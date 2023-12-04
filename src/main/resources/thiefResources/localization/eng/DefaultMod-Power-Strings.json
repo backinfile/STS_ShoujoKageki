@@ -1,0 +1,85 @@
+{
+	"fortuneTeller:CommonPower": {
+		"NAME": "Placeholder Power",
+		"DESCRIPTIONS": [
+			"You applied #b",
+			" keyword.",
+			" keywords."
+		]
+	},
+	"fortuneTeller:RarePower": {
+		"NAME": "Placeholder Power",
+		"DESCRIPTIONS": [
+			"At the start of your turn, TOUCH #b",
+			" enemy.",
+			" enemies."
+		]
+	},
+	"fortuneTeller:Horror": {
+		"NAME": "Horror",
+		"DESCRIPTIONS": [
+			"At the start of your turn, if #yHorror reach your health, enter Crazy.",
+			"Cthulhu! Cthulhu! Cthulhu!"
+		]
+	},
+	"fortuneTeller:Trained": {
+		"NAME": "Trained",
+		"DESCRIPTIONS": [
+			"Increases attack damage by #b",
+			" of the shooting card."
+		]
+	},
+	"fortuneTeller:ReloadingPower": {
+		"NAME": "Reloading",
+		"DESCRIPTIONS": [
+			"When your draw an ethereal card, play it #b",
+			" times."
+		]
+	},
+	"fortuneTeller:NightWatchmanPower": {
+		"NAME": "Night Watchman Power",
+		"DESCRIPTIONS": [
+			"When you play an ATTACK card, put #b",
+			" random SHOOT card in your draw pile."
+		]
+	},
+	"fortuneTeller:ShowTimeDamageOrLoseHpPower": {
+		"NAME": "Show Time",
+		"DESCRIPTIONS": [
+			"At the end of this turn, lose #b",
+			" hp.(deal #b",
+			" more damage to remove this)"
+		]
+	},
+	"fortuneTeller:PlayCardThenRestoreEnergyPower": {
+		"NAME": "Show Time",
+		"DESCRIPTIONS": [
+			"If you have played NL ",
+			" NL ",
+			" NL this turn, restore your energy."
+		]
+	},
+	"fortuneTeller:PlayCardThenGainBufferPower": {
+		"NAME": "Show Time",
+		"DESCRIPTIONS": [
+			"If you have played ",
+			" NL ",
+			"gain #b1 buffer.",
+			" NL "
+		]
+	},
+	"fortuneTeller:ShootDealMoreDamagePower": {
+		"NAME": "Death Knell",
+		"DESCRIPTIONS": [
+			"Shoot deals #b",
+			" times damage."
+		]
+	},
+	"fortuneTeller:GainDebuffAtTurnEndPower": {
+		"NAME": "More Debuff",
+		"DESCRIPTIONS": [
+			"Gain #b",
+			" random debuff at the end of turn."
+		]
+	}
+}

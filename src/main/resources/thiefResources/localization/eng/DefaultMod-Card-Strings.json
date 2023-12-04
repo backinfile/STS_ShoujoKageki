@@ -1,0 +1,66 @@
+{
+	"fortuneTeller:CrutchStrike": {
+		"NAME": "Crutch Strike",
+		"DESCRIPTION": "Deal !D! Damage."
+	},
+	"fortuneTeller:ShootingPractice": {
+		"NAME": "Shooting Practice",
+		"DESCRIPTION": "Deal !D! Damage. NL Gain 1 Trained. NL Create an ethereal copy.",
+		"EXTENDED_DESCRIPTION": [
+			"Ethereal. NL Deal !D! Damage. NL Gain 1 Trained. NL Create an ethereal copy."
+		]
+	},
+	"fortuneTeller:Defend": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	},
+	"fortuneTeller:Reloading": {
+		"NAME": "Reloading",
+		"DESCRIPTION": "When your draw an ethereal card, play it.",
+		"UPGRADE_DESCRIPTION": "When your draw an ethereal card, play it twice."
+	},
+	"fortuneTeller:BustShoot": {
+		"NAME": "Bust Shoot",
+		"DESCRIPTION": "Ethereal. NL Deal !D! Damage. Then deal half damge to others"
+	},
+	"fortuneTeller:FastShoot": {
+		"NAME": "Fast Shoot",
+		"DESCRIPTION": "Deal !D! Damage. NL Draw !M! card of SHOOT type"
+	},
+	"fortuneTeller:NightWatchmanRecruit": {
+		"NAME": "Night Watchman",
+		"DESCRIPTION": "When you play an ATTACK card, put a SHOOT card to your draw pile.",
+		"UPGRADE_DESCRIPTION": "Innate. NL When you play an ATTACK card, put a SHOOT card to your draw pile."
+	},
+	"fortuneTeller:DreamDivine": {
+		"NAME": "Dream Divine",
+		"DESCRIPTION": "When you play an ATTACK card, put a SHOOT card to your draw pile.",
+		"UPGRADE_DESCRIPTION": "Innate. NL When you play an ATTACK card, put a SHOOT card to your draw pile."
+	},
+	"fortuneTeller:CrutchDivine": {
+		"NAME": "Crutch Divine",
+		"DESCRIPTION": "When you play an ATTACK card, put a SHOOT card to your draw pile.",
+		"UPGRADE_DESCRIPTION": "Innate. NL When you play an ATTACK card, put a SHOOT card to your draw pile."
+	},
+	"fortuneTeller:MirrorDivine": {
+		"NAME": "Mirror Divine",
+		"DESCRIPTION": "When you play an ATTACK card, put a SHOOT card to your draw pile.",
+		"UPGRADE_DESCRIPTION": "Innate. NL When you play an ATTACK card, put a SHOOT card to your draw pile."
+	},
+	"fortuneTeller:ShowTime": {
+		"NAME": "Show Time",
+		"DESCRIPTION": "Gain !M! Strength. Lose 10 hp if your damge lower then 12 this turn."
+	},
+	"fortuneTeller:Improvisation": {
+		"NAME": "Improvisation",
+		"DESCRIPTION": "Draw !M! card, restore your energy when you played all of them this turn."
+	},
+	"fortuneTeller:OpenPreview": {
+		"NAME": "Open Preview",
+		"DESCRIPTION": "Gain !B! block. NL Put the next card you play this turn on top of your draw pile."
+	},
+	"fortuneTeller:HolyShoot": {
+		"NAME": "Holy Shoot",
+		"DESCRIPTION": "Ethereal. NL Deal !D! damage, gain !M! trained if kill an enemy."
+	}
+}

@@ -1,0 +1,52 @@
+{
+	"fortuneTeller:FeaturePotion": {
+		"NAME": "Feature Potion",
+		"DESCRIPTIONS": [
+			"Gain ",
+			" At the end of your turn, lose ",
+			" Strength."
+		]
+	},
+	"fortuneTeller:Tmp1Potion": {
+		"NAME": "Tmp1Potion",
+		"DESCRIPTIONS": [
+			"tmp1 potion"
+		]
+	},
+	"fortuneTeller:Tmp2Potion": {
+		"NAME": "Tmp2Potion",
+		"DESCRIPTIONS": [
+			"tmp2 potion"
+		]
+	},
+	"fortuneTeller:Tmp3Potion": {
+		"NAME": "Tmp3Potion",
+		"DESCRIPTIONS": [
+			"tmp3 potion"
+		]
+	},
+	"fortuneTeller:TrainedPotion": {
+		"NAME": "训练药水",
+		"DESCRIPTIONS": [
+			" 特性 。 NL 获得 #b",
+			" 层 训练 。",
+			" 特性 。 NL 获得一张快速射击。"
+		]
+	},
+	"fortuneTeller:DivinePotion": {
+		"NAME": "占卜药水",
+		"DESCRIPTIONS": [
+			" 特性 。 NL 占卜 #b",
+			"  。",
+			" 特性 。 NL 获得一张梦境占卜。",
+			"特性"
+		]
+	},
+	"fortuneTeller:CloudPotion": {
+		"NAME": "云雾药水",
+		"DESCRIPTIONS": [
+			"获得 #b",
+			" 页罗塞尔大帝的日记。"
+		]
+	}
+}

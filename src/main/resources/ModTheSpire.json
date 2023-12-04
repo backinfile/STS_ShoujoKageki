@@ -1,0 +1,9 @@
+{
+  "modid": "Example_Mod_ID_12345",
+  "name": "thief 盗贼",
+  "author_list": ["不方不方"],
+  "description": "盗贼角色mod",
+  "version": "0.1",
+  "sts_version": "06-15-2018",
+  "mts_version": "2.7.0"
+}

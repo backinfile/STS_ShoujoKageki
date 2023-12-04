@@ -1,0 +1,62 @@
+{
+	"fortuneTeller:PlaceholderRelic": {
+		"NAME": "Placeholder Energy Relic",
+		"FLAVOR": "The snake is a friend.",
+		"DESCRIPTIONS": [
+			"Gain #b1 [E] ."
+		]
+	},
+	"fortuneTeller:GlassesRelic": {
+		"NAME": "Glasses",
+		"FLAVOR": "You feel like a gentleman.",
+		"DESCRIPTIONS": [
+			"At the start of your turn, reduce a random card's cost by #b1."
+		]
+	},
+	"fortuneTeller:ConnectionRelic": {
+		"NAME": "Connection",
+		"FLAVOR": "You feel like a gentleman.",
+		"DESCRIPTIONS": [
+			"You can join the Tarot Assembly at the rest room."
+		]
+	},
+	"fortuneTeller:FortuneRelic": {
+		"NAME": "Fortune",
+		"FLAVOR": "You feel like a gentleman.",
+		"DESCRIPTIONS": [
+			"You can see the top card of draw pile util you use this to draw a card each combat."
+		]
+	},
+	"fortuneTeller:DeathknellRelic": {
+		"NAME": "Death Knell",
+		"FLAVOR": "You feel like a gentleman.",
+		"DESCRIPTIONS": [
+			"Your Shoot deals triple damage, gain one random debuff at the end of your turn."
+		]
+	},
+	"fortuneTeller:PlaceholderRelic2": {
+		"NAME": "Placeholder Relic 2",
+		"FLAVOR": "You feel like a gentleman.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, gain #b1 #yStrength."
+		]
+	},
+	"fortuneTeller:DefaultClickableRelic": {
+		"NAME": "Right-Clicky Relic",
+		"FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+		"DESCRIPTIONS": [
+			"[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
+			"YOU ARE MINE!"
+		]
+	},
+	"fortuneTeller:BottledPlaceholderRelic": {
+		"NAME": "Bottled Placeholder",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			"Choose a card. Whenever you take play any card, draw the chosen card.",
+			"Whenever you play a card, draw ",
+			".",
+			"Select a card to bottle for "
+		]
+	}
+}

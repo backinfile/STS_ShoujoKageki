@@ -1,0 +1,17 @@
+{
+  "fortuneTeller:demo": {
+    "TEXT": ["demo text"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "fortuneTeller:TarotAssembly": {
+    "TEXT": ["Tarot Assembly", "exchange something"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "fortuneTeller:DivineAction": {
+    "TEXT": ["choose one put on top", "exchange something"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  }
+}

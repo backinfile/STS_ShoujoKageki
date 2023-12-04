@@ -1,0 +1,94 @@
+{
+	"fortuneTeller:GlassesRelic": {
+		"NAME": "金边眼镜",
+		"FLAVOR": "感觉自己像个绅士。",
+		"DESCRIPTIONS": [
+			"回合开始时，将随机一张技能卡的费用降低 #b1."
+		]
+	},
+	"fortuneTeller:ConnectionRelic": {
+		"NAME": "云雾",
+		"FLAVOR": "You feel like a gentleman.",
+		"DESCRIPTIONS": [
+			"你可以在休息房中参加塔罗聚会。"
+		]
+	},
+	"fortuneTeller:FortuneRelic": {
+		"NAME": "占卜水晶",
+		"FLAVOR": "占卜水晶",
+		"DESCRIPTIONS": [
+			"你可以看到牌库顶牌。每场战斗一次，抽 #b1 张牌。"
+		]
+	},
+	"fortuneTeller:DeathknellRelic": {
+		"NAME": "\"丧钟\"手枪",
+		"FLAVOR": "You feel like a gentleman.",
+		"DESCRIPTIONS": [
+			" #y射击 造成 #b3 倍伤害。 NL 每打出一张 射击 ，回合结束时获得一层随机负面效果。"
+		]
+	},
+	"fortuneTeller:EarthRingRelic": {
+		"NAME": "莉莉丝的指环",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			"在每回合开始时获得 [E] 。在每场战斗开始时，有",
+			"%的几率召唤一只地精。"
+		]
+	},
+	"fortuneTeller:DiaryOfEmperorRoselleRelic": {
+		"NAME": "罗塞尔大帝的日记",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			" NL ",
+			"： 在战斗开始时，获得 #b",
+			" 格挡 ，之后每回合获得 #b格挡 层数减半。",
+			"： 在对战普通敌人时获得一些增益。",
+			"： 在对战精英敌人和Boss时获得一些增益。",
+			"收集更多的日记获取知识。",
+			"无法获得更多日记。"
+		]
+	},
+	"fortuneTeller:CitrineRelic": {
+		"NAME": "黄水晶",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			"战斗开始时，将牌库中一张 #y占卜牌 置入手牌。"
+		]
+	},
+	"fortuneTeller:RituaSilverDaggerRelic": {
+		"NAME": "仪式银匕",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			"进行 #y占卜 时， #y升级 所有被替换的牌。"
+		]
+	},
+	"fortuneTeller:CandleRelic": {
+		"NAME": "蜡烛",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			" #y占卜 后， 额外抽一张牌。"
+		]
+	},
+	"fortuneTeller:SealedItem2049Relic": {
+		"NAME": "封印物2049",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			"每 #b",
+			" 个回合，随机击晕一个敌人。"
+		]
+	},
+	"fortuneTeller:SealedItem30782Relic": {
+		"NAME": "封印物30782",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			"战斗的前6个回合，使随机一张技能牌耗能-1。"
+		]
+	},
+	"fortuneTeller:TravelNotes": {
+		"NAME": "莱曼诺旅行笔记",
+		"FLAVOR": "What is this?",
+		"DESCRIPTIONS": [
+			"两回合一次：记录你打出的第一张技能牌，在下个回合开始时，获得其一张复制。"
+		]
+	}
+}

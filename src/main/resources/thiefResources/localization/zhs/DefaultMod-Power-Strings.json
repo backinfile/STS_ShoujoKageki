@@ -1,0 +1,108 @@
+{
+	"fortuneTeller:Horror": {
+		"NAME": "Horror",
+		"DESCRIPTIONS": [
+			"At the start of your turn, if #yHorror reach your health, enter Crazy.",
+			"Cthulhu! Cthulhu! Cthulhu!"
+		]
+	},
+	"fortuneTeller:Trained": {
+		"NAME": "训练",
+		"DESCRIPTIONS": [
+			"射击牌的伤害增加 #b",
+			" ，回合结束时失去一半层数。"
+		]
+	},
+	"fortuneTeller:ReloadingPower": {
+		"NAME": "子弹上膛",
+		"DESCRIPTIONS": [
+			"When your draw an ethereal card, play it #b",
+			" times."
+		]
+	},
+	"fortuneTeller:NightWatchmanPower": {
+		"NAME": "守夜人新兵",
+		"DESCRIPTIONS": [
+			"打出一张攻击时，随机将 #b",
+			" 张射击置如你的抽牌堆。"
+		]
+	},
+	"fortuneTeller:ShowTimeDamageOrLoseHpPower": {
+		"NAME": "表演时间",
+		"DESCRIPTIONS": [
+			"回合结束时，失去 #b",
+			" 点生命值。（移除需要造成 #b",
+			" 点伤害）"
+		]
+	},
+	"fortuneTeller:PlayCardThenRestoreEnergyPower": {
+		"NAME": "即兴表演",
+		"DESCRIPTIONS": [
+			"本回合你打出 NL ",
+			" NL ",
+			" NL 后，回复全部能量。",
+			"抽牌数目不足。"
+		]
+	},
+	"fortuneTeller:PlayCardThenGainBufferPower": {
+		"NAME": "Show Time",
+		"DESCRIPTIONS": [
+			"If you have played ",
+			" NL ",
+			"gain #b1 buffer.",
+			" NL "
+		]
+	},
+	"fortuneTeller:ShootDealMoreDamagePower": {
+		"NAME": "丧钟",
+		"DESCRIPTIONS": [
+			"射击造成 #b",
+			" 倍伤害。"
+		]
+	},
+	"fortuneTeller:GainDebuffAtTurnEndPower": {
+		"NAME": "弱点",
+		"DESCRIPTIONS": [
+			"回合结束时，随机获得 #b",
+			" 个负面效果。"
+		]
+	},
+	"fortuneTeller:DivinePower": {
+		"NAME": "占卜",
+		"DESCRIPTIONS": [
+			"被替换的牌： NL ",
+			" NL ",
+			" NL 抽到的牌： NL ",
+			" NL ",
+			" NL 占卜完成。"
+		]
+	},
+	"fortuneTeller:LoseHpAtTurnEndEqualsHandPower": {
+		"NAME": "魔镜",
+		"DESCRIPTIONS": [
+			"回合结束时，失去等同于手牌数量的生命值。"
+		]
+	},
+	"fortuneTeller:SwingDivinePower": {
+		"NAME": "灵摆",
+		"DESCRIPTIONS": [
+			" 占卜完成 时，对所有敌人造成 #b",
+			" 点伤害。"
+		]
+	},
+	"fortuneTeller:MovingHungerPower": {
+		"NAME": "饥饿",
+		"DESCRIPTIONS": [
+			"回合开始时随机 消耗 #b",
+			" 张手牌，获得 #b",
+			" 点 力量。"
+		]
+	},
+	"fortuneTeller:PaperAngelPower": {
+		"NAME": "纸天使",
+		"DESCRIPTIONS": [
+			"进行 占卜 时，获得 #b",
+			" 点 格挡 。"
+		]
+	}
+}
