@@ -4,6 +4,7 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import com.backinfile.thief.ModInfo;
 import com.backinfile.thief.Log;
+import com.backinfile.thief.relics.FortuneRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -20,15 +21,15 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
 
+import static com.backinfile.thief.ModInfo.makeID;
 import static com.backinfile.thief.Res.*;
 import static com.backinfile.thief.character.Thief.Enums.COLOR_GRAY;
 
-public class Thief extends CustomPlayer {
+public class Thief extends BasePlayer {
 
     public static class Enums {
         @SpireEnum
@@ -171,7 +172,7 @@ public class Thief extends CustomPlayer {
     // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(BurningBlood.ID);
+        retVal.add(FortuneRelic.ID);
         return retVal;
     }
 

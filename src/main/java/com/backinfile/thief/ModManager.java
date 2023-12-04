@@ -1,13 +1,21 @@
 package com.backinfile.thief;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomRelic;
 import basemod.interfaces.*;
 import com.backinfile.thief.character.Thief;
 import com.backinfile.thief.util.IDCheck;
+import com.badlogic.gdx.Gdx;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
+import java.nio.charset.StandardCharsets;
 
 import static com.backinfile.thief.Res.*;
 import static com.backinfile.thief.character.Thief.Enums.COLOR_GRAY;
@@ -52,34 +60,34 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         String lang = getLang();
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-Card-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Card-Strings.json"));
 
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-Power-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Power-Strings.json"));
 
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-Relic-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Relic-Strings.json"));
 
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-Event-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Event-Strings.json"));
 
         // PotionStrings
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-Potion-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Potion-Strings.json"));
 
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-Character-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Character-Strings.json"));
 
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-Orb-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Orb-Strings.json"));
 
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                Res.getResPath("/localization/" + lang + "/DefaultMod-UI-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-UI-Strings.json"));
 
         Log.logger.info("Done edittting strings");
     }
@@ -109,11 +117,34 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
     @Override
     public void receiveEditKeywords() {
+        Gson gson = new Gson();
+        String json = Gdx.files
+                .internal(ModInfo.getResPath("/localization/" + getLang() + "/DefaultMod-Keyword-Strings.json"))
+                .readString(String.valueOf(StandardCharsets.UTF_8));
+        com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json,
+                com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
+        if (keywords != null) {
+            for (com.evacipated.cardcrawl.mod.stslib.Keyword keyword : keywords) {
+                BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                Log.logger.info("-----------------add keyword: " + keyword.PROPER_NAME);
+            }
+        }
     }
 
     @Override
     public void receiveEditRelics() {
-
+        String relicClassPath = this.getClass().getPackage().getName() + ".relics";
+        Log.logger.info("===============Adding relics: search in " + relicClassPath);
+        for(com.evacipated.cardcrawl.modthespire.ModInfo info: Loader.MODINFOS) {
+            Log.logger.info(info.ID);
+        }
+        new AutoAdd(ModInfo.getModId()).packageFilter(relicClassPath).any(CustomRelic.class, (info, relic) -> {
+            BaseMod.addRelicToCustomPool(relic, COLOR_GRAY);
+//			if (info.seen || relic.tier == RelicTier.STARTER)
+            UnlockTracker.markRelicAsSeen(relic.relicId);
+            Log.logger.info("Adding relics: " + relic.relicId);
+        });
+        Log.logger.info("Done adding relics!");
     }
 }

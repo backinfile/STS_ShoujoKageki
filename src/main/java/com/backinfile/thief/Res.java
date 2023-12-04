@@ -18,38 +18,31 @@ public class Res {
     // Red/Brown
 
     // Card backgrounds - The actual rectangular card.
-    public static final String ATTACK_DEFAULT_GRAY = getResPath("/images/512/bg_attack_default_gray.png");
-    public static final String SKILL_DEFAULT_GRAY = getResPath("/images/512/bg_skill_default_gray.png");
-    public static final String POWER_DEFAULT_GRAY = getResPath("/images/512/bg_power_default_gray.png");
+    public static final String ATTACK_DEFAULT_GRAY = ModInfo.getResPath("/images/512/bg_attack_default_gray.png");
+    public static final String SKILL_DEFAULT_GRAY = ModInfo.getResPath("/images/512/bg_skill_default_gray.png");
+    public static final String POWER_DEFAULT_GRAY = ModInfo.getResPath("/images/512/bg_power_default_gray.png");
 
-    public static final String ENERGY_ORB_DEFAULT_GRAY = getResPath("/images/512/card_default_gray_orb.png");
-    public static final String CARD_ENERGY_ORB = getResPath("/images/512/card_small_orb.png");
+    public static final String ENERGY_ORB_DEFAULT_GRAY = ModInfo.getResPath("/images/512/card_default_gray_orb.png");
+    public static final String CARD_ENERGY_ORB = ModInfo.getResPath("/images/512/card_small_orb.png");
 
-    public static final String ATTACK_DEFAULT_GRAY_PORTRAIT = getResPath("/images/1024/bg_attack_default_gray.png");
-    public static final String SKILL_DEFAULT_GRAY_PORTRAIT = getResPath("/images/1024/bg_skill_default_gray.png");
-    public static final String POWER_DEFAULT_GRAY_PORTRAIT = getResPath("/images/1024/bg_power_default_gray.png");
-    public static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = getResPath("/images/1024/card_default_gray_orb.png");
+    public static final String ATTACK_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/bg_attack_default_gray.png");
+    public static final String SKILL_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/bg_skill_default_gray.png");
+    public static final String POWER_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/bg_power_default_gray.png");
+    public static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/card_default_gray_orb.png");
 
     // Character assets
-    public static final String THE_DEFAULT_BUTTON = getResPath("/images/charSelect/DefaultCharacterButton.png");
-    public static final String THE_DEFAULT_PORTRAIT = getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
-    public static final String THE_DEFAULT_SHOULDER_1 = getResPath("/images/char/defaultCharacter/shoulder.png");
-    public static final String THE_DEFAULT_SHOULDER_2 = getResPath("/images/char/defaultCharacter/shoulder2.png");
-    public static final String THE_DEFAULT_CORPSE = getResPath("/images/char/defaultCharacter/corpse.png");
+    public static final String THE_DEFAULT_BUTTON = ModInfo.getResPath("/images/charSelect/DefaultCharacterButton.png");
+    public static final String THE_DEFAULT_PORTRAIT = ModInfo.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
+    public static final String THE_DEFAULT_SHOULDER_1 = ModInfo.getResPath("/images/char/defaultCharacter/shoulder.png");
+    public static final String THE_DEFAULT_SHOULDER_2 = ModInfo.getResPath("/images/char/defaultCharacter/shoulder2.png");
+    public static final String THE_DEFAULT_CORPSE = ModInfo.getResPath("/images/char/defaultCharacter/corpse.png");
 
     // Mod Badge - A small icon that appears in the mod settings menu next to your
     // mod.
-    public static final String BADGE_IMAGE = getResPath("/images/Badge.png");
+    public static final String BADGE_IMAGE = ModInfo.getResPath("/images/Badge.png");
 
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = getResPath("/images/char/defaultCharacter/skeleton.atlas");
-    public static final String THE_DEFAULT_SKELETON_JSON = getResPath("/images/char/defaultCharacter/skeleton.json");
+    public static final String THE_DEFAULT_SKELETON_ATLAS = ModInfo.getResPath("/images/char/defaultCharacter/skeleton.atlas");
+    public static final String THE_DEFAULT_SKELETON_JSON = ModInfo.getResPath("/images/char/defaultCharacter/skeleton.json");
 
-    public static String getResPath(String relativePath) {
-        return ModInfo.getModId() + "Resources" + relativePath;
-    }
-
-    public static String makeID(String idText) {
-        return ModInfo.getModId() + ":" + idText;
-    }
 }
