@@ -2,10 +2,12 @@ package thief.character;
 
 import thief.Log;
 import thief.ModInfo;
+import thief.ModManager;
 import thief.Res;
 import thief.cards.starter.BagBottom;
 import thief.cards.starter.Defend;
 import thief.cards.starter.ThiefStrike;
+import thief.cards.tool.Dagger;
 import thief.relics.DeckTopRelic;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -152,13 +154,15 @@ public class Thief extends BasePlayer {
         // TODO
         retVal.add(ThiefStrike.ID);
         retVal.add(ThiefStrike.ID);
-        retVal.add(ThiefStrike.ID);
-        retVal.add(ThiefStrike.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(BagBottom.ID);
+//        retVal.add(ThiefStrike.ID);
+//        retVal.add(ThiefStrike.ID);
+//        retVal.add(Defend.ID);
+//        retVal.add(Defend.ID);
+//        retVal.add(Defend.ID);
+//        retVal.add(Defend.ID);
+//        retVal.add(BagBottom.ID);
+//        retVal.add(Dagger.ID);
+        retVal.addAll(ModManager.cardIds);
         return retVal;
     }
 
@@ -219,7 +223,7 @@ public class Thief extends BasePlayer {
     // Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike_Blue(); // TODO
+        return new ThiefStrike();
     }
 
     // The class name as it appears next to your player name in-game

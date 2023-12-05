@@ -50,6 +50,7 @@ public class DeckTopViewer {
 		if (topCard != oriCard) {
 			oriCard = topCard;
 			showCard = oriCard.makeStatEquivalentCopy();
+			showCard.initializeDescription();
 			showCard.lighten(false);
 			showCard.unhover();
 			if (canDraw) {

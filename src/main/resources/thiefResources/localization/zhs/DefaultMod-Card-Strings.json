@@ -1,7 +1,7 @@
 {
 	"thief:BagBottom": {
 		"NAME": "掏底兜",
-		"DESCRIPTION": "获得2点临时 敏捷 NL 口袋 !M! "
+		"DESCRIPTION": "获得2点临时 敏捷 NL 口袋 !M!"
 	},
 	"thief:Defend": {
 		"NAME": "防御",
@@ -11,9 +11,25 @@
 		"NAME": "打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
-	"thief:Reloading": {
-		"NAME": "打击",
-		"DESCRIPTION": " 虚无 。 NL 造成 !D! 点伤害。 NL 获得 !M! 层 训练 。 NL 生成一个本牌的复制到手中。"
+	"thief:Dagger": {
+		"NAME": "匕首",
+		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
+	},
+	"thief:Dagger2": {
+		"NAME": "匕首2",
+		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
+	},
+	"thief:Dagger3": {
+		"NAME": "匕首3",
+		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
+	},
+	"thief:Dagger4": {
+		"NAME": "匕首4",
+		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
+	},
+	"thief:Dagger5": {
+		"NAME": "匕首5",
+		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
 	},
 	"fortuneTeller:Reloading": {
 		"NAME": "子弹上膛",

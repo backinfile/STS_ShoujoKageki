@@ -1,5 +1,7 @@
 package thief.cards.starter;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import thief.ModInfo;
 import thief.actions.BagAction;
 import thief.cards.BaseCard;
@@ -22,9 +24,9 @@ public class BagBottom extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, magicNumber)));
-        addToBot(new BagAction(2));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2)));
+        addToBot(new BagAction(magicNumber));
     }
 
     @Override

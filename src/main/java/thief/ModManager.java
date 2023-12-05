@@ -3,6 +3,7 @@ package thief;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.DynamicVariable;
 import basemod.interfaces.*;
 import thief.character.Thief;
 import thief.util.IDCheckDontTouchPls;
@@ -19,10 +20,13 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import thief.variables.DisposableVariable;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 import static thief.Res.*;
 import static thief.character.Thief.Enums.COLOR_GRAY;
@@ -31,10 +35,11 @@ import static thief.character.Thief.Enums.THIEF;
 @SpireInitializer
 public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSubscriber,
         EditRelicsSubscriber, EditStringsSubscriber,
-        EditKeywordsSubscriber, EditCharactersSubscriber {
+        EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(ModInfo.ModName);
 
     private static String modID;
+    public static final List<String> cardIds = new ArrayList<>();
 
     public ModManager() {
         BaseMod.subscribe(this);
@@ -130,10 +135,17 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new DisposableVariable());
 
         Log.logger.info("Adding cards");
         String cardsClassPath = this.getClass().getPackage().getName() + ".cards";
-        new AutoAdd(ModInfo.getModId()).packageFilter(cardsClassPath).setDefaultSeen(true).cards();
+        new AutoAdd(ModInfo.getModId()).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
+            BaseMod.addCard(card);
+            if (info.seen) {
+                UnlockTracker.unlockCard(card.cardID);
+            }
+            cardIds.add(card.cardID);
+        });
         Log.logger.info("Done adding cards!");
     }
 
@@ -168,6 +180,14 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
             Log.logger.info("Adding relics: " + relic.relicId);
         });
         Log.logger.info("Done adding relics!");
+    }
+
+    @Override
+    public void receivePostInitialize() {
+//        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
+
+        // =============== /EVENTS/ =================
+        logger.info("Done loading badge Image and mod options");
     }
 
 
