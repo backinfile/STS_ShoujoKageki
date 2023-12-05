@@ -1,9 +1,9 @@
 {
-	"fortuneTeller:Horror": {
-		"NAME": "Horror",
+	"thief:BagPower": {
+		"NAME": "口袋",
 		"DESCRIPTIONS": [
-			"At the start of your turn, if #yHorror reach your health, enter Crazy.",
-			"Cthulhu! Cthulhu! Cthulhu!"
+			"",
+			" NL "
 		]
 	},
 	"fortuneTeller:Trained": {

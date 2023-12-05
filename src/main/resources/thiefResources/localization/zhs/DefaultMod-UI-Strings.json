@@ -1,6 +1,6 @@
 {
-  "fortuneTeller:demo": {
-    "TEXT": ["demo text"],
+  "thief:BagAction": {
+    "TEXT": ["选择卡牌放入口袋"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },

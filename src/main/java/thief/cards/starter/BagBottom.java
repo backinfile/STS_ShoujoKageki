@@ -1,6 +1,7 @@
 package thief.cards.starter;
 
 import thief.ModInfo;
+import thief.actions.BagAction;
 import thief.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,6 +24,7 @@ public class BagBottom extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, magicNumber)));
+        addToBot(new BagAction(2));
     }
 
     @Override
