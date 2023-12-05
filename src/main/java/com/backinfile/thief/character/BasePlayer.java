@@ -23,6 +23,8 @@ public abstract class BasePlayer extends CustomPlayer {
 	public CardGroup replacedCards = new CardGroup(CardGroupType.UNSPECIFIED);
 	public int divineCount = 0;
 
+
+
 	public BasePlayer(String name, PlayerClass playerClass, EnergyOrbInterface energyOrbInterface,
 			AbstractAnimation animation) {
 		super(name, playerClass, energyOrbInterface, animation);

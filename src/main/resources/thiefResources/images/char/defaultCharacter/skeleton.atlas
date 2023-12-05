@@ -1,118 +1,160 @@
 
 skeleton.png
-size: 512,256
+size: 256,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-images/armleft
+images/shadow
   rotate: false
-  xy: 113, 3
-  size: 67, 64
-  orig: 67, 64
-  offset: 0, 0
+  xy: 68, 117
+  size: 124, 24
+  orig: 126, 25
+  offset: 2, 1
   index: -1
-images/armright
+images/legright
   rotate: false
-  xy: 292, 91
-  size: 70, 36
-  orig: 70, 36
-  offset: 0, 0
-  index: -1
-images/bandage
-  rotate: false
-  xy: 472, 165
-  size: 16, 17
-  orig: 16, 17
-  offset: 0, 0
-  index: -1
-images/bandageflap
-  rotate: false
-  xy: 378, 138
-  size: 32, 12
-  orig: 32, 12
-  offset: 0, 0
-  index: -1
-images/body
-  rotate: false
-  xy: 2, 69
-  size: 172, 185
-  orig: 172, 185
-  offset: 0, 0
-  index: -1
-images/fingersleft
-  rotate: false
-  xy: 230, 57
-  size: 18, 24
-  orig: 18, 24
-  offset: 0, 0
-  index: -1
-images/fingersright
-  rotate: false
-  xy: 204, 33
-  size: 24, 22
-  orig: 24, 22
-  offset: 0, 0
-  index: -1
-images/head
-  rotate: false
-  xy: 420, 184
-  size: 75, 70
-  orig: 75, 70
-  offset: 0, 0
-  index: -1
-images/leftwing
-  rotate: false
-  xy: 326, 152
-  size: 92, 102
-  orig: 92, 102
+  xy: 213, 1
+  size: 29, 49
+  orig: 29, 49
   offset: 0, 0
   index: -1
 images/legleft
   rotate: false
-  xy: 182, 2
-  size: 20, 79
-  orig: 20, 79
+  xy: 1, 131
+  size: 33, 62
+  orig: 33, 62
   offset: 0, 0
   index: -1
-images/legright
-  rotate: true
-  xy: 420, 163
-  size: 19, 50
-  orig: 19, 50
-  offset: 0, 0
-  index: -1
-images/rightwing
+images/pants
   rotate: false
-  xy: 176, 152
-  size: 148, 102
-  orig: 148, 102
+  xy: 1, 1
+  size: 80, 58
+  orig: 80, 58
   offset: 0, 0
   index: -1
-images/shadow
+images/neck
   rotate: false
-  xy: 176, 129
-  size: 200, 21
-  orig: 200, 21
-  offset: 0, 0
+  xy: 104, 87
+  size: 20, 24
+  orig: 21, 25
+  offset: 1, 1
   index: -1
-images/shoulderright
+images/head
   rotate: false
-  xy: 204, 57
-  size: 24, 24
-  orig: 24, 24
+  xy: 1, 195
+  size: 37, 37
+  orig: 38, 38
+  offset: 1, 1
+  index: -1
+images/eyelid
+  rotate: false
+  xy: 57, 131
+  size: 8, 5
+  orig: 9, 6
+  offset: 1, 1
+  index: -1
+images/armleft
+  rotate: false
+  xy: 140, 1
+  size: 71, 57
+  orig: 71, 57
   offset: 0, 0
   index: -1
-images/weaponleft
-  rotate: true
-  xy: 176, 83
-  size: 44, 114
-  orig: 44, 114
+images/torso
+  rotate: false
+  xy: 83, 1
+  size: 55, 84
+  orig: 55, 84
   offset: 0, 0
   index: -1
-images/weaponright
-  rotate: true
-  xy: 2, 10
-  size: 57, 109
-  orig: 57, 109
+images/hair
+  rotate: false
+  xy: 140, 60
+  size: 56, 55
+  orig: 56, 55
   offset: 0, 0
+  index: -1
+images/pouch
+  rotate: false
+  xy: 36, 131
+  size: 19, 40
+  orig: 19, 40
+  offset: 0, 0
+  index: -1
+images/mouth
+  rotate: false
+  xy: 68, 61
+  size: 11, 10
+  orig: 12, 11
+  offset: 1, 1
+  index: -1
+images/daggerleft
+  rotate: false
+  xy: 36, 173
+  size: 71, 13
+  orig: 72, 14
+  offset: 1, 1
+  index: -1
+images/fingesleft
+  rotate: false
+  xy: 57, 143
+  size: 25, 10
+  orig: 26, 11
+  offset: 1, 1
+  index: -1
+images/daggerright
+  rotate: false
+  xy: 198, 60
+  size: 32, 53
+  orig: 33, 54
+  offset: 1, 1
+  index: -1
+armleft
+  rotate: false
+  xy: 60, 138
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+armright
+  rotate: false
+  xy: 68, 73
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+leglft
+  rotate: false
+  xy: 63, 138
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+legright
+  rotate: false
+  xy: 57, 138
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/armright
+  rotate: false
+  xy: 1, 61
+  size: 65, 68
+  orig: 65, 68
+  offset: 0, 0
+  index: -1
+images/shoulder
+  rotate: false
+  xy: 194, 117
+  size: 32, 54
+  orig: 32, 54
+  offset: 0, 0
+  index: -1
+images/goggles
+  rotate: false
+  xy: 68, 87
+  size: 34, 19
+  orig: 35, 20
+  offset: 1, 1
   index: -1

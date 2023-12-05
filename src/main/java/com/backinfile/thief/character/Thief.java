@@ -1,6 +1,7 @@
 package com.backinfile.thief.character;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.backinfile.thief.ModInfo;
 import com.backinfile.thief.Log;
@@ -97,8 +98,7 @@ public class Thief extends BasePlayer {
 
     public Thief(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, ModName + "Resources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        ModName + "Resources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+                new SpineAnimation(THE_DEFAULT_SKELETON_ATLAS, THE_DEFAULT_SKELETON_JSON, 1.0f));
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
 
@@ -115,7 +115,7 @@ public class Thief extends BasePlayer {
         // =============== ANIMATIONS =================
 
         loadAnimation(THE_DEFAULT_SKELETON_ATLAS, THE_DEFAULT_SKELETON_JSON, 1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
         // =============== /ANIMATIONS/ =================

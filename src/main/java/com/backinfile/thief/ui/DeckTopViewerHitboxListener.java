@@ -26,6 +26,7 @@ public class DeckTopViewerHitboxListener implements HitboxListener {
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
 			AbstractRelic relic = player.getRelic(FortuneRelic.ID);
 			if (relic != null) {
+				relic.stopPulse();
 				AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(player, relic));
 			}
 		}

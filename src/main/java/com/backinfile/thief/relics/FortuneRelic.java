@@ -28,6 +28,7 @@ public class FortuneRelic extends CustomRelic {
     @Override
     public void atBattleStart() {
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.beginLongPulse();
 
         if (deckTopViewer == null) {
             deckTopViewer = new DeckTopViewer();
@@ -38,6 +39,7 @@ public class FortuneRelic extends CustomRelic {
     @Override
     public void onVictory() {
         deckTopViewer.hide();
+        this.stopPulse();
     }
 
     @Override
