@@ -1,6 +1,6 @@
 package com.backinfile.thief.ui;
 
-import com.backinfile.thief.relics.FortuneRelic;
+import com.backinfile.thief.relics.DeckTopRelic;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -24,7 +24,7 @@ public class DeckTopViewerHitboxListener implements HitboxListener {
 				&& AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
 			viewer.canDraw = false;
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
-			AbstractRelic relic = player.getRelic(FortuneRelic.ID);
+			AbstractRelic relic = player.getRelic(DeckTopRelic.ID);
 			if (relic != null) {
 				relic.stopPulse();
 				AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(player, relic));

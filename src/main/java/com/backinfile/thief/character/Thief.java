@@ -1,11 +1,9 @@
 package com.backinfile.thief.character;
 
-import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.backinfile.thief.ModInfo;
 import com.backinfile.thief.Log;
-import com.backinfile.thief.relics.FortuneRelic;
+import com.backinfile.thief.relics.DeckTopRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -172,7 +170,7 @@ public class Thief extends BasePlayer {
     // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(FortuneRelic.ID);
+        retVal.add(DeckTopRelic.ID);
         return retVal;
     }
 

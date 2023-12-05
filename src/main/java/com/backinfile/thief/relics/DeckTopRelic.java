@@ -5,23 +5,23 @@ import com.backinfile.thief.ModInfo;
 
 import static com.backinfile.thief.ModInfo.*;
 
+import com.backinfile.thief.effects.DeckTopEffect;
 import com.backinfile.thief.ui.DeckTopViewer;
 import com.backinfile.thief.util.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class FortuneRelic extends CustomRelic {
+public class DeckTopRelic extends CustomRelic {
 
-    public static final String ID = ModInfo.makeID(FortuneRelic.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(DeckTopRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("glasses_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("glasses_relic.png"));
 
     public static DeckTopViewer deckTopViewer = null;
 
-    public FortuneRelic() {
+    public DeckTopRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
     }
 
@@ -32,6 +32,7 @@ public class FortuneRelic extends CustomRelic {
 
         if (deckTopViewer == null) {
             deckTopViewer = new DeckTopViewer();
+            AbstractDungeon.effectsQueue.add(new DeckTopEffect());
         }
         deckTopViewer.open(true);
     }

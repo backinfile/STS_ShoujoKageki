@@ -1,9 +1,9 @@
 {
-	"thief:FortuneRelic": {
-		"NAME": "占卜水晶",
-		"FLAVOR": "占卜水晶",
+	"thief:DeckTopRelic": {
+		"NAME": "摸点子",
+		"FLAVOR": "摸点子",
 		"DESCRIPTIONS": [
-			"你可以看到牌库顶牌。每场战斗一次，抽 #b1 张牌。"
+			"你可以看到牌库顶牌。 NL 每场战斗一次，抽 #b1 张牌。"
 		]
 	}
 }

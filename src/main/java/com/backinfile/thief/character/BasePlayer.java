@@ -1,7 +1,6 @@
 package com.backinfile.thief.character;
 
 import com.backinfile.thief.potions.BasePotion;
-import com.backinfile.thief.relics.FortuneRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -123,9 +122,6 @@ public abstract class BasePlayer extends CustomPlayer {
 	@Override
 	public void combatUpdate() {
 		super.combatUpdate();
-		if (FortuneRelic.deckTopViewer != null) {
-			FortuneRelic.deckTopViewer.update();
-		}
 		for (AbstractCard card : replacedCards.group) {
 			card.update();
 		}
@@ -141,10 +137,6 @@ public abstract class BasePlayer extends CustomPlayer {
 		}
 
 		super.render(sb);
-
-		if (FortuneRelic.deckTopViewer != null) {
-			FortuneRelic.deckTopViewer.render(sb);
-		}
 
 	}
 
