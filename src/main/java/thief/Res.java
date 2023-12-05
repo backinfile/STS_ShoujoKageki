@@ -1,4 +1,4 @@
-package com.backinfile.thief;
+package thief;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.helpers.CardHelper;

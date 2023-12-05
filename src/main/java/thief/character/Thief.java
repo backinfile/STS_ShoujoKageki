@@ -1,9 +1,13 @@
-package com.backinfile.thief.character;
+package thief.character;
 
+import thief.Log;
+import thief.ModInfo;
+import thief.Res;
+import thief.cards.starter.BagBottom;
+import thief.cards.starter.Defend;
+import thief.cards.starter.ThiefStrike;
+import thief.relics.DeckTopRelic;
 import basemod.animations.SpineAnimation;
-import com.backinfile.thief.ModInfo;
-import com.backinfile.thief.Log;
-import com.backinfile.thief.relics.DeckTopRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -24,9 +28,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
 
-import static com.backinfile.thief.ModInfo.makeID;
-import static com.backinfile.thief.Res.*;
-import static com.backinfile.thief.character.Thief.Enums.COLOR_GRAY;
+import static thief.character.Thief.Enums.COLOR_GRAY;
 
 public class Thief extends BasePlayer {
 
@@ -54,7 +56,7 @@ public class Thief extends BasePlayer {
 
     // =============== STRINGS =================
 
-    private static final String ID = makeID("thief");
+    private static final String ID = ModInfo.makeID("thief");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -96,23 +98,23 @@ public class Thief extends BasePlayer {
 
     public Thief(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, ModName + "Resources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpineAnimation(THE_DEFAULT_SKELETON_ATLAS, THE_DEFAULT_SKELETON_JSON, 1.0f));
+                new SpineAnimation(Res.THE_DEFAULT_SKELETON_ATLAS, Res.THE_DEFAULT_SKELETON_JSON, 1.0f));
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are,
                 // Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_2, // campfire pose
-                THE_DEFAULT_SHOULDER_1, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
+                Res.THE_DEFAULT_SHOULDER_2, // campfire pose
+                Res.THE_DEFAULT_SHOULDER_1, // another campfire pose
+                Res.THE_DEFAULT_CORPSE, // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
 
         // =============== ANIMATIONS =================
 
-        loadAnimation(THE_DEFAULT_SKELETON_ATLAS, THE_DEFAULT_SKELETON_JSON, 1.0f);
+        loadAnimation(Res.THE_DEFAULT_SKELETON_ATLAS, Res.THE_DEFAULT_SKELETON_JSON, 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
@@ -130,7 +132,7 @@ public class Thief extends BasePlayer {
 
     @Override
     public String getPortraitImageName() {
-        return THE_DEFAULT_PORTRAIT;
+        return Res.THE_DEFAULT_PORTRAIT;
     }
 
     // =============== /CHARACTER CLASS END/ =================
@@ -148,22 +150,15 @@ public class Thief extends BasePlayer {
         ArrayList<String> retVal = new ArrayList<>();
         Log.logger.info("Begin loading starter Deck Strings");
         // TODO
-        retVal.add(Strike_Blue.ID);
-        retVal.add(Strike_Blue.ID);
-        retVal.add(Strike_Blue.ID);
-        retVal.add(Strike_Blue.ID);
-        retVal.add(Strike_Blue.ID);
-        retVal.add(Strike_Blue.ID);
-        retVal.add(Strike_Blue.ID);
-//        retVal.add(CrutchStrike.ID);
-//        retVal.add(CrutchStrike.ID);
-//        retVal.add(CrutchStrike.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(CrutchDivine.ID);
-//        retVal.add(MoneyShoot.ID);
+        retVal.add(ThiefStrike.ID);
+        retVal.add(ThiefStrike.ID);
+        retVal.add(ThiefStrike.ID);
+        retVal.add(ThiefStrike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(BagBottom.ID);
         return retVal;
     }
 
@@ -205,7 +200,7 @@ public class Thief extends BasePlayer {
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return DEFAULT_GRAY;
+        return Res.DEFAULT_GRAY;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -244,14 +239,14 @@ public class Thief extends BasePlayer {
     // run history.
     @Override
     public Color getCardRenderColor() {
-        return DEFAULT_GRAY;
+        return Res.DEFAULT_GRAY;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return DEFAULT_GRAY;
+        return Res.DEFAULT_GRAY;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

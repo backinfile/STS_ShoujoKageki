@@ -1,4 +1,4 @@
-package com.backinfile.thief;
+package thief;
 
 public class ModInfo {
     public static final String ModName = "thief";
@@ -6,18 +6,15 @@ public class ModInfo {
     public static final String AUTHOR = "不方不方";
     public static final String DESCRIPTION = "盗贼角色mod";
 
-
-    public static String ModId = "thief";
-
     public static String getModId() {
-        return ModId;
+        return ModManager.getModID();
     }
 
     public static String makeID(String idText) {
         return getModId() + ":" + idText;
     }
     public static String getFullModName() {
-        return AUTHOR + ":" + ModId;
+        return AUTHOR + ":" + getModId();
     }
 
     public static String getResPath(String relativePath) {

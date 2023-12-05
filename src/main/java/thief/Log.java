@@ -1,4 +1,4 @@
-package com.backinfile.thief;
+package thief;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

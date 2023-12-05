@@ -1,4 +1,4 @@
-package com.backinfile.thief.potions;
+package thief.potions;
 
 import java.util.ArrayList;
 
@@ -6,13 +6,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-
-import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiwordKeywords.InitializeDescription;
 
 public abstract class BasePotion extends AbstractPotion {
 	public static final Logger logger = LogManager.getLogger(BasePotion.class.getName());

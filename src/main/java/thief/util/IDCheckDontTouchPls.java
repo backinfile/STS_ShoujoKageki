@@ -1,4 +1,4 @@
-package com.backinfile.thief.util;
+package thief.util;
 
 public class IDCheckDontTouchPls {
     public String DEFAULTID;

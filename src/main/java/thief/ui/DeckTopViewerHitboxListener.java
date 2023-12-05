@@ -1,6 +1,6 @@
-package com.backinfile.thief.ui;
+package thief.ui;
 
-import com.backinfile.thief.relics.DeckTopRelic;
+import thief.relics.DeckTopRelic;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

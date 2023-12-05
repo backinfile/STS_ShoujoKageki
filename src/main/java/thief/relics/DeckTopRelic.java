@@ -1,17 +1,16 @@
-package com.backinfile.thief.relics;
+package thief.relics;
 
+import thief.effects.DeckTopEffect;
+import thief.ui.DeckTopViewer;
+import thief.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
-import com.backinfile.thief.ModInfo;
+import thief.ModInfo;
 
-import static com.backinfile.thief.ModInfo.*;
+import static thief.ModInfo.*;
 
-import com.backinfile.thief.effects.DeckTopEffect;
-import com.backinfile.thief.ui.DeckTopViewer;
-import com.backinfile.thief.util.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class DeckTopRelic extends CustomRelic {
 

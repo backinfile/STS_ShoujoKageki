@@ -1,9 +1,7 @@
-package com.backinfile.thief.effects;
+package thief.effects;
 
-import com.backinfile.thief.relics.DeckTopRelic;
+import thief.relics.DeckTopRelic;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class DeckTopEffect extends AbstractGameEffect {

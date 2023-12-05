@@ -1,14 +1,18 @@
 {
-	"fortuneTeller:CrutchStrike": {
-		"NAME": "手杖打击",
-		"DESCRIPTION": "造成 !D! 点伤害。"
+	"thief:BagBottom": {
+		"NAME": "掏底兜",
+		"DESCRIPTION": "获得2点临时 敏捷"
 	},
-	"fortuneTeller:Defend": {
+	"thief:Defend": {
 		"NAME": "防御",
 		"DESCRIPTION": "获得 !B! 格挡 ."
 	},
-	"fortuneTeller:ShootingPractice": {
-		"NAME": "射击训练",
+	"thief:ThiefStrike": {
+		"NAME": "打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"thief:Reloading": {
+		"NAME": "打击",
 		"DESCRIPTION": " 虚无 。 NL 造成 !D! 点伤害。 NL 获得 !M! 层 训练 。 NL 生成一个本牌的复制到手中。"
 	},
 	"fortuneTeller:Reloading": {

@@ -1,6 +1,6 @@
-package com.backinfile.thief.util;
+package thief.util;
 
-import com.backinfile.thief.ModInfo;
+import thief.ModInfo;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.utils.GdxRuntimeException;

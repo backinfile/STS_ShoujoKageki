@@ -1,4 +1,4 @@
-package com.backinfile.thief;
+package thief;
 
 public class Main {
     public static void main(String[] args) {

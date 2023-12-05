@@ -1,6 +1,6 @@
-package com.backinfile.thief.character;
+package thief.character;
 
-import com.backinfile.thief.potions.BasePotion;
+import thief.potions.BasePotion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

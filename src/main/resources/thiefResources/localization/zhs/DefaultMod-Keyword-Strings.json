@@ -1,17 +1,10 @@
 [
 	{
-		"PROPER_NAME": "占卜",
+		"PROPER_NAME": "口袋",
 		"NAMES": [
-			"占卜"
+			"口袋"
 		],
-		"DESCRIPTION": "将你的手牌替换为牌库中的牌，回合结束时换回。"
-	},
-	{
-		"PROPER_NAME": "特性",
-		"NAMES": [
-			"特性"
-		],
-		"DESCRIPTION": "该药水在战斗内与战斗外有不同的效果。"
+		"DESCRIPTION": "将至多x张手牌置入口袋，每回合开始时，从口袋中发现一张加入手牌。"
 	},
 	{
 		"PROPER_NAME": "训练",
@@ -19,35 +12,5 @@
 			"训练"
 		],
 		"DESCRIPTION": "训练会让 #y射击 获得额外的伤害，层数每回合下降一半。"
-	},
-	{
-		"PROPER_NAME": "射击",
-		"NAMES": [
-			"射击",
-			"射击牌"
-		],
-		"DESCRIPTION": "所有名字中包含“射击”的牌。"
-	},
-	{
-		"PROPER_NAME": "占卜牌",
-		"NAMES": [
-			"占卜牌"
-		],
-		"DESCRIPTION": "所有名字中包含“占卜”的牌。"
-	},
-	{
-		"PROPER_NAME": "占卜完成",
-		"NAMES": [
-			"占卜完成"
-		],
-		"DESCRIPTION": "通过 #y占卜 获得的牌，在当回合完全打出时。"
-	},
-	{
-		"PROPER_NAME": "替换",
-		"NAMES": [
-			"替换",
-			"被替换时"
-		],
-		"DESCRIPTION": " #y占卜 时，手牌被替换前触发。"
 	}
 ]
