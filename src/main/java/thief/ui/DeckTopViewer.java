@@ -15,7 +15,7 @@ public class DeckTopViewer {
 	private AbstractCard oriCard = null;
 	private AbstractCard showCard = null;
 
-	private float startScale = 0.24f;
+	private float startScale = 0.34f;
 	private float startX = Settings.WIDTH * 0.13F;
 	private float startY = AbstractDungeon.player.hb.cY; // Settings.HEIGHT * 0.06F;
 
