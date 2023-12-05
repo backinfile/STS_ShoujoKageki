@@ -11,6 +11,7 @@ import com.backinfile.thief.util.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class DeckTopRelic extends CustomRelic {
 
@@ -32,9 +33,12 @@ public class DeckTopRelic extends CustomRelic {
 
         if (deckTopViewer == null) {
             deckTopViewer = new DeckTopViewer();
-            AbstractDungeon.effectsQueue.add(new DeckTopEffect());
         }
         deckTopViewer.open(true);
+
+        if (AbstractDungeon.effectList.stream().noneMatch(e -> e instanceof DeckTopEffect)) {
+            AbstractDungeon.effectsQueue.add(new DeckTopEffect());
+        }
     }
 
     @Override
