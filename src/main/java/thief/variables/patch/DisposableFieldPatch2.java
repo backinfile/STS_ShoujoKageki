@@ -20,6 +20,7 @@ public class DisposableFieldPatch2 {
         if (__result != null) {
             if (__result.misc != 0) {
                 if (__result instanceof ToolCard) {
+                    DisposableField.DisposableFields.disposable.set(__result, __result.misc);
                     __result.initializeDescription();
                 }
             }
