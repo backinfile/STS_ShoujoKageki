@@ -4,6 +4,11 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "thief:TakeCardFromBagAction": {
+    "TEXT": ["从口袋中取回"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "fortuneTeller:TarotAssembly": {
     "TEXT": ["塔罗聚会", "exchange something"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thief.Log;
+import thief.actions.TakeCardFromBagAction;
 import thief.util.Utils2;
 
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class BagPower extends BasePower {
     public void atStartOfTurn() {
         super.atStartOfTurn();
 
-        addToBot(new GainBlockAction(owner, bag.size()));
+        addToBot(new TakeCardFromBagAction());
     }
 
 
