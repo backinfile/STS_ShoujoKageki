@@ -50,6 +50,7 @@ public class TakeCardFromBagAction extends AbstractGameAction {
             AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard;
             if (card != null) {
 
+                Log.logger.info("============contain card? " + player.bag.contains(card));
                 player.bag.removeCard(card);
                 if (AbstractDungeon.player.hand.size() < 10) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
@@ -69,11 +70,9 @@ public class TakeCardFromBagAction extends AbstractGameAction {
         if (cardGroup.size() <= 3) {
             cards.addAll(cardGroup.group);
         } else {
-            CardGroup copy = new CardGroup(cardGroup, CardGroup.CardGroupType.UNSPECIFIED);
+            cardGroup.shuffle();
             for (int i = 0; i < 3; i++) {
-                AbstractCard take = copy.getRandomCard(true);
-                copy.removeCard(take);
-                cards.add(take);
+                cards.add(cardGroup.getNCardFromTop(i));
             }
         }
         return cards;

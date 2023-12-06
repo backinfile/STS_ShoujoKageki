@@ -18,7 +18,7 @@ public class BagUp extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new BagAction(p));
+        addToBot(new BagAction(p, false, true));
     }
 
     @Override

@@ -25,7 +25,7 @@
 	},
 	"thief:BagUp": {
 		"NAME": "上天窗",
-		"DESCRIPTION": "消耗 NL 将所有手牌放入口袋"
+		"DESCRIPTION": "消耗 NL 手牌与口袋中的牌交换。"
 	},
 	"fortuneTeller:BustShoot": {
 		"NAME": "爆炸射击",

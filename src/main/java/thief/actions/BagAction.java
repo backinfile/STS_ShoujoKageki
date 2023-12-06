@@ -2,6 +2,7 @@ package thief.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thief.character.BasePlayer;
@@ -30,6 +33,7 @@ public class BagAction extends AbstractGameAction {
 
     private final AbstractPlayer player;
     private boolean allCardInHand = false;
+    private boolean replaceAllCardInHand = false;
 
     public BagAction(AbstractPlayer player, int amount) {
         this.player = player;
@@ -38,16 +42,25 @@ public class BagAction extends AbstractGameAction {
     }
 
     // all card in hand
-    public BagAction(AbstractPlayer player) {
-        this(player, 0);
-        allCardInHand = true;
+    public BagAction(AbstractPlayer player, boolean allCardInHand, boolean replaceAllCardInHand) {
+        this(player, 1);
+        this.allCardInHand = allCardInHand;
+        this.replaceAllCardInHand = replaceAllCardInHand;
     }
 
     @Override
     public void update() {
         if (duration == startDuration) {
-            if (!(player instanceof BasePlayer) || player.hand.isEmpty()) {
+            if (!(player instanceof BasePlayer)) {
                 isDone = true;
+                return;
+            }
+            if (replaceAllCardInHand) {
+                replaceAllCardInHand((BasePlayer) player);
+                isDone = true;
+                return;
+            }
+            if (player.hand.isEmpty()) {
                 return;
             }
             if (allCardInHand) {
@@ -72,6 +85,19 @@ public class BagAction extends AbstractGameAction {
         }
 
         tickDuration();
+    }
+
+    private void replaceAllCardInHand(BasePlayer player) {
+        CardGroup bag = player.bag;
+        int beforeAmount = bag.size();
+
+        ArrayList<AbstractCard> bagCards = new ArrayList<>(bag.group);
+        bag.clear();
+        if (beforeAmount > 0) {
+            addToBot(new ReducePowerAction(player, player, BagPower.POWER_ID, beforeAmount));
+        }
+        addToBot(new BagAction(player, true, false));
+        addToBot(new PutCardsToHandAction(player, bagCards));
     }
 
     private void bagCards(BasePlayer player, List<AbstractCard> cardsToBag) {
