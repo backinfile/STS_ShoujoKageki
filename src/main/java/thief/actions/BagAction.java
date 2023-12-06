@@ -15,6 +15,9 @@ import org.apache.logging.log4j.Logger;
 import thief.effects.MoveCardToBagEffect;
 import thief.powers.BagPower;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static thief.ModInfo.makeID;
 
 public class BagAction extends AbstractGameAction {
@@ -24,16 +27,30 @@ public class BagAction extends AbstractGameAction {
     private static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(ID);
     private static final String[] TEXT = uiString.TEXT;
 
-    public BagAction(int amount) {
+    private final AbstractPlayer player;
+    private boolean allCardInHand = false;
+
+    public BagAction(AbstractPlayer player, int amount) {
+        this.player = player;
         this.amount = amount;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
     }
 
+    // all card in hand
+    public BagAction(AbstractPlayer player) {
+        this(player, 0);
+        allCardInHand = true;
+    }
+
     @Override
     public void update() {
-        AbstractPlayer player = AbstractDungeon.player;
         if (duration == startDuration) {
             if (player.hand.isEmpty()) {
+                isDone = true;
+                return;
+            }
+            if (allCardInHand) {
+                bagCards(player, player.hand.group);
                 isDone = true;
                 return;
             }
@@ -49,23 +66,28 @@ public class BagAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
-
-            for (AbstractCard card : selectedCards.group) {
-                player.hand.removeCard(card);
-                AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
-            }
-            addToTop(new WaitAction(MoveCardToBagEffect.DURATION));
-
-            BagPower oldPower = (BagPower) player.getPower(BagPower.POWER_ID);
-            if (oldPower != null) {
-                oldPower.addBagCards(selectedCards.group);
-                oldPower.stackPower(selectedCards.size());
-            } else {
-                addToBot(new ApplyPowerAction(player, player, new BagPower(selectedCards.group)));
-            }
+            bagCards(player, selectedCards.group);
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
 
         tickDuration();
+    }
+
+    private void bagCards(AbstractPlayer player, List<AbstractCard> cardsToBag) {
+        if (cardsToBag == null || cardsToBag.isEmpty()) return;
+        ArrayList<AbstractCard> cards = new ArrayList<>(cardsToBag);
+        for (AbstractCard card : cards) {
+            player.hand.removeCard(card);
+            AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
+        }
+        addToTop(new WaitAction(MoveCardToBagEffect.DURATION));
+
+        BagPower oldPower = (BagPower) player.getPower(BagPower.POWER_ID);
+        if (oldPower != null) {
+            oldPower.addBagCards(cards);
+            oldPower.stackPower(cards.size());
+        } else {
+            addToBot(new ApplyPowerAction(player, player, new BagPower(cards)));
+        }
     }
 }

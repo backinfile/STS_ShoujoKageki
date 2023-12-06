@@ -7,9 +7,9 @@
 		"DESCRIPTION": "将至多x张手牌置入口袋，每回合开始时，从口袋中发现一张加入手牌。"
 	},
 	{
-		"PROPER_NAME": "一次性",
+		"PROPER_NAME": "工具",
 		"NAMES": [
-			"一次性"
+			"工具"
 		],
 		"DESCRIPTION": "打出X次后卡牌从牌组中移除。"
 	},

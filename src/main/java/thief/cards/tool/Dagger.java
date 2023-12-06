@@ -16,11 +16,10 @@ import static thief.ModInfo.makeID;
 
 public class Dagger extends ToolCard {
     public static final String ID = makeID(Dagger.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
 
     public Dagger() {
-        super(ID, IMG, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY, 2);
-        baseDamage = 6;
+        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, 2);
+        baseDamage = 8;
     }
 
     @Override

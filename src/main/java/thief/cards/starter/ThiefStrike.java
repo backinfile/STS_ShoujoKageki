@@ -12,30 +12,28 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ThiefStrike extends BaseCard {
+    public static final String ID = makeID(ThiefStrike.class.getSimpleName());
 
-	public static final String ID = makeID(ThiefStrike.class.getSimpleName());
-	public static final String IMG = makeCardPath("Attack.png");
+    public ThiefStrike() {
+        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        baseDamage = 6;
 
-	public ThiefStrike() {
-		super(ID, IMG, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-		baseDamage = 6;
+        this.tags.add(CardTags.STRIKE);
+        this.tags.add(CardTags.STARTER_STRIKE);
+    }
 
-		this.tags.add(CardTags.STRIKE);
-		this.tags.add(CardTags.STARTER_STRIKE);
-	}
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL));
+    }
 
-	@Override
-	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(
-				new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL));
-	}
-
-	@Override
-	public void upgrade() {
-		if (!upgraded) {
-			upgradeName();
-			upgradeDamage(3);
-			initializeDescription();
-		}
-	}
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(3);
+            initializeDescription();
+        }
+    }
 }

@@ -14,11 +14,9 @@ import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 public class BagBottom extends BaseCard {
 
     public static final String ID = ModInfo.makeID(BagBottom.class.getSimpleName());
-    public static final String IMG = ModInfo.makeCardPath("Attack.png");
-
 
     public BagBottom() {
-        super(ID, IMG, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         magicNumber = baseMagicNumber = 2;
     }
 
@@ -26,7 +24,7 @@ public class BagBottom extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));
         addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2)));
-        addToBot(new BagAction(magicNumber));
+        addToBot(new BagAction(p, magicNumber));
     }
 
     @Override

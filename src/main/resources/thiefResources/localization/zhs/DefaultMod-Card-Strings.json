@@ -11,30 +11,21 @@
 		"NAME": "打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
+	"thief:ToolStrike": {
+		"NAME": "小利",
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。抽1张牌。"
+	},
 	"thief:Dagger": {
 		"NAME": "匕首",
-		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。"
 	},
-	"thief:Dagger2": {
-		"NAME": "匕首2",
-		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
+	"thief:BagDraw": {
+		"NAME": "查户口",
+		"DESCRIPTION": "抽 !M! 张牌 NL 口袋 2"
 	},
-	"thief:Dagger3": {
-		"NAME": "匕首3",
-		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
-	},
-	"thief:Dagger4": {
-		"NAME": "匕首4",
-		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
-	},
-	"thief:Dagger5": {
-		"NAME": "匕首5",
-		"DESCRIPTION": " 一次性 !thief:disposable! NL 造成 !D! 点伤害。"
-	},
-	"fortuneTeller:Reloading": {
-		"NAME": "子弹上膛",
-		"DESCRIPTION": "When your draw an ethereal card, play it.",
-		"UPGRADE_DESCRIPTION": "When your draw an ethereal card, play it twice."
+	"thief:BagUp": {
+		"NAME": "上天窗",
+		"DESCRIPTION": "消耗 NL 将所有手牌放入口袋"
 	},
 	"fortuneTeller:BustShoot": {
 		"NAME": "爆炸射击",
