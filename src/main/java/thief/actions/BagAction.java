@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import thief.character.BasePlayer;
 import thief.effects.MoveCardToBagEffect;
 import thief.powers.BagPower;
 
@@ -45,12 +46,12 @@ public class BagAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == startDuration) {
-            if (player.hand.isEmpty()) {
+            if (!(player instanceof BasePlayer) || player.hand.isEmpty()) {
                 isDone = true;
                 return;
             }
             if (allCardInHand) {
-                bagCards(player, player.hand.group);
+                bagCards((BasePlayer) player, player.hand.group);
                 isDone = true;
                 return;
             }
@@ -66,14 +67,14 @@ public class BagAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
-            bagCards(player, selectedCards.group);
+            bagCards((BasePlayer) player, selectedCards.group);
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
 
         tickDuration();
     }
 
-    private void bagCards(AbstractPlayer player, List<AbstractCard> cardsToBag) {
+    private void bagCards(BasePlayer player, List<AbstractCard> cardsToBag) {
         if (cardsToBag == null || cardsToBag.isEmpty()) return;
         ArrayList<AbstractCard> cards = new ArrayList<>(cardsToBag);
         for (AbstractCard card : cards) {
@@ -81,13 +82,7 @@ public class BagAction extends AbstractGameAction {
             AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
         }
         addToTop(new WaitAction(MoveCardToBagEffect.DURATION));
-
-        BagPower oldPower = (BagPower) player.getPower(BagPower.POWER_ID);
-        if (oldPower != null) {
-            oldPower.addBagCards(cards);
-            oldPower.stackPower(cards.size());
-        } else {
-            addToBot(new ApplyPowerAction(player, player, new BagPower(cards)));
-        }
+        player.bag.group.addAll(cards);
+        addToBot(new ApplyPowerAction(player, player, new BagPower(cards.size())));
     }
 }

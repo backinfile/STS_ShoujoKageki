@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thief.Log;
 import thief.actions.TakeCardFromBagAction;
+import thief.character.BasePlayer;
 import thief.util.Utils2;
 
 import java.util.ArrayList;
@@ -28,32 +29,30 @@ public class BagPower extends BasePower {
     private static final String tex84 = "placeholder_power84.png";
     private static final String tex32 = "placeholder_power32.png";
 
-    public final CardGroup bag = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-
-    public BagPower(List<AbstractCard> cards) {
+    public BagPower(int amount) {
         super(POWER_ID, POWER_ID, PowerType.BUFF, tex84, tex32,
-                AbstractDungeon.player, AbstractDungeon.player, cards.size());
-        this.bag.group.addAll(cards);
+                AbstractDungeon.player, AbstractDungeon.player, amount);
         updateDescription();
-    }
-
-    public BagPower(int num) {
-        super(POWER_ID, POWER_ID, PowerType.BUFF, tex84, tex32,
-                AbstractDungeon.player, AbstractDungeon.player, num);
     }
 
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
+        updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        if (bag == null) {
-            description = DESCRIPTIONS[0];
+        if (owner instanceof BasePlayer) {
+            BasePlayer player = (BasePlayer) owner;
+            if (player.bag == null || player.bag.isEmpty()) {
+                description = DESCRIPTIONS[0];
+            } else {
+                description = Utils2.getCardNames(player.bag, DESCRIPTIONS[1]);
+            }
         } else {
-            description = DESCRIPTIONS[0] + Utils2.getCardNames(bag, DESCRIPTIONS[1]);
+            description = DESCRIPTIONS[0];
         }
     }
 
@@ -61,17 +60,7 @@ public class BagPower extends BasePower {
     public void atStartOfTurn() {
         super.atStartOfTurn();
 
+        this.flashWithoutSound();
         addToBot(new TakeCardFromBagAction());
-    }
-
-
-    public void addBagCards(ArrayList<AbstractCard> cardGroup) {
-        this.bag.group.addAll(cardGroup);
-        updateDescription();
-    }
-
-    @Override
-    public void update(int slot) {
-        super.update(slot);
     }
 }

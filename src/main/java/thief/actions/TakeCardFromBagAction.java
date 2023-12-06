@@ -1,6 +1,8 @@
 package thief.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,12 +13,15 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import thief.Log;
+import thief.character.BasePlayer;
 import thief.powers.BagPower;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static thief.ModInfo.makeID;
+import static thief.ModInfo.makePowerPath;
 
 public class TakeCardFromBagAction extends AbstractGameAction {
     private static final String ID = makeID(TakeCardFromBagAction.class.getSimpleName());
@@ -30,24 +35,22 @@ public class TakeCardFromBagAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        BasePlayer player = (BasePlayer) AbstractDungeon.player;
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            AbstractPlayer player = AbstractDungeon.player;
             if (player.hand.size() >= 10) {
                 isDone = true;
                 return;
             }
 
-            BagPower power = (BagPower) player.getPower(BagPower.POWER_ID);
-            if (power == null || power.bag.isEmpty()) {
-                isDone = true;
-                return;
-            }
-            ArrayList<AbstractCard> cards = rnd3Cards(power.bag);
+            if (player.bag.isEmpty()) return;
+            ArrayList<AbstractCard> cards = rnd3Cards(player.bag);
 
             AbstractDungeon.cardRewardScreen.customCombatOpen(cards, uiString.TEXT[0], false);
         } else if (!retrieveCard) {
             AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard;
             if (card != null) {
+
+                player.bag.removeCard(card);
                 if (AbstractDungeon.player.hand.size() < 10) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 } else {
@@ -55,6 +58,7 @@ public class TakeCardFromBagAction extends AbstractGameAction {
                 }
                 retrieveCard = true;
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;
+                addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, 1));
             }
         }
         tickDuration();

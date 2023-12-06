@@ -15,13 +15,11 @@ public class DeckTopViewer {
 	private AbstractCard oriCard = null;
 	private AbstractCard showCard = null;
 
-	private float startScale = 0.34f;
-	private float startX = Settings.WIDTH * 0.13F;
-	private float startY = AbstractDungeon.player.hb.cY; // Settings.HEIGHT * 0.06F;
+	private final float startScale = 0.34f;
+	private final float startX = Settings.WIDTH * 0.13F;
+	private final float startY = AbstractDungeon.player.hb.cY * 0.8f; // Settings.HEIGHT * 0.06F;
 
 	private float curScale = startScale;
-	private float curX = startX;
-	private float curY = startY;
 
 	public boolean isRunning = false;
 	public boolean canDraw = true;
@@ -57,8 +55,8 @@ public class DeckTopViewer {
 				showCard.beginGlowing();
 			}
 			showCard.drawScale = showCard.targetDrawScale = curScale;
-			showCard.current_x = showCard.target_x = curX;
-			showCard.current_y = showCard.target_y = curY;
+			showCard.current_x = showCard.target_x = startX;
+			showCard.current_y = showCard.target_y = startY;
 //			logger.info("--------cur_x: " + curX + "cur_y: " + curY);
 		}
 		if (showCard != null) {
@@ -103,7 +101,7 @@ public class DeckTopViewer {
 		showCard.applyPowers();
 		showCard.hb.encapsulatedUpdate(listener);
 		if (showCard.hb.hovered) {
-			showCard.targetDrawScale = curScale = 1f;
+			showCard.targetDrawScale = curScale = 0.7f;
 //			showCard.target_y = curY = AbstractCard.IMG_HEIGHT / 2;
 		} else {
 			showCard.targetDrawScale = curScale = startScale;

@@ -17,10 +17,7 @@ import basemod.animations.AbstractAnimation;
 
 public abstract class BasePlayer extends CustomPlayer {
 	public static final Logger logger = LogManager.getLogger(BasePlayer.class.getName());
-
-	// 保存占卜中被替换的卡
-	public CardGroup replacedCards = new CardGroup(CardGroupType.UNSPECIFIED);
-	public int divineCount = 0;
+	public final CardGroup bag = new CardGroup(CardGroupType.UNSPECIFIED);
 
 
 
@@ -62,21 +59,18 @@ public abstract class BasePlayer extends CustomPlayer {
 	
 	@Override
 	public void applyStartOfCombatPreDrawLogic() {
-		replacedCards.clear();
-		divineCount = 0;
+		bag.clear();
 
 		super.applyStartOfCombatPreDrawLogic();
 	}
 
 	@Override
 	public void applyStartOfTurnRelics() {
-		replacedCards.clear();
-
 		logger.info("on base player turn start");
 		super.applyStartOfTurnRelics();
 
 		for (AbstractPotion potion : AbstractDungeon.player.potions) {
-			if (potion != null && potion instanceof BasePotion) {
+			if (potion instanceof BasePotion) {
 				((BasePotion) potion).triggerOnTurnStart();
 			}
 		}
@@ -88,7 +82,7 @@ public abstract class BasePlayer extends CustomPlayer {
 		super.applyEndOfTurnTriggers();
 
 		for (AbstractPotion potion : AbstractDungeon.player.potions) {
-			if (potion != null && potion instanceof BasePotion) {
+			if (potion instanceof BasePotion) {
 				((BasePotion) potion).triggerOnTurnEnd();
 			}
 		}
@@ -100,7 +94,7 @@ public abstract class BasePlayer extends CustomPlayer {
 		super.applyStartOfCombatLogic();
 
 		for (AbstractPotion potion : AbstractDungeon.player.potions) {
-			if (potion != null && potion instanceof BasePotion) {
+			if (potion instanceof BasePotion) {
 				((BasePotion) potion).triggerOnCombatStart();
 			}
 		}
@@ -112,7 +106,7 @@ public abstract class BasePlayer extends CustomPlayer {
 		super.onVictory();
 
 		for (AbstractPotion potion : AbstractDungeon.player.potions) {
-			if (potion != null && potion instanceof BasePotion) {
+			if (potion instanceof BasePotion) {
 				((BasePotion) potion).triggerOnVictory();
 			}
 		}
@@ -122,19 +116,19 @@ public abstract class BasePlayer extends CustomPlayer {
 	@Override
 	public void combatUpdate() {
 		super.combatUpdate();
-		for (AbstractCard card : replacedCards.group) {
-			card.update();
-		}
+//		for (AbstractCard card : replacedCards.group) {
+//			card.update();
+//		}
 	}
 
 	@Override
 	public void render(SpriteBatch sb) {
 
-		for (AbstractCard card : replacedCards.group) {
-			if (card.drawScale > 0.02F) {
-				card.render(sb);
-			}
-		}
+//		for (AbstractCard card : replacedCards.group) {
+//			if (card.drawScale > 0.02F) {
+//				card.render(sb);
+//			}
+//		}
 
 		super.render(sb);
 

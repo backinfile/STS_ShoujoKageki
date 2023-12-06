@@ -2,7 +2,7 @@
 	"thief:BagPower": {
 		"NAME": "口袋",
 		"DESCRIPTIONS": [
-			"",
+			"口袋中没有牌了",
 			" NL "
 		]
 	},

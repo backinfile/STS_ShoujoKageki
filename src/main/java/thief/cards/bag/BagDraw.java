@@ -16,7 +16,7 @@ public class BagDraw extends BaseCard {
 
     public BagDraw() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
