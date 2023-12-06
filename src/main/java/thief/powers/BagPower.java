@@ -26,13 +26,12 @@ import static thief.ModInfo.makeID;
 public class BagPower extends BasePower {
     public static final Logger logger = LogManager.getLogger(BagPower.class.getName());
 
-    public static final String POWER_ID = makeID(BagPower.class.getSimpleName());
+    public static final String RAW_ID = BagPower.class.getSimpleName();
+    public static final String POWER_ID = makeID(RAW_ID);
     private static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID).DESCRIPTIONS;
-    private static final String tex84 = "placeholder_power84.png";
-    private static final String tex32 = "placeholder_power32.png";
 
     public BagPower(int amount) {
-        super(POWER_ID, POWER_ID, PowerType.BUFF, tex84, tex32,
+        super(POWER_ID, RAW_ID, PowerType.BUFF,
                 AbstractDungeon.player, AbstractDungeon.player, amount);
         updateDescription();
     }

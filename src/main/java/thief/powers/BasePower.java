@@ -14,49 +14,40 @@ import static thief.ModInfo.makePowerPath;
 
 
 public abstract class BasePower extends AbstractPower {
-	public AbstractCreature source = null;
-	public final String[] DESCRIPTIONS;
+    public AbstractCreature source = null;
+    public final String[] DESCRIPTIONS;
 
-	public BasePower(String ID, String actualID, PowerType powerType, String tex84, String tex32,
-			final AbstractCreature owner, final AbstractCreature source, final int amount) {
-		this.ID = actualID;
-		PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ID);
-		name = powerStrings.NAME;
-		description = powerStrings.DESCRIPTIONS[0];
-		DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public BasePower(String ID, String RAW_ID, PowerType powerType,
+                     final AbstractCreature owner, final AbstractCreature source, final int amount) {
+        this.ID = ID;
+        PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ID);
+        name = powerStrings.NAME;
+        description = powerStrings.DESCRIPTIONS[0];
+        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-		this.owner = owner;
-		this.source = source;
-		this.amount = amount;
+        this.owner = owner;
+        this.source = source;
+        this.amount = amount;
 
-		type = powerType;
-		isTurnBased = false;
+        type = powerType;
+        isTurnBased = false;
 
-		this.region128 = new TextureAtlas.AtlasRegion(TextureLoader.getTexture(makePowerPath(tex84)), 0, 0, 84, 84);
-		this.region48 = new TextureAtlas.AtlasRegion(TextureLoader.getTexture(makePowerPath(tex32)), 0, 0, 32, 32);
+        this.region128 = new TextureAtlas.AtlasRegion(TextureLoader.getTexture(makePowerPath(RAW_ID + "84.png")), 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(TextureLoader.getTexture(makePowerPath(RAW_ID + "32.png")), 0, 0, 32, 32);
 
-		updateDescription();
-	}
+        updateDescription();
+    }
 
-	public BasePower(String ID, PowerType powerType, String tex84, String tex32, final AbstractCreature owner,
-			final AbstractCreature source, final int amount) {
-		this(ID, ID, powerType, tex84, tex32, owner, source, amount);
-	}
+    public void addToBot(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToBottom(action);
+    }
 
-	public BasePower(String ID, PowerType powerType, String tex84, String tex32, final int amount) {
-		this(ID, powerType, tex84, tex32, AbstractDungeon.player, AbstractDungeon.player, amount);
-	}
+    public void addToTop(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToTop(action);
+    }
 
-	public void addToBot(AbstractGameAction action) {
-		AbstractDungeon.actionManager.addToBottom(action);
-	}
-
-	public void addToTop(AbstractGameAction action) {
-		AbstractDungeon.actionManager.addToTop(action);
-	}
-
-	@Override
-	public void onRemove() {
-	}
+    @Override
+    public void onRemove() {
+    }
 
 }

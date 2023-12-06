@@ -6,18 +6,20 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import thief.cards.tool.patch.BagField;
 
 import static thief.ModInfo.makeID;
 
 public class BagDefendPower extends BasePower {
-    public static final String POWER_ID = makeID(BagDefendPower.class.getSimpleName());
+    public static final String RAW_ID = BagDefendPower.class.getSimpleName();
+    public static final String POWER_ID = makeID(RAW_ID);
+
     private static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID).DESCRIPTIONS;
     private static final String tex84 = "placeholder_power84.png";
     private static final String tex32 = "placeholder_power32.png";
 
     public BagDefendPower(int amount) {
-        super(POWER_ID, POWER_ID, AbstractPower.PowerType.BUFF, tex84, tex32,
-                AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, RAW_ID, AbstractPower.PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
         updateDescription();
     }
 
@@ -30,6 +32,9 @@ public class BagDefendPower extends BasePower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         super.atEndOfTurn(isPlayer);
-        addToBot(new GainBlockAction(AbstractDungeon.player, amount));
+        if (isPlayer) {
+            addToBot(new GainBlockAction(AbstractDungeon.player, amount * BagField.bag.get(AbstractDungeon.player).size()));
+        }
+
     }
 }
