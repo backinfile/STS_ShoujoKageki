@@ -6,6 +6,13 @@
 			" NL "
 		]
 	},
+	"thief:BagDefendPower": {
+		"NAME": "架子活",
+		"DESCRIPTIONS": [
+			"回合结束时，口袋 中每有一张牌，获得",
+			"点格挡。"
+		]
+	},
 	"fortuneTeller:Trained": {
 		"NAME": "训练",
 		"DESCRIPTIONS": [

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thief.cards.BaseCard;
+import thief.cards.tool.patch.BagField;
 import thief.character.BasePlayer;
 
 import static thief.ModInfo.makeID;
@@ -19,16 +20,15 @@ public class BagDefend extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        addToBot(new GainBlockAction(p, p, block));
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.player instanceof BasePlayer) {
-            int bagSize = ((BasePlayer) AbstractDungeon.player).bag.size();
-            this.costForTurn = Math.max(0, this.cost - Math.min(bagSize, 4));
-        }
+        int bagSize = BagField.bag.get(AbstractDungeon.player).size();
+        this.costForTurn = Math.max(0, this.cost - Math.min(bagSize, 4));
+        this.chargeCost = -Math.min(bagSize, 4);
     }
 
     @Override

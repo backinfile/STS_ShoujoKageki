@@ -5,7 +5,7 @@
 	},
 	"thief:Defend": {
 		"NAME": "防御",
-		"DESCRIPTION": "获得 !B! 格挡 ."
+		"DESCRIPTION": "获得 !B! 格挡 。"
 	},
 	"thief:ThiefStrike": {
 		"NAME": "打击",
@@ -38,6 +38,18 @@
 	"thief:BagDefend": {
 		"NAME": "蹭地皮",
 		"DESCRIPTION": "口袋 中每有一张牌，耗能就减少1 [B] 。 NL 获得 !B! 点 格挡 。"
+	},
+	"thief:CommonAttack": {
+		"NAME": "踹",
+		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"
+	},
+	"thief:CommonDefend": {
+		"NAME": "蹬",
+		"DESCRIPTION": "获得 !B! 格挡。抽1张牌，如果是攻击牌就再抽1张。"
+	},
+	"thief:BagPowerDefend": {
+		"NAME": "架子活",
+		"DESCRIPTION": "回合结束时，口袋 中每有一张牌，获得 !M! 点格挡。"
 	},
 	"fortuneTeller:SoulVision": {
 		"NAME": "灵视",

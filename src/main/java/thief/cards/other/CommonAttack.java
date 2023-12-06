@@ -1,44 +1,31 @@
-package thief.cards.bag;
+package thief.cards.other;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thief.actions.DrawMoreByLastDrawAction;
 import thief.cards.BaseCard;
-import thief.cards.starter.ThiefStrike;
-import thief.cards.tool.patch.BagField;
 import thief.character.BasePlayer;
-
-import java.util.Iterator;
 
 import static thief.ModInfo.makeID;
 
-public class BagAttack extends BaseCard {
-    public static final String ID = makeID(BagAttack.class.getSimpleName());
+public class CommonAttack extends BaseCard {
+    public static final String ID = makeID(CommonAttack.class.getSimpleName());
 
-    public BagAttack() {
+    public CommonAttack() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 10;
+        baseDamage = 9;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        if (!BagField.bag.get(p).isEmpty()) {
-            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        }
-    }
-
-    public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        AbstractPlayer p = AbstractDungeon.player;
-        if (!BagField.bag.get(p).isEmpty()) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }
+        addToBot(new DrawCardAction(1, new DrawMoreByLastDrawAction(c -> c.type == CardType.SKILL, 1)));
     }
 
     @Override

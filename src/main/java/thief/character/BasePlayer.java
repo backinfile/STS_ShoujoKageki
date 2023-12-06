@@ -17,8 +17,6 @@ import basemod.animations.AbstractAnimation;
 
 public abstract class BasePlayer extends CustomPlayer {
 	public static final Logger logger = LogManager.getLogger(BasePlayer.class.getName());
-	public final CardGroup bag = new CardGroup(CardGroupType.UNSPECIFIED);
-
 
 
 	public BasePlayer(String name, PlayerClass playerClass, EnergyOrbInterface energyOrbInterface,
@@ -59,8 +57,6 @@ public abstract class BasePlayer extends CustomPlayer {
 	
 	@Override
 	public void applyStartOfCombatPreDrawLogic() {
-		bag.clear();
-
 		super.applyStartOfCombatPreDrawLogic();
 	}
 

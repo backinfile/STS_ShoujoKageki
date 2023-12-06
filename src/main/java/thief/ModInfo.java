@@ -39,6 +39,9 @@ public class ModInfo {
     public static String makePowerPath(String resourcePath) {
         return getResPath("/images/powers/" + resourcePath);
     }
+    public static String makeUIPath(String resourcePath) {
+        return getResPath("/images/ui/" + resourcePath);
+    }
 
     public static String makeEventPath(String resourcePath) {
         return getResPath("/images/events/" + resourcePath);

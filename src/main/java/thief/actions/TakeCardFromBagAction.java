@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thief.Log;
+import thief.cards.tool.patch.BagField;
 import thief.character.BasePlayer;
 import thief.powers.BagPower;
 
@@ -42,16 +43,16 @@ public class TakeCardFromBagAction extends AbstractGameAction {
                 return;
             }
 
-            if (player.bag.isEmpty()) return;
-            ArrayList<AbstractCard> cards = rnd3Cards(player.bag);
+            CardGroup bag = BagField.bag.get(player);
+
+            if (bag.isEmpty()) return;
+            ArrayList<AbstractCard> cards = rnd3Cards(bag);
 
             AbstractDungeon.cardRewardScreen.customCombatOpen(cards, uiString.TEXT[0], false);
         } else if (!retrieveCard) {
             AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard;
             if (card != null) {
-
-                Log.logger.info("============contain card? " + player.bag.contains(card));
-                player.bag.removeCard(card);
+                BagField.bag.get(player).removeCard(card);
                 if (AbstractDungeon.player.hand.size() < 10) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 } else {

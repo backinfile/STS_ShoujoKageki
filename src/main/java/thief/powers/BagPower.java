@@ -2,6 +2,7 @@ package thief.powers;
 
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import thief.Log;
 import thief.actions.TakeCardFromBagAction;
+import thief.cards.tool.patch.BagField;
 import thief.character.BasePlayer;
 import thief.util.Utils2;
 
@@ -44,12 +46,12 @@ public class BagPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        if (owner instanceof BasePlayer) {
-            BasePlayer player = (BasePlayer) owner;
-            if (player.bag == null || player.bag.isEmpty()) {
+        if (owner instanceof AbstractPlayer) {
+            CardGroup bag = BagField.bag.get(owner);
+            if (bag.isEmpty()) {
                 description = DESCRIPTIONS[0];
             } else {
-                description = Utils2.getCardNames(player.bag, DESCRIPTIONS[1]);
+                description = Utils2.getCardNames(bag, DESCRIPTIONS[1]);
             }
         } else {
             description = DESCRIPTIONS[0];

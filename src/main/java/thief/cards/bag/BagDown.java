@@ -8,6 +8,7 @@ import thief.ModInfo;
 import thief.actions.BagAction;
 import thief.actions.TakeCardFromBagAction;
 import thief.cards.BaseCard;
+import thief.cards.tool.patch.BagField;
 import thief.character.BasePlayer;
 
 public class BagDown extends BaseCard {
@@ -20,18 +21,15 @@ public class BagDown extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        if (p instanceof BasePlayer) {
-            CardGroup bag = ((BasePlayer) p).bag;
-            if (bag.size() == 1) {
-                addToTop(new TakeCardFromBagAction());
-            }
-            if (bag.size() >= 2) {
-                addToTop(new TakeCardFromBagAction());
-                addToTop(new TakeCardFromBagAction());
-                addToTop(new GainEnergyAction(2));
-            }
+        CardGroup bag = BagField.bag.get(p);
+        if (bag.size() == 1) {
+            addToTop(new TakeCardFromBagAction());
         }
-
+        if (bag.size() >= 2) {
+            addToTop(new TakeCardFromBagAction());
+            addToTop(new TakeCardFromBagAction());
+            addToTop(new GainEnergyAction(2));
+        }
     }
 
     @Override

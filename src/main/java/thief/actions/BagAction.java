@@ -11,11 +11,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thief.character.BasePlayer;
+import thief.cards.tool.patch.BagField;
 import thief.effects.MoveCardToBagEffect;
 import thief.powers.BagPower;
 
@@ -51,12 +49,8 @@ public class BagAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == startDuration) {
-            if (!(player instanceof BasePlayer)) {
-                isDone = true;
-                return;
-            }
             if (replaceAllCardInHand) {
-                replaceAllCardInHand((BasePlayer) player);
+                replaceAllCardInHand();
                 isDone = true;
                 return;
             }
@@ -64,7 +58,7 @@ public class BagAction extends AbstractGameAction {
                 return;
             }
             if (allCardInHand) {
-                bagCards((BasePlayer) player, player.hand.group);
+                bagCards(player.hand.group);
                 isDone = true;
                 return;
             }
@@ -80,15 +74,15 @@ public class BagAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
-            bagCards((BasePlayer) player, selectedCards.group);
+            bagCards(selectedCards.group);
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
 
         tickDuration();
     }
 
-    private void replaceAllCardInHand(BasePlayer player) {
-        CardGroup bag = player.bag;
+    private void replaceAllCardInHand() {
+        CardGroup bag = BagField.bag.get(player);
         int beforeAmount = bag.size();
 
         ArrayList<AbstractCard> bagCards = new ArrayList<>(bag.group);
@@ -100,7 +94,7 @@ public class BagAction extends AbstractGameAction {
         addToBot(new PutCardsToHandAction(player, bagCards));
     }
 
-    private void bagCards(BasePlayer player, List<AbstractCard> cardsToBag) {
+    private void bagCards(List<AbstractCard> cardsToBag) {
         if (cardsToBag == null || cardsToBag.isEmpty()) return;
         ArrayList<AbstractCard> cards = new ArrayList<>(cardsToBag);
         for (AbstractCard card : cards) {
@@ -108,7 +102,7 @@ public class BagAction extends AbstractGameAction {
             AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
         }
         addToTop(new WaitAction(MoveCardToBagEffect.DURATION));
-        player.bag.group.addAll(cards);
+        BagField.bag.get(player).group.addAll(cards);
         addToBot(new ApplyPowerAction(player, player, new BagPower(cards.size())));
     }
 }
