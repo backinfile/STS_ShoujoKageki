@@ -155,6 +155,7 @@ public class BlackMarketScreen extends CustomScreen {
     @Override
     public void close() {
         AbstractDungeon.overlayMenu.hideBlackScreen();
+        AbstractDungeon.isScreenUp = false;
         if (AbstractDungeon.getCurrRoom() instanceof RestRoom) {
             RestRoom r = (RestRoom) AbstractDungeon.getCurrRoom();
             r.campfireUI.reopen();
