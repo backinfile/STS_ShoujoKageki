@@ -79,6 +79,10 @@
 		"NAME": "榴弹炮",
 		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤"
 	},
+	"thief:ToolPowerPower": {
+		"NAME": "惯犯",
+		"DESCRIPTION": "获得 !M! 点 熟练度"
+	},
 	"thief:BagEnergy": {
 		"NAME": "开桃源",
 		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在口袋中，获得 [E]",
