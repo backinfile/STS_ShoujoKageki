@@ -12,5 +12,12 @@
 		"DESCRIPTIONS": [
 			"抽到黑市中购买的工具牌后，额外抽一张牌。"
 		]
+	},
+	"thief:BagDiscoverRelic": {
+		"NAME": "灵巧手指",
+		"FLAVOR": "灵巧手指",
+		"DESCRIPTIONS": [
+			"从 口袋 中取回卡牌时，从5张牌中选择。"
+		]
 	}
 }

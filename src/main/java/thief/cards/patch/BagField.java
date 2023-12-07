@@ -1,4 +1,4 @@
-package thief.cards.tool.patch;
+package thief.cards.patch;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

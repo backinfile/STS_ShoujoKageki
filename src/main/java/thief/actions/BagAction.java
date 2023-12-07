@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thief.cards.tool.patch.BagField;
+import thief.cards.patch.BagField;
 import thief.effects.MoveCardToBagEffect;
 import thief.powers.BagPower;
 

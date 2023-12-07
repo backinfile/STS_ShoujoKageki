@@ -67,14 +67,19 @@ public class BlackMarketScreen extends CustomScreen {
     }
 
     private void initCards() {
+        this.cards.clear();
+
         int tmp = (int) ((float) Settings.WIDTH - DRAW_START_X * 2.0F - AbstractCard.IMG_WIDTH_S * 5.0F) / 4;
         float padX = (float) ((int) ((float) tmp + AbstractCard.IMG_WIDTH_S));
 
-        cards.add(AbstractDungeon.getCardFromPool(AbstractDungeon.rollRarity(), AbstractCard.CardType.SKILL, true));
+        for (int i = 0; i < 5; i++) {
+            this.cards.add(AbstractDungeon.getCardFromPool(AbstractDungeon.rollRarity(), AbstractCard.CardType.SKILL, true));
+        }
+
 
         for (int i = 0; i < cards.size(); ++i) {
             AbstractCard card = cards.get(i);
-            card.price = (int) (AbstractCard.getPrice(card.rarity) * AbstractDungeon.merchantRng.random(0.9F, 1.1F));
+            card.price = (int) (AbstractCard.getPrice(card.rarity) * AbstractDungeon.merchantRng.random(0.9F, 1.1F)) / 5;
             card.current_x = (float) (Settings.WIDTH / 2);
             card.target_x = DRAW_START_X + AbstractCard.IMG_WIDTH_S / 2.0F + padX * (float) i;
             for (AbstractRelic relic : AbstractDungeon.player.relics) {
@@ -109,7 +114,7 @@ public class BlackMarketScreen extends CustomScreen {
 //        AbstractDungeon.overlayMenu.proceedButton.hide();
         AbstractDungeon.overlayMenu.cancelButton.show(uiString.TEXT[0]);
 
-        this.rugY = (float)Settings.HEIGHT;
+        this.rugY = (float) Settings.HEIGHT;
         AbstractDungeon.overlayMenu.showBlackScreen();
     }
 

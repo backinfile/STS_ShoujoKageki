@@ -5,11 +5,9 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thief.ModInfo;
-import thief.actions.BagAction;
 import thief.actions.TakeCardFromBagAction;
 import thief.cards.BaseCard;
-import thief.cards.tool.patch.BagField;
-import thief.character.BasePlayer;
+import thief.cards.patch.BagField;
 
 public class BagDown extends BaseCard {
 

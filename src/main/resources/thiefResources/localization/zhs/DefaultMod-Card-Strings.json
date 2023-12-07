@@ -16,8 +16,32 @@
 		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。抽1张牌。"
 	},
 	"thief:Dagger": {
-		"NAME": "匕首",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。"
+		"NAME": "飞刀1",
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 消耗"
+	},
+	"thief:Dagger2": {
+		"NAME": "飞刀2",
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 给予1层 虚弱。 NL 消耗"
+	},
+	"thief:Dagger3": {
+		"NAME": "飞刀3",
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 给予1层 易伤。 NL 消耗"
+	},
+	"thief:Dagger4": {
+		"NAME": "飞刀4",
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 抽1张牌。 NL 消耗"
+	},
+	"thief:Dagger5": {
+		"NAME": "飞刀5",
+		"DESCRIPTION": "工具 !thief:disposable! NL 对所有敌人造成 !D! 点伤害。 NL 消耗"
+	},
+	"thief:Dagger6": {
+		"NAME": "飞刀6",
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗"
+	},
+	"thief:DaggerRnd": {
+		"NAME": "割底兜",
+		"DESCRIPTION": "在你的手牌中加入 !M! 张随机飞刀。"
 	},
 	"thief:BagDraw": {
 		"NAME": "查户口",
@@ -25,7 +49,7 @@
 	},
 	"thief:BagUp": {
 		"NAME": "上天窗",
-		"DESCRIPTION": "消耗 NL 手牌与口袋中的牌交换。"
+		"DESCRIPTION": "手牌与口袋中的牌交换。 NL 消耗"
 	},
 	"thief:BagAttack": {
 		"NAME": "遛边子",
@@ -54,6 +78,14 @@
 	"thief:BlackAttack": {
 		"NAME": "榴弹炮",
 		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤"
+	},
+	"thief:BagEnergy": {
+		"NAME": "开桃源",
+		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在口袋中，获得 [E]",
+		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在口袋中，获得 [E] [E]",
+		"EXTENDED_DESCRIPTION": [
+		  "这张牌不能被打出。"
+		]
 	},
 	"fortuneTeller:SoulVision": {
 		"NAME": "灵视",

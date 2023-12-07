@@ -1,25 +1,18 @@
 package thief.powers;
 
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import thief.Log;
 import thief.actions.TakeCardFromBagAction;
-import thief.cards.tool.patch.BagField;
-import thief.character.BasePlayer;
+import thief.cards.bag.BagEnergy;
+import thief.cards.patch.BagField;
 import thief.util.Utils2;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static thief.ModInfo.makeID;
 
@@ -60,6 +53,14 @@ public class BagPower extends BasePower {
     @Override
     public void atStartOfTurn() {
         super.atStartOfTurn();
+
+        CardGroup bag = BagField.bag.get(AbstractDungeon.player);
+        for (AbstractCard card : bag.group) {
+            if (card instanceof BagEnergy) {
+                card.use(AbstractDungeon.player, null);
+                this.flashWithoutSound();
+            }
+        }
 
         this.flashWithoutSound();
         addToBot(new TakeCardFromBagAction());

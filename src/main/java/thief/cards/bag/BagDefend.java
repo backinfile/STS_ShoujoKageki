@@ -5,8 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thief.cards.BaseCard;
-import thief.cards.tool.patch.BagField;
-import thief.character.BasePlayer;
+import thief.cards.patch.BagField;
 
 import static thief.ModInfo.makeID;
 

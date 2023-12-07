@@ -1,28 +1,23 @@
 package thief.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
-import thief.Log;
-import thief.cards.tool.patch.BagField;
+import thief.cards.patch.BagField;
 import thief.character.BasePlayer;
 import thief.powers.BagPower;
+import thief.relics.BagDiscoverRelic;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static thief.ModInfo.makeID;
-import static thief.ModInfo.makePowerPath;
 
 public class TakeCardFromBagAction extends AbstractGameAction {
     private static final String ID = makeID(TakeCardFromBagAction.class.getSimpleName());
@@ -67,12 +62,14 @@ public class TakeCardFromBagAction extends AbstractGameAction {
     }
 
     private ArrayList<AbstractCard> rnd3Cards(CardGroup cardGroup) {
+        int takeNum = 3;
+        if (AbstractDungeon.player.hasRelic(BagDiscoverRelic.ID)) takeNum = BagDiscoverRelic.TAKE_NUM;
         ArrayList<AbstractCard> cards = new ArrayList<>();
-        if (cardGroup.size() <= 3) {
+        if (cardGroup.size() <= takeNum) {
             cards.addAll(cardGroup.group);
         } else {
             cardGroup.shuffle();
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < takeNum; i++) {
                 cards.add(cardGroup.getNCardFromTop(i));
             }
         }
