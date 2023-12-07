@@ -53,7 +53,7 @@
 	},
 	"thief:BlackAttack": {
 		"NAME": "榴弹炮",
-		"DESCRIPTION": "工具 !thief:disposable! 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤"
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤"
 	},
 	"fortuneTeller:SoulVision": {
 		"NAME": "灵视",

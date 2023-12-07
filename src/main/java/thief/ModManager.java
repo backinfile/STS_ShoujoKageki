@@ -6,6 +6,7 @@ import basemod.abstracts.CustomRelic;
 import basemod.abstracts.DynamicVariable;
 import basemod.interfaces.*;
 import thief.character.Thief;
+import thief.screen.BlackMarketScreen;
 import thief.util.IDCheckDontTouchPls;
 import thief.variables.DefaultCustomVariable;
 import thief.variables.DefaultSecondMagicNumber;
@@ -185,6 +186,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     @Override
     public void receivePostInitialize() {
 //        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
+        BaseMod.addCustomScreen(new BlackMarketScreen());
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");

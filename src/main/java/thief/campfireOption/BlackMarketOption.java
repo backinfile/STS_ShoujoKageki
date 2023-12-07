@@ -1,11 +1,14 @@
 package thief.campfireOption;
 
+import basemod.BaseMod;
+import basemod.abstracts.CustomScreen;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import thief.ModInfo;
+import thief.screen.BlackMarketScreen;
 import thief.util.TextureLoader;
 
 public class BlackMarketOption extends AbstractCampfireOption {
@@ -17,14 +20,16 @@ public class BlackMarketOption extends AbstractCampfireOption {
 
     public BlackMarketOption() {
         this.label = uiStrings.TEXT[0];
-        this.description = uiStrings.TEXT[1] + uiStrings.TEXT[2] + price + uiStrings.TEXT[3];
-        this.usable = AbstractDungeon.player.gold >= price;
+        this.description = uiStrings.TEXT[1];
+        this.usable = true;
         this.img = TextureLoader.getTexture(ModInfo.makeUIPath(RAW_ID + ".png"));
+
+        BlackMarketScreen blackMarketScreen = (BlackMarketScreen) BaseMod.getCustomScreen(BlackMarketScreen.Enum.BLACK_MARKET);
+        blackMarketScreen.init();
     }
 
     @Override
     public void useOption() {
-        AbstractDungeon.player.loseGold(price);
-        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+        BaseMod.openCustomScreen(BlackMarketScreen.Enum.BLACK_MARKET);
     }
 }

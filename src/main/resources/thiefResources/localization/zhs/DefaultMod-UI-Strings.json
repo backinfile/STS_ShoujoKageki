@@ -14,8 +14,8 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
-  "fortuneTeller:DivineAction": {
-    "TEXT": ["牌库中牌的数量不足以进行占卜。", "exchange something"],
+  "thief:BlackMarketScreen": {
+    "TEXT": ["返回", "exchange something"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   }
