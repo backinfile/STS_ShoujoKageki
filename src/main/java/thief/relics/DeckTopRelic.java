@@ -16,17 +16,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 
-public class DeckTopRelic extends CustomRelic {
-
-    public static final String ID = ModInfo.makeID(DeckTopRelic.class.getSimpleName());
-
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("glasses_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("glasses_relic.png"));
-
+public class DeckTopRelic extends BaseRelic {
+    public static final String RAW_ID = DeckTopRelic.class.getSimpleName();
+    public static final String ID = ModInfo.makeID(RAW_ID);
     public static DeckTopViewer deckTopViewer = null;
 
     public DeckTopRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
+        super(ID, RAW_ID, RelicTier.STARTER);
     }
 
     @Override

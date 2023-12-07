@@ -1,4 +1,4 @@
-package thief.cards.tool;
+package thief.cards.tool.thief;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -6,15 +6,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thief.cards.BaseCard;
-import thief.cards.starter.ThiefStrike;
-import thief.variables.DisposableVariable;
-import thief.variables.patch.DisposableField;
+import thief.cards.tool.ThiefToolCard;
 
-import static thief.ModInfo.makeCardPath;
 import static thief.ModInfo.makeID;
 
-public class Dagger extends ToolCard {
+public class Dagger extends ThiefToolCard {
     public static final String ID = makeID(Dagger.class.getSimpleName());
 
     public Dagger() {

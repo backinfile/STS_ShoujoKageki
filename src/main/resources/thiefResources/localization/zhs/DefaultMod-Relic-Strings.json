@@ -5,5 +5,12 @@
 		"DESCRIPTIONS": [
 			"你可以看到牌库顶牌。 NL 每场战斗一次，抽 #b1 张牌。"
 		]
+	},
+	"thief:BlackMarketRelic": {
+		"NAME": "朋友关系",
+		"FLAVOR": "朋友关系",
+		"DESCRIPTIONS": [
+			"抽到黑市中购买的工具牌后，额外抽一张牌。"
+		]
 	}
 }

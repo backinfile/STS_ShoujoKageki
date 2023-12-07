@@ -51,6 +51,10 @@
 		"NAME": "架子活",
 		"DESCRIPTION": "回合结束时，口袋 中每有一张牌，获得 !M! 点格挡。"
 	},
+	"thief:BlackAttack": {
+		"NAME": "榴弹炮",
+		"DESCRIPTION": "工具 !thief:disposable! 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤"
+	},
 	"fortuneTeller:SoulVision": {
 		"NAME": "灵视",
 		"DESCRIPTION": " 不能被打出 。 NL 被 替换 时，获得 [E] 。",
