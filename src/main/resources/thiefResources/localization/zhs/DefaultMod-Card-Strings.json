@@ -77,7 +77,7 @@
 	},
 	"thief:BlackAttack": {
 		"NAME": "榴弹炮",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤"
+		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤。"
 	},
 	"thief:ToolPowerPower": {
 		"NAME": "惯犯",
@@ -90,6 +90,18 @@
 		"EXTENDED_DESCRIPTION": [
 		  "这张牌不能被打出。"
 		]
+	},
+	"thief:ReduceStrength": {
+		"NAME": "偷袭",
+		"DESCRIPTION": "造成 !D! 点伤害。 削减 其 !M! 点力量。"
+	},
+	"thief:ReduceStrength2": {
+		"NAME": "组团偷袭",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 削减 其 !M! 点力量。"
+	},
+	"thief:ReduceStrength3": {
+		"NAME": "暗中窥视",
+		"DESCRIPTION": "敌人被 削减 的 力量 每回合至多恢复 !M! 点。"
 	},
 	"fortuneTeller:SoulVision": {
 		"NAME": "灵视",

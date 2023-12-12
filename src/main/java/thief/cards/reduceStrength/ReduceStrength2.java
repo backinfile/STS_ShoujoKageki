@@ -1,27 +1,25 @@
-package thief.cards.tool.thief;
+package thief.cards.reduceStrength;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import thief.cards.tool.ThiefToolCard;
+import thief.actions.ReduceStrengthAction;
+import thief.cards.BaseCard;
 
 import static thief.ModInfo.makeID;
 
-public class Dagger5 extends ThiefToolCard {
-    public static final String ID = makeID(Dagger5.class.getSimpleName());
+public class ReduceStrength2 extends BaseCard {
+    public static final String ID = makeID(ReduceStrength2.class.getSimpleName());
 
-    public Dagger5() {
-        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY, 1);
-        baseDamage = 5;
+    public ReduceStrength2() {
+        super(ID, 3, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        baseDamage = 14;
+        baseMagicNumber = magicNumber = 14;
         isMultiDamage = true;
-        exhaust = true;
     }
 
     @Override
@@ -29,13 +27,15 @@ public class Dagger5 extends ThiefToolCard {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ReduceStrengthAction(p, magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(4);
+            upgradeMagicNumber(4);
             initializeDescription();
         }
     }

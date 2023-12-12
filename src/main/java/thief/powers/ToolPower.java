@@ -20,7 +20,7 @@ import static thief.ModInfo.makeID;
 public class ToolPower extends BasePower {
     public static final Logger logger = LogManager.getLogger(ToolPower.class.getName());
 
-    public static final String RAW_ID = ToolPower.class.getSimpleName();
+    private static final String RAW_ID = ToolPower.class.getSimpleName();
     public static final String POWER_ID = makeID(RAW_ID);
 
     public ToolPower(int amount) {

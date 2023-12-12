@@ -19,6 +19,13 @@
 			"提高工具牌的效果。"
 		]
 	},
+	"thief:ReduceStrengthLimitPower": {
+		"NAME": "暗中窥视",
+		"DESCRIPTIONS": [
+			"敌人被 削减 的 力量 每回合最多回复", 
+			"点。不可叠加。"
+		]
+	},
 	"fortuneTeller:MovingHungerPower": {
 		"NAME": "饥饿",
 		"DESCRIPTIONS": [

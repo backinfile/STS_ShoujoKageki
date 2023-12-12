@@ -21,6 +21,13 @@
 		"DESCRIPTION": "提高工具牌的效果。"
 	},
 	{
+		"PROPER_NAME": "削减",
+		"NAMES": [
+			"削减"
+		],
+		"DESCRIPTION": "敌人当回合失去力量。"
+	},
+	{
 		"PROPER_NAME": "训练",
 		"NAMES": [
 			"训练"

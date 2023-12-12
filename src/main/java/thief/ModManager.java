@@ -3,7 +3,6 @@ package thief;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
-import basemod.abstracts.DynamicVariable;
 import basemod.interfaces.*;
 import thief.character.Thief;
 import thief.screen.BlackMarketScreen;
@@ -40,7 +39,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     public static final Logger logger = LogManager.getLogger(ModInfo.ModName);
 
     private static String modID;
-    public static final List<String> cardIds = new ArrayList<>();
+    public static final List<String> allCardIds = new ArrayList<>();
 
     public ModManager() {
         BaseMod.subscribe(this);
@@ -145,7 +144,9 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
             if (info.seen) {
                 UnlockTracker.unlockCard(card.cardID);
             }
-            cardIds.add(card.cardID);
+            if (card.color == COLOR_GRAY) {
+                allCardIds.add(card.cardID);
+            }
         });
         Log.logger.info("Done adding cards!");
     }

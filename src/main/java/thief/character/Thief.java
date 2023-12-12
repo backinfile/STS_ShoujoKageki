@@ -158,7 +158,7 @@ public class Thief extends BasePlayer {
 //        retVal.add(Defend.ID);
 //        retVal.add(BagBottom.ID);
 //        retVal.add(Dagger.ID);
-        retVal.addAll(ModManager.cardIds);
+        retVal.addAll(ModManager.allCardIds);
         return retVal;
     }
 

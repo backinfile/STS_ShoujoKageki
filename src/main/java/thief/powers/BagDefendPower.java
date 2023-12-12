@@ -9,12 +9,10 @@ import thief.cards.patch.BagField;
 import static thief.ModInfo.makeID;
 
 public class BagDefendPower extends BasePower {
-    public static final String RAW_ID = BagDefendPower.class.getSimpleName();
+    private static final String RAW_ID = BagDefendPower.class.getSimpleName();
     public static final String POWER_ID = makeID(RAW_ID);
 
     private static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID).DESCRIPTIONS;
-    private static final String tex84 = "placeholder_power84.png";
-    private static final String tex32 = "placeholder_power32.png";
 
     public BagDefendPower(int amount) {
         super(POWER_ID, RAW_ID, AbstractPower.PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);

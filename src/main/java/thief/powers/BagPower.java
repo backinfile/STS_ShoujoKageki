@@ -19,7 +19,7 @@ import static thief.ModInfo.makeID;
 public class BagPower extends BasePower {
     public static final Logger logger = LogManager.getLogger(BagPower.class.getName());
 
-    public static final String RAW_ID = BagPower.class.getSimpleName();
+    private static final String RAW_ID = BagPower.class.getSimpleName();
     public static final String POWER_ID = makeID(RAW_ID);
     private static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID).DESCRIPTIONS;
 
