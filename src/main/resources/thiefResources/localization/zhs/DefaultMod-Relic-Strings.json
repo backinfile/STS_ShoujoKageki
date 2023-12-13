@@ -1,7 +1,7 @@
 {
 	"thief:DeckTopRelic": {
-		"NAME": "摸点子",
-		"FLAVOR": "摸点子",
+		"NAME": "火把",
+		"FLAVOR": "从尖塔底层顺走的火把",
 		"DESCRIPTIONS": [
 			"你可以看到牌库顶牌。 NL 每场战斗一次，抽 #b1 张牌。"
 		]

@@ -1,6 +1,7 @@
 package thief.relics;
 
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import thief.Log;
 import thief.campfireOption.BlackMarketOption;
 import thief.effects.DeckTopEffect;
 import thief.ui.DeckTopViewer;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class DeckTopRelic extends BaseRelic {
     public static final String RAW_ID = DeckTopRelic.class.getSimpleName();
@@ -27,7 +29,7 @@ public class DeckTopRelic extends BaseRelic {
 
     @Override
     public void atBattleStart() {
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+//        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         this.beginLongPulse();
 
         if (deckTopViewer == null) {
@@ -35,9 +37,9 @@ public class DeckTopRelic extends BaseRelic {
         }
         deckTopViewer.open(true);
 
-        if (AbstractDungeon.effectList.stream().noneMatch(e -> e instanceof DeckTopEffect)) {
-            AbstractDungeon.effectsQueue.add(new DeckTopEffect());
-        }
+        AbstractDungeon.effectsQueue.add(new DeckTopEffect());
+//        long count = AbstractDungeon.effectsQueue.stream().filter(e -> e instanceof DeckTopEffect).count();
+//        Log.logger.info("============effect " + count);
     }
 
     @Override

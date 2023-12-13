@@ -275,4 +275,6 @@ public class Thief extends BasePlayer {
         return TEXT[2];
     }
 
+
+
 }
