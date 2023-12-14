@@ -1,7 +1,7 @@
 {
 	"thief:DeckTopRelic": {
 		"NAME": "火把",
-		"FLAVOR": "从尖塔底层顺走的火把",
+		"FLAVOR": "从高塔底层顺走的火把",
 		"DESCRIPTIONS": [
 			"你可以看到牌库顶牌。 NL 每场战斗一次，抽 #b1 张牌。"
 		]
@@ -18,6 +18,14 @@
 		"FLAVOR": "灵巧手指",
 		"DESCRIPTIONS": [
 			"从 口袋 中取回卡牌时，从5张牌中选择。"
+		]
+	},
+	"thief:TakeAllRewardCardsRelic": {
+		"NAME": "手快全拿",
+		"FLAVOR": "手快全拿",
+		"DESCRIPTIONS": [
+			"在卡牌奖励画面，可以获取所有卡牌。（仅一次，击杀 #y精英 敌人后重置）",
+			"手快全拿"
 		]
 	}
 }
