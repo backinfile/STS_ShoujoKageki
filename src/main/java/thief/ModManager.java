@@ -63,7 +63,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
     @Override
     public void receivePostDraw(AbstractCard abstractCard) {
-        System.out.println("=====================" + abstractCard.name);
+//        System.out.println("=====================" + abstractCard.name);
     }
 
 
