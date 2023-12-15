@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.lwjgl.openal.AL;
 import thief.cards.tool.ThiefToolCard;
 
 import java.util.ArrayList;
@@ -20,8 +21,7 @@ public class Dagger extends ThiefToolCard {
 
     public Dagger() {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, 1);
-        baseDamage = 7;
-        exhaust = true;
+        baseDamage = 8;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Dagger extends ThiefToolCard {
     }
 
 
-    private static final List<AbstractCard> ALL_DAGGER_CARDS;
+    public static final List<AbstractCard> ALL_DAGGER_CARDS;
 
     static {
         ALL_DAGGER_CARDS = new ArrayList<>();

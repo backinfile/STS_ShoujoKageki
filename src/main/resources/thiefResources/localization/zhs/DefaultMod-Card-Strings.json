@@ -41,7 +41,7 @@
 	},
 	"thief:DaggerRnd": {
 		"NAME": "割底兜",
-		"DESCRIPTION": "在你的手牌， 口袋 中分别加入 !M! 张随机飞刀。"
+		"DESCRIPTION": "在手牌和 口袋 中分别加入 !M! 张随机飞刀。"
 	},
 	"thief:BagDraw": {
 		"NAME": "查户口",
@@ -61,7 +61,7 @@
 	},
 	"thief:BagDefend": {
 		"NAME": "蹭地皮",
-		"DESCRIPTION": "口袋 中每有一张牌，耗能就减少1 [B] 。 NL 获得 !B! 点 格挡 。"
+		"DESCRIPTION": "口袋 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
 	},
 	"thief:CommonAttack": {
 		"NAME": "踹",

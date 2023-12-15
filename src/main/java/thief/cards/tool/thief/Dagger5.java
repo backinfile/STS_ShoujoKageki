@@ -21,7 +21,6 @@ public class Dagger5 extends ThiefToolCard {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY, 1);
         baseDamage = 5;
         isMultiDamage = true;
-        exhaust = true;
     }
 
     @Override
