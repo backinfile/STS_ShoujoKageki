@@ -17,7 +17,7 @@ public class BagAttack extends BaseCard {
 
     public BagAttack() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 10;
+        baseDamage = 8;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class BagAttack extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(3);
             initializeDescription();
         }
     }

@@ -1,7 +1,7 @@
 {
 	"thief:BagBottom": {
 		"NAME": "掏底兜",
-		"DESCRIPTION": "获得2点临时 敏捷 NL 口袋 !M!"
+		"DESCRIPTION": "获得 !M! 点临时 敏捷 NL 将牌库顶牌放入 口袋"
 	},
 	"thief:Defend": {
 		"NAME": "防御",
@@ -13,43 +13,43 @@
 	},
 	"thief:ToolStrike": {
 		"NAME": "小利",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。抽1张牌。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 工具 !thief:disposable!"
 	},
 	"thief:Dagger": {
-		"NAME": "飞刀1",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 消耗"
+		"NAME": "飞刀-攻击",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 工具 !thief:disposable!"
 	},
 	"thief:Dagger2": {
-		"NAME": "飞刀2",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 给予1层 虚弱。 NL 消耗"
+		"NAME": "飞刀-虚弱",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 虚弱。 NL 工具 !thief:disposable!"
 	},
 	"thief:Dagger3": {
-		"NAME": "飞刀3",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 给予1层 易伤。 NL 消耗"
+		"NAME": "飞刀-易伤",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 易伤。 NL 工具 !thief:disposable!"
 	},
 	"thief:Dagger4": {
-		"NAME": "飞刀4",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 抽1张牌。 NL 消耗"
+		"NAME": "飞刀-抽牌",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 工具 !thief:disposable!"
 	},
 	"thief:Dagger5": {
-		"NAME": "飞刀5",
-		"DESCRIPTION": "工具 !thief:disposable! NL 对所有敌人造成 !D! 点伤害。 NL 消耗"
+		"NAME": "飞刀-群体",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 工具 !thief:disposable!"
 	},
 	"thief:Dagger6": {
-		"NAME": "飞刀6",
-		"DESCRIPTION": "工具 !thief:disposable! NL 造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗"
+		"NAME": "飞刀-格挡",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 工具 !thief:disposable!"
 	},
 	"thief:DaggerRnd": {
 		"NAME": "割底兜",
-		"DESCRIPTION": "在你的手牌中加入 !M! 张随机飞刀。"
+		"DESCRIPTION": "在你的手牌， 口袋 中分别加入 !M! 张随机飞刀。"
 	},
 	"thief:BagDraw": {
 		"NAME": "查户口",
-		"DESCRIPTION": "抽 !M! 张牌 NL 口袋 2"
+		"DESCRIPTION": "抽 !M! 张牌 NL 选择至多2张手牌放入 口袋"
 	},
 	"thief:BagUp": {
 		"NAME": "上天窗",
-		"DESCRIPTION": "手牌与口袋中的牌交换。 NL 消耗"
+		"DESCRIPTION": "手牌与口袋中的牌交换。"
 	},
 	"thief:BagAttack": {
 		"NAME": "遛边子",

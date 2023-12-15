@@ -1,10 +1,9 @@
 package thief.cards.bag;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thief.ModInfo;
-import thief.actions.BagAction;
+import thief.actions.PutHandCardIntoBagAction;
 import thief.cards.BaseCard;
 
 public class BagUp extends BaseCard {
@@ -13,12 +12,12 @@ public class BagUp extends BaseCard {
 
     public BagUp() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
-        exhaust = true;
+//        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new BagAction(p, false, true));
+        addToBot(new PutHandCardIntoBagAction(p, false, true));
     }
 
     @Override

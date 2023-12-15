@@ -22,10 +22,10 @@ import java.util.List;
 
 import static thief.ModInfo.makeID;
 
-public class BagAction extends AbstractGameAction {
-    public static final Logger logger = LogManager.getLogger(BagAction.class.getName());
+public class PutHandCardIntoBagAction extends AbstractGameAction {
+    public static final Logger logger = LogManager.getLogger(PutHandCardIntoBagAction.class.getName());
 
-    private static final String ID = makeID(BagAction.class.getSimpleName());
+    private static final String ID = makeID(PutHandCardIntoBagAction.class.getSimpleName());
     private static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(ID);
     private static final String[] TEXT = uiString.TEXT;
 
@@ -33,14 +33,14 @@ public class BagAction extends AbstractGameAction {
     private boolean allCardInHand = false;
     private boolean replaceAllCardInHand = false;
 
-    public BagAction(AbstractPlayer player, int amount) {
+    public PutHandCardIntoBagAction(AbstractPlayer player, int amount) {
         this.player = player;
         this.amount = amount;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
     }
 
     // all card in hand
-    public BagAction(AbstractPlayer player, boolean allCardInHand, boolean replaceAllCardInHand) {
+    public PutHandCardIntoBagAction(AbstractPlayer player, boolean allCardInHand, boolean replaceAllCardInHand) {
         this(player, 1);
         this.allCardInHand = allCardInHand;
         this.replaceAllCardInHand = replaceAllCardInHand;
@@ -90,19 +90,13 @@ public class BagAction extends AbstractGameAction {
         if (beforeAmount > 0) {
             addToBot(new ReducePowerAction(player, player, BagPower.POWER_ID, beforeAmount));
         }
-        addToBot(new BagAction(player, true, false));
+        bagCards(player.hand.group);
+//        addToBot(new PutHandCardIntoBagAction(player, true, false));
         addToBot(new PutCardsToHandAction(player, bagCards));
     }
 
     private void bagCards(List<AbstractCard> cardsToBag) {
         if (cardsToBag == null || cardsToBag.isEmpty()) return;
-        ArrayList<AbstractCard> cards = new ArrayList<>(cardsToBag);
-        for (AbstractCard card : cards) {
-            player.hand.removeCard(card);
-            AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
-        }
-        addToTop(new WaitAction(MoveCardToBagEffect.DURATION));
-        BagField.bag.get(player).group.addAll(cards);
-        addToBot(new ApplyPowerAction(player, player, new BagPower(cards.size())));
+        addToBot(new MoveCardToBagAction(new ArrayList<>(cardsToBag)));
     }
 }

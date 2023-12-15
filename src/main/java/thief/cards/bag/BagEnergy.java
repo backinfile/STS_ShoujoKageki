@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thief.ModInfo;
-import thief.actions.BagAction;
 import thief.cards.BaseCard;
 
 public class BagEnergy extends BaseCard {

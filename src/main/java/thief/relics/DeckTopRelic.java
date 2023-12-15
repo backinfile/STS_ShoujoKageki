@@ -2,7 +2,9 @@ package thief.relics;
 
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import thief.Log;
+import thief.actions.MakeTempCardInBagAction;
 import thief.campfireOption.BlackMarketOption;
+import thief.cards.tool.thief.Dagger;
 import thief.effects.DeckTopEffect;
 import thief.ui.DeckTopViewer;
 import thief.util.TextureLoader;
@@ -40,6 +42,8 @@ public class DeckTopRelic extends BaseRelic {
         AbstractDungeon.effectsQueue.add(new DeckTopEffect());
 //        long count = AbstractDungeon.effectsQueue.stream().filter(e -> e instanceof DeckTopEffect).count();
 //        Log.logger.info("============effect " + count);
+
+//        addToBot(new MakeTempCardInBagAction(Dagger.makeRndDagger(), 15, true));
     }
 
     @Override

@@ -29,7 +29,10 @@ public class BagDefendPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         super.atEndOfTurn(isPlayer);
         if (isPlayer) {
-            addToBot(new GainBlockAction(AbstractDungeon.player, amount * BagField.bag.get(AbstractDungeon.player).size()));
+            int cardsNumInBag = BagField.bag.get(AbstractDungeon.player).size();
+            if (cardsNumInBag > 0) {
+                addToBot(new GainBlockAction(AbstractDungeon.player, amount * cardsNumInBag));
+            }
         }
 
     }

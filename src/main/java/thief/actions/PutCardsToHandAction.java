@@ -1,5 +1,6 @@
 package thief.actions;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import thief.cards.tool.thief.Dagger;
 
 import java.util.ArrayList;
 
@@ -27,7 +29,7 @@ public class PutCardsToHandAction extends AbstractGameAction {
             int handSize = player.hand.size();
             for (int i = 0; i < cards.size(); i++) {
                 AbstractCard card = cards.get(i);
-                if (i + handSize <= 10) {
+                if (i + handSize < 10) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, player.hb.cX, player.hb.cY));
                 } else {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card, player.hb.cX, player.hb.cY));

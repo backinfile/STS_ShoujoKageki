@@ -14,7 +14,7 @@ public class BagDefend extends BaseCard {
 
     public BagDefend() {
         super(ID, 4, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = 16;
+        baseBlock = 12;
     }
 
     @Override
