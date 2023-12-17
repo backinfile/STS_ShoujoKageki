@@ -1,0 +1,114 @@
+{
+	"ShoujoKageki:BagBottom": {
+		"NAME": "掏底兜",
+		"DESCRIPTION": "获得 !M! 点临时 敏捷 NL 将牌库顶牌放入 约定牌库"
+	},
+	"ShoujoKageki:Defend": {
+		"NAME": "防御",
+		"DESCRIPTION": "获得 !B! 格挡 。"
+	},
+	"ShoujoKageki:ShoujoKagekiStrike": {
+		"NAME": "打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"ShoujoKageki:ToolStrike": {
+		"NAME": "小利",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 工具 !ShoujoKageki:disposable!"
+	},
+	"ShoujoKageki:Dagger": {
+		"NAME": "飞刀-攻击",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 工具 !ShoujoKageki:disposable!"
+	},
+	"ShoujoKageki:Dagger2": {
+		"NAME": "飞刀-虚弱",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 虚弱。 NL 工具 !ShoujoKageki:disposable!"
+	},
+	"ShoujoKageki:Dagger3": {
+		"NAME": "飞刀-易伤",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 易伤。 NL 工具 !ShoujoKageki:disposable!"
+	},
+	"ShoujoKageki:Dagger4": {
+		"NAME": "飞刀-抽牌",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 工具 !ShoujoKageki:disposable!"
+	},
+	"ShoujoKageki:Dagger5": {
+		"NAME": "飞刀-群体",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 工具 !ShoujoKageki:disposable!"
+	},
+	"ShoujoKageki:Dagger6": {
+		"NAME": "飞刀-格挡",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 工具 !ShoujoKageki:disposable!"
+	},
+	"ShoujoKageki:DaggerRnd": {
+		"NAME": "割底兜",
+		"DESCRIPTION": "在手牌和 约定牌库 中分别加入 !M! 张随机飞刀。"
+	},
+	"ShoujoKageki:BagDraw": {
+		"NAME": "查户口",
+		"DESCRIPTION": "抽 !M! 张牌 NL 选择至多2张手牌放入 约定牌库"
+	},
+	"ShoujoKageki:BagUp": {
+		"NAME": "上天窗",
+		"DESCRIPTION": "手牌与 约定牌库 中的牌交换。"
+	},
+	"ShoujoKageki:BagAttack": {
+		"NAME": "遛边子",
+		"DESCRIPTION": "造成 !D! 伤害。如果 约定牌库 中有牌，重复一次。"
+	},
+	"ShoujoKageki:BagDown": {
+		"NAME": "下平台",
+		"DESCRIPTION": "从 约定牌库 取回两张牌，然后获得 [E] [E] 。"
+	},
+	"ShoujoKageki:BagDefend": {
+		"NAME": "蹭地皮",
+		"DESCRIPTION": "约定牌库 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
+	},
+	"ShoujoKageki:CommonAttack": {
+		"NAME": "踹",
+		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"
+	},
+	"ShoujoKageki:CommonDefend": {
+		"NAME": "蹬",
+		"DESCRIPTION": "获得 !B! 格挡。抽1张牌，如果是攻击牌就再抽1张。"
+	},
+	"ShoujoKageki:BagPowerDefend": {
+		"NAME": "架子活",
+		"DESCRIPTION": "回合结束时，口袋 中每有一张牌，获得 !M! 点格挡。"
+	},
+	"ShoujoKageki:BlackAttack": {
+		"NAME": "榴弹炮",
+		"DESCRIPTION": "工具 !ShoujoKageki:disposable! NL 造成 !D! 伤害。 NL 给予1层 虚弱 和 易伤。"
+	},
+	"ShoujoKageki:ToolPowerPower": {
+		"NAME": "惯犯",
+		"DESCRIPTION": "获得 !M! 点 熟练度"
+	},
+	"ShoujoKageki:BagEnergy": {
+		"NAME": "开桃源",
+		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌库 中，获得 [E]",
+		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌库 中，获得 [E] [E]",
+		"EXTENDED_DESCRIPTION": [
+		  "这张牌不能被打出。"
+		]
+	},
+	"ShoujoKageki:ReduceStrength": {
+		"NAME": "偷袭",
+		"DESCRIPTION": "造成 !D! 点伤害。 削减 其 !M! 点力量。"
+	},
+	"ShoujoKageki:ReduceStrength2": {
+		"NAME": "组团偷袭",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 削减 其 !M! 点力量。"
+	},
+	"ShoujoKageki:ReduceStrength3": {
+		"NAME": "暗中窥视",
+		"DESCRIPTION": "敌人被 削减 的 力量 每回合至多恢复 !M! 点。"
+	},
+	"fortuneTeller:SoulVision": {
+		"NAME": "灵视",
+		"DESCRIPTION": " 不能被打出 。 NL 被 替换 时，获得 [E] 。",
+		"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 被 替换 时，获得 [E] [E] 。",
+		"EXTENDED_DESCRIPTION": [
+			"不能被打出。"
+		]
+	}
+}

@@ -1,0 +1,37 @@
+[
+	{
+		"PROPER_NAME": "约定(约定牌堆)",
+		"NAMES": [
+			"约定牌堆", "约定"
+		],
+		"DESCRIPTION": "Karen特有的牌库。每回合开始时，从约定牌堆中取回一张牌加入手牌。"
+	},
+	{
+		"PROPER_NAME": "工具",
+		"NAMES": [
+			"工具"
+		],
+		"DESCRIPTION": "打出X次后卡牌从牌组中移除。"
+	},
+	{
+		"PROPER_NAME": "熟练度",
+		"NAMES": [
+			"熟练度"
+		],
+		"DESCRIPTION": "提高工具牌的效果。"
+	},
+	{
+		"PROPER_NAME": "削减",
+		"NAMES": [
+			"削减"
+		],
+		"DESCRIPTION": "敌人当回合失去力量。"
+	},
+	{
+		"PROPER_NAME": "训练",
+		"NAMES": [
+			"训练"
+		],
+		"DESCRIPTION": "训练会让 #y射击 获得额外的伤害，层数每回合下降一半。"
+	}
+]

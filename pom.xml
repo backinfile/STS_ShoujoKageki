@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>backinfile</groupId>
-    <artifactId>thief</artifactId>
+    <artifactId>ShoujoKageki</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>thief</name>
-    <description>thief</description>
+    <name>ShoujoKageki</name>
+    <description>ShoujoKageki</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

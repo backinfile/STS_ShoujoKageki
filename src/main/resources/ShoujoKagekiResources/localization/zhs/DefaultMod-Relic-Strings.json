@@ -1,0 +1,38 @@
+{
+	"ShoujoKageki:DeckTopRelic": {
+		"NAME": "发夹",
+		"FLAVOR": "小时候与小光两人在东京塔附近的商店中买到的一对发夹中皇冠样式的一枚",
+		"DESCRIPTIONS": [
+			"可以看到牌库顶牌。每场战斗一次: 抽 #b1 张牌。"
+		]
+	},
+	"ShoujoKageki:BlackMarketRelic": {
+		"NAME": "朋友关系",
+		"FLAVOR": "朋友关系",
+		"DESCRIPTIONS": [
+			"抽到黑市中购买的工具牌后，额外抽一张牌。"
+		]
+	},
+	"ShoujoKageki:BagDiscoverRelic": {
+		"NAME": "灵巧手指",
+		"FLAVOR": "灵巧手指",
+		"DESCRIPTIONS": [
+			"从 口袋 中取回卡牌时，从5张牌中选择。"
+		]
+	},
+	"ShoujoKageki:TakeAllRewardCardsRelic": {
+		"NAME": "手快全拿",
+		"FLAVOR": "手快全拿",
+		"DESCRIPTIONS": [
+			"在卡牌奖励画面，可以获取所有卡牌。（仅一次，击杀 #y精英 敌人后重置）",
+			"手快全拿"
+		]
+	},
+	"ShoujoKageki:DrawExtraRelic": {
+		"NAME": "怀表牌",
+		"FLAVOR": "怀表牌",
+		"DESCRIPTIONS": [
+			"若回合内没有额外抽牌，则于下回合额外抽1张牌"
+		]
+	}
+}

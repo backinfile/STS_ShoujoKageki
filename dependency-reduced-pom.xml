@@ -2,19 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>backinfile</groupId>
-  <artifactId>thief</artifactId>
-  <name>thief</name>
+  <artifactId>ShoujoKageki</artifactId>
+  <name>ShoujoKageki</name>
   <version>0.0.1</version>
-  <description>thief</description>
+  <description>ShoujoKageki</description>
   <build>
-    <finalName>thief</finalName>
+    <finalName>ShoujoKageki</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <version>2.4.2</version>
         <executions>
           <execution>
-            <id>thief</id>
+            <id>ShoujoKageki</id>
             <phase>package</phase>
             <goals>
               <goal>shade</goal>
@@ -22,7 +22,7 @@
             <configuration>
               <filters>
                 <filter>
-                  <artifact>backinfile:thief</artifact>
+                  <artifact>backinfile:ShoujoKageki</artifact>
                 </filter>
               </filters>
             </configuration>

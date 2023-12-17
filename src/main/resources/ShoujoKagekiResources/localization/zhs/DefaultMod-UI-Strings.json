@@ -1,0 +1,27 @@
+{
+  "ShoujoKageki:PutHandCardIntoBagAction": {
+    "TEXT": ["放入口袋"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:TakeCardFromBagAction": {
+    "TEXT": ["从口袋中取回"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:BlackMarketOption": {
+    "TEXT": ["黑市", "进入黑市", "(保护费", ")"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:BlackMarketScreen": {
+    "TEXT": ["返回", "exchange something"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:TakeAllRewardCardsButton": {
+    "TEXT": ["手快全拿"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  }
+}
