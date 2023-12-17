@@ -1,11 +1,11 @@
 {
   "ShoujoKageki:PutHandCardIntoBagAction": {
-    "TEXT": ["放入口袋"],
+    "TEXT": ["放入约定牌堆"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
   "ShoujoKageki:TakeCardFromBagAction": {
-    "TEXT": ["从口袋中取回"],
+    "TEXT": ["从约定牌堆中取回"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },

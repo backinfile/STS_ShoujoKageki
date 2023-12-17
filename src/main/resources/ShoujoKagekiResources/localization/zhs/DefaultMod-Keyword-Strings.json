@@ -1,10 +1,10 @@
 [
 	{
-		"PROPER_NAME": "约定(约定牌堆)",
+		"PROPER_NAME": "约定牌堆",
 		"NAMES": [
 			"约定牌堆", "约定"
 		],
-		"DESCRIPTION": "Karen特有的牌库。每回合开始时，从约定牌堆中取回一张牌加入手牌。"
+		"DESCRIPTION": "爱城华恋特有的牌堆。 NL 每回合开始时，从约定牌堆中取回一张加入手牌。"
 	},
 	{
 		"PROPER_NAME": "工具",
