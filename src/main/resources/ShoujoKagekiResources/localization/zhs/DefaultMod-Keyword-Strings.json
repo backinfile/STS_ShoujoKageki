@@ -7,9 +7,9 @@
 		"DESCRIPTION": "爱城华恋特有的牌堆。 NL 每回合开始时，从约定牌堆中取回一张加入手牌。"
 	},
 	{
-		"PROPER_NAME": "工具",
+		"PROPER_NAME": "销毁",
 		"NAMES": [
-			"工具"
+			"销毁"
 		],
 		"DESCRIPTION": "打出X次后卡牌从牌组中移除。"
 	},

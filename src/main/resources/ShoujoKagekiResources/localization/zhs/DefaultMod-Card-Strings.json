@@ -7,37 +7,37 @@
 		"NAME": "防御",
 		"DESCRIPTION": "获得 !B! 格挡 。"
 	},
-	"ShoujoKageki:ShoujoKagekiStrike": {
+	"ShoujoKageki:ThiefStrike": {
 		"NAME": "打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
 	"ShoujoKageki:ToolStrike": {
 		"NAME": "小利",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 工具 !ShoujoKageki:disposable!"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。{@@}{!ShoujoKageki:disposable!|@=|>0= NL 销毁 !ShoujoKageki:disposable!}"
 	},
 	"ShoujoKageki:Dagger": {
 		"NAME": "飞刀-攻击",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 工具 !ShoujoKageki:disposable!"
+		"DESCRIPTION": "造成 !D! 点伤害。{@@}{!ShoujoKageki:disposable!|@=|>0= NL 销毁 !ShoujoKageki:disposable!}"
 	},
 	"ShoujoKageki:Dagger2": {
 		"NAME": "飞刀-虚弱",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 虚弱。 NL 工具 !ShoujoKageki:disposable!"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 虚弱。 {@@}{!ShoujoKageki:disposable!|@=|>0= NL 销毁 !ShoujoKageki:disposable!}"
 	},
 	"ShoujoKageki:Dagger3": {
 		"NAME": "飞刀-易伤",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 易伤。 NL 工具 !ShoujoKageki:disposable!"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 易伤。"
 	},
 	"ShoujoKageki:Dagger4": {
 		"NAME": "飞刀-抽牌",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 工具 !ShoujoKageki:disposable!"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。"
 	},
 	"ShoujoKageki:Dagger5": {
 		"NAME": "飞刀-群体",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 工具 !ShoujoKageki:disposable!"
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
 	},
 	"ShoujoKageki:Dagger6": {
 		"NAME": "飞刀-格挡",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 工具 !ShoujoKageki:disposable!"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。"
 	},
 	"ShoujoKageki:DaggerRnd": {
 		"NAME": "割底兜",

@@ -15,7 +15,7 @@ public class ToolStrike extends ToolCard {
     public static final String ID = makeID(ToolStrike.class.getSimpleName());
 
     public ToolStrike() {
-        super(ID, 0, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY, 12);
+        super(ID, 0, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY, -1);
         baseDamage = 6;
     }
 
