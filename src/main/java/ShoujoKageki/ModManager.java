@@ -1,5 +1,6 @@
 package ShoujoKageki;
 
+import ShoujoKageki.events.RealTimeEvent;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
@@ -16,6 +17,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -190,6 +193,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.addCustomScreen(new BlackMarketScreen());
 
         // =============== /EVENTS/ =================
+        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
         logger.info("Done loading badge Image and mod options");
     }
 

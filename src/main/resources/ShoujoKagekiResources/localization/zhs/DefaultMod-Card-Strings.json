@@ -15,6 +15,10 @@
 		"NAME": "小利",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。{@@}{!ShoujoKageki:disposable!|@=|>0= NL 销毁 !ShoujoKageki:disposable!}"
 	},
+	"ShoujoKageki:RealTimeAttack": {
+		"NAME": "观众席是这么近的吗",
+		"DESCRIPTION": "造成 !D! 点伤害。（伤害数值随系统时间而变化）"
+	},
 	"ShoujoKageki:Dagger": {
 		"NAME": "飞刀-攻击",
 		"DESCRIPTION": "造成 !D! 点伤害。{@@}{!ShoujoKageki:disposable!|@=|>0= NL 销毁 !ShoujoKageki:disposable!}"
