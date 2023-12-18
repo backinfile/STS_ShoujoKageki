@@ -48,8 +48,8 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
 
         Log.logger.info("Creating the color " + CardColor_Karen.toString());
-        BaseMod.addColor(KarenCharacter.Enums.CardColor_Karen, RenderColor, RenderColor, RenderColor, RenderColor,
-                RenderColor, RenderColor, RenderColor, ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY,
+        BaseMod.addColor(KarenCharacter.Enums.CardColor_Karen, KarenRenderColor, KarenRenderColor, KarenRenderColor, KarenRenderColor,
+                KarenRenderColor, KarenRenderColor, KarenRenderColor, ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY,
                 ENERGY_ORB_DEFAULT_GRAY, ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT,
                 POWER_DEFAULT_GRAY_PORTRAIT, ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
         Log.logger.info("Done creating the color");

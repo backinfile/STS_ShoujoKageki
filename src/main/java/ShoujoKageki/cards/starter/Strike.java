@@ -10,10 +10,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ThiefStrike extends BaseCard {
-    public static final String ID = makeID(ThiefStrike.class.getSimpleName());
+public class Strike extends BaseCard {
+    public static final String ID = makeID(Strike.class.getSimpleName());
 
-    public ThiefStrike() {
+    public Strike() {
         super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
         baseDamage = 6;
 

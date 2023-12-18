@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class BagBottom extends BaseCard {
 
@@ -20,8 +22,8 @@ public class BagBottom extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));
-        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2)));
         addToBot(new PutDeckTopCardIntoBagAction());
     }
 

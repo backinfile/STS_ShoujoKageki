@@ -43,5 +43,5 @@ public class Res {
 
     // Colors (RGB)
     // Character Color
-    public static final Color RenderColor = CardHelper.getColor(219.0f, 94.0f, 104.0f);
+    public static final Color KarenRenderColor = CardHelper.getColor(219.0f, 94.0f, 104.0f);
 }

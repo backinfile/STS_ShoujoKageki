@@ -4,7 +4,7 @@ import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.ModManager;
 import ShoujoKageki.Res;
-import ShoujoKageki.cards.starter.ThiefStrike;
+import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.DeckTopRelic;
 import basemod.animations.SpineAnimation;
@@ -148,8 +148,8 @@ public class KarenCharacter extends BasePlayer {
         ArrayList<String> retVal = new ArrayList<>();
         Log.logger.info("Begin loading starter Deck Strings");
         // TODO
-        retVal.add(ThiefStrike.ID);
-        retVal.add(ThiefStrike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
 //        retVal.add(ThiefStrike.ID);
 //        retVal.add(ThiefStrike.ID);
 //        retVal.add(Defend.ID);
@@ -200,7 +200,7 @@ public class KarenCharacter extends BasePlayer {
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return Res.RenderColor;
+        return Res.KarenRenderColor;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -219,7 +219,7 @@ public class KarenCharacter extends BasePlayer {
     // Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new ThiefStrike();
+        return new Strike();
     }
 
     // The class name as it appears next to your player name in-game
@@ -239,14 +239,14 @@ public class KarenCharacter extends BasePlayer {
     // run history.
     @Override
     public Color getCardRenderColor() {
-        return Res.RenderColor;
+        return Res.KarenRenderColor;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return Res.RenderColor;
+        return Res.KarenRenderColor;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects
