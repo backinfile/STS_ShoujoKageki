@@ -1,4 +1,4 @@
-package ShoujoKageki.cards.other;
+package ShoujoKageki.cards.spec;
 
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
@@ -16,6 +16,7 @@ public class RealTimeAttack extends BaseCard {
     public RealTimeAttack() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         baseDamage = 0;
+        this.color = CardColor.COLORLESS;
     }
 
     @Override

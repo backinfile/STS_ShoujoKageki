@@ -6,11 +6,11 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.PutHandCardIntoBagAction;
 import ShoujoKageki.cards.BaseCard;
 
-public class BagUp extends BaseCard {
+public class ExchangeFate extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(BagUp.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(ExchangeFate.class.getSimpleName());
 
-    public BagUp() {
+    public ExchangeFate() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
 //        exhaust = true;
     }

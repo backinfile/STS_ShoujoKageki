@@ -6,16 +6,14 @@ import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class BagBottom extends BaseCard {
+public class We extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(BagBottom.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(We.class.getSimpleName());
 
-    public BagBottom() {
+    public We() {
         super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         magicNumber = baseMagicNumber = 2;
     }

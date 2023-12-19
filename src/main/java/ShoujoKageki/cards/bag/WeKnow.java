@@ -9,10 +9,10 @@ import ShoujoKageki.cards.patch.BagField;
 
 import static ShoujoKageki.ModInfo.makeID;
 
-public class BagDefend extends BaseCard {
-    public static final String ID = makeID(BagDefend.class.getSimpleName());
+public class WeKnow extends BaseCard {
+    public static final String ID = makeID(WeKnow.class.getSimpleName());
 
-    public BagDefend() {
+    public WeKnow() {
         super(ID, 4, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = 12;
     }

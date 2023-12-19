@@ -9,11 +9,11 @@ import ShoujoKageki.actions.TakeCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patch.BagField;
 
-public class BagDown extends BaseCard {
+public class ToTheStage extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(BagDown.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(ToTheStage.class.getSimpleName());
 
-    public BagDown() {
+    public ToTheStage() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
     }
 

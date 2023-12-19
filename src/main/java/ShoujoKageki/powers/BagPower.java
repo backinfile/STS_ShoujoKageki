@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import ShoujoKageki.actions.TakeCardFromBagAction;
-import ShoujoKageki.cards.bag.BagEnergy;
+import ShoujoKageki.cards.bag.Fate;
 import ShoujoKageki.cards.patch.BagField;
 import ShoujoKageki.util.Utils2;
 
@@ -56,7 +56,7 @@ public class BagPower extends BasePower {
 
         CardGroup bag = BagField.bag.get(AbstractDungeon.player);
         for (AbstractCard card : bag.group) {
-            if (card instanceof BagEnergy) {
+            if (card instanceof Fate) {
                 card.use(AbstractDungeon.player, null);
                 this.flashWithoutSound();
             }

@@ -12,10 +12,10 @@ import ShoujoKageki.cards.patch.BagField;
 
 import static ShoujoKageki.ModInfo.makeID;
 
-public class BagAttack extends BaseCard {
-    public static final String ID = makeID(BagAttack.class.getSimpleName());
+public class NeverRetreat extends BaseCard {
+    public static final String ID = makeID(NeverRetreat.class.getSimpleName());
 
-    public BagAttack() {
+    public NeverRetreat() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 8;
     }

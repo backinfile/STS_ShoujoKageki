@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.reduceStrength;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -12,6 +13,7 @@ import ShoujoKageki.cards.BaseCard;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class ReduceStrength2 extends BaseCard {
     public static final String ID = makeID(ReduceStrength2.class.getSimpleName());
 

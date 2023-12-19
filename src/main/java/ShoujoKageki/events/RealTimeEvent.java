@@ -1,23 +1,13 @@
 package ShoujoKageki.events;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.cards.other.RealTimeAttack;
-import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import ShoujoKageki.cards.spec.RealTimeAttack;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 

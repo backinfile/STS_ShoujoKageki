@@ -1,24 +1,25 @@
 package ShoujoKageki.cards.bag;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.PutHandCardIntoBagAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.powers.BagDefendPower;
 
-public class BagPowerDefend extends BaseCard {
+public class OurPromise extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(BagPowerDefend.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(OurPromise.class.getSimpleName());
 
-    public BagPowerDefend() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
-        baseMagicNumber = magicNumber = 1;
+    public OurPromise() {
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new BagDefendPower(magicNumber)));
+        addToBot(new DrawCardAction(p, magicNumber));
+        addToBot(new PutHandCardIntoBagAction(p, 2));
     }
 
     @Override

@@ -8,12 +8,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 
-public class BagEnergy extends BaseCard {
+public class Fate extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(BagEnergy.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(Fate.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public BagEnergy() {
+    public Fate() {
         super(ID, -2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         baseMagicNumber = magicNumber = 1;
     }
