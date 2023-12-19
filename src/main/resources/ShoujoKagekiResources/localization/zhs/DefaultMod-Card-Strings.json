@@ -13,7 +13,7 @@
 	},
 	"ShoujoKageki:ToolStrike": {
 		"NAME": "舞步",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。{@@} NL 闪耀 {!ShoujoKageki:disposable!|@=|>0=!ShoujoKageki:disposable!}"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。"
 	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",

@@ -14,6 +14,13 @@
 		"DESCRIPTION": "打出X次后卡牌从牌组中移除。"
 	},
 	{
+		"PROPER_NAME": "永远闪耀",
+		"NAMES": [
+			"永远闪耀"
+		],
+		"DESCRIPTION": "打出后不再从牌组中移除。"
+	},
+	{
 		"PROPER_NAME": "熟练度",
 		"NAMES": [
 			"熟练度"

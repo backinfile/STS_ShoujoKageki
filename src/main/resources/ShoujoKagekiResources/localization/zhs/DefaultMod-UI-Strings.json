@@ -35,7 +35,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:DisposableKeyword": {
-    "TEXT": ["{@@}{!ShoujoKageki:disposable!|@=|>0= NL 销毁 !ShoujoKageki:disposable!}"],
+    "TEXT": ["{@@} NL {!ShoujoKageki:disposable!|@=永远闪耀|>0= 闪耀 !ShoujoKageki:disposable!}"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   }
