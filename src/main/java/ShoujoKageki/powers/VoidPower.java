@@ -17,6 +17,6 @@ public class VoidPower extends BasePower {
     public VoidPower() {
         super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, 0);
 
-        // TODO DrawCardAction FastDrawCardAction DeckTopViewRelic CommonAttack.predict
+        // TODO DrawCardAction FastDrawCardAction DeckTopViewRelic CommonAttack.predict DrawCardAction.drawn
     }
 }
