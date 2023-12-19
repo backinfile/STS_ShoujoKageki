@@ -14,6 +14,16 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:ShineOption": {
+    "TEXT": ["闪耀凝固", "选择一张具有闪耀的卡牌，使其闪耀凝固。"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:CampfireShineEffect": {
+    "TEXT": ["选择一张凝固闪耀"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:BlackMarketScreen": {
     "TEXT": ["返回", "exchange something"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],

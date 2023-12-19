@@ -5,14 +5,17 @@ import ShoujoKageki.actions.PutHandCardIntoBagAction;
 import ShoujoKageki.actions.ReproduceAction;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Reproduce extends BaseCard {
 
     public static final String ID = ModInfo.makeID(Reproduce.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public Reproduce() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
 //        exhaust = true;
         magicNumber = baseMagicNumber = 2;
     }
@@ -26,7 +29,8 @@ public class Reproduce extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            selfRetain = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

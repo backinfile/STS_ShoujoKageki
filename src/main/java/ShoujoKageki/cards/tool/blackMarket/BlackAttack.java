@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.tool.blackMarket;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,6 +13,7 @@ import ShoujoKageki.cards.tool.BlackToolCard;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class BlackAttack extends BlackToolCard {
     public static final String ID = makeID(BlackAttack.class.getSimpleName());
 

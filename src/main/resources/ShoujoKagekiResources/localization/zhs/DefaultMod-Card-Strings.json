@@ -13,7 +13,7 @@
 	},
 	"ShoujoKageki:ToolStrike": {
 		"NAME": "舞步",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。{@@}{!ShoujoKageki:disposable!|@=|>0= NL 闪耀 !ShoujoKageki:disposable!}"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。{@@} NL 闪耀 {!ShoujoKageki:disposable!|@=|>0=!ShoujoKageki:disposable!}"
 	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
@@ -61,7 +61,8 @@
 	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",
-		"DESCRIPTION": "消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。"
+		"DESCRIPTION": "消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。",
+		"UPGRADE_DESCRIPTION": "保留 NL 消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。"
 	},
 	"ShoujoKageki:Fate": {
 		"NAME": "约定",

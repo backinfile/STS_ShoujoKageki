@@ -24,9 +24,9 @@ public abstract class ToolCard extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeSameInstanceOf() {
-        AbstractCard abstractCard = super.makeSameInstanceOf();
-        DisposableField.DisposableFields.disposable.set(abstractCard, this.misc);
-        return abstractCard;
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard card = super.makeStatEquivalentCopy();
+        DisposableField.DisposableFields.disposable.set(card, this.misc);
+        return card;
     }
 }
