@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.patch.BagField;
+import ShoujoKageki.cards.patches.BagField;
 
 import static ShoujoKageki.ModInfo.makeID;
 

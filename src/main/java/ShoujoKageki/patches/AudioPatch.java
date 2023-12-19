@@ -1,12 +1,9 @@
 package ShoujoKageki.patches;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.cards.patch.BagField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.audio.Sfx;
 import com.megacrit.cardcrawl.audio.SoundMaster;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 import java.util.HashMap;
 

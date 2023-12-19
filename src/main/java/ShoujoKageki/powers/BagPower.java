@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import ShoujoKageki.actions.TakeCardFromBagAction;
 import ShoujoKageki.cards.bag.Fate;
-import ShoujoKageki.cards.patch.BagField;
+import ShoujoKageki.cards.patches.BagField;
 import ShoujoKageki.util.Utils2;
 
 import static ShoujoKageki.ModInfo.makeID;

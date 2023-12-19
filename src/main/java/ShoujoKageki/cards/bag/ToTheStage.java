@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.TakeCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.patch.BagField;
+import ShoujoKageki.cards.patches.BagField;
 
 public class ToTheStage extends BaseCard {
 

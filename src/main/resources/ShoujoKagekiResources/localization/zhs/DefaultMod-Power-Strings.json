@@ -14,9 +14,15 @@
 		]
 	},
 	"ShoujoKageki:ToolPower": {
-		"NAME": "熟练度",
+		"NAME": "闪耀",
 		"DESCRIPTIONS": [
 			"提高工具牌的效果。"
+		]
+	},
+	"ShoujoKageki:VoidPower": {
+		"NAME": "世界上最空虚的人",
+		"DESCRIPTIONS": [
+			"抽牌改为从 约定牌堆 中抽取。"
 		]
 	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {

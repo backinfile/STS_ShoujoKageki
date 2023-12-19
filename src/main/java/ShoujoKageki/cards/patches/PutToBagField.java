@@ -1,16 +1,18 @@
-package ShoujoKageki.cards.patch;
+package ShoujoKageki.cards.patches;
+
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 @SpirePatch(
-        clz = AbstractPlayer.class,
+        clz = AbstractCard.class,
         method = "<class>"
 )
-public class BagField {
-    public static SpireField<CardGroup> bag = new SpireField<>(() -> {
-        return new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+public class PutToBagField {
+    public static SpireField<Boolean> putToBag = new SpireField<>(() -> {
+        return false;
     });
 }

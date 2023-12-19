@@ -1,7 +1,7 @@
 {
 	"ShoujoKageki:We": {
 		"NAME": "我们一起",
-		"DESCRIPTION": "获得 !M! 点临时 力量。 NL 将牌库顶牌放入 约定牌堆。"
+		"DESCRIPTION": "获得 !M! 点临时 力量 。 NL 打出后进入 约定牌堆 。"
 	},
 	"ShoujoKageki:Defend": {
 		"NAME": "防御",
@@ -54,6 +54,10 @@
 	"ShoujoKageki:NeverRetreat": {
 		"NAME": "绝不退让",
 		"DESCRIPTION": "造成 !D! 伤害。如果 约定牌堆 中有牌，重复一次。"
+	},
+	"ShoujoKageki:Void": {
+		"NAME": "世界上最空虚的人",
+		"DESCRIPTION": "摧毁牌库，抽牌改为从 约定牌堆 中抽取。"
 	},
 	"ShoujoKageki:Fate": {
 		"NAME": "约定",

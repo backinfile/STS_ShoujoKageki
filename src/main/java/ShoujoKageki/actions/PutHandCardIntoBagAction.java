@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ShoujoKageki.cards.patch.BagField;
+import ShoujoKageki.cards.patches.BagField;
 import ShoujoKageki.powers.BagPower;
 
 import java.util.ArrayList;

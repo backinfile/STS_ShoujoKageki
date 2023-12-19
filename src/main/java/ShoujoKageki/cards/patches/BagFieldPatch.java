@@ -1,4 +1,4 @@
-package ShoujoKageki.cards.patch;
+package ShoujoKageki.cards.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.CardGroup;
