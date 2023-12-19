@@ -4,8 +4,10 @@ import ShoujoKageki.effects.DeckTopEffect;
 import ShoujoKageki.ui.DeckTopViewer;
 import ShoujoKageki.ModInfo;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+@AutoAdd.Ignore
 public class DeckTopRelic extends BaseRelic {
     public static final String RAW_ID = DeckTopRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);

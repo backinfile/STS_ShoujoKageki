@@ -24,7 +24,7 @@ public class DaggerRnd extends BaseCard {
             addToBot(new MakeTempCardInHandAction(Dagger.makeRndDagger(), 1, true));
         }
         for (int i = 0; i < magicNumber; i++) {
-            addToBot(new MakeTempCardInBagAction(Dagger.makeRndDagger(), 1, true));
+            addToBot(new MakeTempCardInBagAction(Dagger.makeRndDagger(), 1, true, false));
         }
     }
 

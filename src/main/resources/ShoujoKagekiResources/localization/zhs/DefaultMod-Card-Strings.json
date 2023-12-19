@@ -57,7 +57,11 @@
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",
-		"DESCRIPTION": "摧毁牌库，抽牌改为从 约定牌堆 中抽取。"
+		"DESCRIPTION": "墓地 NL 摧毁牌库，抽牌改为从 约定牌堆 中抽取。"
+	},
+	"ShoujoKageki:Reproduce": {
+		"NAME": "我，再生产",
+		"DESCRIPTION": "消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。"
 	},
 	"ShoujoKageki:Fate": {
 		"NAME": "约定",

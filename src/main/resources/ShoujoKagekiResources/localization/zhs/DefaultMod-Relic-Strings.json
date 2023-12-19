@@ -1,9 +1,9 @@
 {
-	"ShoujoKageki:DeckTopRelic": {
+	"ShoujoKageki:HairpinRelic": {
 		"NAME": "发夹",
 		"FLAVOR": "小时候与小光两人在东京塔附近的商店中买到的一对发夹中皇冠样式的一枚",
 		"DESCRIPTIONS": [
-			"可以看到牌库顶牌。每场战斗一次: 抽 #b1 张牌。"
+			"回合结束时， 约定牌堆 中每有 #b1 张牌，获得 #b1 格挡。"
 		]
 	},
 	"ShoujoKageki:BlackMarketRelic": {

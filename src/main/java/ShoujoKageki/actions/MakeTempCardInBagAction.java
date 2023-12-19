@@ -13,11 +13,15 @@ import ShoujoKageki.effects.ShowAndHoldCardThenEffect;
 
 import java.util.ArrayList;
 
+
+// TODO change to cardList
 public class MakeTempCardInBagAction extends AbstractGameAction {
     private final AbstractCard cardToMake;
     private final boolean autoPosition;
+    private final boolean fast;
 
-    public MakeTempCardInBagAction(AbstractCard card, int amount, boolean autoPosition) {
+    public MakeTempCardInBagAction(AbstractCard card, int amount, boolean autoPosition, boolean fast) {
+        this.fast = fast;
         UnlockTracker.markCardAsSeen(card.cardID);
         this.setValues(this.target, this.source, amount);
         this.actionType = ActionType.CARD_MANIPULATION;
@@ -44,6 +48,8 @@ public class MakeTempCardInBagAction extends AbstractGameAction {
             }
             addToTop(new MoveCardToBagAction(cards));
             addToTop(new WaitAction(ShowAndHoldCardThenEffect.DURATION));
+
+            if (fast) isDone = true;
         }
         tickDuration();
     }

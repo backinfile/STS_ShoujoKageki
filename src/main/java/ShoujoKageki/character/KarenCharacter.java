@@ -7,6 +7,7 @@ import ShoujoKageki.Res;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.DeckTopRelic;
+import ShoujoKageki.relics.HairpinRelic;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -165,7 +166,7 @@ public class KarenCharacter extends BasePlayer {
     // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(DeckTopRelic.ID);
+        retVal.add(HairpinRelic.ID);
         return retVal;
     }
 

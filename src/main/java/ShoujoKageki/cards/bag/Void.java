@@ -4,6 +4,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.DestroyAllCardInDrawPileAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.powers.VoidPower;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,6 +18,7 @@ public class Void extends BaseCard {
 
     public Void() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
+        GraveField.grave.set(this, true);
     }
 
     @Override
