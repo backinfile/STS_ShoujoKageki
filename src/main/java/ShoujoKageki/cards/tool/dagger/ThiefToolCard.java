@@ -1,6 +1,8 @@
-package ShoujoKageki.cards.tool;
+package ShoujoKageki.cards.tool.dagger;
 
-public abstract class ThiefToolCard extends ToolCard{
+import ShoujoKageki.cards.tool.ToolCard;
+
+public abstract class ThiefToolCard extends ToolCard {
     public ThiefToolCard(String id, int cost, CardType type, CardRarity rarity, CardTarget target, int disposableCnt) {
         super(id, cost, type, rarity, target, disposableCnt);
         this.color = CardColor.COLORLESS;

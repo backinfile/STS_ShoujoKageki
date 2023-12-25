@@ -35,6 +35,11 @@
 		"NAME": "我们很清楚",
 		"DESCRIPTION": "约定牌堆 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
 	},
+	"ShoujoKageki:Ready": {
+		"NAME": "准备完成",
+		"DESCRIPTION": "获得 !M! 点力量。 NL 抽 1 张牌。",
+		"UPGRADE_DESCRIPTION": "固有 NL 获得 !M! 点力量。 NL 抽 1 张牌。"
+	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
 		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"

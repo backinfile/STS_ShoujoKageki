@@ -2,17 +2,14 @@ package ShoujoKageki.campfireOption;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.effects.CampfireShineEffect;
-import ShoujoKageki.screen.BlackMarketScreen;
 import ShoujoKageki.util.TextureLoader;
 import ShoujoKageki.variables.patch.DisposableField;
-import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 
 public class ShineOption extends AbstractCampfireOption {
     private static final String RAW_ID = ShineOption.class.getSimpleName();
@@ -43,7 +40,7 @@ public class ShineOption extends AbstractCampfireOption {
     public static CardGroup getAllShineCards() {
         CardGroup cardGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-            if (DisposableField.DisposableFields.disposable.get(card) > 0) {
+            if (DisposableField.disposable.get(card) > 0) {
                 cardGroup.group.add(card);
             }
         }

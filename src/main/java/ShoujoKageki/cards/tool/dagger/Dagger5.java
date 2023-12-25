@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import ShoujoKageki.cards.tool.ThiefToolCard;
 
 import static ShoujoKageki.ModInfo.makeID;
 

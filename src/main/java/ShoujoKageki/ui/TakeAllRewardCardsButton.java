@@ -14,15 +14,12 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
-import ShoujoKageki.ModInfo;
-import ShoujoKageki.relics.TakeAllRewardCardsRelic;
+import ShoujoKageki.relics.BookMarchRelic;
 
 public class TakeAllRewardCardsButton {
-    private static final UIStrings uiStrings;
     public static final String TEXT;
     private static final int W = 512;
     private static final int H = 256;
@@ -86,10 +83,10 @@ public class TakeAllRewardCardsButton {
     }
 
     public void onClick() {
-        for(AbstractCard card: this.rItem.cards) {
+        for (AbstractCard card : this.rItem.cards) {
             AbstractDungeon.effectsQueue.add(new FastCardObtainEffect(card, card.current_x, card.current_y));
         }
-        AbstractDungeon.player.getRelic(TakeAllRewardCardsRelic.ID).onTrigger();
+        AbstractDungeon.player.getRelic(BookMarchRelic.ID).onTrigger();
         AbstractDungeon.combatRewardScreen.rewards.remove(this.rItem);
     }
 
@@ -143,8 +140,7 @@ public class TakeAllRewardCardsButton {
     }
 
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(TakeAllRewardCardsButton.class.getSimpleName()));
-        TEXT = uiStrings.TEXT[0];
+        TEXT = BookMarchRelic.STRINGS.DESCRIPTIONS[1];
         OFFSET_X = 165.0F;
         SHOW_X = (float) Settings.WIDTH / 2.0F;
         HIDE_X = (float) Settings.WIDTH / 2.0F;

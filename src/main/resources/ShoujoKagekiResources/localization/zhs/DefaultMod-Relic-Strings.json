@@ -15,17 +15,25 @@
 	},
 	"ShoujoKageki:BagDiscoverRelic": {
 		"NAME": "灵巧手指",
-		"FLAVOR": "灵巧手指",
+		"FLAVOR": "",
 		"DESCRIPTIONS": [
 			"从 口袋 中取回卡牌时，从5张牌中选择。"
 		]
 	},
-	"ShoujoKageki:TakeAllRewardCardsRelic": {
-		"NAME": "手快全拿",
-		"FLAVOR": "手快全拿",
+	"ShoujoKageki:BookMarchRelic": {
+		"NAME": "书签",
+		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"在卡牌奖励画面，可以获取所有卡牌。（仅一次，击杀 #y精英 敌人后重置）",
-			"手快全拿"
+			"在选奖励牌时，可以获取全部卡牌并使此遗物失效。 NL 击杀 #y精英 敌人后重置。",
+			"获取全部"
+		]
+	},
+	"ShoujoKageki:CookieRelic": {
+		"NAME": "饼干",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"拾起时，随机获得 普通 ，罕见 ，稀有 闪耀 牌各一张。",
+			"获取卡牌"
 		]
 	},
 	"ShoujoKageki:DrawExtraRelic": {

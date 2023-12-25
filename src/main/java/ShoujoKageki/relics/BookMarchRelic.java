@@ -1,14 +1,17 @@
 package ShoujoKageki.relics;
 
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import ShoujoKageki.ModInfo;
 
-public class TakeAllRewardCardsRelic extends BaseRelic {
-    public static final String RAW_ID = TakeAllRewardCardsRelic.class.getSimpleName();
+public class BookMarchRelic extends BaseRelic {
+    public static final String RAW_ID = BookMarchRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);
+    public static final RelicStrings STRINGS = CardCrawlGame.languagePack.getRelicStrings(ID);
 
-    public TakeAllRewardCardsRelic() {
+    public BookMarchRelic() {
         super(ID, RAW_ID, RelicTier.UNCOMMON);
     }
 
@@ -18,6 +21,9 @@ public class TakeAllRewardCardsRelic extends BaseRelic {
         if (counter == -2) {
             this.grayscale = true;
             this.usedUp = true;
+        } else {
+            this.grayscale = false;
+            this.usedUp = false;
         }
     }
 
@@ -32,8 +38,6 @@ public class TakeAllRewardCardsRelic extends BaseRelic {
             if (this.counter == -2) {
                 this.flash();
                 this.setCounter(-1);
-                this.grayscale = false;
-                this.usedUp = false;
             }
         }
     }

@@ -25,14 +25,14 @@ public abstract class ToolCard extends BaseCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        DisposableField.DisposableFields.disposable.set(this, this.misc);
+        DisposableField.disposable.set(this, this.misc);
         initializeDescription();
     }
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard card = super.makeStatEquivalentCopy();
-        DisposableField.DisposableFields.disposable.set(card, this.misc);
+        DisposableField.disposable.set(card, this.misc);
         return card;
     }
 

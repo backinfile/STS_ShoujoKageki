@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 import com.megacrit.cardcrawl.ui.buttons.SingingBowlButton;
 import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
 import ShoujoKageki.Log;
-import ShoujoKageki.relics.TakeAllRewardCardsRelic;
+import ShoujoKageki.relics.BookMarchRelic;
 import ShoujoKageki.ui.TakeAllRewardCardsButton;
 
 import java.lang.reflect.Field;
@@ -65,7 +65,7 @@ public class TakeAllRewardCardsPatch {
     }
 
     private static void fixTakeAllButtonsShow(CardRewardScreen instance) {
-        AbstractRelic takeAllCardsRelic = AbstractDungeon.player.getRelic(TakeAllRewardCardsRelic.ID);
+        AbstractRelic takeAllCardsRelic = AbstractDungeon.player.getRelic(BookMarchRelic.ID);
         if (takeAllCardsRelic == null || takeAllCardsRelic.usedUp) {
             return;
         }

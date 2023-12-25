@@ -12,35 +12,46 @@ public class DisposableVariable extends DynamicVariable {
     public DisposableVariable() {
     }
 
+
     public String key() {
         return ModInfo.makeID("disposable");
     }
 
     public boolean isModified(AbstractCard card) {
-        return !Objects.equals(DisposableField.DisposableFields.baseDisposable.get(card), DisposableField.DisposableFields.disposable.get(card));
+        return !Objects.equals(DisposableField.baseDisposable.get(card), DisposableField.disposable.get(card));
     }
 
     public int value(AbstractCard card) {
-        return (Integer) DisposableField.DisposableFields.disposable.get(card);
+        return (Integer) DisposableField.disposable.get(card);
     }
 
     public int baseValue(AbstractCard card) {
-        return (Integer) DisposableField.DisposableFields.baseDisposable.get(card);
+        return (Integer) DisposableField.baseDisposable.get(card);
     }
 
     public boolean upgraded(AbstractCard card) {
-        return (Boolean) DisposableField.DisposableFields.isDisposableUpgraded.get(card);
+        return false;
     }
 
     public static void setBaseValue(AbstractCard card, int amount) {
         card.misc = amount;
-        DisposableField.DisposableFields.baseDisposable.set(card, amount);
-        DisposableField.DisposableFields.disposable.set(card, amount);
+        DisposableField.baseDisposable.set(card, amount);
+        DisposableField.disposable.set(card, amount);
         card.initializeDescription();
     }
 
-    public static void upgrade(AbstractCard card, int amount) {
-        DisposableField.DisposableFields.isDisposableUpgraded.set(card, true);
-        setBaseValue(card, (Integer) DisposableField.DisposableFields.baseDisposable.get(card) + amount);
+    public static void setValue(AbstractCard card, int amount) {
+        card.misc = amount;
+        DisposableField.disposable.set(card, amount);
+        card.initializeDescription();
     }
+
+    public static int getValue(AbstractCard card) {
+        return DisposableField.disposable.get(card);
+    }
+
+    public static boolean isDisposableCard(AbstractCard card) {
+        return DisposableField.baseDisposable.get(card) != 0;
+    }
+
 }
