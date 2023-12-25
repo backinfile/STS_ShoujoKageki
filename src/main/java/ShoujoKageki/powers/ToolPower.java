@@ -1,12 +1,12 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ShoujoKageki.cards.tool.ToolCard;
 
 import static ShoujoKageki.ModInfo.makeID;
 
@@ -23,7 +23,7 @@ public class ToolPower extends BasePower {
     @Override
     public float atDamageFinalGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
         float d = super.atDamageFinalGive(damage, type, card);
-        if (card instanceof ToolCard) {
+        if (DisposableVariable.isDisposableCard(card)) {
             return d + amount;
         }
         return d;
@@ -32,7 +32,7 @@ public class ToolPower extends BasePower {
     @Override
     public float modifyBlock(float blockAmount, AbstractCard card) {
         float b = super.modifyBlock(blockAmount, card);
-        if (card instanceof ToolCard) {
+        if (DisposableVariable.isDisposableCard(card)) {
             return b + amount;
         }
         return b;

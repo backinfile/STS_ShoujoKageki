@@ -9,11 +9,11 @@ import ShoujoKageki.actions.TakeCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.BagField;
 
-public class ToTheStage extends BaseCard {
+public class MeetAgain extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(ToTheStage.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(MeetAgain.class.getSimpleName());
 
-    public ToTheStage() {
+    public MeetAgain() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
     }
 

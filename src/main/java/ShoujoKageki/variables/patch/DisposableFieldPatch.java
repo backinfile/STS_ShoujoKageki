@@ -1,18 +1,19 @@
 package ShoujoKageki.variables.patch;
 
-import ShoujoKageki.cards.tool.ToolCard;
 import ShoujoKageki.variables.DisposableVariable;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import javassist.CtBehavior;
 
 
 public class DisposableFieldPatch {
+
+
     @SpirePatch(
             clz = AbstractPlayer.class,
             method = "useCard"
@@ -42,21 +43,26 @@ public class DisposableFieldPatch {
 
 
     @SpirePatch(
-            clz = CardLibrary.class,
-            method = "getCopy",
-            paramtypez = {String.class, int.class, int.class}
+            clz = AbstractCard.class,
+            method = "makeStatEquivalentCopy"
     )
-    public static class CopyField {
-        public static AbstractCard Postfix(AbstractCard __result) {
-            if (__result != null) {
-                if (__result.misc != 0) {
-                    if (__result instanceof ToolCard) {
-                        DisposableField.disposable.set(__result, __result.misc);
-                        __result.initializeDescription();
-                    }
-                }
+    public static class CardModifierStatEquivalentCopyModifiers {
+        @SpireInsertPatch(
+                locator = Locator.class,
+                localvars = {"card"}
+        )
+        public static void Insert(AbstractCard __instance, AbstractCard card) {
+            if (DisposableVariable.isDisposableCard(__instance)) {
+                DisposableVariable.setValue(card, DisposableVariable.getValue(__instance));
             }
-            return __result;
+        }
+
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "name");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
         }
     }
 }

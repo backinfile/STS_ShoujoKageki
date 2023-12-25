@@ -14,6 +14,10 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class BaseCard extends AbstractDefaultCard {
 
+    public static final int DEFAULT_SHINE_CNT = 9;
+    public static final int MEDIUM_SHINE_CNT = 6;
+    public static final int LOW_SHINE_CNT = 3;
+
     private long previewCardsListLastChangeTime = -1;
     private int previewCardsListIndex = 0;
     private List<AbstractCard> cardsToPreviewList = null;

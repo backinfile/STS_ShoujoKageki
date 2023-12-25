@@ -11,9 +11,17 @@
 		"NAME": "打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
-	"ShoujoKageki:ToolStrike": {
-		"NAME": "舞步",
+	"ShoujoKageki:ShineStrike": {
+		"NAME": "闪耀打击",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。"
+	},
+	"ShoujoKageki:ChargeStrike": {
+		"NAME": "蓄力打击",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 本回合目标失去 !M! 点 力量 。"
+	},
+	"ShoujoKageki:SwordUp": {
+		"NAME": "上挑",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 和 易伤 。"
 	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
@@ -27,18 +35,21 @@
 		"NAME": "交换命运之日",
 		"DESCRIPTION": "手牌与 约定牌堆 中的牌交换。"
 	},
-	"ShoujoKageki:ToTheStage": {
-		"NAME": "迈向那个舞台",
+	"ShoujoKageki:MeetAgain": {
+		"NAME": "重逢",
 		"DESCRIPTION": "从 约定牌堆 取回两张牌，然后获得 [E] [E] 。"
 	},
 	"ShoujoKageki:WeKnow": {
 		"NAME": "我们很清楚",
 		"DESCRIPTION": "约定牌堆 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
 	},
+	"ShoujoKageki:ToTheStage": {
+		"NAME": "迈向那个舞台",
+		"DESCRIPTION": "抽 !M! 张牌 NL 消耗"
+	},
 	"ShoujoKageki:Ready": {
 		"NAME": "准备完成",
-		"DESCRIPTION": "获得 !M! 点力量。 NL 抽 1 张牌。",
-		"UPGRADE_DESCRIPTION": "固有 NL 获得 !M! 点力量。 NL 抽 1 张牌。"
+		"DESCRIPTION": "固有 NL 获得 !M! 点 力量 。 NL 抽 1 张牌。"
 	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",

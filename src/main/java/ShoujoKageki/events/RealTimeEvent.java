@@ -1,7 +1,7 @@
 package ShoujoKageki.events;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.cards.spec.RealTimeAttack;
+import ShoujoKageki.cards.shine.RealTimeAttack;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;

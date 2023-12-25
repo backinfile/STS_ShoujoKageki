@@ -1,6 +1,7 @@
-package ShoujoKageki.cards.spec;
+package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -14,15 +15,14 @@ public class RealTimeAttack extends BaseCard {
     public static final String ID = makeID(RealTimeAttack.class.getSimpleName());
 
     public RealTimeAttack() {
-        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 0;
-        this.color = CardColor.COLORLESS;
+        DisposableVariable.setBaseValueAndDescription(this, MEDIUM_SHINE_CNT);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override

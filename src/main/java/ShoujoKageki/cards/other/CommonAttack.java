@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.other;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -14,6 +15,7 @@ import ShoujoKageki.relics.DeckTopRelic;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class CommonAttack extends BaseCard {
     public static final String ID = makeID(CommonAttack.class.getSimpleName());
 

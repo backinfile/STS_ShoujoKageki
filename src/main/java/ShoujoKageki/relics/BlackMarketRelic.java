@@ -1,11 +1,13 @@
 package ShoujoKageki.relics;
 
+import ShoujoKageki.variables.DisposableVariable;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.cards.tool.BlackToolCard;
 
+@AutoAdd.Ignore
 public class BlackMarketRelic extends BaseRelic {
     public static final String RAW_ID = BlackMarketRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);
@@ -17,7 +19,7 @@ public class BlackMarketRelic extends BaseRelic {
     @Override
     public void onCardDraw(AbstractCard drawnCard) {
         super.onCardDraw(drawnCard);
-        if (drawnCard instanceof BlackToolCard) {
+        if (DisposableVariable.isDisposableCard(drawnCard)) {
             addToBot(new DrawCardAction(AbstractDungeon.player, 1));
         }
     }

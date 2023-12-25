@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.tool;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -7,6 +8,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.powers.ToolPower;
 
+@AutoAdd.Ignore
 public class ToolPowerPower extends BaseCard {
 
     public static final String ID = ModInfo.makeID(ToolPowerPower.class.getSimpleName());

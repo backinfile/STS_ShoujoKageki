@@ -9,10 +9,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
         method = "<class>"
 )
 public class DisposableField {
-    public static SpireField<Integer> disposable = new SpireField<>(() -> {
-        return -1;
-    });
-    public static SpireField<Integer> baseDisposable = new SpireField<>(() -> {
-        return -1;
-    });
+    public static SpireField<Integer> disposable = new SpireField<>(() -> 0);
+    public static SpireField<Integer> baseDisposable = new SpireField<>(() -> 0);
 }

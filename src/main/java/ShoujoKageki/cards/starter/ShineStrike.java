@@ -1,22 +1,25 @@
 package ShoujoKageki.cards.starter;
 
+import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import ShoujoKageki.cards.tool.ToolCard;
 
 import static ShoujoKageki.ModInfo.makeID;
 
-public class ToolStrike extends ToolCard {
+public class ShineStrike extends BaseCard {
 
-    public static final String ID = makeID(ToolStrike.class.getSimpleName());
+    public static final String ID = makeID(ShineStrike.class.getSimpleName());
 
-    public ToolStrike() {
-        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY, 12);
-        baseDamage = 6;
+    public ShineStrike() {
+        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        baseDamage = 9;
+        DisposableVariable.setBaseValueAndDescription(this, DEFAULT_SHINE_CNT);
+        tags.add(CardTags.STRIKE);
     }
 
     @Override

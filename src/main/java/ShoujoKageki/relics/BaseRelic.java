@@ -10,4 +10,10 @@ public abstract class BaseRelic extends CustomRelic {
                 TextureLoader.getTexture(ModInfo.makeRelicPath(rawId + ".png")),
                 tier, LandingSound.CLINK);
     }
+
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
 }
