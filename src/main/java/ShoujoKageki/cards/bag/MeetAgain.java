@@ -31,6 +31,13 @@ public class MeetAgain extends BaseCard {
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+        if (BagField.bag.get(p).size() < 2) return false;
+        return super.canUse(p, m);
+    }
+
+    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();

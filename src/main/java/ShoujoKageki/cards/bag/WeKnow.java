@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.bag;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,6 +10,7 @@ import ShoujoKageki.cards.patches.BagField;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class WeKnow extends BaseCard {
     public static final String ID = makeID(WeKnow.class.getSimpleName());
 

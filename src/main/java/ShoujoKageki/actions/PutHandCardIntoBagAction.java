@@ -59,7 +59,7 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
-            AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, true, true);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, false, false);
             AbstractDungeon.player.hand.applyPowers();
             this.tickDuration();
             return;

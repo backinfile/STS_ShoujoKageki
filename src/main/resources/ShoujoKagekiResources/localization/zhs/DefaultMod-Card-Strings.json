@@ -25,19 +25,26 @@
 	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
-		"DESCRIPTION": "造成 !D! 点伤害。（伤害数值随系统时间而变化）"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL (伤害数值随系统时间而变化)"
 	},
 	"ShoujoKageki:OurPromise": {
 		"NAME": "我们的约定",
 		"DESCRIPTION": "抽 !M! 张牌 NL 选择至多2张手牌放入 约定牌堆"
 	},
 	"ShoujoKageki:ExchangeFate": {
-		"NAME": "交换命运之日",
+		"NAME": "命运交换之日",
 		"DESCRIPTION": "手牌与 约定牌堆 中的牌交换。"
 	},
 	"ShoujoKageki:MeetAgain": {
 		"NAME": "重逢",
-		"DESCRIPTION": "从 约定牌堆 取回两张牌，然后获得 [E] [E] 。"
+		"DESCRIPTION": "从 约定牌堆 取回两张牌，然后获得 [E] [E] 。",
+		"EXTENDED_DESCRIPTION": [
+		  "约定牌堆 中卡牌数量不足。"
+		]
+	},
+	"ShoujoKageki:Dance": {
+		"NAME": "舞动",
+		"DESCRIPTION": "抽 !M! 张牌，获得 [E] [E] 。"
 	},
 	"ShoujoKageki:WeKnow": {
 		"NAME": "我们很清楚",
@@ -45,11 +52,15 @@
 	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
-		"DESCRIPTION": "抽 !M! 张牌 NL 消耗"
+		"DESCRIPTION": "抽 !M! 张牌 NL 抹除"
 	},
 	"ShoujoKageki:Ready": {
 		"NAME": "准备完成",
 		"DESCRIPTION": "固有 NL 获得 !M! 点 力量 。 NL 抽 1 张牌。"
+	},
+	"ShoujoKageki:Debut": {
+		"NAME": "出场",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害三次。"
 	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
@@ -81,28 +92,12 @@
 		"UPGRADE_DESCRIPTION": "保留 NL 消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。"
 	},
 	"ShoujoKageki:Fate": {
-		"NAME": "约定",
+		"NAME": "命运",
 		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",
 		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E] [E]",
 		"EXTENDED_DESCRIPTION": [
 		  "这张牌不能被打出。"
 		]
-	},
-	"ShoujoKageki:ReduceStrength": {
-		"NAME": "偷袭",
-		"DESCRIPTION": "造成 !D! 点伤害。 削减 其 !M! 点力量。"
-	},
-	"ShoujoKageki:ReduceStrength2": {
-		"NAME": "组团偷袭",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 削减 其 !M! 点力量。"
-	},
-	"ShoujoKageki:ReduceStrength3": {
-		"NAME": "暗中窥视",
-		"DESCRIPTION": "敌人被 削减 的 力量 每回合至多恢复 !M! 点。"
-	},
-	"ShoujoKageki:ToolPowerPower": {
-		"NAME": "惯犯",
-		"DESCRIPTION": "获得 !M! 点 熟练度"
 	},
 	"fortuneTeller:SoulVision": {
 		"NAME": "灵视",
@@ -111,33 +106,5 @@
 		"EXTENDED_DESCRIPTION": [
 			"不能被打出。"
 		]
-	},
-	"ShoujoKageki:Dagger": {
-		"NAME": "飞刀-攻击",
-		"DESCRIPTION": "造成 !D! 点伤害。{@@}{!ShoujoKageki:disposable!|@=|>0= NL 闪耀 !ShoujoKageki:disposable!}"
-	},
-	"ShoujoKageki:Dagger2": {
-		"NAME": "飞刀-虚弱",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 虚弱。 {@@}{!ShoujoKageki:disposable!|@=|>0= NL 闪耀 !ShoujoKageki:disposable!}"
-	},
-	"ShoujoKageki:Dagger3": {
-		"NAME": "飞刀-易伤",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予1层 易伤。"
-	},
-	"ShoujoKageki:Dagger4": {
-		"NAME": "飞刀-抽牌",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。"
-	},
-	"ShoujoKageki:Dagger5": {
-		"NAME": "飞刀-群体",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
-	},
-	"ShoujoKageki:Dagger6": {
-		"NAME": "飞刀-格挡",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。"
-	},
-	"ShoujoKageki:DaggerRnd": {
-		"NAME": "割底兜",
-		"DESCRIPTION": "在手牌和 约定牌堆 中分别加入 !M! 张随机飞刀。"
 	}
 }

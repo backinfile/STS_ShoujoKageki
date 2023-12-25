@@ -59,6 +59,15 @@ public class DisposableVariable extends DynamicVariable { // Shine
         return DisposableField.disposable.get(card);
     }
 
+    public static void reset(AbstractCard card) {
+        int baseValue = DisposableField.baseDisposable.get(card);
+        if (baseValue == 0) return;
+        int curValue = DisposableField.disposable.get(card);
+        if (curValue < baseValue) {
+            setValue(card, baseValue);
+        }
+    }
+
     public static boolean isDisposableCard(AbstractCard card) {
         return DisposableField.baseDisposable.get(card) != 0;
     }

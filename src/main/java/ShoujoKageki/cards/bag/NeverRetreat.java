@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.bag;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +13,7 @@ import ShoujoKageki.cards.patches.BagField;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class NeverRetreat extends BaseCard {
     public static final String ID = makeID(NeverRetreat.class.getSimpleName());
 

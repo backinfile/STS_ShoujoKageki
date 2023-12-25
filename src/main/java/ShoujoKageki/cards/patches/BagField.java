@@ -10,7 +10,5 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
         method = "<class>"
 )
 public class BagField {
-    public static SpireField<CardGroup> bag = new SpireField<>(() -> {
-        return new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-    });
+    public static SpireField<CardGroup> bag = new SpireField<>(() -> null);
 }

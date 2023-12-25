@@ -13,7 +13,7 @@ public class OurPromise extends BaseCard {
 
     public OurPromise() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 3;
     }
 
     @Override
