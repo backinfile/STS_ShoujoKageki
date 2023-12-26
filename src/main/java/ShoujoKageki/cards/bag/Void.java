@@ -17,7 +17,7 @@ public class Void extends BaseCard {
     public static final String ID = ModInfo.makeID(Void.class.getSimpleName());
 
     public Void() {
-        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
         GraveField.grave.set(this, true);
     }
 
@@ -31,7 +31,7 @@ public class Void extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(2);
+            upgradeBaseCost(1);
         }
     }
 }

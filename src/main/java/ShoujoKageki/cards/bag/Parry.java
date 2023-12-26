@@ -22,6 +22,7 @@ public class Parry extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
+        resetBlock();
     }
 
     public void triggerOnPlayerDrawOrDiscard() {

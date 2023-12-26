@@ -13,7 +13,7 @@
 	},
 	"ShoujoKageki:TowerOfPromise": {
 		"NAME": "约定之塔",
-		"DESCRIPTION": "保留 NL 从 约定牌堆 中取回所有牌"
+		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中取回所有牌"
 	},
 	"ShoujoKageki:ShineStrike": {
 		"NAME": "闪耀打击",
@@ -27,9 +27,25 @@
 		"NAME": "蓄力打击",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 本回合目标失去 !M! 点 力量 。"
 	},
+	"ShoujoKageki:TwistingStrike": {
+		"NAME": "扭转打击",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 将 *耀眼 放入 约定牌堆 。"
+	},
+	"ShoujoKageki:Sunlight": {
+		"NAME": "耀眼",
+		"DESCRIPTION": "获得 !M! 点临时 力量 。 NL 消耗 。"
+	},
 	"ShoujoKageki:SwordUp": {
 		"NAME": "上挑",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 和 易伤 。"
+	},
+	"ShoujoKageki:Attack04": {
+		"NAME": "落地",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将 *反击 放入 约定牌堆 。 NL 消耗 。"
+	},
+	"ShoujoKageki:Attack05": {
+		"NAME": "反击",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害两次。 "
 	},
 	"ShoujoKageki:Parry": {
 		"NAME": "招架",
@@ -56,7 +72,7 @@
 	},
 	"ShoujoKageki:Dance": {
 		"NAME": "舞动",
-		"DESCRIPTION": "抽 !M! 张牌，获得 [E] [E] 。"
+		"DESCRIPTION": "抽 !M! 张牌 NL 获得 [E] [E] 。"
 	},
 	"ShoujoKageki:WeKnow": {
 		"NAME": "我们很清楚",
@@ -68,7 +84,7 @@
 	},
 	"ShoujoKageki:Ready": {
 		"NAME": "准备完成",
-		"DESCRIPTION": "固有 NL 获得 !M! 点 力量 。 NL 抽 1 张牌。"
+		"DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 抽 1 张牌。"
 	},
 	"ShoujoKageki:Debut": {
 		"NAME": "出场",
@@ -96,7 +112,7 @@
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",
-		"DESCRIPTION": "墓地 NL 摧毁牌库，抽牌改为从 约定牌堆 中抽取。"
+		"DESCRIPTION": "墓地 。 NL 摧毁牌库，抽牌改为从 约定牌堆 中抽取。"
 	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",

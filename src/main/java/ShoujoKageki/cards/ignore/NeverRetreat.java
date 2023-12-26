@@ -1,4 +1,4 @@
-package ShoujoKageki.cards.bag;
+package ShoujoKageki.cards.ignore;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

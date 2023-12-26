@@ -271,7 +271,7 @@ public class BagPileViewScreen extends CustomScreen implements ScrollBarListener
             c.drawScale = 0.12F;
             c.targetDrawScale = 0.12F;
 //            c.teleportToDiscardPile();
-            c.darken(true);
+//            c.darken(true);
             c.unhover();
         }
     }
