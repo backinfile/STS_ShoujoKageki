@@ -17,6 +17,7 @@ public class Attack05 extends BaseCard {
         this.color = CardColor.COLORLESS;
         this.baseDamage = 7;
         isMultiDamage = true;
+        exhaust = true;
     }
 
     @Override

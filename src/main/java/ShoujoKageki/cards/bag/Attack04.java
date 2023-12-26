@@ -19,7 +19,6 @@ public class Attack04 extends BaseCard {
         this.baseDamage = 7;
         isMultiDamage = true;
         this.cardsToPreview = new Attack05();
-        exhaust = true;
     }
 
     @Override
