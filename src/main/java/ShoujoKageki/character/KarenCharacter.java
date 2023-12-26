@@ -4,25 +4,33 @@ import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.ModManager;
 import ShoujoKageki.Res;
+import ShoujoKageki.cards.patches.BagField;
 import ShoujoKageki.cards.starter.Defend;
 import ShoujoKageki.cards.starter.Fall;
 import ShoujoKageki.cards.starter.ShineStrike;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.HairpinRelic;
+import ShoujoKageki.screen.BagPileViewScreen;
+import basemod.BaseMod;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
+import com.megacrit.cardcrawl.helpers.controller.CInputHelper;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
@@ -280,4 +288,15 @@ public class KarenCharacter extends BasePlayer {
     }
 
 
+    @Override
+    public void update() {
+        super.update();
+
+        if (hb.hovered && InputHelper.justClickedLeft) {
+//            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, "lala"));
+            if (!BagField.getBag().isEmpty()) {
+                BaseMod.openCustomScreen(BagPileViewScreen.Enum.BAG_PILE_VIEW);
+            }
+        }
+    }
 }

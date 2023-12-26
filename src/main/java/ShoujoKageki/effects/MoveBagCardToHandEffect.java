@@ -1,5 +1,6 @@
 package ShoujoKageki.effects;
 
+import ShoujoKageki.util.ActionUtils;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,7 +21,7 @@ public class MoveBagCardToHandEffect extends AbstractGameEffect {
         super();
         this.card = card;
         duration = startingDuration = DURATION;
-//        ActionUtils.resetBeforeMoving(card);
+        ActionUtils.resetBeforeMoving(card);
         AbstractDungeon.player.hand.addToHand(card);
         AbstractDungeon.player.hand.refreshHandLayout();
         AbstractDungeon.player.hand.applyPowers();

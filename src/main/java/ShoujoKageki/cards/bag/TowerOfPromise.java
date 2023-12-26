@@ -21,7 +21,7 @@ public class TowerOfPromise extends BaseCard {
     public TowerOfPromise() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         this.color = CardColor.COLORLESS;
-        ExpectField.expect.set(this, true);
+        selfRetain = true;
     }
 
     @Override

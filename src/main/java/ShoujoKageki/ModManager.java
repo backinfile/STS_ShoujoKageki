@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.events.RealTimeEvent;
+import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
@@ -190,6 +191,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     public void receivePostInitialize() {
 //        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
         BaseMod.addCustomScreen(new BlackMarketScreen());
+        BaseMod.addCustomScreen(new BagPileViewScreen());
 
         // =============== /EVENTS/ =================
         BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);

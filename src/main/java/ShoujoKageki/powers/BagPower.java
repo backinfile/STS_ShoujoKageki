@@ -46,7 +46,7 @@ public class BagPower extends BasePower {
             if (bag.isEmpty()) {
                 description = DESCRIPTIONS[0];
             } else {
-                description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + Utils2.getCardNames(bag, DESCRIPTIONS[2], true);
+                description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + Utils2.getCardNames(bag, DESCRIPTIONS[2], false);
             }
         } else {
             description = DESCRIPTIONS[0];

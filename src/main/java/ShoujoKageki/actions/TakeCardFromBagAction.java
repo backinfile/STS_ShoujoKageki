@@ -71,7 +71,7 @@ public class TakeCardFromBagAction extends AbstractGameAction {
                 int handEmpty = Math.max(0, 10 - handSize);
                 int toTake = Math.min(Math.min(amount, bag.size()), handEmpty);
                 for (int i = 0; i < toTake; i++) {
-                    AbstractCard topCard = bag.getTopCard();
+                    AbstractCard topCard = bag.getBottomCard();
                     bag.removeCard(topCard);
                     if (handSize + i < 10) {
                         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(topCard, player.hb.cX, player.hb.cY));
