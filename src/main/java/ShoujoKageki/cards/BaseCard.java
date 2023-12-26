@@ -82,4 +82,8 @@ public abstract class BaseCard extends AbstractDefaultCard {
             }
         }
     }
+
+    public void triggerOnTurnStartInBag() {
+
+    }
 }

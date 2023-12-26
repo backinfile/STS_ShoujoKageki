@@ -1,8 +1,4 @@
 {
-	"ShoujoKageki:We": {
-		"NAME": "我们一起",
-		"DESCRIPTION": "获得 !M! 点临时 力量 。 NL 打出后进入 约定牌堆 。"
-	},
 	"ShoujoKageki:Defend": {
 		"NAME": "防御",
 		"DESCRIPTION": "获得 !B! 格挡 。"
@@ -11,9 +7,21 @@
 		"NAME": "打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
+	"ShoujoKageki:Fall": {
+		"NAME": "坠落",
+		"DESCRIPTION": "选择 !M! 张手牌放入 约定牌堆 。"
+	},
+	"ShoujoKageki:TowerOfPromise": {
+		"NAME": "约定之塔",
+		"DESCRIPTION": "期待 NL 从 约定牌堆 中取回所有牌"
+	},
 	"ShoujoKageki:ShineStrike": {
 		"NAME": "闪耀打击",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。"
+	},
+	"ShoujoKageki:MeetAgain": {
+		"NAME": "重逢",
+		"DESCRIPTION": "获得 !M! 点临时 力量 。 NL 打出后进入 约定牌堆 。"
 	},
 	"ShoujoKageki:ChargeStrike": {
 		"NAME": "蓄力打击",
@@ -23,21 +31,25 @@
 		"NAME": "上挑",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 和 易伤 。"
 	},
+	"ShoujoKageki:Parry": {
+		"NAME": "招架",
+		"DESCRIPTION": "获得 !B! 格挡 。 NL 获得或失去手牌时，本回合格挡值增加 !M! 。"
+	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL (伤害数值随系统时间而变化)"
 	},
 	"ShoujoKageki:OurPromise": {
 		"NAME": "我们的约定",
-		"DESCRIPTION": "抽 !M! 张牌 NL 选择至多2张手牌放入 约定牌堆"
+		"DESCRIPTION": "抽 !M! 张牌 NL 选择2张手牌放入 约定牌堆"
 	},
 	"ShoujoKageki:ExchangeFate": {
 		"NAME": "命运交换之日",
 		"DESCRIPTION": "手牌与 约定牌堆 中的牌交换。"
 	},
-	"ShoujoKageki:MeetAgain": {
-		"NAME": "重逢",
-		"DESCRIPTION": "从 约定牌堆 取回两张牌，然后获得 [E] [E] 。",
+	"ShoujoKageki:RevueDuet": {
+		"NAME": "Revue Duet",
+		"DESCRIPTION": "从 约定牌堆 取回 !M! 张牌，然后获得 [E] [E] 。",
 		"EXTENDED_DESCRIPTION": [
 		  "约定牌堆 中卡牌数量不足。"
 		]
@@ -91,8 +103,8 @@
 		"DESCRIPTION": "消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。",
 		"UPGRADE_DESCRIPTION": "保留 NL 消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。"
 	},
-	"ShoujoKageki:Fate": {
-		"NAME": "命运",
+	"ShoujoKageki:Promise": {
+		"NAME": "约定",
 		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",
 		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E] [E]",
 		"EXTENDED_DESCRIPTION": [

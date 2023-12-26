@@ -41,7 +41,7 @@ public class MoveCardToBagAction extends AbstractGameAction {
                 player.hand.group.remove(card);
                 AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
             }
-            BagField.bag.get(player).group.addAll(cards);
+            BagField.bag.get(player).group.addAll(0, cards);
             addToTop(new ApplyPowerAction(player, player, new BagPower(cards.size())));
         }
         tickDuration();

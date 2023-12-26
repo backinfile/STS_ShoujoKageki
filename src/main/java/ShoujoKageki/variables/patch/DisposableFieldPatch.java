@@ -4,24 +4,15 @@ import ShoujoKageki.effects.PurgeCardInBattleEffect;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
-import com.evacipated.cardcrawl.mod.stslib.patches.PurgePatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
-import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import javassist.CtBehavior;
-import jdk.internal.reflect.Reflection;
 
 import java.util.ArrayList;
 
@@ -31,7 +22,7 @@ public class DisposableFieldPatch {
             clz = UseCardAction.class,
             method = "update"
     )
-    public static class PurgePatch {
+    public static class AfterUsePatch {
 
         @SpireInsertPatch(
                 locator = Locator.class
@@ -96,6 +87,57 @@ public class DisposableFieldPatch {
         }
     }
 
+    @SpirePatch(
+            clz = CampfireSmithEffect.class,
+            method = "update"
+    )
+    public static class UpgradePatch {
+        @SpireInsertPatch(locator = UpgradeCallLocator.class)
+        public static void Insert(CampfireSmithEffect __instance, AbstractCard ___c) {
+            DisposableVariable.reset(___c);
+        }
+
+        private static class UpgradeCallLocator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher("com.megacrit.cardcrawl.cards.AbstractCard", "upgrade");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = Whetstone.class,
+            method = "onEquip"
+    )
+    public static class UpgradePatch2 {
+        @SpireInsertPatch(locator = BeforeArrayCallLocator.class, localvars = "upgradableCards")
+        public static void Insert(Whetstone __instance, ArrayList<AbstractCard> upgradableCards) {
+            for(AbstractCard card: upgradableCards) {
+                DisposableVariable.reset(card);
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = WarPaint.class,
+            method = "onEquip"
+    )
+    public static class UpgradePatch3 {
+        @SpireInsertPatch(locator = BeforeArrayCallLocator.class, localvars = "upgradableCards")
+        public static void Insert(WarPaint __instance, ArrayList<AbstractCard> upgradableCards) {
+            for(AbstractCard card: upgradableCards) {
+                DisposableVariable.reset(card);
+            }
+        }
+    }
+
+    private static class BeforeArrayCallLocator extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+            Matcher finalMatcher = new Matcher.MethodCallMatcher("java.util.ArrayList", "isEmpty");
+            return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+        }
+    }
+
 
 //    @SpirePatch(
 //            clz = AbstractCard.class,
@@ -119,18 +161,7 @@ public class DisposableFieldPatch {
 //        }
 //    }
 
-//    @SpirePatch(
-//            clz = CampfireSmithEffect.class,
-//            method = "update"
-//    )
-//    public static class UpgradePatch {
-//        @SpireInsertPatch(locator = UpgradeCallLocator.class)
-//        public static void Insert(CampfireSmithEffect __instance, AbstractCard ___c) {
-//            DisposableVariable.reset(___c);
-//        }
-//
-//    }
-//
+    //
 //    @SpirePatch(
 //            clz = GridCardSelectScreen.class,
 //            method = "update"
@@ -142,10 +173,4 @@ public class DisposableFieldPatch {
 //        }
 //    }
 //
-//    private static class UpgradeCallLocator extends SpireInsertLocator {
-//        public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
-//            Matcher finalMatcher = new Matcher.MethodCallMatcher("com.megacrit.cardcrawl.cards.AbstractCard", "upgrade");
-//            return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
-//        }
-//    }
 }

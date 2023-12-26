@@ -35,4 +35,9 @@ public class ToTheStage extends BaseCard {
             upgradeMagicNumber(1);
         }
     }
+
+    @Override
+    public void triggerOnExhaust() {
+        super.triggerOnExhaust();
+    }
 }

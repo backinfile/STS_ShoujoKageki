@@ -11,13 +11,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Defend extends BaseCard {
     public static final String ID = makeID(Defend.class.getSimpleName());
 
-    private static final int COST = 1;
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-
     public Defend() {
-        super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseBlock = BLOCK;
+        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        baseBlock = 5;
 
         this.tags.add(CardTags.STARTER_DEFEND);
 
@@ -25,14 +21,14 @@ public class Defend extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        addToBot(new GainBlockAction(p, p, block));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBlock(3);
             initializeDescription();
         }
     }

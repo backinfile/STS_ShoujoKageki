@@ -4,9 +4,11 @@ import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.ModManager;
 import ShoujoKageki.Res;
+import ShoujoKageki.cards.starter.Defend;
+import ShoujoKageki.cards.starter.Fall;
+import ShoujoKageki.cards.starter.ShineStrike;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
-import ShoujoKageki.relics.DeckTopRelic;
 import ShoujoKageki.relics.HairpinRelic;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -148,18 +150,19 @@ public class KarenCharacter extends BasePlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         Log.logger.info("Begin loading starter Deck Strings");
-        // TODO
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-//        retVal.add(ThiefStrike.ID);
-//        retVal.add(ThiefStrike.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(BagBottom.ID);
-//        retVal.add(Dagger.ID);
-        retVal.addAll(ModManager.allCardIds);
+
+        for (AbstractCard card : ModManager.allModCards) {
+            if (card.rarity == AbstractCard.CardRarity.BASIC) {
+                if (card.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || card.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
+                    retVal.add(card.cardID);
+                    retVal.add(card.cardID);
+                    retVal.add(card.cardID);
+                    retVal.add(card.cardID);
+                } else {
+                    retVal.add(0, card.cardID);
+                }
+            }
+        }
         return retVal;
     }
 

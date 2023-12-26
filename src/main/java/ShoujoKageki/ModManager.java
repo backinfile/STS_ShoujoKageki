@@ -17,7 +17,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -42,7 +41,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     public static final Logger logger = LogManager.getLogger(ModInfo.ModName);
 
     private static String modID;
-    public static final List<String> allCardIds = new ArrayList<>();
+    public static final List<AbstractCard> allModCards = new ArrayList<>();
 
     public ModManager() {
         BaseMod.subscribe(this);
@@ -148,7 +147,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
                 UnlockTracker.unlockCard(card.cardID);
             }
             if (card.color == CardColor_Karen) {
-                allCardIds.add(card.cardID);
+                allModCards.add(card);
             }
         });
         Log.logger.info("Done adding cards!");

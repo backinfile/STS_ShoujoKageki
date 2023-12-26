@@ -46,12 +46,13 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == startDuration) {
-            if (replaceAllCardInHand) {
-                replaceAllCardInHand();
+            if (player.hand.isEmpty()) {
                 isDone = true;
                 return;
             }
-            if (player.hand.isEmpty()) {
+            if (replaceAllCardInHand) {
+                replaceAllCardInHand();
+                isDone = true;
                 return;
             }
             if (allCardInHand) {

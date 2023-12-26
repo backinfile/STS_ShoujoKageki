@@ -1,6 +1,9 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.bag.TowerOfPromise;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import org.apache.logging.log4j.LogManager;
@@ -10,7 +13,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import ShoujoKageki.actions.TakeCardFromBagAction;
-import ShoujoKageki.cards.bag.Fate;
+import ShoujoKageki.cards.ignore.Promise;
 import ShoujoKageki.cards.patches.BagField;
 import ShoujoKageki.util.Utils2;
 
@@ -43,7 +46,7 @@ public class BagPower extends BasePower {
             if (bag.isEmpty()) {
                 description = DESCRIPTIONS[0];
             } else {
-                description = Utils2.getCardNames(bag, DESCRIPTIONS[1]);
+                description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + Utils2.getCardNames(bag, DESCRIPTIONS[2], true);
             }
         } else {
             description = DESCRIPTIONS[0];
@@ -56,13 +59,27 @@ public class BagPower extends BasePower {
 
         CardGroup bag = BagField.bag.get(AbstractDungeon.player);
         for (AbstractCard card : bag.group) {
-            if (card instanceof Fate) {
-                card.use(AbstractDungeon.player, null);
+            if (card instanceof BaseCard) {
+                ((BaseCard) card).triggerOnTurnStartInBag();
                 this.flashWithoutSound();
             }
         }
 
         this.flashWithoutSound();
-        addToBot(new TakeCardFromBagAction());
+//        addToBot(new TakeCardFromBagAction());
+//        addToBot(new MakeTempCardInHandAction());
+
+        addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        super.atEndOfTurn(isPlayer);
+
+        if (isPlayer) {
+            for (AbstractCard card : BagField.bag.get(AbstractDungeon.player).group) {
+                card.triggerOnEndOfPlayerTurn();
+            }
+        }
     }
 }

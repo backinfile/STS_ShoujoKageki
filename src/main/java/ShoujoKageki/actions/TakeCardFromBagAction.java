@@ -26,9 +26,11 @@ public class TakeCardFromBagAction extends AbstractGameAction {
     private boolean retrieveCard = false;
 
     public TakeCardFromBagAction() {
-        this.duration = Settings.ACTION_DUR_FAST;
-        this.amount = 1;
-        this.rnd = false;
+        this(99, false);
+    }
+
+    public TakeCardFromBagAction(int amount) {
+        this(amount, false);
     }
 
     public TakeCardFromBagAction(int amount, boolean rnd) {
@@ -64,24 +66,34 @@ public class TakeCardFromBagAction extends AbstractGameAction {
                 return;
             }
 
-            if (amount > 1) {
-                for (int i = 0; i < amount; amount++) {
-                    this.addToTop(new TakeCardFromBagAction());
+            if (true) {
+                int handSize = player.hand.size();
+                int handEmpty = Math.max(0, 10 - handSize);
+                int toTake = Math.min(Math.min(amount, bag.size()), handEmpty);
+                for (int i = 0; i < toTake; i++) {
+                    AbstractCard topCard = bag.getTopCard();
+                    bag.removeCard(topCard);
+                    if (handSize + i < 10) {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(topCard, player.hb.cX, player.hb.cY));
+                    } else {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(topCard, player.hb.cX, player.hb.cY));
+                    }
                 }
+                addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, toTake));
                 isDone = true;
                 return;
             }
-
 
             if (bag.isEmpty()) return;
             ArrayList<AbstractCard> cards = rnd3Cards(bag);
 
             AbstractDungeon.cardRewardScreen.customCombatOpen(cards, uiString.TEXT[0], false);
         } else if (!retrieveCard) {
+            int handSize = player.hand.size();
             AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard;
             if (card != null) {  // 等待选择卡牌
                 BagField.bag.get(player).removeCard(card);
-                if (AbstractDungeon.player.hand.size() < 10) {
+                if (handSize < 10) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 } else {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));

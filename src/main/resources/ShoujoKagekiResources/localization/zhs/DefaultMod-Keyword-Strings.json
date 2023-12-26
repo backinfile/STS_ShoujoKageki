@@ -2,23 +2,30 @@
 	{
 		"PROPER_NAME": "约定牌堆",
 		"NAMES": [
-			"约定牌堆", "约定"
+			"约定牌堆", "约定", "约定牌库"
 		],
-		"DESCRIPTION": "爱城华恋特有的牌堆。 NL 每回合开始时，从约定牌堆中取回一张加入手牌。"
+		"DESCRIPTION": "爱城华恋特有的牌堆，可以在回合开始时取回所有牌。"
+	},
+	{
+		"PROPER_NAME": "期待",
+		"NAMES": [
+			"期待"
+		],
+		"DESCRIPTION": "打出此牌后，或打出其他牌时，或回合结束时， #r抹除 此牌。"
 	},
 	{
 		"PROPER_NAME": "闪耀",
 		"NAMES": [
 			"销毁", "闪耀", "工具"
 		],
-		"DESCRIPTION": "打出X次后卡牌从牌组中移除。"
+		"DESCRIPTION": "打出X次后卡牌从 #y牌组 中 #r移除 。"
 	},
 	{
 		"PROPER_NAME": "永远闪耀",
 		"NAMES": [
 			"永远闪耀"
 		],
-		"DESCRIPTION": "打出后不再从牌组中移除。"
+		"DESCRIPTION": "打出后不再从牌组中 #r移除 。"
 	},
 	{
 		"PROPER_NAME": "熟练度",
