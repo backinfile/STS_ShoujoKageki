@@ -1,11 +1,13 @@
 package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.cards.bag.TowerOfPromise;
 import ShoujoKageki.cards.patches.BagField;
 import ShoujoKageki.effects.DeckTopEffect;
 import ShoujoKageki.ui.DeckTopViewer;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,10 +40,17 @@ public class HairpinRelic extends BaseRelic {
 //        }
 
 
-        AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new RelicAboveCreatureAction(p, this));
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));
-        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2)));
+//        AbstractPlayer p = AbstractDungeon.player;
+//        addToBot(new RelicAboveCreatureAction(p, this));
+//        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));
+//        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2)));
+    }
+
+    @Override
+    public void atBattleStartPreDraw() {
+        super.atBattleStartPreDraw();
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
     }
 
     //    @Override

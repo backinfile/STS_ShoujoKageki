@@ -65,11 +65,11 @@ public class BagPower extends BasePower {
             }
         }
 
-        this.flashWithoutSound();
+//        this.flashWithoutSound();
 //        addToBot(new TakeCardFromBagAction());
 //        addToBot(new MakeTempCardInHandAction());
 
-        addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
+//        addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
     }
 
     @Override

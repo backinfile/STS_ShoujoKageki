@@ -3,7 +3,7 @@
 		"NAME": "发夹",
 		"FLAVOR": "小时候与小光两人在东京塔附近的商店中买到的一对发夹中皇冠样式的一枚",
 		"DESCRIPTIONS": [
-			"战斗开始时，获得 #y2 临时 #y敏捷 。"
+			"在每场战斗开始时，将一张 #y约定之塔 放入你的手牌。"
 		]
 	},
 	"ShoujoKageki:BlackMarketRelic": {
