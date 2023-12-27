@@ -17,7 +17,8 @@
 	},
 	"ShoujoKageki:TowerOfPromise": {
 		"NAME": "约定之塔",
-		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中取回所有牌"
+		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中抽取直到手牌上限。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL  从 约定牌堆 中抽取直到手牌上限。 NL 将这张牌放入抽牌堆。"
 	},
 	"ShoujoKageki:MeetAgain": {
 		"NAME": "重逢",
@@ -72,6 +73,10 @@
 		"NAME": "我不会输的",
 		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 沉淀 。"
 	},
+	"ShoujoKageki:Must": {
+		"NAME": "东京塔下",
+		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 !M! 张 *约定之塔 放入手牌 NL 消耗 。"
+	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL (伤害数值随系统时间而变化)"
@@ -96,7 +101,7 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张放入手牌。"
 	},
 	"ShoujoKageki:WeKnow": {
-		"NAME": "我们很清楚",
+		"NAME": "舞台的热情",
 		"DESCRIPTION": "约定牌堆 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
 	},
 	"ShoujoKageki:ToTheStage": {

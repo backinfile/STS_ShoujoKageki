@@ -19,7 +19,6 @@ public class Defend03 extends BaseCard {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = 4;
         this.cardsToPreview = new Attack07();
-        this.tags.add(CardTags.STRIKE);
         this.baseMagicNumber = this.magicNumber = 1;
     }
 

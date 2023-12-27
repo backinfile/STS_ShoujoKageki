@@ -25,11 +25,6 @@ public class TowerOfPromise extends BaseCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public void triggerOnGlowCheck() {
         AbstractPlayer p = AbstractDungeon.player;
         if (!BagField.bag.get(p).isEmpty()) {
@@ -41,8 +36,11 @@ public class TowerOfPromise extends BaseCard {
 
     @Override
     public void upgrade() {
-//        if (!upgraded) {
-//            upgradeName();
-//        }
+        if (!upgraded) {
+            upgradeName();
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            shuffleBackIntoDrawPile = true;
+            initializeDescription();
+        }
     }
 }
