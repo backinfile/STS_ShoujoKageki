@@ -2,6 +2,7 @@ package ShoujoKageki.screen;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.patches.BagField;
+import basemod.BaseMod;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -228,7 +229,7 @@ public class BagPileViewScreen extends CustomScreen implements ScrollBarListener
     }
 
     private void calculateScrollBounds() {
-        if (BagField.getBag().size() > 10) {
+        if (BagField.getBag().size() > BaseMod.MAX_HAND_SIZE) {
             int scrollTmp = BagField.getBag().size() / 5 - 2;
             if (BagField.getBag().size() % 5 != 0) {
                 ++scrollTmp;

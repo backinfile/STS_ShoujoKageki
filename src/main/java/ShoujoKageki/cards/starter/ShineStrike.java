@@ -25,14 +25,13 @@ public class ShineStrike extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL));
-        addToBot(new DrawCardAction(p, 1));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

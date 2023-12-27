@@ -1,5 +1,6 @@
 package ShoujoKageki.variables;
 
+import ShoujoKageki.Log;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import ShoujoKageki.ModInfo;
@@ -50,6 +51,12 @@ public class DisposableVariable extends DynamicVariable { // Shine
         card.initializeDescription();
     }
 
+    public static void setUpgradeDescription(AbstractCard card, String upgradeDescription) {
+        card.rawDescription = addDescription(upgradeDescription);
+        card.initializeDescription();
+    }
+
+
     public static void setValue(AbstractCard card, int amount) {
         DisposableField.disposable.set(card, amount);
         card.initializeDescription();
@@ -66,13 +73,14 @@ public class DisposableVariable extends DynamicVariable { // Shine
         if (curValue < baseValue) {
             setValue(card, baseValue);
         }
+        Log.logger.info("reset card " + card.name + " to " + getValue(card));
     }
 
     public static boolean isDisposableCard(AbstractCard card) {
         return DisposableField.baseDisposable.get(card) != 0;
     }
 
-    public static String addDescription(String rawDescription) {
+    private static String addDescription(String rawDescription) {
         return uiStrings.TEXT[0] + rawDescription;
     }
 }

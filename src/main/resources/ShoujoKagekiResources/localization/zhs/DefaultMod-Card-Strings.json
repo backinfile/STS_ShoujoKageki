@@ -7,17 +7,17 @@
 		"NAME": "打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
+	"ShoujoKageki:ShineStrike": {
+		"NAME": "闪耀打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
 	"ShoujoKageki:Fall": {
 		"NAME": "坠落",
-		"DESCRIPTION": "选择 !M! 张手牌放入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 格挡 。 NL 选择 !M! 张手牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:TowerOfPromise": {
 		"NAME": "约定之塔",
 		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中取回所有牌"
-	},
-	"ShoujoKageki:ShineStrike": {
-		"NAME": "闪耀打击",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。"
 	},
 	"ShoujoKageki:MeetAgain": {
 		"NAME": "重逢",
@@ -29,11 +29,15 @@
 	},
 	"ShoujoKageki:TwistingStrike": {
 		"NAME": "扭转打击",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 将 *耀眼 放入 约定牌堆 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
+	},
+	"ShoujoKageki:EatFood2": {
+		"NAME": "三明治",
+		"DESCRIPTION": "获得 !M! 点临时 力量 。 NL 消耗 。"
 	},
 	"ShoujoKageki:Sunlight": {
 		"NAME": "耀眼",
-		"DESCRIPTION": "获得 !M! 点临时 力量 。 NL 消耗 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 如果 力量 不低于 !M! 点，重复一次。"
 	},
 	"ShoujoKageki:SwordUp": {
 		"NAME": "上挑",
@@ -41,11 +45,24 @@
 	},
 	"ShoujoKageki:Attack04": {
 		"NAME": "落地",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将 *反击 放入 约定牌堆 。"
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将 *回击 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Attack05": {
-		"NAME": "反击",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害两次。  NL 消耗 。"
+		"NAME": "回击",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害三次。 NL 消耗 。"
+	},
+	"ShoujoKageki:Attack06": {
+		"NAME": "进化",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 将弃牌堆中的 !M! 张牌放入 约定牌堆 。"
+	},
+	"ShoujoKageki:Defend03": {
+		"NAME": "闪避",
+		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 *对峙 放入 约定牌堆 。",
+		"UPGRADE_DESCRIPTION": "获得 !B! 格挡 。 NL 将 *对峙+ 放入 约定牌堆 。"
+	},
+	"ShoujoKageki:Attack07": {
+		"NAME": "对峙",
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 消耗 。"
 	},
 	"ShoujoKageki:Parry": {
 		"NAME": "招架",
@@ -65,14 +82,14 @@
 	},
 	"ShoujoKageki:RevueDuet": {
 		"NAME": "Revue Duet",
-		"DESCRIPTION": "从 约定牌堆 取回 !M! 张牌，然后获得 [E] [E] 。",
+		"DESCRIPTION": "从 约定牌堆 抽取 !M! 张牌，然后获得 [E] [E] 。",
 		"EXTENDED_DESCRIPTION": [
 		  "约定牌堆 中卡牌数量不足。"
 		]
 	},
 	"ShoujoKageki:Dance": {
 		"NAME": "舞动",
-		"DESCRIPTION": "抽 !M! 张牌 NL 获得 [E] [E] 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张放入手牌。"
 	},
 	"ShoujoKageki:WeKnow": {
 		"NAME": "我们很清楚",
@@ -80,7 +97,8 @@
 	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
-		"DESCRIPTION": "抽 !M! 张牌 NL 抹除"
+		"DESCRIPTION": "获得此牌闪耀值的 [E] 。",
+		"UPGRADE_DESCRIPTION": "获得此牌闪耀值的 [E] 。 NL 抽 !M! 张牌。"
 	},
 	"ShoujoKageki:Ready": {
 		"NAME": "准备完成",

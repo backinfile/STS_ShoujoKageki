@@ -2,6 +2,7 @@ package ShoujoKageki.cards.patches;
 
 import ShoujoKageki.actions.TakeCardFromBagAction;
 import ShoujoKageki.powers.VoidPower;
+import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
@@ -39,15 +40,15 @@ public class DrawCardPatch {
                 int deckSize = bag.size();
                 if (deckSize == 0) {
                     // ignore
-                } else if (AbstractDungeon.player.hand.size() == 10) {
+                } else if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) {
                     AbstractDungeon.player.createHandIsFullDialog();
                 } else {
                     int toDraw = instance.amount;
-                    if (instance.amount + AbstractDungeon.player.hand.size() > 10) {
-                        toDraw = 10 - AbstractDungeon.player.hand.size();
+                    if (instance.amount + AbstractDungeon.player.hand.size() > BaseMod.MAX_HAND_SIZE) {
+                        toDraw = BaseMod.MAX_HAND_SIZE - AbstractDungeon.player.hand.size();
                         AbstractDungeon.player.createHandIsFullDialog();
                     }
-                    AbstractDungeon.actionManager.addToTop(new TakeCardFromBagAction(toDraw, true));
+                    AbstractDungeon.actionManager.addToTop(new TakeCardFromBagAction(toDraw));
                 }
             }
             endActionWithFollowUp(instance, ___followUpAction);

@@ -1,8 +1,9 @@
-package ShoujoKageki.cards.starter;
+package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.PutHandCardIntoBagAction;
 import ShoujoKageki.cards.BaseCard;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -11,12 +12,14 @@ public class Fall extends BaseCard {
     public static final String ID = ModInfo.makeID(Fall.class.getSimpleName());
 
     public Fall() {
-        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        baseBlock = 8;
         magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
+        addToBot(new GainBlockAction(p, p, block));
         addToBot(new PutHandCardIntoBagAction(p, magicNumber));
     }
 

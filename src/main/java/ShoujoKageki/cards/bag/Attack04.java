@@ -15,8 +15,8 @@ public class Attack04 extends BaseCard {
     public static final String ID = ModInfo.makeID(Attack04.class.getSimpleName());
 
     public Attack04() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        this.baseDamage = 7;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        this.baseDamage = 5;
         isMultiDamage = true;
         this.cardsToPreview = new Attack05();
     }

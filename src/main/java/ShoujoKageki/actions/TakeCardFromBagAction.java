@@ -1,5 +1,6 @@
 package ShoujoKageki.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,17 +24,18 @@ public class TakeCardFromBagAction extends AbstractGameAction {
     private static final String ID = makeID(TakeCardFromBagAction.class.getSimpleName());
     private static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(ID);
     private final boolean rnd;
-    private boolean retrieveCard = false;
+    private final boolean discardOverflowedCard;
 
     public TakeCardFromBagAction() {
-        this(99, false);
+        this(999, false, false);
     }
 
     public TakeCardFromBagAction(int amount) {
-        this(amount, false);
+        this(amount, false, false);
     }
 
-    public TakeCardFromBagAction(int amount, boolean rnd) {
+    public TakeCardFromBagAction(int amount, boolean rnd, boolean discardOverflowedCard) {
+        this.discardOverflowedCard = discardOverflowedCard;
         this.duration = Settings.ACTION_DUR_FAST;
         this.amount = amount;
         this.rnd = rnd;
@@ -43,65 +45,32 @@ public class TakeCardFromBagAction extends AbstractGameAction {
     public void update() {
         BasePlayer player = (BasePlayer) AbstractDungeon.player;
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            if (player.hand.size() >= 10) {
+            if (player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
                 isDone = true;
                 return;
             }
             CardGroup bag = BagField.bag.get(player);
 
             if (rnd) { // 随机获取
-                bag.shuffle();
-                int toTake = Math.min(amount, bag.size());
-                for (int i = 0; i < toTake; i++) {
-                    AbstractCard topCard = bag.getTopCard();
-                    bag.removeCard(topCard);
-                    if (AbstractDungeon.player.hand.size() + i < 10) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(topCard, player.hb.cX, player.hb.cY));
-                    } else {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(topCard, player.hb.cX, player.hb.cY));
-                    }
+                ArrayList<AbstractCard> toTakeCards = new ArrayList<>();
+                for (int i = 0; i < amount && !bag.isEmpty(); i++) {
+                    int rnd = AbstractDungeon.cardRng.random(bag.size() - 1);
+                    AbstractCard card = bag.group.get(rnd);
+                    toTakeCards.add(card);
+                    bag.removeCard(card);
                 }
-                addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, toTake));
-                isDone = true;
-                return;
-            }
-
-            if (true) {
-                int handSize = player.hand.size();
-                int handEmpty = Math.max(0, 10 - handSize);
-                int toTake = Math.min(Math.min(amount, bag.size()), handEmpty);
-                for (int i = 0; i < toTake; i++) {
-                    AbstractCard topCard = bag.getBottomCard();
-                    bag.removeCard(topCard);
-                    if (handSize + i < 10) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(topCard, player.hb.cX, player.hb.cY));
-                    } else {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(topCard, player.hb.cX, player.hb.cY));
-                    }
+                addToTop(new TakeSpecCardFromBagAction(toTakeCards, discardOverflowedCard));
+            } else {
+                ArrayList<AbstractCard> toTakeCards = new ArrayList<>();
+                for (int i = 0; i < amount && !bag.isEmpty(); i++) {
+                    AbstractCard card = bag.getBottomCard();
+                    toTakeCards.add(card);
+                    bag.removeCard(card);
                 }
-                addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, toTake));
-                isDone = true;
-                return;
+                addToTop(new TakeSpecCardFromBagAction(toTakeCards, discardOverflowedCard));
             }
-
-            if (bag.isEmpty()) return;
-            ArrayList<AbstractCard> cards = rnd3Cards(bag);
-
-            AbstractDungeon.cardRewardScreen.customCombatOpen(cards, uiString.TEXT[0], false);
-        } else if (!retrieveCard) {
-            int handSize = player.hand.size();
-            AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard;
-            if (card != null) {  // 等待选择卡牌
-                BagField.bag.get(player).removeCard(card);
-                if (handSize < 10) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                } else {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                }
-                retrieveCard = true;
-                AbstractDungeon.cardRewardScreen.discoveryCard = null;
-                addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, 1));
-            }
+            isDone = true;
+            return;
         }
         tickDuration();
     }

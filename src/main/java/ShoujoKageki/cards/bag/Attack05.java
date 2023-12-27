@@ -15,13 +15,14 @@ public class Attack05 extends BaseCard {
     public Attack05() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         this.color = CardColor.COLORLESS;
-        this.baseDamage = 7;
+        this.baseDamage = 5;
         isMultiDamage = true;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }

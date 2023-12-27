@@ -1,5 +1,6 @@
 package ShoujoKageki.util;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -13,8 +14,8 @@ public class ActionUtils {
 	public static void addCopyCardToHand(AbstractPlayer player, AbstractCard card, int amount) {
 		int handAmt = amount;
 		int handSize = player.hand.size();
-		if (amount + handSize > 10) {
-			handAmt = 10 - handSize;
+		if (amount + handSize > BaseMod.MAX_HAND_SIZE) {
+			handAmt = BaseMod.MAX_HAND_SIZE - handSize;
 		}
 		int discardAmount = amount - handAmt;
 

@@ -14,18 +14,28 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:SelectDiscardCardIntoBagAction": {
+    "TEXT": ["选择卡牌放入约定牌堆", "返回"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:SelectBagCardToHandAction": {
+    "TEXT": ["选择卡牌放入手牌", "选择", "张卡牌放入手牌"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:BlackMarketOption": {
     "TEXT": ["黑市", "进入黑市", "(保护费", ")"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
   "ShoujoKageki:ShineOption": {
-    "TEXT": ["闪耀凝固", "选择一张具有闪耀的卡牌，使其闪耀凝固。"],
+    "TEXT": ["闪耀强化", "选择一张卡牌+3闪耀。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
   "ShoujoKageki:CampfireShineEffect": {
-    "TEXT": ["选择一张凝固闪耀"],
+    "TEXT": ["选择一张卡牌+3闪耀。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
@@ -35,7 +45,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:DisposableKeyword": {
-    "TEXT": ["{!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable!|<0=永远闪耀} NL {@@}"],
+    "TEXT": ["{!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! 。|<0=永远闪耀 。} NL {@@}"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   }

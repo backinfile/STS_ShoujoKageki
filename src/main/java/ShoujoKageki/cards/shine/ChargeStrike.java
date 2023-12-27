@@ -18,7 +18,7 @@ public class ChargeStrike extends BaseCard {
     public ChargeStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 9;
-        this.baseMagicNumber = 2;
+        this.baseMagicNumber = this.magicNumber = 2;
         tags.add(CardTags.STRIKE);
         DisposableVariable.setBaseValueAndDescription(this, DEFAULT_SHINE_CNT);
     }
@@ -35,6 +35,7 @@ public class ChargeStrike extends BaseCard {
             upgradeName();
             upgradeDamage(3);
             upgradeMagicNumber(1);
+            initializeDescription();
         }
     }
 }

@@ -16,7 +16,8 @@ public class MoveCardToBagAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> cardsToBag;
 
     public MoveCardToBagAction(ArrayList<AbstractCard> cardsToBag) {
-        this.cardsToBag = cardsToBag;
+        this.cardsToBag = new ArrayList<>();
+        this.cardsToBag.addAll(cardsToBag);
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
     }
 
