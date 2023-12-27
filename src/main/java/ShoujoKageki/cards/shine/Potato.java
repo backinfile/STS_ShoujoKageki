@@ -18,6 +18,7 @@ public class Potato extends BaseCard {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 6;
         DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

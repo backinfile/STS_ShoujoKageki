@@ -18,7 +18,6 @@ public class Practice2 extends BaseCard {
     public Practice2() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         CardModifierManager.addModifier(this, new TotalShineDescriptionModifier());
-        this.tags.add(CardTags.HEALING);
     }
 
     @Override
@@ -34,11 +33,5 @@ public class Practice2 extends BaseCard {
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
-    }
-
-    @Override
-    public void triggerOnDisposed() {
-        super.triggerOnDisposed();
-        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber));
     }
 }

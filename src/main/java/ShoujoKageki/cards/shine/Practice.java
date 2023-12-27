@@ -21,6 +21,7 @@ public class Practice extends BaseCard {
         this.baseBlock = 9;
         this.magicNumber = this.baseMagicNumber = 9;
         DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
