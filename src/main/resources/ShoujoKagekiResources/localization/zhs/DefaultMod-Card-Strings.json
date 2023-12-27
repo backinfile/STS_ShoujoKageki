@@ -121,6 +121,10 @@
 		"NAME": "竞演结束",
 		"DESCRIPTION": "战斗结束时，获得 *腐朽 和一个随机遗物。"
 	},
+	"ShoujoKageki:EatFood3": {
+		"NAME": "Banana蛋糕",
+		"DESCRIPTION": "获得一瓶 *类固醇药水 。 NL 消耗 。"
+	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
 		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"

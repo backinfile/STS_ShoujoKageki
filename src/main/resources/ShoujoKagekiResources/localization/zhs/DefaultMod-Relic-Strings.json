@@ -32,8 +32,8 @@
 		"NAME": "饼干",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"拾起时，随机获得 普通 ，罕见 ，稀有 闪耀 牌各一张。",
-			"获取卡牌"
+			"拾起时，随机获得 #y普通 ，#y罕见 ，#y稀有 #y闪耀 牌各一张。",
+			"[饼干] 获取卡牌"
 		]
 	},
 	"ShoujoKageki:DrawExtraRelic": {
