@@ -4,9 +4,7 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -20,7 +18,7 @@ public class Debut extends BaseCard {
     public Debut() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         baseDamage = 3;
-        DisposableVariable.setBaseValueAndDescription(this, MEDIUM_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);
     }
 
     @Override

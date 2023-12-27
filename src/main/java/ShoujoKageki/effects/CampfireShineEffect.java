@@ -52,7 +52,7 @@ public class CampfireShineEffect extends AbstractGameEffect {
                 AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
 //                c.upgrade();
 //                AbstractDungeon.player.bottledCardUpgradeCheck(c);
-                DisposableVariable.setBaseValue(c, -1);
+                DisposableVariable.setAlwaysShine(c);
                 shineOption.usable = false;
                 AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
                 state = 2;

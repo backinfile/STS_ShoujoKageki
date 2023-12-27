@@ -74,7 +74,7 @@
 	},
 	"ShoujoKageki:OurPromise": {
 		"NAME": "我们的约定",
-		"DESCRIPTION": "抽 !M! 张牌 NL 选择2张手牌放入 约定牌堆"
+		"DESCRIPTION": "抽 !M! 张牌。 NL 选择2张手牌放入 约定牌堆"
 	},
 	"ShoujoKageki:ExchangeFate": {
 		"NAME": "命运交换之日",

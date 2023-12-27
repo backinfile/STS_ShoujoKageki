@@ -14,7 +14,7 @@ public class ToTheStage extends BaseCard {
 
     public ToTheStage() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        DisposableVariable.setBaseValueAndDescription(this, 3);
+        DisposableVariable.setBaseValue(this, 3);
         this.baseMagicNumber = this.magicNumber = 0;
     }
 
@@ -34,7 +34,8 @@ public class ToTheStage extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            DisposableVariable.setUpgradeDescription(this, cardStrings.UPGRADE_DESCRIPTION);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

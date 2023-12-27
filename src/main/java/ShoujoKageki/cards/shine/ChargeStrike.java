@@ -6,7 +6,6 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -20,7 +19,7 @@ public class ChargeStrike extends BaseCard {
         this.baseDamage = 9;
         this.baseMagicNumber = this.magicNumber = 2;
         tags.add(CardTags.STRIKE);
-        DisposableVariable.setBaseValueAndDescription(this, DEFAULT_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
     @Override

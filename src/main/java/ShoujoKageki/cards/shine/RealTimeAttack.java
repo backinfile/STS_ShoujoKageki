@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKageki.ModInfo.makeID;
@@ -17,7 +16,7 @@ public class RealTimeAttack extends BaseCard {
     public RealTimeAttack() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 0;
-        DisposableVariable.setBaseValueAndDescription(this, MEDIUM_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);
     }
 
     @Override

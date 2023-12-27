@@ -6,7 +6,6 @@ import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,7 +20,7 @@ public class SwordUp extends BaseCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 4;
         this.baseMagicNumber = this.magicNumber = 1;
-        DisposableVariable.setBaseValueAndDescription(this, DEFAULT_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
     @Override

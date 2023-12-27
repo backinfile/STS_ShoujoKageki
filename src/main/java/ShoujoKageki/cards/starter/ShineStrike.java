@@ -4,7 +4,6 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +17,7 @@ public class ShineStrike extends BaseCard {
     public ShineStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
         baseDamage = 9;
-        DisposableVariable.setBaseValueAndDescription(this, DEFAULT_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
         tags.add(CardTags.STRIKE);
     }
 
