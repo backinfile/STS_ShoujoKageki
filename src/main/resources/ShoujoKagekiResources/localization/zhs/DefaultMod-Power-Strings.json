@@ -32,6 +32,12 @@
 			"战斗结束时，获得 #r腐朽 和一个随机遗物。"
 		]
 	},
+	"ShoujoKageki:StarlightPower": {
+		"NAME": "Starlight",
+		"DESCRIPTIONS": [
+			"本次战斗多掉落", "次 #y卡牌奖励 ，其中仅包含 #y闪耀 卡牌。"
+		]
+	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {
 		"NAME": "暗中窥视",
 		"DESCRIPTIONS": [

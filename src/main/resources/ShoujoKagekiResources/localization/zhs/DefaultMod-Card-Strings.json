@@ -125,6 +125,10 @@
 		"NAME": "Banana蛋糕",
 		"DESCRIPTION": "获得一瓶 *类固醇药水 。 NL 消耗 。"
 	},
+	"ShoujoKageki:Starlight": {
+		"NAME": "Starlight",
+		"DESCRIPTION": "本次战斗多掉落一次卡牌奖励，其中仅包含 闪耀 卡牌。"
+	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
 		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"
