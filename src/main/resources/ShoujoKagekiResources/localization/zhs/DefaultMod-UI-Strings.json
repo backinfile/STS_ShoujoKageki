@@ -29,6 +29,11 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:TokenCardField": {
+    "TEXT": ["衍生牌"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:BlackMarketOption": {
     "TEXT": ["黑市", "进入黑市", "(保护费", ")"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
