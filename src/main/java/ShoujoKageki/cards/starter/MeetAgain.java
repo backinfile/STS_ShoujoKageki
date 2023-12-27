@@ -14,7 +14,7 @@ public class MeetAgain extends BaseCard {
     public static final String ID = ModInfo.makeID(MeetAgain.class.getSimpleName());
 
     public MeetAgain() {
-        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 2;
         PutToBagField.putToBag.set(this, true);
     }

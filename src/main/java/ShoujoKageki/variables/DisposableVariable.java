@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.variables.patch.DisposableField;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.Objects;
@@ -75,6 +76,18 @@ public class DisposableVariable extends DynamicVariable { // Shine
             setValue(card, baseValue);
         }
         Log.logger.info("reset card " + card.name + " to " + getValue(card));
+    }
+
+    public static int getTotalValueInHand() {
+        if (AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
+            return 0;
+        }
+        int cnt = 0;
+        for (AbstractCard card : AbstractDungeon.player.hand.group) {
+            int value = getValue(card);
+            if (value > 0) cnt += value;
+        }
+        return cnt;
     }
 
     public static boolean isDisposableCard(AbstractCard card) {

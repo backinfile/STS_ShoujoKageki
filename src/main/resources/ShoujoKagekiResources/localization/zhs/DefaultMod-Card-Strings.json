@@ -129,6 +129,31 @@
 		"NAME": "Starlight",
 		"DESCRIPTION": "本次战斗多掉落一次卡牌奖励，其中仅包含 闪耀 卡牌。"
 	},
+	"ShoujoKageki:Nonon": {
+		"NAME": "Nonon",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害，目标本回合失去 !M! 点 力量 。"
+	},
+	"ShoujoKageki:NewSituation": {
+		"NAME": "观察情况",
+		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
+	},
+	"ShoujoKageki:Practice": {
+		"NAME": "武术练习",
+		"DESCRIPTION": "获得 !B! 格挡 。 NL 闪耀 耗尽时回复 !M! 生命。"
+	},
+	"ShoujoKageki:Practice2": {
+		"NAME": "舞蹈练习",
+		"DESCRIPTION": "获得手牌中总 闪耀 值的 格挡 。",
+		"UPGRADE_DESCRIPTION": "获得手牌中总 闪耀 值的 格挡 。 NL 沉淀 。"
+	},
+	"ShoujoKageki:Potato": {
+		"NAME": "土豆",
+		"DESCRIPTION": "回复 !M! 生命。"
+	},
+	"ShoujoKageki:BananaMuffin": {
+		"NAME": "Banana松饼",
+		"DESCRIPTION": "获得 3 点临时 力量 。 NL 抽 !M! 张牌。"
+	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
 		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"

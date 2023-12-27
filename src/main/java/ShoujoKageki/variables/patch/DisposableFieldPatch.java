@@ -1,5 +1,6 @@
 package ShoujoKageki.variables.patch;
 
+import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.effects.PurgeCardInBattleEffect;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.ReflectionHacks;
@@ -38,6 +39,11 @@ public class DisposableFieldPatch {
                 if (cardInDeck != null) {
                     AbstractDungeon.player.masterDeck.removeCard(cardInDeck);
                 }
+
+                if (___targetCard instanceof BaseCard) {
+                    ((BaseCard) ___targetCard).triggerOnDisposed();
+                }
+
 //                PurgeField.purge.set(card, true);
                 AbstractDungeon.effectList.add(new PurgeCardInBattleEffect(___targetCard, ___targetCard.current_x, ___targetCard.current_y));
                 AbstractDungeon.actionManager.addToBottom(new HandCheckAction());
@@ -45,8 +51,10 @@ public class DisposableFieldPatch {
                 return SpireReturn.Return();
             } else {
                 curValue--;
-                if (cardInDeck != null) {
-                    DisposableVariable.setValue(cardInDeck, curValue);
+                if (cardInDeck != null) { // 牌组中的闪耀值可能低于战斗内的，此时不扣
+                    if (DisposableVariable.getValue(cardInDeck) > curValue) {
+                        DisposableVariable.setValue(cardInDeck, curValue);
+                    }
                 }
                 DisposableVariable.setValue(___targetCard, curValue);
                 return SpireReturn.Continue();
@@ -112,7 +120,7 @@ public class DisposableFieldPatch {
     public static class UpgradePatch2 {
         @SpireInsertPatch(locator = BeforeArrayCallLocator.class, localvars = "upgradableCards")
         public static void Insert(Whetstone __instance, ArrayList<AbstractCard> upgradableCards) {
-            for(AbstractCard card: upgradableCards) {
+            for (AbstractCard card : upgradableCards) {
                 DisposableVariable.reset(card);
             }
         }
@@ -125,7 +133,7 @@ public class DisposableFieldPatch {
     public static class UpgradePatch3 {
         @SpireInsertPatch(locator = BeforeArrayCallLocator.class, localvars = "upgradableCards")
         public static void Insert(WarPaint __instance, ArrayList<AbstractCard> upgradableCards) {
-            for(AbstractCard card: upgradableCards) {
+            for (AbstractCard card : upgradableCards) {
                 DisposableVariable.reset(card);
             }
         }

@@ -11,7 +11,7 @@ public class Parry extends BaseCard {
     public static final String ID = makeID(Parry.class.getSimpleName());
 
     private static final int BASE_BLOCK = 4;
-    private static final int UPGRADED_BLOCK = 2;
+    private static final int UPGRADED_BLOCK = 4;
 
     public Parry() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);

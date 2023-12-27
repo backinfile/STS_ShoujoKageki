@@ -1,4 +1,4 @@
-package ShoujoKageki.cards.bag;
+package ShoujoKageki.cards.starter;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.PutHandCardIntoBagAction;
@@ -12,7 +12,7 @@ public class Fall extends BaseCard {
     public static final String ID = ModInfo.makeID(Fall.class.getSimpleName());
 
     public Fall() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.NONE);
         baseBlock = 8;
         magicNumber = baseMagicNumber = 1;
     }

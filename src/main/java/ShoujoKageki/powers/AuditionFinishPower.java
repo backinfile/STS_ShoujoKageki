@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import org.apache.logging.log4j.LogManager;
@@ -38,7 +39,7 @@ public class AuditionFinishPower extends BasePower {
 
         AbstractRelic.RelicTier relicTier = AbstractDungeon.returnRandomRelicTier();
         AbstractRelic relic = AbstractDungeon.returnRandomRelic(relicTier);
-        relic.instantObtain();
+        AbstractDungeon.getCurrRoom().addRelicToRewards(relic);
         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Decay(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
     }
 }
