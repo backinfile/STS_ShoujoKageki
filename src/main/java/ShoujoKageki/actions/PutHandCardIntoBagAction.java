@@ -1,5 +1,7 @@
 package ShoujoKageki.actions;
 
+import ShoujoKageki.powers.BagDefendPower;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -85,10 +87,15 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
 
         ArrayList<AbstractCard> bagCards = new ArrayList<>(bag.group);
         bag.clear();
-        if (beforeAmount > 0) {
+        if (beforeAmount > 0 && !BagField.isInfinite()) {
             addToBot(new ReducePowerAction(player, player, BagPower.POWER_ID, beforeAmount));
         }
         bagCards(player.hand.group);
+
+        if (BagField.isInfinite()) {
+            addToBot(new TakeRndTmpCardFromBagAction(BaseMod.MAX_HAND_SIZE));
+            return;
+        }
 //        addToBot(new PutHandCardIntoBagAction(player, true, false));
         addToBot(new PutCardsToHandAction(player, bagCards));
     }

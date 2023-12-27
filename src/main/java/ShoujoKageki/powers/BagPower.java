@@ -26,6 +26,16 @@ public class BagPower extends BasePower {
         super(POWER_ID, RAW_ID, PowerType.BUFF,
                 AbstractDungeon.player, AbstractDungeon.player, amount);
         updateDescription();
+
+        checkBagPower();
+    }
+
+    public void checkBagPower() {
+        if (BagField.bagInfinite.get(AbstractDungeon.player)) {
+            this.amount = -1;
+            this.flashWithoutSound();
+        }
+        updateDescription();
     }
 
 
@@ -37,6 +47,14 @@ public class BagPower extends BasePower {
 
     @Override
     public void updateDescription() {
+        if (BagField.isInfinite()) {
+            description = DESCRIPTIONS[3];
+            if (BagField.isCostZero()) {
+                description += DESCRIPTIONS[4];
+            }
+            return;
+        }
+
         if (owner instanceof AbstractPlayer) {
             CardGroup bag = BagField.bag.get(owner);
             if (bag.isEmpty()) {
@@ -60,12 +78,6 @@ public class BagPower extends BasePower {
                 this.flashWithoutSound();
             }
         }
-
-//        this.flashWithoutSound();
-//        addToBot(new TakeCardFromBagAction());
-//        addToBot(new MakeTempCardInHandAction());
-
-//        addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
     }
 
     @Override

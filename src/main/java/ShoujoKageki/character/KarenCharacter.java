@@ -287,7 +287,7 @@ public class KarenCharacter extends BasePlayer {
 
         if (hb.hovered && InputHelper.justClickedLeft) {
 //            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, "lala"));
-            if (!BagField.getBag().isEmpty()) {
+            if (!BagField.getBag().isEmpty() && !BagField.isInfinite()) {
                 BaseMod.openCustomScreen(BagPileViewScreen.Enum.BAG_PILE_VIEW);
             }
         }

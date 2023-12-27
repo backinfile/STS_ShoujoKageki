@@ -19,6 +19,11 @@ public class ReproduceAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
+            if (BagField.isInfinite()) {
+                BagField.notifyBagPower();
+                isDone = true;
+                return;
+            }
 
             CardGroup bag = BagField.bag.get(AbstractDungeon.player);
             int size = bag.size();

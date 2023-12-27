@@ -14,6 +14,8 @@ public class BagFieldPatch {
     public static class CombatStart {
         public static void Prefix(AbstractPlayer p) {
             BagField.bag.set(p, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
+            BagField.bagInfinite.set(p, false);
+            BagField.bagCostZero.set(p, false);
         }
     }
 

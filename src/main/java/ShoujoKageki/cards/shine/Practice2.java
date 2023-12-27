@@ -18,6 +18,7 @@ public class Practice2 extends BaseCard {
     public Practice2() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         CardModifierManager.addModifier(this, new TotalShineDescriptionModifier());
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

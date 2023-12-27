@@ -2,6 +2,7 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.powers.BagDefendPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -46,6 +47,12 @@ public class SelectBagCardToHandAction extends AbstractGameAction {
         CardGroup bag = BagField.getBag();
 
         if (this.duration == this.startDuration) {
+            if (BagField.isInfinite()) {
+                addToTop(new TakeRndTmpCardFromBagAction(numberOfCards));
+                isDone = true;
+                return;
+            }
+
             if (bag.isEmpty() || this.numberOfCards <= 0) {
                 isDone = true;
                 return;
@@ -71,7 +78,7 @@ public class SelectBagCardToHandAction extends AbstractGameAction {
         }
 
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) { // selectFinish
-            for(AbstractCard c: AbstractDungeon.gridSelectScreen.selectedCards) {
+            for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 if (this.setCost) {
                     c.setCostForTurn(this.newCost);
                 }

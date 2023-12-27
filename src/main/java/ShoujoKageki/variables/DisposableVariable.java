@@ -10,6 +10,7 @@ import ShoujoKageki.variables.patch.DisposableField;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.Objects;
 
@@ -79,7 +80,10 @@ public class DisposableVariable extends DynamicVariable { // Shine
     }
 
     public static int getTotalValueInHand() {
-        if (AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
+        if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
+            return 0;
+        }
+        if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
             return 0;
         }
         int cnt = 0;

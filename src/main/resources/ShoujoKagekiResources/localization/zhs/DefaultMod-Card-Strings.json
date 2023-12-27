@@ -17,8 +17,8 @@
 	},
 	"ShoujoKageki:TowerOfPromise": {
 		"NAME": "约定之塔",
-		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中抽取直到手牌上限。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL  从 约定牌堆 中抽取直到手牌上限。 NL 将这张牌放入抽牌堆。"
+		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中抽牌直到手牌上限。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL  从 约定牌堆 中抽牌直到手牌上限。 NL 将这张牌放入抽牌堆。"
 	},
 	"ShoujoKageki:MeetAgain": {
 		"NAME": "重逢",
@@ -154,6 +154,10 @@
 		"NAME": "Banana松饼",
 		"DESCRIPTION": "获得 3 点临时 力量 。 NL 抽 !M! 张牌。"
 	},
+	"ShoujoKageki:BananaLunch": {
+		"NAME": "Banana午餐",
+		"DESCRIPTION": "回合开始时，增加一张 *三明治 到 约定牌堆 。"
+	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
 		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"
@@ -165,6 +169,14 @@
 	"ShoujoKageki:Letter": {
 		"NAME": "信封",
 		"DESCRIPTION": "回合结束时，约定牌堆 中每有一张牌，获得 !M! 点格挡。"
+	},
+	"ShoujoKageki:Burn": {
+		"NAME": "燃料",
+		"DESCRIPTION": "约定牌堆 将提供无限的随机卡牌。 NL 将 *下一个舞台 洗入抽牌堆。"
+	},
+	"ShoujoKageki:NextStage": {
+		"NAME": "下一个舞台",
+		"DESCRIPTION": "从 约定牌堆 抽取的牌本回合耗能变为0。"
 	},
 	"ShoujoKageki:BlackAttack": {
 		"NAME": "榴弹炮",

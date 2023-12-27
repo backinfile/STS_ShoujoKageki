@@ -41,48 +41,43 @@ public class TakeCardFromBagAction extends AbstractGameAction {
     public void update() {
         BasePlayer player = (BasePlayer) AbstractDungeon.player;
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            if (player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+            int handSize = player.hand.size();
+            if (handSize >= BaseMod.MAX_HAND_SIZE) {
                 isDone = true;
                 return;
             }
             CardGroup bag = BagField.bag.get(player);
 
+            if (BagField.isInfinite()) {
+                int toTake = Math.min(BaseMod.MAX_HAND_SIZE - handSize, amount);
+                addToTop(new TakeRndTmpCardFromBagAction(toTake));
+                isDone = true;
+                return;
+            }
+
             if (rnd) { // 随机获取
                 ArrayList<AbstractCard> toTakeCards = new ArrayList<>();
                 for (int i = 0; i < amount && !bag.isEmpty(); i++) {
+                    if (!discardOverflowedCard && handSize + i >= BaseMod.MAX_HAND_SIZE) break;
                     int rnd = AbstractDungeon.cardRng.random(bag.size() - 1);
                     AbstractCard card = bag.group.get(rnd);
                     toTakeCards.add(card);
                     bag.removeCard(card);
                 }
-                addToTop(new TakeSpecCardFromBagAction(toTakeCards, discardOverflowedCard));
+                addToTop(new TakeSpecCardFromBagAction(toTakeCards, true));
             } else {
                 ArrayList<AbstractCard> toTakeCards = new ArrayList<>();
                 for (int i = 0; i < amount && !bag.isEmpty(); i++) {
+                    if (!discardOverflowedCard && handSize + i >= BaseMod.MAX_HAND_SIZE) break;
                     AbstractCard card = bag.getBottomCard();
                     toTakeCards.add(card);
                     bag.removeCard(card);
                 }
-                addToTop(new TakeSpecCardFromBagAction(toTakeCards, discardOverflowedCard));
+                addToTop(new TakeSpecCardFromBagAction(toTakeCards, true));
             }
             isDone = true;
             return;
         }
         tickDuration();
-    }
-
-    private ArrayList<AbstractCard> rnd3Cards(CardGroup cardGroup) {
-        int takeNum = 3;
-        if (AbstractDungeon.player.hasRelic(BagDiscoverRelic.ID)) takeNum = BagDiscoverRelic.TAKE_NUM;
-        ArrayList<AbstractCard> cards = new ArrayList<>();
-        if (cardGroup.size() <= takeNum) {
-            cards.addAll(cardGroup.group);
-        } else {
-            cardGroup.shuffle();
-            for (int i = 0; i < takeNum; i++) {
-                cards.add(cardGroup.getNCardFromTop(i));
-            }
-        }
-        return cards;
     }
 }

@@ -4,7 +4,9 @@
 		"DESCRIPTIONS": [
 			"爱城华恋特有的牌堆。（点击人物查看具体卡牌）",
 			"约定牌堆 中没有牌了",
-			" NL "
+			" NL ",
+			"爱城华恋特有的牌堆，现在有 #y无限 的随机卡牌。",
+			" NL 从这里抽取的牌本回合耗能变为 #y0 。"
 		]
 	},
 	"ShoujoKageki:BagDefendPower": {
@@ -36,6 +38,12 @@
 		"NAME": "Starlight",
 		"DESCRIPTIONS": [
 			"本次战斗多掉落", "次 #y卡牌奖励 ，其中仅包含 #y闪耀 卡牌。"
+		]
+	},
+	"ShoujoKageki:BananaLunchPower": {
+		"NAME": "Banana午餐",
+		"DESCRIPTIONS": [
+			"回合开始时，增加 #y", " 张 #y三明治 到 约定牌堆 。"
 		]
 	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {

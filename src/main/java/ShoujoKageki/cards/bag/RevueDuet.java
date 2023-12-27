@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.bag;
 
+import ShoujoKageki.actions.TakeRndTmpCardFromBagAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,14 +22,17 @@ public class RevueDuet extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         CardGroup bag = BagField.bag.get(p);
-        if (bag.size() >= magicNumber) {
-            addToTop(new TakeCardFromBagAction(magicNumber));
-            addToTop(new GainEnergyAction(2));
+        if (bag.size() >= magicNumber || BagField.isInfinite()) {
+            addToBot(new TakeCardFromBagAction(magicNumber));
+            addToBot(new GainEnergyAction(2));
         }
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (BagField.isInfinite()) {
+            return true;
+        }
         if (BagField.bag.get(p).size() < magicNumber) {
             this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             return false;
