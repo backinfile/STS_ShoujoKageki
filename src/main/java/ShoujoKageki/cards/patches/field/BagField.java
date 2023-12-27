@@ -1,4 +1,4 @@
-package ShoujoKageki.cards.patches;
+package ShoujoKageki.cards.patches.field;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

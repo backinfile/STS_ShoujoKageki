@@ -68,6 +68,10 @@
 		"NAME": "招架",
 		"DESCRIPTION": "获得 !B! 格挡 。 NL 获得或失去手牌时，本回合格挡值增加 !M! 。"
 	},
+	"ShoujoKageki:NotLose": {
+		"NAME": "我不会输的",
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 沉淀 。"
+	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL (伤害数值随系统时间而变化)"

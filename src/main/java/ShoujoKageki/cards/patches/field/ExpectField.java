@@ -1,5 +1,4 @@
-package ShoujoKageki.cards.patches;
-
+package ShoujoKageki.cards.patches.field;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -11,8 +10,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
         clz = AbstractCard.class,
         method = "<class>"
 )
-public class PutToBagField {
-    public static SpireField<Boolean> putToBag = new SpireField<>(() -> {
-        return false;
-    });
+public class ExpectField {
+    public static SpireField<Boolean> expect = new SpireField<>(() -> false);
 }

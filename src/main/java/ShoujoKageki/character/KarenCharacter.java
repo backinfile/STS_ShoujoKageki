@@ -4,7 +4,7 @@ import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.ModManager;
 import ShoujoKageki.Res;
-import ShoujoKageki.cards.patches.BagField;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.HairpinRelic;

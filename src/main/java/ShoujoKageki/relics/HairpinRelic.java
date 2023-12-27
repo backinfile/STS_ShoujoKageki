@@ -2,17 +2,9 @@ package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.bag.TowerOfPromise;
-import ShoujoKageki.cards.patches.BagField;
-import ShoujoKageki.effects.DeckTopEffect;
-import ShoujoKageki.ui.DeckTopViewer;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.*;
 
 public class HairpinRelic extends BaseRelic {
     public static final String RAW_ID = HairpinRelic.class.getSimpleName();

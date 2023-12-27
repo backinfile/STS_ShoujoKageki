@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.TakeCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.patches.BagField;
+import ShoujoKageki.cards.patches.field.BagField;
 
 public class RevueDuet extends BaseCard {
 

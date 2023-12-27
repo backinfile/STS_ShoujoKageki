@@ -2,18 +2,14 @@ package ShoujoKageki.actions;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
-import ShoujoKageki.cards.patches.BagField;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.character.BasePlayer;
-import ShoujoKageki.powers.BagPower;
 import ShoujoKageki.relics.BagDiscoverRelic;
 
 import java.util.ArrayList;

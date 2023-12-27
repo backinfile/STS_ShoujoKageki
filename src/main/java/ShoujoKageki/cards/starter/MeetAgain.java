@@ -2,7 +2,7 @@ package ShoujoKageki.cards.starter;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.patches.PutToBagField;
+import ShoujoKageki.cards.patches.field.PutToBagField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,8 +21,8 @@ public class MeetAgain extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
-        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber)));
 //        addToBot(new PutDeckTopCardIntoBagAction());
     }
 

@@ -1,6 +1,6 @@
 package ShoujoKageki.actions;
 
-import ShoujoKageki.cards.patches.BagField;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.powers.BagPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -9,8 +9,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 public class ReproduceAction extends AbstractGameAction {
     public ReproduceAction(int amount) {

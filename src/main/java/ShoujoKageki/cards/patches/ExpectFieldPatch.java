@@ -1,28 +1,18 @@
 package ShoujoKageki.cards.patches;
 
 import ShoujoKageki.actions.ExhaustSpecificCardButPurgeAction;
-import ShoujoKageki.effects.MoveCardToBagEffect;
-import ShoujoKageki.effects.PurgeCardInBattleEffect;
-import ShoujoKageki.powers.BagPower;
-import ShoujoKageki.variables.patch.DisposableFieldPatch;
+import ShoujoKageki.cards.patches.field.ExpectField;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
-import javassist.CannotCompileException;
 import javassist.CtBehavior;
-import javassist.expr.ExprEditor;
-import javassist.expr.MethodCall;
 
 
 public class ExpectFieldPatch {
@@ -83,7 +73,7 @@ public class ExpectFieldPatch {
             for (AbstractCard card : AbstractDungeon.player.hand.group) {
                 if (card.isEthereal) continue;
                 if (ExpectField.expect.get(card)) {
-                    AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardButPurgeAction(card, AbstractDungeon.player.hand));
+                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardButPurgeAction(card, AbstractDungeon.player.hand));
                 }
             }
         }

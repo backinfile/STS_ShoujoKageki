@@ -1,5 +1,7 @@
 package ShoujoKageki.cards.patches;
 
+import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.cards.patches.field.PutToBagField;
 import ShoujoKageki.effects.MoveCardToBagEffect;
 import ShoujoKageki.powers.BagPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

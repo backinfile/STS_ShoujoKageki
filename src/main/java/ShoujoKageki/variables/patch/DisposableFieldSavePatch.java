@@ -85,8 +85,11 @@ public class DisposableFieldSavePatch {
             }
 
             for (int i = 0; i < savedString.size() && i < masterDeck.size(); i++) {
-                DisposableVariable.setValue(masterDeck.group.get(i), Integer.parseInt(savedString.get(i)));
-                Log.logger.info("set value = " + Integer.parseInt(savedString.get(i)));
+                int amount = Integer.parseInt(savedString.get(i));
+                if (amount != 0) {
+                    DisposableVariable.setValue(masterDeck.group.get(i), amount);
+                }
+                Log.logger.info("set value = " + amount);
             }
         }
     }

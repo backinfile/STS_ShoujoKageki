@@ -2,8 +2,6 @@ package ShoujoKageki.powers;
 
 
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.bag.TowerOfPromise;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import org.apache.logging.log4j.LogManager;
@@ -12,9 +10,7 @@ import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import ShoujoKageki.actions.TakeCardFromBagAction;
-import ShoujoKageki.cards.ignore.Promise;
-import ShoujoKageki.cards.patches.BagField;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.util.Utils2;
 
 import static ShoujoKageki.ModInfo.makeID;

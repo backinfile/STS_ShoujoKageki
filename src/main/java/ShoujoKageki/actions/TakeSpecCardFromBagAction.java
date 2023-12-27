@@ -1,6 +1,6 @@
 package ShoujoKageki.actions;
 
-import ShoujoKageki.cards.patches.BagField;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.character.BasePlayer;
 import ShoujoKageki.powers.BagPower;
 import basemod.BaseMod;
