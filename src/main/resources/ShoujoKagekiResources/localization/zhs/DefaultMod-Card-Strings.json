@@ -117,6 +117,10 @@
 		"NAME": "出场",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害三次。"
 	},
+	"ShoujoKageki:AuditionFinish": {
+		"NAME": "竞演结束",
+		"DESCRIPTION": "战斗结束时，获得 *腐朽 和一个随机遗物。"
+	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
 		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"

@@ -26,6 +26,12 @@
 			"抽牌改为从 约定牌堆 中抽取。"
 		]
 	},
+	"ShoujoKageki:AuditionFinishPower": {
+		"NAME": "竞演结束",
+		"DESCRIPTIONS": [
+			"战斗结束时，获得 #r腐朽 和一个随机遗物。"
+		]
+	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {
 		"NAME": "暗中窥视",
 		"DESCRIPTIONS": [
