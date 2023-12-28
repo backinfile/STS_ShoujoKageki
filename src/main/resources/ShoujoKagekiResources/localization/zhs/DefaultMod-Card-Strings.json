@@ -156,7 +156,7 @@
 	},
 	"ShoujoKageki:Starlight02": {
 		"NAME": "Starlight-II",
-		"DESCRIPTION": "打出的 闪耀 牌会额外打出 !M! 次，然后耗尽 闪耀 。"
+		"DESCRIPTION": "打出的 闪耀 牌会额外打出 !M! 次，然后耗尽 闪耀 值。"
 	},
 	"ShoujoKageki:Starlight03": {
 		"NAME": "Starlight-III",

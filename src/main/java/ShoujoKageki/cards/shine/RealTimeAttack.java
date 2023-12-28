@@ -2,6 +2,7 @@ package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.variables.DisposableVariable;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class RealTimeAttack extends BaseCard {
     public static final String ID = makeID(RealTimeAttack.class.getSimpleName());
 
