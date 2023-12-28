@@ -1,7 +1,6 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.PutHandCardIntoBagAction;
 import ShoujoKageki.actions.ReproduceAction;
 import ShoujoKageki.cards.BaseCard;
 import basemod.AutoAdd;

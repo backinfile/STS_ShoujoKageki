@@ -1,6 +1,6 @@
 package ShoujoKageki.cards.patches;
 
-import ShoujoKageki.actions.MoveCardToBagAction;
+import ShoujoKageki.actions.bag.MoveCardToBagAction;
 import ShoujoKageki.cards.patches.field.AccretionField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;

@@ -1,6 +1,8 @@
-package ShoujoKageki.actions;
+package ShoujoKageki.actions.bag;
 
+import ShoujoKageki.cards.patches.field.BagField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -35,6 +37,13 @@ public class MakeTempCardInBagAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
             AbstractPlayer player = AbstractDungeon.player;
+
+            if (BagField.isChangeToDrawPile()) {
+                addToTop(new MakeTempCardInDrawPileAction(cardToMake, amount, false, autoPosition, true));
+                isDone = true;
+                return;
+            }
+
             ArrayList<AbstractCard> cards = new ArrayList<>();
 
             for (int i = 0; i < amount; i++) {

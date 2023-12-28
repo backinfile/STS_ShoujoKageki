@@ -1,17 +1,13 @@
-package ShoujoKageki.actions;
+package ShoujoKageki.actions.bag;
 
 import ShoujoKageki.ModInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-
-import java.util.Iterator;
 
 public class SelectDiscardCardIntoBagAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(SelectDiscardCardIntoBagAction.class.getSimpleName()));

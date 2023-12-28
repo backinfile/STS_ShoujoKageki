@@ -1,16 +1,15 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.ApplyBagPowerAction;
+import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.actions.DestroyAllCardInDrawPileAction;
+import ShoujoKageki.actions.bag.MoveCardToBagAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.powers.VoidPower;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Void extends BaseCard {
@@ -24,8 +23,10 @@ public class Void extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
+//        addToBot(new ApplyPowerAction(p, p, new VoidPower()));
+        BagField.bagReplace.set(p, true);
         addToBot(new DestroyAllCardInDrawPileAction());
-        addToBot(new ApplyPowerAction(p, p, new VoidPower()));
+        addToBot(new MoveCardToBagAction(BagField.getBag().group));
         addToBot(new ApplyBagPowerAction());
     }
 

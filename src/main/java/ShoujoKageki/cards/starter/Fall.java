@@ -1,7 +1,7 @@
 package ShoujoKageki.cards.starter;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.PutHandCardIntoBagAction;
+import ShoujoKageki.actions.bag.PutHandCardIntoBagAction;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

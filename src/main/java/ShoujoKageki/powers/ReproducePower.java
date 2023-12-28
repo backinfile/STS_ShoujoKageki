@@ -1,8 +1,6 @@
 package ShoujoKageki.powers;
 
 
-import ShoujoKageki.actions.MakeTempCardInBagAction;
-import ShoujoKageki.cards.bag.EatFood2;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,8 +13,8 @@ public class ReproducePower extends BasePower {
     private static final String RAW_ID = ReproducePower.class.getSimpleName();
     public static final String POWER_ID = makeID(RAW_ID);
 
-    public ReproducePower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+    public ReproducePower() {
+        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, -1);
     }
 
     @Override

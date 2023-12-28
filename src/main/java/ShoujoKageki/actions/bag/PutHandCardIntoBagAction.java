@@ -1,9 +1,8 @@
-package ShoujoKageki.actions;
+package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.powers.BagDefendPower;
+import ShoujoKageki.actions.PutCardsToHandAction;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +13,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.powers.BagPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +56,11 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
                 return;
             }
             if (allCardInHand) {
+                bagCards(player.hand.group);
+                isDone = true;
+                return;
+            }
+            if (player.hand.size() <= this.amount) {
                 bagCards(player.hand.group);
                 isDone = true;
                 return;

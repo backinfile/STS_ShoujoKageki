@@ -1,11 +1,9 @@
 package ShoujoKageki.cards.tool;
 
 import basemod.AutoAdd;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.MakeTempCardInBagAction;
 import ShoujoKageki.cards.BaseCard;
 
 @AutoAdd.Ignore

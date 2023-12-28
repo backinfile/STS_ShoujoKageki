@@ -32,7 +32,6 @@ public class Promise extends BaseCard {
 
     @Override
     public void triggerOnTurnStartInBag() {
-        super.triggerOnTurnStartInBag();
         addToBot(new GainEnergyAction(magicNumber));
     }
 

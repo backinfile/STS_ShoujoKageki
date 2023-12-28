@@ -3,7 +3,7 @@ package ShoujoKageki.cards.bag;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.PutHandCardIntoBagAction;
+import ShoujoKageki.actions.bag.PutHandCardIntoBagAction;
 import ShoujoKageki.cards.BaseCard;
 
 public class ExchangeFate extends BaseCard {

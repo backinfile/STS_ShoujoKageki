@@ -25,10 +25,10 @@ public class BurnModifier extends AbstractCardModifier {
     }
 
 
-//    @Override
-//    public String modifyDescription(String rawDescription, AbstractCard card) {
-//        return TEXT[0] + rawDescription + TEXT[1];
-//    }
+    @Override
+    public String modifyDescription(String rawDescription, AbstractCard card) {
+        return TEXT[0] + rawDescription + TEXT[1];
+    }
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {

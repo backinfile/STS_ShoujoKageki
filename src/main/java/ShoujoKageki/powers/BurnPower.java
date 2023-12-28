@@ -1,6 +1,7 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.modifier.BurnModifier;
 import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -31,11 +32,27 @@ public class BurnPower extends BasePower {
     @Override
     public void triggerOnTakeFromBag(AbstractCard card) {
         super.triggerOnTakeFromBag(card);
+        makeCardBurn(card);
+        flash();
+    }
+
+    @Override
+    public void onCardDraw(AbstractCard card) {
+        super.onCardDraw(card);
+
+        if (BagField.isChangeToDrawPile(false)) {
+            makeCardBurn(card);
+        }
+    }
+
+    private static void makeCardBurn(AbstractCard card) {
         if (card.canUpgrade()) {
             card.upgrade();
         }
-        FlavorText.AbstractCardFlavorFields.flavor.set(card, DESCRIPTIONS[1]);
-        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(card, FlavorText.boxType.TRADITIONAL);
-        CardModifierManager.addModifier(card, new BurnModifier());
+//        FlavorText.AbstractCardFlavorFields.flavor.set(card, DESCRIPTIONS[1]);
+//        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(card, FlavorText.boxType.TRADITIONAL);
+        if (!CardModifierManager.hasModifier(card, BurnModifier.ID)) {
+            CardModifierManager.addModifier(card, new BurnModifier());
+        }
     }
 }

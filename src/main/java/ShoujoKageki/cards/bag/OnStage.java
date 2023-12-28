@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.TakeCardFromBagAction;
+import ShoujoKageki.actions.bag.TakeCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
 
 public class OnStage extends BaseCard {

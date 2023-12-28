@@ -1,13 +1,11 @@
 package ShoujoKageki.cards.patches;
 
-import ShoujoKageki.actions.ApplyBagPowerAction;
+import ShoujoKageki.actions.bag.ApplyBagPowerAction;
+import ShoujoKageki.actions.bag.MoveCardToBagAction;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.cards.patches.field.PutToBagField;
 import ShoujoKageki.effects.MoveCardToBagEffect;
-import ShoujoKageki.powers.BagDefendPower;
-import ShoujoKageki.powers.BagPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -20,10 +18,7 @@ public class PutToBagPatch {
 
     public static boolean checkIfPutToBag(AbstractCard targetCard) {
         if (PutToBagField.putToBag.get(targetCard)) {
-            CardGroup bag = BagField.bag.get(AbstractDungeon.player);
-            bag.group.add(targetCard);
-            AbstractDungeon.effectList.add(new MoveCardToBagEffect(targetCard));
-            AbstractDungeon.actionManager.addToTop(new ApplyBagPowerAction(1));
+            AbstractDungeon.actionManager.addToTop(new MoveCardToBagAction(targetCard));
             return true;
         }
         return false;

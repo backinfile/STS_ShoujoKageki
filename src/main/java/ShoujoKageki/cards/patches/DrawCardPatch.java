@@ -1,11 +1,10 @@
 package ShoujoKageki.cards.patches;
 
-import ShoujoKageki.actions.TakeCardFromBagAction;
+import ShoujoKageki.actions.bag.TakeCardFromBagAction;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.powers.VoidPower;
 import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -17,10 +16,10 @@ import com.megacrit.cardcrawl.powers.NoDrawPower;
 public class DrawCardPatch {
 
 
-    @SpirePatch(
-            clz = DrawCardAction.class,
-            method = "update"
-    )
+//    @SpirePatch(
+//            clz = DrawCardAction.class,
+//            method = "update"
+//    )
     public static class Patch {
         public static SpireReturn<Void> Prefix(DrawCardAction instance, @ByRef boolean[] ___clearDrawHistory, AbstractGameAction ___followUpAction) {
             AbstractPower voidPower = AbstractDungeon.player.getPower(VoidPower.POWER_ID);

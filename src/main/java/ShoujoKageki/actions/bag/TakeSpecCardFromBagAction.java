@@ -1,10 +1,9 @@
-package ShoujoKageki.actions;
+package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.character.BasePlayer;
 import ShoujoKageki.powers.BagPower;
-import ShoujoKageki.powers.BasePower;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -12,8 +11,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
@@ -46,14 +43,7 @@ public class TakeSpecCardFromBagAction extends AbstractGameAction {
             for (int i = 0; i < toTake; i++) {
                 AbstractCard curCard = cardsToTake.get(i);
 
-                { // triggers
-                    if (curCard instanceof BaseCard) {
-                        ((BaseCard) curCard).triggerOnTakeFromBag();
-                    }
-                    for (AbstractPower power : player.powers) {
-                        if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(curCard);
-                    }
-                }
+                BagFieldPatch.triggerOnTakeFromBag(curCard);
 
                 if (handSize + i >= BaseMod.MAX_HAND_SIZE) {
                     if (discardOverflowedCard) {

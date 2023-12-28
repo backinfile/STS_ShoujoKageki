@@ -1,9 +1,10 @@
-package ShoujoKageki.actions;
+package ShoujoKageki.actions.bag;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.powers.BagDefendPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
+import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -49,6 +50,12 @@ public class SelectBagCardToHandAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             if (BagField.isInfinite()) {
                 addToTop(new TakeRndTmpCardFromBagAction(numberOfCards));
+                isDone = true;
+                return;
+            }
+
+            if (BagField.isChangeToDrawPile()) {
+                addToBot(new BetterDrawPileToHandAction(numberOfCards));
                 isDone = true;
                 return;
             }

@@ -1,10 +1,8 @@
 package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.MakeTempCardInBagAction;
 import ShoujoKageki.actions.ReduceStrengthAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.bag.Attack05;
 import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;

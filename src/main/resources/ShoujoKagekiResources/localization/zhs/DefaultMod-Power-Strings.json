@@ -2,9 +2,14 @@
 	"ShoujoKageki:BagPower": {
 		"NAME": "约定牌堆",
 		"DESCRIPTIONS": [
-			"爱城华恋特有的牌堆。（点击人物查看具体卡牌）",
-			"约定牌堆 中没有牌了",
-			" NL "
+			"爱城华恋特有的牌堆。", 
+			"（点击人物查看具体卡牌）", 
+			" NL #y强化 ：现在约定牌堆中有无限的 #y续演 。", 
+			" NL #y强化 ：现在视抽牌堆为约定牌堆。",
+			" NL #y强化 ：现在从约定牌堆中抽出的牌将被 #y升级 ，且被打出时 #r消耗 。",
+			" NL 约定牌堆 中没有牌 。",
+			" NL 卡牌按顺序： NL ",
+			" NL ", 
 		]
 	},
 	"ShoujoKageki:BagInfinitePower": {
@@ -22,7 +27,7 @@
 	"ShoujoKageki:VoidPower": {
 		"NAME": "世界上最空虚的人",
 		"DESCRIPTIONS": [
-			"抽牌改为从 约定牌堆 中抽取。"
+			"以 #y约定牌堆 代替 抽牌堆。"
 		]
 	},
 	"ShoujoKageki:AuditionFinishPower": {
@@ -65,7 +70,7 @@
 	"ShoujoKageki:ReproducePower": {
 		"NAME": "再生产",
 		"DESCRIPTIONS": [
-			"回合结束时，增加 #y", " 张 #y三明治 到 约定牌堆 。"
+			"#y约定牌堆 将提供 #y无限 的 #y续演 。"
 		]
 	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {

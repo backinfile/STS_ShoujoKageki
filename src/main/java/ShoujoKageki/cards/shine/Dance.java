@@ -1,13 +1,10 @@
 package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.SelectBagCardToHandAction;
+import ShoujoKageki.actions.bag.SelectBagCardToHandAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.variables.DisposableVariable;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

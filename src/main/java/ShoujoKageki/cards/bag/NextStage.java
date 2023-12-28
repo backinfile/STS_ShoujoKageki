@@ -1,7 +1,7 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.ApplyBagPowerAction;
+import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
 import basemod.AutoAdd;

@@ -1,4 +1,4 @@
-package ShoujoKageki.actions;
+package ShoujoKageki.actions.bag;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;

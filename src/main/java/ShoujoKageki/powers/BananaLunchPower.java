@@ -1,15 +1,9 @@
 package ShoujoKageki.powers;
 
 
-import ShoujoKageki.actions.MakeTempCardInBagAction;
+import ShoujoKageki.actions.bag.MakeTempCardInBagAction;
 import ShoujoKageki.cards.bag.EatFood2;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.curses.Decay;
-import com.megacrit.cardcrawl.cards.tempCards.Shiv;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

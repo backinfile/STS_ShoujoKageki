@@ -1,7 +1,8 @@
-package ShoujoKageki.actions;
+package ShoujoKageki.actions.bag;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.character.BasePlayer;
-import ShoujoKageki.relics.BagDiscoverRelic;
 
 import java.util.ArrayList;
 
@@ -46,6 +46,17 @@ public class TakeCardFromBagAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
+            if (BagField.isChangeToDrawPile()) {
+                if (discardOverflowedCard) {
+                    addToTop(new DrawCardAction(amount));
+                } else {
+                    int toDraw = Math.min(amount, BaseMod.MAX_HAND_SIZE - handSize);
+                    addToTop(new DrawCardAction(toDraw));
+                }
+                isDone = true;
+                return;
+            }
+
             CardGroup bag = BagField.bag.get(player);
 
             if (BagField.isInfinite()) {
