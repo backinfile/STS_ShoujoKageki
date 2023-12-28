@@ -1,6 +1,7 @@
 package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.LockRelicAction;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class LockRelic extends BaseRelic {
     public static final String RAW_ID = LockRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);
+    public static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS;
     private final AbstractRelic lockedRelic;
     private final int position;
 
@@ -30,7 +32,6 @@ public class LockRelic extends BaseRelic {
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
-        initializeTips();
     }
 
 

@@ -26,7 +26,8 @@
 		"NAME": "禁用的遗物",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"这里锁着 #y", " 。"
+			"这里锁着 #y", " 。",
+			"无可禁用遗物"
 		]
 	},
 	"ShoujoKageki:DrawExtraRelic": {

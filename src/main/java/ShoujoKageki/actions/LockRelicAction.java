@@ -7,7 +7,16 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import java.util.ArrayList;
+
 public class LockRelicAction extends AbstractGameAction {
+
+    public static final ArrayList<String> WhiteList = new ArrayList<>();
+
+    {
+        WhiteList.add("loadout:");
+    }
+
     public LockRelicAction() {
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
     }
@@ -38,6 +47,7 @@ public class LockRelicAction extends AbstractGameAction {
         for (int i = p.relics.size() - 1; i >= 0; i--) {
             AbstractRelic relic = p.relics.get(i);
             if (relic instanceof LockRelic) continue;
+            if (WhiteList.stream().anyMatch(relic.relicId::contains)) continue;
             return i;
         }
         return -1;

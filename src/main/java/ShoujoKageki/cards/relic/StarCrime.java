@@ -3,6 +3,7 @@ package ShoujoKageki.cards.relic;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.LockRelicAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.relics.LockRelic;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,6 +27,7 @@ public class StarCrime extends BaseCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!LockRelicAction.hasRelicToLock()) {
+            cantUseMessage = LockRelic.DESCRIPTIONS[2];
             return false;
         }
         return super.canUse(p, m);
