@@ -3,7 +3,6 @@ package ShoujoKageki.actions;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.patches.TokenCardField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -17,6 +16,7 @@ public class GainOrIgnoreAction extends AbstractGameAction {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(GainOrIgnoreAction.class.getSimpleName())).TEXT;
 
     private final AbstractCard gainCard;
+    private boolean retrieveCard = false;
 
     public GainOrIgnoreAction(AbstractCard gainCard) {
         this.gainCard = gainCard.makeCopy();
@@ -35,19 +35,20 @@ public class GainOrIgnoreAction extends AbstractGameAction {
         if (this.startDuration == this.duration) {
             CardGroup selectFrom = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             selectFrom.addToTop(gainCard);
-            AbstractDungeon.gridSelectScreen.open(selectFrom, 1, true, TEXT[0]);
-
+            AbstractDungeon.cardRewardScreen.customCombatOpen(selectFrom.group, TEXT[0], true);
             tickDuration();
             return;
         }
-        if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) { // selectFinish
-            addToBot(new AddCardToDeckAction(gainCard));
-            addToBot(new WaitAction(Settings.ACTION_DUR_FAST));
 
-            addToBot(new MakeTempCardInHandAction(gainCard.makeSameInstanceOf(), false, true));
-            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+        if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
+            AbstractCard targetCard = AbstractDungeon.cardRewardScreen.discoveryCard;
+            AbstractDungeon.cardRewardScreen.discoveryCard = null;
+            TokenCardField.isToken.set(targetCard, false);
+            addToBot(new MakeTempCardInHandAction(targetCard, false, true));
+            addToBot(new AddCardToDeckAction(targetCard.makeSameInstanceOf()));
             isDone = true;
         }
+
         this.tickDuration();
     }
 }
