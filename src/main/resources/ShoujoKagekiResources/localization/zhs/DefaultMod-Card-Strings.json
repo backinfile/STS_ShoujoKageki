@@ -130,7 +130,15 @@
 		"DESCRIPTION": "获得一瓶 *类固醇药水 。 NL 消耗 。"
 	},
 	"ShoujoKageki:Starlight": {
-		"NAME": "Starlight",
+		"NAME": "Starlight-I",
+		"DESCRIPTION": "打出 闪耀 牌后，抽 !M! 张牌。"
+	},
+	"ShoujoKageki:Starlight02": {
+		"NAME": "Starlight-II",
+		"DESCRIPTION": "打出的 闪耀 牌会额外打出 !M! 次，然后耗尽 闪耀 。"
+	},
+	"ShoujoKageki:Starlight03": {
+		"NAME": "Starlight-III",
 		"DESCRIPTION": "本次战斗多掉落一次卡牌奖励，其中仅包含 闪耀 卡牌。"
 	},
 	"ShoujoKageki:Nonon": {
@@ -166,7 +174,7 @@
 		"NAME": "命运舞台的再生产",
 		"DESCRIPTION": "约定牌堆 将提供无限的 *续演 。"
 	},
-	"ShoujoKageki:Continuation": {
+	"ShoujoKageki:Continue": {
 		"NAME": "续演",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗 。"
 	},
@@ -200,7 +208,7 @@
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",
-		"DESCRIPTION": "墓地 。 NL 摧毁牌库，抽牌改为从 约定牌堆 中抽取。"
+		"DESCRIPTION": "墓地 。 NL 摧毁抽牌堆，以 约定牌堆 代替。"
 	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",
