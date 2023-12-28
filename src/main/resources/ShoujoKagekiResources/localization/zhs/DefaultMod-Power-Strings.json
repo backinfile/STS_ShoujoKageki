@@ -4,16 +4,13 @@
 		"DESCRIPTIONS": [
 			"爱城华恋特有的牌堆。（点击人物查看具体卡牌）",
 			"约定牌堆 中没有牌了",
-			" NL ",
-			"爱城华恋特有的牌堆，现在有 #y无限 的随机卡牌。",
-			" NL 从这里抽取的牌本回合耗能变为 #y0 。"
+			" NL "
 		]
 	},
-	"ShoujoKageki:BagDefendPower": {
-		"NAME": "架子活",
+	"ShoujoKageki:BagInfinitePower": {
+		"NAME": "约定牌堆",
 		"DESCRIPTIONS": [
-			"回合结束时，口袋 中每有一张牌，获得",
-			"点格挡。"
+			"爱城华恋特有的牌堆，现在有 #y无限 的 #y续演 。"
 		]
 	},
 	"ShoujoKageki:ToolPower": {
@@ -32,6 +29,13 @@
 		"NAME": "竞演结束",
 		"DESCRIPTIONS": [
 			"战斗结束时，获得 #r腐朽 和一个随机遗物。"
+		]
+	},
+	"ShoujoKageki:BurnPower": {
+		"NAME": "燃烧",
+		"DESCRIPTIONS": [
+			"从 约定牌堆 抽出的牌将被 #y升级 ， 且被打出时 #r消耗 。",
+			"#r燃烧中"
 		]
 	},
 	"ShoujoKageki:StarlightPower": {

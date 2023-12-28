@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.patches;
 
+import ShoujoKageki.actions.ApplyBagPowerAction;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.cards.patches.field.PutToBagField;
 import ShoujoKageki.effects.MoveCardToBagEffect;
@@ -22,11 +23,7 @@ public class PutToBagPatch {
             CardGroup bag = BagField.bag.get(AbstractDungeon.player);
             bag.group.add(targetCard);
             AbstractDungeon.effectList.add(new MoveCardToBagEffect(targetCard));
-            if (!BagField.isInfinite()) {
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BagPower(1)));
-            } else {
-                BagField.notifyBagPower();
-            }
+            AbstractDungeon.actionManager.addToTop(new ApplyBagPowerAction(1));
             return true;
         }
         return false;

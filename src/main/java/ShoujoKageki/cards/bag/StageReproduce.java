@@ -1,6 +1,7 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.ApplyBagPowerAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.effects.BurnEffect;
@@ -21,9 +22,7 @@ public class StageReproduce extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         BagField.bagInfinite.set(p, true);
-        BagField.notifyBagPower();
-        addToBot(new MakeTempCardInDrawPileAction(new NextStage(), 1, true, true));
-        AbstractDungeon.effectList.add(new BurnEffect());
+        addToBot(new ApplyBagPowerAction());
     }
 
     @Override

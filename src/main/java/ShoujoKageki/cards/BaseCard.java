@@ -91,4 +91,8 @@ public abstract class BaseCard extends AbstractDefaultCard {
     public void triggerOnDisposed() {
 
     }
+
+    public void triggerOnTakeFromBag() {
+        
+    }
 }

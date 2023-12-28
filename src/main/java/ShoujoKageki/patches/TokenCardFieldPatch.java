@@ -108,7 +108,7 @@ public class TokenCardFieldPatch {
         if (card.isLocked || !card.isSeen) {
             return;
         }
-        if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+        if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.getCurrMapNode() == null || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
             return;
         }
         if (!TokenCardField.isToken.get(card)) {

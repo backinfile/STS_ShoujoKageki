@@ -1,7 +1,6 @@
-package ShoujoKageki.cards.shine;
+package ShoujoKageki.modifier;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.variables.DisposableVariable;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

@@ -191,8 +191,8 @@
 		"DESCRIPTION": "回合结束时，约定牌堆 中每有一张牌，获得 !M! 点格挡。"
 	},
 	"ShoujoKageki:Burn": {
-		"NAME": "燃料",
-		"DESCRIPTION": "约定牌堆 将提供无限的随机卡牌。 NL 将 *下一个舞台 洗入抽牌堆。"
+		"NAME": "燃烧",
+		"DESCRIPTION": "从 约定牌堆 抽出的牌将被 升级 ， 且被打出时 消耗 。"
 	},
 	"ShoujoKageki:NextStage": {
 		"NAME": "下一个舞台",

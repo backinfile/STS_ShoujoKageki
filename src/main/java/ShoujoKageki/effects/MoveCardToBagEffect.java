@@ -1,5 +1,6 @@
 package ShoujoKageki.effects;
 
+import ShoujoKageki.powers.VoidPower;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,6 +17,10 @@ public class MoveCardToBagEffect extends AbstractGameEffect {
     private boolean justStart = true;
 
     public static float DURATION = Settings.ACTION_DUR_FAST;
+    public static final float DISCARD_X = (float) Settings.WIDTH * 0.96F;
+    public static final float DISCARD_Y = (float) Settings.HEIGHT * 0.06F;
+    public static final float DRAW_PILE_X = (float) Settings.WIDTH * 0.04F;
+    public static final float DRAW_PILE_Y = (float) Settings.HEIGHT * 0.06F;
 
     public MoveCardToBagEffect(AbstractCard card) {
         super();
@@ -32,8 +37,15 @@ public class MoveCardToBagEffect extends AbstractGameEffect {
             card.unhover();
             card.setAngle(0.0F);
             card.targetDrawScale = 0.001F;
-            card.target_x = AbstractDungeon.player.hb.cX;
-            card.target_y = AbstractDungeon.player.hb.cY;
+
+            if (AbstractDungeon.player.hasPower(VoidPower.POWER_ID)) {
+                card.target_x = DRAW_PILE_X;
+                card.target_y = DRAW_PILE_Y;
+            } else {
+                card.target_x = AbstractDungeon.player.hb.cX;
+                card.target_y = AbstractDungeon.player.hb.cY;
+            }
+
 //            AbstractDungeon.player.hand.refreshHandLayout();
 //            AbstractDungeon.player.hand.applyPowers();
         }

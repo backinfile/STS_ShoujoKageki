@@ -20,11 +20,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
@@ -280,16 +282,4 @@ public class KarenCharacter extends BasePlayer {
         return TEXT[2];
     }
 
-
-    @Override
-    public void update() {
-        super.update();
-
-        if (hb.hovered && InputHelper.justClickedLeft) {
-//            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, "lala"));
-            if (!BagField.getBag().isEmpty() && !BagField.isInfinite()) {
-                BaseMod.openCustomScreen(BagPileViewScreen.Enum.BAG_PILE_VIEW);
-            }
-        }
-    }
 }

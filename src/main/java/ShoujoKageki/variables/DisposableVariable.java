@@ -1,15 +1,13 @@
 package ShoujoKageki.variables;
 
 import ShoujoKageki.Log;
-import ShoujoKageki.cards.shine.ShineCardDescriptionModifier;
+import ShoujoKageki.modifier.ShineCardDescriptionModifier;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.variables.patch.DisposableField;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.Objects;

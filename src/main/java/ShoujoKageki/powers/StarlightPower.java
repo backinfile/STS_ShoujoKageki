@@ -4,6 +4,7 @@ package ShoujoKageki.powers;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.curses.Decay;
@@ -43,9 +44,9 @@ public class StarlightPower extends BasePower {
     }
 
     @Override
-    public void onAfterCardPlayed(AbstractCard usedCard) {
-        super.onAfterCardPlayed(usedCard);
-        if (DisposableVariable.isDisposableCard(usedCard)) {
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        super.onAfterUseCard(card, action);
+        if (DisposableVariable.isDisposableCard(card)) {
             addToBot(new DrawCardAction(amount));
             this.flash();
         }

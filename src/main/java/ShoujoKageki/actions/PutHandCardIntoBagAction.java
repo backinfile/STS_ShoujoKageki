@@ -87,9 +87,7 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
 
         ArrayList<AbstractCard> bagCards = new ArrayList<>(bag.group);
         bag.clear();
-        if (beforeAmount > 0 && !BagField.isInfinite()) {
-            addToBot(new ReducePowerAction(player, player, BagPower.POWER_ID, beforeAmount));
-        }
+        addToBot(new ApplyBagPowerAction(-beforeAmount));
         bagCards(player.hand.group);
 
         if (BagField.isInfinite()) {

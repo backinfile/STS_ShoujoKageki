@@ -4,11 +4,13 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.PutHandCardIntoBagAction;
 import ShoujoKageki.actions.ReproduceAction;
 import ShoujoKageki.cards.BaseCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class Reproduce extends BaseCard {
 
     public static final String ID = ModInfo.makeID(Reproduce.class.getSimpleName());

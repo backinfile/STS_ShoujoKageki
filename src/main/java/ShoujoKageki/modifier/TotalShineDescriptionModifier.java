@@ -1,4 +1,4 @@
-package ShoujoKageki.cards.shine;
+package ShoujoKageki.modifier;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.variables.DisposableVariable;

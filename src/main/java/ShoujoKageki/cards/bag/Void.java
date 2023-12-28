@@ -1,6 +1,7 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.ApplyBagPowerAction;
 import ShoujoKageki.actions.DestroyAllCardInDrawPileAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.powers.VoidPower;
@@ -25,6 +26,7 @@ public class Void extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         addToBot(new DestroyAllCardInDrawPileAction());
         addToBot(new ApplyPowerAction(p, p, new VoidPower()));
+        addToBot(new ApplyBagPowerAction());
     }
 
     @Override

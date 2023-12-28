@@ -1,11 +1,14 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.ApplyBagPowerAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class NextStage extends BaseCard {
 
     public static final String ID = ModInfo.makeID(NextStage.class.getSimpleName());
@@ -18,7 +21,8 @@ public class NextStage extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         BagField.bagCostZero.set(p, true);
-        BagField.notifyBagPower();
+        addToBot(new ApplyBagPowerAction());
+//        BagField.notifyBagPower();
     }
 
     @Override

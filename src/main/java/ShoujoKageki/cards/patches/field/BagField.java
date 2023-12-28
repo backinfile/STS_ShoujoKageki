@@ -1,6 +1,8 @@
 package ShoujoKageki.cards.patches.field;
 
 import ShoujoKageki.powers.BagPower;
+import ShoujoKageki.powers.BurnPower;
+import ShoujoKageki.powers.VoidPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -9,6 +11,8 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import java.util.ArrayList;
 
 @SpirePatch(
         clz = AbstractPlayer.class,
@@ -23,24 +27,12 @@ public class BagField {
         return bag.get(AbstractDungeon.player);
     }
 
-    public static void notifyBagPower() {
-
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p.hasPower(BagPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, BagPower.POWER_ID));
-        }
-
-        for (AbstractPower power : p.powers) {
-            if (power instanceof BagPower) {
-                ((BagPower) power).checkBagPower();
-                return;
-            }
-        }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BagPower(1)));
-    }
-
     public static boolean isInfinite() {
         return bagInfinite.get(AbstractDungeon.player);
+    }
+
+    public static boolean isChangeToDrawPile() {
+        return AbstractDungeon.player.hasPower(VoidPower.POWER_ID);
     }
 
     public static boolean isCostZero() {

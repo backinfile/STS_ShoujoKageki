@@ -29,6 +29,11 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:BurnModifier": {
+    "TEXT": ["", " NL *燃烧中"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:TokenCardField": {
     "TEXT": ["衍生牌"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],

@@ -1,10 +1,12 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.ApplyBagPowerAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.effects.BurnEffect;
 import ShoujoKageki.powers.BananaLunchPower;
+import ShoujoKageki.powers.BurnPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,15 +18,13 @@ public class Burn extends BaseCard {
     public static final String ID = ModInfo.makeID(Burn.class.getSimpleName());
 
     public Burn() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
-        this.cardsToPreview = new NextStage();
+        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        BagField.bagInfinite.set(p, true);
-        BagField.notifyBagPower();
-        addToBot(new MakeTempCardInDrawPileAction(new NextStage(), 1, true, true));
+        addToBot(new ApplyPowerAction(p, p, new BurnPower()));
+        addToBot(new ApplyBagPowerAction());
         AbstractDungeon.effectList.add(new BurnEffect());
     }
 

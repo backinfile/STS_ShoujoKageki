@@ -3,12 +3,11 @@ package ShoujoKageki.cards.shine;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.AccretionField;
+import ShoujoKageki.modifier.TotalShineDescriptionModifier;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Practice2 extends BaseCard {
