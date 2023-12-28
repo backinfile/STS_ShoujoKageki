@@ -11,4 +11,5 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 public class DisposableField {
     public static SpireField<Integer> disposable = new SpireField<>(() -> 0);
     public static SpireField<Integer> baseDisposable = new SpireField<>(() -> 0);
+    public static SpireField<Boolean> forceDispose = new SpireField<>(() -> false);
 }

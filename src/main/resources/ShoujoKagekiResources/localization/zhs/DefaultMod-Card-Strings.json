@@ -17,8 +17,8 @@
 	},
 	"ShoujoKageki:TowerOfPromise": {
 		"NAME": "约定之塔",
-		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中抽牌直到手牌上限。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL  从 约定牌堆 中抽牌直到手牌上限。 NL 将这张牌放入抽牌堆。"
+		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中抽牌直到手牌上限。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL  从 约定牌堆 中抽牌直到手牌上限。"
 	},
 	"ShoujoKageki:MeetAgain": {
 		"NAME": "重逢",
@@ -89,20 +89,24 @@
 		"NAME": "命运交换之日",
 		"DESCRIPTION": "手牌与 约定牌堆 中的牌交换。"
 	},
-	"ShoujoKageki:RevueDuet": {
-		"NAME": "Revue Duet",
-		"DESCRIPTION": "从 约定牌堆 抽取 !M! 张牌，然后获得 [E] [E] 。",
+	"ShoujoKageki:OnStage": {
+		"NAME": "舞台之上",
+		"DESCRIPTION": "从 约定牌堆 抽取 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
 		"EXTENDED_DESCRIPTION": [
 		  "约定牌堆 中卡牌数量不足。"
 		]
 	},
 	"ShoujoKageki:Dance": {
 		"NAME": "舞动",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张放入手牌。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌。"
 	},
 	"ShoujoKageki:WeKnow": {
 		"NAME": "舞台的热情",
 		"DESCRIPTION": "约定牌堆 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
+	},
+	"ShoujoKageki:Run03": {
+		"NAME": "奔跑",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，可将此牌重新加入牌组。"
 	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
@@ -156,7 +160,15 @@
 	},
 	"ShoujoKageki:BananaLunch": {
 		"NAME": "Banana午餐",
-		"DESCRIPTION": "回合开始时，增加一张 *三明治 到 约定牌堆 。"
+		"DESCRIPTION": "回合结束时，增加一张 *三明治 到 约定牌堆 。"
+	},
+	"ShoujoKageki:StageReproduce": {
+		"NAME": "命运舞台的再生产",
+		"DESCRIPTION": "约定牌堆 将提供无限的 *续演 。"
+	},
+	"ShoujoKageki:Continuation": {
+		"NAME": "续演",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗 。"
 	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",

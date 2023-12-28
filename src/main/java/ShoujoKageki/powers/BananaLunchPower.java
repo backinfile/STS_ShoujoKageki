@@ -25,10 +25,15 @@ public class BananaLunchPower extends BasePower {
         super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
-    public void atStartOfTurn() {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flash();
-            this.addToBot(new MakeTempCardInBagAction(new EatFood2(), this.amount, false, false));
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        super.atEndOfTurn(isPlayer);
+
+        if (isPlayer) {
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                this.flash();
+                this.addToBot(new MakeTempCardInBagAction(new EatFood2(), this.amount, false, false));
+            }
         }
     }
 

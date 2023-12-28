@@ -43,7 +43,13 @@
 	"ShoujoKageki:BananaLunchPower": {
 		"NAME": "Banana午餐",
 		"DESCRIPTIONS": [
-			"回合开始时，增加 #y", " 张 #y三明治 到 约定牌堆 。"
+			"回合结束时，增加 #y", " 张 #y三明治 到 约定牌堆 。"
+		]
+	},
+	"ShoujoKageki:ReproducePower": {
+		"NAME": "再生产",
+		"DESCRIPTIONS": [
+			"回合结束时，增加 #y", " 张 #y三明治 到 约定牌堆 。"
 		]
 	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {

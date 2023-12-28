@@ -35,7 +35,7 @@ public class DisposableFieldPatch {
             }
             AbstractCard cardInDeck = StSLib.getMasterDeckEquivalent(___targetCard);
 
-            if (curValue == 1) {
+            if (curValue == 1 || DisposableField.forceDispose.get(___targetCard)) {
                 if (cardInDeck != null) {
                     AbstractDungeon.player.masterDeck.removeCard(cardInDeck);
                 }
@@ -90,6 +90,28 @@ public class DisposableFieldPatch {
         private static class Locator extends SpireInsertLocator {
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "uuid");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractCard.class,
+            method = "makeStatEquivalentCopy"
+    )
+    public static class MakeStatEquivalentCopy { // 当前卡的闪耀值突破上限了，保留突破上限的这些
+        @SpireInsertPatch(locator = Locator.class, localvars = "card")
+        public static void Insert(AbstractCard __instance, AbstractCard card) {
+            int curValue = DisposableVariable.getValue(__instance);
+            int newValue = DisposableVariable.getValue(card);
+            if (curValue > newValue && newValue != -1) {
+                DisposableVariable.setValue(card, curValue);
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "name");
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
         }

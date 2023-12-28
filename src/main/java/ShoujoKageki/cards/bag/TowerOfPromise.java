@@ -17,6 +17,7 @@ public class TowerOfPromise extends BaseCard {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         this.color = CardColor.COLORLESS;
         selfRetain = true;
+        exhaust = true;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class TowerOfPromise extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (!BagField.bag.get(p).isEmpty()) {
+        if (BagField.isInfinite() || !BagField.bag.get(p).isEmpty()) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
@@ -39,7 +40,8 @@ public class TowerOfPromise extends BaseCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            shuffleBackIntoDrawPile = true;
+//            shuffleBackIntoDrawPile = true;
+            exhaust = false;
             initializeDescription();
         }
     }

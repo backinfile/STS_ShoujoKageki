@@ -87,6 +87,7 @@ public abstract class BaseCard extends AbstractDefaultCard {
 
     }
 
+    // 闪耀耗尽时
     public void triggerOnDisposed() {
 
     }

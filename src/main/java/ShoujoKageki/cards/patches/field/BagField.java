@@ -4,6 +4,7 @@ import ShoujoKageki.powers.BagPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,13 +24,19 @@ public class BagField {
     }
 
     public static void notifyBagPower() {
-        for (AbstractPower power : AbstractDungeon.player.powers) {
+
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(BagPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, BagPower.POWER_ID));
+        }
+
+        for (AbstractPower power : p.powers) {
             if (power instanceof BagPower) {
                 ((BagPower) power).checkBagPower();
                 return;
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BagPower(1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BagPower(1)));
     }
 
     public static boolean isInfinite() {

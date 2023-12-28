@@ -2,10 +2,14 @@ package ShoujoKageki.patches;
 
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKageki.variables.patch.DisposableFieldPatch;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,6 +19,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import javassist.CtBehavior;
 
 import java.util.ArrayList;
 
@@ -40,6 +45,51 @@ public class TokenCardFieldPatch {
             }
         }
     }
+
+    @SpirePatch(
+            clz = AbstractCard.class,
+            method = "makeSameInstanceOf"
+    )
+    public static class MakeSameInstanceOf {
+        @SpireInsertPatch(locator = Locator.class, localvars = "card")
+        public static void Insert(AbstractCard __instance, AbstractCard card) {
+            if (!TokenCardField.isToken.get(__instance)) {
+                TokenCardField.isToken.set(card, false);
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "uuid");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AddCardToDeckAction.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+    public static class AddCardToDeck {
+        public static void Postfix(AddCardToDeckAction __instance, AbstractCard ___cardToObtain) {
+            TokenCardField.isToken.set(___cardToObtain, false);
+        }
+    }
+
+
+//    @SpirePatch(
+//            clz = MakeTempCardInHandAction.class,
+//            method = "update"
+//    )
+//    public static class MakeTempCardInHand {
+//        public static void Prefix(MakeTempCardInHandAction __instance, AbstractCard ___c, boolean ___sameUUID) {
+//            if (___sameUUID && StSLib.getMasterDeckEquivalent(___c) != null) {
+//                TokenCardField.isToken.set(___c, false);
+//            }
+//        }
+//    }
+
 
     @SpirePatch(
             clz = AbstractCard.class,
