@@ -1,7 +1,10 @@
 package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
+import basemod.AutoAdd;
 
+
+@AutoAdd.Ignore
 public class BagDiscoverRelic extends BaseRelic {
     public static final String RAW_ID = BagDiscoverRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);

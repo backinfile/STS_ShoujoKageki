@@ -35,6 +35,13 @@
 		"DESCRIPTION": "打出后不再从牌组中 #r移除 。"
 	},
 	{
+		"PROPER_NAME": "禁用",
+		"NAMES": [
+			"禁用"
+		],
+		"DESCRIPTION": "在本场战斗内，禁用最右侧的可用遗物。"
+	},
+	{
 		"PROPER_NAME": "熟练度",
 		"NAMES": [
 			"熟练度"

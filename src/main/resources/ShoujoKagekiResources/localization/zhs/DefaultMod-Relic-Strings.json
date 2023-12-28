@@ -6,20 +6,6 @@
 			"在每场战斗开始时，将一张 #y约定之塔 放入你的手牌。"
 		]
 	},
-	"ShoujoKageki:BlackMarketRelic": {
-		"NAME": "朋友关系",
-		"FLAVOR": "朋友关系",
-		"DESCRIPTIONS": [
-			"抽到黑市中购买的工具牌后，额外抽一张牌。"
-		]
-	},
-	"ShoujoKageki:BagDiscoverRelic": {
-		"NAME": "灵巧手指",
-		"FLAVOR": "",
-		"DESCRIPTIONS": [
-			"从 口袋 中取回卡牌时，从5张牌中选择。"
-		]
-	},
 	"ShoujoKageki:BookMarchRelic": {
 		"NAME": "书签",
 		"FLAVOR": "",
@@ -36,11 +22,32 @@
 			"[饼干] 获取卡牌"
 		]
 	},
+	"ShoujoKageki:LockRelic": {
+		"NAME": "禁用的遗物",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"这里锁着 #y", " 。"
+		]
+	},
 	"ShoujoKageki:DrawExtraRelic": {
 		"NAME": "怀表牌",
 		"FLAVOR": "怀表牌",
 		"DESCRIPTIONS": [
 			"若回合内没有额外抽牌，则于下回合额外抽 #y1 张牌"
+		]
+	},
+	"ShoujoKageki:BlackMarketRelic": {
+		"NAME": "朋友关系",
+		"FLAVOR": "朋友关系",
+		"DESCRIPTIONS": [
+			"抽到黑市中购买的工具牌后，额外抽一张牌。"
+		]
+	},
+	"ShoujoKageki:BagDiscoverRelic": {
+		"NAME": "灵巧手指",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"从 口袋 中取回卡牌时，从5张牌中选择。"
 		]
 	}
 }
