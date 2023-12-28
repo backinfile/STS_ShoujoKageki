@@ -24,6 +24,9 @@ import javassist.CtBehavior;
 import java.util.ArrayList;
 
 public class TokenCardFieldPatch {
+    public static boolean OPEN = false;
+
+
     @SpirePatch(
             clz = AbstractPlayer.class,
             method = "preBattlePrep"
@@ -105,6 +108,7 @@ public class TokenCardFieldPatch {
     private static final String TEXT = uiStrings.TEXT[0];
 
     private static void renderTitle(AbstractCard card, SpriteBatch sb) {
+        if (!OPEN) return;
         if (card.isLocked || !card.isSeen) {
             return;
         }

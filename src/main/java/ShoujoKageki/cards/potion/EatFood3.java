@@ -1,10 +1,7 @@
 package ShoujoKageki.cards.potion;
 
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.powers.AuditionFinishPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
-import com.megacrit.cardcrawl.cards.curses.Decay;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.SteroidPotion;

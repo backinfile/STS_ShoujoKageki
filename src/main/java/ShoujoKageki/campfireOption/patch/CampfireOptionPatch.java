@@ -24,7 +24,7 @@ public class CampfireOptionPatch {
     public static void Insert(CampfireUI instance, ArrayList<AbstractCampfireOption> ___buttons) {
 //        ___buttons.add(new BlackMarketOption());
         if (AbstractDungeon.player instanceof BasePlayer) {
-            ___buttons.add(new ShineOption());
+//            ___buttons.add(new ShineOption());
         }
     }
 

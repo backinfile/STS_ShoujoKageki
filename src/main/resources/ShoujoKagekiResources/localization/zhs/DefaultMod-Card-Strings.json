@@ -108,6 +108,10 @@
 		"NAME": "奔跑",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，可将此牌重新加入牌组。"
 	},
+	"ShoujoKageki:Run02": {
+		"NAME": "啊？",
+		"DESCRIPTION": "获得 力量 点数的 敏捷 。 NL 消耗 。"
+	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
 		"DESCRIPTION": "获得此牌闪耀值的 [E] 。",
@@ -121,9 +125,17 @@
 		"NAME": "出场",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害三次。"
 	},
-	"ShoujoKageki:AuditionFinish": {
-		"NAME": "竞演结束",
+	"ShoujoKageki:Tragedy": {
+		"NAME": "悲剧",
 		"DESCRIPTION": "战斗结束时，获得 *腐朽 和一个随机遗物。"
+	},
+	"ShoujoKageki:Passion": {
+		"NAME": "激情",
+		"DESCRIPTION": "战斗结束时，获得一个随机遗物 。"
+	},
+	"ShoujoKageki:Arrogant": {
+		"NAME": "骄傲",
+		"DESCRIPTION": "虚无 NL 每个回合开始时，失去25%最大生命值的生命，并获得一个随机遗物。"
 	},
 	"ShoujoKageki:EatFood3": {
 		"NAME": "Banana蛋糕",

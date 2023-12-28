@@ -2,13 +2,13 @@
 	"ShoujoKageki:BagPower": {
 		"NAME": "约定牌堆",
 		"DESCRIPTIONS": [
-			"爱城华恋特有的牌堆。", 
-			"（点击人物查看具体卡牌）", 
+			"爱城华恋特有的牌堆。 NL ", 
+			"可点击人物查看具体卡牌。 NL ", 
 			" NL #y强化 ：现在约定牌堆中有无限的 #y续演 。", 
 			" NL #y强化 ：现在视抽牌堆为约定牌堆。",
 			" NL #y强化 ：现在从约定牌堆中抽出的牌将被 #y升级 ，且被打出时 #r消耗 。",
 			" NL 约定牌堆 中没有牌 。",
-			" NL 卡牌按顺序： NL ",
+			" NL NL 卡牌按顺序： NL ",
 			" NL ", 
 		]
 	},
@@ -30,10 +30,22 @@
 			"以 #y约定牌堆 代替 抽牌堆。"
 		]
 	},
-	"ShoujoKageki:AuditionFinishPower": {
-		"NAME": "竞演结束",
+	"ShoujoKageki:ArrogantPower": {
+		"NAME": "骄傲",
 		"DESCRIPTIONS": [
-			"战斗结束时，获得 #r腐朽 和一个随机遗物。"
+			"回合开始时，失去25%最大生命值的生命，并获得一个随机遗物"
+		]
+	},
+	"ShoujoKageki:TragedyPower": {
+		"NAME": "悲剧",
+		"DESCRIPTIONS": [
+			"战斗结束时，获得 #r腐朽 和 #y", " 个随机遗物。"
+		]
+	},
+	"ShoujoKageki:PassionPower": {
+		"NAME": "激情",
+		"DESCRIPTIONS": [
+			"战斗结束时，获得 #y", " 个随机遗物。"
 		]
 	},
 	"ShoujoKageki:BurnPower": {
