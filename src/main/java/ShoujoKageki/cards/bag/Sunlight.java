@@ -5,6 +5,8 @@ import ShoujoKageki.actions.GainCardOrIgnoreAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.util.Utils2;
 import ShoujoKageki.variables.DisposableVariable;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -22,6 +24,9 @@ public class Sunlight extends BaseCard {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 9;
         DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
+//        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
+//        FlavorText.AbstractCardFlavorFields.flavor.set(this, cardStrings.EXTENDED_DESCRIPTION[1]);
+//        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.WHITE);
     }
 
     @Override

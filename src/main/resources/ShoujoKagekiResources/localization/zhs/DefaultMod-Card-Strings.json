@@ -124,6 +124,7 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，可将此牌重新加入牌组。",
 		"EXTENDED_DESCRIPTION": [
 		  "战斗提前结束了，你可以重新取回它。",
+		  "注意：作为最后一击击杀敌人时也会重新加入牌组。"
 		]
 	},
 	"ShoujoKageki:Run02": {
