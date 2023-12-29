@@ -12,7 +12,7 @@ public class OurPromise extends BaseCard {
     public static final String ID = ModInfo.makeID(OurPromise.class.getSimpleName());
 
     public OurPromise() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         magicNumber = baseMagicNumber = 3;
     }
 

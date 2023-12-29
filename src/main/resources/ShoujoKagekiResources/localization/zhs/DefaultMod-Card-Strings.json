@@ -212,7 +212,7 @@
 	},
 	"ShoujoKageki:BananaMuffin": {
 		"NAME": "Banana松饼",
-		"DESCRIPTION": "获得 3 点临时 力量 。 NL 抽 !M! 张牌。"
+		"DESCRIPTION": "获得 !ShoujoKageki:SM! 点临时 力量 。 NL 抽 !M! 张牌。"
 	},
 	"ShoujoKageki:BananaLunch": {
 		"NAME": "Banana午餐",

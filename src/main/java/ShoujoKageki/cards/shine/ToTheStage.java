@@ -13,7 +13,7 @@ public class ToTheStage extends BaseCard {
     public static final String ID = ModInfo.makeID(ToTheStage.class.getSimpleName());
 
     public ToTheStage() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         DisposableVariable.setBaseValue(this, 3);
         this.baseMagicNumber = this.magicNumber = 0;
     }

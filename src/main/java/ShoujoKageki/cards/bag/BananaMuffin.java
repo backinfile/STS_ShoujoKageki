@@ -2,6 +2,7 @@ package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.variables.DefaultSecondMagicNumber;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,17 +14,17 @@ public class BananaMuffin extends BaseCard {
 
     public static final String ID = ModInfo.makeID(BananaMuffin.class.getSimpleName());
 
-    public static final int STRENGTH_AMOUNT = 3;
 
     public BananaMuffin() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_AMOUNT)));
-        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, STRENGTH_AMOUNT)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, defaultSecondMagicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, defaultSecondMagicNumber)));
         addToBot(new DrawCardAction(magicNumber));
     }
 
@@ -32,6 +33,7 @@ public class BananaMuffin extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeDefaultSecondMagicNumber(1);
         }
     }
 }
