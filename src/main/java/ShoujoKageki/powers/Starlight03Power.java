@@ -87,6 +87,9 @@ public class Starlight03Power extends BasePower {
     }
 
     private static AbstractCard.CardRarity getRarity() {
-        return AbstractDungeon.cardRng.random(99) < 40 ? AbstractCard.CardRarity.UNCOMMON : AbstractCard.CardRarity.COMMON;
+        int random = AbstractDungeon.cardRng.random(99);
+        if (random < 3) return AbstractCard.CardRarity.RARE;
+        if (random < 40) return AbstractCard.CardRarity.UNCOMMON;
+        return AbstractCard.CardRarity.COMMON;
     }
 }
