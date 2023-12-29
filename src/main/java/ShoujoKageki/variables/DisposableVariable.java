@@ -81,7 +81,7 @@ public class DisposableVariable extends DynamicVariable { // Shine
         if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
             return 0;
         }
-        if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.getCurrMapNode() == null || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
             return 0;
         }
         int cnt = 0;

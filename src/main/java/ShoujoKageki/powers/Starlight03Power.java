@@ -51,7 +51,7 @@ public class Starlight03Power extends BasePower {
         ArrayList<AbstractCard> cardsToObtain = new ArrayList<>();
         for (int i = 0; i < cardReward.cards.size(); i++) { // replace card to shine card
             for (int tryTimes = 0; tryTimes < 5; tryTimes++) {
-                AbstractCard.CardRarity rarity = AbstractDungeon.rollRarity();
+                AbstractCard.CardRarity rarity = getRarity();
                 List<AbstractCard> list;
                 if (rarity.equals(AbstractCard.CardRarity.COMMON)) {
                     list = AbstractDungeon.srcCommonCardPool.group;
@@ -84,5 +84,9 @@ public class Starlight03Power extends BasePower {
             }
         }
         AbstractDungeon.getCurrRoom().addCardReward(cardReward);
+    }
+
+    private static AbstractCard.CardRarity getRarity() {
+        return AbstractDungeon.cardRng.random(99) < 40 ? AbstractCard.CardRarity.UNCOMMON : AbstractCard.CardRarity.COMMON;
     }
 }

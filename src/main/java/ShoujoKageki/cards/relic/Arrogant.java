@@ -16,6 +16,7 @@ public class Arrogant extends BaseCard {
     public Arrogant() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
         isEthereal = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

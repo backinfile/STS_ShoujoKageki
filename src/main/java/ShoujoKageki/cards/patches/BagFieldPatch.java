@@ -41,7 +41,7 @@ public class BagFieldPatch {
     )
     public static class Update {
         public static void Prefix(AbstractPlayer p) {
-            if (p.hb.hovered && InputHelper.justClickedLeft) {
+            if (p.hb.hovered && InputHelper.justClickedLeft && !AbstractDungeon.isScreenUp) {
 //            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, "lala"));
                 if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                     if (BagField.showCardsInBag()) {

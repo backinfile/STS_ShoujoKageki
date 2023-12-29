@@ -36,8 +36,8 @@
 		"NAME": "三明治",
 		"DESCRIPTION": "获得 !M! 点临时 力量 。 NL 消耗 。"
 	},
-	"ShoujoKageki:Sunlight": {
-		"NAME": "耀眼",
+	"ShoujoKageki:Run03": {
+		"NAME": "行动",
 		"DESCRIPTION": "造成 !D! 点伤害。 如果 力量 不低于 !M! 点，重复一次。"
 	},
 	"ShoujoKageki:SwordUp": {
@@ -119,8 +119,8 @@
 		"NAME": "舞台的热情",
 		"DESCRIPTION": "约定牌堆 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
 	},
-	"ShoujoKageki:Run03": {
-		"NAME": "奔跑",
+	"ShoujoKageki:Sunlight": {
+		"NAME": "耀眼",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，可将此牌重新加入牌组。",
 		"EXTENDED_DESCRIPTION": [
 		  "战斗提前结束了，你可以重新取回它。",
@@ -157,12 +157,12 @@
 	},
 	"ShoujoKageki:PickStar": {
 		"NAME": "摘星",
-		"DESCRIPTION": "禁用 一个遗物，获得 [E] [E] 。",
+		"DESCRIPTION": "禁用 两个遗物，获得 [E] [E] 。",
 		"UPGRADE_DESCRIPTION": "禁用 一个遗物，获得 [E] [E] [E] 。"
 	},
 	"ShoujoKageki:StarCrime": {
 		"NAME": "星罪",
-		"DESCRIPTION": "禁用 一个遗物，抽 !M! 张牌。"
+		"DESCRIPTION": "禁用 两个遗物，抽 !M! 张牌。"
 	},
 	"ShoujoKageki:Star": {
 		"NAME": "星光指引",
@@ -228,6 +228,10 @@
 	"ShoujoKageki:Cry": {
 		"NAME": "添麻烦了",
 		"DESCRIPTION": "此牌在牌堆之间移动时，获得 !M! 格挡 。"
+	},
+	"ShoujoKageki:Spin": {
+		"NAME": "旋转",
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 此牌在牌堆之间移动时，增加攻击次数，打出后重置。"
 	},
 	"ShoujoKageki:Continue02": {
 		"NAME": "永无结束的命运舞台",

@@ -105,7 +105,7 @@ public class BagPower extends BasePower {
 
         if (isPlayer) {
             for (AbstractCard card : BagField.bag.get(AbstractDungeon.player).group) {
-                card.triggerOnEndOfPlayerTurn();
+                if (card instanceof BaseCard) card.triggerOnEndOfPlayerTurn();
             }
         }
     }

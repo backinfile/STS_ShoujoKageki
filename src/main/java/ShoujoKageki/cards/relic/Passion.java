@@ -15,6 +15,7 @@ public class Passion extends BaseCard {
     public Passion() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         DisposableVariable.setBaseValue(this, 1);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

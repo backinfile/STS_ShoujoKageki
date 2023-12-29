@@ -16,6 +16,7 @@ public class Tragedy extends BaseCard {
     public Tragedy() {
         super(ID, 1, AbstractCard.CardType.POWER, CardRarity.UNCOMMON, AbstractCard.CardTarget.NONE);
         this.cardsToPreview = new Decay();
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

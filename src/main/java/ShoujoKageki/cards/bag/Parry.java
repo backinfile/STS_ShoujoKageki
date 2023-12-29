@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.bag;
 
+import ShoujoKageki.Log;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,6 +34,24 @@ public class Parry extends BaseCard {
     @Override
     public void triggerOnEndOfPlayerTurn() {
         super.triggerOnEndOfPlayerTurn();
+        resetBlock();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInBag() {
+        super.triggerOnEndOfPlayerTurnInBag();
+        resetBlock();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDrawPile() {
+        super.triggerOnEndOfPlayerTurnInDrawPile();
+        resetBlock();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDiscardPile() {
+        super.triggerOnEndOfPlayerTurnInDiscardPile();
         resetBlock();
     }
 

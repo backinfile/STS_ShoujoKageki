@@ -14,6 +14,7 @@ public class EatFood3 extends BaseCard {
     public EatFood3() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

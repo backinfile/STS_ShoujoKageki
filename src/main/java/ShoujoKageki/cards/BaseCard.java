@@ -100,8 +100,20 @@ public abstract class BaseCard extends AbstractDefaultCard {
 
     }
 
+    public void triggerWhenMoveToDiscardPile() { // use this
+
+    }
+
     public void triggerOnShuffleInfoDrawPile() {
 
     }
 
+    public void triggerOnEndOfPlayerTurnInBag() {
+    }
+
+    public void triggerOnEndOfPlayerTurnInDrawPile() {
+    }
+
+    public void triggerOnEndOfPlayerTurnInDiscardPile() {
+    }
 }
