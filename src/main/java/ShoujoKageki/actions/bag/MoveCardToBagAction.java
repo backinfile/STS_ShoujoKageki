@@ -1,6 +1,7 @@
 package ShoujoKageki.actions.bag;
 
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
+import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.powers.BagDefendPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
@@ -39,6 +40,11 @@ public class MoveCardToBagAction extends AbstractGameAction {
 
             CardGroup bag = BagField.getBag();
             AbstractPlayer player = AbstractDungeon.player;
+
+            for (AbstractCard card : cardsToBag) {
+                if (card instanceof BaseCard) ((BaseCard) card).triggerOnPutInBag();
+            }
+
 
             if (BagField.isChangeToDrawPile()) {
                 for (AbstractCard card : cardsToBag) {

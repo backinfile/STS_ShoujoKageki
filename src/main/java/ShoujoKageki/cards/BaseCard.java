@@ -93,6 +93,15 @@ public abstract class BaseCard extends AbstractDefaultCard {
     }
 
     public void triggerOnTakeFromBag() {
-        
+
     }
+
+    public void triggerOnPutInBag() {
+
+    }
+
+    public void triggerOnShuffleInfoDrawPile() {
+
+    }
+
 }

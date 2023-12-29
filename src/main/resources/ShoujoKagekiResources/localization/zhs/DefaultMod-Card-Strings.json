@@ -225,6 +225,10 @@
 		"NAME": "续演",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗 。"
 	},
+	"ShoujoKageki:Cry": {
+		"NAME": "添麻烦了",
+		"DESCRIPTION": "此牌在牌堆之间移动时，获得 !M! 格挡 。"
+	},
 	"ShoujoKageki:Continue02": {
 		"NAME": "永无结束的命运舞台",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 能被多次 升级 。"
