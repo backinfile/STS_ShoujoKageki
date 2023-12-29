@@ -17,18 +17,19 @@ public class BananaLunch extends BaseCard {
     public BananaLunch() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
         this.cardsToPreview = new EatFood2();
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new BananaLunchPower(1)));
+        addToBot(new ApplyPowerAction(p, p, new BananaLunchPower(magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
         }
     }
 }

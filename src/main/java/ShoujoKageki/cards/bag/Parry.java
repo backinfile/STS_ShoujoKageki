@@ -62,14 +62,14 @@ public class Parry extends BaseCard {
     }
 
     public void resetBlock() {
-        this.baseBlock = BASE_BLOCK + (upgraded ? UPGRADED_BLOCK : 0);
+        this.baseBlock = BASE_BLOCK;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADED_BLOCK);
+            upgradeMagicNumber(1);
         }
     }
 }

@@ -15,7 +15,7 @@ public class TwistingStrike extends BaseCard {
 
     public TwistingStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 7;
+        this.baseDamage = 8;
         this.cardsToPreview = new EatFood2();
         this.tags.add(CardTags.STRIKE);
         this.baseMagicNumber = this.magicNumber = 1;
@@ -31,6 +31,7 @@ public class TwistingStrike extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }

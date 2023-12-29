@@ -15,7 +15,7 @@ public class Dance extends BaseCard {
 
     public Dance() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 6;
+        baseDamage = 8;
         this.baseMagicNumber = this.magicNumber = 2;
     }
 
@@ -29,6 +29,7 @@ public class Dance extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(4);
             upgradeMagicNumber(2);
         }
     }

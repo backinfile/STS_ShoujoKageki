@@ -12,7 +12,7 @@ public class NewSituation extends BaseCard {
     public static final String ID = ModInfo.makeID(NewSituation.class.getSimpleName());
 
     public NewSituation() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.baseBlock = 7;
         this.cardsToPreview = new EatFood2();
         this.baseMagicNumber = this.magicNumber = 1;
@@ -28,6 +28,7 @@ public class NewSituation extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(5);
             upgradeMagicNumber(1);
         }
     }

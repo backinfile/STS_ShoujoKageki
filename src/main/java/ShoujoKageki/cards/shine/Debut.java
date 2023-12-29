@@ -36,7 +36,7 @@ public class Debut extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(3);
             initializeDescription();
         }
     }

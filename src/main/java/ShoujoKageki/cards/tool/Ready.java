@@ -19,12 +19,13 @@ public class Ready extends BaseCard {
         this.baseMagicNumber = this.magicNumber = 1;
         DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
         this.isInnate = true;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        addToBot(new DrawCardAction(1));
+        addToBot(new DrawCardAction(defaultSecondMagicNumber));
     }
 
     @Override
@@ -32,6 +33,7 @@ public class Ready extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeDefaultSecondMagicNumber(1);
         }
     }
 }

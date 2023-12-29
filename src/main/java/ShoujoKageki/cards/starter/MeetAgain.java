@@ -30,7 +30,7 @@ public class MeetAgain extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

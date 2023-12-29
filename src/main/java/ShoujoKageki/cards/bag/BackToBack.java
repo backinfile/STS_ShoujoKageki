@@ -18,7 +18,7 @@ public class BackToBack extends BaseCard {
 
     public BackToBack() {
         super(ID, -1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override

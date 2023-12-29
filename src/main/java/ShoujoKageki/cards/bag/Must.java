@@ -13,7 +13,7 @@ public class Must extends BaseCard {
 
     public Must() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        this.baseBlock = 6;
+        this.baseBlock = 7;
         this.cardsToPreview = new TowerOfPromise();
         this.baseMagicNumber = this.magicNumber = 1;
         exhaust = true;
@@ -29,7 +29,7 @@ public class Must extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3);
+            upgradeBlock(5);
         }
     }
 }

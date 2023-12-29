@@ -30,7 +30,7 @@ public class Potato extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(4);
         }
     }
 }

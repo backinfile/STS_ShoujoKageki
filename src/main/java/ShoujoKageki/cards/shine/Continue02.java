@@ -21,7 +21,7 @@ public class Continue02 extends BaseCard {
 
     public Continue02(int timesUpgraded) {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 9;
+        this.baseDamage = 12;
         this.timesUpgraded = timesUpgraded;
         DisposableVariable.setBaseValue(this, 9);
     }
@@ -38,7 +38,7 @@ public class Continue02 extends BaseCard {
 
     @Override
     public void upgrade() {
-        this.upgradeDamage(3 + this.timesUpgraded);
+        this.upgradeDamage(4 + this.timesUpgraded);
         ++this.timesUpgraded;
         this.upgraded = true;
         this.name = cardStrings.NAME + "+" + this.timesUpgraded;

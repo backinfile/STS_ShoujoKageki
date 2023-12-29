@@ -138,7 +138,7 @@
 	},
 	"ShoujoKageki:Ready": {
 		"NAME": "准备完成",
-		"DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 抽 1 张牌。"
+		"DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 抽 !ShoujoKageki:SM! 张牌。"
 	},
 	"ShoujoKageki:Debut": {
 		"NAME": "出场",

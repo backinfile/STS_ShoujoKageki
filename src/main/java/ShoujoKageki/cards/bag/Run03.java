@@ -18,7 +18,7 @@ public class Run03 extends BaseCard {
 
     public Run03() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 9;
+        this.baseDamage = 11;
         this.baseMagicNumber = this.magicNumber = 5;
     }
 
@@ -47,7 +47,7 @@ public class Run03 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(4);
         }
     }
 }

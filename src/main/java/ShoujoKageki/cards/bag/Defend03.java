@@ -13,7 +13,7 @@ public class Defend03 extends BaseCard {
 
     public Defend03() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseBlock = 4;
+        this.baseBlock = 5;
         this.cardsToPreview = new Attack07();
         this.baseMagicNumber = this.magicNumber = 1;
     }
@@ -28,7 +28,7 @@ public class Defend03 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3);
+            upgradeBlock(4);
         }
     }
 }

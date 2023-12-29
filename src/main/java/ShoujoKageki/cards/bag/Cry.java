@@ -61,7 +61,7 @@ public class Cry extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(2);
         }
     }
 }
