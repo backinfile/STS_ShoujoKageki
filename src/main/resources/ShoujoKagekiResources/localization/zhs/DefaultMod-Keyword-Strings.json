@@ -42,6 +42,13 @@
 		"DESCRIPTION": "在本场战斗内，禁用最右侧的可用遗物。"
 	},
 	{
+		"PROPER_NAME": "衍生牌",
+		"NAMES": [
+			"衍生牌"
+		],
+		"DESCRIPTION": "牌组以外的牌。"
+	},
+	{
 		"PROPER_NAME": "熟练度",
 		"NAMES": [
 			"熟练度"

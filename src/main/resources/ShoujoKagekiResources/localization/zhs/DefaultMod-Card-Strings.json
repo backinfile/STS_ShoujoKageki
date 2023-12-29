@@ -44,6 +44,13 @@
 		"NAME": "上挑",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 和 易伤 。"
 	},
+	"ShoujoKageki:WatchBack": {
+		"NAME": "背后袭击",
+		"DESCRIPTION": "给予所有敌人 !M! 层 虚弱 和 易伤 。 NL 手牌满时才能打出。",
+		"EXTENDED_DESCRIPTION": [
+		  "手牌满时才能打出。"
+		]
+	},
 	"ShoujoKageki:Attack04": {
 		"NAME": "落地",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将 *回击 放入 约定牌堆 。"
@@ -58,8 +65,7 @@
 	},
 	"ShoujoKageki:Defend03": {
 		"NAME": "闪避",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 *对峙 放入 约定牌堆 。",
-		"UPGRADE_DESCRIPTION": "获得 !B! 格挡 。 NL 将 *对峙+ 放入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 *对峙 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Attack07": {
 		"NAME": "对峙",
@@ -69,9 +75,18 @@
 		"NAME": "招架",
 		"DESCRIPTION": "获得 !B! 格挡 。 NL 获得或失去手牌时，本回合格挡值增加 !M! 。"
 	},
+	"ShoujoKageki:BackToBack": {
+		"NAME": "背靠背",
+		"DESCRIPTION": "获得 !M! 临时 力量 X次。 NL 获得 [E] 。",
+		"UPGRADE_DESCRIPTION": "获得 !M! 临时 力量 X+1次。 NL 获得 [E] 。"
+	},
 	"ShoujoKageki:NotLose": {
 		"NAME": "我不会输的",
 		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 沉淀 。"
+	},
+	"ShoujoKageki:Aquarium": {
+		"NAME": "水族馆",
+		"DESCRIPTION": "每个回合开始时，从 约定牌堆 中抽取 !M! 张牌。"
 	},
 	"ShoujoKageki:Must": {
 		"NAME": "东京塔下",
@@ -198,6 +213,10 @@
 	"ShoujoKageki:Continue": {
 		"NAME": "续演",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗 。"
+	},
+	"ShoujoKageki:Gear": {
+		"NAME": "齿轮",
+		"DESCRIPTION": "选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。"
 	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",

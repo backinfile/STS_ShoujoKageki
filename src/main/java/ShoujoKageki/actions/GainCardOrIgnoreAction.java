@@ -2,27 +2,24 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.patches.TokenCardField;
+import ShoujoKageki.util.Utils2;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class GainOrIgnoreAction extends AbstractGameAction {
-    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(GainOrIgnoreAction.class.getSimpleName())).TEXT;
+public class GainCardOrIgnoreAction extends AbstractGameAction {
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(GainCardOrIgnoreAction.class.getSimpleName())).TEXT;
 
     private final AbstractCard gainCard;
     private boolean retrieveCard = false;
 
-    public GainOrIgnoreAction(AbstractCard gainCard) {
-        this.gainCard = gainCard.makeCopy();
-        if (gainCard.upgraded) {
-            this.gainCard.upgrade();
-        }
+    public GainCardOrIgnoreAction(AbstractCard gainCard) {
+        this.gainCard = Utils2.makeCardCopyOnlyWithUpgrade(gainCard);
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
     }
 

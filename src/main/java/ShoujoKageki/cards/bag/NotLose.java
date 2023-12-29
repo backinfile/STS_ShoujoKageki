@@ -15,8 +15,8 @@ public class NotLose extends BaseCard {
 
     public NotLose() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 5;
-        this.baseMagicNumber = this.magicNumber = 3;
+        this.baseDamage = 4;
+        this.baseMagicNumber = this.magicNumber = 4;
         AccretionField.accretion.set(this, true);
     }
 

@@ -28,9 +28,7 @@ public class Defend03 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.cardsToPreview.upgrade();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeBlock(3);
         }
     }
 }

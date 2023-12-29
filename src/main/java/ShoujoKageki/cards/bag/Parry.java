@@ -27,6 +27,7 @@ public class Parry extends BaseCard {
 
     public void triggerOnPlayerDrawOrDiscard() {
         this.baseBlock += magicNumber;
+        this.flash();
     }
 
     @Override

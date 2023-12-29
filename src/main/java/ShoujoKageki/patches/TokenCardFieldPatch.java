@@ -24,7 +24,7 @@ import javassist.CtBehavior;
 import java.util.ArrayList;
 
 public class TokenCardFieldPatch {
-    public static boolean OPEN = false;
+    public static boolean OPEN = true;
 
 
     @SpirePatch(
@@ -120,6 +120,6 @@ public class TokenCardFieldPatch {
         }
         FontHelper.cardTitleFont.getData().setScale(card.drawScale * 0.7f);
         Color color = Settings.GREEN_TEXT_COLOR.cpy();
-        FontHelper.renderRotatedText(sb, FontHelper.cardTitleFont, TEXT, card.current_x, card.current_y, 0.0F, 205.0F * card.drawScale * Settings.scale, card.angle, false, color);
+        FontHelper.renderRotatedText(sb, FontHelper.cardTitleFont, TEXT, card.current_x, card.current_y, 0.0F, 220.0F * card.drawScale * Settings.scale, card.angle, false, color);
     }
 }

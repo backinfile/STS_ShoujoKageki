@@ -7,6 +7,17 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 
 public class Utils2 {
+    public static AbstractCard makeCardCopyOnlyWithUpgrade(AbstractCard source) {
+        AbstractCard copy = source.makeCopy();
+        if (source.upgraded) {
+            for (int i = 0; i < Math.max(1, source.timesUpgraded); i++) {
+                copy.upgrade();
+            }
+        }
+        return copy;
+    }
+
+
     public static String getCardNames(CardGroup group, String sep, boolean reverse) {
         StringJoiner sj = new StringJoiner(sep);
         if (reverse) {
