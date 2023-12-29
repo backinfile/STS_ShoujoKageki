@@ -30,7 +30,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:BurnModifier": {
-    "TEXT": ["", " NL *(燃烧中)"],
+    "TEXT": ["", " NL 消耗 。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
@@ -44,7 +44,7 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
-  "ShoujoKageki:GainOrIgnoreAction": {
+  "ShoujoKageki:GainCardOrIgnoreAction": {
     "TEXT": ["选择加入牌组和手牌"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}

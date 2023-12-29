@@ -36,16 +36,8 @@ public class DisposableFieldPatch {
             AbstractCard cardInDeck = StSLib.getMasterDeckEquivalent(___targetCard);
 
             if (curValue == 1 || DisposableField.forceDispose.get(___targetCard)) {
-                if (cardInDeck != null) {
-                    AbstractDungeon.player.masterDeck.removeCard(cardInDeck);
-                }
 
-                if (___targetCard instanceof BaseCard) {
-                    ((BaseCard) ___targetCard).triggerOnDisposed();
-                }
-
-//                PurgeField.purge.set(card, true);
-                AbstractDungeon.effectList.add(new PurgeCardInBattleEffect(___targetCard, ___targetCard.current_x, ___targetCard.current_y));
+                DisposableField.disposeCard(___targetCard);
                 AbstractDungeon.actionManager.addToBottom(new HandCheckAction());
                 ReflectionHacks.privateMethod(AbstractGameAction.class, "tickDuration").invoke(__instance);
                 return SpireReturn.Return();

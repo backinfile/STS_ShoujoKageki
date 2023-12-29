@@ -32,6 +32,7 @@ public class Nonon extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(6);
+            upgradeMagicNumber(6);
         }
     }
 }

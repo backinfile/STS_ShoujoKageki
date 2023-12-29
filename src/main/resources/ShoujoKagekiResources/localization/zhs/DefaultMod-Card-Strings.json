@@ -121,7 +121,10 @@
 	},
 	"ShoujoKageki:Run03": {
 		"NAME": "奔跑",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，可将此牌重新加入牌组。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，可将此牌重新加入牌组。",
+		"EXTENDED_DESCRIPTION": [
+		  "战斗提前结束了，你可以重新取回它。",
+		]
 	},
 	"ShoujoKageki:Run02": {
 		"NAME": "啊？",
@@ -161,6 +164,14 @@
 		"NAME": "星罪",
 		"DESCRIPTION": "禁用 一个遗物，抽 !M! 张牌。"
 	},
+	"ShoujoKageki:Star": {
+		"NAME": "星光指引",
+		"DESCRIPTION": "耗尽 你唯一 闪耀 牌 的 闪耀 值，将其打出同等次数。",
+		"EXTENDED_DESCRIPTION": [
+		  "没有 闪耀 牌。",
+		  "闪耀 牌太多了。",
+		]
+	},
 	"ShoujoKageki:EatFood3": {
 		"NAME": "Banana蛋糕",
 		"DESCRIPTION": "获得一瓶 *类固醇药水 。 NL 消耗 。"
@@ -178,7 +189,7 @@
 		"DESCRIPTION": "本次战斗多掉落一次卡牌奖励，其中仅包含 闪耀 卡牌。"
 	},
 	"ShoujoKageki:Nonon": {
-		"NAME": "Nonon",
+		"NAME": "Non non dayo",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害，目标本回合失去 !M! 点 力量 。"
 	},
 	"ShoujoKageki:NewSituation": {
@@ -214,6 +225,10 @@
 		"NAME": "续演",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗 。"
 	},
+	"ShoujoKageki:Continue02": {
+		"NAME": "永无结束的命运舞台",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 能被多次 升级 。"
+	},
 	"ShoujoKageki:Gear": {
 		"NAME": "齿轮",
 		"DESCRIPTION": "选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。"
@@ -248,7 +263,7 @@
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",
-		"DESCRIPTION": "墓地 。 NL 摧毁抽牌堆，以 约定牌堆 代替。"
+		"DESCRIPTION": "墓地 。 NL 摧毁抽牌堆，然后以 约定牌堆 代替抽牌堆。"
 	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",

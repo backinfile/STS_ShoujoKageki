@@ -13,7 +13,7 @@ public class Passion extends BaseCard {
     public static final String ID = ModInfo.makeID(Passion.class.getSimpleName());
 
     public Passion() {
-        super(ID, 3, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         DisposableVariable.setBaseValue(this, 1);
     }
 
@@ -26,7 +26,7 @@ public class Passion extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(2);
+            upgradeBaseCost(1);
         }
     }
 }

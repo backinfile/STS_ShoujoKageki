@@ -60,7 +60,7 @@ public class Starlight02Power extends BasePower {
             if (m != null) {
                 tmp.calculateCardDamage(m);
             }
-
+            tmp.applyPowers();
             tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
         }

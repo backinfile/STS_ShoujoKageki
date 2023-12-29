@@ -3,12 +3,15 @@ package ShoujoKageki.cards.bag;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.GainCardOrIgnoreAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.util.Utils2;
 import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 
 public class Run03 extends BaseCard {
 
@@ -17,7 +20,7 @@ public class Run03 extends BaseCard {
     public Run03() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 9;
-        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
     }
 
     @Override
@@ -34,8 +37,17 @@ public class Run03 extends BaseCard {
     }
 
     @Override
-    public void triggerOnDisposed() {
+    public void triggerOnDisposed() { // 特殊处理，最后一击击杀敌人
         super.triggerOnDisposed();
-        addToBot(new GainCardOrIgnoreAction(this.makeStatEquivalentCopy()));
+
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            RewardItem cardReward = new RewardItem();
+            cardReward.cards.clear();
+            cardReward.cards.add(Utils2.makeCardCopyOnlyWithUpgrade(this));
+            cardReward.text = cardStrings.EXTENDED_DESCRIPTION[0];
+            AbstractDungeon.getCurrRoom().addCardReward(cardReward);
+        } else {
+            addToBot(new GainCardOrIgnoreAction(this.makeStatEquivalentCopy()));
+        }
     }
 }

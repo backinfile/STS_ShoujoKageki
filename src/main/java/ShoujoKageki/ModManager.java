@@ -1,10 +1,13 @@
 package ShoujoKageki;
 
 import ShoujoKageki.events.RealTimeEvent;
+import ShoujoKageki.reward.ShineCardReward;
+import ShoujoKageki.reward.patch.RewardPatch;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.CustomReward;
 import basemod.interfaces.*;
 import ShoujoKageki.character.KarenCharacter;
 import ShoujoKageki.screen.BlackMarketScreen;
@@ -20,6 +23,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -192,6 +196,19 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 //        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
         BaseMod.addCustomScreen(new BlackMarketScreen());
         BaseMod.addCustomScreen(new BagPileViewScreen());
+
+        // TODO
+        BaseMod.registerCustomReward(RewardPatch.TypePatch.SHINE_CARD, new BaseMod.LoadCustomReward() {
+            @Override
+            public CustomReward onLoad(RewardSave rewardSave) {
+                return null;//new ShineCardReward();
+            }
+        }, new BaseMod.SaveCustomReward() {
+            @Override
+            public RewardSave onSave(CustomReward customReward) {
+                return null;
+            }
+        });
 
         // =============== /EVENTS/ =================
         BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);

@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class BurnModifier extends AbstractCardModifier {
+
     public BurnModifier() {
         this.priority = 1;
     }
-
 
 
     public static final String ID = ModInfo.makeID(BurnModifier.class.getSimpleName());
@@ -27,6 +27,7 @@ public class BurnModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
+        if (card.exhaust) return rawDescription;
         return TEXT[0] + rawDescription + TEXT[1];
     }
 
