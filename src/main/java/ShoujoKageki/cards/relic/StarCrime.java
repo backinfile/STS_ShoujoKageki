@@ -16,17 +16,18 @@ public class StarCrime extends BaseCard {
     public StarCrime() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 3;
+        this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LockRelicAction());
+        addToBot(new LockRelicAction(defaultSecondMagicNumber));
         addToBot(new DrawCardAction(magicNumber));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!LockRelicAction.hasRelicToLock()) {
+        if (!LockRelicAction.hasRelicToLock(defaultSecondMagicNumber)) {
             cantUseMessage = LockRelic.DESCRIPTIONS[2];
             return false;
         }
@@ -37,7 +38,7 @@ public class StarCrime extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeDefaultSecondMagicNumber(-1);
         }
     }
 }

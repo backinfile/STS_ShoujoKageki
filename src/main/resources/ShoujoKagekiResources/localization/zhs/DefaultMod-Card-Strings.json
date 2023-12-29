@@ -113,7 +113,7 @@
 	},
 	"ShoujoKageki:Dance": {
 		"NAME": "舞动",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张牌。"
 	},
 	"ShoujoKageki:WeKnow": {
 		"NAME": "舞台的热情",
@@ -158,12 +158,12 @@
 	},
 	"ShoujoKageki:PickStar": {
 		"NAME": "摘星",
-		"DESCRIPTION": "禁用 两个遗物，获得 [E] [E] 。",
+		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，获得 [E] [E] 。",
 		"UPGRADE_DESCRIPTION": "禁用 一个遗物，获得 [E] [E] [E] 。"
 	},
 	"ShoujoKageki:StarCrime": {
 		"NAME": "星罪",
-		"DESCRIPTION": "禁用 两个遗物，抽 !M! 张牌。"
+		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，抽 !M! 张牌。"
 	},
 	"ShoujoKageki:Star": {
 		"NAME": "星光指引",

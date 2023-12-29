@@ -19,17 +19,18 @@ public class PickStar extends BaseCard {
     public PickStar() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LockRelicAction());
+        addToBot(new LockRelicAction(defaultSecondMagicNumber));
         addToBot(new GainEnergyAction(magicNumber));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!LockRelicAction.hasRelicToLock()) {
+        if (!LockRelicAction.hasRelicToLock(defaultSecondMagicNumber)) {
             cantUseMessage = LockRelic.DESCRIPTIONS[2];
             return false;
         }
@@ -40,9 +41,7 @@ public class PickStar extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeDefaultSecondMagicNumber(-1);
         }
     }
 }

@@ -19,9 +19,9 @@ public class LockRelicAction extends AbstractGameAction {
         WhiteList.add("loadout:");
     }
 
-    public LockRelicAction() {
+    public LockRelicAction(int amount) {
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
-        this.amount = 2;
+        this.amount = amount;
     }
 
     @Override
@@ -43,9 +43,6 @@ public class LockRelicAction extends AbstractGameAction {
         tickDuration();
     }
 
-    public static boolean hasRelicToLock() {
-        return hasRelicToLock(2);
-    }
 
     public static boolean hasRelicToLock(int number) {
         int endPosition = -1;
