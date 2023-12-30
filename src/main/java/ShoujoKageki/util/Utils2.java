@@ -5,6 +5,8 @@ import java.util.StringJoiner;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class Utils2 {
     public static AbstractCard makeCardCopyOnlyWithUpgrade(AbstractCard source) {
@@ -47,5 +49,15 @@ public class Utils2 {
             newGroup.addToTop(card);
         }
         return newGroup;
+    }
+
+    public static boolean inBattlePhase() {
+        if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
+            return false;
+        }
+        if (AbstractDungeon.getCurrMapNode() == null || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            return false;
+        }
+        return true;
     }
 }

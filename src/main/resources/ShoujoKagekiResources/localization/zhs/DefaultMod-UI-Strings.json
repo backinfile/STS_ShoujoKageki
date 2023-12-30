@@ -29,8 +29,13 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:CarryingGuiltModifier": {
+    "TEXT": [" NL (已耗尽","张)"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:BurnModifier": {
-    "TEXT": ["", " NL 消耗 。"],
+    "TEXT": ["", " NL 消耗 (燃烧) 。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },

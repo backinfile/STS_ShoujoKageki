@@ -54,6 +54,12 @@
 			"战斗结束时，获得 #y", " 个随机遗物。"
 		]
 	},
+	"ShoujoKageki:GainRelicPower": {
+		"NAME": "激情",
+		"DESCRIPTIONS": [
+			"战斗结束时，获得 #y", " 个随机遗物。"
+		]
+	},
 	"ShoujoKageki:BurnPower": {
 		"NAME": "燃烧",
 		"DESCRIPTIONS": [

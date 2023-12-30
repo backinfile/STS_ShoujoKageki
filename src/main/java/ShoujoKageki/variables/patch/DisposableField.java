@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -22,6 +23,9 @@ public class DisposableField {
 
     public static void disposeCard(AbstractCard card) {
         disposeCard(card, card.current_x, card.current_y);
+        AbstractPlayer p = AbstractDungeon.player;
+        Integer value = DisposableFieldCounterSavePatch.Field.counter.get(p);
+        DisposableFieldCounterSavePatch.Field.counter.set(p, value + 1);
     }
 
     public static void disposeCard(AbstractCard card, float x, float y) {

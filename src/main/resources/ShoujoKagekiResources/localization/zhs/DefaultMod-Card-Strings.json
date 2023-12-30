@@ -154,7 +154,7 @@
 	},
 	"ShoujoKageki:Arrogant": {
 		"NAME": "骄傲",
-		"DESCRIPTION": "虚无 NL 每个回合开始时，失去25%最大生命值的生命，并获得一个随机遗物。"
+		"DESCRIPTION": "固有 ， 期待 。 NL 战斗结束时，获得一个随机遗物。"
 	},
 	"ShoujoKageki:PickStar": {
 		"NAME": "摘星",
@@ -223,7 +223,7 @@
 	},
 	"ShoujoKageki:StageReproduce": {
 		"NAME": "命运舞台的再生产",
-		"DESCRIPTION": "约定牌堆 将提供无限的 *续演 。"
+		"DESCRIPTION": "以无限的 *续演 充满 约定牌堆。"
 	},
 	"ShoujoKageki:Continue": {
 		"NAME": "续演",
@@ -245,6 +245,10 @@
 		"NAME": "投下燃料",
 		"DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] [E] [E] 。 NL 消耗 。"
+	},
+	"ShoujoKageki:CarryingGuilt": {
+		"NAME": "背负着我们犯下的罪过",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 本局游戏中每耗尽一张 闪耀 牌伤害增加 !M! 。"
 	},
 	"ShoujoKageki:Gear": {
 		"NAME": "齿轮",

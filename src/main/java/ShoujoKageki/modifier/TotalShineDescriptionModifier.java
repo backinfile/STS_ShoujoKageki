@@ -1,6 +1,7 @@
 package ShoujoKageki.modifier;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.util.Utils2;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +23,7 @@ public class TotalShineDescriptionModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (!DisposableVariable.inBattlePhase()) return rawDescription;
+        if (!Utils2.inBattlePhase()) return rawDescription;
         return rawDescription + TEXT[0] + DisposableVariable.getTotalShineValue() + TEXT[1];
     }
 

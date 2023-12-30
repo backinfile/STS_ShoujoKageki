@@ -2,6 +2,7 @@ package ShoujoKageki.cards.relic;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.powers.GainRelicPower;
 import ShoujoKageki.powers.PassionPower;
 import ShoujoKageki.variables.DisposableVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,7 +21,7 @@ public class Passion extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PassionPower()));
+        addToBot(new ApplyPowerAction(p, p, new GainRelicPower(1)));
     }
 
     @Override

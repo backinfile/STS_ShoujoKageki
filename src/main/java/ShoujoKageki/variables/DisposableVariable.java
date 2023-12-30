@@ -3,13 +3,13 @@ package ShoujoKageki.variables;
 import ShoujoKageki.Log;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.modifier.ShineCardDescriptionModifier;
+import ShoujoKageki.util.Utils2;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.variables.patch.DisposableField;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.Objects;
 
@@ -78,18 +78,8 @@ public class DisposableVariable extends DynamicVariable { // Shine
         Log.logger.info("reset card " + card.name + " to " + getValue(card));
     }
 
-    public static boolean inBattlePhase() {
-        if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
-            return false;
-        }
-        if (AbstractDungeon.getCurrMapNode() == null || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
-            return false;
-        }
-        return true;
-    }
-
     public static int getTotalShineValue() {
-        if (!inBattlePhase()) return 0;
+        if (!Utils2.inBattlePhase()) return 0;
 
         int cnt = 0;
         for (AbstractCard card : AbstractDungeon.player.hand.group) {
