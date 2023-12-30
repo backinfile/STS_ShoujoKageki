@@ -45,7 +45,7 @@
 	"ShoujoKageki:TragedyPower": {
 		"NAME": "悲剧",
 		"DESCRIPTIONS": [
-			"战斗结束时，获得 #r腐朽 和 #y", " 个随机遗物。"
+			"战斗结束时，获得 #r", " 和 #y", " 个随机遗物。"
 		]
 	},
 	"ShoujoKageki:PassionPower": {

@@ -146,7 +146,8 @@
 	},
 	"ShoujoKageki:Tragedy": {
 		"NAME": "悲剧",
-		"DESCRIPTION": "战斗结束时，获得 *腐朽 和一个随机遗物。"
+		"DESCRIPTION": "战斗结束时，获得 *腐朽 和一个随机遗物。",
+		"UPGRADE_DESCRIPTION": "战斗结束时，获得 *受伤 和一个随机遗物。"
 	},
 	"ShoujoKageki:Passion": {
 		"NAME": "激情",
