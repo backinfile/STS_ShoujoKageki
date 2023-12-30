@@ -157,6 +157,10 @@
 		"NAME": "骄傲",
 		"DESCRIPTION": "固有 ， 期待 。 NL 战斗结束时，获得一个随机遗物。"
 	},
+	"ShoujoKageki:KillAll": {
+		"NAME": "皆杀",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，获得 !M! 个随机遗物。"
+	},
 	"ShoujoKageki:PickStar": {
 		"NAME": "摘星",
 		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，获得 [E] [E] 。",

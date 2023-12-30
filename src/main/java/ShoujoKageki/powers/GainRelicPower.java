@@ -24,11 +24,15 @@ public class GainRelicPower extends BasePower {
     public void onVictory() {
         super.onVictory();
 
+        addRandomRelicToReward(amount);
+        flash();
+    }
+
+    public static void addRandomRelicToReward(int amount) {
         for (int i = 0; i < amount; i++) {
             AbstractRelic.RelicTier relicTier = AbstractDungeon.returnRandomRelicTier();
             AbstractRelic relic = AbstractDungeon.returnRandomRelic(relicTier);
             AbstractDungeon.getCurrRoom().addRelicToRewards(relic);
-            flash();
         }
     }
 
