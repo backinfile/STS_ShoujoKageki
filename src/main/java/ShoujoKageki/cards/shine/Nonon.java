@@ -18,7 +18,7 @@ public class Nonon extends BaseCard {
         this.baseDamage = 14;
         isMultiDamage = true;
         this.baseMagicNumber = this.magicNumber = 14;
-        DisposableVariable.setBaseValue(this, 6);
+        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
     @Override

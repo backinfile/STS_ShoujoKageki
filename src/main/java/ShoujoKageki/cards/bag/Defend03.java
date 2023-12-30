@@ -28,7 +28,7 @@ public class Defend03 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(4);
+            upgradeBlock(3);
         }
     }
 }

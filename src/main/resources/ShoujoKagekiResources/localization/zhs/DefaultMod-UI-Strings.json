@@ -25,7 +25,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:TotalShineDescriptionModifier": {
-    "TEXT": [" NL (总计","点)"],
+    "TEXT": [" NL (总计","点 闪耀 )"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },

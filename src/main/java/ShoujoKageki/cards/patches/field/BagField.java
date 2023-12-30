@@ -71,7 +71,8 @@ public class BagField {
     public static boolean showCardsInBag() {
         if (BagField.isChangeToDrawPile(false)) return false;
         if (BagField.isInfinite(false)) return false;
-        if (BagField.getBag().isEmpty()) return false;
+        CardGroup bagGroup = BagField.getBag();
+        if (bagGroup == null || bagGroup.isEmpty()) return false;
         return true;
     }
 }

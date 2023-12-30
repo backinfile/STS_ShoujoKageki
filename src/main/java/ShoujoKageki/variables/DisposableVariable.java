@@ -1,6 +1,7 @@
 package ShoujoKageki.variables;
 
 import ShoujoKageki.Log;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.modifier.ShineCardDescriptionModifier;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.CardModifierManager;
@@ -77,17 +78,37 @@ public class DisposableVariable extends DynamicVariable { // Shine
         Log.logger.info("reset card " + card.name + " to " + getValue(card));
     }
 
-    public static int getTotalValueInHand() {
+    public static boolean inBattlePhase() {
         if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
-            return 0;
+            return false;
         }
         if (AbstractDungeon.getCurrMapNode() == null || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
-            return 0;
+            return false;
         }
+        return true;
+    }
+
+    public static int getTotalShineValue() {
+        if (!inBattlePhase()) return 0;
+
         int cnt = 0;
         for (AbstractCard card : AbstractDungeon.player.hand.group) {
             int value = getValue(card);
             if (value > 0) cnt += value;
+        }
+        for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
+            int value = getValue(card);
+            if (value > 0) cnt += value;
+        }
+        for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+            int value = getValue(card);
+            if (value > 0) cnt += value;
+        }
+        if (BagField.showCardsInBag()) {
+            for (AbstractCard card : BagField.getBag().group) {
+                int value = getValue(card);
+                if (value > 0) cnt += value;
+            }
         }
         return cnt;
     }

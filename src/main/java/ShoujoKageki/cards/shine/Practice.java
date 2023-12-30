@@ -18,8 +18,8 @@ public class Practice extends BaseCard {
 
     public Practice() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        this.baseBlock = 9;
-        this.magicNumber = this.baseMagicNumber = 9;
+        this.baseBlock = 10;
+        this.magicNumber = this.baseMagicNumber = 10;
         DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
         this.tags.add(CardTags.HEALING);
     }
@@ -33,8 +33,8 @@ public class Practice extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3);
-            upgradeMagicNumber(3);
+            upgradeBlock(4);
+            upgradeMagicNumber(4);
         }
     }
 

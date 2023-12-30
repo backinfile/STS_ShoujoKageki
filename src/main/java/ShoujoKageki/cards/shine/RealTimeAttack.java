@@ -18,7 +18,7 @@ public class RealTimeAttack extends BaseCard {
     public RealTimeAttack() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 0;
-        DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
     @Override

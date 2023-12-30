@@ -17,7 +17,7 @@ public class Gear extends BaseCard {
     public static final String ID = makeID(Gear.class.getSimpleName());
 
     public Gear() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         exhaust = true;
     }
 
@@ -43,7 +43,10 @@ public class Gear extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+//            upgradeBaseCost(0);
+            selfRetain = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

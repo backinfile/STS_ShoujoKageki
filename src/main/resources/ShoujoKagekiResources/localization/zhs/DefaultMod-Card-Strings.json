@@ -165,6 +165,10 @@
 		"NAME": "星罪",
 		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，抽 !M! 张牌。"
 	},
+	"ShoujoKageki:Forgive": {
+		"NAME": "\"宽恕\"",
+		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，对所有敌人造成 !D! 点伤害。"
+	},
 	"ShoujoKageki:Star": {
 		"NAME": "星光指引",
 		"DESCRIPTION": "耗尽 你唯一 闪耀 牌 的 闪耀 值，将其打出同等次数。",
@@ -203,8 +207,7 @@
 	},
 	"ShoujoKageki:Practice2": {
 		"NAME": "舞蹈练习",
-		"DESCRIPTION": "获得手牌中总 闪耀 值的 格挡 。",
-		"UPGRADE_DESCRIPTION": "获得手牌中总 闪耀 值的 格挡 。 NL 沉淀 。"
+		"DESCRIPTION": "获得所有牌 闪耀 值 !M! 倍的 格挡 。"
 	},
 	"ShoujoKageki:Potato": {
 		"NAME": "土豆",
@@ -232,7 +235,7 @@
 	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 此牌在牌堆之间移动时，增加攻击次数，打出后重置。"
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 此牌在牌堆之间移动时，增加攻击次数。"
 	},
 	"ShoujoKageki:Continue02": {
 		"NAME": "永无结束的命运舞台",
@@ -240,7 +243,8 @@
 	},
 	"ShoujoKageki:Gear": {
 		"NAME": "齿轮",
-		"DESCRIPTION": "选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。"
+		"DESCRIPTION": "选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "保留 NL 选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。"
 	},
 	"ShoujoKageki:CommonAttack": {
 		"NAME": "踹",
@@ -269,6 +273,10 @@
 	"ShoujoKageki:NeverRetreat": {
 		"NAME": "绝不退让",
 		"DESCRIPTION": "造成 !D! 伤害。如果 约定牌堆 中有牌，重复一次。"
+	},
+	"ShoujoKageki:NeverRetreat02": {
+		"NAME": "绝不言败",
+		"DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL 沉淀 ：被打出之前耗能变为0。"
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",

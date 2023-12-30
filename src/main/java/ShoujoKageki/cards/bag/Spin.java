@@ -29,15 +29,15 @@ public class Spin extends BaseCard {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
 
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                magicNumber = baseMagicNumber = 0;
-                isMagicNumberModified = false;
-                initializeDescription();
-                isDone = true;
-            }
-        });
+//        addToBot(new AbstractGameAction() {
+//            @Override
+//            public void update() {
+//                magicNumber = baseMagicNumber = 0;
+//                isMagicNumberModified = false;
+//                initializeDescription();
+//                isDone = true;
+//            }
+//        });
     }
 
     private void onTrigger() {

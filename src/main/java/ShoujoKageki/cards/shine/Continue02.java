@@ -23,7 +23,7 @@ public class Continue02 extends BaseCard {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 12;
         this.timesUpgraded = timesUpgraded;
-        DisposableVariable.setBaseValue(this, 9);
+        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
     @Override

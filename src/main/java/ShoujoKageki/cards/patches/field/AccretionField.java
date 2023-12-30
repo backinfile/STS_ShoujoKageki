@@ -8,6 +8,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
         clz = AbstractCard.class,
         method = "<class>"
 )
-public class AccretionField {
+public class AccretionField { // 沉淀
     public static SpireField<Boolean> accretion = new SpireField<>(() -> false);
 }

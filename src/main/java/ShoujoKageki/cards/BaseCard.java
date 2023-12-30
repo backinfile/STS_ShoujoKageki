@@ -116,4 +116,9 @@ public abstract class BaseCard extends AbstractDefaultCard {
 
     public void triggerOnEndOfPlayerTurnInDiscardPile() {
     }
+
+
+    public void triggerOnAccretion() {
+
+    }
 }

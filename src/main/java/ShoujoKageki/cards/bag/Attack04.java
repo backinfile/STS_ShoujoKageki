@@ -14,7 +14,7 @@ public class Attack04 extends BaseCard {
 
     public Attack04() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        this.baseDamage = 5;
+        this.baseDamage = 6;
         isMultiDamage = true;
         this.cardsToPreview = new Attack05();
     }

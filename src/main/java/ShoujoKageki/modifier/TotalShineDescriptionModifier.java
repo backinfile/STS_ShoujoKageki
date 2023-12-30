@@ -22,7 +22,8 @@ public class TotalShineDescriptionModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0] + DisposableVariable.getTotalValueInHand() + TEXT[1];
+        if (!DisposableVariable.inBattlePhase()) return rawDescription;
+        return rawDescription + TEXT[0] + DisposableVariable.getTotalShineValue() + TEXT[1];
     }
 
     @Override

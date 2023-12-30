@@ -17,9 +17,9 @@ public class Debut extends BaseCard {
 
     public Debut() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        baseDamage = 3;
+        baseDamage = 4;
         isMultiDamage = true;
-        DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
     @Override

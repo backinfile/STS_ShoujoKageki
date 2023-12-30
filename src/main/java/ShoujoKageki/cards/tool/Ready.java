@@ -17,7 +17,7 @@ public class Ready extends BaseCard {
     public Ready() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
-        DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);
         this.isInnate = true;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 1;
     }
