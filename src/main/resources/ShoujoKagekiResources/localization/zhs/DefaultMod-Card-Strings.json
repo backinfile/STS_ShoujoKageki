@@ -241,6 +241,11 @@
 		"NAME": "永无结束的命运舞台",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 能被多次 升级 。"
 	},
+	"ShoujoKageki:DropFuel": {
+		"NAME": "投下燃料",
+		"DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] [E] [E] 。 NL 消耗 。"
+	},
 	"ShoujoKageki:Gear": {
 		"NAME": "齿轮",
 		"DESCRIPTION": "选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。",

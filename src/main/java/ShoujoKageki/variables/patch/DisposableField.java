@@ -15,8 +15,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         method = "<class>"
 )
 public class DisposableField {
-    public static SpireField<Integer> disposable = new SpireField<>(() -> 0);
-    public static SpireField<Integer> baseDisposable = new SpireField<>(() -> 0);
+    public static SpireField<Integer> disposable = new SpireField<>(() -> 0);// use DisposableVariable.setValue instead
+    public static SpireField<Integer> baseDisposable = new SpireField<>(() -> 0); // use DisposableVariable.setBaseValue instead
     public static SpireField<Boolean> forceDispose = new SpireField<>(() -> false);
 
 
