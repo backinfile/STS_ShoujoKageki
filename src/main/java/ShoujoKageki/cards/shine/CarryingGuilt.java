@@ -21,8 +21,8 @@ public class CarryingGuilt extends BaseCard {
 
     public CarryingGuilt() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        this.baseDamage = 12;
-        this.baseMagicNumber = this.magicNumber = 6;
+        this.baseDamage = 14;
+        this.baseMagicNumber = this.magicNumber = 10;
 //        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
 
         CardModifierManager.addModifier(this, new CarryingGuiltModifier());
@@ -51,19 +51,19 @@ public class CarryingGuilt extends BaseCard {
     @Override
     public void applyPowers() {
         int counter = DisposableFieldCounterSavePatch.getDiffShineDisposedCount();
-        this.baseDamage = (upgraded ? 16 : 12) + counter * baseMagicNumber;
+        int added = counter * baseMagicNumber;
+        this.baseDamage += added;
         super.applyPowers();
-        if (counter != 0) {
-            this.isDamageModified = true;
-        }
+        this.baseDamage -= added;
+        if (this.baseDamage != this.damage) this.isDamageModified = true;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(4);
-            upgradeMagicNumber(2);
+//            upgradeDamage(4);
+            upgradeMagicNumber(4);
             initializeDescription();
         }
     }
