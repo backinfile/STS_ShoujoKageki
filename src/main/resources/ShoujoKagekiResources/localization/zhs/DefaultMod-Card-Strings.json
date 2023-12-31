@@ -15,6 +15,14 @@
 		"NAME": "坠落",
 		"DESCRIPTION": "获得 !B! 格挡 。 NL 选择 !M! 张手牌放入 约定牌堆 。"
 	},
+	"ShoujoKageki:WhosPromise": {
+		"NAME": "翩翩旋转的双人舞",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌，然后选择 !M! 张手牌放入其中。"
+	},
+	"ShoujoKageki:WeKnow": {
+		"NAME": "约定的舞台",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 在下回合从 约定牌堆 中抽取 !M! 张牌。"
+	},
 	"ShoujoKageki:TowerOfPromise": {
 		"NAME": "约定之塔",
 		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中抽牌直到手牌上限。 NL 消耗 。",
@@ -105,6 +113,11 @@
 		"DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。",
 		"UPGRADE_DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。"
 	},
+	"ShoujoKageki:Rapid": {
+		"NAME": "极速下降",
+		"DESCRIPTION": "从 约定牌堆 中选择 !M! 张牌放入你的手牌，弃置其余。",
+		"UPGRADE_DESCRIPTION": ""
+	},
 	"ShoujoKageki:OnStage": {
 		"NAME": "舞台之上",
 		"DESCRIPTION": "从 约定牌堆 抽取 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
@@ -124,10 +137,6 @@
 	"ShoujoKageki:Dance": {
 		"NAME": "舞动",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张牌。"
-	},
-	"ShoujoKageki:WeKnow": {
-		"NAME": "舞台的热情",
-		"DESCRIPTION": "约定牌堆 中每有一张牌，耗能就减少1 [E] 。 NL 获得 !B! 点 格挡 。"
 	},
 	"ShoujoKageki:Sunlight": {
 		"NAME": "耀眼",

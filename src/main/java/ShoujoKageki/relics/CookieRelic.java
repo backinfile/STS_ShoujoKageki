@@ -38,7 +38,7 @@ public class CookieRelic extends BaseRelic {
             List<AbstractCard> cards = cardPool.group.stream().filter(DisposableVariable::isDisposableCard).collect(Collectors.toList());
             if (cards.isEmpty()) continue;
             int rnd = AbstractDungeon.cardRng.random(cards.size() - 1);
-            rewardCards.group.add(cards.get(rnd));
+            rewardCards.group.add(cards.get(rnd).makeCopy());
         }
         AbstractDungeon.gridSelectScreen.openConfirmationGrid(rewardCards, this.DESCRIPTIONS[1]);
     }

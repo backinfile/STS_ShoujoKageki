@@ -39,7 +39,7 @@ public class CarryingGuilt extends BaseCard {
     public void update() {
         super.update();
 
-        if (Utils2.inBattlePhase()) {
+        if (AbstractDungeon.isPlayerInDungeon()) {
             int counter = DisposableFieldCounterSavePatch.getDiffShineDisposedCount();
             if (counter != counterCache) {
                 this.counterCache = counter;
