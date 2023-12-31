@@ -21,7 +21,7 @@ public class CarryingGuilt extends BaseCard {
 
     public CarryingGuilt() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        this.baseDamage = 14;
+        this.baseDamage = 10;
         this.baseMagicNumber = this.magicNumber = 10;
 //        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
 
@@ -48,13 +48,20 @@ public class CarryingGuilt extends BaseCard {
         }
     }
 
+    public void calculateCardDamage(AbstractMonster mo) {
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += DisposableFieldCounterSavePatch.getDiffShineDisposedCount() * baseMagicNumber;
+        super.calculateCardDamage(mo);
+        this.baseDamage = realBaseDamage;
+        if (this.baseDamage != this.damage) this.isDamageModified = true;
+    }
+
     @Override
     public void applyPowers() {
-        int counter = DisposableFieldCounterSavePatch.getDiffShineDisposedCount();
-        int added = counter * baseMagicNumber;
-        this.baseDamage += added;
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += DisposableFieldCounterSavePatch.getDiffShineDisposedCount() * baseMagicNumber;
         super.applyPowers();
-        this.baseDamage -= added;
+        this.baseDamage = realBaseDamage;
         if (this.baseDamage != this.damage) this.isDamageModified = true;
     }
 
@@ -62,7 +69,7 @@ public class CarryingGuilt extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//            upgradeDamage(4);
+            upgradeDamage(4);
             upgradeMagicNumber(4);
             initializeDescription();
         }
