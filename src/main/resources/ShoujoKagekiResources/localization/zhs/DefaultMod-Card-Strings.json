@@ -187,16 +187,16 @@
 		"DESCRIPTION": "获得一瓶 *类固醇药水 。 NL 消耗 。"
 	},
 	"ShoujoKageki:Starlight": {
-		"NAME": "Starlight-I",
+		"NAME": "Starlight第一幕",
 		"DESCRIPTION": "打出 闪耀 牌后，抽 !M! 张牌。"
 	},
 	"ShoujoKageki:Starlight02": {
-		"NAME": "Starlight-II",
+		"NAME": "Starlight第二幕",
 		"DESCRIPTION": "打出的 闪耀 牌会额外打出 !M! 次，然后耗尽 闪耀 值。"
 	},
 	"ShoujoKageki:Starlight03": {
-		"NAME": "Starlight-III",
-		"DESCRIPTION": "本次战斗多掉落一次卡牌奖励，其中仅包含 闪耀 卡牌。"
+		"NAME": "Starlight第三幕",
+		"DESCRIPTION": "本次战斗多掉落一次仅包含1张 闪耀 牌 的卡牌奖励。"
 	},
 	"ShoujoKageki:Nonon": {
 		"NAME": "Non non dayo",
@@ -224,7 +224,7 @@
 	},
 	"ShoujoKageki:BananaLunch": {
 		"NAME": "Banana午餐",
-		"DESCRIPTION": "回合结束时，增加一张 *三明治 到 约定牌堆 。"
+		"DESCRIPTION": "回合结束时，增加 !M! 张 *三明治 到 约定牌堆 。"
 	},
 	"ShoujoKageki:StageReproduce": {
 		"NAME": "命运舞台的再生产",

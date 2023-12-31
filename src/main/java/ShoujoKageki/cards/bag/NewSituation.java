@@ -28,7 +28,7 @@ public class NewSituation extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(5);
+            upgradeBlock(3);
             upgradeMagicNumber(1);
         }
     }

@@ -44,6 +44,11 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:ShineCardReward": {
+    "TEXT": ["将闪耀牌加入你的牌组中", "选择一张牌"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:CopyHandCardToDeckAction": {
     "TEXT": ["将衍生牌的复制加入牌组"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],

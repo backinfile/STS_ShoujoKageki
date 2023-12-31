@@ -201,12 +201,15 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.registerCustomReward(RewardPatch.TypePatch.SHINE_CARD, new BaseMod.LoadCustomReward() {
             @Override
             public CustomReward onLoad(RewardSave rewardSave) {
-                return null;//new ShineCardReward();
+                return new ShineCardReward(rewardSave.id);
             }
         }, new BaseMod.SaveCustomReward() {
             @Override
             public RewardSave onSave(CustomReward customReward) {
-                return null;
+                if (customReward.cards.isEmpty()) {
+                    return new RewardSave(customReward.type.toString(), "");
+                }
+                return new RewardSave(customReward.type.toString(), customReward.cards.get(0).cardID);
             }
         });
 

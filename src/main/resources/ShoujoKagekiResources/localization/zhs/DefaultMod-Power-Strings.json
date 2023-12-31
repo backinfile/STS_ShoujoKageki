@@ -68,21 +68,21 @@
 		]
 	},
 	"ShoujoKageki:StarlightPower": {
-		"NAME": "Starlight-I",
+		"NAME": "Starlight第一幕",
 		"DESCRIPTIONS": [
 			"打出 #y闪耀 牌后，抽 #y", " 张牌。"
 		]
 	},
 	"ShoujoKageki:Starlight02Power": {
-		"NAME": "Starlight-II",
+		"NAME": "Starlight第二幕",
 		"DESCRIPTIONS": [
 			"打出的 #y闪耀 牌会额外打出 #y", " 次，然后 #r耗尽 #y闪耀 。"
 		]
 	},
 	"ShoujoKageki:Starlight03Power": {
-		"NAME": "Starlight-III",
+		"NAME": "Starlight第三幕",
 		"DESCRIPTIONS": [
-			"本次战斗多掉落", "次 #y卡牌奖励 ，其中仅包含 #y闪耀 卡牌。"
+			"本次战斗多掉落", "次仅包含1张 #y闪耀 牌 #y卡牌奖励。"
 		]
 	},
 	"ShoujoKageki:BananaLunchPower": {
