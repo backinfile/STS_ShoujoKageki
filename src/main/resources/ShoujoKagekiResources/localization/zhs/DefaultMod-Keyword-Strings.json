@@ -4,7 +4,7 @@
 		"NAMES": [
 			"约定牌堆", "约定", "约定牌库"
 		],
-		"DESCRIPTION": "#y爱城华恋 特有的牌堆。"
+		"DESCRIPTION": "约定牌堆 是 #y爱城华恋 特有的牌堆。"
 	},
 	{
 		"PROPER_NAME": "期待",
@@ -18,7 +18,7 @@
 		"NAMES": [
 			"沉淀"
 		],
-		"DESCRIPTION": "在回合结束时放入 #y约定牌堆 。"
+		"DESCRIPTION": "在回合结束时，具有沉淀的牌会被放入 #y约定牌堆 。"
 	},
 	{
 		"PROPER_NAME": "闪耀",

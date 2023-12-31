@@ -57,7 +57,8 @@ public class TakeSpecCardFromBagAction extends AbstractGameAction {
                 bag.removeCard(curCard);
                 takeCnt++;
             }
-            addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, takeCnt));
+            addToTop(new ApplyBagPowerAction());
+//            addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, takeCnt));
             isDone = true;
             return;
         }

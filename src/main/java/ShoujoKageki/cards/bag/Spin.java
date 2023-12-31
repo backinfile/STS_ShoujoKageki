@@ -1,14 +1,11 @@
 package ShoujoKageki.cards.bag;
 
-import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Spin extends BaseCard {
@@ -18,7 +15,7 @@ public class Spin extends BaseCard {
     public static final String ID = ModInfo.makeID(Spin.class.getSimpleName());
 
     public Spin() {
-        super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 4;
         this.baseMagicNumber = this.magicNumber = 0;
     }
@@ -29,15 +26,19 @@ public class Spin extends BaseCard {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
 
-//        addToBot(new AbstractGameAction() {
-//            @Override
-//            public void update() {
-//                magicNumber = baseMagicNumber = 0;
-//                isMagicNumberModified = false;
-//                initializeDescription();
-//                isDone = true;
-//            }
-//        });
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                reset();
+                isDone = true;
+            }
+        });
+    }
+
+    public void reset() {
+        magicNumber = baseMagicNumber = 0;
+        isMagicNumberModified = false;
+        initializeDescription();
     }
 
     private void onTrigger() {
@@ -76,6 +77,30 @@ public class Spin extends BaseCard {
     public void triggerOnShuffleInfoDrawPile() {
         super.triggerOnShuffleInfoDrawPile();
         onTrigger();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        super.triggerOnEndOfPlayerTurn();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInBag() {
+        super.triggerOnEndOfPlayerTurnInBag();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDrawPile() {
+        super.triggerOnEndOfPlayerTurnInDrawPile();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDiscardPile() {
+        super.triggerOnEndOfPlayerTurnInDiscardPile();
+        reset();
     }
 
     @Override

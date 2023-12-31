@@ -20,10 +20,16 @@ public class ToTheStage extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        int value = DisposableVariable.getValue(this);
-        if (value > 0) {
-            addToBot(new GainEnergyAction(value));
+
+        if (!upgraded) {
+            int value = DisposableVariable.getValue(this);
+            if (value > 0) {
+                addToBot(new GainEnergyAction(value));
+            }
+        } else {
+            addToBot(new GainEnergyAction(3));
         }
+
         if (magicNumber > 0) {
             addToBot(new DrawCardAction(magicNumber));
         }
@@ -33,7 +39,7 @@ public class ToTheStage extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(1);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

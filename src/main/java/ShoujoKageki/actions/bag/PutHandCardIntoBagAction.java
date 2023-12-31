@@ -85,6 +85,22 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
     }
 
     private void replaceAllCardInHand() {
+        if (BagField.isChangeToDrawPile()) {
+            ArrayList<AbstractCard> cardsInBag = new ArrayList<>(AbstractDungeon.player.drawPile.group);
+            AbstractDungeon.player.drawPile.group.clear();
+
+            bagCards(player.hand.group);
+
+
+            if (BagField.isInfinite()) {
+                addToBot(new TakeRndTmpCardFromBagAction(cardsInBag.size()));
+                return;
+            }
+            addToBot(new PutCardsToHandAction(player, cardsInBag));
+            return;
+        }
+
+
         CardGroup bag = BagField.bag.get(player);
         int beforeAmount = bag.size();
 

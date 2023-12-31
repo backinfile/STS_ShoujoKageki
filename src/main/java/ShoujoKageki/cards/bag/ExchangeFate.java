@@ -11,7 +11,7 @@ public class ExchangeFate extends BaseCard {
     public static final String ID = ModInfo.makeID(ExchangeFate.class.getSimpleName());
 
     public ExchangeFate() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
 //        exhaust = true;
     }
 

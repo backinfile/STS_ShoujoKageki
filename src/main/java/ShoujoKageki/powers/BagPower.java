@@ -78,10 +78,15 @@ public class BagPower extends BasePower {
 
     public void checkBagPower() {
         int oldAmount = this.amount;
-        this.amount = BagField.showCardsInBag() ? BagField.getBag().size() : 0;
-        if (oldAmount != this.amount) {
+        int newAmount = BagField.showCardsInBag() ? BagField.getBag().size() : 0;
+        if (newAmount == 0) newAmount = -1;
+
+        if (oldAmount != newAmount) {
+            this.amount = newAmount;
             flash();
         }
+
+
         updateDescription();
     }
 

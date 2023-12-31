@@ -102,12 +102,21 @@
 	},
 	"ShoujoKageki:ExchangeFate": {
 		"NAME": "命运交换之日",
-		"DESCRIPTION": "手牌与 约定牌堆 中的牌交换。"
+		"DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。"
 	},
 	"ShoujoKageki:OnStage": {
 		"NAME": "舞台之上",
 		"DESCRIPTION": "从 约定牌堆 抽取 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
 		"EXTENDED_DESCRIPTION": [
+			"约定牌堆 中卡牌数量不足。"
+		]
+	},
+	"ShoujoKageki:StageIsWaiting": {
+		"NAME": "舞台正在等待着",
+		"DESCRIPTION": " 不能被打出 。 NL 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] 。",
+		"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] [E] 。",
+		"EXTENDED_DESCRIPTION": [
+		  "这张牌不能被打出。",
 		  "约定牌堆 中卡牌数量不足。"
 		]
 	},
@@ -134,7 +143,7 @@
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
 		"DESCRIPTION": "获得此牌闪耀值的 [E] 。",
-		"UPGRADE_DESCRIPTION": "获得此牌闪耀值的 [E] 。 NL 抽 !M! 张牌。"
+		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 抽 !M! 张牌。"
 	},
 	"ShoujoKageki:Ready": {
 		"NAME": "准备完成",
@@ -240,7 +249,7 @@
 	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 此牌在牌堆之间移动时，增加攻击次数。"
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 此牌在牌堆之间移动时，在本回合增加攻击次数。"
 	},
 	"ShoujoKageki:Continue02": {
 		"NAME": "永无结束的命运舞台",
@@ -276,9 +285,16 @@
 		"NAME": "燃烧",
 		"DESCRIPTION": "从 约定牌堆 抽出的牌将被 升级 ， 且被打出时 消耗 。"
 	},
+	"ShoujoKageki:HolyStar": {
+		"NAME": "神圣星辰",
+		"DESCRIPTION": "造成 !D! 伤害。 NL 沉淀 : 在本场战斗中的耗能减少 !M! 。"
+	},
 	"ShoujoKageki:NextStage": {
 		"NAME": "下一个舞台",
-		"DESCRIPTION": "从 约定牌堆 抽取的牌本回合耗能变为0。"
+		"DESCRIPTION": "不能被打出 。 NL  此牌在牌堆之间移动时，抽 !M! 张牌。",
+		"EXTENDED_DESCRIPTION": [
+		  "这张牌不能被打出。"
+		]
 	},
 	"ShoujoKageki:BlackAttack": {
 		"NAME": "榴弹炮",

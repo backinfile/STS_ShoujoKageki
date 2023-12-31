@@ -12,7 +12,7 @@ public class Run02 extends BaseCard {
     public static final String ID = ModInfo.makeID(Run02.class.getSimpleName());
 
     public Run02() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         exhaust = true;
     }
 
@@ -25,7 +25,7 @@ public class Run02 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
         }
     }
 }
