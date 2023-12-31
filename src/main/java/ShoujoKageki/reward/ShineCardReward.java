@@ -72,7 +72,7 @@ public class ShineCardReward extends CustomReward {
         list = list.stream().filter(DisposableVariable::isDisposableCard).collect(Collectors.toList());
         if (list.isEmpty()) return null;
         int rnd = AbstractDungeon.cardRandomRng.random(list.size() - 1);
-        return list.get(rnd);
+        return list.get(rnd).makeCopy();
     }
 
     public static AbstractCard.CardRarity getRarity() {

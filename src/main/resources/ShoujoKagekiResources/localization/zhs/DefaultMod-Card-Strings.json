@@ -113,8 +113,8 @@
 	},
 	"ShoujoKageki:StageIsWaiting": {
 		"NAME": "舞台正在等待着",
-		"DESCRIPTION": " 不能被打出 。 NL 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] 。",
-		"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] [E] 。",
+		"DESCRIPTION": " 不能被打出 ， 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] 。",
+		"UPGRADE_DESCRIPTION": " 不能被打出 ， 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] [E] 。",
 		"EXTENDED_DESCRIPTION": [
 		  "这张牌不能被打出。",
 		  "约定牌堆 中卡牌数量不足。"

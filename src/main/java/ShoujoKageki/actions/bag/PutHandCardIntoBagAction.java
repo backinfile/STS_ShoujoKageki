@@ -1,6 +1,6 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.actions.PutCardsToHandAction;
+import ShoujoKageki.actions.PutBagCardsToHandAction;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,12 +46,12 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == startDuration) {
-            if (player.hand.isEmpty()) {
+            if (replaceAllCardInHand) {
+                replaceAllCardInHand();
                 isDone = true;
                 return;
             }
-            if (replaceAllCardInHand) {
-                replaceAllCardInHand();
+            if (player.hand.isEmpty()) {
                 isDone = true;
                 return;
             }
@@ -96,7 +96,7 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
                 addToBot(new TakeRndTmpCardFromBagAction(cardsInBag.size()));
                 return;
             }
-            addToBot(new PutCardsToHandAction(player, cardsInBag));
+            addToBot(new PutBagCardsToHandAction(player, cardsInBag));
             return;
         }
 
@@ -114,7 +114,7 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
             return;
         }
 //        addToBot(new PutHandCardIntoBagAction(player, true, false));
-        addToBot(new PutCardsToHandAction(player, bagCards));
+        addToBot(new PutBagCardsToHandAction(player, bagCards));
     }
 
     private void bagCards(List<AbstractCard> cardsToBag) {

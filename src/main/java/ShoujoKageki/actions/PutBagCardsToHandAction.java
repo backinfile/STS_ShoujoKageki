@@ -1,5 +1,6 @@
 package ShoujoKageki.actions;
 
+import ShoujoKageki.cards.BaseCard;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,12 +12,12 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 import java.util.ArrayList;
 
-public class PutCardsToHandAction extends AbstractGameAction {
+public class PutBagCardsToHandAction extends AbstractGameAction {
 
     private final ArrayList<AbstractCard> cards;
     private final AbstractPlayer player;
 
-    public PutCardsToHandAction(AbstractPlayer player, ArrayList<AbstractCard> cards) {
+    public PutBagCardsToHandAction(AbstractPlayer player, ArrayList<AbstractCard> cards) {
         this.player = player;
         this.cards = cards;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
@@ -25,6 +26,11 @@ public class PutCardsToHandAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == startDuration) {
+
+            for (AbstractCard card : cards) {
+                if (card instanceof BaseCard) ((BaseCard) card).triggerOnTakeFromBag();
+            }
+
             int handSize = player.hand.size();
             for (int i = 0; i < cards.size(); i++) {
                 AbstractCard card = cards.get(i);

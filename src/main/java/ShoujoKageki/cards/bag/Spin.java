@@ -26,13 +26,13 @@ public class Spin extends BaseCard {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
 
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                reset();
-                isDone = true;
-            }
-        });
+//        addToBot(new AbstractGameAction() {
+//            @Override
+//            public void update() {
+//                reset();
+//                isDone = true;
+//            }
+//        });
     }
 
     public void reset() {
