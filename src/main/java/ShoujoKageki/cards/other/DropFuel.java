@@ -21,7 +21,7 @@ public class DropFuel extends BaseCard {
 
     public DropFuel() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         exhaust = true;
         DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
@@ -36,7 +36,7 @@ public class DropFuel extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

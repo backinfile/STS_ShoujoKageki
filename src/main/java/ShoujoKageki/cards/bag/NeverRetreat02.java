@@ -21,7 +21,7 @@ public class NeverRetreat02 extends BaseCard {
 
     public NeverRetreat02() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        baseDamage = 10;
+        baseDamage = 8;
         isMultiDamage = true;
         AccretionField.accretion.set(this, true);
     }

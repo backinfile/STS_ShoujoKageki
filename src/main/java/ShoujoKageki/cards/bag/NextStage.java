@@ -36,40 +36,31 @@ public class NextStage extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
-    private int curTurn = 0;
-    private int triggerCnt = 0;
+//    private int curTurn = 0;
+//    private int triggerCnt = 0;
 
     private void onTrigger() {
-        if (curTurn != GameActionManager.turn) {
-            curTurn = GameActionManager.turn;
-            triggerCnt = 0;
-        }
-        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) { // 防止无限
-            if (triggerCnt++ >= 10) {
-                triggerCnt = 0;
-                return;
-            }
-        }
+//        if (curTurn != GameActionManager.turn) {
+//            curTurn = GameActionManager.turn;
+//            triggerCnt = 0;
+//        }
+//        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) { // 防止无限
+//            if (triggerCnt++ >= 10) {
+//                triggerCnt = 0;
+//                return;
+//            }
+//        }
 
         addToBot(new DrawCardAction(magicNumber));
         flash();
     }
 
-    @Override
-    public void triggerWhenMoveToDiscardPile() {
-        super.triggerWhenMoveToDiscardPile();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        onTrigger();
-    }
 
     @Override
     public void triggerOnTakeFromBag() {
@@ -83,10 +74,23 @@ public class NextStage extends BaseCard {
         onTrigger();
     }
 
+
+    @Override
+    public void triggerWhenMoveToDiscardPile() {
+        super.triggerWhenMoveToDiscardPile();
+        if (upgraded) onTrigger();
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        if (upgraded) onTrigger();
+    }
+
     @Override
     public void triggerOnShuffleInfoDrawPile() {
         super.triggerOnShuffleInfoDrawPile();
-        onTrigger();
+        if (upgraded) onTrigger();
     }
 
 }

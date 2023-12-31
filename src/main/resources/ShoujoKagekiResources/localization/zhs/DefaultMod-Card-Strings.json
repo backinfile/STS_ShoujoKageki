@@ -102,7 +102,8 @@
 	},
 	"ShoujoKageki:ExchangeFate": {
 		"NAME": "命运交换之日",
-		"DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。"
+		"DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。",
+		"UPGRADE_DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。"
 	},
 	"ShoujoKageki:OnStage": {
 		"NAME": "舞台之上",
@@ -258,8 +259,8 @@
 	},
 	"ShoujoKageki:DropFuel": {
 		"NAME": "投下燃料",
-		"DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] [E] [E] 。 NL 消耗 。"
+		"DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] 。 NL 消耗 。"
 	},
 	"ShoujoKageki:CarryingGuilt": {
 		"NAME": "背负着我们犯下的罪过",
@@ -312,7 +313,8 @@
 	},
 	"ShoujoKageki:NextStage": {
 		"NAME": "下一个舞台",
-		"DESCRIPTION": "不能被打出 。 NL  此牌在牌堆之间移动时，抽 !M! 张牌。",
+		"DESCRIPTION": "不能被打出 。 NL  此牌在被放入或离开 约定牌堆 时，抽 !M! 张牌。",
+		"UPGRADE_DESCRIPTION": "不能被打出 。 NL  此牌在牌堆之间移动时，抽 !M! 张牌。",
 		"EXTENDED_DESCRIPTION": [
 		  "这张牌不能被打出。"
 		]
