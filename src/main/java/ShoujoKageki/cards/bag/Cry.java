@@ -58,6 +58,12 @@ public class Cry extends BaseCard {
     }
 
     @Override
+    public void triggerOnExhaust() {
+        super.triggerOnExhaust();
+        onTrigger();
+    }
+
+    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();

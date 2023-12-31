@@ -4,10 +4,12 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.AccretionField;
 import ShoujoKageki.cards.patches.field.BagField;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class StageIsWaiting extends BaseCard {
 
     public static final String ID = ModInfo.makeID(StageIsWaiting.class.getSimpleName());

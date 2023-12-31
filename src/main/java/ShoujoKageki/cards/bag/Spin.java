@@ -80,6 +80,12 @@ public class Spin extends BaseCard {
     }
 
     @Override
+    public void triggerOnExhaust() {
+        super.triggerOnExhaust();
+        onTrigger();
+    }
+
+    @Override
     public void triggerOnEndOfPlayerTurn() {
         super.triggerOnEndOfPlayerTurn();
         reset();

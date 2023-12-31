@@ -93,4 +93,9 @@ public class NextStage extends BaseCard {
         if (upgraded) onTrigger();
     }
 
+    @Override
+    public void triggerOnExhaust() {
+        super.triggerOnExhaust();
+        if (upgraded) onTrigger();
+    }
 }
