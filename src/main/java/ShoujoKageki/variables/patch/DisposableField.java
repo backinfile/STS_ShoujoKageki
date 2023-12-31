@@ -3,6 +3,7 @@ package ShoujoKageki.variables.patch;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.effects.PurgeCardInBattleEffect;
 import ShoujoKageki.util.ActionUtils;
+import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -24,8 +25,7 @@ public class DisposableField {
     public static void disposeCard(AbstractCard card) {
         disposeCard(card, card.current_x, card.current_y);
         AbstractPlayer p = AbstractDungeon.player;
-        Integer value = DisposableFieldCounterSavePatch.Field.counter.get(p);
-        DisposableFieldCounterSavePatch.Field.counter.set(p, value + 1);
+        DisposableFieldCounterSavePatch.addShineCardDispose(card);
     }
 
     public static void disposeCard(AbstractCard card, float x, float y) {

@@ -1,11 +1,14 @@
 package ShoujoKageki.modifier;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import basemod.abstracts.AbstractCardModifier;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class BurnModifier extends AbstractCardModifier {
@@ -35,6 +38,7 @@ public class BurnModifier extends AbstractCardModifier {
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         super.onUse(card, target, action);
         action.exhaustCard = true;
+        AbstractDungeon.actionManager.addToBottom(new ApplyBagPowerAction());
     }
 
     @Override

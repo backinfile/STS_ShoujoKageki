@@ -40,7 +40,7 @@ public class CarryingGuilt extends BaseCard {
         super.update();
 
         if (Utils2.inBattlePhase()) {
-            int counter = DisposableFieldCounterSavePatch.Field.counter.get(AbstractDungeon.player);
+            int counter = DisposableFieldCounterSavePatch.getDiffShineDisposedCount();
             if (counter != counterCache) {
                 this.counterCache = counter;
                 initializeDescription();
@@ -50,7 +50,7 @@ public class CarryingGuilt extends BaseCard {
 
     @Override
     public void applyPowers() {
-        int counter = DisposableFieldCounterSavePatch.Field.counter.get(AbstractDungeon.player);
+        int counter = DisposableFieldCounterSavePatch.getDiffShineDisposedCount();
         this.baseDamage = (upgraded ? 16 : 12) + counter * baseMagicNumber;
         super.applyPowers();
         if (counter != 0) {

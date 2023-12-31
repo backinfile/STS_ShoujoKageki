@@ -30,7 +30,7 @@ public class CarryingGuiltModifier extends AbstractCardModifier {
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
         if (!Utils2.inBattlePhase()) return rawDescription;
-        int counter = DisposableFieldCounterSavePatch.Field.counter.get(AbstractDungeon.player);
+        int counter = DisposableFieldCounterSavePatch.getDiffShineDisposedCount();
         return rawDescription + TEXT[0] + counter + TEXT[1];
     }
 

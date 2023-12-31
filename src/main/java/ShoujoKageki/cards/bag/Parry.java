@@ -14,8 +14,10 @@ public class Parry extends BaseCard {
     private static final int BASE_BLOCK = 4;
     private static final int UPGRADED_BLOCK = 4;
 
+    private int extraBlock = 0;
+
     public Parry() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         baseBlock = BASE_BLOCK;
         this.baseMagicNumber = this.magicNumber = 1;
     }
@@ -26,9 +28,25 @@ public class Parry extends BaseCard {
 //        resetBlock();
     }
 
+    public void resetBlock() {
+//        this.baseBlock = BASE_BLOCK;
+        extraBlock = 0;
+        applyPowers();
+    }
+
+
     public void triggerOnPlayerDrawOrDiscard() {
-        this.baseBlock += magicNumber;
+        this.extraBlock += magicNumber;
         this.flash();
+        applyPowers();
+    }
+
+    @Override
+    protected void applyPowersToBlock() {
+        this.baseBlock += extraBlock;
+        super.applyPowersToBlock();
+        this.baseBlock -= extraBlock;
+        this.isBlockModified = this.block != this.baseBlock;
     }
 
     @Override
@@ -61,15 +79,12 @@ public class Parry extends BaseCard {
         resetBlock();
     }
 
-    public void resetBlock() {
-        this.baseBlock = BASE_BLOCK;
-    }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBlock(UPGRADED_BLOCK);
         }
     }
 }

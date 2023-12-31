@@ -14,21 +14,22 @@ public class Practice2 extends BaseCard {
     public static final String ID = ModInfo.makeID(Practice2.class.getSimpleName());
 
     public Practice2() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 1;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        this.magicNumber = this.baseMagicNumber = 0;
         CardModifierManager.addModifier(this, new TotalShineDescriptionModifier());
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, DisposableVariable.getTotalShineValue() * magicNumber));
+        addToBot(new GainBlockAction(p, p, DisposableVariable.getTotalShineValue() + magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(4);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -221,7 +221,8 @@
 	},
 	"ShoujoKageki:Practice2": {
 		"NAME": "舞蹈练习",
-		"DESCRIPTION": "获得所有牌 闪耀 值 !M! 倍的 格挡 。"
+		"DESCRIPTION": "获得所有牌 闪耀 值之和的 格挡 。",
+		"UPGRADE_DESCRIPTION": "获得所有牌 闪耀 值之和+ !M! 的 格挡 。"
 	},
 	"ShoujoKageki:Potato": {
 		"NAME": "土豆",
@@ -262,7 +263,7 @@
 	},
 	"ShoujoKageki:CarryingGuilt": {
 		"NAME": "背负着我们犯下的罪过",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 本局游戏中每耗尽一张 闪耀 牌伤害增加 !M! 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 本局游戏中每耗尽一张非同名的 闪耀 牌，伤害增加 !M! 。"
 	},
 	"ShoujoKageki:Gear": {
 		"NAME": "齿轮",
