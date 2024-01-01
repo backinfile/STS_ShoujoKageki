@@ -4,6 +4,7 @@ import ShoujoKageki.Log;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKageki.ModInfo.makeID;
@@ -35,10 +36,34 @@ public class Parry extends BaseCard {
     }
 
 
-    public void triggerOnPlayerDrawOrDiscard() {
+    private int lastHandNumber = 0;
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p == null) return;
+
+        if (!p.hand.contains(this)) {
+            lastHandNumber = 0;
+            return;
+        }
+        if (lastHandNumber != p.hand.size()) {
+            lastHandNumber = p.hand.size();
+            onTrigger();
+        }
+
+    }
+
+    private void onTrigger() {
         this.extraBlock += magicNumber;
         this.flash();
         applyPowers();
+    }
+
+    public void triggerOnPlayerDrawOrDiscard() {
+//        onTrigger();
     }
 
     @Override

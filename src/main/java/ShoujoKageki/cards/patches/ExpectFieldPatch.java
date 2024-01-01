@@ -30,6 +30,7 @@ public class ExpectFieldPatch {
             if (!ExpectField.expect.get(___targetCard)) {
                 return SpireReturn.Continue();
             }
+            AbstractDungeon.player.onCardDrawOrDiscard();
             AbstractDungeon.effectList.add(new ExhaustCardEffect(___targetCard));
             AbstractDungeon.actionManager.addToBottom(new HandCheckAction());
             ReflectionHacks.privateMethod(AbstractGameAction.class, "tickDuration").invoke(__instance);

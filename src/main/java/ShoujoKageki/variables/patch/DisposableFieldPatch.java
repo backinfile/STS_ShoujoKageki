@@ -38,6 +38,8 @@ public class DisposableFieldPatch {
             if (curValue == 1 || DisposableField.forceDispose.get(___targetCard)) {
 
                 DisposableField.disposeCard(___targetCard);
+                AbstractDungeon.player.onCardDrawOrDiscard();
+
                 AbstractDungeon.actionManager.addToBottom(new HandCheckAction());
                 ReflectionHacks.privateMethod(AbstractGameAction.class, "tickDuration").invoke(__instance);
                 return SpireReturn.Return();

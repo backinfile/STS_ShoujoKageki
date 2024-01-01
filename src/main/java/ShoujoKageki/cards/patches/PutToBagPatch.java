@@ -18,6 +18,7 @@ public class PutToBagPatch {
 
     public static boolean checkIfPutToBag(AbstractCard targetCard) {
         if (PutToBagField.putToBag.get(targetCard)) {
+            AbstractDungeon.player.onCardDrawOrDiscard();
             AbstractDungeon.actionManager.addToTop(new MoveCardToBagAction(targetCard));
             return true;
         }

@@ -3,6 +3,7 @@ package ShoujoKageki.modifier;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import basemod.abstracts.AbstractCardModifier;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -28,17 +29,22 @@ public class BurnModifier extends AbstractCardModifier {
     }
 
 
-    @Override
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (card.exhaust) return rawDescription;
-        return TEXT[0] + rawDescription + TEXT[1];
-    }
+//    @Override
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        if (card.exhaust) return rawDescription;
+//        return TEXT[0] + rawDescription + TEXT[1];
+//    }
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         super.onUse(card, target, action);
         action.exhaustCard = true;
         AbstractDungeon.actionManager.addToBottom(new ApplyBagPowerAction());
+    }
+
+    @Override
+    public Color getGlow(AbstractCard card) {
+        return Color.FIREBRICK;
     }
 
     @Override
