@@ -96,6 +96,10 @@
 		"NAME": "我不会输的",
 		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 沉淀 。"
 	},
+	"ShoujoKageki:BringStarlight": {
+		"NAME": "为大家带来Starlight",
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 这张牌每被打出一次，在本场战斗中其攻击次数增加1。"
+	},
 	"ShoujoKageki:Aquarium": {
 		"NAME": "水族馆",
 		"DESCRIPTION": "每个回合开始时，从 约定牌堆 中抽取 !M! 张牌。"

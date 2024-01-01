@@ -21,8 +21,8 @@ public class CarryingGuilt extends BaseCard {
 
     public CarryingGuilt() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        this.baseDamage = 10;
-        this.baseMagicNumber = this.magicNumber = 10;
+        this.baseDamage = 8;
+        this.baseMagicNumber = this.magicNumber = 8;
 //        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
 
         CardModifierManager.addModifier(this, new CarryingGuiltModifier());
@@ -69,8 +69,8 @@ public class CarryingGuilt extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(4);
-            upgradeMagicNumber(4);
+            upgradeDamage(2);
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }
