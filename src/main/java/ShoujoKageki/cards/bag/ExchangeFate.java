@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.bag;
 
+import ShoujoKageki.actions.bag.ReplaceHandAndBagAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ShoujoKageki.ModInfo;
@@ -11,20 +12,21 @@ public class ExchangeFate extends BaseCard {
     public static final String ID = ModInfo.makeID(ExchangeFate.class.getSimpleName());
 
     public ExchangeFate() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-//        exhaust = true;
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new PutHandCardIntoBagAction(p, false, true));
+        addToBot(new ReplaceHandAndBagAction());
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            exhaust = false;
+//            upgradeBaseCost(0);
         }
     }
 }

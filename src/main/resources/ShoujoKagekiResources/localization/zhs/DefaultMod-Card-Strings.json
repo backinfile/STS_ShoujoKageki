@@ -89,8 +89,8 @@
 	},
 	"ShoujoKageki:BackToBack": {
 		"NAME": "背靠背",
-		"DESCRIPTION": "获得 !M!  临时力量 X次。 NL 获得 [E] 。",
-		"UPGRADE_DESCRIPTION": "获得 !M!  临时力量 X+1次。 NL 获得 [E] 。"
+		"DESCRIPTION": "获得 !M! 临时力量 X次。 NL 获得 [E] 。",
+		"UPGRADE_DESCRIPTION": "获得 !M! 临时力量 X+1次。 NL 获得 [E] 。"
 	},
 	"ShoujoKageki:NotLose": {
 		"NAME": "我不会输的",
@@ -118,7 +118,7 @@
 	},
 	"ShoujoKageki:ExchangeFate": {
 		"NAME": "命运交换之日",
-		"DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。",
+		"DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。"
 	},
 	"ShoujoKageki:Rapid": {
@@ -226,7 +226,7 @@
 		"DESCRIPTION": "本次战斗多掉落一次仅包含1张 闪耀 牌 的卡牌奖励。"
 	},
 	"ShoujoKageki:Nonon": {
-		"NAME": "Non non dayo",
+		"NAME": "Non non 哒哟",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害，目标本回合失去 !M! 点 力量 。"
 	},
 	"ShoujoKageki:NewSituation": {

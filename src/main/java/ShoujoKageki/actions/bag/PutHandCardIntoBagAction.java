@@ -28,7 +28,6 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
 
     private final AbstractPlayer player;
     private boolean allCardInHand = false;
-    private boolean replaceAllCardInHand = false;
 
     public PutHandCardIntoBagAction(AbstractPlayer player, int amount) {
         this.player = player;
@@ -37,20 +36,14 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
     }
 
     // all card in hand
-    public PutHandCardIntoBagAction(AbstractPlayer player, boolean allCardInHand, boolean replaceAllCardInHand) {
+    public PutHandCardIntoBagAction(AbstractPlayer player, boolean allCardInHand) {
         this(player, 1);
         this.allCardInHand = allCardInHand;
-        this.replaceAllCardInHand = replaceAllCardInHand;
     }
 
     @Override
     public void update() {
         if (duration == startDuration) {
-            if (replaceAllCardInHand) {
-                replaceAllCardInHand();
-                isDone = true;
-                return;
-            }
             if (player.hand.isEmpty()) {
                 isDone = true;
                 return;
@@ -84,38 +77,6 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
         tickDuration();
     }
 
-    private void replaceAllCardInHand() {
-        if (BagField.isChangeToDrawPile()) {
-            ArrayList<AbstractCard> cardsInBag = new ArrayList<>(AbstractDungeon.player.drawPile.group);
-            AbstractDungeon.player.drawPile.group.clear();
-
-            bagCards(player.hand.group);
-
-
-            if (BagField.isInfinite()) {
-                addToBot(new TakeRndTmpCardFromBagAction(cardsInBag.size()));
-                return;
-            }
-            addToBot(new PutBagCardsToHandAction(player, cardsInBag));
-            return;
-        }
-
-
-        CardGroup bag = BagField.bag.get(player);
-        int beforeAmount = bag.size();
-
-        ArrayList<AbstractCard> bagCards = new ArrayList<>(bag.group);
-        bag.clear();
-        addToBot(new ApplyBagPowerAction(-beforeAmount));
-        bagCards(player.hand.group);
-
-        if (BagField.isInfinite()) {
-            addToBot(new TakeRndTmpCardFromBagAction(BaseMod.MAX_HAND_SIZE));
-            return;
-        }
-//        addToBot(new PutHandCardIntoBagAction(player, true, false));
-        addToBot(new PutBagCardsToHandAction(player, bagCards));
-    }
 
     public static void bagCards(List<AbstractCard> cardsToBag) {
         if (cardsToBag == null || cardsToBag.isEmpty()) return;
