@@ -23,6 +23,7 @@ public class Burn extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
 //        addToBot(new ApplyPowerAction(p, p, new BurnPower()));
         BagField.bagBurn.set(p, true);
+        BagField.bagUpgrade.set(p, true);
         addToBot(new ApplyBagPowerAction());
         AbstractDungeon.effectList.add(new BurnEffect());
     }

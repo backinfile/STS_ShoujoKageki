@@ -47,4 +47,10 @@ public class LockRelic extends BaseRelic {
 
         lockedRelic.instantObtain(AbstractDungeon.player, position, false);
     }
+
+    @Override
+    public void triggerOnDead() {
+        super.triggerOnDead();
+        lockedRelic.instantObtain(AbstractDungeon.player, position, false);
+    }
 }

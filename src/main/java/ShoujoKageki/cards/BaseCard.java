@@ -1,5 +1,6 @@
 package ShoujoKageki.cards;
 
+import ShoujoKageki.variables.patch.DisposableFieldUpgradePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -44,6 +45,14 @@ public abstract class BaseCard extends AbstractDefaultCard {
     public BaseCard(String id, int cost, AbstractCard.CardType type, AbstractCard.CardColor color, AbstractCard.CardRarity rarity, AbstractCard.CardTarget target) {
         super(id, languagePack.getCardStrings(id).NAME, ModInfo.makeCardPath(id.split(":")[1] + ".png"), cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initNameAndDescription(id);
+    }
+
+    protected void upgradeTimes() {
+        ++this.timesUpgraded;
+        this.upgraded = true;
+        this.name = cardStrings.NAME + "+" + this.timesUpgraded;
+        this.initializeTitle();
+        DisposableFieldUpgradePatch.resetField(this);
     }
 
     private void initNameAndDescription(String id) {

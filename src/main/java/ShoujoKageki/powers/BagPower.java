@@ -53,15 +53,19 @@ public class BagPower extends BasePower {
         if (showCardsInBag) {
             description += DESCRIPTIONS[1];
         }
-        if (infinite) {
-            description += DESCRIPTIONS[2];
-        }
         if (changeToDrawPile) {
             description += DESCRIPTIONS[3];
         }
-
-        if (BagField.isBurn()) {
+        if (infinite && BagField.isUpgrade()) {
+            description += DESCRIPTIONS[9];
+        } else if (infinite) {
+            description += DESCRIPTIONS[2];
+        } else if (BagField.isUpgrade()) {
             description += DESCRIPTIONS[4];
+        }
+        
+        if (BagField.isBurn()) {
+            description += DESCRIPTIONS[5];
         }
 
         if (!showCardsInBag) {
@@ -70,9 +74,9 @@ public class BagPower extends BasePower {
 
         CardGroup bag = BagField.bag.get(owner);
         if (bag.isEmpty()) {
-            description += DESCRIPTIONS[5];
+            description += DESCRIPTIONS[6];
         } else {
-            description += DESCRIPTIONS[6] + Utils2.getCardNames(bag, DESCRIPTIONS[7], false);
+            description += DESCRIPTIONS[7] + Utils2.getCardNames(bag, DESCRIPTIONS[8], false);
         }
     }
 
@@ -124,25 +128,39 @@ public class BagPower extends BasePower {
         if (BagField.isBurn()) {
             makeCardBurn(card);
         }
+        if (BagField.isUpgrade()) {
+            makeCardUpgrade(card);
+        }
     }
 
     @Override
     public void onCardDraw(AbstractCard card) {
         super.onCardDraw(card);
-        if (BagField.isBurn() && BagField.isChangeToDrawPile(false)) {
-            makeCardBurn(card);
+
+        if (BagField.isChangeToDrawPile(false)) {
+            if (BagField.isUpgrade()) {
+                makeCardUpgrade(card);
+            }
+            if (BagField.isBurn()) {
+                makeCardBurn(card);
+            }
         }
     }
 
     private void makeCardBurn(AbstractCard card) {
         flash();
-        if (card.canUpgrade()) {
-            card.upgrade();
-        }
 //        FlavorText.AbstractCardFlavorFields.flavor.set(card, DESCRIPTIONS[1]);
 //        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(card, FlavorText.boxType.TRADITIONAL);
         if (!CardModifierManager.hasModifier(card, BurnModifier.ID)) {
             CardModifierManager.addModifier(card, new BurnModifier());
+        }
+    }
+
+    private void makeCardUpgrade(AbstractCard card) {
+        flash();
+        if (card.canUpgrade()) {
+            card.upgrade();
+            card.superFlash();
         }
     }
 }

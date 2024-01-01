@@ -38,11 +38,8 @@ public class Continue02 extends BaseCard {
 
     @Override
     public void upgrade() {
+        upgradeTimes();
         this.upgradeDamage(4 + this.timesUpgraded);
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.NAME + "+" + this.timesUpgraded;
-        this.initializeTitle();
     }
 
     @Override

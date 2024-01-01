@@ -27,6 +27,7 @@ public class BagField {
     public static SpireField<Boolean> bagInfinite = new SpireField<>(() -> false);
     public static SpireField<Boolean> bagReplace = new SpireField<>(() -> false);
     public static SpireField<Boolean> bagBurn = new SpireField<>(() -> false);
+    public static SpireField<Boolean> bagUpgrade = new SpireField<>(() -> false);
     public static SpireField<Boolean> bagCostZero = new SpireField<>(() -> false);
 
     public static CardGroup getBag() {
@@ -43,6 +44,10 @@ public class BagField {
         boolean result = bagReplace.get(AbstractDungeon.player);
         if (flash && result) flash();
         return result;
+    }
+
+    public static boolean isUpgrade() {
+        return BagField.bagUpgrade.get(AbstractDungeon.player);
     }
 
     public static boolean isBurn() {

@@ -31,6 +31,7 @@ public class BagFieldPatch {
             BagField.bagReplace.set(p, false);
             BagField.bagCostZero.set(p, false);
             BagField.bagBurn.set(p, false);
+            BagField.bagUpgrade.set(p, false);
         }
     }
 
