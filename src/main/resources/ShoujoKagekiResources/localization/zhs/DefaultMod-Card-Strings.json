@@ -316,6 +316,22 @@
 		"NAME": "唤醒",
 		"DESCRIPTION": "从 抽牌堆 , 弃牌堆 ,或 约定牌堆 中选择 2 张牌放入你的手牌。 NL 消耗 。"
 	},
+	"ShoujoKageki:SeriousStrike": {
+		"NAME": "认真打击",
+		"DESCRIPTION": "造成 !D! 伤害。 NL 回合结束时如果在 约定牌堆 中，本场战斗伤害增加 !M! 。 NL 沉淀 。"
+	},
+	"ShoujoKageki:CourageStrike": {
+		"NAME": "勇气打击",
+		"DESCRIPTION": "造成 !D! 伤害。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
+	},
+	"ShoujoKageki:Stretching": {
+		"NAME": "拉伸",
+		"DESCRIPTION": "获得 !B! 格挡。 NL 沉淀 。"
+	},
+	"ShoujoKageki:Sideways": {
+		"NAME": "侧身",
+		"DESCRIPTION": "获得 !B! 格挡。 NL 消耗 。"
+	},
 	"ShoujoKageki:SelectDiscardPile": {
 		"NAME": "弃牌堆",
 		"DESCRIPTION": "从 弃牌堆 中选择 2 张牌放入你的手牌。"

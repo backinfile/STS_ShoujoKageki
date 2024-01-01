@@ -14,7 +14,7 @@ public class Dance extends BaseCard {
     public static final String ID = ModInfo.makeID(Dance.class.getSimpleName());
 
     public Dance() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 8;
         this.baseMagicNumber = this.magicNumber = 2;
     }
