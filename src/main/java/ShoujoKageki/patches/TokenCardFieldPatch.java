@@ -3,6 +3,7 @@ package ShoujoKageki.patches;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.util.Utils2;
 import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableFieldPatch;
 import com.badlogic.gdx.graphics.Color;
@@ -90,27 +91,31 @@ public class TokenCardFieldPatch {
     )
     public static class OnObtain {
         public static void Postfix(Soul __instance, AbstractCard ___card) {
+            if (!Utils2.inBattlePhase()) return;
             TokenCardField.isToken.set(___card, false);
             AbstractPlayer p = AbstractDungeon.player;
             if (p != null) {
                 for (AbstractCard card : p.hand.group) {
-                    if (card.uuid.equals( ___card.uuid)) {
+                    if (card.uuid.equals(___card.uuid)) {
                         TokenCardField.isToken.set(card, false);
                     }
                 }
                 for (AbstractCard card : p.drawPile.group) {
-                    if (card.uuid.equals( ___card.uuid)) {
+                    if (card.uuid.equals(___card.uuid)) {
                         TokenCardField.isToken.set(card, false);
                     }
                 }
                 for (AbstractCard card : p.discardPile.group) {
-                    if (card.uuid.equals( ___card.uuid)) {
+                    if (card.uuid.equals(___card.uuid)) {
                         TokenCardField.isToken.set(card, false);
                     }
                 }
-                for (AbstractCard card : BagField.getBag().group) {
-                    if (card.uuid.equals( ___card.uuid)) {
-                        TokenCardField.isToken.set(card, false);
+                CardGroup bag = BagField.getBag();
+                if (bag != null) {
+                    for (AbstractCard card : bag.group) {
+                        if (card.uuid.equals(___card.uuid)) {
+                            TokenCardField.isToken.set(card, false);
+                        }
                     }
                 }
             }

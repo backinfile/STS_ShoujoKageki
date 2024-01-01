@@ -27,6 +27,8 @@ public class ExchangeFate extends BaseCard {
             upgradeName();
             exhaust = false;
 //            upgradeBaseCost(0);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
