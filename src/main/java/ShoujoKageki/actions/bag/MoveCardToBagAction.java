@@ -1,8 +1,7 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.powers.BagDefendPower;
+import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,25 +42,32 @@ public class MoveCardToBagAction extends AbstractGameAction {
 
             for (AbstractCard card : cardsToBag) {
                 if (card instanceof BaseCard) ((BaseCard) card).triggerOnPutInBag();
+                GlobalMovePatch.triggerGlobalMove(card, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
             }
 
 
             if (BagField.isChangeToDrawPile()) {
+                boolean fromHand = false;
                 for (AbstractCard card : cardsToBag) {
-                    player.hand.group.remove(card);
+                    if (player.hand.group.remove(card)) {
+                        fromHand = true;
+                    }
                     bag.removeCard(card);
                     AbstractDungeon.player.hand.moveToBottomOfDeck(card);
                 }
+                if (fromHand) player.onCardDrawOrDiscard();
                 this.addToBot(new HandCheckAction());
                 isDone = true;
                 return;
             }
 
+            boolean fromHand = false;
             ArrayList<AbstractCard> cards = new ArrayList<>(cardsToBag);
             for (AbstractCard card : cards) {
-                player.hand.group.remove(card);
+                if (player.hand.group.remove(card)) fromHand = true;
                 AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
             }
+            if (fromHand) player.onCardDrawOrDiscard();
             BagField.bag.get(player).group.addAll(cards);
             addToTop(new ApplyBagPowerAction(cards.size()));
         }

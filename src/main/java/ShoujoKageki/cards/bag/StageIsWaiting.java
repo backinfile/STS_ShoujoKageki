@@ -31,8 +31,8 @@ public class StageIsWaiting extends BaseCard {
     }
 
     @Override
-    public void triggerOnTakeFromBag() {
-        super.triggerOnTakeFromBag();
+    public void triggerOnTakeFromBagToHand() {
+        super.triggerOnTakeFromBagToHand();
         addToBot(new GainEnergyAction(magicNumber));
         flash();
     }

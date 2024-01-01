@@ -117,8 +117,8 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
         addToBot(new PutBagCardsToHandAction(player, bagCards));
     }
 
-    private void bagCards(List<AbstractCard> cardsToBag) {
+    public static void bagCards(List<AbstractCard> cardsToBag) {
         if (cardsToBag == null || cardsToBag.isEmpty()) return;
-        addToBot(new MoveCardToBagAction(new ArrayList<>(cardsToBag)));
+        AbstractDungeon.actionManager.addToBottom(new MoveCardToBagAction(new ArrayList<>(cardsToBag)));
     }
 }

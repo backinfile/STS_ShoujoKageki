@@ -1,16 +1,9 @@
-package ShoujoKageki.cards.bag;
+package ShoujoKageki.cards.globalMove;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.patches.field.BagField;
-import basemod.AutoAdd;
-import basemod.BaseMod;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class NextStage extends BaseCard {
@@ -20,6 +13,7 @@ public class NextStage extends BaseCard {
     public NextStage() {
         super(ID, -2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.logGlobalMove = true;
     }
 
     @Override
@@ -61,41 +55,22 @@ public class NextStage extends BaseCard {
         flash();
     }
 
-
     @Override
     public void triggerOnTakeFromBag() {
         super.triggerOnTakeFromBag();
-        onTrigger();
+        if (!upgraded) onTrigger();
     }
 
     @Override
     public void triggerOnPutInBag() {
         super.triggerOnPutInBag();
-        onTrigger();
+        if (!upgraded) onTrigger();
     }
 
 
     @Override
-    public void triggerWhenMoveToDiscardPile() {
-        super.triggerWhenMoveToDiscardPile();
-        if (upgraded) onTrigger();
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        if (upgraded) onTrigger();
-    }
-
-    @Override
-    public void triggerOnShuffleInfoDrawPile() {
-        super.triggerOnShuffleInfoDrawPile();
-        if (upgraded) onTrigger();
-    }
-
-    @Override
-    public void triggerOnExhaust() {
-        super.triggerOnExhaust();
+    public void triggerOnGlobalMove() {
+        super.triggerOnGlobalMove();
         if (upgraded) onTrigger();
     }
 }

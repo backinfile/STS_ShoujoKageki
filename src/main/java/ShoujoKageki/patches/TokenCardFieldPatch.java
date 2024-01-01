@@ -2,6 +2,7 @@ package ShoujoKageki.patches;
 
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableFieldPatch;
 import com.badlogic.gdx.graphics.Color;
@@ -12,6 +13,8 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.Soul;
+import com.megacrit.cardcrawl.cards.SoulGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -77,6 +80,54 @@ public class TokenCardFieldPatch {
     public static class AddCardToDeck {
         public static void Postfix(AddCardToDeckAction __instance, AbstractCard ___cardToObtain) {
             TokenCardField.isToken.set(___cardToObtain, false);
+        }
+    }
+
+    @SpirePatch(
+            clz = Soul.class,
+            method = "obtain",
+            paramtypez = {AbstractCard.class}
+    )
+    public static class OnObtain {
+        public static void Postfix(Soul __instance, AbstractCard ___card) {
+            TokenCardField.isToken.set(___card, false);
+            AbstractPlayer p = AbstractDungeon.player;
+            if (p != null) {
+                for (AbstractCard card : p.hand.group) {
+                    if (card.uuid.equals( ___card.uuid)) {
+                        TokenCardField.isToken.set(card, false);
+                    }
+                }
+                for (AbstractCard card : p.drawPile.group) {
+                    if (card.uuid.equals( ___card.uuid)) {
+                        TokenCardField.isToken.set(card, false);
+                    }
+                }
+                for (AbstractCard card : p.discardPile.group) {
+                    if (card.uuid.equals( ___card.uuid)) {
+                        TokenCardField.isToken.set(card, false);
+                    }
+                }
+                for (AbstractCard card : BagField.getBag().group) {
+                    if (card.uuid.equals( ___card.uuid)) {
+                        TokenCardField.isToken.set(card, false);
+                    }
+                }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = CardGroup.class,
+            method = "addToHand",
+            paramtypez = {AbstractCard.class}
+    )
+    public static class OnAddToHand {
+        public static void Postfix(CardGroup __instance, AbstractCard ___c) {
+            if (!TokenCardField.isToken.get(___c)) return;
+            if (StSLib.getMasterDeckEquivalent(___c) != null) {
+                TokenCardField.isToken.set(___c, false);
+            }
         }
     }
 

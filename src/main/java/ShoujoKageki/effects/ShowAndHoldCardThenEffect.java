@@ -26,8 +26,8 @@ public class ShowAndHoldCardThenEffect extends AbstractGameEffect {
         card.fadingOut = false;
 
         if (randomCenter) {
-            this.card.target_x = MathUtils.random((float) Settings.WIDTH * 0.2F, (float) Settings.WIDTH * 0.8F);
-            this.card.target_y = MathUtils.random((float) Settings.HEIGHT * 0.3F, (float) Settings.HEIGHT * 0.7F);
+            this.card.target_x = MathUtils.random((float) Settings.WIDTH * 0.4F, (float) Settings.WIDTH * 0.6F);
+            this.card.target_y = MathUtils.random((float) Settings.HEIGHT * 0.4F, (float) Settings.HEIGHT * 0.6F);
         } else {
             this.card.target_x = Settings.WIDTH * 0.5F;
             this.card.target_y = Settings.HEIGHT * 0.5F;

@@ -24,6 +24,8 @@ public abstract class BaseCard extends AbstractDefaultCard {
     public CardStrings cardStrings;
     public String DESCRIPTION;
 
+    public boolean logGlobalMove = false;
+
     public BaseCard(String id, String img, int cost, AbstractCard.CardType type, AbstractCard.CardRarity rarity, AbstractCard.CardTarget target) {
         super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, CardColor_Karen, rarity, target);
         initNameAndDescription(id);
@@ -92,7 +94,16 @@ public abstract class BaseCard extends AbstractDefaultCard {
 
     }
 
+    // take from bag by any way
     public void triggerOnTakeFromBag() {
+
+    }
+
+    public void triggerOnGlobalMove() {
+
+    }
+
+    public void triggerOnTakeFromBagToHand() {
 
     }
 
@@ -119,6 +130,10 @@ public abstract class BaseCard extends AbstractDefaultCard {
 
 
     public void triggerOnAccretion() {
+
+    }
+
+    public void triggerOnBattleStart() {
 
     }
 }

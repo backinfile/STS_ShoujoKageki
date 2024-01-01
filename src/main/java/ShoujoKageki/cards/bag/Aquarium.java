@@ -14,8 +14,8 @@ public class Aquarium extends BaseCard {
     public static final String ID = ModInfo.makeID(Aquarium.class.getSimpleName());
 
     public Aquarium() {
-        super(ID, 0, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.magicNumber = this.baseMagicNumber = 1;
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

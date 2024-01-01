@@ -1,8 +1,6 @@
-package ShoujoKageki.cards.bag;
+package ShoujoKageki.cards.globalMove;
 
-import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.bag.MakeTempCardInBagAction;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,6 +14,7 @@ public class Cry extends BaseCard {
     public Cry() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 3;
+        this.logGlobalMove = true;
     }
 
     @Override
@@ -28,38 +27,8 @@ public class Cry extends BaseCard {
     }
 
     @Override
-    public void triggerWhenMoveToDiscardPile() {
-        super.triggerWhenMoveToDiscardPile();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnTakeFromBag() {
-        super.triggerOnTakeFromBag();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnPutInBag() {
-        super.triggerOnPutInBag();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnShuffleInfoDrawPile() {
-        super.triggerOnShuffleInfoDrawPile();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnExhaust() {
-        super.triggerOnExhaust();
+    public void triggerOnGlobalMove() {
+        super.triggerOnGlobalMove();
         onTrigger();
     }
 

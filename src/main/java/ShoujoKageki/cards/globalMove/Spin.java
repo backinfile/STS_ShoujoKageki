@@ -1,4 +1,4 @@
-package ShoujoKageki.cards.bag;
+package ShoujoKageki.cards.globalMove;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
@@ -18,6 +18,7 @@ public class Spin extends BaseCard {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 4;
         this.baseMagicNumber = this.magicNumber = 0;
+        this.logGlobalMove = true;
     }
 
     @Override
@@ -49,39 +50,10 @@ public class Spin extends BaseCard {
         flash();
     }
 
-    @Override
-    public void triggerWhenMoveToDiscardPile() {
-        super.triggerWhenMoveToDiscardPile();
-        onTrigger();
-    }
 
     @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnTakeFromBag() {
-        super.triggerOnTakeFromBag();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnPutInBag() {
-        super.triggerOnPutInBag();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnShuffleInfoDrawPile() {
-        super.triggerOnShuffleInfoDrawPile();
-        onTrigger();
-    }
-
-    @Override
-    public void triggerOnExhaust() {
-        super.triggerOnExhaust();
+    public void triggerOnGlobalMove() {
+        super.triggerOnGlobalMove();
         onTrigger();
     }
 
