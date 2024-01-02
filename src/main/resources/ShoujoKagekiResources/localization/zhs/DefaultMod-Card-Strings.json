@@ -162,6 +162,10 @@
 		"NAME": "啊？",
 		"DESCRIPTION": "获得 力量 点数的 敏捷 。 NL 消耗 。"
 	},
+	"ShoujoKageki:NewDay": {
+		"NAME": "新的一天",
+		"DESCRIPTION": "打出的下 !M! 张牌进入 约定牌堆 。 NL 打出后进入 约定牌堆。"
+	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
 		"DESCRIPTION": "获得此牌闪耀值的 [E] 。",

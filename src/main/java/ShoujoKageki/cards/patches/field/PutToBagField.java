@@ -15,4 +15,7 @@ public class PutToBagField {
     public static SpireField<Boolean> putToBag = new SpireField<>(() -> {
         return false;
     });
+    public static SpireField<Boolean> putToBagOnce = new SpireField<>(() -> {
+        return false;
+    });
 }

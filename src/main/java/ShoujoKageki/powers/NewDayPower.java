@@ -1,0 +1,38 @@
+package ShoujoKageki.powers;
+
+
+import ShoujoKageki.actions.bag.TakeCardFromBagAction;
+import ShoujoKageki.cards.patches.field.PutToBagField;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import static ShoujoKageki.ModInfo.makeID;
+
+public class NewDayPower extends BasePower {
+    public static final Logger logger = LogManager.getLogger(NewDayPower.class.getName());
+
+    private static final String RAW_ID = NewDayPower.class.getSimpleName();
+    public static final String POWER_ID = makeID(RAW_ID);
+
+
+    public NewDayPower(int amount) {
+        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+    }
+
+    @Override
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        super.onPlayCard(card, m);
+        PutToBagField.putToBagOnce.set(card, true);
+        addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+    }
+
+    @Override
+    public void updateDescription() {
+        super.updateDescription();
+//        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
+}
