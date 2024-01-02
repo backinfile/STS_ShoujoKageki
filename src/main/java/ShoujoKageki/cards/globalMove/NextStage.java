@@ -11,7 +11,7 @@ public class NextStage extends BaseCard {
     public static final String ID = ModInfo.makeID(NextStage.class.getSimpleName());
 
     public NextStage() {
-        super(ID, -2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        super(ID, -2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 1;
         this.logGlobalMove = true;
     }

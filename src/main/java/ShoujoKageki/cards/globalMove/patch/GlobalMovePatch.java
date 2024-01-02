@@ -32,28 +32,28 @@ public class GlobalMovePatch {
     public static CardGroup.CardGroupType Bag;
 
 
-    @SpirePatch(
-            clz = AbstractPlayer.class,
-            method = "draw",
-            paramtypez = int.class
-    )
-    public static class Draw {
-        @SpireInsertPatch(
-                locator = Locator.class,
-                localvars = "c"
-        )
-        public static void Insert(AbstractPlayer __instance, AbstractCard c) {
-            triggerGlobalMove(c, CardGroup.CardGroupType.DRAW_PILE, CardGroup.CardGroupType.HAND);
-        }
-
-        private static class Locator extends SpireInsertLocator {
-            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
-                Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractCard.class, "triggerWhenDrawn");
-                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
-            }
-        }
-
-    }
+//    @SpirePatch(
+//            clz = AbstractPlayer.class,
+//            method = "draw",
+//            paramtypez = int.class
+//    )
+//    public static class Draw {
+//        @SpireInsertPatch(
+//                locator = Locator.class,
+//                localvars = "c"
+//        )
+//        public static void Insert(AbstractPlayer __instance, AbstractCard c) {
+//            triggerGlobalMove(c, CardGroup.CardGroupType.DRAW_PILE, CardGroup.CardGroupType.HAND);
+//        }
+//
+//        private static class Locator extends SpireInsertLocator {
+//            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+//                Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractCard.class, "triggerWhenDrawn");
+//                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+//            }
+//        }
+//
+//    }
 
 
     @SpirePatch(

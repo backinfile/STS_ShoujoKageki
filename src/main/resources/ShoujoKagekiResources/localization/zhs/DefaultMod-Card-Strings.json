@@ -11,6 +11,10 @@
 		"NAME": "闪耀打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
+	"ShoujoKageki:ShineStrike2": {
+		"NAME": "用你的闪耀贯穿我吧",
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。"
+	},
 	"ShoujoKageki:Fall": {
 		"NAME": "坠落",
 		"DESCRIPTION": "获得 !B! 格挡 。 NL 选择 !M! 张手牌放入 约定牌堆 。"
@@ -73,7 +77,7 @@
 	},
 	"ShoujoKageki:Attack06": {
 		"NAME": "进化",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 将弃牌堆中的 !M! 张牌放入 约定牌堆 。"
+		"DESCRIPTION": "造成 !D! 点伤害 2 次。 NL 将弃牌堆中的 !M! 张牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Defend03": {
 		"NAME": "闪避",
@@ -169,7 +173,7 @@
 	},
 	"ShoujoKageki:Debut": {
 		"NAME": "出场",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害三次。"
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次。"
 	},
 	"ShoujoKageki:Tragedy": {
 		"NAME": "悲剧",
@@ -284,7 +288,7 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 本局游戏中每耗尽一张非同名的 闪耀 牌，伤害增加 !M! 。"
 	},
 	"ShoujoKageki:Gear": {
-		"NAME": "齿轮",
+		"NAME": "命运的齿轮",
 		"DESCRIPTION": "选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "保留 NL 选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。"
 	},
@@ -311,7 +315,7 @@
 	},
 	"ShoujoKageki:HolyStar": {
 		"NAME": "神圣星辰",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 沉淀 : 在本场战斗中的耗能减少 !M! 。"
+		"DESCRIPTION": "造成 !D! 伤害 2 次。 NL 沉淀 : 在本场战斗中的耗能减少 !M! 。"
 	},
 	"ShoujoKageki:Future": {
 		"NAME": "未来的道路",
@@ -323,11 +327,11 @@
 	},
 	"ShoujoKageki:SeriousStrike": {
 		"NAME": "认真打击",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 回合结束时如果在 约定牌堆 中，本场战斗伤害增加 !M! 。 NL 沉淀 。"
+		"DESCRIPTION": "造成 !D! 伤害 2 次。 NL 回合结束时如果在 约定牌堆 中，本场战斗伤害增加 !M! 。"
 	},
 	"ShoujoKageki:CourageStrike": {
 		"NAME": "勇气打击",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
+		"DESCRIPTION": "造成 !D! 伤害 2 次。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Stretching": {
 		"NAME": "拉伸",
