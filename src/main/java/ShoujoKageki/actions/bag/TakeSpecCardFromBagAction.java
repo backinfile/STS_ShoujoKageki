@@ -58,6 +58,7 @@ public class TakeSpecCardFromBagAction extends AbstractGameAction {
                 takeCnt++;
             }
             addToTop(new ApplyBagPowerAction());
+            addToTop(new CheckBagEmptyAction());
 //            addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, takeCnt));
             isDone = true;
             return;

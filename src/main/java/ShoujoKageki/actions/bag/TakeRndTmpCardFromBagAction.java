@@ -52,6 +52,7 @@ public class TakeRndTmpCardFromBagAction extends AbstractGameAction {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(curCard, player.hb.cX, player.hb.cY));
                 }
             }
+            addToTop(new CheckBagEmptyAction());
             isDone = true;
             return;
         }

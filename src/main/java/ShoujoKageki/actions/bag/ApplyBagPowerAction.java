@@ -18,7 +18,7 @@ public class ApplyBagPowerAction extends AbstractGameAction {
     }
 
     public ApplyBagPowerAction() {
-        this(0);
+        this(1);
     }
 
     @Override

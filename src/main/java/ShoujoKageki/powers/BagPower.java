@@ -63,7 +63,7 @@ public class BagPower extends BasePower {
         } else if (BagField.isUpgrade()) {
             description += DESCRIPTIONS[4];
         }
-        
+
         if (BagField.isBurn()) {
             description += DESCRIPTIONS[5];
         }

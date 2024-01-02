@@ -1,5 +1,6 @@
 package ShoujoKageki.actions;
 
+import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.cards.BaseCard;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -40,6 +41,7 @@ public class PutBagCardsToHandAction extends AbstractGameAction {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card, player.hb.cX, player.hb.cY));
                 }
             }
+            addToTop(new CheckBagEmptyAction());
         }
         tickDuration();
     }

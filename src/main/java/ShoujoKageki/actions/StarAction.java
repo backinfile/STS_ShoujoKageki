@@ -2,14 +2,9 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.effects.PurgeCardInBattleEffect;
-import ShoujoKageki.powers.BagDefendPower;
-import ShoujoKageki.util.ActionUtils;
 import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableField;
-import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -17,7 +12,6 @@ import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
@@ -29,7 +23,7 @@ public class StarAction extends AbstractGameAction {
     @Override
     public void update() {
 
-        ArrayList<AbstractCard> allShineCards = getAllShineCards();
+        ArrayList<AbstractCard> allShineCards = getAllShineCardsWithoutBag();
         if (allShineCards.size() != 1) {
             isDone = true;
             return;
@@ -67,17 +61,20 @@ public class StarAction extends AbstractGameAction {
         isDone = true;
     }
 
-    public static ArrayList<AbstractCard> getAllShineCards() {
+    public static ArrayList<AbstractCard> getAllShineCardsWithoutBag() {
         AbstractPlayer p = AbstractDungeon.player;
         ArrayList<AbstractCard> result = new ArrayList<>();
 
         ArrayList<CardGroup> cardPools = new ArrayList<>();
         cardPools.add(p.hand);
         cardPools.add(p.discardPile);
-        cardPools.add(p.drawPile);
-        CardGroup bag = BagField.getBag();
-        if (bag != null && !BagField.isInfinite(false)) {
-            cardPools.add(bag);
+//        cardPools.add(p.drawPile);
+//        CardGroup bag = BagField.getBag();
+//        if (bag != null && !BagField.isInfinite(false)) {
+//            cardPools.add(bag);
+//        }
+        if (!BagField.isChangeToDrawPile()) {
+            cardPools.add(p.drawPile);
         }
 
         for (CardGroup pool : cardPools) {

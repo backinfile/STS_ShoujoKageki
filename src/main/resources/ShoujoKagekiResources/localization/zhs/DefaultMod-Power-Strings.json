@@ -27,9 +27,21 @@
 		]
 	},
 	"ShoujoKageki:Position0Power": {
-		"NAME": "舞台下手入口",
+		"NAME": "Position 0",
 		"DESCRIPTIONS": [
 			"每当你获得 #y力量 ， 获得额外 #y", " 点 #y力量 。"
+		]
+	},
+	"ShoujoKageki:PutToBagPower": {
+		"NAME": "新的一天",
+		"DESCRIPTIONS": [
+			"你打出的下 #y", " 张牌 会被放入 #y约定牌堆 。"
+		]
+	},
+	"ShoujoKageki:StageIsWaitingPower": {
+		"NAME": "新的一天",
+		"DESCRIPTIONS": [
+			"约定牌堆 被清空时，获得  #y", " 个 [E] 。"
 		]
 	},
 	"ShoujoKageki:NextTurnDrawBagPower": {

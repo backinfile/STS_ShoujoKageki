@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.patches;
 
+import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.actions.bag.TakeRndTmpCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
@@ -91,6 +92,7 @@ public class BagFieldPatch {
                     }
                 }
             }
+            AbstractDungeon.actionManager.addToTop(new CheckBagEmptyAction());
             return SpireReturn.Continue();
         }
 

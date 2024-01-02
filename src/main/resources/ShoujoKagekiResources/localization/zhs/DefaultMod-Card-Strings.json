@@ -139,6 +139,17 @@
 	},
 	"ShoujoKageki:StageIsWaiting": {
 		"NAME": "舞台正在等待着",
+		"DESCRIPTION": " 约定牌堆 被清空时，获得 [E] 。"
+	},
+	"ShoujoKageki:LastWord": {
+		"NAME": "最后的台词",
+		"DESCRIPTION": "约定牌堆 之外只有这张牌时才能打出。 NL 造成 !D! 点伤害。",
+		"EXTENDED_DESCRIPTION": [
+			"约定牌堆 之外必须只有这张牌。"
+		]
+	},
+	"ShoujoKageki:StageIsWaitingTmp": {
+		"NAME": "舞台正在等待着",
 		"DESCRIPTION": " 不能被打出 ， 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] 。",
 		"UPGRADE_DESCRIPTION": " 不能被打出 ， 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] [E] 。",
 		"EXTENDED_DESCRIPTION": [
@@ -211,7 +222,7 @@
 	},
 	"ShoujoKageki:Star": {
 		"NAME": "星光指引",
-		"DESCRIPTION": "耗尽 你唯一 闪耀 牌 的 闪耀 值，将其打出同等次数。",
+		"DESCRIPTION": "耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。",
 		"EXTENDED_DESCRIPTION": [
 		  "没有 闪耀 牌。",
 		  "闪耀 牌太多了。",

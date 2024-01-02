@@ -1,6 +1,7 @@
 package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.cards.bag.TowerOfPromise;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -43,6 +44,7 @@ public class HairpinRelic extends BaseRelic {
         super.atBattleStartPreDraw();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
+        addToBot(new ApplyBagPowerAction());
     }
 
     //    @Override

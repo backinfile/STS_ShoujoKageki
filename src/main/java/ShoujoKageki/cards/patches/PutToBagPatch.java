@@ -6,9 +6,11 @@ import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.cards.patches.field.PutToBagField;
 import ShoujoKageki.effects.MoveCardToBagEffect;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
@@ -18,8 +20,12 @@ public class PutToBagPatch {
 
     public static boolean checkIfPutToBag(AbstractCard targetCard) {
         if (PutToBagField.putToBag.get(targetCard) || PutToBagField.putToBagOnce.get(targetCard)) {
-            AbstractDungeon.player.onCardDrawOrDiscard();
-            AbstractDungeon.actionManager.addToTop(new MoveCardToBagAction(targetCard));
+            PutToBagField.putToBagOnce.set(targetCard, false);
+            AbstractPlayer player = AbstractDungeon.player;
+            player.onCardDrawOrDiscard();
+            player.limbo.addToTop(targetCard);
+            AbstractDungeon.actionManager.addToBottom(new MoveCardToBagAction(targetCard));
+            AbstractDungeon.actionManager.addToBottom(new UnlimboAction(targetCard));
             return true;
         }
         return false;

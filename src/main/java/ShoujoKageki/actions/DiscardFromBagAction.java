@@ -2,6 +2,7 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
+import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -87,6 +88,7 @@ public class DiscardFromBagAction extends AbstractGameAction {
             p.drawPile.moveToDiscardPile(card);
             trigger(card);
         }
+        addToTop(new CheckBagEmptyAction());
         isDone = true;
     }
 

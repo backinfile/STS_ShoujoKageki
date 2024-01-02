@@ -54,6 +54,7 @@ public class ReplaceHandAndBagAction extends AbstractGameAction {
         ArrayList<AbstractCard> bagCards = new ArrayList<>(bag.group);
         bag.clear();
         addToBot(new ApplyBagPowerAction(-beforeAmount));
+        addToTop(new CheckBagEmptyAction());
         PutHandCardIntoBagAction.bagCards(player.hand.group);
 
         if (BagField.isInfinite()) {
