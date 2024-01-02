@@ -30,7 +30,7 @@ public class Res {
     public static final String THE_DEFAULT_BUTTON = ModInfo.getResPath("/images/charSelect/DefaultCharacterButton.png");
     public static final String THE_DEFAULT_PORTRAIT = ModInfo.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
     public static final String THE_DEFAULT_SHOULDER_1 = ModInfo.getResPath("/images/char/defaultCharacter/shoulder.png");
-    public static final String THE_DEFAULT_SHOULDER_2 = ModInfo.getResPath("/images/char/defaultCharacter/shoulder2.png");
+    public static final String THE_DEFAULT_SHOULDER_2 = ModInfo.getResPath("/images/char/defaultCharacter/shoulder.png");
     public static final String THE_DEFAULT_CORPSE = ModInfo.getResPath("/images/char/defaultCharacter/corpse.png");
 
     // Mod Badge - A small icon that appears in the mod settings menu next to your
