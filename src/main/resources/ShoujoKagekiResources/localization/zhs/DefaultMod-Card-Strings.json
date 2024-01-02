@@ -301,8 +301,13 @@
 		"DESCRIPTION": "回合结束时，约定牌堆 中每有一张牌，获得 !M! 点格挡。"
 	},
 	"ShoujoKageki:Burn": {
-		"NAME": "燃烧",
+		"NAME": "燃烧吧燃烧吧",
 		"DESCRIPTION": "从 约定牌堆 抽出的牌将被 升级 ， 且被打出时 消耗 。"
+	},
+	"ShoujoKageki:Position0": {
+		"NAME": "Position 0",
+		"DESCRIPTION": "获得 力量 时， 额外获得 !M! 点 力量 。",
+		"UPGRADE_DESCRIPTION": "固有 。 NL 获得 力量 时， 额外获得 !M! 点 力量 。"
 	},
 	"ShoujoKageki:HolyStar": {
 		"NAME": "神圣星辰",

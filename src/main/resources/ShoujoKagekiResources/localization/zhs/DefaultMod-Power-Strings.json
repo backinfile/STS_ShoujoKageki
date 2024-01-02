@@ -26,6 +26,12 @@
 			"提高工具牌的效果。"
 		]
 	},
+	"ShoujoKageki:Position0Power": {
+		"NAME": "舞台下手入口",
+		"DESCRIPTIONS": [
+			"每当你获得 #y力量 ， 获得额外 #y", " 点 #y力量 。"
+		]
+	},
 	"ShoujoKageki:NextTurnDrawBagPower": {
 		"NAME": "抽牌",
 		"DESCRIPTIONS": [
