@@ -38,8 +38,14 @@
 			"你打出的下 #y", " 张牌 会被放入 #y约定牌堆 。"
 		]
 	},
+	"ShoujoKageki:LetterPower": {
+		"NAME": "信封",
+		"DESCRIPTIONS": [
+			"将卡牌放入到 约定牌堆 时，获得 #y", " 点 格挡 。"
+		]
+	},
 	"ShoujoKageki:StageIsWaitingPower": {
-		"NAME": "新的一天",
+		"NAME": "舞台正在等待着",
 		"DESCRIPTIONS": [
 			"约定牌堆 被清空时，获得  #y", " 个 [E] 。"
 		]
@@ -105,10 +111,10 @@
 			"打出的 #y闪耀 牌会额外打出 #y", " 次，然后 #r耗尽 #y闪耀 。"
 		]
 	},
-	"ShoujoKageki:Starlight03Power": {
-		"NAME": "Starlight第三幕",
+	"ShoujoKageki:ShineRewardPower": {
+		"NAME": "闪耀牌奖励",
 		"DESCRIPTIONS": [
-			"本次战斗多掉落", "次仅包含1张 #y闪耀 牌 #y卡牌奖励。"
+			"战斗结束时, 获得 #y", " 个 #y闪耀牌奖励 。"
 		]
 	},
 	"ShoujoKageki:BananaLunchPower": {

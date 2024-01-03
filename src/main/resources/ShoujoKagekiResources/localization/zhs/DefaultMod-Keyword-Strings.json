@@ -35,6 +35,13 @@
 		"DESCRIPTION": "打出X次后卡牌从 #y牌组 中 #r移除 。"
 	},
 	{
+		"PROPER_NAME": "闪耀牌奖励",
+		"NAMES": [
+			"闪耀牌奖励"
+		],
+		"DESCRIPTION": "战斗结束时多掉落一次仅包含 #y1 张 闪耀 牌 的 #y卡牌奖励 。 NL （第三层boss无效）"
+	},
+	{
 		"PROPER_NAME": "永远闪耀",
 		"NAMES": [
 			"永远闪耀"

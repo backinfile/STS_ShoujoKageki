@@ -1,8 +1,10 @@
 package ShoujoKageki.relics;
 
+import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.cards.bag.TowerOfPromise;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,6 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class HairpinRelic extends BaseRelic {
     public static final String RAW_ID = HairpinRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);
+
+    private int turnCount = 0;
 
     public HairpinRelic() {
         super(ID, RAW_ID, RelicTier.STARTER);
@@ -42,9 +46,21 @@ public class HairpinRelic extends BaseRelic {
     @Override
     public void atBattleStartPreDraw() {
         super.atBattleStartPreDraw();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
         addToBot(new ApplyBagPowerAction());
+        beginLongPulse();
+        this.turnCount = 0;
+    }
+
+    @Override
+    public void atTurnStart() {
+        super.atTurnStart();
+        this.turnCount++;
+        if (this.turnCount == 2) { // 第二回合
+            stopPulse();
+            flash();
+            addToBot(new MakeTempCardInHandAction(new TowerOfPromise()));
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        }
     }
 
     //    @Override

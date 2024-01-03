@@ -14,7 +14,7 @@ public class ShineStrike2 extends BaseCard {
     public static final String ID = ModInfo.makeID(ShineStrike2.class.getSimpleName());
 
     public ShineStrike2() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 3;
         this.baseMagicNumber = this.magicNumber = 4;
         DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);

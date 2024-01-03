@@ -1,10 +1,12 @@
 package ShoujoKageki.relics.patch;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.SingingBowl;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 import com.megacrit.cardcrawl.ui.buttons.SingingBowlButton;
@@ -12,6 +14,7 @@ import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
 import ShoujoKageki.Log;
 import ShoujoKageki.relics.BookMarchRelic;
 import ShoujoKageki.ui.TakeAllRewardCardsButton;
+import javassist.CtBehavior;
 
 import java.lang.reflect.Field;
 
@@ -46,12 +49,19 @@ public class TakeAllRewardCardsPatch {
             method = "update"
     )
     public static class UpdatePatch {
-        public static void Postfix(CardRewardScreen __instance) {
+        public static void Postfix(CardRewardScreen __instance, AbstractCard ___touchCard) {
+            if (Settings.isTouchScreen) {
+                if (__instance.confirmButton.hb.clicked && ___touchCard != null) {
+                    takeAllRewardCardsButton.hide();
+                }
+            }
+
             if (!PeekButton.isPeeking) {
                 takeAllRewardCardsButton.update();
             }
         }
     }
+
     @SpirePatch(
             clz = CardRewardScreen.class,
             method = "render"
@@ -64,7 +74,56 @@ public class TakeAllRewardCardsPatch {
         }
     }
 
+    @SpirePatch(
+            clz = CardRewardScreen.class,
+            method = "customCombatOpen"
+    )
+    public static class CustomCombatOpen {
+        public static void Postfix(CardRewardScreen __instance) {
+            takeAllRewardCardsButton.hide();
+        }
+    }
+    @SpirePatch(
+            clz = CardRewardScreen.class,
+            method = "chooseOneOpen"
+    )
+    public static class ChooseOneOpen {
+        public static void Postfix(CardRewardScreen __instance) {
+            takeAllRewardCardsButton.hide();
+        }
+    }
+    @SpirePatch(
+            clz = CardRewardScreen.class,
+            method = "draftOpen"
+    )
+    public static class DraftOpen {
+        public static void Postfix(CardRewardScreen __instance) {
+            takeAllRewardCardsButton.hide();
+        }
+    }
+
+    @SpirePatch(
+            clz = CardRewardScreen.class,
+            method = "cardSelectUpdate"
+    )
+    public static class CardSelectUpdate {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void Insert(CardRewardScreen __instance) {
+            takeAllRewardCardsButton.hide();
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(SingingBowlButton.class, "hide");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
+
     private static void fixTakeAllButtonsShow(CardRewardScreen instance) {
+        takeAllRewardCardsButton.hide();
+
         AbstractRelic takeAllCardsRelic = AbstractDungeon.player.getRelic(BookMarchRelic.ID);
         if (takeAllCardsRelic == null || takeAllCardsRelic.usedUp) {
             return;

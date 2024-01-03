@@ -1,5 +1,6 @@
-package ShoujoKageki.cards.ignore;
+package ShoujoKageki.cards.bag;
 
+import ShoujoKageki.powers.LetterPower;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,19 +9,18 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.powers.BagDefendPower;
 
-@AutoAdd.Ignore
 public class Letter extends BaseCard {
 
     public static final String ID = ModInfo.makeID(Letter.class.getSimpleName());
 
     public Letter() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new BagDefendPower(magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new LetterPower(magicNumber)));
     }
 
     @Override

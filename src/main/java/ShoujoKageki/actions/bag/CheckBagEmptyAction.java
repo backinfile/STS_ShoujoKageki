@@ -2,6 +2,7 @@ package ShoujoKageki.actions.bag;
 
 import ShoujoKageki.Log;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.powers.BasePower;
 import ShoujoKageki.powers.StageIsWaitingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -29,9 +30,8 @@ public class CheckBagEmptyAction extends AbstractGameAction {
             }
         }
 
-        AbstractPower power = p.getPower(StageIsWaitingPower.POWER_ID);
-        if (power != null) {
-            addToBot(new GainEnergyAction(power.amount));
+        for(AbstractPower power: p.powers) {
+            if (power instanceof BasePower) ((BasePower) power).triggerOnBagClear();
         }
         isDone = true;
     }

@@ -1,7 +1,7 @@
 {
 	"ShoujoKageki:Defend": {
 		"NAME": "防御",
-		"DESCRIPTION": "获得 !B! 格挡 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。"
 	},
 	"ShoujoKageki:Strike": {
 		"NAME": "打击",
@@ -17,7 +17,7 @@
 	},
 	"ShoujoKageki:Fall": {
 		"NAME": "坠落",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 选择 !M! 张手牌放入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 选择 !M! 张手牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:WhosPromise": {
 		"NAME": "翩翩旋转的双人舞",
@@ -46,7 +46,7 @@
 	},
 	"ShoujoKageki:EatTogether": {
 		"NAME": "一起吃饭吧",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 每场战斗开始时，将 !M! 张 *三明治 放入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 每场战斗开始时，将 !M! 张 *三明治 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:EatFood2": {
 		"NAME": "三明治",
@@ -81,7 +81,7 @@
 	},
 	"ShoujoKageki:Defend03": {
 		"NAME": "闪避",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 *对峙 放入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 *对峙 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Attack07": {
 		"NAME": "对峙",
@@ -89,12 +89,12 @@
 	},
 	"ShoujoKageki:Parry": {
 		"NAME": "招架",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 获得或失去手牌时，本回合格挡值增加 !M! 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得或失去手牌时，本回合格挡值增加 !M! 。"
 	},
 	"ShoujoKageki:BackToBack": {
 		"NAME": "背靠背",
-		"DESCRIPTION": "获得 !M! 临时力量 X次。 NL 获得 [E] 。",
-		"UPGRADE_DESCRIPTION": "获得 !M! 临时力量 X+1次。 NL 获得 [E] 。"
+		"DESCRIPTION": "获得 !M! 临时力量 X次。 NL 获得 [E] 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "获得 !M! 临时力量 X+1次。 NL 获得 [E] 。 NL 消耗 。"
 	},
 	"ShoujoKageki:NotLose": {
 		"NAME": "我不会输的",
@@ -110,7 +110,7 @@
 	},
 	"ShoujoKageki:Must": {
 		"NAME": "东京塔下",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 !M! 张 *约定之塔 放入手牌 NL 消耗 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张 *约定之塔 放入手牌 NL 消耗 。"
 	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
@@ -242,7 +242,11 @@
 	},
 	"ShoujoKageki:Starlight03": {
 		"NAME": "Starlight第三幕",
-		"DESCRIPTION": "本次战斗多掉落一次仅包含1张 闪耀 牌 的卡牌奖励。"
+		"DESCRIPTION": "获得 闪耀牌奖励 。"
+	},
+	"ShoujoKageki:StarFriend": {
+		"NAME": "星星串起了我们的友谊",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时，获得 闪耀牌奖励 。"
 	},
 	"ShoujoKageki:Nonon": {
 		"NAME": "Non non 哒哟",
@@ -250,11 +254,11 @@
 	},
 	"ShoujoKageki:NewSituation": {
 		"NAME": "观察情况",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Practice": {
 		"NAME": "武术练习",
-		"DESCRIPTION": "获得 !B! 格挡 。 NL 闪耀 耗尽时回复 !M! 生命。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 闪耀 耗尽时回复 !M! 生命。"
 	},
 	"ShoujoKageki:Practice2": {
 		"NAME": "舞蹈练习",
@@ -279,11 +283,11 @@
 	},
 	"ShoujoKageki:Continue": {
 		"NAME": "续演",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 格挡 。 NL 消耗 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
 	},
 	"ShoujoKageki:Cry": {
 		"NAME": "添麻烦了",
-		"DESCRIPTION": "此牌在牌堆之间移动时，获得 !M! 格挡 。"
+		"DESCRIPTION": "此牌在牌堆之间移动时，获得 !M! 点 格挡 。"
 	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
@@ -313,11 +317,11 @@
 	},
 	"ShoujoKageki:CommonDefend": {
 		"NAME": "蹬",
-		"DESCRIPTION": "获得 !B! 格挡。抽1张牌，如果是攻击牌就再抽1张。"
+		"DESCRIPTION": "获得 !B! 点 格挡。抽1张牌，如果是攻击牌就再抽1张。"
 	},
 	"ShoujoKageki:Letter": {
 		"NAME": "信封",
-		"DESCRIPTION": "回合结束时，约定牌堆 中每有一张牌，获得 !M! 点格挡。"
+		"DESCRIPTION": "将卡牌放入到 约定牌堆 时， 获得 !M! 点 格挡 。"
 	},
 	"ShoujoKageki:Burn": {
 		"NAME": "燃烧吧燃烧吧",
@@ -350,11 +354,11 @@
 	},
 	"ShoujoKageki:Stretching": {
 		"NAME": "拉伸",
-		"DESCRIPTION": "获得 !B! 格挡。 NL 沉淀 。"
+		"DESCRIPTION": "获得 !B! 点 格挡。 NL 沉淀 。"
 	},
 	"ShoujoKageki:Sideways": {
 		"NAME": "侧身",
-		"DESCRIPTION": "获得 !B! 格挡。 NL 消耗 。"
+		"DESCRIPTION": "获得 !B! 点 格挡。 NL 消耗 。"
 	},
 	"ShoujoKageki:SelectDiscardPile": {
 		"NAME": "弃牌堆",

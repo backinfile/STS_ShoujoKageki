@@ -1,8 +1,7 @@
 package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.powers.Starlight03Power;
-import ShoujoKageki.powers.StarlightPower;
+import ShoujoKageki.powers.ShineRewardPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +17,7 @@ public class Starlight03 extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new Starlight03Power()));
+        addToBot(new ApplyPowerAction(p, p, new ShineRewardPower()));
     }
 
     @Override

@@ -2,6 +2,7 @@ package ShoujoKageki.actions.bag;
 
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
+import ShoujoKageki.powers.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.effects.MoveCardToBagEffect;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
@@ -43,6 +45,9 @@ public class MoveCardToBagAction extends AbstractGameAction {
             for (AbstractCard card : cardsToBag) {
                 if (card instanceof BaseCard) ((BaseCard) card).triggerOnPutInBag();
                 GlobalMovePatch.triggerGlobalMove(card, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
+                for (AbstractPower power : player.powers) {
+                    if (power instanceof BasePower) ((BasePower) power).triggerOnPutIntoBag(card);
+                }
             }
 
 
