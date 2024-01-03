@@ -18,7 +18,7 @@ public class StageIsWaiting extends BaseCard {
     public StageIsWaiting() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
-        AccretionField.accretion.set(this, true);
+//        AccretionField.accretion.set(this, true);
     }
 
     @Override

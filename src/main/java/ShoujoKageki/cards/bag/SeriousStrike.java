@@ -20,7 +20,7 @@ public class SeriousStrike extends BaseCard {
 
     public SeriousStrike() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 5;
+        this.baseDamage = 6;
 //        AccretionField.accretion.set(this, true);
         this.baseMagicNumber = this.magicNumber = 3;
         this.tags.add(CardTags.STRIKE);

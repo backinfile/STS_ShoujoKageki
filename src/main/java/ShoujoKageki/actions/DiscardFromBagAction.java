@@ -44,7 +44,7 @@ public class DiscardFromBagAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         if (BagField.isInfinite()) {
-            addToBot(new TalkAction(p, uiStrings.TEXT[0]));
+//            addToBot(new TalkAction(p, uiStrings.TEXT[0]));
             isDone = true;
             return;
         }
@@ -67,6 +67,7 @@ public class DiscardFromBagAction extends AbstractGameAction {
                 p.drawPile.moveToDiscardPile(card);
                 trigger(card);
             }
+            addToTop(new CheckBagEmptyAction());
             isDone = true;
             return;
         }
@@ -79,6 +80,7 @@ public class DiscardFromBagAction extends AbstractGameAction {
             }
             bag.clear();
             addToBot(new ApplyBagPowerAction());
+            addToTop(new CheckBagEmptyAction());
             isDone = true;
             return;
         }

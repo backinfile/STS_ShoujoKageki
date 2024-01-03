@@ -159,7 +159,7 @@
 	},
 	"ShoujoKageki:Dance": {
 		"NAME": "舞动",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张牌。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张牌加入你的手牌。"
 	},
 	"ShoujoKageki:Sunlight": {
 		"NAME": "耀眼的阳光",
