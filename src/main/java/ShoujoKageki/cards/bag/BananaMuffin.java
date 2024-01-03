@@ -33,7 +33,7 @@ public class BananaMuffin extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            upgradeDefaultSecondMagicNumber(1);
+//            upgradeDefaultSecondMagicNumber(1);
         }
     }
 }

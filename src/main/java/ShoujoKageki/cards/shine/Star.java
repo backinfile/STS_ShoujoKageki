@@ -14,7 +14,7 @@ public class Star extends BaseCard {
     public static final String ID = ModInfo.makeID(Star.class.getSimpleName());
 
     public Star() {
-        super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
     }
 
     @Override
@@ -53,7 +53,10 @@ public class Star extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            selfRetain = true;
+//            upgradeBaseCost(1);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

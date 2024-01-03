@@ -143,7 +143,7 @@
 	},
 	"ShoujoKageki:LastWord": {
 		"NAME": "最后的台词",
-		"DESCRIPTION": "约定牌堆 之外只有这张牌时才能打出。 NL 造成 !D! 点伤害。",
+		"DESCRIPTION": "约定牌堆 之外只有这张牌时才能打出。 NL 对所有敌人造成 !D! 点伤害。",
 		"EXTENDED_DESCRIPTION": [
 			"约定牌堆 之外必须只有这张牌。"
 		]
@@ -171,7 +171,8 @@
 	},
 	"ShoujoKageki:Run02": {
 		"NAME": "啊？",
-		"DESCRIPTION": "获得 力量 点数的 敏捷 。 NL 消耗 。"
+		"DESCRIPTION": "虚无 。 NL 获得 力量 点数的 敏捷 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "获得 力量 点数的 敏捷 。 NL 消耗 。"
 	},
 	"ShoujoKageki:NewDay": {
 		"NAME": "新的一天",
@@ -223,6 +224,7 @@
 	"ShoujoKageki:Star": {
 		"NAME": "星光指引",
 		"DESCRIPTION": "耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。",
 		"EXTENDED_DESCRIPTION": [
 		  "没有 闪耀 牌。",
 		  "闪耀 牌太多了。",
