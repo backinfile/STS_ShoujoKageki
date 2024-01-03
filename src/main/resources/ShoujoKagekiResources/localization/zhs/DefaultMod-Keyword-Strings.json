@@ -42,6 +42,13 @@
 		"DESCRIPTION": "战斗结束时多掉落一次仅包含 #y1 张 闪耀 牌 的 #y卡牌奖励 。 NL （第三层boss无效）"
 	},
 	{
+		"PROPER_NAME": "搜寻",
+		"NAMES": [
+			"搜寻"
+		],
+		"DESCRIPTION": "从目标牌堆中选择一张牌或多张牌置入手牌。"
+	},
+	{
 		"PROPER_NAME": "永远闪耀",
 		"NAMES": [
 			"永远闪耀"
