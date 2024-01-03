@@ -60,4 +60,13 @@ public class Utils2 {
         }
         return true;
     }
+    public static boolean inRoom() {
+        if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.player == null || AbstractDungeon.player.hand == null) {
+            return false;
+        }
+        if (AbstractDungeon.getCurrMapNode() == null || AbstractDungeon.getCurrRoom() == null) {
+            return false;
+        }
+        return true;
+    }
 }

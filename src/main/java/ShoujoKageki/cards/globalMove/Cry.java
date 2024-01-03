@@ -22,7 +22,8 @@ public class Cry extends BaseCard {
     }
 
     private void onTrigger() {
-        addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber));
+        applyPowersToBlock();
+        addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
         flash();
     }
 

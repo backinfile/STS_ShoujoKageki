@@ -9,6 +9,7 @@ import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.variables.patch.DisposableField;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Objects;
@@ -78,7 +79,18 @@ public class DisposableVariable extends DynamicVariable { // Shine
         Log.logger.info("reset card " + card.name + " to " + getValue(card));
     }
 
-    public static int getTotalShineValue() {
+    public static int getTotalShineValueInDeck() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p == null) return 0;
+        int cnt = 0;
+        for (AbstractCard card : p.masterDeck.group) {
+            int value = DisposableVariable.getValue(card);
+            if (value > 0) cnt += value;
+        }
+        return cnt;
+    }
+
+    public static int getTotalShineValueInBattle() {
         if (!Utils2.inBattlePhase()) return 0;
 
         int cnt = 0;
@@ -91,6 +103,10 @@ public class DisposableVariable extends DynamicVariable { // Shine
             if (value > 0) cnt += value;
         }
         for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+            int value = getValue(card);
+            if (value > 0) cnt += value;
+        }
+        for (AbstractCard card : AbstractDungeon.player.exhaustPile.group) {
             int value = getValue(card);
             if (value > 0) cnt += value;
         }

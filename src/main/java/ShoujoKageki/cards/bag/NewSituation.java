@@ -15,7 +15,7 @@ public class NewSituation extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.baseBlock = 7;
         this.cardsToPreview = new EatFood2();
-        this.baseMagicNumber = this.magicNumber = 1;
+        this.baseMagicNumber = this.magicNumber = 2;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class NewSituation extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(3);
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
         }
     }
 }

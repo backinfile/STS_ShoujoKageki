@@ -48,7 +48,7 @@ public class BringStarlight extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(7);
+            upgradeDamage(2);
             initializeDescription();
         }
     }
