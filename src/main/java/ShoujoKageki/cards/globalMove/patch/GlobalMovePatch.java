@@ -76,11 +76,13 @@ public class GlobalMovePatch {
             method = "update"
     )
     public static class Shuffle02 {
-        public static void Prefix(ShuffleAction __instance) {
-            for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
-                triggerGlobalMove(card, CardGroup.CardGroupType.DISCARD_PILE, CardGroup.CardGroupType.DRAW_PILE);
-                if (card instanceof BaseCard) {
-                    ((BaseCard) card).triggerOnShuffleInfoDrawPile();
+        public static void Prefix(ShuffleAction __instance, boolean ___triggerRelics) {
+            if (___triggerRelics) {
+                for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+                    triggerGlobalMove(card, CardGroup.CardGroupType.DISCARD_PILE, CardGroup.CardGroupType.DRAW_PILE);
+                    if (card instanceof BaseCard) {
+                        ((BaseCard) card).triggerOnShuffleInfoDrawPile();
+                    }
                 }
             }
         }
@@ -158,6 +160,7 @@ public class GlobalMovePatch {
             triggerGlobalMove(___c, CardGroup.CardGroupType.UNSPECIFIED, CardGroup.CardGroupType.HAND);
         }
     }
+
     @SpirePatch(
             clz = CardGroup.class,
             method = "addToHand",

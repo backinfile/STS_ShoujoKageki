@@ -49,6 +49,7 @@ public class MoveCardToBagAction extends AbstractGameAction {
                 for (AbstractPower power : player.powers) {
                     if (power instanceof BasePower) ((BasePower) power).triggerOnPutIntoBag(card);
                 }
+                player.limbo.removeCard(card);
             }
 
 

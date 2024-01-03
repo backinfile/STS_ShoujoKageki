@@ -221,8 +221,13 @@
 		"NAME": "\"宽恕\"",
 		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，对所有敌人造成 !D! 点伤害。"
 	},
-	"ShoujoKageki:Star": {
+	"ShoujoKageki:StarGuide": {
 		"NAME": "星光指引",
+		"DESCRIPTION": "固有 。 NL 将你所有的闪耀牌放入 约定牌堆 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。"
+	},
+	"ShoujoKageki:Star": {
+		"NAME": "星光闪耀之时",
 		"DESCRIPTION": "耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。",
 		"UPGRADE_DESCRIPTION": "保留 。 NL 耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。",
 		"EXTENDED_DESCRIPTION": [

@@ -13,6 +13,7 @@ public class Cry extends BaseCard {
 
     public Cry() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        this.baseBlock = 3;
         this.baseMagicNumber = this.magicNumber = 3;
         this.logGlobalMove = true;
     }
@@ -37,7 +38,8 @@ public class Cry extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeBlock(2);
+//            upgradeMagicNumber(2);
         }
     }
 }
