@@ -19,15 +19,27 @@ public class PassionPower extends BasePower {
     }
 
     @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
+        addReward();
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        addReward();
+    }
+
+    @Override
     public void onVictory() {
         super.onVictory();
+        flash();
+    }
 
-        for (int i = 0; i < amount; i++) {
-            AbstractRelic.RelicTier relicTier = AbstractDungeon.returnRandomRelicTier();
-            AbstractRelic relic = AbstractDungeon.returnRandomRelic(relicTier);
-            AbstractDungeon.getCurrRoom().addRelicToRewards(relic);
-            flash();
-        }
+    private static void addReward() {
+        AbstractRelic.RelicTier relicTier = AbstractDungeon.returnRandomRelicTier();
+        AbstractRelic relic = AbstractDungeon.returnRandomRelic(relicTier);
+        AbstractDungeon.getCurrRoom().addRelicToRewards(relic);
     }
 
     @Override

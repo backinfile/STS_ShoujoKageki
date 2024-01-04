@@ -15,7 +15,7 @@ public class Letter extends BaseCard {
 
     public Letter() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 1;
     }
 
     @Override

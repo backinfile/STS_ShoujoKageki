@@ -15,7 +15,7 @@ public class Potato extends BaseCard {
     public static final String ID = ModInfo.makeID(Potato.class.getSimpleName());
 
     public Potato() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 6;
         DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
         this.tags.add(CardTags.HEALING);

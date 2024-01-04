@@ -52,9 +52,9 @@
 		"NAME": "三明治",
 		"DESCRIPTION": "获得 !M! 点 临时力量 。 NL 消耗 。"
 	},
-	"ShoujoKageki:Run03": {
-		"NAME": "行动",
-		"DESCRIPTION": "造成 !D! 点伤害。 如果 力量 不低于 !M! 点，重复一次。"
+	"ShoujoKageki:NeverRetreat02": {
+		"NAME": "绝不认输",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌。"
 	},
 	"ShoujoKageki:SwordUp": {
 		"NAME": "上挑",
@@ -77,7 +77,7 @@
 	},
 	"ShoujoKageki:Attack06": {
 		"NAME": "昨天夜空的光辉",
-		"DESCRIPTION": "造成 !D! 点伤害 2 次。 NL 将弃牌堆中的 !M! 张牌放入 约定牌堆 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 将弃牌堆中的 !M! 张牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Defend03": {
 		"NAME": "闪避",
@@ -118,7 +118,7 @@
 	},
 	"ShoujoKageki:OurPromise": {
 		"NAME": "我们的约定",
-		"DESCRIPTION": "抽 !M! 张牌。 NL 选择2张手牌放入 约定牌堆"
+		"DESCRIPTION": "抽 !M! 张牌。 NL 选择2张手牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:ExchangeFate": {
 		"NAME": "命运交换之日",
@@ -131,7 +131,7 @@
 		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:OnStage": {
-		"NAME": "舞台之上",
+		"NAME": "我将再次变为我自己",
 		"DESCRIPTION": "从 约定牌堆 抽取 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
 		"EXTENDED_DESCRIPTION": [
 			"约定牌堆 中卡牌数量不足。"
@@ -223,7 +223,7 @@
 	},
 	"ShoujoKageki:StarGuide": {
 		"NAME": "星光指引",
-		"DESCRIPTION": "固有 。 NL 将你所有的闪耀牌放入 约定牌堆 。 NL 消耗 。",
+		"DESCRIPTION": "固有 。 NL 将你所有的 闪耀 牌放入 约定牌堆 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "保留 。 NL 耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。"
 	},
 	"ShoujoKageki:Star": {
@@ -318,8 +318,13 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得与所造成的未被格挡的伤害相等的 格挡 。",
 		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
 	},
+	"ShoujoKageki:Attack09": {
+		"NAME": "不再遥不可及",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 打出后进入 约定牌堆 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
+	},
 	"ShoujoKageki:Gear": {
-		"NAME": "命运的齿轮",
+		"NAME": "舞台装置",
 		"DESCRIPTION": "复制 所有手牌 到 约定牌堆 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
 	},
@@ -351,7 +356,7 @@
 	},
 	"ShoujoKageki:HolyStar": {
 		"NAME": "神圣星辰",
-		"DESCRIPTION": "造成 !D! 伤害 2 次。 NL 沉淀 : 在本场战斗中的耗能减少 !M! 。"
+		"DESCRIPTION": "造成 !D! 伤害。 NL 沉淀 : 在本场战斗中的耗能减少 !M! 。"
 	},
 	"ShoujoKageki:Future": {
 		"NAME": "未来的道路",
@@ -363,11 +368,11 @@
 	},
 	"ShoujoKageki:SeriousStrike": {
 		"NAME": "认真打击",
-		"DESCRIPTION": "造成 !D! 伤害 2 次。 NL 回合结束时如果在 约定牌堆 中，本场战斗伤害增加 !M! 。"
+		"DESCRIPTION": "造成 !D! 伤害。 NL 回合结束时如果在 约定牌堆 中，本场战斗伤害增加 !M! 。"
 	},
 	"ShoujoKageki:CourageStrike": {
 		"NAME": "勇气打击",
-		"DESCRIPTION": "造成 !D! 伤害 2 次。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
+		"DESCRIPTION": "造成 !D! 伤害。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Stretching": {
 		"NAME": "拉伸",
@@ -401,9 +406,9 @@
 		"NAME": "绝不退让",
 		"DESCRIPTION": "造成 !D! 伤害。如果 约定牌堆 中有牌，重复一次。"
 	},
-	"ShoujoKageki:NeverRetreat02": {
-		"NAME": "绝不言败",
-		"DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL 沉淀 ：被打出之前耗能变为0。"
+	"ShoujoKageki:Run03": {
+		"NAME": "行动",
+		"DESCRIPTION": "造成 !D! 伤害。 NL 如果 约定牌库 不为空， 获得 [E] 。"
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",

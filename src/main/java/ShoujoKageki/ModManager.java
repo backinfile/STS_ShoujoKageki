@@ -214,7 +214,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         });
 
         // =============== /EVENTS/ =================
-        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
+//        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
         logger.info("Done loading badge Image and mod options");
     }
 

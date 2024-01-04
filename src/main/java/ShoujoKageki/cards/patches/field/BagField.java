@@ -1,9 +1,6 @@
 package ShoujoKageki.cards.patches.field;
 
-import ShoujoKageki.powers.BagPower;
-import ShoujoKageki.powers.BurnPower;
-import ShoujoKageki.powers.ReproducePower;
-import ShoujoKageki.powers.VoidPower;
+import ShoujoKageki.powers.*;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
@@ -77,7 +74,15 @@ public class BagField {
         if (BagField.isChangeToDrawPile(false)) return false;
         if (BagField.isInfinite(false)) return false;
         CardGroup bagGroup = BagField.getBag();
-        if (bagGroup == null || bagGroup.isEmpty()) return false;
-        return true;
+        return bagGroup != null && !bagGroup.isEmpty();
+    }
+
+    public static boolean hasCardsInBag() {
+        if (BagField.isInfinite(false)) return true;
+        if (BagField.isChangeToDrawPile(false)) {
+            return !AbstractDungeon.player.drawPile.isEmpty();
+        }
+        CardGroup bag = BagField.getBag();
+        return bag != null && !bag.isEmpty();
     }
 }

@@ -39,7 +39,7 @@ public class Continue02 extends BaseCard {
     @Override
     public void upgrade() {
         upgradeTimes();
-        this.upgradeDamage(4 + this.timesUpgraded);
+        this.upgradeDamage(3 + this.timesUpgraded);
     }
 
     @Override

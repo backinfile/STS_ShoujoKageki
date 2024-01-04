@@ -12,7 +12,7 @@ public class Stretching extends BaseCard {
     public static final String ID = ModInfo.makeID(Stretching.class.getSimpleName());
 
     public Stretching() {
-        super(ID, 2, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = 14;
         AccretionField.accretion.set(this, true);
     }
