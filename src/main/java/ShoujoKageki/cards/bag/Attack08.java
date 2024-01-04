@@ -29,7 +29,7 @@ public class Attack08 extends BaseCard {
 //        if (power != null && power.amount >= magicNumber) {
 //            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 //        }
-        addToBot(new TakeCardFromBagAction(2));
+        addToBot(new TakeCardFromBagAction(magicNumber));
     }
 
     @Override

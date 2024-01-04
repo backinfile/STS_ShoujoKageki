@@ -29,7 +29,7 @@ public class LastWord extends BaseCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        this.glowColor = Color.FIREBRICK.cpy();
+        this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
     }
 
     @Override
