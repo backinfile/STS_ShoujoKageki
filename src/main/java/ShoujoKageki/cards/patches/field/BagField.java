@@ -77,6 +77,16 @@ public class BagField {
         return bagGroup != null && !bagGroup.isEmpty();
     }
 
+    public static boolean hasCardsInBagToDraw() {
+        if (BagField.isInfinite(false)) return true;
+        if (BagField.isChangeToDrawPile(false)) {
+            AbstractPlayer p = AbstractDungeon.player;
+            return !(p.drawPile.isEmpty() && p.discardPile.isEmpty());
+        }
+        CardGroup bag = BagField.getBag();
+        return bag != null && !bag.isEmpty();
+    }
+
     public static boolean hasCardsInBag() {
         if (BagField.isInfinite(false)) return true;
         if (BagField.isChangeToDrawPile(false)) {

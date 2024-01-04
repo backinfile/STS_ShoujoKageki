@@ -273,8 +273,8 @@
 	},
 	"ShoujoKageki:Practice2": {
 		"NAME": "舞蹈练习",
-		"DESCRIPTION": "获得所有牌 闪耀 值之和的 格挡 。",
-		"UPGRADE_DESCRIPTION": "获得所有牌 闪耀 值之和+ !M! 的 格挡 。"
+		"DESCRIPTION": "获得你所有牌 闪耀 值之和的 格挡 。",
+		"UPGRADE_DESCRIPTION": "获得你所有牌 闪耀 值之和+ !M! 的 格挡 。"
 	},
 	"ShoujoKageki:Potato": {
 		"NAME": "土豆",

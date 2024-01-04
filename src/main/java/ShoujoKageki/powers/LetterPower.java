@@ -21,7 +21,7 @@ public class LetterPower extends BasePower {
     @Override
     public void triggerOnPutIntoBag(AbstractCard card) {
         super.triggerOnPutIntoBag(card);
-        addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amount));
+        addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amount));
         flash();
     }
 

@@ -28,7 +28,7 @@ public class TowerOfPromise extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (BagField.isInfinite(false) || !BagField.bag.get(p).isEmpty()) {
+        if (BagField.hasCardsInBagToDraw()) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

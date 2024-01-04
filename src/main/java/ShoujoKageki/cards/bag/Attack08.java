@@ -35,7 +35,7 @@ public class Attack08 extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (BagField.hasCardsInBag()) {
+        if (BagField.hasCardsInBagToDraw()) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
