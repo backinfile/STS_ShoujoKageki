@@ -56,10 +56,12 @@ public class BagFieldDrawCardPatch {
     public static class AfterDrawCard2 {
         public static void Postfix(DrawCardAction __instance) {
             if (beforeDrawCardCnt != drawCnt) {
-                Log.logger.info("draw " + (drawCnt - beforeDrawCardCnt) + " cards");
+                Log.logger.info("DrawCardAction: draw " + (drawCnt - beforeDrawCardCnt) + " cards");
                 if (BagField.isChangeToDrawPile(false)) {
                     AbstractDungeon.actionManager.addToTop(new CheckBagEmptyAction());
                 }
+            } else {
+                Log.logger.info("DrawCardAction: draw 0 cards");
             }
         }
     }
