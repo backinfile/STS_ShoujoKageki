@@ -44,11 +44,8 @@ public class MoveCardToBagAction extends AbstractGameAction {
             AbstractPlayer player = AbstractDungeon.player;
 
             for (AbstractCard card : cardsToBag) {
-                if (card instanceof BaseCard) ((BaseCard) card).triggerOnPutInBag();
+                GlobalMovePatch.triggerOnPutInBag(card);
                 GlobalMovePatch.triggerGlobalMove(card, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
-                for (AbstractPower power : player.powers) {
-                    if (power instanceof BasePower) ((BasePower) power).triggerOnPutIntoBag(card);
-                }
                 player.limbo.removeCard(card);
             }
 

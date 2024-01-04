@@ -36,6 +36,11 @@ public class TakeSpecCardFromBagAction extends AbstractGameAction {
     public void update() {
         BasePlayer player = (BasePlayer) AbstractDungeon.player;
         if (this.duration == Settings.ACTION_DUR_FAST) {
+            if (cardsToTake.isEmpty()) {
+                isDone = true;
+                return;
+            }
+
             CardGroup bag = BagField.bag.get(player);
             int handSize = player.hand.size();
             int toTake = cardsToTake.size();
@@ -57,8 +62,8 @@ public class TakeSpecCardFromBagAction extends AbstractGameAction {
                 bag.removeCard(curCard);
                 takeCnt++;
             }
-            addToTop(new ApplyBagPowerAction());
             addToTop(new CheckBagEmptyAction());
+            addToTop(new ApplyBagPowerAction());
 //            addToTop(new ReducePowerAction(player, player, BagPower.POWER_ID, takeCnt));
             isDone = true;
             return;

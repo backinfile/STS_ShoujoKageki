@@ -2,6 +2,8 @@ package ShoujoKageki.cards.globalMove.patch;
 
 import ShoujoKageki.Log;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.powers.BasePower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
@@ -11,6 +13,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.Soul;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CtBehavior;
 
 // to hand: draw select
@@ -25,6 +28,22 @@ public class GlobalMovePatch {
             if (((BaseCard) c).logGlobalMove) {
                 Log.logger.info("GlobalMove card:" + c.name + " from:" + from.name() + " to:" + to.name());
             }
+        }
+    }
+
+    public static void triggerOnPutInBag(AbstractCard card) {
+        if (card instanceof BaseCard) ((BaseCard) card).triggerOnPutInBag();
+        for (AbstractPower power : AbstractDungeon.player.powers) {
+            if (power instanceof BasePower) ((BasePower) power).triggerOnPutIntoBag(card);
+        }
+    }
+
+    public static void triggerShuffleInfoDrawPile(AbstractCard card) {
+        if (card instanceof BaseCard) {
+            ((BaseCard) card).triggerOnShuffleInfoDrawPile();
+        }
+        if (BagField.isChangeToDrawPile(false)) {
+            triggerOnPutInBag(card);
         }
     }
 
@@ -64,9 +83,7 @@ public class GlobalMovePatch {
         public static void Postfix(EmptyDeckShuffleAction __instance) {
             for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
                 triggerGlobalMove(card, CardGroup.CardGroupType.DISCARD_PILE, CardGroup.CardGroupType.DRAW_PILE);
-                if (card instanceof BaseCard) {
-                    ((BaseCard) card).triggerOnShuffleInfoDrawPile();
-                }
+                triggerShuffleInfoDrawPile(card);
             }
         }
     }
@@ -80,9 +97,7 @@ public class GlobalMovePatch {
             if (___triggerRelics) {
                 for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
                     triggerGlobalMove(card, CardGroup.CardGroupType.DISCARD_PILE, CardGroup.CardGroupType.DRAW_PILE);
-                    if (card instanceof BaseCard) {
-                        ((BaseCard) card).triggerOnShuffleInfoDrawPile();
-                    }
+                    triggerShuffleInfoDrawPile(card);
                 }
             }
         }
@@ -96,9 +111,7 @@ public class GlobalMovePatch {
         public static void Postfix(ShuffleAllAction __instance) {
             for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
                 triggerGlobalMove(card, CardGroup.CardGroupType.DISCARD_PILE, CardGroup.CardGroupType.DRAW_PILE);
-                if (card instanceof BaseCard) {
-                    ((BaseCard) card).triggerOnShuffleInfoDrawPile();
-                }
+                triggerShuffleInfoDrawPile(card);
             }
         }
     }
