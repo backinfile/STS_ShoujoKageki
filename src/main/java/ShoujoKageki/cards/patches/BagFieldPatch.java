@@ -7,13 +7,16 @@ import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.powers.BasePower;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
+import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -80,9 +83,10 @@ public class BagFieldPatch {
                     return SpireReturn.Continue();
                 }
                 if (___player.drawPile.size() <= ___numberOfCards && !___optional) {
-                    for (AbstractCard card : ___player.hand.group) {
+                    for (AbstractCard card : ___player.drawPile.group) {
                         triggerOnTakeFromBag(card);
                     }
+                    AbstractDungeon.actionManager.addToTop(new CheckBagEmptyAction());
                 }
             } else {
 
@@ -90,9 +94,9 @@ public class BagFieldPatch {
                     for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
                         triggerOnTakeFromBag(card);
                     }
+                    AbstractDungeon.actionManager.addToTop(new CheckBagEmptyAction());
                 }
             }
-            AbstractDungeon.actionManager.addToTop(new CheckBagEmptyAction());
             return SpireReturn.Continue();
         }
 
