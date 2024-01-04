@@ -5,6 +5,7 @@ import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.powers.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
@@ -96,6 +98,9 @@ public class DiscardFromBagAction extends AbstractGameAction {
 
     private void trigger(AbstractCard card) {
         if (card instanceof BaseCard) ((BaseCard) card).triggerOnTakeFromBag();
+        for (AbstractPower power : AbstractDungeon.player.powers) {
+            if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
+        }
     }
 }
 

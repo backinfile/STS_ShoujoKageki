@@ -2,12 +2,14 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.powers.BasePower;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
@@ -30,6 +32,9 @@ public class PutBagCardsToHandAction extends AbstractGameAction {
 
             for (AbstractCard card : cards) {
                 if (card instanceof BaseCard) ((BaseCard) card).triggerOnTakeFromBag();
+                for (AbstractPower power : AbstractDungeon.player.powers) {
+                    if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
+                }
             }
 
             int handSize = player.hand.size();

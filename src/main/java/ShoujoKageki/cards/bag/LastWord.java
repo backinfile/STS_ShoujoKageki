@@ -41,7 +41,7 @@ public class LastWord extends BaseCard {
             this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             return false;
         }
-        if (!BagField.isChangeToDrawPile()) {
+        if (!BagField.isChangeToDrawPile(false)) {
             if (!p.drawPile.isEmpty()) {
                 this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
                 return false;
