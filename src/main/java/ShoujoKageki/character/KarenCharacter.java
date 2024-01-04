@@ -12,6 +12,7 @@ import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -30,6 +32,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static ShoujoKageki.character.KarenCharacter.Enums.CardColor_Karen;
 import static ShoujoKageki.character.KarenCharacter.Enums.Karen;
@@ -282,4 +285,23 @@ public class KarenCharacter extends BasePlayer {
         return TEXT[2];
     }
 
+
+    @Override
+    public Texture getCutsceneBg() {
+        return super.getCutsceneBg();
+    }
+
+    @Override
+    public Texture getCustomModeCharacterButtonImage() {
+        return super.getCustomModeCharacterButtonImage();
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        ArrayList<CutscenePanel> panels = new ArrayList<>();
+        panels.add(new CutscenePanel(ModInfo.makeUIPath("CutScene_Karen1.png")));
+        panels.add(new CutscenePanel(ModInfo.makeUIPath("CutScene_Karen2.png")));
+        panels.add(new CutscenePanel(ModInfo.makeUIPath("CutScene_Karen3.png")));
+        return panels;
+    }
 }

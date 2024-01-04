@@ -1,47 +1,34 @@
 package ShoujoKageki.cards.bag;
 
-import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.bag.TakeCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.patches.field.AccretionField;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.cards.patches.field.PutToBagField;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+
+import static ShoujoKageki.ModInfo.makeID;
 
 public class NeverRetreat02 extends BaseCard {
-
-    public static final String ID = ModInfo.makeID(NeverRetreat02.class.getSimpleName());
+    public static final String ID = makeID(NeverRetreat02.class.getSimpleName());
 
     public NeverRetreat02() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 10;
-        this.baseMagicNumber = this.magicNumber = 2;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        baseDamage = 8;
+        isMultiDamage = true;
+        AccretionField.accretion.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-//        AbstractPower power = p.getPower(StrengthPower.POWER_ID);
-//        if (power != null && power.amount >= magicNumber) {
-//            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-//        }
-        addToBot(new TakeCardFromBagAction(2));
-    }
-
-    @Override
-    public void triggerOnGlowCheck() {
-        AbstractPlayer p = AbstractDungeon.player;
-        if (BagField.hasCardsInBag()) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     @Override
@@ -49,7 +36,12 @@ public class NeverRetreat02 extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(4);
-            upgradeMagicNumber(2);
         }
+    }
+
+    @Override
+    public void triggerOnAccretion() {
+        super.triggerOnAccretion();
+        this.freeToPlayOnce = true;
     }
 }

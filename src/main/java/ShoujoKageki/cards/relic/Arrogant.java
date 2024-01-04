@@ -7,6 +7,7 @@ import ShoujoKageki.powers.ArrogantPower;
 import ShoujoKageki.powers.GainRelicPower;
 import ShoujoKageki.powers.PassionPower;
 import ShoujoKageki.variables.DisposableVariable;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -31,7 +32,7 @@ public class Arrogant extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         super.triggerOnGlowCheck();
-        this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        this.glowColor = Color.FIREBRICK.cpy();
     }
 
     @Override

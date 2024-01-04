@@ -52,9 +52,13 @@
 		"NAME": "三明治",
 		"DESCRIPTION": "获得 !M! 点 临时力量 。 NL 消耗 。"
 	},
+	"ShoujoKageki:Attack08": {
+		"NAME": "即使渺小的光芒",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌。"
+	},
 	"ShoujoKageki:NeverRetreat02": {
 		"NAME": "绝不认输",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌。"
+		"DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL 沉淀 ：被打出之前耗能变为0。"
 	},
 	"ShoujoKageki:SwordUp": {
 		"NAME": "上挑",
