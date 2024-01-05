@@ -53,6 +53,7 @@ public class SeriousStrike extends BaseCard {
         super.triggerOnAccretion();
         this.addedDamage += magicNumber;
         applyPowers();
+        initializeDescription();
     }
 
     @Override
@@ -60,6 +61,7 @@ public class SeriousStrike extends BaseCard {
         super.triggerOnEndOfPlayerTurnInBag();
         this.addedDamage += magicNumber;
         applyPowers();
+        initializeDescription();
     }
 
     @Override

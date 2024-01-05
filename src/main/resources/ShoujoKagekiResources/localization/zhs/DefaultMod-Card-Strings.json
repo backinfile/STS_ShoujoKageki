@@ -359,6 +359,11 @@
 		"DESCRIPTION": "获得 力量 时， 额外获得 !M! 点 力量 。",
 		"UPGRADE_DESCRIPTION": "固有 。 NL 获得 力量 时， 额外获得 !M! 点 力量 。"
 	},
+	"ShoujoKageki:Pizza": {
+		"NAME": "披萨",
+		"DESCRIPTION": "获得 !M! 点 力量， 所有敌人失去 !ShoujoKageki:SM! 点 力量 。",
+		"UPGRADE_DESCRIPTION": ""
+	},
 	"ShoujoKageki:HolyStar": {
 		"NAME": "神圣星辰",
 		"DESCRIPTION": "造成 !D! 伤害。 NL 被放入 约定牌堆 时， 在本场战斗中的耗能减少 !M! 。"
@@ -366,10 +371,6 @@
 	"ShoujoKageki:Future": {
 		"NAME": "未来的道路",
 		"DESCRIPTION": "从 弃牌堆 中选择 2 张牌放入你的手牌。"
-	},
-	"ShoujoKageki:WakeUp": {
-		"NAME": "唤醒",
-		"DESCRIPTION": "从 抽牌堆 , 弃牌堆 ,或 约定牌堆 中选择 2 张牌放入你的手牌。 NL 消耗 。"
 	},
 	"ShoujoKageki:SeriousStrike": {
 		"NAME": "认真打击",
@@ -387,6 +388,10 @@
 		"NAME": "侧身",
 		"DESCRIPTION": "获得 !B! 点 格挡。 NL 消耗 。"
 	},
+	"ShoujoKageki:WakeUp": {
+		"NAME": "唤醒",
+		"DESCRIPTION": "从 抽牌堆 、 弃牌堆 、或 约定牌堆 中选择 2 张牌放入你的手牌。 NL 消耗 。"
+	},
 	"ShoujoKageki:SelectDiscardPile": {
 		"NAME": "弃牌堆",
 		"DESCRIPTION": "从 弃牌堆 中选择 2 张牌放入你的手牌。"
@@ -398,6 +403,23 @@
 	"ShoujoKageki:SelectBagPile": {
 		"NAME": "约定牌堆",
 		"DESCRIPTION": "从 约定牌堆 中选择 2 张牌放入你的手牌。"
+	},
+	"ShoujoKageki:NoHesitate": {
+		"NAME": "不再犹豫",
+		"DESCRIPTION": "从 抽牌堆 、弃牌堆 、或手牌 中选择 !M! 张牌放入 约定牌堆 。",
+		"UPGRADE_DESCRIPTION": ""
+	},
+	"ShoujoKageki:SelectDiscardPile2": {
+		"NAME": "弃牌堆",
+		"DESCRIPTION": "从 弃牌堆 中选择 !M! 张牌放入 约定牌堆 。"
+	},
+	"ShoujoKageki:SelectDrawPile2": {
+		"NAME": "抽牌堆",
+		"DESCRIPTION": "从 抽牌堆 中选择 !M! 张牌放入 约定牌堆 。"
+	},
+	"ShoujoKageki:SelectHand2": {
+		"NAME": "手牌",
+		"DESCRIPTION": "从 手牌 中选择 !M! 张牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:NextStage": {
 		"NAME": "下一个舞台",
