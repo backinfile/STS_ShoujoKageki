@@ -59,7 +59,9 @@
 	"ShoujoKageki:AquariumPower": {
 		"NAME": "水族馆",
 		"DESCRIPTIONS": [
-			"每个回合开始时，从 #y约定牌堆 中抽取 #y", " 张牌。"
+			"每个回合开始时，抽 #y", 
+			" 张牌， 然后选择 #y",
+			" 张手牌放入 #y约定牌堆 。"
 		]
 	},
 	"ShoujoKageki:VoidPower": {

@@ -14,21 +14,14 @@ public class ToTheStage extends BaseCard {
 
     public ToTheStage() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
+        DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);
         this.baseMagicNumber = this.magicNumber = 0;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
 
-        if (!upgraded) {
-            int value = DisposableVariable.getValue(this);
-            if (value > 0) {
-                addToBot(new GainEnergyAction(value));
-            }
-        } else {
-            addToBot(new GainEnergyAction(3));
-        }
+        addToBot(new GainEnergyAction(3));
 
         if (magicNumber > 0) {
             addToBot(new DrawCardAction(magicNumber));

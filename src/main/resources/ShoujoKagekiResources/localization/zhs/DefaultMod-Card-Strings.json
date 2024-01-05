@@ -110,7 +110,8 @@
 	},
 	"ShoujoKageki:Aquarium": {
 		"NAME": "水族馆",
-		"DESCRIPTION": "每个回合开始时，从 约定牌堆 中抽取 !M! 张牌。"
+		"DESCRIPTION": "每个回合开始时，抽 !M! 张牌， 然后选择 !M! 张手牌放入 约定牌堆 。",
+		"UPGRADE_DESCRIPTION": "固有 。 NL 每个回合开始时，抽 !M! 张牌， 然后选择 !M! 张手牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Must": {
 		"NAME": "东京塔下",
@@ -184,7 +185,7 @@
 	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
-		"DESCRIPTION": "获得此牌闪耀值的 [E] 。",
+		"DESCRIPTION": "获得 [E] [E] [E] 。",
 		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 抽 !M! 张牌。"
 	},
 	"ShoujoKageki:Ready": {
@@ -302,7 +303,7 @@
 	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 此牌在牌堆之间移动时，在本回合增加攻击次数。"
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 被放入 约定牌堆 时，在本场战斗中增加攻击次数。"
 	},
 	"ShoujoKageki:Continue02": {
 		"NAME": "永无结束的命运舞台",
@@ -360,7 +361,7 @@
 	},
 	"ShoujoKageki:HolyStar": {
 		"NAME": "神圣星辰",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 沉淀 : 在本场战斗中的耗能减少 !M! 。"
+		"DESCRIPTION": "造成 !D! 伤害。 NL 被放入 约定牌堆 时， 在本场战斗中的耗能减少 !M! 。"
 	},
 	"ShoujoKageki:Future": {
 		"NAME": "未来的道路",

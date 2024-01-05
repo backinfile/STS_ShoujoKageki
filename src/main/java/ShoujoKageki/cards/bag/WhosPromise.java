@@ -25,7 +25,7 @@ public class WhosPromise extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new TakeCardFromBagAction(magicNumber));
-        addToBot(new PutHandCardIntoBagAction(p, magicNumber));
+        addToBot(new PutHandCardIntoBagAction(magicNumber));
     }
 
     @Override

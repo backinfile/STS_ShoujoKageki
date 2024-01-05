@@ -1,7 +1,9 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKageki.actions.bag.PutHandCardIntoBagAction;
 import ShoujoKageki.actions.bag.TakeCardFromBagAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,13 +27,15 @@ public class AquariumPower extends BasePower {
     @Override
     public void atStartOfTurnPostDraw() {
         super.atStartOfTurnPostDraw();
-        addToBot(new TakeCardFromBagAction(amount));
+//        addToBot(new TakeCardFromBagAction(amount));
+        addToBot(new DrawCardAction(amount));
+        addToBot(new PutHandCardIntoBagAction(amount));
         flash();
     }
 
     @Override
     public void updateDescription() {
         super.updateDescription();
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 }

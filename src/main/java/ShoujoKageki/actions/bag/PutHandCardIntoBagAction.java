@@ -29,15 +29,15 @@ public class PutHandCardIntoBagAction extends AbstractGameAction {
     private final AbstractPlayer player;
     private boolean allCardInHand = false;
 
-    public PutHandCardIntoBagAction(AbstractPlayer player, int amount) {
-        this.player = player;
+    public PutHandCardIntoBagAction(int amount) {
+        this.player = AbstractDungeon.player;
         this.amount = amount;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
     }
 
     // all card in hand
-    public PutHandCardIntoBagAction(AbstractPlayer player, boolean allCardInHand) {
-        this(player, 1);
+    public PutHandCardIntoBagAction(boolean allCardInHand) {
+        this(1);
         this.allCardInHand = allCardInHand;
     }
 

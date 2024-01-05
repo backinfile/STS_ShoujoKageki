@@ -20,7 +20,7 @@ public class Fall extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new PutHandCardIntoBagAction(p, magicNumber));
+        addToBot(new PutHandCardIntoBagAction(magicNumber));
     }
 
     @Override

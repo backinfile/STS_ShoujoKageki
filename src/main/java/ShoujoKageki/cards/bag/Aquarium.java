@@ -15,7 +15,7 @@ public class Aquarium extends BaseCard {
 
     public Aquarium() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
@@ -27,7 +27,11 @@ public class Aquarium extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
+//            upgradeBaseCost(0);
+            isInnate = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

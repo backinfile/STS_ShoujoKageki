@@ -17,7 +17,7 @@ public class Spin extends BaseCard {
     public Spin() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 4;
-        this.baseMagicNumber = this.magicNumber = 0;
+        this.baseMagicNumber = this.magicNumber = 1;
         this.logGlobalMove = true;
     }
 
@@ -50,36 +50,41 @@ public class Spin extends BaseCard {
         flash();
     }
 
-
     @Override
-    public void triggerOnGlobalMove() {
-        super.triggerOnGlobalMove();
+    public void triggerOnPutInBag() {
+        super.triggerOnPutInBag();
         onTrigger();
     }
 
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-        super.triggerOnEndOfPlayerTurn();
-        reset();
-    }
-
-    @Override
-    public void triggerOnEndOfPlayerTurnInBag() {
-        super.triggerOnEndOfPlayerTurnInBag();
-        reset();
-    }
-
-    @Override
-    public void triggerOnEndOfPlayerTurnInDrawPile() {
-        super.triggerOnEndOfPlayerTurnInDrawPile();
-        reset();
-    }
-
-    @Override
-    public void triggerOnEndOfPlayerTurnInDiscardPile() {
-        super.triggerOnEndOfPlayerTurnInDiscardPile();
-        reset();
-    }
+    //    @Override
+//    public void triggerOnGlobalMove() {
+//        super.triggerOnGlobalMove();
+//        onTrigger();
+//    }
+//
+//    @Override
+//    public void triggerOnEndOfPlayerTurn() {
+//        super.triggerOnEndOfPlayerTurn();
+//        reset();
+//    }
+//
+//    @Override
+//    public void triggerOnEndOfPlayerTurnInBag() {
+//        super.triggerOnEndOfPlayerTurnInBag();
+//        reset();
+//    }
+//
+//    @Override
+//    public void triggerOnEndOfPlayerTurnInDrawPile() {
+//        super.triggerOnEndOfPlayerTurnInDrawPile();
+//        reset();
+//    }
+//
+//    @Override
+//    public void triggerOnEndOfPlayerTurnInDiscardPile() {
+//        super.triggerOnEndOfPlayerTurnInDiscardPile();
+//        reset();
+//    }
 
     @Override
     public void upgrade() {

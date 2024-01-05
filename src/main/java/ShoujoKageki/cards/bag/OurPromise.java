@@ -19,7 +19,7 @@ public class OurPromise extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         addToBot(new DrawCardAction(p, magicNumber));
-        addToBot(new PutHandCardIntoBagAction(p, 2));
+        addToBot(new PutHandCardIntoBagAction(2));
     }
 
     @Override
