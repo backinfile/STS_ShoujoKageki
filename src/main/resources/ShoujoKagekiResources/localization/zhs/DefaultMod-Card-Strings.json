@@ -323,6 +323,10 @@
 		"NAME": "添麻烦了",
 		"DESCRIPTION": "此牌在牌堆之间移动时，获得 !B! 点 格挡 。"
 	},
+	"ShoujoKageki:DrinkWater": {
+		"NAME": "水分补充",
+		"DESCRIPTION": "获得 !M! 层 缓冲 。 NL 消耗 。"
+	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
 		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 被放入 约定牌堆 时，在本场战斗中增加攻击次数。"
