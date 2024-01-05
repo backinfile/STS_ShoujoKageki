@@ -1,6 +1,7 @@
 package ShoujoKageki.cards.strength;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.actions.ReduceStrengthAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.powers.Position0Power;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -23,11 +24,7 @@ public class Pizza extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (!monster.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber)));
-            }
-        }
+        addToBot(new ReduceStrengthAction(p, defaultSecondMagicNumber, false));
     }
 
     @Override

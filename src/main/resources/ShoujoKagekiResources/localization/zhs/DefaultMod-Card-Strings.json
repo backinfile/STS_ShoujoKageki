@@ -361,7 +361,7 @@
 	},
 	"ShoujoKageki:Pizza": {
 		"NAME": "披萨",
-		"DESCRIPTION": "获得 !M! 点 力量， 所有敌人失去 !ShoujoKageki:SM! 点 力量 。",
+		"DESCRIPTION": "获得 !M! 点 力量 ， 所有敌人失去 !ShoujoKageki:SM! 点 力量 。",
 		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:HolyStar": {
