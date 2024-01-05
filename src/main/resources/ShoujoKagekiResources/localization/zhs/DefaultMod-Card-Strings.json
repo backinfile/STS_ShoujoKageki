@@ -327,6 +327,23 @@
 		"NAME": "水分补充",
 		"DESCRIPTION": "获得 !M! 层 缓冲 。 NL 消耗 。"
 	},
+	"ShoujoKageki:OldPlace2": {
+		"NAME": "明年也要在这里相见",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 保留能量 ，手牌，或 格挡 一回合。",
+		"UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 保留能量 ，手牌，与 格挡 一回合。"
+	},
+	"ShoujoKageki:RetainBlock": {
+		"NAME": "保留格挡",
+		"DESCRIPTION": "保留格挡 1 回合 。"
+	},
+	"ShoujoKageki:RetainEnegy": {
+		"NAME": "保留能量",
+		"DESCRIPTION": "保留能量 1 回合。"
+	},
+	"ShoujoKageki:RetainHand": {
+		"NAME": "保留手牌",
+		"DESCRIPTION": "保留手牌 1 回合。"
+	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
 		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 被放入 约定牌堆 时，在本场战斗中增加攻击次数。"
@@ -416,7 +433,7 @@
 	},
 	"ShoujoKageki:WakeUp": {
 		"NAME": "唤醒",
-		"DESCRIPTION": "从 抽牌堆 、 弃牌堆 、或 约定牌堆 中选择 2 张牌放入你的手牌。 NL 消耗 。"
+		"DESCRIPTION": "从 抽牌堆 ， 弃牌堆 ，或 约定牌堆 中选择 2 张牌放入你的手牌。 NL 消耗 。"
 	},
 	"ShoujoKageki:SelectDiscardPile": {
 		"NAME": "弃牌堆",
@@ -432,7 +449,7 @@
 	},
 	"ShoujoKageki:NoHesitate": {
 		"NAME": "不再犹豫",
-		"DESCRIPTION": "从 抽牌堆 、弃牌堆 、或手牌 中选择 !M! 张牌放入 约定牌堆 。",
+		"DESCRIPTION": "从 抽牌堆 ，弃牌堆 ，或手牌 中选择 !M! 张牌放入 约定牌堆 。",
 		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:SelectDiscardPile2": {
