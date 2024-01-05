@@ -63,4 +63,8 @@ public abstract class BasePower extends AbstractPower {
 
     }
 
+    public void onCreatureApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+
+    }
+
 }

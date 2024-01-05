@@ -64,6 +64,13 @@
 			" 张手牌放入 #y约定牌堆 。"
 		]
 	},
+	"ShoujoKageki:CryPower": {
+		"NAME": "添麻烦了",
+		"DESCRIPTIONS": [
+			"当有 #y力量 发生变化时， 获得变化数量 #y",
+			" 倍的 #y格挡 。"
+		]
+	},
 	"ShoujoKageki:VoidPower": {
 		"NAME": "世界上最空虚的人",
 		"DESCRIPTIONS": [

@@ -193,7 +193,7 @@
 		]
 	},
 	"ShoujoKageki:Run02": {
-		"NAME": "啊？",
+		"NAME": "哎？",
 		"DESCRIPTION": "虚无 。 NL 获得 力量 点数的 敏捷 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "获得 力量 点数的 敏捷 。 NL 消耗 。"
 	},
@@ -316,6 +316,10 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
 	},
 	"ShoujoKageki:Cry": {
+		"NAME": "添麻烦了",
+		"DESCRIPTION": "当有 力量 发生变化时， 获得变化数量 !M! 倍的 格挡 。"
+	},
+	"ShoujoKageki:CryTmp": {
 		"NAME": "添麻烦了",
 		"DESCRIPTION": "此牌在牌堆之间移动时，获得 !B! 点 格挡 。"
 	},
