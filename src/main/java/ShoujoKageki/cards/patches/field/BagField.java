@@ -20,6 +20,8 @@ import java.util.ArrayList;
         method = "<class>"
 )
 public class BagField {
+
+    // 抽牌用getBottomCard
     public static SpireField<CardGroup> bag = new SpireField<>(() -> null);
     public static SpireField<Boolean> bagInfinite = new SpireField<>(() -> false);
     public static SpireField<Boolean> bagReplace = new SpireField<>(() -> false);

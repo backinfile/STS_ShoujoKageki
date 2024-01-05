@@ -146,4 +146,13 @@ public class BagFieldPatch {
             if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
         }
     }
+//    public static void triggerOnTakeFromBag(AbstractCard card) {
+//        if (card instanceof BaseCard) {
+//            ((BaseCard) card).triggerOnTakeFromBag();
+//            ((BaseCard) card).triggerOnTakeFromBagToHand();
+//        }
+//        for (AbstractPower power : AbstractDungeon.player.powers) {
+//            if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
+//        }
+//    }
 }

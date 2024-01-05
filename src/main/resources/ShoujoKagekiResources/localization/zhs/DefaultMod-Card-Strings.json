@@ -23,7 +23,20 @@
 		"NAME": "翩翩旋转的双人舞",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌，然后选择 !M! 张手牌放入其中。"
 	},
+	"ShoujoKageki:Bridge": {
+		"NAME": "约定之塔桥",
+		"DESCRIPTION": "打出 约定牌堆 顶部 X 张牌。",
+		"UPGRADE_DESCRIPTION": "打出 约定牌堆 顶部 X+1 张牌。"
+	},
 	"ShoujoKageki:WeKnow": {
+		"NAME": "约定的舞台",
+		"DESCRIPTION": "手牌与 约定牌堆 卡牌数目相同时才能打出。 NL  获得 [E] [E] 。",
+		"UPGRADE_DESCRIPTION": "手牌与 约定牌堆 卡牌数目相同时才能打出。 NL  获得 [E] [E] [E] 。",
+		"EXTENDED_DESCRIPTION": [
+		  "手牌与 约定牌堆 卡牌数目相同时才能打出。"
+		]
+	},
+	"ShoujoKageki:WeKnowTmp": {
 		"NAME": "约定的舞台",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 在下回合从 约定牌堆 中抽取 !M! 张牌。"
 	},
@@ -66,7 +79,7 @@
 	},
 	"ShoujoKageki:WatchBack": {
 		"NAME": "背后袭击",
-		"DESCRIPTION": "给予所有敌人 !M! 层 虚弱 和 易伤 。 NL 手牌满时才能打出。",
+		"DESCRIPTION": "手牌满时才能打出。 NL 给予所有敌人 !M! 层 虚弱 和 易伤 。",
 		"EXTENDED_DESCRIPTION": [
 		  "手牌满时才能打出。"
 		]
@@ -435,7 +448,7 @@
 	},
 	"ShoujoKageki:Run03": {
 		"NAME": "行动",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 如果 约定牌库 不为空， 获得 [E] 。"
+		"DESCRIPTION": "造成 !D! 伤害。 NL 如果 约定牌堆 不为空， 获得 [E] 。"
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",
