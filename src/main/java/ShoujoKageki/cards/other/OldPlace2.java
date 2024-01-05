@@ -7,6 +7,7 @@ import ShoujoKageki.cards.bag.SelectBagPile;
 import ShoujoKageki.cards.bag.SelectDiscardPile;
 import ShoujoKageki.cards.bag.SelectDrawPile;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -29,6 +30,7 @@ public class OldPlace2 extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, p, block));
         if (!upgraded) {
             ArrayList<AbstractCard> choices = new ArrayList<>();
             choices.add(new RetainEnegy());
