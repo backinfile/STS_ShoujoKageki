@@ -1,15 +1,15 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.BackToBackAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.util.Utils2;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.unique.DoppelgangerAction;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BackToBack extends BaseCard {
@@ -17,23 +17,49 @@ public class BackToBack extends BaseCard {
     public static final String ID = ModInfo.makeID(BackToBack.class.getSimpleName());
 
     public BackToBack() {
-        super(ID, -1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 2;
-        exhaust = true;
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        this.baseDamage = 0;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new BackToBackAction(p, this.upgraded, this.freeToPlayOnce, this.energyOnUse, this.magicNumber));
-        this.addToBot(new GainEnergyAction(1));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    }
+
+    private int getBagCardsForGame() {
+        if (!Utils2.inBattlePhase()) return 0;
+        if (BagField.isInfinite()) return 10;
+        if (BagField.isChangeToDrawPile()) {
+            return AbstractDungeon.player.drawPile.size();
+        }
+        CardGroup bag = BagField.getBag();
+        if (bag == null) return 0;
+        return bag.size();
+    }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += getBagCardsForGame() * magicNumber;
+        super.calculateCardDamage(mo);
+        this.baseDamage = realBaseDamage;
+        if (this.baseDamage != this.damage) this.isDamageModified = true;
+    }
+
+    @Override
+    public void applyPowers() {
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += getBagCardsForGame() * magicNumber;
+        super.applyPowers();
+        this.baseDamage = realBaseDamage;
+        if (this.baseDamage != this.damage) this.isDamageModified = true;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            upgradeMagicNumber(2);
         }
     }
 }

@@ -110,6 +110,11 @@
 	},
 	"ShoujoKageki:BackToBack": {
 		"NAME": "背靠背",
+		"DESCRIPTION": "造成 约定牌堆 中卡牌数量 !M! 倍 的 伤害。 NL （造成 !D! 点 伤害）",
+		"UPGRADE_DESCRIPTION": ""
+	},
+	"ShoujoKageki:Snack": {
+		"NAME": "小零食",
 		"DESCRIPTION": "获得 !M! 临时力量 X次。 NL 获得 [E] 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": "获得 !M! 临时力量 X+1次。 NL 获得 [E] 。 NL 消耗 。"
 	},
