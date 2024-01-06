@@ -3,7 +3,6 @@ package ShoujoKageki.cards.bag;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.SelectDrawPileToBagAction;
 import ShoujoKageki.cards.BaseCard;
-import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -25,7 +24,7 @@ public class SelectDrawPile2 extends BaseCard {
     @Override
     public void onChoseThisOption() {
         super.onChoseThisOption();
-        addToBot(new SelectDrawPileToBagAction(magicNumber));
+        addToBot(new SelectDrawPileToBagAction(magicNumber, false));
     }
 
     @Override

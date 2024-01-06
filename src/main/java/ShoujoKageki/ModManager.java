@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.events.RealTimeEvent;
+import ShoujoKageki.potions.BagPotion;
 import ShoujoKageki.potions.ShinePotion;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.reward.patch.RewardPatch;
@@ -24,6 +25,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.TheCity;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -134,7 +136,8 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         Log.logger.info("Added " + Karen.toString());
 
         Log.logger.info("Beginning to add potions.");
-        BaseMod.addPotion(ShinePotion.class, new Color(0.9f, 0.7f, 0f, 1f), Color.WHITE, new Color(0.9f, 0.7f, 0f, 1f), ShinePotion.POTION_ID, Karen);
+        BaseMod.addPotion(ShinePotion.class, Color.GOLD, CardHelper.getColor(255.0f, 230.0f, 230.0f), Color.GOLD, ShinePotion.POTION_ID, Karen);
+        BaseMod.addPotion(BagPotion.class, KarenRenderColor, Color.GOLD, KarenRenderColor, BagPotion.POTION_ID, Karen);
         Log.logger.info("Added potions.");
     }
 

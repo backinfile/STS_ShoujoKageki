@@ -6,20 +6,12 @@
 			"从 #b3 张随机闪耀牌中选择 #b1 张，将其加入你的手牌 #b2 次。这两张牌在本回合耗能变为 #b0 。"
 		]
 	},
-	"fortuneTeller:DivinePotion": {
-		"NAME": "占卜药水",
+	"ShoujoKageki:BagPotion": {
+		"NAME": "约定药水",
 		"DESCRIPTIONS": [
-			" 特性 。 NL 占卜 #b",
-			"  。",
-			" 特性 。 NL 获得一张梦境占卜。",
-			"特性"
-		]
-	},
-	"fortuneTeller:CloudPotion": {
-		"NAME": "云雾药水",
-		"DESCRIPTIONS": [
-			"获得 #b",
-			" 页罗塞尔大帝的日记。"
+			"选择抽牌堆中的一张牌放入你的手牌。这张牌在本回合的耗能变为 #b0 。",
+			"选择抽牌堆中的 #b ",
+			" 张牌放入你的手牌。它们在本回合的耗能变为 #b0 。"
 		]
 	}
 }

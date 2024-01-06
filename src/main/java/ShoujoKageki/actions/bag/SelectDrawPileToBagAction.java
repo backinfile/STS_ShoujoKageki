@@ -14,7 +14,10 @@ public class SelectDrawPileToBagAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(SelectDiscardCardIntoBagAction.class.getSimpleName()));
     public static final String[] TEXT = uiStrings.TEXT;
 
-    public SelectDrawPileToBagAction(int amount) {
+    private boolean reduceCost;
+
+    public SelectDrawPileToBagAction(int amount, boolean reduceCost) {
+        this.reduceCost = reduceCost;
         this.amount = amount;
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
@@ -45,6 +48,7 @@ public class SelectDrawPileToBagAction extends AbstractGameAction {
 
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                if (reduceCost) c.setCostForTurn(0);
                 p.drawPile.removeCard(c);
             }
             addToBot(new MoveCardToBagAction(AbstractDungeon.gridSelectScreen.selectedCards));

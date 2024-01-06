@@ -60,10 +60,10 @@ public class ShinePotion extends BasePotion {
         targetRequired = false;
         potency = getPotency();
 
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(SacredBark.ID)) {
-            this.description = potionStrings.DESCRIPTIONS[1];
-        } else {
+        if (potency == 1) {
             this.description = potionStrings.DESCRIPTIONS[0];
+        } else {
+            this.description = potionStrings.DESCRIPTIONS[1];
         }
 
         initializeDescription();
