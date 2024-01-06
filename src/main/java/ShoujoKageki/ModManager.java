@@ -1,8 +1,8 @@
 package ShoujoKageki;
 
-import ShoujoKageki.events.RealTimeEvent;
 import ShoujoKageki.potions.BagPotion;
 import ShoujoKageki.potions.ShinePotion;
+import ShoujoKageki.relics.SharedRelic;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.reward.patch.RewardPatch;
 import ShoujoKageki.screen.BagPileViewScreen;
@@ -10,6 +10,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomReward;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import ShoujoKageki.character.KarenCharacter;
 import ShoujoKageki.screen.BlackMarketScreen;
@@ -24,7 +25,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rewards.RewardSave;
@@ -192,7 +192,11 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
             Log.logger.info(info.ID);
         }
         new AutoAdd(ModInfo.getModId()).packageFilter(relicClassPath).any(CustomRelic.class, (info, relic) -> {
-            BaseMod.addRelicToCustomPool(relic, CardColor_Karen);
+            if (relic.getClass().isAnnotationPresent(SharedRelic.class)) {
+                BaseMod.addRelic(relic, RelicType.SHARED);
+            } else {
+                BaseMod.addRelicToCustomPool(relic, CardColor_Karen);
+            }
 //			if (info.seen || relic.tier == RelicTier.STARTER)
             UnlockTracker.markRelicAsSeen(relic.relicId);
             Log.logger.info("Adding relics: " + relic.relicId);

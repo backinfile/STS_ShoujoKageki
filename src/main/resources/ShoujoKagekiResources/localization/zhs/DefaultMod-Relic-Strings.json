@@ -6,11 +6,18 @@
 			"在第二回合开始时，获得一张 #y约定之塔 。"
 		]
 	},
+	"ShoujoKageki:Hairpin2Relic": {
+		"NAME": "发夹-立体版",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"替换 #g发夹 。 NL 在第一回合开始时，获得一张 #y约定之塔+ 。"
+		]
+	},
 	"ShoujoKageki:BookMarchRelic": {
 		"NAME": "书签",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"在选奖励牌时，可以获取全部卡牌并使此遗物失效。 NL 击杀 #y精英 敌人后重置。",
+			"在选奖励牌时，可以升级全部卡牌并获取它们。 NL 使用后失效，可通过击杀 #y精英 敌人 重置此遗物。",
 			"获取全部"
 		]
 	},
@@ -64,6 +71,13 @@
 		"DESCRIPTIONS": [
 			"被 #y禁用 时，改为获得 #y ",
 			" 点 #y格挡 。"
+		]
+	},
+	"ShoujoKageki:StarCrownRelic": {
+		"NAME": "星之皇冠",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"在回合开始时获得 [E] 。 NL 在每个回合开始时， #y禁用 #y2 个 遗物。"
 		]
 	}
 }

@@ -3,6 +3,7 @@ package ShoujoKageki.actions;
 import ShoujoKageki.Log;
 import ShoujoKageki.relics.CatRelic;
 import ShoujoKageki.relics.LockRelic;
+import ShoujoKageki.relics.StarCrownRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -68,6 +69,7 @@ public class LockRelicAction extends AbstractGameAction {
         for (int i = endPosition - 1; i >= 0; i--) {
             AbstractRelic relic = p.relics.get(i);
             if (relic instanceof LockRelic) continue;
+            if (relic instanceof StarCrownRelic) continue;
             if (WhiteList.stream().anyMatch(relic.relicId::contains)) continue;
             return i;
         }

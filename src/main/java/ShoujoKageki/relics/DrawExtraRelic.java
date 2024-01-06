@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import ShoujoKageki.ModInfo;
 
+@SharedRelic
 public class DrawExtraRelic extends BaseRelic {
     public static final String RAW_ID = DrawExtraRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);

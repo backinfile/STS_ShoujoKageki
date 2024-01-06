@@ -84,6 +84,7 @@ public class TakeAllRewardCardsButton {
 
     public void onClick() {
         for (AbstractCard card : this.rItem.cards) {
+            card.upgrade();
             AbstractDungeon.effectsQueue.add(new FastCardObtainEffect(card, card.current_x, card.current_y));
         }
         AbstractDungeon.player.getRelic(BookMarchRelic.ID).onTrigger();
