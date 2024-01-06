@@ -1,36 +1,9 @@
 {
-	"fortuneTeller:FeaturePotion": {
-		"NAME": "Feature Potion",
+	"ShoujoKageki:ShinePotion": {
+		"NAME": "闪耀药水",
 		"DESCRIPTIONS": [
-			"Gain ",
-			" At the end of your turn, lose ",
-			" Strength."
-		]
-	},
-	"fortuneTeller:Tmp1Potion": {
-		"NAME": "Tmp1Potion",
-		"DESCRIPTIONS": [
-			"tmp1 potion"
-		]
-	},
-	"fortuneTeller:Tmp2Potion": {
-		"NAME": "Tmp2Potion",
-		"DESCRIPTIONS": [
-			"tmp2 potion"
-		]
-	},
-	"fortuneTeller:Tmp3Potion": {
-		"NAME": "Tmp3Potion",
-		"DESCRIPTIONS": [
-			"tmp3 potion"
-		]
-	},
-	"fortuneTeller:TrainedPotion": {
-		"NAME": "训练药水",
-		"DESCRIPTIONS": [
-			" 特性 。 NL 获得 #b",
-			" 层 训练 。",
-			" 特性 。 NL 获得一张快速射击。"
+			"从 #b3 张随机闪耀牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。",
+			"从 #b3 张随机闪耀牌中选择 #b1 张，将其加入你的手牌 #b2 次。这两张牌在本回合耗能变为 #b0 。"
 		]
 	},
 	"fortuneTeller:DivinePotion": {

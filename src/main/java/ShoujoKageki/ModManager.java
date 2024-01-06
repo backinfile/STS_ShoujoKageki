@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.events.RealTimeEvent;
+import ShoujoKageki.potions.ShinePotion;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.reward.patch.RewardPatch;
 import ShoujoKageki.screen.BagPileViewScreen;
@@ -16,6 +17,7 @@ import ShoujoKageki.variables.DefaultCustomVariable;
 import ShoujoKageki.variables.DefaultSecondMagicNumber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -63,9 +65,9 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     }
 
     public static void initialize() {
-        Log.logger.info("========================= Initializing Default Mod. Hi. =========================");
+        Log.logger.info("========================= Initializing Default Mod. ShoujoKageki. =========================");
         ModManager modManager = new ModManager();
-        Log.logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
+        Log.logger.info("========================= /ShoujoKageki Initialized. Hello World./ =========================");
     }
 
     @Override
@@ -130,6 +132,10 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.addCharacter(new KarenCharacter("Karen", Karen), THE_DEFAULT_BUTTON,
                 THE_DEFAULT_PORTRAIT, Karen);
         Log.logger.info("Added " + Karen.toString());
+
+        Log.logger.info("Beginning to add potions.");
+        BaseMod.addPotion(ShinePotion.class, new Color(0.9f, 0.7f, 0f, 1f), Color.WHITE, new Color(0.9f, 0.7f, 0f, 1f), ShinePotion.POTION_ID, Karen);
+        Log.logger.info("Added potions.");
     }
 
     @Override

@@ -12,15 +12,29 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class GainCardOrIgnoreAction extends AbstractGameAction {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(GainCardOrIgnoreAction.class.getSimpleName())).TEXT;
 
-    private final AbstractCard gainCard;
+    private final List<AbstractCard> gainCards = new ArrayList<>();
     private boolean retrieveCard = false;
+    private boolean duplicate = false;
+
+    private boolean reduceCost = false;
 
     public GainCardOrIgnoreAction(AbstractCard gainCard) {
-        this.gainCard = Utils2.makeCardCopyOnlyWithUpgrade(gainCard);
+        this.gainCards.add(Utils2.makeCardCopyOnlyWithUpgrade(gainCard));
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
+    }
+
+    public GainCardOrIgnoreAction(List<AbstractCard> gainCards, boolean duplicate, boolean reduceCost) {
+        this.gainCards.addAll(gainCards.stream().map(Utils2::makeCardCopyOnlyWithUpgrade).collect(Collectors.toList()));
+        this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
+        this.duplicate = duplicate;
+        this.reduceCost = reduceCost;
     }
 
     @Override
@@ -31,7 +45,7 @@ public class GainCardOrIgnoreAction extends AbstractGameAction {
         }
         if (this.startDuration == this.duration) {
             CardGroup selectFrom = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            selectFrom.addToTop(gainCard);
+            selectFrom.group.addAll(gainCards);
             AbstractDungeon.cardRewardScreen.customCombatOpen(selectFrom.group, TEXT[0], true);
             tickDuration();
             return;
@@ -41,8 +55,12 @@ public class GainCardOrIgnoreAction extends AbstractGameAction {
             AbstractCard targetCard = AbstractDungeon.cardRewardScreen.discoveryCard;
             AbstractDungeon.cardRewardScreen.discoveryCard = null;
             TokenCardField.isToken.set(targetCard, false);
-            addToBot(new MakeTempCardInHandAction(targetCard, false, true));
+
             addToBot(new AddCardToDeckAction(targetCard.makeSameInstanceOf()));
+
+            if (reduceCost) targetCard.setCostForTurn(0);
+            addToBot(new MakeTempCardInHandAction(targetCard, false, true));
+            if (duplicate) addToBot(new MakeTempCardInHandAction(targetCard, false, true));
             isDone = true;
         }
 
