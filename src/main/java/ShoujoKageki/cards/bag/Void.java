@@ -18,7 +18,7 @@ public class Void extends BaseCard {
 
     public Void() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
-        GraveField.grave.set(this, true);
+//        GraveField.grave.set(this, true);
     }
 
     @Override

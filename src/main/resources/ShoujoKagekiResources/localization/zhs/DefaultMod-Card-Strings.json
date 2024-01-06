@@ -486,7 +486,7 @@
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "世界上最空虚的人",
-		"DESCRIPTION": "墓地 。 NL 摧毁抽牌堆，然后以 约定牌堆 代替抽牌堆。"
+		"DESCRIPTION": "摧毁抽牌堆，然后以 约定牌堆 代替抽牌堆。"
 	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",
