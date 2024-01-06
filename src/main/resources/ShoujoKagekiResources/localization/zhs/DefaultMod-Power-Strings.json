@@ -64,6 +64,14 @@
 			" 张手牌放入 #y约定牌堆 。"
 		]
 	},
+	"ShoujoKageki:ReserveStrengthPower": {
+		"NAME": "保留力量",
+		"DESCRIPTIONS": [
+			"在本回合保留你的 #y力量 。", 
+			"在接下来的 #y",
+			" 回合保留你的 #y力量 。"
+		]
+	},
 	"ShoujoKageki:CryPower": {
 		"NAME": "添麻烦了",
 		"DESCRIPTIONS": [

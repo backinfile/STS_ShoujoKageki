@@ -17,6 +17,7 @@ public class RetainHand extends BaseCard {
     public RetainHand() {
         super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE);
         this.color = CardColor.COLORLESS;
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     @Override
@@ -28,13 +29,14 @@ public class RetainHand extends BaseCard {
     public void onChoseThisOption() {
         super.onChoseThisOption();
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1))); // 手牌
+        addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, magicNumber))); // 手牌
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(1);
         }
     }
 }

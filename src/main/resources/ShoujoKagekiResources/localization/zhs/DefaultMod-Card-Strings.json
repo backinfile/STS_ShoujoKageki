@@ -329,20 +329,24 @@
 	},
 	"ShoujoKageki:OldPlace2": {
 		"NAME": "明年也要在这里相见",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 保留能量 ，手牌，或 格挡 一回合。",
-		"UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 保留能量 ，手牌，与 格挡 一回合。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 保留你的 能量 ，手牌， 格挡 ， 或 力量 !M! 回合。",
+		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:RetainBlock": {
 		"NAME": "保留格挡",
-		"DESCRIPTION": "保留格挡 1 回合 。"
+		"DESCRIPTION": "保留格挡 !M! 回合 。"
 	},
-	"ShoujoKageki:RetainEnegy": {
+	"ShoujoKageki:RetainEnergy": {
 		"NAME": "保留能量",
-		"DESCRIPTION": "保留能量 1 回合。"
+		"DESCRIPTION": "保留能量 !M! 回合。"
 	},
 	"ShoujoKageki:RetainHand": {
 		"NAME": "保留手牌",
-		"DESCRIPTION": "保留手牌 1 回合。"
+		"DESCRIPTION": "保留手牌 !M! 回合。"
+	},
+	"ShoujoKageki:RetainStrength": {
+		"NAME": "保留力量",
+		"DESCRIPTION": "保留力量 !M! 回合。"
 	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",

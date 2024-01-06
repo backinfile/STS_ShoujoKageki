@@ -6,17 +6,16 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.ConservePower;
-import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
-public class RetainEnegy extends BaseCard {
+public class RetainEnergy extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(RetainEnegy.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(RetainEnergy.class.getSimpleName());
 
-    public RetainEnegy() {
+    public RetainEnergy() {
         super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE);
         this.color = CardColor.COLORLESS;
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     @Override
@@ -28,13 +27,14 @@ public class RetainEnegy extends BaseCard {
     public void onChoseThisOption() {
         super.onChoseThisOption();
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new ConservePower(p, 1))); // 能量
+        addToBot(new ApplyPowerAction(p, p, new ConservePower(p, magicNumber))); // 能量
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(1);
         }
     }
 }
