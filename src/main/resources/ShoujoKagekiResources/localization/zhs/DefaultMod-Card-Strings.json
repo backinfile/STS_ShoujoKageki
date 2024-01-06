@@ -233,12 +233,12 @@
 	},
 	"ShoujoKageki:PickStar": {
 		"NAME": "摘星",
-		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，获得 [E] [E] 。",
+		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，然后获得 [E] [E] 。",
 		"UPGRADE_DESCRIPTION": "禁用 一个遗物，获得 [E] [E] [E] 。"
 	},
 	"ShoujoKageki:StarCrime": {
 		"NAME": "星罪",
-		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，抽 !M! 张牌。"
+		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，然后抽 !M! 张牌。"
 	},
 	"ShoujoKageki:Forgive": {
 		"NAME": "\"宽恕\"",

@@ -23,7 +23,7 @@
 		]
 	},
 	"ShoujoKageki:LockRelic": {
-		"NAME": "禁用的遗物",
+		"NAME": "上锁的遗物",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
 			"这里锁着 #y", " 。",
@@ -56,6 +56,14 @@
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
 			"在每场战斗开始时，将你牌组中超出30张的部分放入 #y约定牌堆 。"
+		]
+	},
+	"ShoujoKageki:CatRelic": {
+		"NAME": "棒球猫",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"被 #y禁用 时，改为获得 #y ",
+			" 点 #y格挡 。"
 		]
 	}
 }
