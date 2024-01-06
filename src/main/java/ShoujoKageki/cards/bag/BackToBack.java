@@ -31,11 +31,11 @@ public class BackToBack extends BaseCard {
         if (!Utils2.inBattlePhase()) return 0;
         if (BagField.isInfinite(false)) return 10;
         if (BagField.isChangeToDrawPile(false)) {
-            return AbstractDungeon.player.drawPile.size();
+            return Math.min(AbstractDungeon.player.drawPile.size(), 10);
         }
         CardGroup bag = BagField.getBag();
         if (bag == null) return 0;
-        return bag.size();
+        return Math.min(bag.size(), 10);
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
