@@ -55,7 +55,7 @@
 	},
 	"ShoujoKageki:TwistingStrike": {
 		"NAME": "扭转打击",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:EatTogether": {
 		"NAME": "一起吃饭吧",
@@ -199,7 +199,7 @@
 	},
 	"ShoujoKageki:NewDay": {
 		"NAME": "新的一天",
-		"DESCRIPTION": "打出的下 !M! 张牌进入 约定牌堆 。 NL 打出后进入 约定牌堆。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 打出的下 !M! 张牌进入 约定牌堆 。 NL 打出后进入 约定牌堆。"
 	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",

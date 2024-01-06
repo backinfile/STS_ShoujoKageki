@@ -29,8 +29,8 @@ public class BackToBack extends BaseCard {
 
     private int getBagCardsForGame() {
         if (!Utils2.inBattlePhase()) return 0;
-        if (BagField.isInfinite()) return 10;
-        if (BagField.isChangeToDrawPile()) {
+        if (BagField.isInfinite(false)) return 10;
+        if (BagField.isChangeToDrawPile(false)) {
             return AbstractDungeon.player.drawPile.size();
         }
         CardGroup bag = BagField.getBag();

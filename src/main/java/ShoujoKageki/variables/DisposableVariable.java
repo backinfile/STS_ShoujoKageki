@@ -76,7 +76,7 @@ public class DisposableVariable extends DynamicVariable { // Shine
         if (curValue < baseValue) {
             setValue(card, baseValue);
         }
-        Log.logger.info("reset card " + card.name + " to " + getValue(card));
+//        Log.logger.info("reset card " + card.name + " to " + getValue(card));
     }
 
     public static int getTotalShineValueInDeck() {

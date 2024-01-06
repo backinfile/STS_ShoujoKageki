@@ -68,11 +68,11 @@ public class BagFieldPatch {
                                                AbstractPlayer ___player, int ___numberOfCards,
                                                boolean ___optional) {
 
-            if (!BagField.isChangeToDrawPile()) {
+            if (!BagField.isChangeToDrawPile(false)) {
                 return SpireReturn.Continue();
             }
 
-            if (BagField.isInfinite()) {
+            if (BagField.isInfinite(false)) {
                 AbstractDungeon.actionManager.addToTop(new TakeRndTmpCardFromBagAction(___numberOfCards));
                 __instance.isDone = true;
                 return SpireReturn.Return();

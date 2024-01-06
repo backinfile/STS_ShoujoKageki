@@ -5,6 +5,7 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.PutToBagField;
 import ShoujoKageki.powers.PutToBagPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -15,12 +16,14 @@ public class NewDay extends BaseCard {
 
     public NewDay() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        this.baseBlock = 4;
         this.baseMagicNumber = this.magicNumber = 1;
         PutToBagField.putToBag.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
+        addToBot(new GainBlockAction(p, p, block));
         addToBot(new ApplyPowerAction(p, p, new PutToBagPower(magicNumber)));
     }
 
@@ -28,6 +31,7 @@ public class NewDay extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(2);
             upgradeMagicNumber(1);
         }
     }
