@@ -23,7 +23,7 @@ public class ShineOption extends AbstractCampfireOption {
         this.usable = true;
         this.img = TextureLoader.getTexture(ModInfo.makeUIPath(RAW_ID + ".png"));
 
-        if (getAllShineCards().isEmpty()) {
+        if (AbstractDungeon.player.masterDeck.isEmpty()) {
             this.usable = false;
         }
     }

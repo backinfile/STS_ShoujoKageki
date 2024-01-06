@@ -16,7 +16,7 @@ public class HairpinRelic extends BaseRelic {
     private int turnCount = 0;
 
     public HairpinRelic() {
-        super(ID, RAW_ID, RelicTier.STARTER);
+        super(ID, RAW_ID, RelicTier.STARTER, LandingSound.FLAT);
     }
 
     @Override

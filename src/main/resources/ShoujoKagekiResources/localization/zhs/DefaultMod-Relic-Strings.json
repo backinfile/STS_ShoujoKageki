@@ -32,23 +32,16 @@
 	},
 	"ShoujoKageki:DrawExtraRelic": {
 		"NAME": "怀表牌",
-		"FLAVOR": "怀表牌",
+		"FLAVOR": "",
 		"DESCRIPTIONS": [
 			"若回合内没有额外抽牌，则于下回合额外抽 #y1 张牌"
 		]
 	},
-	"ShoujoKageki:BlackMarketRelic": {
-		"NAME": "朋友关系",
-		"FLAVOR": "朋友关系",
-		"DESCRIPTIONS": [
-			"抽到黑市中购买的工具牌后，额外抽一张牌。"
-		]
-	},
-	"ShoujoKageki:BagDiscoverRelic": {
-		"NAME": "灵巧手指",
+	"ShoujoKageki:TapeRelic": {
+		"NAME": "胶带",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"从 口袋 中取回卡牌时，从5张牌中选择。"
+			"现在你可以在休息处为卡牌添加 #y闪耀 。"
 		]
 	}
 }

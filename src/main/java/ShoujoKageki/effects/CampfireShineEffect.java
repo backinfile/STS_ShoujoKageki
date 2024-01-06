@@ -2,6 +2,7 @@ package ShoujoKageki.effects;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.campfireOption.ShineOption;
+import ShoujoKageki.relics.TapeRelic;
 import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableField;
 import com.badlogic.gdx.Gdx;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
@@ -31,7 +33,7 @@ public class CampfireShineEffect extends AbstractGameEffect {
     private static final float DUR = 1F;
     private static final float DUR_HALF = 0.5F;
     private final ShineOption shineOption;
-    private int state = 0; // 0-State 1-OpenScreen 2-Finish 3-UnFinish
+    private int state = 0; // 0-Init 1-OpenScreen 2-Finish 3-UnFinish
     private Color screenColor;
 
     public CampfireShineEffect(ShineOption shineOption) {
@@ -43,16 +45,15 @@ public class CampfireShineEffect extends AbstractGameEffect {
     }
 
     public void update() {
-        Iterator var1;
         if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-            var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
-
-            while (var1.hasNext()) {
-                AbstractCard c = (AbstractCard) var1.next();
+            for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
 //                c.upgrade();
 //                AbstractDungeon.player.bottledCardUpgradeCheck(c);
-                DisposableVariable.setAlwaysShine(c);
+//                DisposableVariable.setAlwaysShine(c);
+                DisposableVariable.setValue(c, DisposableVariable.getValue(c) + 3);
+                AbstractRelic relic = AbstractDungeon.player.getRelic(TapeRelic.ID);
+                if (relic != null) relic.onTrigger();
                 shineOption.usable = false;
                 AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
                 state = 2;
@@ -64,7 +65,7 @@ public class CampfireShineEffect extends AbstractGameEffect {
 
         if (this.duration <= DUR_HALF && state == 0) { // to open grid
             state = 1;
-            AbstractDungeon.gridSelectScreen.open(ShineOption.getAllShineCards(), 1, TEXT[0], false, false, true, false);
+            AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck, 1, TEXT[0], false, false, true, false);
             AbstractDungeon.overlayMenu.cancelButton.show(GridCardSelectScreen.TEXT[1]);
         }
 
