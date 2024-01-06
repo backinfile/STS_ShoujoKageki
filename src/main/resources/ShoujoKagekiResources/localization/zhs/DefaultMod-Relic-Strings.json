@@ -43,5 +43,19 @@
 		"DESCRIPTIONS": [
 			"现在你可以在休息处为卡牌添加 #y闪耀 。"
 		]
+	},
+	"ShoujoKageki:FrogWaterCupRelic": {
+		"NAME": "青蛙水杯",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"每当你获得 #y闪耀牌 时，使其 #y闪耀 增加 #y1 。"
+		]
+	},
+	"ShoujoKageki:MrWhiteRelic": {
+		"NAME": "Mr.White",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"在每场战斗开始时，将你牌组中超出30张的部分放入 #y约定牌堆 。"
+		]
 	}
 }

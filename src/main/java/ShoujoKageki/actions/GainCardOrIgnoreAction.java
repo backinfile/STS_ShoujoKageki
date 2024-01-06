@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +47,9 @@ public class GainCardOrIgnoreAction extends AbstractGameAction {
         if (this.startDuration == this.duration) {
             CardGroup selectFrom = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             selectFrom.group.addAll(gainCards);
+            for (AbstractCard card : selectFrom.group) {
+                for (AbstractRelic relic : AbstractDungeon.player.relics) relic.onPreviewObtainCard(card);
+            }
             AbstractDungeon.cardRewardScreen.customCombatOpen(selectFrom.group, TEXT[0], true);
             tickDuration();
             return;

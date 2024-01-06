@@ -26,7 +26,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 public class BagFieldPatch {
     @SpirePatch(
             clz = AbstractPlayer.class,
-            method = "applyStartOfCombatPreDrawLogic"
+            method = "preBattlePrep"
     )
     public static class CombatStart {
         public static void Prefix(AbstractPlayer p) {
