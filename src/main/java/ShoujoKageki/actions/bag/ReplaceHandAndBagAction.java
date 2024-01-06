@@ -1,23 +1,14 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.actions.PutBagCardsToHandAction;
 import ShoujoKageki.cards.patches.field.BagField;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static ShoujoKageki.ModInfo.makeID;
 
 public class ReplaceHandAndBagAction extends AbstractGameAction {
 
@@ -40,10 +31,10 @@ public class ReplaceHandAndBagAction extends AbstractGameAction {
 
 
             if (BagField.isInfinite()) {
-                addToBot(new TakeRndTmpCardFromBagAction(cardsInBag.size()));
+                addToBot(new TakeRndTmpCardFromBagAction(BaseMod.MAX_HAND_SIZE));
                 return;
             }
-            addToBot(new PutBagCardsToHandAction(player, cardsInBag));
+            addToBot(new TakeSpecCardFromBagAction(cardsInBag, true));
             return;
         }
 
@@ -62,6 +53,6 @@ public class ReplaceHandAndBagAction extends AbstractGameAction {
             return;
         }
 //        addToBot(new PutHandCardIntoBagAction(player, true, false));
-        addToBot(new PutBagCardsToHandAction(player, bagCards));
+        addToBot(new TakeSpecCardFromBagAction(bagCards, true));
     }
 }

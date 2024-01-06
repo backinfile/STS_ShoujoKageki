@@ -4,6 +4,8 @@ import ShoujoKageki.cards.bag.Continue;
 import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.character.BasePlayer;
+import ShoujoKageki.effects.ShowBagCardAndAddToDiscardEffect;
+import ShoujoKageki.effects.ShowBagCardToHandEffect;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -36,6 +38,13 @@ public class TakeRndTmpCardFromBagAction extends AbstractGameAction {
             int handSize = player.hand.size();
             for (int i = 0; i < amount; i++) {
                 AbstractCard curCard = new Continue();//AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
+                if (BagField.isChangeToDrawPile(false)) {
+                    curCard.current_x = 0;
+                    curCard.current_y = -200.0F * Settings.scale;
+                } else {
+                    curCard.current_x = player.hb.cX;
+                    curCard.current_y = player.hb.cY;
+                }
 
                 if (asDrawnCards) {
                     DrawCardAction.drawnCards.add(curCard);
@@ -47,9 +56,9 @@ public class TakeRndTmpCardFromBagAction extends AbstractGameAction {
                 BagFieldPatch.triggerOnTakeFromBag(curCard);
 
                 if (handSize + i >= BaseMod.MAX_HAND_SIZE) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(curCard, player.hb.cX, player.hb.cY));
+                    AbstractDungeon.effectList.add(new ShowBagCardAndAddToDiscardEffect(curCard));
                 } else {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(curCard, player.hb.cX, player.hb.cY));
+                    AbstractDungeon.effectList.add(new ShowBagCardToHandEffect(curCard));
                 }
             }
             addToTop(new CheckBagEmptyAction());

@@ -34,7 +34,7 @@ public class PlayBagTopCardAction extends AbstractGameAction {
 
             if (BagField.isInfinite()) {
                 Continue card = new Continue();
-                if (BagField.isChangeToDrawPile()) {
+                if (BagField.isChangeToDrawPile(false)) {
                     card.current_x = 0;
                     card.current_y = -200.0F * Settings.scale;
                 } else {

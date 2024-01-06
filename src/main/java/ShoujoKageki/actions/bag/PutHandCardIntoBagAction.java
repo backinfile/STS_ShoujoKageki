@@ -1,7 +1,5 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.actions.PutBagCardsToHandAction;
-import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -12,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ShoujoKageki.cards.patches.field.BagField;
 
 import java.util.ArrayList;
 import java.util.List;
