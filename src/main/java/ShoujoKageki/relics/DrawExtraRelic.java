@@ -58,5 +58,6 @@ public class DrawExtraRelic extends BaseRelic {
     public void onVictory() {
         super.onVictory();
         setCounter(-1);
+        stopPulse();
     }
 }

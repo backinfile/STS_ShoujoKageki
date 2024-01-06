@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.globalMove;
 
+import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -17,7 +18,7 @@ public class Spin extends BaseCard {
     public Spin() {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 4;
-        this.baseMagicNumber = this.magicNumber = 1;
+        this.baseMagicNumber = this.magicNumber = 0;
         this.logGlobalMove = true;
     }
 
@@ -40,6 +41,7 @@ public class Spin extends BaseCard {
         magicNumber = baseMagicNumber = 0;
         isMagicNumberModified = false;
         initializeDescription();
+        Log.logger.info("reset");
     }
 
     private void onTrigger() {
@@ -48,43 +50,44 @@ public class Spin extends BaseCard {
         isMagicNumberModified = true;
         initializeDescription();
         flash();
+//        new RuntimeException("").printStackTrace();
     }
 
-    @Override
-    public void triggerOnPutInBag() {
-        super.triggerOnPutInBag();
+//    @Override
+//    public void triggerOnPutInBag() {
+//        super.triggerOnPutInBag();
+//        onTrigger();
+//    }
+
+        @Override
+    public void triggerOnGlobalMove() {
+        super.triggerOnGlobalMove();
         onTrigger();
     }
 
-    //    @Override
-//    public void triggerOnGlobalMove() {
-//        super.triggerOnGlobalMove();
-//        onTrigger();
-//    }
-//
-//    @Override
-//    public void triggerOnEndOfPlayerTurn() {
-//        super.triggerOnEndOfPlayerTurn();
-//        reset();
-//    }
-//
-//    @Override
-//    public void triggerOnEndOfPlayerTurnInBag() {
-//        super.triggerOnEndOfPlayerTurnInBag();
-//        reset();
-//    }
-//
-//    @Override
-//    public void triggerOnEndOfPlayerTurnInDrawPile() {
-//        super.triggerOnEndOfPlayerTurnInDrawPile();
-//        reset();
-//    }
-//
-//    @Override
-//    public void triggerOnEndOfPlayerTurnInDiscardPile() {
-//        super.triggerOnEndOfPlayerTurnInDiscardPile();
-//        reset();
-//    }
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        super.triggerOnEndOfPlayerTurn();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInBag() {
+        super.triggerOnEndOfPlayerTurnInBag();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDrawPile() {
+        super.triggerOnEndOfPlayerTurnInDrawPile();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDiscardPile() {
+        super.triggerOnEndOfPlayerTurnInDiscardPile();
+        reset();
+    }
 
     @Override
     public void upgrade() {

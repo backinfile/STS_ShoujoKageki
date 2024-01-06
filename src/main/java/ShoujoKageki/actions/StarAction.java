@@ -73,7 +73,7 @@ public class StarAction extends AbstractGameAction {
 //        if (bag != null && !BagField.isInfinite(false)) {
 //            cardPools.add(bag);
 //        }
-        if (!BagField.isChangeToDrawPile()) {
+        if (!BagField.isChangeToDrawPile(false)) {
             cardPools.add(p.drawPile);
         }
 

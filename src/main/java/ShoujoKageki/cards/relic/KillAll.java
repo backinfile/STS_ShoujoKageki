@@ -25,6 +25,7 @@ public class KillAll extends BaseCard {
         this.baseDamage = 15;
         this.magicNumber = this.baseMagicNumber = 1;
         DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
