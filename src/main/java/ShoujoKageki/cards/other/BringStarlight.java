@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKageki.ModInfo.makeID;
 
-@AutoAdd.Ignore
 public class BringStarlight extends BaseCard {
     public static final String ID = makeID(BringStarlight.class.getSimpleName());
 
