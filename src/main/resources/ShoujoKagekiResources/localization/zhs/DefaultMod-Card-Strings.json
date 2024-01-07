@@ -199,7 +199,7 @@
 	},
 	"ShoujoKageki:NewDay": {
 		"NAME": "新的一天",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 打出的下 !M! 张牌进入 约定牌堆 。 NL 打出后进入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 此牌和你打出的下 !M! 张牌进入 约定牌堆 。"
 	},
 	"ShoujoKageki:ToTheStage": {
 		"NAME": "迈向那个舞台",
@@ -234,7 +234,7 @@
 	"ShoujoKageki:PickStar": {
 		"NAME": "摘星",
 		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，然后获得 [E] [E] 。",
-		"UPGRADE_DESCRIPTION": "禁用 一个遗物，获得 [E] [E] [E] 。"
+		"UPGRADE_DESCRIPTION": "禁用 一个遗物，然后获得 [E] [E] [E] 。"
 	},
 	"ShoujoKageki:StarCrime": {
 		"NAME": "星罪",
@@ -242,7 +242,7 @@
 	},
 	"ShoujoKageki:Forgive": {
 		"NAME": "\"宽恕\"",
-		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，对所有敌人造成 !D! 点伤害。"
+		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，然后对所有敌人造成 !D! 点伤害。"
 	},
 	"ShoujoKageki:StarGuide": {
 		"NAME": "星光指引",

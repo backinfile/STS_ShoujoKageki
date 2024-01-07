@@ -21,35 +21,36 @@ public class FrogWaterCupRelic extends BaseRelic {
         super(ID, RAW_ID, RelicTier.COMMON, LandingSound.FLAT);
     }
 
-    public void onEquip() {
-        Iterator var1 = AbstractDungeon.combatRewardScreen.rewards.iterator();
-
-        while (true) {
-            RewardItem reward;
-            do {
-                if (!var1.hasNext()) {
-                    return;
-                }
-
-                reward = (RewardItem) var1.next();
-            } while (reward.cards == null);
-
-            Iterator var3 = reward.cards.iterator();
-
-            while (var3.hasNext()) {
-                AbstractCard c = (AbstractCard) var3.next();
-                this.onPreviewObtainCard(c);
-            }
-        }
-    }
+//    public void onEquip() {
+//        Iterator var1 = AbstractDungeon.combatRewardScreen.rewards.iterator();
+//
+//        while (true) {
+//            RewardItem reward;
+//            do {
+//                if (!var1.hasNext()) {
+//                    return;
+//                }
+//
+//                reward = (RewardItem) var1.next();
+//            } while (reward.cards == null);
+//
+//            Iterator var3 = reward.cards.iterator();
+//
+//            while (var3.hasNext()) {
+//                AbstractCard c = (AbstractCard) var3.next();
+//                this.onPreviewObtainCard(c);
+//            }
+//        }
+//    }
 
     public void onPreviewObtainCard(AbstractCard c) {
-        this.onObtainCard(c);
+//        this.onObtainCard(c);
     }
 
     public void onObtainCard(AbstractCard c) {
         if (DisposableVariable.isDisposableCard(c)) {
             DisposableVariable.setValue(c, DisposableVariable.getValue(c) + 1);
+            flash();
         }
     }
 
