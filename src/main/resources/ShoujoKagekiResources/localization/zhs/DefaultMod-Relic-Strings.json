@@ -79,5 +79,12 @@
 		"DESCRIPTIONS": [
 			"在回合开始时获得 [E] 。 NL 在每个回合开始时， #y禁用 #y2 个 遗物。"
 		]
+	},
+	"ShoujoKageki:ShineCardRelic": {
+		"NAME": "闪耀会员卡",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"商店中的所有卡牌获得 #y闪耀 3，且打折 #b50% 。"
+		]
 	}
 }
