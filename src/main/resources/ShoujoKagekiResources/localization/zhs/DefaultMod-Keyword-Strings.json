@@ -28,6 +28,13 @@
 		"DESCRIPTION": "临时力量会在本回合让攻击获得额外的伤害。"
 	},
 	{
+		"PROPER_NAME": "缓冲",
+		"NAMES": [
+			"缓冲"
+		],
+		"DESCRIPTION": "阻止下一次你受到的生命值损伤。"
+	},
+	{
 		"PROPER_NAME": "闪耀",
 		"NAMES": [
 			"销毁", "闪耀", "工具"

@@ -10,6 +10,7 @@ import java.util.HashMap;
 public class AudioPatch {
 
     public static final String Karen_OnSelect = "Karen_OnSelect.ogg";
+    public static final String Revue = "Revue.ogg";
 
     @SpirePatch(
             clz = SoundMaster.class,
@@ -18,6 +19,7 @@ public class AudioPatch {
     public static class SoundPatch {
         public static void Postfix(SoundMaster instance, HashMap<String, Sfx> ___map) {
             load(instance, ___map, Karen_OnSelect);
+            load(instance, ___map, Revue);
         }
     }
 

@@ -210,7 +210,6 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.addCustomScreen(new BlackMarketScreen());
         BaseMod.addCustomScreen(new BagPileViewScreen());
 
-        // TODO
         BaseMod.registerCustomReward(RewardPatch.TypePatch.SHINE_CARD, new BaseMod.LoadCustomReward() {
             @Override
             public CustomReward onLoad(RewardSave rewardSave) {
