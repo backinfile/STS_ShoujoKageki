@@ -317,6 +317,10 @@
 	},
 	"ShoujoKageki:Cry": {
 		"NAME": "添麻烦了",
+		"DESCRIPTION": "获得 力量 时， 对所有敌人造成当前 力量 值的伤害。"
+	},
+	"ShoujoKageki:CryTmp2": {
+		"NAME": "添麻烦了",
 		"DESCRIPTION": "当有 力量 发生变化时， 获得变化数量 !M! 倍的 格挡 。"
 	},
 	"ShoujoKageki:CryTmp": {

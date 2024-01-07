@@ -25,9 +25,10 @@ public class Position0 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMagicNumber(1);
+//            isInnate = true;
+//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+//            initializeDescription();
         }
     }
 }

@@ -67,4 +67,8 @@ public abstract class BasePower extends AbstractPower {
 
     }
 
+    public void onStrengthIncrease(int after) {
+
+    }
+
 }

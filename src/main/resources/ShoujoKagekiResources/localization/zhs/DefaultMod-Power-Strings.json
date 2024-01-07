@@ -75,6 +75,13 @@
 	"ShoujoKageki:CryPower": {
 		"NAME": "添麻烦了",
 		"DESCRIPTIONS": [
+			"获得 #y力量 时， 对所有敌人造成当前 #y力量 值的伤害。",
+			"获得 #y力量 时， 对所有敌人造成当前 #y力量 值 #y", " 倍 的伤害。"
+		]
+	},
+	"ShoujoKageki:CryPowerTmp": {
+		"NAME": "添麻烦了",
+		"DESCRIPTIONS": [
 			"当有 #y力量 发生变化时， 获得变化数量 #y",
 			" 倍的 #y格挡 。"
 		]

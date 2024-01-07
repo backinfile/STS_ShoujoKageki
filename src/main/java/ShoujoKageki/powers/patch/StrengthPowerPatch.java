@@ -1,20 +1,13 @@
 package ShoujoKageki.powers.patch;
 
-import ShoujoKageki.Log;
 import ShoujoKageki.powers.BasePower;
-import ShoujoKageki.variables.patch.DisposableFieldSavePatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import javassist.CtBehavior;
-
-import java.util.HashMap;
 
 public class StrengthPowerPatch {
     @SpirePatch(
@@ -35,8 +28,18 @@ public class StrengthPowerPatch {
         @SpireInsertPatch(locator = Locator.class)
         public static void Insert(ApplyPowerAction __instance, AbstractPower ___powerToApply) {
             for (AbstractPower power : AbstractDungeon.player.powers) {
-                if (power instanceof BasePower)
+                if (power instanceof BasePower) {
                     ((BasePower) power).onCreatureApplyPower(___powerToApply, __instance.target, __instance.source);
+                }
+            }
+            if (___powerToApply instanceof StrengthPower && ___powerToApply.amount > 0) {
+                AbstractPower strengthPower = __instance.target.getPower(StrengthPower.POWER_ID);
+                int oldStrength = strengthPower != null ? strengthPower.amount : 0;
+                for (AbstractPower power : __instance.target.powers) {
+                    if (power instanceof BasePower) {
+                        ((BasePower) power).onStrengthIncrease(oldStrength + ___powerToApply.amount);
+                    }
+                }
             }
         }
 
@@ -47,4 +50,29 @@ public class StrengthPowerPatch {
             }
         }
     }
+
+
+//    @SpirePatch(
+//            clz = StrengthPower.class,
+//            method = "onInitialApplication"
+//    )
+//    public static class OnInitialApplication {
+//        public static void Postfix(StrengthPower __instance) {
+//            for (AbstractPower power : __instance.owner.powers) {
+//                if (power instanceof BasePower) ((BasePower) power).onStrengthIncrease(__instance.amount);
+//            }
+//        }
+//    }
+//
+//    @SpirePatch(
+//            clz = StrengthPower.class,
+//            method = "stackPower"
+//    )
+//    public static class StackPower {
+//        public static void Postfix(StrengthPower __instance) {
+//            for (AbstractPower power : __instance.owner.powers) {
+//                if (power instanceof BasePower) ((BasePower) power).onStrengthIncrease(__instance.amount);
+//            }
+//        }
+//    }
 }
