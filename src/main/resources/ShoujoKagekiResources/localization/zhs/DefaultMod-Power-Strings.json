@@ -153,6 +153,12 @@
 			"#y约定牌堆 将提供 #y无限 的 #y续演 。"
 		]
 	},
+	"ShoujoKageki:FormPower": {
+		"NAME": "觉醒形态",
+		"DESCRIPTIONS": [
+			"卡牌给予的伤害和 格挡 固定 为 #y", " 。"
+		]
+	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {
 		"NAME": "暗中窥视",
 		"DESCRIPTIONS": [
