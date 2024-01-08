@@ -17,7 +17,6 @@ public class Form extends BaseCard {
     public Form() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 20;
-        isEthereal = true;
     }
 
     @Override

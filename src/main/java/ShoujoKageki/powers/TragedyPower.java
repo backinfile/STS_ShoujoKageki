@@ -30,14 +30,21 @@ public class TragedyPower extends BasePower {
     }
 
     @Override
-    public void onVictory() {
-        super.onVictory();
+    public void onInitialApplication() {
+        super.onInitialApplication();
 
         AbstractRelic.RelicTier relicTier = AbstractDungeon.returnRandomRelicTier();
         AbstractRelic relic = AbstractDungeon.returnRandomRelic(relicTier);
         AbstractDungeon.getCurrRoom().addRelicToRewards(relic);
+
+
         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(curse.makeCopy(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
-        flash();
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+flash();
     }
 
     @Override

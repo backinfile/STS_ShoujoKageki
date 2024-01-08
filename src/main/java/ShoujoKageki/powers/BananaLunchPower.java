@@ -26,7 +26,7 @@ public class BananaLunchPower extends BasePower {
         if (isPlayer) {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 this.flash();
-                this.addToBot(new MakeTempCardInBagAction(new EatFood2(), this.amount, false, false));
+                this.addToBot(new MakeTempCardInBagAction(new EatFood2(), this.amount, true, false));
             }
         }
     }

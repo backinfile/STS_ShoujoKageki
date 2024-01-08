@@ -17,7 +17,7 @@ public class BananaLunch extends BaseCard {
     public BananaLunch() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
         this.cardsToPreview = new EatFood2();
-        this.baseMagicNumber = this.magicNumber = 1;
+        this.baseMagicNumber = this.magicNumber = 2;
     }
 
     @Override

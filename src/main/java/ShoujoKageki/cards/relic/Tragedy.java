@@ -1,13 +1,17 @@
 package ShoujoKageki.cards.relic;
 
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.powers.PassionPower;
 import ShoujoKageki.powers.TragedyPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Decay;
 import com.megacrit.cardcrawl.cards.curses.Injury;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import static ShoujoKageki.ModInfo.makeID;
 
@@ -22,7 +26,8 @@ public class Tragedy extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new TragedyPower(this.cardsToPreview.makeCopy())));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardsToPreview.makeCopy(), Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
+        addToBot(new ApplyPowerAction(p, p, new PassionPower()));
     }
 
     @Override

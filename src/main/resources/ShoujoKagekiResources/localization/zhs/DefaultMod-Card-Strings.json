@@ -216,8 +216,8 @@
 	},
 	"ShoujoKageki:Tragedy": {
 		"NAME": "悲剧",
-		"DESCRIPTION": "战斗结束时，获得 *腐朽 和一个随机遗物。",
-		"UPGRADE_DESCRIPTION": "战斗结束时，获得 *受伤 和一个随机遗物。"
+		"DESCRIPTION": "增加一张 *腐朽 到你的牌组。 NL 战斗结束时，获得一个随机遗物。",
+		"UPGRADE_DESCRIPTION": "增加一张 *受伤 到你的牌组。 NL 战斗结束时，获得一个随机遗物。"
 	},
 	"ShoujoKageki:Passion": {
 		"NAME": "激情",
@@ -494,7 +494,7 @@
 	},
 	"ShoujoKageki:Form": {
 		"NAME": "觉醒形态",
-		"DESCRIPTION": "虚无 。 NL 卡牌给予的伤害和 格挡 固定 为 !M! 。"
+		"DESCRIPTION": "卡牌给予的伤害和 格挡 固定 为 !M! 。"
 	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",
