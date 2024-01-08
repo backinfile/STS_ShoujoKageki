@@ -3,9 +3,7 @@ package ShoujoKageki.actions.bag;
 import ShoujoKageki.cards.bag.Continue;
 import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.cards.shine.Continue02;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
@@ -60,7 +58,7 @@ public class PlayBagTopCardAction extends AbstractGameAction {
             AbstractCard card = bag.getBottomCard();
             bag.removeCard(card);
             AbstractDungeon.getCurrRoom().souls.remove(card);
-            BagFieldPatch.triggerOnTakeFromBag(card);
+            BagFieldPatch.triggerOnTakeFromBagToHand(card);
             addToBot(new ApplyBagPowerAction());
             addToBot(new CheckBagEmptyAction());
 

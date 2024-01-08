@@ -4,6 +4,8 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.patches.BagFieldDrawCardPatch;
+import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.powers.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -97,10 +99,7 @@ public class DiscardFromBagAction extends AbstractGameAction {
     }
 
     private void trigger(AbstractCard card) {
-        if (card instanceof BaseCard) ((BaseCard) card).triggerOnTakeFromBag();
-        for (AbstractPower power : AbstractDungeon.player.powers) {
-            if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
-        }
+        BagFieldPatch.triggerOnTakeFromBag(card);
     }
 }
 

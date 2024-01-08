@@ -7,16 +7,13 @@ import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.powers.BasePower;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -84,7 +81,7 @@ public class BagFieldPatch {
                 }
                 if (___player.drawPile.size() <= ___numberOfCards && !___optional) {
                     for (AbstractCard card : ___player.drawPile.group) {
-                        triggerOnTakeFromBag(card);
+                        triggerOnTakeFromBagToHand(card);
                     }
                     AbstractDungeon.actionManager.addToTop(new CheckBagEmptyAction());
                 }
@@ -92,7 +89,7 @@ public class BagFieldPatch {
 
                 if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                     for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
-                        triggerOnTakeFromBag(card);
+                        triggerOnTakeFromBagToHand(card);
                     }
                     AbstractDungeon.actionManager.addToTop(new CheckBagEmptyAction());
                 }
@@ -137,7 +134,7 @@ public class BagFieldPatch {
         }
     }
 
-    public static void triggerOnTakeFromBag(AbstractCard card) {
+    public static void triggerOnTakeFromBagToHand(AbstractCard card) {
         if (card instanceof BaseCard) {
             ((BaseCard) card).triggerOnTakeFromBag();
             ((BaseCard) card).triggerOnTakeFromBagToHand();
@@ -146,13 +143,12 @@ public class BagFieldPatch {
             if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
         }
     }
-//    public static void triggerOnTakeFromBag(AbstractCard card) {
-//        if (card instanceof BaseCard) {
-//            ((BaseCard) card).triggerOnTakeFromBag();
-//            ((BaseCard) card).triggerOnTakeFromBagToHand();
-//        }
-//        for (AbstractPower power : AbstractDungeon.player.powers) {
-//            if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
-//        }
-//    }
+    public static void triggerOnTakeFromBag(AbstractCard card) {
+        if (card instanceof BaseCard) {
+            ((BaseCard) card).triggerOnTakeFromBag();
+        }
+        for (AbstractPower power : AbstractDungeon.player.powers) {
+            if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
+        }
+    }
 }

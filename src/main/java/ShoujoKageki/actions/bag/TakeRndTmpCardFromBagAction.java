@@ -12,8 +12,6 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 import java.util.ArrayList;
 
@@ -53,7 +51,7 @@ public class TakeRndTmpCardFromBagAction extends AbstractGameAction {
                     curCard.setCostForTurn(0);
                 }
 
-                BagFieldPatch.triggerOnTakeFromBag(curCard);
+                BagFieldPatch.triggerOnTakeFromBagToHand(curCard);
 
                 if (handSize + i >= BaseMod.MAX_HAND_SIZE) {
                     AbstractDungeon.effectList.add(new ShowBagCardAndAddToDiscardEffect(curCard));

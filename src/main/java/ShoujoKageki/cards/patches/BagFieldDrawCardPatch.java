@@ -2,14 +2,17 @@ package ShoujoKageki.cards.patches;
 
 import ShoujoKageki.Log;
 import ShoujoKageki.actions.bag.CheckBagEmptyAction;
-import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
 import ShoujoKageki.cards.patches.field.BagField;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import javassist.CtBehavior;
+
+import java.util.ArrayList;
 
 public class BagFieldDrawCardPatch {
 
@@ -62,6 +65,30 @@ public class BagFieldDrawCardPatch {
                 }
             } else {
                 Log.logger.info("DrawCardAction: draw 0 cards");
+            }
+        }
+    }
+
+
+    @SpirePatch(
+            clz = PlayTopCardAction.class,
+            method = "update"
+    )
+    public static class PlayTopCardActionPatch {
+        @SpireInsertPatch(
+                locator = Locator.class,
+                localvars = "card"
+        )
+        public static void Insert(PlayTopCardAction __instance, AbstractCard card) {
+            if (BagField.isChangeToDrawPile(false)) {
+                BagFieldPatch.triggerOnTakeFromBag(card);
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(ArrayList.class, "remove");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
         }
     }

@@ -57,7 +57,6 @@ public class NextStage extends BaseCard {
 
     @Override
     public void triggerOnTakeFromBag() {
-        super.triggerOnTakeFromBag();
         if (!upgraded) onTrigger();
     }
 

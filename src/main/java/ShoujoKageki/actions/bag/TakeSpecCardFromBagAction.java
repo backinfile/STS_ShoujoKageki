@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 
 import java.util.ArrayList;
 
@@ -47,7 +46,7 @@ public class TakeSpecCardFromBagAction extends AbstractGameAction {
             for (int i = 0; i < toTake; i++) {
                 AbstractCard curCard = cardsToTake.get(i);
 
-                BagFieldPatch.triggerOnTakeFromBag(curCard);
+                BagFieldPatch.triggerOnTakeFromBagToHand(curCard);
 
                 if (handSize + i >= BaseMod.MAX_HAND_SIZE) {
                     if (discardOverflowedCard) {
