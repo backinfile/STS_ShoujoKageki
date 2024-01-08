@@ -17,11 +17,12 @@ public class Form extends BaseCard {
     public Form() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 20;
+        isEthereal = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new FormPower(magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new FormPower()));
     }
 
     @Override
@@ -29,8 +30,9 @@ public class Form extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(5);
-//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-//            initializeDescription();
+            isEthereal = false;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

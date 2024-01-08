@@ -156,7 +156,7 @@
 	"ShoujoKageki:FormPower": {
 		"NAME": "觉醒形态",
 		"DESCRIPTIONS": [
-			"卡牌给予的伤害和 格挡 固定 为 #y", " 。"
+			"每个回合开始时，抽满手牌。"
 		]
 	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {

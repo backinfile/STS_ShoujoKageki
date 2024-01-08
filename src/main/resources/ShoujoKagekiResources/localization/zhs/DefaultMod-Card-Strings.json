@@ -494,7 +494,8 @@
 	},
 	"ShoujoKageki:Form": {
 		"NAME": "觉醒形态",
-		"DESCRIPTION": "卡牌给予的伤害和 格挡 固定 为 !M! 。"
+		"DESCRIPTION": "虚无 。 NL 每个回合开始时，抽满手牌。",
+		"UPGRADE_DESCRIPTION": "每个回合开始时，抽满手牌。"
 	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",
