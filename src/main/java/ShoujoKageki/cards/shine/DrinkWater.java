@@ -18,6 +18,7 @@ public class DrinkWater extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
         DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
+        exhaust = true;
     }
 
     @Override
