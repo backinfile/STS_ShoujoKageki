@@ -320,7 +320,7 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
 	},
 	"ShoujoKageki:Financier": {
-		"NAME": "banana费南雪",
+		"NAME": "Banana费南雪",
 		"DESCRIPTION": "获得 !M! 点 力量 。 NL 每两回合保留 力量 1 回合。"
 	},
 	"ShoujoKageki:CryTmp3": {
@@ -420,8 +420,8 @@
 	},
 	"ShoujoKageki:Position0": {
 		"NAME": "Position 0",
-		"DESCRIPTION": "每回合第 !M! 次 造成未被格挡的伤害时，获得等量 格挡 。",
-		"UPGRADE_DESCRIPTION": "每回合前 !M! 次 造成未被格挡的伤害时，获得等量 格挡 。"
+		"DESCRIPTION": "每回合第 !M! 次 造成未被格挡的攻击伤害时，获得等量 格挡 。",
+		"UPGRADE_DESCRIPTION": "每回合前 !M! 次 造成未被格挡的攻击伤害时，获得等量 格挡 。"
 	},
 	"ShoujoKageki:Position0Tmp": {
 		"NAME": "Position 0",

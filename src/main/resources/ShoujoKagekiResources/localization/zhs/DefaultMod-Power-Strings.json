@@ -29,7 +29,7 @@
 	"ShoujoKageki:Position0Power": {
 		"NAME": "Position 0",
 		"DESCRIPTIONS": [
-			"每回合前 #y", " 次 造成未被格挡的伤害时，获得等量 #y格挡 。"
+			"每回合前 #y", " 次 造成未被格挡的攻击伤害时，获得等量 #y格挡 。"
 		]
 	},
 	"ShoujoKageki:Position0TmpPower": {
@@ -79,7 +79,7 @@
 		]
 	},
 	"ShoujoKageki:FinancierPower": {
-		"NAME": "费南雪",
+		"NAME": "Banana费南雪",
 		"DESCRIPTIONS": [
 			"每两回合保留 #y力量 #y", " 回合。"
 		]
