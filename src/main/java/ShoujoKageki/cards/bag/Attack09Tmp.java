@@ -3,19 +3,21 @@ package ShoujoKageki.cards.bag;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.PutToBagField;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Attack09 extends BaseCard {
+@AutoAdd.Ignore
+public class Attack09Tmp extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(Attack09.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(Attack09Tmp.class.getSimpleName());
 
-    public Attack09() {
-        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 6;
+    public Attack09Tmp() {
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        this.baseDamage = 12;
         PutToBagField.putToBag.set(this, true);
     }
 
@@ -28,7 +30,7 @@ public class Attack09 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(4);
         }
     }
 }

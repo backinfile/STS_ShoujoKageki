@@ -16,7 +16,7 @@ public class Spin extends BaseCard {
     public static final String ID = ModInfo.makeID(Spin.class.getSimpleName());
 
     public Spin() {
-        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 4;
         this.baseMagicNumber = this.magicNumber = 0;
         this.logGlobalMove = true;
@@ -38,10 +38,10 @@ public class Spin extends BaseCard {
     }
 
     public void reset() {
-        magicNumber = baseMagicNumber = 0;
-        isMagicNumberModified = false;
-        initializeDescription();
-        Log.logger.info("reset");
+//        magicNumber = baseMagicNumber = 0;
+//        isMagicNumberModified = false;
+//        initializeDescription();
+//        Log.logger.info("reset");
     }
 
     private void onTrigger() {

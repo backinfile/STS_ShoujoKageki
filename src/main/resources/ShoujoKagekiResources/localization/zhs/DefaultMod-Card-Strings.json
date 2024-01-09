@@ -59,6 +59,10 @@
 	},
 	"ShoujoKageki:EatTogether": {
 		"NAME": "一起吃饭吧",
+		"DESCRIPTION": "获得 !M! 点 临时力量 。 NL 保留力量 !ShoujoKageki:SM! 回合 。"
+	},
+	"ShoujoKageki:EatTogetherTmp": {
+		"NAME": "一起吃饭吧",
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 每场战斗开始时，将 !M! 张 *三明治 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:EatFood2": {
@@ -354,7 +358,7 @@
 	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 此牌在牌堆之间移动时，在本回合增加攻击次数。"
+		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 在牌堆之间移动时，在本场战斗中增加攻击次数。"
 	},
 	"ShoujoKageki:Continue02": {
 		"NAME": "永无结束的命运舞台",
@@ -375,6 +379,11 @@
 		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
 	},
 	"ShoujoKageki:Attack09": {
+		"NAME": "不再遥不可及",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 打出后进入 约定牌堆 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
+	},
+	"ShoujoKageki:Attack09Tmp": {
 		"NAME": "不再遥不可及",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 打出后进入 约定牌堆 。",
 		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"

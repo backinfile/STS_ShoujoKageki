@@ -18,7 +18,7 @@ public class Parry extends BaseCard {
     private int extraBlock = 0;
 
     public Parry() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseBlock = BASE_BLOCK;
         this.baseMagicNumber = this.magicNumber = 1;
     }

@@ -15,14 +15,14 @@ public class EatFood2 extends BaseCard {
     public EatFood2() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE);
         this.color = CardColor.COLORLESS;
-        this.baseMagicNumber = this.magicNumber = 2;
+        this.baseMagicNumber = this.magicNumber = 4;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2)));
-        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber)));
     }
 
     @Override
