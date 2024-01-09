@@ -17,11 +17,11 @@
 	},
 	"ShoujoKageki:Fall": {
 		"NAME": "坠落",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 选择 !M! 张手牌放入 约定牌堆 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:WhosPromise": {
 		"NAME": "翩翩旋转的双人舞",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌，然后选择 !M! 张手牌放入其中。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽 !M! 张牌，然后放入 !M! 张牌。"
 	},
 	"ShoujoKageki:Bridge": {
 		"NAME": "约定之塔桥",
@@ -38,7 +38,7 @@
 	},
 	"ShoujoKageki:WeKnowTmp": {
 		"NAME": "约定的舞台",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 在下回合从 约定牌堆 中抽取 !M! 张牌。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 在下回合从 约定牌堆 中抽 !M! 张牌。"
 	},
 	"ShoujoKageki:TowerOfPromise": {
 		"NAME": "约定之塔",
@@ -67,7 +67,7 @@
 	},
 	"ShoujoKageki:Attack08": {
 		"NAME": "即使渺小的光芒",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽取 !M! 张牌。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽 !M! 张牌。"
 	},
 	"ShoujoKageki:NeverRetreat02": {
 		"NAME": "绝不认输",
@@ -128,8 +128,8 @@
 	},
 	"ShoujoKageki:Aquarium": {
 		"NAME": "水族馆",
-		"DESCRIPTION": "每个回合开始时，抽 !M! 张牌， 然后选择 !M! 张手牌放入 约定牌堆 。",
-		"UPGRADE_DESCRIPTION": "固有 。 NL 每个回合开始时，抽 !M! 张牌， 然后选择 !M! 张手牌放入 约定牌堆 。"
+		"DESCRIPTION": "每个回合开始时，抽 !M! 张牌， 然后将 !M! 张牌放入 约定牌堆 。",
+		"UPGRADE_DESCRIPTION": "固有 。 NL 每个回合开始时，抽 !M! 张牌， 然后将 !M! 张牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Must": {
 		"NAME": "东京塔下",
@@ -141,7 +141,7 @@
 	},
 	"ShoujoKageki:OurPromise": {
 		"NAME": "我们的约定",
-		"DESCRIPTION": "抽 !M! 张牌。 NL 选择2张手牌放入 约定牌堆 。"
+		"DESCRIPTION": "抽 !M! 张牌。 NL 将2张牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:ExchangeFate": {
 		"NAME": "命运交换之日",
@@ -155,7 +155,7 @@
 	},
 	"ShoujoKageki:OnStage": {
 		"NAME": "我将再次变为我自己",
-		"DESCRIPTION": "从 约定牌堆 抽取 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
+		"DESCRIPTION": "从 约定牌堆 抽 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
 		"EXTENDED_DESCRIPTION": [
 			"约定牌堆 中卡牌数量不足。"
 		]

@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class NeverRetreat02 extends BaseCard {
     public static final String ID = makeID(NeverRetreat02.class.getSimpleName());
 

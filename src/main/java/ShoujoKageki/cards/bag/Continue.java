@@ -15,8 +15,8 @@ public class Continue extends BaseCard {
 
     public Continue() {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
-        this.baseDamage = 5;
-        this.baseBlock = 3;
+        this.baseDamage = 4;
+        this.baseBlock = 2;
         this.color = CardColor.COLORLESS;
         this.exhaust = true;
     }
@@ -31,8 +31,8 @@ public class Continue extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(5);
-            upgradeBlock(3);
+            upgradeDamage(4);
+            upgradeBlock(2);
         }
     }
 }

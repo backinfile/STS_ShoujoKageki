@@ -46,15 +46,16 @@ public class TakeSpecCardFromBagAction extends AbstractGameAction {
             for (int i = 0; i < toTake; i++) {
                 AbstractCard curCard = cardsToTake.get(i);
 
-                BagFieldPatch.triggerOnTakeFromBagToHand(curCard);
 
                 if (handSize + i >= BaseMod.MAX_HAND_SIZE) {
                     if (discardOverflowedCard) {
+                        BagFieldPatch.triggerOnTakeFromBag(curCard);
                         AbstractDungeon.effectList.add(new ShowBagCardAndAddToDiscardEffect(curCard));
                     } else {
                         break;
                     }
                 } else {
+                    BagFieldPatch.triggerOnTakeFromBagToHand(curCard);
                     AbstractDungeon.effectList.add(new ShowBagCardToHandEffect(curCard));
                 }
                 bag.removeCard(curCard);

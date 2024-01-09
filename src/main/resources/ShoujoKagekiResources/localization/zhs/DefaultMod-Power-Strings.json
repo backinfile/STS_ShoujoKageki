@@ -53,7 +53,7 @@
 	"ShoujoKageki:NextTurnDrawBagPower": {
 		"NAME": "抽牌",
 		"DESCRIPTIONS": [
-			"下回合，从 #y约定牌堆 中抽取 #y", " 张牌。"
+			"下回合，从 #y约定牌堆 中抽 #y", " 张牌。"
 		]
 	},
 	"ShoujoKageki:AquariumPower": {

@@ -26,19 +26,24 @@ public class BagPower extends BasePower {
 
     public BagPower(int amount) {
         super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
-        checkBagPower();
     }
 
     @Override
     public void onSpecificTrigger() {
         super.onSpecificTrigger();
-        checkBagPower();
+        checkBagPower(true);
+    }
+
+    @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
+        checkBagPower(false);
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        checkBagPower();
+        checkBagPower(false);
     }
 
     @Override
@@ -80,14 +85,14 @@ public class BagPower extends BasePower {
         }
     }
 
-    public void checkBagPower() {
+    public void checkBagPower(boolean flash) {
         int oldAmount = this.amount;
         int newAmount = BagField.showCardsInBag() ? BagField.getBag().size() : 0;
         if (newAmount == 0) newAmount = -1;
 
         if (oldAmount != newAmount) {
             this.amount = newAmount;
-            flash();
+            if (flash) flash();
         }
 
 
