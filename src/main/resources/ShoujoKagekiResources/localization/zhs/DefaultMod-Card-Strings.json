@@ -283,7 +283,7 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时，获得 闪耀牌奖励 。"
 	},
 	"ShoujoKageki:Nonon": {
-		"NAME": "Non non 哒哟",
+		"NAME": "NONNON哒哟",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害，目标本回合失去 !M! 点 力量 。"
 	},
 	"ShoujoKageki:NewSituation": {

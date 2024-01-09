@@ -15,7 +15,7 @@ public class EatFood2 extends BaseCard {
     public EatFood2() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE);
         this.color = CardColor.COLORLESS;
-        this.baseMagicNumber = this.magicNumber = 4;
+        this.baseMagicNumber = this.magicNumber = 3;
         exhaust = true;
     }
 
@@ -29,7 +29,7 @@ public class EatFood2 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(3);
         }
     }
 }

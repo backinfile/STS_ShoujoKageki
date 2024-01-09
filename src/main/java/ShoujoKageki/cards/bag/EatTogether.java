@@ -18,7 +18,7 @@ public class EatTogether extends BaseCard {
 
     public EatTogether() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 1;
     }
 

@@ -44,7 +44,7 @@ public class TragedyPower extends BasePower {
     @Override
     public void onVictory() {
         super.onVictory();
-flash();
+        flash();
     }
 
     @Override
