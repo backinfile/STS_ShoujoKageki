@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @AutoAdd.Ignore
-public class CryTmp2 extends BaseCard {
+public class CryTmp3 extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(CryTmp2.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(CryTmp3.class.getSimpleName());
 
-    public CryTmp2() {
+    public CryTmp3() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 1;
     }
@@ -27,7 +27,8 @@ public class CryTmp2 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 }

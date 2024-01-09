@@ -15,8 +15,8 @@ public class NewDay extends BaseCard {
 
 
     public NewDay() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.baseBlock = 4;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        this.baseBlock = 6;
         this.baseMagicNumber = this.magicNumber = 1;
         PutToBagField.putToBag.set(this, true);
     }
@@ -31,7 +31,7 @@ public class NewDay extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(2);
+//            upgradeBlock(3);
             upgradeMagicNumber(1);
         }
     }

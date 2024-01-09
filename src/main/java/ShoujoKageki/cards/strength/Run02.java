@@ -4,9 +4,11 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.GainDexterityEquityToStrengthAction;
 import ShoujoKageki.actions.GainCardOrIgnoreAction;
 import ShoujoKageki.cards.BaseCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class Run02 extends BaseCard {
 
     public static final String ID = ModInfo.makeID(Run02.class.getSimpleName());

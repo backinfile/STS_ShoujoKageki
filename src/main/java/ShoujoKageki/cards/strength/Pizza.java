@@ -16,9 +16,10 @@ public class Pizza extends BaseCard {
     public static final String ID = ModInfo.makeID(Pizza.class.getSimpleName());
 
     public Pizza() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
         this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = 1;
+        exhaust = true;
     }
 
     @Override
@@ -32,6 +33,7 @@ public class Pizza extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeDefaultSecondMagicNumber(1);
         }
     }
 }

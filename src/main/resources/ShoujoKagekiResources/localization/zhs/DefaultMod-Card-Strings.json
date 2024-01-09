@@ -319,7 +319,11 @@
 		"NAME": "续演",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
 	},
-	"ShoujoKageki:Cry": {
+	"ShoujoKageki:Financier": {
+		"NAME": "banana费南雪",
+		"DESCRIPTION": "获得 !M! 点 力量 。 NL 每两回合保留 力量 1 回合。"
+	},
+	"ShoujoKageki:CryTmp3": {
 		"NAME": "添麻烦了",
 		"DESCRIPTION": "获得 力量 时， 对所有敌人造成当前 力量 值的伤害。"
 	},
@@ -416,12 +420,17 @@
 	},
 	"ShoujoKageki:Position0": {
 		"NAME": "Position 0",
+		"DESCRIPTION": "每回合第 !M! 次 造成未被格挡的伤害时，获得等量 格挡 。",
+		"UPGRADE_DESCRIPTION": "每回合前 !M! 次 造成未被格挡的伤害时，获得等量 格挡 。"
+	},
+	"ShoujoKageki:Position0Tmp": {
+		"NAME": "Position 0",
 		"DESCRIPTION": "获得 力量 时， 额外获得 !M! 点 力量 。",
 		"UPGRADE_DESCRIPTION": "固有 。 NL 获得 力量 时， 额外获得 !M! 点 力量 。"
 	},
 	"ShoujoKageki:Pizza": {
 		"NAME": "披萨",
-		"DESCRIPTION": "获得 !M! 点 力量 ， 所有敌人失去 !ShoujoKageki:SM! 点 力量 。",
+		"DESCRIPTION": "获得 !M! 点 力量 ， 所有敌人失去 !ShoujoKageki:SM! 点 力量 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:HolyStar": {
