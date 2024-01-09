@@ -5,10 +5,12 @@ import ShoujoKageki.actions.BackToBackAction;
 import ShoujoKageki.actions.DiscardFromBagAction;
 import ShoujoKageki.actions.bag.SelectBagCardToHandAction;
 import ShoujoKageki.cards.BaseCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class Rapid extends BaseCard {
 
     public static final String ID = ModInfo.makeID(Rapid.class.getSimpleName());

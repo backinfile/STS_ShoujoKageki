@@ -3,11 +3,9 @@ package ShoujoKageki.reward;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.reward.patch.RewardPatch;
 import ShoujoKageki.variables.DisposableVariable;
-import basemod.ReflectionHacks;
 import basemod.abstracts.CustomReward;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,7 +14,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,6 +32,12 @@ public class ShineCardReward extends CustomReward {
     public ShineCardReward() {
         super(ICON, uiStrings.TEXT[0], RewardPatch.TypePatch.SHINE_CARD);
         init(rollShineCard());
+    }
+
+    public static void addShineCardRewardToRoom() {
+        RewardItem rewardItem = new ShineCardReward();
+        if (rewardItem.cards.isEmpty()) return;
+        AbstractDungeon.getCurrRoom().addCardReward(rewardItem);
     }
 
     private void init(AbstractCard card) {

@@ -20,6 +20,7 @@ public class TwistingStrike extends BaseCard {
         this.cardsToPreview = new EatFood2();
         this.tags.add(CardTags.STRIKE);
         this.baseMagicNumber = this.magicNumber = 1;
+        isMultiDamage = true;
     }
 
     @Override

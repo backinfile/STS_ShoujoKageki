@@ -1,7 +1,7 @@
 package ShoujoKageki.actions;
 
 import ShoujoKageki.Log;
-import ShoujoKageki.relics.CatRelic;
+import ShoujoKageki.relics.CatRelicTmp;
 import ShoujoKageki.relics.LockRelic;
 import ShoujoKageki.relics.StarCrownRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 public class LockRelicAction extends AbstractGameAction {
 
@@ -39,9 +38,9 @@ public class LockRelicAction extends AbstractGameAction {
 
                 AbstractRelic toLock = p.relics.get(positionToLock);
 
-                if (toLock instanceof CatRelic) {
+                if (toLock instanceof CatRelicTmp) {
                     toLock.flash();
-                    addToTop(new GainBlockAction(p, CatRelic.BLOCK));
+                    addToTop(new GainBlockAction(p, CatRelicTmp.BLOCK));
                     continue;
                 }
 

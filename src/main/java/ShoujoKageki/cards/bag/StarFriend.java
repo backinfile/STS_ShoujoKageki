@@ -3,6 +3,7 @@ package ShoujoKageki.cards.bag;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.powers.ShineRewardPower;
+import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.variables.DisposableVariable;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.DamageCallbackAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,7 +32,7 @@ public class StarFriend extends BaseCard {
             if ((target.isDying || target.currentHealth <= 0) && !target.halfDead && !target.hasPower(MinionPower.POWER_ID)) {
                 flash();
                 if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    ShineRewardPower.addReward();
+                    ShineCardReward.addShineCardRewardToRoom();
                 } else {
                     addToBot(new ApplyPowerAction(p, p, new ShineRewardPower()));
                 }

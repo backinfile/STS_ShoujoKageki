@@ -46,6 +46,7 @@ public class LockRelic extends BaseRelic {
         super.onVictory();
 
         lockedRelic.instantObtain(AbstractDungeon.player, position, false);
+        lockedRelic.onVictory();
     }
 
     @Override

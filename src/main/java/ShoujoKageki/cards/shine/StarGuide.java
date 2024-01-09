@@ -14,10 +14,10 @@ public class StarGuide extends BaseCard {
     public static final String ID = ModInfo.makeID(StarGuide.class.getSimpleName());
 
     public StarGuide() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         isInnate = true;
         exhaust = true;
-        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
+//        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
     @Override

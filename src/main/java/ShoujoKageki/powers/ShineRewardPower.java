@@ -4,7 +4,6 @@ package ShoujoKageki.powers;
 import ShoujoKageki.reward.ShineCardReward;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,13 +23,13 @@ public class ShineRewardPower extends BasePower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        addReward();
+        ShineCardReward.addShineCardRewardToRoom();
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        addReward();
+        ShineCardReward.addShineCardRewardToRoom();
         updateDescription();
     }
 
@@ -44,12 +43,6 @@ public class ShineRewardPower extends BasePower {
     public void updateDescription() {
         super.updateDescription();
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-    }
-
-    public static void addReward() {
-        RewardItem rewardItem = new ShineCardReward();
-        if (rewardItem.cards.isEmpty()) return;
-        AbstractDungeon.getCurrRoom().addCardReward(rewardItem);
     }
 
     private static AbstractCard.CardRarity getRarity() {

@@ -18,7 +18,7 @@ public class TapeRelic extends BaseRelic {
 
     public TapeRelic() {
         super(ID, RAW_ID, RelicTier.RARE, LandingSound.FLAT);
-        setCounter(2);
+        setCounter(3);
     }
 
     @Override

@@ -3,6 +3,7 @@ package ShoujoKageki.relics;
 import basemod.abstracts.CustomRelic;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.util.TextureLoader;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public abstract class BaseRelic extends CustomRelic {
     public BaseRelic(String id, String rawId, RelicTier tier) {
@@ -10,6 +11,7 @@ public abstract class BaseRelic extends CustomRelic {
                 TextureLoader.getTexture(ModInfo.makeRelicPath(rawId + ".png")),
                 tier, LandingSound.FLAT);
     }
+
     public BaseRelic(String id, String rawId, RelicTier tier, LandingSound landingSound) {
         super(id, TextureLoader.getTexture(ModInfo.makeRelicPath(rawId + ".png")),
                 TextureLoader.getTexture(ModInfo.makeRelicPath(rawId + ".png")),
@@ -23,6 +25,10 @@ public abstract class BaseRelic extends CustomRelic {
     }
 
     public void triggerOnDead() {
+
+    }
+
+    public void triggerOnCardDisposed(AbstractCard card) {
 
     }
 }

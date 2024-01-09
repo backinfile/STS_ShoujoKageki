@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import java.util.ArrayList;
+
 @SpirePatch(
         clz = AbstractCard.class,
         method = "<class>"
@@ -24,8 +26,6 @@ public class DisposableField {
 
     public static void disposeCard(AbstractCard card) {
         disposeCard(card, card.current_x, card.current_y);
-        AbstractPlayer p = AbstractDungeon.player;
-        DisposableFieldCounterSavePatch.addShineCardDispose(card);
     }
 
     public static void disposeCard(AbstractCard card, float x, float y) {
@@ -49,5 +49,8 @@ public class DisposableField {
         if (card instanceof BaseCard) {
             ((BaseCard) card).triggerOnDisposed();
         }
+
+        DisposableFieldCounterSavePatch.addShineCardDispose(card);
+        DisposableFieldRecordPatch.addDisposedCard(card);
     }
 }

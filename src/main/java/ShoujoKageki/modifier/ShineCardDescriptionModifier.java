@@ -1,11 +1,14 @@
 package ShoujoKageki.modifier;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.powers.Starlight02Power;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.abstracts.AbstractCardModifier;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class ShineCardDescriptionModifier extends AbstractCardModifier {
@@ -30,6 +33,10 @@ public class ShineCardDescriptionModifier extends AbstractCardModifier {
     public Color getGlow(AbstractCard card) {
         if (DisposableVariable.getValue(card) == 1) {
             return Color.FIREBRICK.cpy();
+        }
+        AbstractPlayer player = AbstractDungeon.player;
+        if (player != null) {
+            if (player.hasPower(Starlight02Power.POWER_ID)) return Color.FIREBRICK.cpy();
         }
         return super.getGlow(card);
     }

@@ -48,7 +48,7 @@
 		"NAME": "胶带",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"现在你可以在休息处为卡牌添加 #y闪耀 。"
+			"现在你可以在休息处为卡牌添加 #y闪耀 。（最多3次）"
 		]
 	},
 	"ShoujoKageki:FrogWaterCupRelic": {
@@ -66,6 +66,13 @@
 		]
 	},
 	"ShoujoKageki:CatRelic": {
+		"NAME": "棒球猫",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"每次战斗中，每耗尽一张非同名的 #y闪耀牌 ，获得一个 #y闪耀牌奖励 。"
+		]
+	},
+	"ShoujoKageki:CatRelicTmp": {
 		"NAME": "棒球猫",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
