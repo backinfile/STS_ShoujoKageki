@@ -210,7 +210,7 @@ public class KarenCharacter extends BasePlayer {
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return Res.KarenRenderColor;
+        return Res.KarenRenderColor.cpy();
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -249,14 +249,14 @@ public class KarenCharacter extends BasePlayer {
     // run history.
     @Override
     public Color getCardRenderColor() {
-        return Res.KarenRenderColor;
+        return Res.KarenRenderColor.cpy();
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return Res.KarenRenderColor;
+        return Res.KarenRenderColor.cpy();
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

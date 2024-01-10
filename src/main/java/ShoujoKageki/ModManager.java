@@ -59,8 +59,15 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
 
         Log.logger.info("Creating the color " + CardColor_Karen.toString());
-        BaseMod.addColor(KarenCharacter.Enums.CardColor_Karen, KarenRenderColor, KarenRenderColor, KarenRenderColor, KarenRenderColor,
-                KarenRenderColor, KarenRenderColor, KarenRenderColor, ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY,
+        BaseMod.addColor(KarenCharacter.Enums.CardColor_Karen,
+                KarenRenderColor.cpy(),
+                KarenRenderColor.cpy(),
+                KarenRenderColor.cpy(),
+                KarenRenderColor.cpy(),
+                KarenRenderColor.cpy(),
+                KarenRenderColor.cpy(),
+                KarenRenderColor.cpy(),
+                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY,
                 ENERGY_ORB_DEFAULT_GRAY, ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT,
                 POWER_DEFAULT_GRAY_PORTRAIT, ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
         Log.logger.info("Done creating the color");
@@ -137,7 +144,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         Log.logger.info("Beginning to add potions.");
         BaseMod.addPotion(ShinePotion.class, Color.GOLD, CardHelper.getColor(255.0f, 230.0f, 230.0f), Color.GOLD, ShinePotion.POTION_ID, Karen);
-        BaseMod.addPotion(BagPotion.class, KarenRenderColor, Color.GOLD, KarenRenderColor, BagPotion.POTION_ID, Karen);
+        BaseMod.addPotion(BagPotion.class, KarenRenderColor.cpy(), Color.GOLD, KarenRenderColor.cpy(), BagPotion.POTION_ID, Karen);
         Log.logger.info("Added potions.");
     }
 

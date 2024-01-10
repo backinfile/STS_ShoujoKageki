@@ -22,7 +22,7 @@ public class BagPotion extends BasePotion {
 
     public BagPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.EYE, PotionEffect.NONE,
-                Res.KarenRenderColor, Res.KarenRenderColor, (Color) null);
+                Res.KarenRenderColor.cpy(), Res.KarenRenderColor.cpy(), (Color) null);
     }
 
     @Override
