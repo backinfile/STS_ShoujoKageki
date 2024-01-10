@@ -52,29 +52,29 @@
 		]
 	},
 	"ShoujoKageki:FrogWaterCupRelic": {
-		"NAME": "青蛙水杯",
-		"FLAVOR": "",
+		"NAME": "水杯",
+		"FLAVOR": "贴有青蛙贴纸的水杯，属于大场奈奈。",
 		"DESCRIPTIONS": [
 			"每当你获得 #y闪耀牌 时，使其 #y闪耀 增加 #y1 。"
 		]
 	},
 	"ShoujoKageki:MrWhiteRelic": {
 		"NAME": "Mr.White",
-		"FLAVOR": "",
+		"FLAVOR": "神乐光喜爱的角色形象。",
 		"DESCRIPTIONS": [
 			"在每场战斗开始时，将你牌组中超出30张的部分放入 #y约定牌堆 。"
 		]
 	},
 	"ShoujoKageki:CatRelic": {
 		"NAME": "棒球猫",
-		"FLAVOR": "",
+		"FLAVOR": "露崎真昼喜爱的角色形象。",
 		"DESCRIPTIONS": [
 			"每次战斗中，每耗尽一张非同名的 #y闪耀牌 ，获得一个 #y闪耀牌奖励 。"
 		]
 	},
 	"ShoujoKageki:CatRelicTmp": {
 		"NAME": "棒球猫",
-		"FLAVOR": "",
+		"FLAVOR": "露崎真昼喜爱的角色形象。",
 		"DESCRIPTIONS": [
 			"被 #y禁用 时，改为获得 #y ",
 			" 点 #y格挡 。"
@@ -82,7 +82,7 @@
 	},
 	"ShoujoKageki:StarCrownRelic": {
 		"NAME": "星之皇冠",
-		"FLAVOR": "",
+		"FLAVOR": "带来最闪耀Revue的女孩，将被授予星之皇冠，通往TopStar的道路也将为她敞开。",
 		"DESCRIPTIONS": [
 			"在回合开始时获得 [E] 。 NL 在每个回合开始时， #y禁用 #y2 个 遗物。"
 		]
