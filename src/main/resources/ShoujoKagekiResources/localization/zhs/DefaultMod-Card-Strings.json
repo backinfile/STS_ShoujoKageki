@@ -459,7 +459,8 @@
 	},
 	"ShoujoKageki:WakeUp": {
 		"NAME": "唤醒",
-		"DESCRIPTION": "从 抽牌堆 ， 弃牌堆 ，或 约定牌堆 中选择 2 张牌放入你的手牌。 NL 消耗 。"
+		"DESCRIPTION": "从抽牌堆中选择2张牌放入你的手牌。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "从抽牌堆，弃牌堆，或 约定牌堆 中选择2张牌放入你的手牌。 NL 消耗 。"
 	},
 	"ShoujoKageki:SelectDiscardPile": {
 		"NAME": "弃牌堆",

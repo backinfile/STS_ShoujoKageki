@@ -2,6 +2,7 @@ package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
+import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.optionCards.BecomeAlmighty;
@@ -24,6 +25,11 @@ public class WakeUp extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!upgraded) {
+            addToBot(new BetterDrawPileToHandAction(2));
+            return;
+        }
+
         ArrayList<AbstractCard> choices = new ArrayList<>();
         choices.add(new SelectDrawPile());
         choices.add(new SelectDiscardPile());
@@ -35,7 +41,9 @@ public class WakeUp extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+//            upgradeBaseCost(0);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
