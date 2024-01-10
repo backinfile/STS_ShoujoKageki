@@ -28,7 +28,7 @@ public class StarGuide extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         super.triggerOnGlowCheck();
-        if (StarAction.getAllShineCardsWithoutBag().size() > 1) { // contains self
+        if (!StarAction.getAllShineCardsWithoutBag().isEmpty()) { // contains self
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
