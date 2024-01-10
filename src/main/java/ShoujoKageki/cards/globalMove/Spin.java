@@ -1,6 +1,5 @@
 package ShoujoKageki.cards.globalMove;
 
-import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -15,85 +14,55 @@ public class Spin extends BaseCard {
 
     public static final String ID = ModInfo.makeID(Spin.class.getSimpleName());
 
+    private int addedDamage = 0;
+
     public Spin() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 4;
-        this.baseMagicNumber = this.magicNumber = 0;
+        this.baseMagicNumber = this.magicNumber = 2;
         this.logGlobalMove = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < this.magicNumber; i++) {
-            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        }
-
-//        addToBot(new AbstractGameAction() {
-//            @Override
-//            public void update() {
-//                reset();
-//                isDone = true;
-//            }
-//        });
-    }
-
-    public void reset() {
-//        magicNumber = baseMagicNumber = 0;
-//        isMagicNumberModified = false;
-//        initializeDescription();
-//        Log.logger.info("reset");
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     private void onTrigger() {
-        this.baseMagicNumber++;
-        this.magicNumber = this.baseMagicNumber;
-        isMagicNumberModified = true;
-        initializeDescription();
+        this.addedDamage += this.magicNumber;
         flash();
-//        new RuntimeException("").printStackTrace();
+        applyPowers();
     }
 
-//    @Override
-//    public void triggerOnPutInBag() {
-//        super.triggerOnPutInBag();
-//        onTrigger();
-//    }
-
-        @Override
+    @Override
     public void triggerOnGlobalMove() {
-        super.triggerOnGlobalMove();
         onTrigger();
     }
 
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-        super.triggerOnEndOfPlayerTurn();
-        reset();
+    public void calculateCardDamage(AbstractMonster mo) {
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += addedDamage;
+        super.calculateCardDamage(mo);
+        this.baseDamage = realBaseDamage;
+        if (this.baseDamage != this.damage) this.isDamageModified = true;
     }
 
     @Override
-    public void triggerOnEndOfPlayerTurnInBag() {
-        super.triggerOnEndOfPlayerTurnInBag();
-        reset();
+    public void applyPowers() {
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += addedDamage;
+        super.applyPowers();
+        this.baseDamage = realBaseDamage;
+        if (this.baseDamage != this.damage) this.isDamageModified = true;
     }
 
-    @Override
-    public void triggerOnEndOfPlayerTurnInDrawPile() {
-        super.triggerOnEndOfPlayerTurnInDrawPile();
-        reset();
-    }
-
-    @Override
-    public void triggerOnEndOfPlayerTurnInDiscardPile() {
-        super.triggerOnEndOfPlayerTurnInDiscardPile();
-        reset();
-    }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(2);
+            upgradeMagicNumber(1);
         }
     }
 }

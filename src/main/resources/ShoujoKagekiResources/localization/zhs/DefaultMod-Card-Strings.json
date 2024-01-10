@@ -362,7 +362,7 @@
 	},
 	"ShoujoKageki:Spin": {
 		"NAME": "旋转",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 在牌堆之间移动时，在本场战斗中增加攻击次数。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 此牌在牌堆之间移动时，在本场战斗中伤害增加 !M! 。"
 	},
 	"ShoujoKageki:Continue02": {
 		"NAME": "永无结束的命运舞台",
