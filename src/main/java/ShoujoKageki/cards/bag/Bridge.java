@@ -15,7 +15,7 @@ public class Bridge extends BaseCard {
     public static final String ID = ModInfo.makeID(Bridge.class.getSimpleName());
 
     public Bridge() {
-        super(ID, -1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, -1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
     }
 
     @Override

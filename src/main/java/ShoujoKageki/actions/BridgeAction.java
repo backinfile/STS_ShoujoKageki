@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class BridgeAction extends AbstractGameAction {
@@ -46,6 +47,11 @@ public class BridgeAction extends AbstractGameAction {
         }
 
         if (effect > 0) {
+            if (AbstractDungeon.player.endTurnQueued) {
+                this.isDone = true;
+                return;
+            }
+
             for (int i = 0; i < effect; i++) {
                 AbstractMonster monster = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
                 this.addToBot(new PlayBagTopCardAction(monster, false));

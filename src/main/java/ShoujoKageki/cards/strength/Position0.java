@@ -12,7 +12,7 @@ public class Position0 extends BaseCard {
     public static final String ID = ModInfo.makeID(Position0.class.getSimpleName());
 
     public Position0() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
     }
 
@@ -26,10 +26,11 @@ public class Position0 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
 //            isInnate = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+//            initializeDescription();
+            upgradeBaseCost(2);
         }
     }
 }
