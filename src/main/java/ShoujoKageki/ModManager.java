@@ -6,8 +6,11 @@ import ShoujoKageki.relics.SharedRelic;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.reward.patch.RewardPatch;
 import ShoujoKageki.screen.BagPileViewScreen;
+import ShoujoKageki.util.TextureLoader;
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomReward;
 import basemod.helpers.RelicType;
@@ -20,14 +23,23 @@ import ShoujoKageki.variables.DefaultSecondMagicNumber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.Loader;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rewards.RewardSave;
+import com.megacrit.cardcrawl.screens.DeathScreen;
+import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
+import com.megacrit.cardcrawl.screens.stats.StatsScreen;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -234,6 +246,46 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         // =============== /EVENTS/ =================
 //        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
+
+
+        // Load the Mod Badge
+        Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
+
+        // Create the Mod Menu
+        ModPanel settingsPanel = new ModPanel();
+
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID("settingsPanel"));
+
+        // Create the on/off button:
+        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton(
+                uiStrings.TEXT[0], 350.0f, 700.0f, Settings.CREAM_COLOR,
+                FontHelper.charDescFont, // Position (trial and error it), color, font
+                false,
+                settingsPanel,
+                (label) -> {
+                },
+                (button) -> {
+                    try {
+                        Settings.isTrial = false;
+                        AbstractPlayer karen = CardCrawlGame.characterManager.recreateCharacter(Karen);
+                        karen.getCharStat().incrementVictory();
+                        karen.getCharStat().unlockAscension();
+                        for (int i = 0; i < 20; i++) {
+                            AbstractDungeon.ascensionLevel = i + 1;
+                            karen.getCharStat().incrementAscension();
+                        }
+                        CardCrawlGame.mainMenuScreen = new MainMenuScreen();
+                        CardCrawlGame.mainMenuScreen.bg.slideDownInstantly();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
+        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
+
+        BaseMod.registerModBadge(badgeTexture, ModInfo.ModName, ModInfo.AUTHOR, ModInfo.DESCRIPTION, settingsPanel);
+
+
         logger.info("Done loading badge Image and mod options");
     }
 

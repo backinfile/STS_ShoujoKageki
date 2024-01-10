@@ -84,6 +84,11 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:settingsPanel": {
+    "TEXT": ["解锁进阶20", "exchange something"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:DisposableKeyword": {
     "TEXT": ["", " NL 闪耀 !ShoujoKageki:disposable! 。", " NL {!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],

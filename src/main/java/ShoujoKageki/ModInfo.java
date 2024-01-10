@@ -3,6 +3,7 @@ package ShoujoKageki;
 public class ModInfo {
     public static final String ModName = "ShoujoKageki";
     public static final String AUTHOR = "不方不方";
+    public static final String DESCRIPTION = "新增角色：爱城华恋 Aijo Karen";
 
     public static String getModId() {
         return ModManager.getModID();
