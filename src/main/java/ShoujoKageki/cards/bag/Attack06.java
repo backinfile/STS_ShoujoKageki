@@ -29,7 +29,7 @@ public class Attack06 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(1);
             upgradeMagicNumber(1);
         }
     }

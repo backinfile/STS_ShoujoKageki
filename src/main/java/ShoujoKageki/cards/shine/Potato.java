@@ -16,7 +16,7 @@ public class Potato extends BaseCard {
 
     public Potato() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        this.baseMagicNumber = this.magicNumber = 6;
+        this.baseMagicNumber = this.magicNumber = 4;
         DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
         this.tags.add(CardTags.HEALING);
     }
@@ -30,7 +30,7 @@ public class Potato extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(3);
         }
     }
 }

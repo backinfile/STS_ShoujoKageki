@@ -18,7 +18,7 @@ public class Attack08 extends BaseCard {
 
     public Attack08() {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 4;
+        this.baseDamage = 3;
         this.baseMagicNumber = this.magicNumber = 2;
     }
 

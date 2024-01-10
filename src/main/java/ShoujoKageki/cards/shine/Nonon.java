@@ -15,9 +15,9 @@ public class Nonon extends BaseCard {
 
     public Nonon() {
         super(ID, 3, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
-        this.baseDamage = 14;
+        this.baseDamage = 12;
         isMultiDamage = true;
-        this.baseMagicNumber = this.magicNumber = 14;
+        this.baseMagicNumber = this.magicNumber = 12;
         DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }
 
@@ -31,8 +31,8 @@ public class Nonon extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(6);
-            upgradeMagicNumber(6);
+            upgradeDamage(4);
+            upgradeMagicNumber(4);
         }
     }
 }

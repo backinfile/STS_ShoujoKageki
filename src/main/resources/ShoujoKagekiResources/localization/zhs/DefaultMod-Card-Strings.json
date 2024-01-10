@@ -447,7 +447,7 @@
 	},
 	"ShoujoKageki:CourageStrike": {
 		"NAME": "勇气打击",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
+		"DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
 	},
 	"ShoujoKageki:Stretching": {
 		"NAME": "拉伸",

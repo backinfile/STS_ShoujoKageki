@@ -34,7 +34,7 @@ public class SwordUp extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }

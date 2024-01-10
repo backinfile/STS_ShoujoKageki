@@ -22,7 +22,7 @@ public class CarryingGuilt extends BaseCard {
     public CarryingGuilt() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         this.baseDamage = 12;
-        this.baseMagicNumber = this.magicNumber = 6;
+        this.baseMagicNumber = this.magicNumber = 4;
 //        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
 
         CardModifierManager.addModifier(this, new CarryingGuiltModifier());

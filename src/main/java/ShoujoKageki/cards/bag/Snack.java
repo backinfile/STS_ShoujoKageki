@@ -3,10 +3,12 @@ package ShoujoKageki.cards.bag;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.BackToBackAction;
 import ShoujoKageki.cards.BaseCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class Snack extends BaseCard {
 
     public static final String ID = ModInfo.makeID(Snack.class.getSimpleName());
