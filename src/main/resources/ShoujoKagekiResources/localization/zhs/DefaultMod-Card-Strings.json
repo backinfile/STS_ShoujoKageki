@@ -317,7 +317,7 @@
 	},
 	"ShoujoKageki:Continue": {
 		"NAME": "续演",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 消耗 。"
 	},
 	"ShoujoKageki:Financier": {
 		"NAME": "Banana费南雪",

@@ -14,7 +14,7 @@ public class StageReproduce extends BaseCard {
     public static final String ID = ModInfo.makeID(StageReproduce.class.getSimpleName());
 
     public StageReproduce() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
         this.cardsToPreview = new Continue();
     }
 
@@ -29,7 +29,7 @@ public class StageReproduce extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
         }
     }
 }

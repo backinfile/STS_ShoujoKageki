@@ -24,7 +24,7 @@ public class Continue extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new GainBlockAction(p, p, block));
+//        addToBot(new GainBlockAction(p, p, block));
     }
 
     @Override
