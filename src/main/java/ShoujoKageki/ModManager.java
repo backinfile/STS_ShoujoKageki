@@ -82,6 +82,9 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY,
                 ENERGY_ORB_DEFAULT_GRAY, ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT,
                 POWER_DEFAULT_GRAY_PORTRAIT, ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
+
+        SettingsPanel.initProperties();
+
         Log.logger.info("Done creating the color");
     }
 
@@ -229,63 +232,14 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.addCustomScreen(new BlackMarketScreen());
         BaseMod.addCustomScreen(new BagPileViewScreen());
 
-        BaseMod.registerCustomReward(RewardPatch.TypePatch.SHINE_CARD, new BaseMod.LoadCustomReward() {
-            @Override
-            public CustomReward onLoad(RewardSave rewardSave) {
-                return new ShineCardReward(rewardSave.id);
-            }
-        }, new BaseMod.SaveCustomReward() {
-            @Override
-            public RewardSave onSave(CustomReward customReward) {
-                if (customReward.cards.isEmpty()) {
-                    return new RewardSave(customReward.type.toString(), "");
-                }
-                return new RewardSave(customReward.type.toString(), customReward.cards.get(0).cardID);
-            }
-        });
+        ShineCardReward.register();
 
         // =============== /EVENTS/ =================
 //        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
 
 
         // Load the Mod Badge
-        Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
-
-        // Create the Mod Menu
-        ModPanel settingsPanel = new ModPanel();
-
-        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID("settingsPanel"));
-
-        // Create the on/off button:
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton(
-                uiStrings.TEXT[0], 350.0f, 700.0f, Settings.CREAM_COLOR,
-                FontHelper.charDescFont, // Position (trial and error it), color, font
-                false,
-                settingsPanel,
-                (label) -> {
-                },
-                (button) -> {
-                    try {
-                        Settings.isTrial = false;
-                        AbstractPlayer karen = CardCrawlGame.characterManager.recreateCharacter(Karen);
-                        karen.getCharStat().incrementVictory();
-                        karen.getCharStat().unlockAscension();
-                        for (int i = 0; i < 20; i++) {
-                            AbstractDungeon.ascensionLevel = i + 1;
-                            karen.getCharStat().incrementAscension();
-                        }
-                        CardCrawlGame.mainMenuScreen = new MainMenuScreen();
-                        CardCrawlGame.mainMenuScreen.bg.slideDownInstantly();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                });
-
-        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
-
-        BaseMod.registerModBadge(badgeTexture, ModInfo.ModName, ModInfo.AUTHOR, ModInfo.DESCRIPTION, settingsPanel);
-
-
+        SettingsPanel.initPanel();
         logger.info("Done loading badge Image and mod options");
     }
 

@@ -28,9 +28,14 @@ public class BagField {
     public static SpireField<Boolean> bagBurn = new SpireField<>(() -> false);
     public static SpireField<Boolean> bagUpgrade = new SpireField<>(() -> false);
     public static SpireField<Boolean> bagCostZero = new SpireField<>(() -> false);
+    public static SpireField<CardGroup> bagPreviewCards = new SpireField<>(() -> null);
 
     public static CardGroup getBag() {
         return bag.get(AbstractDungeon.player);
+    }
+
+    public static CardGroup getBagPreview() {
+        return bagPreviewCards.get(AbstractDungeon.player);
     }
 
     public static boolean isInfinite(boolean flash) {

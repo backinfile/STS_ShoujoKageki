@@ -18,6 +18,8 @@ public class TowerOfPromise extends BaseCard {
         this.color = CardColor.COLORLESS;
         selfRetain = true;
         exhaust = true;
+        this.baseMagicNumber = this.magicNumber = 99;
+        this.bagCardPreviewNumber = 99;
     }
 
     @Override

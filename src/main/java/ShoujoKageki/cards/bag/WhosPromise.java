@@ -19,6 +19,7 @@ public class WhosPromise extends BaseCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 9;
         this.baseMagicNumber = this.magicNumber = 1;
+        this.bagCardPreviewNumber = 1;
     }
 
     @Override
@@ -34,6 +35,7 @@ public class WhosPromise extends BaseCard {
             upgradeName();
             upgradeDamage(2);
             upgradeMagicNumber(1);
+            this.bagCardPreviewNumber = 2;
         }
     }
 }

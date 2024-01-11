@@ -28,6 +28,7 @@ public class BagFieldPatch {
     public static class CombatStart {
         public static void Prefix(AbstractPlayer p) {
             BagField.bag.set(p, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
+            BagField.bagPreviewCards.set(p, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
             BagField.bagInfinite.set(p, false);
             BagField.bagReplace.set(p, false);
             BagField.bagCostZero.set(p, false);
@@ -143,6 +144,7 @@ public class BagFieldPatch {
             if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
         }
     }
+
     public static void triggerOnTakeFromBag(AbstractCard card) {
         if (card instanceof BaseCard) {
             ((BaseCard) card).triggerOnTakeFromBag();

@@ -3,6 +3,7 @@ package ShoujoKageki.reward;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.reward.patch.RewardPatch;
 import ShoujoKageki.variables.DisposableVariable;
+import basemod.BaseMod;
 import basemod.abstracts.CustomReward;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,6 +34,15 @@ public class ShineCardReward extends CustomReward {
     public ShineCardReward() {
         super(ICON, uiStrings.TEXT[0], RewardPatch.TypePatch.SHINE_CARD);
         init(rollShineCard());
+    }
+
+    public static void register() {
+        BaseMod.registerCustomReward(RewardPatch.TypePatch.SHINE_CARD, rewardSave -> new ShineCardReward(rewardSave.id), customReward -> {
+            if (customReward.cards.isEmpty()) {
+                return new RewardSave(customReward.type.toString(), "");
+            }
+            return new RewardSave(customReward.type.toString(), customReward.cards.get(0).cardID);
+        });
     }
 
     public static void addShineCardRewardToRoom() {
