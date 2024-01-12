@@ -26,7 +26,7 @@ public class Position0Power extends BasePower {
     }
 
     @Override
-    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+    public void onAttackAfter(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (damageAmount > 0 && info.type == DamageInfo.DamageType.NORMAL) {
             if (UnblockedDamagePatch.UnblockedDamageCurCount <= this.amount) {
                 addToTop(new GainBlockAction(this.owner, this.owner, damageAmount));

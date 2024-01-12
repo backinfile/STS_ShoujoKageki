@@ -4,6 +4,7 @@ package ShoujoKageki.powers;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -71,4 +72,6 @@ public abstract class BasePower extends AbstractPower {
 
     }
 
+    public void onAttackAfter(DamageInfo info, int damageAmount, AbstractCreature target) {
+    }
 }
