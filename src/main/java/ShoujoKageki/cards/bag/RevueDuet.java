@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Attack09 extends BaseCard {
+public class RevueDuet extends BaseCard {
 
-    public static final String ID = ModInfo.makeID(Attack09.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(RevueDuet.class.getSimpleName());
 
-    public Attack09() {
+    public RevueDuet() {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 6;
         PutToBagField.putToBag.set(this, true);
