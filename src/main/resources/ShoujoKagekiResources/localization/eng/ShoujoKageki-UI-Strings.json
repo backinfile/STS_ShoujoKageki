@@ -89,6 +89,20 @@
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
+  "ShoujoKageki:FTUE": {
+    "TEXT": [
+		"爱城华恋通过 #y约定牌堆 调度自己的卡牌。 NL NL 放入卡牌到 #y约定牌堆 后，点击人物即可查看放入的卡牌。",
+		"具有 #y闪耀 的卡牌，在被打出一定次数后从牌组中 #r永久移除 。"
+	],
+    "EXTRA_TEXT": [
+      "下一条",
+      "我准备好了！",
+      "教程",
+      "（页数：",
+      "／2）"
+    ],
+    "TEXT_DICT": {}
+  },
   "ShoujoKageki:DisposableKeyword": {
     "TEXT": ["", " NL 闪耀 !ShoujoKageki:disposable! 。", " NL {!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],

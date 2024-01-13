@@ -39,7 +39,7 @@
 		"NAMES": [
 			"销毁", "闪耀", "工具"
 		],
-		"DESCRIPTION": "打出X次后卡牌永久从 #y牌组 中 #r移除 。"
+		"DESCRIPTION": "打出X次后卡牌从 #y牌组 中 #r永久移除 。"
 	},
 	{
 		"PROPER_NAME": "闪耀牌奖励",

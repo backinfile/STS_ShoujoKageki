@@ -106,36 +106,37 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     public void receiveEditStrings() {
         Log.logger.info("Beginning to edit strings for mod with ID: " + ModInfo.getModId());
         String lang = getLang();
+        Log.logger.info("lang = " + lang);
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Card-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Card-Strings.json"));
 
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Power-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Power-Strings.json"));
 
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Relic-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Relic-Strings.json"));
 
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Event-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Event-Strings.json"));
 
         // PotionStrings
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Potion-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Potion-Strings.json"));
 
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Character-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Character-Strings.json"));
 
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-Orb-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Orb-Strings.json"));
 
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                ModInfo.getResPath("/localization/" + lang + "/DefaultMod-UI-Strings.json"));
+                ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-UI-Strings.json"));
 
         Log.logger.info("Done edittting strings");
     }
@@ -193,7 +194,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     public void receiveEditKeywords() {
         Gson gson = new Gson();
         String json = Gdx.files
-                .internal(ModInfo.getResPath("/localization/" + getLang() + "/DefaultMod-Keyword-Strings.json"))
+                .internal(ModInfo.getResPath("/localization/" + getLang() + "/ShoujoKageki-Keyword-Strings.json"))
                 .readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json,
                 com.evacipated.cardcrawl.mod.stslib.Keyword[].class);

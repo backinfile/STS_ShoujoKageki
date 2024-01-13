@@ -1,15 +1,16 @@
 package ShoujoKageki.character;
 
-import ShoujoKageki.Log;
-import ShoujoKageki.ModInfo;
-import ShoujoKageki.ModManager;
-import ShoujoKageki.Res;
+import ShoujoKageki.*;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.cards.starter.Defend;
+import ShoujoKageki.cards.starter.Fall;
+import ShoujoKageki.cards.starter.ShineStrike;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.HairpinRelic;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
+import basemod.abstracts.CustomMultiPageFtue;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -28,6 +29,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
@@ -157,18 +159,28 @@ public class KarenCharacter extends BasePlayer {
         ArrayList<String> retVal = new ArrayList<>();
         Log.logger.info("Begin loading starter Deck Strings");
 
-        for (AbstractCard card : ModManager.allModCards) {
-            if (card.rarity == AbstractCard.CardRarity.BASIC) {
-                if (card.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || card.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                    retVal.add(card.cardID);
-                    retVal.add(card.cardID);
-                    retVal.add(card.cardID);
-                    retVal.add(card.cardID);
-                } else {
-                    retVal.add(0, card.cardID);
-                }
-            }
-        }
+//        for (AbstractCard card : ModManager.allModCards) {
+//            if (card.rarity == AbstractCard.CardRarity.BASIC) {
+//                if (card.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || card.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
+//                    retVal.add(card.cardID);
+//                    retVal.add(card.cardID);
+//                    retVal.add(card.cardID);
+//                    retVal.add(card.cardID);
+//                } else {
+//                    retVal.add(0, card.cardID);
+//                }
+//            }
+//        }
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(ShineStrike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Fall.ID);
         return retVal;
     }
 

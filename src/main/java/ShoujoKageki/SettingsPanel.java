@@ -8,6 +8,7 @@ import basemod.ModPanel;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -68,6 +69,7 @@ public class SettingsPanel {
                             AbstractDungeon.ascensionLevel = i + 1;
                             karen.getCharStat().incrementAscension();
                         }
+                        CardCrawlGame.music.fadeAll();
                         CardCrawlGame.mainMenuScreen = new MainMenuScreen();
                         CardCrawlGame.mainMenuScreen.bg.slideDownInstantly();
                     } catch (Exception e) {

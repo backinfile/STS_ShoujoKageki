@@ -1,0 +1,43 @@
+{
+	"fortuneTeller:IdentityCrisisEvent": {
+		"NAME": "Identity Crisis",
+		"DESCRIPTIONS": [
+			"As you move through ~The~ ~City~ you come across a #pPurple #pMirror. NL You look at it, but you see no reflection.",
+			"You see no one but #g~You~ #g~wish~ #g~to~ #g~become~ #g~someone.~",
+			"#r@YOU@ #r@EXIST@ #r@AND@ #r@ARE@ #r@VALID!@",
+			"#yYou #yare #yat #ypeace #ywith #yyour #ypresence.",
+			"You have no hands."
+		],
+		"OPTIONS": [
+			"[Inspiration] #gGain #ga #gRandom #gStarting #gRelic.",
+			"[Denial] #rLose #r",
+			" #rMax #rHP. #gRemove #ga #gCard #gfrom #gyour #gdeck.",
+			"[Acceptance] #gGain #gApotheosis.",
+			"[TOUCH THE MIRROR] TOUCH TOUCH TO#C# TOUCH TO UCH TOUCH #rTOUCH TOUCH",
+			"[Leave]",
+			"Select card to remove."
+		]
+	},
+	"fortuneTeller:NeowEventPatch": {
+		"NAME": "NeowEventPatch",
+		"DESCRIPTIONS": [
+			"实现了~",
+			
+		],
+		"OPTIONS": [
+			"[ #g获得一页 #g罗塞尔大帝的日记 ]",
+			"[离开]"
+		]
+	},
+	"ShoujoKageki:RealTimeEvent": {
+		"NAME": "观众席是这么近的吗？",
+		"DESCRIPTIONS": [
+			"观众席是这么近的吗？ NL 照明灯是这么 #g炽热 的吗？ NL 舞台是这么 #g可怕 的吗？ NL 大家都活在这样的 #g恐惧 里面吗？",
+			"但我却没察觉到这些，只看到了小光。",
+		],
+		"OPTIONS": [
+			"[soyo] #g获得卡牌",
+			"[离开]"
+		]
+	}
+}
