@@ -1,100 +1,101 @@
+
 [
 	{
-		"PROPER_NAME": "约定牌堆",
+		"PROPER_NAME": "Promise Pile",
 		"NAMES": [
-			"约定牌堆", "约定", "约定牌库"
+			"promise pile", "promise_pile"
 		],
-		"DESCRIPTION": "约定牌堆 是 #y爱城华恋 特有的牌堆。 NL 放入卡牌时，默认放入牌堆底部。"
+		"DESCRIPTION": "Promise Pile is a special pile of #yKaren #yAijou. NL When a card is put into this pile, it is placed at the bottom of the pile by default."
 	},
 	{
-		"PROPER_NAME": "期待",
+		"PROPER_NAME": "Expectation",
 		"NAMES": [
-			"期待"
+			"expectation"
 		],
-		"DESCRIPTION": "打出此牌后，或打出其他牌时，或回合结束时， #r抹除 此牌。"
+		"DESCRIPTION": "When playing another card, or at the end of the turn, #rexhaust this card."
 	},
 	{
-		"PROPER_NAME": "沉淀",
+		"PROPER_NAME": "Precipitation",
 		"NAMES": [
-			"沉淀"
+			"precipitation"
 		],
-		"DESCRIPTION": "在回合结束时，具有沉淀的牌会被放入 #y约定牌堆 。"
+		"DESCRIPTION": "At the end of the turn, cards with precipitation will be placed in #yPromise #yPile."
 	},
 	{
-		"PROPER_NAME": "临时力量",
+		"PROPER_NAME": "Temporary Strength",
 		"NAMES": [
-			"临时力量"
+			"temporary strength"
 		],
-		"DESCRIPTION": "临时力量会在本回合让攻击获得额外的伤害。"
+		"DESCRIPTION": "Temporary strength will give extra damage to attacks in this turn."
 	},
 	{
-		"PROPER_NAME": "缓冲",
+		"PROPER_NAME": "Buffer",
 		"NAMES": [
-			"缓冲"
+			"buffer"
 		],
-		"DESCRIPTION": "阻止下一次你受到的生命值损伤。"
+		"DESCRIPTION": "Prevent the next damage you receive."
 	},
 	{
-		"PROPER_NAME": "闪耀",
+		"PROPER_NAME": "Shine",
 		"NAMES": [
-			"销毁", "闪耀", "工具"
+			"shine"
 		],
-		"DESCRIPTION": "打出X次后卡牌从 #y牌组 中 #r永久移除 。"
+		"DESCRIPTION": "After playing X times, the card is #rpermanently removed from your #yDeck ."
 	},
 	{
-		"PROPER_NAME": "闪耀牌奖励",
+		"PROPER_NAME": "Shine Card Reward",
 		"NAMES": [
-			"闪耀牌奖励"
+			"shine card reward", "shine-card-reward"
 		],
-		"DESCRIPTION": "战斗结束时多掉落 #y1 次仅包含一张 闪耀 牌 的 #y卡牌奖励 。 NL （第三层boss无效）"
+		"DESCRIPTION": "At the end of the battle, drop #y1 #yCard Reward containing only one #yShine Card . NL (The third layer boss is invalid)"
 	},
 	{
-		"PROPER_NAME": "搜寻",
+		"PROPER_NAME": "Search",
 		"NAMES": [
-			"搜寻"
+			"search"
 		],
-		"DESCRIPTION": "从目标牌堆中选择一张牌或多张牌置入手牌。"
+		"DESCRIPTION": "Select one or more cards from the target pile and place them in your hand."
 	},
 	{
-		"PROPER_NAME": "永远闪耀",
+		"PROPER_NAME": "Shine Forever",
 		"NAMES": [
-			"永远闪耀"
+			"shine forever"
 		],
-		"DESCRIPTION": "打出后不再从牌组中 #r移除 。"
+		"DESCRIPTION": "After playing, it will no longer be #rremoved from the deck ."
 	},
 	{
-		"PROPER_NAME": "禁用",
+		"PROPER_NAME": "Disable",
 		"NAMES": [
-			"禁用"
+			"disable"
 		],
-		"DESCRIPTION": "在本场战斗内，禁用最右侧的可用遗物。（ #y星之皇冠 不会被禁用）"
+		"DESCRIPTION": "Disable the rightmost available relic in this battle. ( #yStar #yCrown will not be disabled)"
 	},
 	{
-		"PROPER_NAME": "衍生牌",
+		"PROPER_NAME": "Derivative Card",
 		"NAMES": [
-			"衍生牌"
+			"derivative card"
 		],
-		"DESCRIPTION": "牌组以外的牌。"
+		"DESCRIPTION": "Cards outside the deck."
 	},
 	{
-		"PROPER_NAME": "熟练度",
+		"PROPER_NAME": "Proficiency",
 		"NAMES": [
-			"熟练度"
+			"proficiency"
 		],
-		"DESCRIPTION": "提高工具牌的效果。"
+		"DESCRIPTION": "Improve the effect of tool cards."
 	},
 	{
-		"PROPER_NAME": "削减",
+		"PROPER_NAME": "Cut",
 		"NAMES": [
-			"削减"
+			"cut"
 		],
-		"DESCRIPTION": "敌人当回合失去力量。"
+		"DESCRIPTION": "The enemy loses strength this turn."
 	},
 	{
-		"PROPER_NAME": "训练",
+		"PROPER_NAME": "Training",
 		"NAMES": [
-			"训练"
+			"training"
 		],
-		"DESCRIPTION": "训练会让 #y射击 获得额外的伤害，层数每回合下降一半。"
+		"DESCRIPTION": "Training will give #yShoot extra damage, and the number of layers will decrease by half every turn."
 	}
 ]

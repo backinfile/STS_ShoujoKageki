@@ -1,189 +1,187 @@
 {
 	"ShoujoKageki:BagPower": {
-		"NAME": "约定牌堆",
+		"NAME": "Promise Pile",
 		"DESCRIPTIONS": [
-			"爱城华恋特有的牌堆。 NL ", 
-			"可点击人物查看具体卡牌。 NL ", 
-			" NL #y强化 ：现在约定牌堆中充满无限的 #y续演 。 NL ", 
-			" NL #y强化 ：现在视抽牌堆为约定牌堆。 NL ",
-			" NL #y强化 ：现在从约定牌堆中抽出的牌将被 #y升级。 NL ",
-			" NL #y强化 ：现在从约定牌堆中抽出的牌被打出时将 #r消耗 。 NL ",
-			" NL 约定牌堆 中没有牌 。",
-			" NL 卡牌按顺序： NL ",
-			" NL ", 
-			" NL #y强化 ：现在约定牌堆中充满无限的 #y续演+ 。 NL ", 
+			"Unique pile for Karen Aijou. NL ",
+			"Click the character to view the specific cards. NL ",
+			" NL #yEnhance: Now the #yShoujoKageki:Promise_Pile is filled with #yInfinite #yContinue. NL ",
+			" NL #yEnhance: Now the draw pile is treated as the #yShoujoKageki:Promise_Pile. NL ",
+			" NL #yEnhance: Now the cards drawn from the #yShoujoKageki:Promise_Pile are #yUpgraded. NL ",
+			" NL #yEnhance: Now the cards drawn from the #yShoujoKageki:Promise_Pile are #rExhausted when played. NL ",
+			" NL There are no cards in the #yShoujoKageki:Promise_Pile. NL ",
+			" NL Cards in order: NL ",
+			" NL ",
+			" NL #yEnhance: Now the #yShoujoKageki:Promise_Pile is filled with #yInfinite #yContinue+. NL "
 		]
 	},
 	"ShoujoKageki:BagInfinitePower": {
-		"NAME": "约定牌堆",
+		"NAME": "Promise Pile",
 		"DESCRIPTIONS": [
-			"爱城华恋特有的牌堆，现在有 #y无限 的 #y续演 。"
+			"Unique pile for Karen Aijou. NL "
 		]
 	},
 	"ShoujoKageki:ToolPower": {
-		"NAME": "闪耀",
+		"NAME": "Shine",
 		"DESCRIPTIONS": [
-			"提高工具牌的效果。"
+			"Improve the effect of tool cards. NL "
 		]
 	},
 	"ShoujoKageki:Position0Power": {
 		"NAME": "Position 0",
 		"DESCRIPTIONS": [
-			"每回合前 #y", " 次 造成未被格挡的攻击伤害时，获得等量 #y格挡 。"
+			"Whenever you deal unblocked attack damage #y", " times in a turn, gain #y", " Block."
 		]
 	},
 	"ShoujoKageki:Position0TmpPower": {
 		"NAME": "Position 0",
 		"DESCRIPTIONS": [
-			"每当你获得 #y力量 ， 获得额外 #y", " 点 #y力量 。"
+			"Whenever you gain #yStrength, gain an additional #y", " Strength."
 		]
 	},
 	"ShoujoKageki:PutToBagPower": {
-		"NAME": "新的一天",
+		"NAME": "New Day",
 		"DESCRIPTIONS": [
-			"你打出的下 #y", " 张牌 会被放入 #y约定牌堆 。"
+			"The next #y", " cards you play are put into the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:LetterPower": {
-		"NAME": "信封",
+		"NAME": "Letter",
 		"DESCRIPTIONS": [
-			"将卡牌放入到 约定牌堆 时，获得 #y", " 点 格挡 。"
+			"When you put a card into the #yShoujoKageki:Promise_Pile, gain #y", " Block."
 		]
 	},
 	"ShoujoKageki:StageIsWaitingPower": {
-		"NAME": "舞台正在等待着",
+		"NAME": "Stage Is Waiting",
 		"DESCRIPTIONS": [
-			"约定牌堆 被清空时，获得  #y", " 个 [E] 。"
+			"When the #yShoujoKageki:Promise_Pile is empty, gain #y", " [E]."
 		]
 	},
 	"ShoujoKageki:NextTurnDrawBagPower": {
-		"NAME": "抽牌",
+		"NAME": "Draw",
 		"DESCRIPTIONS": [
-			"下回合，从 #y约定牌堆 中抽 #y", " 张牌。"
+			"Next turn, draw #y", " cards from the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:AquariumPower": {
-		"NAME": "水族馆",
+		"NAME": "Aquarium",
 		"DESCRIPTIONS": [
-			"每个回合开始时，抽 #y", 
-			" 张牌， 然后选择 #y",
-			" 张手牌放入 #y约定牌堆 。"
+			"At the start of each turn, draw #y",
+			" cards, then put #y",
+			" cards from your hand into the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:ReserveStrengthPower": {
-		"NAME": "保留力量",
+		"NAME": "Retain Strength",
 		"DESCRIPTIONS": [
-			"在本回合保留你的 #y力量 。", 
-			"在接下来的 #y",
-			" 回合保留你的 #y力量 。"
+			"Retain your #yStrength this turn.",
+			"Retain your #yStrength for the next #y",
+			" turns."
 		]
 	},
 	"ShoujoKageki:FinancierPower": {
-		"NAME": "Banana费南雪",
+		"NAME": "Banana Financier",
 		"DESCRIPTIONS": [
-			"每两回合保留 #y力量 #y", " 回合。"
+			"Retain #yStrength every two turns for #y", " turns."
 		]
 	},
 	"ShoujoKageki:CryPowerTmp2": {
-		"NAME": "添麻烦了",
+		"NAME": "Trouble",
 		"DESCRIPTIONS": [
-			"获得 #y力量 时， 对所有敌人造成当前 #y力量 值的伤害。",
-			"获得 #y力量 时， 对所有敌人造成当前 #y力量 值 #y", " 倍 的伤害。"
+			"When you gain #yStrength, deal damage to ALL enemies equal to your current #yStrength.",
+			"When you gain #yStrength, deal damage to ALL enemies equal to your current #yStrength #y", " times."
 		]
 	},
 	"ShoujoKageki:CryPowerTmp": {
-		"NAME": "添麻烦了",
+		"NAME": "Trouble",
 		"DESCRIPTIONS": [
-			"当有 #y力量 发生变化时， 获得变化数量 #y",
-			" 倍的 #y格挡 。"
+			"When your #yStrength changes, gain #y", " times the amount as #yBlock."
 		]
 	},
 	"ShoujoKageki:VoidPower": {
-		"NAME": "世界上最空虚的人",
+		"NAME": "The Emptiest Person",
 		"DESCRIPTIONS": [
-			"以 #y约定牌堆 代替 抽牌堆。"
+			"Replace your draw pile with the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:ArrogantPower": {
-		"NAME": "骄傲",
+		"NAME": "Arrogant",
 		"DESCRIPTIONS": [
-			"回合开始时，失去25%最大生命值的生命，并获得一个随机遗物"
+			"At the start of your turn, lose 25% of your Max HP and gain a random relic."
 		]
 	},
 	"ShoujoKageki:TragedyPower": {
-		"NAME": "悲剧",
+		"NAME": "Tragedy",
 		"DESCRIPTIONS": [
-			"战斗结束时，获得 #r", " 和 #y", " 个随机遗物。"
+			"At the end of combat, obtain #r", " and #y", " random relics."
 		]
 	},
 	"ShoujoKageki:PassionPower": {
-		"NAME": "激情",
+		"NAME": "Passion",
 		"DESCRIPTIONS": [
-			"战斗结束时，获得 #y", " 个随机遗物。"
+			"At the end of combat, obtain #y", " random relics."
 		]
 	},
 	"ShoujoKageki:GainRelicPower": {
-		"NAME": "激情",
+		"NAME": "Passion",
 		"DESCRIPTIONS": [
-			"战斗结束时，获得 #y", " 个随机遗物。"
+			"At the end of combat, obtain #y", " random relics."
 		]
 	},
 	"ShoujoKageki:BurnPower": {
-		"NAME": "燃烧",
+		"NAME": "Burn",
 		"DESCRIPTIONS": [
-			"从 约定牌堆 抽出的牌将被 #y升级 ， 且被打出时 #r消耗 。",
-			"#r燃烧中"
+			"Cards drawn from the #yShoujoKageki:Promise_Pile are #yUpgraded and #rExhausted when played.",
+			"#rBurning"
 		]
 	},
 	"ShoujoKageki:StarlightPower": {
-		"NAME": "Starlight第一幕",
+		"NAME": "Starlight Act 1",
 		"DESCRIPTIONS": [
-			"打出 #y闪耀 牌后，抽 #y", " 张牌。"
+			"When you play a #yShoujoKageki:Shine card, draw #y", " cards."
 		]
 	},
 	"ShoujoKageki:Starlight02Power": {
-		"NAME": "Starlight第二幕",
+		"NAME": "Starlight Act 2",
 		"DESCRIPTIONS": [
-			"打出的 #y闪耀 牌会额外打出 #y", " 次，然后 #r耗尽 #y闪耀 。"
+			"When you play a #yShoujoKageki:Shine card, play it #y", " more time, then #rExhaust it."
 		]
 	},
 	"ShoujoKageki:ShineRewardPower": {
-		"NAME": "闪耀牌奖励",
+		"NAME": "Shine Reward",
 		"DESCRIPTIONS": [
-			"战斗结束时, 获得 #y", " 个 #y闪耀牌奖励 。"
+			"At the end of combat, obtain #y", " #yShoujoKageki:Shine Reward."
 		]
 	},
 	"ShoujoKageki:BananaLunchPower": {
-		"NAME": "Banana午餐",
+		"NAME": "Banana Lunch",
 		"DESCRIPTIONS": [
-			"回合结束时，增加 #y", " 张 #y三明治 到 约定牌堆 。"
+			"At the end of your turn, add #y", " #ySandwich into the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:ReproducePower": {
-		"NAME": "再生产",
+		"NAME": "Reproduction",
 		"DESCRIPTIONS": [
-			"#y约定牌堆 将提供 #y无限 的 #y续演 。"
+			"The #yShoujoKageki:Promise_Pile provides #yInfinite #yContinue."
 		]
 	},
 	"ShoujoKageki:FormPower": {
-		"NAME": "觉醒形态",
+		"NAME": "Awakening Form",
 		"DESCRIPTIONS": [
-			"每个回合开始时，抽满手牌。"
+			"At the start of each turn, draw cards until your hand is full."
 		]
 	},
 	"ShoujoKageki:ReduceStrengthLimitPower": {
-		"NAME": "暗中窥视",
+		"NAME": "Peek",
 		"DESCRIPTIONS": [
-			"敌人被 削减 的 力量 每回合最多回复", 
-			"点。不可叠加。"
+			"Enemies can only gain #y", " #yStrength per turn. Does not stack."
 		]
 	},
 	"fortuneTeller:MovingHungerPower": {
-		"NAME": "饥饿",
+		"NAME": "Hunger",
 		"DESCRIPTIONS": [
-			"回合开始时随机 消耗 #b",
-			" 张手牌，获得 #b",
-			" 点 力量。"
+			"At the start of your turn, randomly #yExhaust #b",
+			" cards and gain #b",
+			" #yStrength."
 		]
 	}
 }

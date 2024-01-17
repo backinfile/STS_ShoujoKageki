@@ -16,7 +16,7 @@ public class Burn extends BaseCard {
     public static final String ID = ModInfo.makeID(Burn.class.getSimpleName());
 
     public Burn() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
     }
 
     @Override

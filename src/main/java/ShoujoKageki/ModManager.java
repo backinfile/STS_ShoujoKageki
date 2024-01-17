@@ -201,7 +201,11 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         if (keywords != null) {
             for (com.evacipated.cardcrawl.mod.stslib.Keyword keyword : keywords) {
-                BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                if (getLang().equals("eng")) {
+                    BaseMod.addKeyword(ModInfo.getModId().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                } else {
+                    BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                }
                 Log.logger.info("-----------------add keyword: " + keyword.PROPER_NAME);
             }
         }

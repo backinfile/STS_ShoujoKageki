@@ -1,540 +1,537 @@
 {
 	"ShoujoKageki:Defend": {
-		"NAME": "防御",
-		"DESCRIPTION": "获得 !B! 点 格挡 。"
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! block."
 	},
 	"ShoujoKageki:Strike": {
-		"NAME": "打击",
-		"DESCRIPTION": "造成 !D! 点伤害。"
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage."
 	},
 	"ShoujoKageki:ShineStrike": {
-		"NAME": "闪耀打击",
-		"DESCRIPTION": "造成 !D! 点伤害。"
+		"NAME": "Shine Strike",
+		"DESCRIPTION": "Deal !D! damage."
 	},
 	"ShoujoKageki:ShineStrike2": {
-		"NAME": "用你的闪耀贯穿我吧",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。"
+		"NAME": "Radiance",
+		"DESCRIPTION": "Deal !D! damage !M! times."
 	},
 	"ShoujoKageki:Fall": {
-		"NAME": "坠落",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张牌放入 约定牌堆 。"
+		"NAME": "Fallen",
+		"DESCRIPTION": "Gain !B! block. NL Put !M! cards into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:WhosPromise": {
-		"NAME": "翩翩旋转的双人舞",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽 !M! 张牌，然后放入 !M! 张牌。"
+		"NAME": "Graceful Duo Spin",
+		"DESCRIPTION": "Deal !D! damage. NL Draw !M! cards from ShoujoKageki:Promise_Pile, then put !M! cards into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Bridge": {
-		"NAME": "约定之塔桥",
-		"DESCRIPTION": "打出 约定牌堆 顶部 X 张牌。",
-		"UPGRADE_DESCRIPTION": "打出 约定牌堆 顶部 X+1 张牌。"
+		"NAME": "Bridge of Promise",
+		"DESCRIPTION": "Play the top X cards of ShoujoKageki:Promise_Pile.",
+		"UPGRADE_DESCRIPTION": "Play the top X+1 cards of ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:WeKnow": {
-		"NAME": "约定的舞台",
-		"DESCRIPTION": "手牌与 约定牌堆 卡牌数目相同时才能打出。 NL  获得 [E] [E] 。",
-		"UPGRADE_DESCRIPTION": "手牌与 约定牌堆 卡牌数目相同时才能打出。 NL  获得 [E] [E] [E] 。",
+		"NAME": "Stage of Promise",
+		"DESCRIPTION": "Can only be played if your hand has the same number of cards as ShoujoKageki:Promise_Pile. NL Gain [E] [E].",
+		"UPGRADE_DESCRIPTION": "Can only be played if your hand has the same number of cards as ShoujoKageki:Promise_Pile. NL Gain [E] [E] [E].",
 		"EXTENDED_DESCRIPTION": [
-		  "手牌与 约定牌堆 卡牌数目相同时才能打出。"
+		  "Can only be played if your hand has the same number of cards as ShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:WeKnowTmp": {
-		"NAME": "约定的舞台",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 在下回合从 约定牌堆 中抽 !M! 张牌。"
+		"NAME": "Stage of Promise",
+		"DESCRIPTION": "Deal !D! damage. NL Draw !M! cards from ShoujoKageki:Promise_Pile next turn."
 	},
 	"ShoujoKageki:TowerOfPromise": {
-		"NAME": "约定之塔",
-		"DESCRIPTION": "保留 。 NL 从 约定牌堆 中抽牌直到手牌上限。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL  从 约定牌堆 中抽牌直到手牌上限。"
+		"NAME": "Tower of Promise",
+		"DESCRIPTION": "Retain. NL Draw cards from ShoujoKageki:Promise_Pile until your hand is full. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Draw cards from ShoujoKageki:Promise_Pile until your hand is full."
 	},
 	"ShoujoKageki:MeetAgain": {
-		"NAME": "重逢",
-		"DESCRIPTION": "获得 !M! 点 临时力量 。 NL 打出后进入 约定牌堆 。"
+		"NAME": "Reunion",
+		"DESCRIPTION": "Gain !M! temporary Strength. NL Put this card into ShoujoKageki:Promise_Pile after playing."
 	},
 	"ShoujoKageki:ChargeStrike": {
-		"NAME": "蓄力打击",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 本回合目标失去 !M! 点 力量 。"
+		"NAME": "Charged Strike",
+		"DESCRIPTION": "Deal !D! damage. NL Target loses !M! Strength this turn."
 	},
 	"ShoujoKageki:TwistingStrike": {
-		"NAME": "扭转打击",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
+		"NAME": "Twisting Strike",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Put !M! *Sandwich into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:EatTogether": {
-		"NAME": "一起吃饭吧",
-		"DESCRIPTION": "获得 !M! 点 临时力量 。 NL 保留力量 !ShoujoKageki:SM! 回合 。"
+		"NAME": "Let's Eat!",
+		"DESCRIPTION": "Gain !M! temporary Strength. NL Retain Strength for !ShoujoKageki:SM! turns."
 	},
 	"ShoujoKageki:EatTogetherTmp": {
-		"NAME": "一起吃饭吧",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 每场战斗开始时，将 !M! 张 *三明治 放入 约定牌堆 。"
+		"NAME": "Let's Eat!",
+		"DESCRIPTION": "Gain !B! block. NL At the start of each combat, put !M! *Sandwich into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:EatFood2": {
-		"NAME": "三明治",
-		"DESCRIPTION": "获得 !M! 点 临时力量 。 NL 消耗 。"
+		"NAME": "Sandwich",
+		"DESCRIPTION": "Gain !M! temporary Strength. NL Exhaust."
 	},
 	"ShoujoKageki:NeverRetreat02": {
-		"NAME": "绝不认输",
-		"DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL 沉淀 ：被打出之前耗能变为0。"
+		"NAME": "Never retreat",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Set Cost to 0 before playing."
 	},
 	"ShoujoKageki:SwordUp": {
-		"NAME": "上挑",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 和 易伤 。"
+		"NAME": "Sword Up",
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak and Vulnerable."
 	},
 	"ShoujoKageki:WatchBack": {
-		"NAME": "背后袭击",
-		"DESCRIPTION": "手牌满时才能打出。 NL 给予所有敌人 !M! 层 虚弱 和 易伤 。",
+		"NAME": "Backstab",
+		"DESCRIPTION": "Can only be played if your hand is full. NL Apply !M! Weak and Vulnerable to ALL enemies.",
 		"EXTENDED_DESCRIPTION": [
-		  "手牌满时才能打出。"
+		  "Can only be played if your hand is full."
 		]
 	},
 	"ShoujoKageki:Attack04": {
-		"NAME": "落地",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将 *回击 放入 约定牌堆 。"
+		"NAME": "Touchdown",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Put *Counterattack into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Attack05": {
-		"NAME": "回击",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害三次。 NL 消耗 。"
+		"NAME": "Counterstrike",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies 3 times. NL Exhaust."
 	},
 	"ShoujoKageki:Attack06": {
-		"NAME": "昨天夜空的光辉",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 将弃牌堆中的 !M! 张牌放入 约定牌堆 。"
+		"NAME": "Radiance of Last Night",
+		"DESCRIPTION": "Deal !D! damage. NL Put !M! cards from discard pile into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Defend03": {
-		"NAME": "闪避",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 *对峙 放入 约定牌堆 。"
+		"NAME": "Evade",
+		"DESCRIPTION": "Gain !B! block. NL Put *Confrontation into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Attack07": {
-		"NAME": "对峙",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 消耗 。"
+		"NAME": "Confrontation",
+		"DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
 	},
 	"ShoujoKageki:Parry": {
-		"NAME": "招架",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得或失去手牌时，本回合格挡值增加 !M! 。"
+		"NAME": "Parry",
+		"DESCRIPTION": "Gain !B! block. NL Whenever you gain or lose cards, gain extra !M! block"
 	},
 	"ShoujoKageki:BackToBack": {
-		"NAME": "背靠背",
-		"DESCRIPTION": "造成 约定牌堆 中卡牌数量 !M! 倍 的 伤害。 NL （造成 !D! 点 伤害） NL （至多计算10张）",
-		"UPGRADE_DESCRIPTION": ""
+		"NAME": "Back-to-Back",
+		"UPGRADE_CHINESE_DESCRIPTION": "",
+		"DESCRIPTION": "Deal damage equal to ShoujoKageki:Promise_Pile size times !M!. NL (Deal !D! damage) NL (Max 10 cards)"
 	},
 	"ShoujoKageki:Snack": {
-		"NAME": "小零食",
-		"DESCRIPTION": "获得 !M! 临时力量 X次。 NL 获得 [E] 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "获得 !M! 临时力量 X+1次。 NL 获得 [E] 。 NL 消耗 。"
+		"NAME": "Snacks",
+		"DESCRIPTION": "Gain !M! temporary Strength X times. NL Gain [E]. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !M! temporary Strength X+1 times. NL Gain [E]. NL Exhaust."
 	},
 	"ShoujoKageki:NotLose": {
-		"NAME": "我不会输的",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 沉淀 。"
+		"NAME": "I Won't Lose",
+		"DESCRIPTION": "Deal !D! damage !M! times. NL Set Cost to 0 before playing."
 	},
 	"ShoujoKageki:BringStarlight": {
-		"NAME": "为大家带来Starlight",
-		"DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 这张牌每被打出一次，在本场战斗中其攻击次数增加1。"
+		"NAME": "Starlight for Everyone",
+		"DESCRIPTION": "Deal !D! damage !M! times. NL This card gains 1 additional attack for each time it is played in this combat."
 	},
 	"ShoujoKageki:Aquarium": {
-		"NAME": "水族馆",
-		"DESCRIPTION": "每个回合开始时，抽 !M! 张牌， 然后将 !M! 张牌放入 约定牌堆 。",
-		"UPGRADE_DESCRIPTION": "固有 。 NL 每个回合开始时，抽 !M! 张牌， 然后将 !M! 张牌放入 约定牌堆 。"
+		"NAME": "Aquarium",
+		"DESCRIPTION": "At the start of each turn, draw !M! cards, then put !M! cards into ShoujoKageki:Promise_Pile.",
+		"UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, draw !M! cards, then put !M! cards into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Must": {
-		"NAME": "东京塔下",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张 *约定之塔 放入手牌 NL 消耗 。"
+		"NAME": "Under Tokyo Tower",
+		"DESCRIPTION": "Gain !B! block. NL Put !M! *Tower *of *Promise into your hand. NL Exhaust."
 	},
 	"ShoujoKageki:RealTimeAttack": {
 		"NAME": "观众席是这么近的吗",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL (伤害数值随系统时间而变化)"
+		"DESCRIPTION": "Deal !D! damage. NL (Damage scales with system time)"
 	},
 	"ShoujoKageki:OurPromise": {
-		"NAME": "我们的约定",
-		"DESCRIPTION": "抽 !M! 张牌。 NL 将2张牌放入 约定牌堆 。"
+		"NAME": "Our Promise",
+		"DESCRIPTION": "Draw !M! cards. NL Put 2 cards into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:ExchangeFate": {
-		"NAME": "命运交换之日",
-		"DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "将手牌与 约定牌堆 中的牌交换。"
+		"NAME": "Day of Fate",
+		"DESCRIPTION": "Swap your hand with ShoujoKageki:Promise_Pile. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Swap your hand with ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Rapid": {
-		"NAME": "极速下降",
-		"DESCRIPTION": "从 约定牌堆 中选择 !M! 张牌放入你的手牌，弃置其余。",
+		"NAME": "Rapid Descent",
+		"DESCRIPTION": "Select !M! cards from ShoujoKageki:Promise_Pile. NL Discard the rest.",
 		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:OnStage": {
-		"NAME": "我将再次变为我自己",
-		"DESCRIPTION": "从 约定牌堆 抽 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
+		"NAME": "I Will Be Myself",
+		"DESCRIPTION": "Draw !M! cards from ShoujoKageki:Promise_Pile. NL Gain [E] [E]. NL Exhaust.",
 		"EXTENDED_DESCRIPTION": [
-			"约定牌堆 中卡牌数量不足。"
+			"ShoujoKageki:Promise_Pile does not have enough cards."
 		]
 	},
 	"ShoujoKageki:StageIsWaiting": {
-		"NAME": "舞台正在等待着",
-		"DESCRIPTION": " 约定牌堆 被清空时，获得 [E] 。"
+		"NAME": "Stage Is Waiting",
+		"DESCRIPTION": "When ShoujoKageki:Promise_Pile is empty, gain [E]."
 	},
 	"ShoujoKageki:LastWord": {
-		"NAME": "最后的台词",
-		"DESCRIPTION": "约定牌堆 之外只有这张牌时才能打出。 NL 对所有敌人造成 !D! 点伤害。",
+		"NAME": "Last Word",
+		"DESCRIPTION": "Can only be played if this is the only card out of ShoujoKageki:Promise_Pile. NL Deal !D! damage to ALL enemies.",
 		"EXTENDED_DESCRIPTION": [
-			"约定牌堆 之外必须只有这张牌。"
+			"Can only be played if this is the only card out of ShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:StageIsWaitingTmp": {
-		"NAME": "舞台正在等待着",
-		"DESCRIPTION": " 不能被打出 ， 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] 。",
-		"UPGRADE_DESCRIPTION": " 不能被打出 ， 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] [E] 。",
-		"EXTENDED_DESCRIPTION": [
+		"NAME": "Stage Is Waiting",
+		"UPGRADE_CHINESE_DESCRIPTION": " 不能被打出 ， 沉淀 。 NL 从 约定牌堆 中抽出此牌时，获得 [E] [E] 。",
+		"EXTENDED_CHINESE_DESCRIPTION": [
 		  "这张牌不能被打出。",
 		  "约定牌堆 中卡牌数量不足。"
 		]
 	},
 	"ShoujoKageki:Dance": {
-		"NAME": "舞动",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中选择 !M! 张牌加入你的手牌。"
+		"NAME": "Dance",
+		"DESCRIPTION": "Deal !D! damage. NL Select !M! cards from ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Sunlight": {
-		"NAME": "耀眼的阳光",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，可将此牌重新加入牌组。",
+		"NAME": "Shining Sunlight",
+		"DESCRIPTION": "Deal !D! damage. NL When this card is run out, you can retrieve it.",
 		"EXTENDED_DESCRIPTION": [
-		  "战斗提前结束了，你可以重新取回它。",
-		  "注意：作为最后一击击杀敌人时也会重新加入牌组。"
+		  "The battle ended early, you can retrieve it.",
+		  "Note: It will also be retrieved when the enemy is killed by the last blow."
 		]
 	},
 	"ShoujoKageki:Run02": {
-		"NAME": "哎？",
-		"DESCRIPTION": "虚无 。 NL 获得 力量 点数的 敏捷 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "获得 力量 点数的 敏捷 。 NL 消耗 。"
+		"NAME": "Huh?",
+		"DESCRIPTION": "Ethereal. NL Gain Dexterity equal to Strength. NL Exhaust."
 	},
 	"ShoujoKageki:NewDay": {
-		"NAME": "新的一天",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 此牌和你打出的下 !M! 张牌进入 约定牌堆 。"
+		"NAME": "New Day",
+		"DESCRIPTION": "Gain !B! block. NL Put this card and the next !M! cards you play into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:ToTheStage": {
-		"NAME": "迈向那个舞台",
-		"DESCRIPTION": "获得 [E] [E] [E] 。",
-		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 抽 !M! 张牌。"
+		"NAME": "Towards The Stage",
+		"DESCRIPTION": "Gain [E] [E] [E].",
+		"UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL Draw !M! cards."
 	},
 	"ShoujoKageki:Ready": {
-		"NAME": "准备完成",
-		"DESCRIPTION": "固有 。 NL 获得 !M! 点 力量 。 NL 抽 !ShoujoKageki:SM! 张牌。"
+		"NAME": "Ready",
+		"DESCRIPTION": "Innate. NL Gain !M! Strength. NL Draw !ShoujoKageki:SM! cards."
 	},
 	"ShoujoKageki:Debut": {
-		"NAME": "出场",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次。"
+		"NAME": "Debut",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
 	},
 	"ShoujoKageki:Tragedy": {
-		"NAME": "悲剧",
-		"DESCRIPTION": "增加一张 *腐朽 到你的牌组。 NL 战斗结束时，获得一个随机遗物。",
-		"UPGRADE_DESCRIPTION": "增加一张 *受伤 到你的牌组。 NL 战斗结束时，获得一个随机遗物。"
+		"NAME": "Tragedy",
+		"DESCRIPTION": "Add *Decay into your pile. NL At the end of combat, obtain a random relic.",
+		"UPGRADE_DESCRIPTION": "Add *Injury into your pile. NL At the end of combat, obtain a random relic."
 	},
 	"ShoujoKageki:Passion": {
-		"NAME": "激情",
-		"DESCRIPTION": "战斗结束时，获得一个随机遗物 。"
+		"NAME": "Passion",
+		"DESCRIPTION": "At the end of combat, obtain a random relic."
 	},
 	"ShoujoKageki:Arrogant": {
-		"NAME": "骄傲",
-		"DESCRIPTION": "固有 ， 期待 。 NL 战斗结束时，获得一个随机遗物。"
+		"NAME": "Arrogant",
+		"DESCRIPTION": "Innate, ShoujoKageki:Expectation. NL At the end of combat, obtain a random relic."
 	},
 	"ShoujoKageki:KillAll": {
-		"NAME": "皆杀",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 闪耀 耗尽时，获得 !M! 个随机遗物。"
+		"NAME": "Kill All",
+		"DESCRIPTION": "Deal !D! damage. NL When this card is run out, obtain !M! random relics."
 	},
 	"ShoujoKageki:PickStar": {
-		"NAME": "摘星",
-		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，然后获得 [E] [E] 。",
-		"UPGRADE_DESCRIPTION": "禁用 一个遗物，然后获得 [E] [E] [E] 。"
+		"NAME": "Pick Stars",
+		"DESCRIPTION": "ShoujoKageki:Disable !ShoujoKageki:SM! relics, then gain [E] [E].",
+		"UPGRADE_DESCRIPTION": "ShoujoKageki:Disable 1 relic, then gain [E] [E] [E]."
 	},
 	"ShoujoKageki:StarCrime": {
-		"NAME": "星罪",
-		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，然后抽 !M! 张牌。"
+		"NAME": "Star Crime",
+		"DESCRIPTION": "ShoujoKageki:Disable !ShoujoKageki:SM! relics, then draw !M! cards."
 	},
 	"ShoujoKageki:Forgive": {
-		"NAME": "\"宽恕\"",
-		"DESCRIPTION": "禁用 !ShoujoKageki:SM! 个遗物，然后对所有敌人造成 !D! 点伤害。"
+		"NAME": "\"Forgive\"",
+		"DESCRIPTION": "ShoujoKageki:Disable !ShoujoKageki:SM! relics, then deal !D! damage to ALL enemies."
 	},
 	"ShoujoKageki:StarGuide": {
-		"NAME": "星光指引",
-		"DESCRIPTION": "固有 。 NL 将你所有的 闪耀 牌放入 约定牌堆 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。"
+		"NAME": "Guidance of Starlight",
+		"DESCRIPTION": "Innate. NL Put all your ShoujoKageki:Shine cards into ShoujoKageki:Promise_Pile. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Retain. NL When ShoujoKageki:Promise_Pile is empty, play your only ShoujoKageki:Shine card as many times as possible."
 	},
 	"ShoujoKageki:Star": {
-		"NAME": "星光闪耀之时",
-		"DESCRIPTION": "耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 耗尽 约定牌堆 之外 你唯一 闪耀 牌，将其打出同等次数。",
+		"NAME": "Moment of Starlight",
+		"DESCRIPTION": "When ShoujoKageki:Promise_Pile is empty, play your only ShoujoKageki:Shine card as many times as its ShoujoKageki:Shine count.",
+		"UPGRADE_DESCRIPTION": "Retain. NL When ShoujoKageki:Promise_Pile is empty, play your only ShoujoKageki:Shine card as many times as its ShoujoKageki:Shine count.",
 		"EXTENDED_DESCRIPTION": [
-		  "没有 闪耀 牌。",
-		  "闪耀 牌太多了。",
+		  "You don't have any ShoujoKageki:Shine cards.",
+		  "You have too many ShoujoKageki:Shine cards."
 		]
+
 	},
 	"ShoujoKageki:EatFood3": {
-		"NAME": "Banana蛋糕",
-		"DESCRIPTION": "获得一瓶 *类固醇药水 。 NL 消耗 。"
+		"NAME": "Banana Cake",
+		"DESCRIPTION": "Gain a *Flex Potion. NL Exhaust."
 	},
 	"ShoujoKageki:Starlight": {
-		"NAME": "Starlight第一幕",
-		"DESCRIPTION": "打出 闪耀 牌后，抽 !M! 张牌。"
+		"NAME": "Starlight Act One",
+		"DESCRIPTION": "Whenever you play a ShoujoKageki:Shine card, draw !M! cards "
 	},
 	"ShoujoKageki:Starlight02": {
-		"NAME": "Starlight第二幕",
-		"DESCRIPTION": "打出的 闪耀 牌会额外打出 !M! 次，然后耗尽 闪耀 值。"
+		"NAME": "Starlight Act Two",
+		"DESCRIPTION": "Whenever you play a ShoujoKageki:Shine card, play it additional !M! times, then run out its ShoujoKageki:Shine count."
 	},
 	"ShoujoKageki:Starlight03": {
-		"NAME": "Starlight第三幕",
-		"DESCRIPTION": "获得 闪耀牌奖励 。"
+		"NAME": "Starlight Act Three",
+		"DESCRIPTION": "Obtain ShoujoKageki:Shine-card-reward."
 	},
 	"ShoujoKageki:StarFriend": {
-		"NAME": "星星串起了我们的友谊",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时，获得 闪耀牌奖励 。"
+		"NAME": "Stringing Our Friendship",
+		"DESCRIPTION": "Deal !D! damage. NL If Fatal, obtain ShoujoKageki:Shine-card-reward."
 	},
 	"ShoujoKageki:Nonon": {
 		"NAME": "NONNON哒哟",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害，目标本回合失去 !M! 点 力量 。"
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Target loses !M! Strength this turn."
 	},
 	"ShoujoKageki:NewSituation": {
-		"NAME": "观察情况",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张 *三明治 放入 约定牌堆 。"
+		"NAME": "Observation",
+		"DESCRIPTION": "Gain !B! block. NL Put !M! *Sandwich into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Practice": {
-		"NAME": "武术练习",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 闪耀 耗尽时回复 !M! 生命。"
+		"NAME": "Practice",
+		"DESCRIPTION": "Gain !B! block. NL When this card is run out, heal !M! HP."
 	},
 	"ShoujoKageki:Practice2": {
-		"NAME": "舞蹈练习",
-		"DESCRIPTION": "获得你所有牌 闪耀 值之和的 格挡 。",
-		"UPGRADE_DESCRIPTION": "获得你所有牌 闪耀 值之和+ !M! 的 格挡 。"
+		"NAME": "Dance Practice",
+		"DESCRIPTION": "Gain block equal to the total ShoujoKageki:Shine count of all your cards.",
+		"UPGRADE_DESCRIPTION": "Gain block equal to the total ShoujoKageki:Shine count of all your cards plus !M!."
 	},
 	"ShoujoKageki:Potato": {
-		"NAME": "土豆",
-		"DESCRIPTION": "回复 !M! 生命。"
+		"NAME": "Potato",
+		"DESCRIPTION": "Heal !M! HP."
 	},
 	"ShoujoKageki:BananaMuffin": {
-		"NAME": "Banana松饼",
-		"DESCRIPTION": "获得 !ShoujoKageki:SM! 点 临时力量 。 NL 抽 !M! 张牌。"
+		"NAME": "Banana Pancake",
+		"DESCRIPTION": "Gain !ShoujoKageki:SM! temporary Strength. NL Draw !M! cards."
 	},
 	"ShoujoKageki:BananaLunch": {
-		"NAME": "Banana午餐",
-		"DESCRIPTION": "回合结束时，增加 !M! 张 *三明治 到 约定牌堆 。"
+		"NAME": "Banana Lunch",
+		"DESCRIPTION": "At the end of turn, add !M! *Sandwich into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:StageReproduce": {
-		"NAME": "命运舞台的再生产",
-		"DESCRIPTION": "以无限的 *续演 充满 约定牌堆 。"
+		"NAME": "Reproduction",
+		"DESCRIPTION": "Fill ShoujoKageki:Promise_Pile with infinite *Continue."
 	},
 	"ShoujoKageki:Continue": {
-		"NAME": "续演",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 消耗 。"
+		"NAME": "Continue",
+		"DESCRIPTION": "Deal !D! damage. NL Exhaust."
 	},
 	"ShoujoKageki:Financier": {
-		"NAME": "Banana费南雪",
-		"DESCRIPTION": "获得 !M! 点 力量 。 NL 每两回合保留 力量 1 回合。"
+		"NAME": "Banana Financier",
+		"DESCRIPTION": "Gain !M! Strength. NL Retain Strength for 1 turn every 2 turns."
 	},
 	"ShoujoKageki:CryTmp3": {
-		"NAME": "添麻烦了",
-		"DESCRIPTION": "获得 力量 时， 对所有敌人造成当前 力量 值的伤害。"
+		"NAME": "Trouble",
+		"DESCRIPTION": "Whenever you gain Strength, deal damage to ALL enemies equal to your current Strength."
 	},
 	"ShoujoKageki:CryTmp2": {
-		"NAME": "添麻烦了",
-		"DESCRIPTION": "当有 力量 发生变化时， 获得变化数量 !M! 倍的 格挡 。"
+		"NAME": "Trouble",
+		"DESCRIPTION": "Whenever your Strength changes, gain block equal to the change times !M!."
 	},
 	"ShoujoKageki:CryTmp": {
-		"NAME": "添麻烦了",
-		"DESCRIPTION": "此牌在牌堆之间移动时，获得 !B! 点 格挡 。"
+		"NAME": "Trouble",
+		"DESCRIPTION": "Whenever this card is moved between piles, gain !B! block."
 	},
 	"ShoujoKageki:DrinkWater": {
-		"NAME": "水分补充",
-		"DESCRIPTION": "获得 !M! 层 缓冲 。 NL 消耗 。"
+		"NAME": "Drink Water",
+		"DESCRIPTION": "Gain !M! Buffer. NL Exhaust."
 	},
 	"ShoujoKageki:OldPlace2": {
-		"NAME": "明年也要在这里相见",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 保留你的 能量 ，手牌， 格挡 ， 或 力量 !M! 回合。",
-		"UPGRADE_DESCRIPTION": ""
+		"NAME": "See You Here Again",
+		"DESCRIPTION": "Gain !B! block. NL Retain your Energy, Hand, Block, or Strength for !M! turns."
 	},
 	"ShoujoKageki:RetainBlock": {
-		"NAME": "保留格挡",
-		"DESCRIPTION": "保留格挡 !M! 回合 。"
+		"NAME": "Retain Block",
+		"DESCRIPTION": "Retain Block for !M! turns."
 	},
 	"ShoujoKageki:RetainEnergy": {
-		"NAME": "保留能量",
-		"DESCRIPTION": "保留能量 !M! 回合。"
+		"NAME": "Retain Energy",
+		"DESCRIPTION": "Retain Energy for !M! turns."
 	},
 	"ShoujoKageki:RetainHand": {
-		"NAME": "保留手牌",
-		"DESCRIPTION": "保留手牌 !M! 回合。"
+		"NAME": "Retain Hand",
+		"DESCRIPTION": "Retain Hand for !M! turns."
 	},
 	"ShoujoKageki:RetainStrength": {
-		"NAME": "保留力量",
-		"DESCRIPTION": "保留力量 !M! 回合。"
+		"NAME": "Retain Strength",
+		"DESCRIPTION": "Retain Strength for !M! turns."
 	},
 	"ShoujoKageki:Spin": {
-		"NAME": "旋转",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 此牌在牌堆之间移动时，在本场战斗中伤害增加 !M! 。"
+		"NAME": "Spin",
+		"DESCRIPTION": "Deal !D! damage. NL Whenever this card is moved between piles, increase damage by !M! for this combat."
 	},
 	"ShoujoKageki:Continue02": {
-		"NAME": "永无结束的命运舞台",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 能被多次 升级 。"
+		"NAME": "Endless Stage",
+		"DESCRIPTION": "Deal !D! damage. NL Can be upgraded any number of times."
 	},
 	"ShoujoKageki:DropFuel": {
-		"NAME": "投下燃料",
-		"DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] [E] [E] 。 NL 消耗 。"
+		"NAME": "Drop Fuel",
+		"DESCRIPTION": "Draw !M! cards. NL Gain [E] [E]. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain [E] [E] [E]. NL Exhaust."
 	},
 	"ShoujoKageki:CarryingGuilt": {
-		"NAME": "背负着我们犯下的罪过",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 本局游戏中每耗尽一张非同名的 闪耀 牌，伤害增加 !M! 。"
+		"NAME": "Guilty",
+		"DESCRIPTION": "Deal !D! damage. NL Increase damage by !M! for every different ShoujoKageki:Shine card you run out in this game."
 	},
 	"ShoujoKageki:Consciousness": {
-		"NAME": "以觉悟的名义",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得与所造成的未被格挡的伤害相等的 格挡 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
+		"NAME": "Resolve",
+		"UPGRADE_CHINESE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。",
+		"DESCRIPTION": "Deal !D! damage. NL Gain block equal to the unblocked damage dealt."
 	},
 	"ShoujoKageki:Attack08": {
-		"NAME": "不再遥不可及",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽 !M! 张牌。"
+		"NAME": "Not far away",
+		"DESCRIPTION": "Deal !D! damage. NL Draw !M! cards from ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:RevueDuet": {
 		"NAME": "RevueDuet",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 打出后进入 约定牌堆 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
+		"DESCRIPTION": "Deal !D! damage. NL Put this card into ShoujoKageki:Promise_Pile.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Copy all your hand into ShoujoKageki:Promise_Pile. NL Exhaust."
 	},
 	"ShoujoKageki:Attack09Tmp": {
-		"NAME": "不再遥不可及",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 打出后进入 约定牌堆 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
+		"NAME": "Not far away",
+		"DESCRIPTION": "Deal !D! damage. NL Put this card into ShoujoKageki:Promise_Pile.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Copy all your hand into ShoujoKageki:Promise_Pile. NL Exhaust."
 	},
 	"ShoujoKageki:Gear": {
-		"NAME": "命运的齿轮",
-		"DESCRIPTION": "复制 所有手牌 到 约定牌堆 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 复制 所有手牌 到 约定牌堆 。 NL 消耗 。"
+		"NAME": "Gears of Destiny",
+		"DESCRIPTION": "Copy all your hand into ShoujoKageki:Promise_Pile. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Copy all your hand into ShoujoKageki:Promise_Pile. NL Exhaust."
 	},
 	"ShoujoKageki:GearTmp": {
-		"NAME": "命运的齿轮",
-		"DESCRIPTION": "选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 选择 手牌中一张 衍生牌 ，将其复制加入牌组。 NL 消耗 。"
+		"NAME": "Gears of Destiny",
+		"DESCRIPTION": "Choose a card in your hand and add a copy of it into your pile. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Choose a card in your hand and add a copy of it into your pile. NL Exhaust."
 	},
 	"ShoujoKageki:CommonAttack": {
-		"NAME": "踹",
-		"DESCRIPTION": "造成 !D! 伤害。抽1张牌，如果是技能牌就再抽1张。"
+		"NAME": "Kick",
+		"DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL If it is a Skill card, draw 1 more card."
+
 	},
 	"ShoujoKageki:CommonDefend": {
-		"NAME": "蹬",
-		"DESCRIPTION": "获得 !B! 点 格挡。抽1张牌，如果是攻击牌就再抽1张。"
+		"NAME": "Stomp",
+		"DESCRIPTION": "Gain !B! block. NL Draw 1 card. NL If it is an Attack card, draw 1 more card."
 	},
 	"ShoujoKageki:Letter": {
-		"NAME": "信封",
-		"DESCRIPTION": "将卡牌放入到 约定牌堆 时， 获得 !M! 点 格挡 。"
+		"NAME": "Letter",
+		"DESCRIPTION": "Whenever you put a card into ShoujoKageki:Promise_Pile, gain !M! block."
 	},
 	"ShoujoKageki:Burn": {
-		"NAME": "燃烧吧燃烧吧",
-		"DESCRIPTION": "从 约定牌堆 抽出的牌将被 升级 ， 且被打出时 消耗 。"
+		"NAME": "Burn, Burn",
+		"DESCRIPTION": "Cards drawn from ShoujoKageki:Promise_Pile are upgraded and Exhaust when played."
 	},
 	"ShoujoKageki:Position0": {
 		"NAME": "Position 0",
-		"DESCRIPTION": "每回合第 !M! 次 造成未被格挡的攻击伤害时，获得等量 格挡 。",
-		"UPGRADE_DESCRIPTION": "每回合前 !M! 次 造成未被格挡的攻击伤害时，获得等量 格挡 。"
+		"DESCRIPTION": "Whenever you deal unblocked attack damage for the !M!th time each turn, gain block equal to the damage dealt.",
+		"UPGRADE_DESCRIPTION": "Whenever you deal unblocked attack damage for the !M!th time each turn, gain block equal to the damage dealt."
 	},
 	"ShoujoKageki:Position0Tmp": {
 		"NAME": "Position 0",
-		"DESCRIPTION": "获得 力量 时， 额外获得 !M! 点 力量 。",
-		"UPGRADE_DESCRIPTION": "固有 。 NL 获得 力量 时， 额外获得 !M! 点 力量 。"
+		"DESCRIPTION": "Whenever you gain Strength, gain additional !M! Strength.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Strength, gain additional !M! Strength."
 	},
 	"ShoujoKageki:Pizza": {
-		"NAME": "披萨",
-		"DESCRIPTION": "获得 !M! 点 力量 ， 所有敌人失去 !ShoujoKageki:SM! 点 力量 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": ""
+		"NAME": "Pizza",
+		"DESCRIPTION": "Gain !M! Strength. NL All enemies lose !ShoujoKageki:SM! Strength. NL Exhaust."
 	},
 	"ShoujoKageki:HolyStar": {
-		"NAME": "神圣星辰",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 被放入 约定牌堆 时， 在本场战斗中的耗能减少 !M! 。"
+		"NAME": "Sacred Stars",
+		"DESCRIPTION": "Deal !D! damage. NL When this card is put into ShoujoKageki:Promise_Pile, reduce its cost by !M! for this combat."
 	},
 	"ShoujoKageki:Future": {
-		"NAME": "未来的道路",
-		"DESCRIPTION": "从 弃牌堆 中选择 2 张牌放入你的手牌。"
+		"NAME": "Path Of Future",
+		"DESCRIPTION": "Choose 2 cards from your discard pile and put them into your hand."
 	},
 	"ShoujoKageki:SeriousStrike": {
-		"NAME": "认真打击",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 回合结束时如果在 约定牌堆 中，本场战斗伤害增加 !M! 。"
+		"NAME": "Serious Strike",
+		"DESCRIPTION": "Deal !D! damage. NL if this card is in ShoujoKageki:Promise_Pile at the end of turn, increase damage by !M! for this combat."
 	},
 	"ShoujoKageki:CourageStrike": {
-		"NAME": "勇气打击",
-		"DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL 将 !M! 张 *侧身 放入 约定牌堆 。"
+		"NAME": "Courage Strike",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Put !M! *Sideways into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Stretching": {
-		"NAME": "拉伸",
-		"DESCRIPTION": "获得 !B! 点 格挡。 NL 沉淀 。"
+		"NAME": "Stretching",
+		"CHINESE_DESCRIPTION": "获得 !B! 点 格挡。 NL 沉淀 。"
 	},
 	"ShoujoKageki:Sideways": {
-		"NAME": "侧身",
-		"DESCRIPTION": "获得 !B! 点 格挡。 NL 消耗 。"
+		"NAME": "Sideways",
+		"DESCRIPTION": "Gain !B! block. NL Exhaust."
 	},
 	"ShoujoKageki:WakeUp": {
-		"NAME": "唤醒",
-		"DESCRIPTION": "从抽牌堆中选择2张牌放入你的手牌。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "从抽牌堆，弃牌堆，或 约定牌堆 中选择2张牌放入你的手牌。 NL 消耗 。"
+		"NAME": "Awake",
+		"DESCRIPTION": "Choose 2 cards from your draw pile and put them into your hand. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Choose 2 cards from your draw pile, discard pile, or ShoujoKageki:Promise_Pile and put them into your hand. NL Exhaust."
 	},
 	"ShoujoKageki:SelectDiscardPile": {
-		"NAME": "弃牌堆",
-		"DESCRIPTION": "从 弃牌堆 中选择 2 张牌放入你的手牌。"
+		"NAME": "Discard Pile",
+		"DESCRIPTION": "Choose 2 cards from your discard pile and put them into your hand."
 	},
 	"ShoujoKageki:SelectDrawPile": {
-		"NAME": "抽牌堆",
-		"DESCRIPTION": "从 抽牌堆 中选择 2 张牌放入你的手牌。"
+		"NAME": "Draw Pile",
+		"DESCRIPTION": "Choose 2 cards from your draw pile and put them into your hand."
 	},
 	"ShoujoKageki:SelectBagPile": {
-		"NAME": "约定牌堆",
-		"DESCRIPTION": "从 约定牌堆 中选择 2 张牌放入你的手牌。"
+		"NAME": "ShoujoKageki:Promise_Pile",
+		"DESCRIPTION": "Choose 2 cards from your ShoujoKageki:Promise_Pile and put them into your hand."
 	},
 	"ShoujoKageki:NoHesitate": {
-		"NAME": "不再犹豫",
-		"DESCRIPTION": "从 抽牌堆 ，弃牌堆 ，或手牌 中选择 !M! 张牌放入 约定牌堆 。",
-		"UPGRADE_DESCRIPTION": ""
+		"NAME": "No Hesitate",
+		"DESCRIPTION": "Choose !M! cards from your draw pile, discard pile, or hand. Put them into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:SelectDiscardPile2": {
-		"NAME": "弃牌堆",
-		"DESCRIPTION": "从 弃牌堆 中选择 !M! 张牌放入 约定牌堆 。"
+		"NAME": "Discard Pile",
+		"DESCRIPTION": "Choose !M! cards from your discard pile and put them into your hand."
 	},
 	"ShoujoKageki:SelectDrawPile2": {
-		"NAME": "抽牌堆",
-		"DESCRIPTION": "从 抽牌堆 中选择 !M! 张牌放入 约定牌堆 。"
+		"NAME": "ShoujoKageki:Promise_Pile",
+		"DESCRIPTION": "Choose !M! cards from your draw pile and put them into your hand."
 	},
 	"ShoujoKageki:SelectHand2": {
-		"NAME": "手牌",
-		"DESCRIPTION": "从 手牌 中选择 !M! 张牌放入 约定牌堆 。"
+		"NAME": "Hand",
+		"DESCRIPTION": "Choose !M! cards from your hand and put them into your hand."
 	},
 	"ShoujoKageki:NextStage": {
-		"NAME": "下一个舞台",
-		"DESCRIPTION": "不能被打出 。 NL 此牌在被放入或离开 约定牌堆 时，抽 !M! 张牌。",
-		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 此牌在牌堆之间移动时，抽 !M! 张牌。",
+		"NAME": "Next Stage",
+		"DESCRIPTION": "Unplayable. NL Whenever this card is put into or removed from ShoujoKageki:Promise_Pile, draw !M! cards.",
+		"UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is moved between piles, draw !M! cards.",
 		"EXTENDED_DESCRIPTION": [
-		  "这张牌不能被打出。"
+		  "This card cannot be played."
 		]
 	},
 	"ShoujoKageki:NeverRetreat": {
-		"NAME": "绝不退让",
-		"DESCRIPTION": "造成 !D! 伤害。如果 约定牌堆 中有牌，重复一次。"
+		"NAME": "Never Retreat",
+		"DESCRIPTION": "Deal !D! damage. NL If ShoujoKageki:Promise_Pile is not empty, play again."
 	},
 	"ShoujoKageki:Run03": {
-		"NAME": "行动",
-		"DESCRIPTION": "造成 !D! 伤害。 NL 如果 约定牌堆 不为空， 获得 [E] 。"
+		"NAME": "Action",
+		"DESCRIPTION": "Deal !D! damage. NL If ShoujoKageki:Promise_Pile is not empty, gain [E]."
 	},
 	"ShoujoKageki:Void": {
-		"NAME": "世界上最空虚的人",
-		"DESCRIPTION": "摧毁抽牌堆，然后以 约定牌堆 代替抽牌堆。"
+		"NAME": "The Emptiest Person",
+		"DESCRIPTION": "Destroy your draw pile, then replace it with ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Form": {
-		"NAME": "觉醒形态",
-		"DESCRIPTION": "虚无 。 NL 每个回合开始时，抽满手牌。",
-		"UPGRADE_DESCRIPTION": "每个回合开始时，抽满手牌。"
+		"NAME": "Awakening Form",
+		"DESCRIPTION": "Ethereal. NL At the start of each turn, draw cards until your hand is full.",
+		"UPGRADE_DESCRIPTION": "At the start of each turn, draw cards until your hand is full."
 	},
 	"ShoujoKageki:Reproduce": {
-		"NAME": "我，再生产",
-		"DESCRIPTION": "消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。",
-		"UPGRADE_DESCRIPTION": "保留 NL 消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。"
+		"NAME": "I, Reproduce",
+		"DESCRIPTION": "Exhaust all cards in ShoujoKageki:Promise_Pile. NL For each card run out, add !M! random cards into there.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Exhaust all cards in ShoujoKageki:Promise_Pile. NL For each card run out, add !M! random cards into there."
 	},
 	"ShoujoKageki:Promise": {
-		"NAME": "约定",
-		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",
-		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E] [E]",
+		"NAME": "Promise",
+		"DESCRIPTION": "Unplayable. NL At the start of turn, if this card is in ShoujoKageki:Promise_Pile, gain [E].",
+		"UPGRADE_DESCRIPTION": "Unplayable. NL At the start of turn, if this card is in ShoujoKageki:Promise_Pile, gain [E] [E].",
 		"EXTENDED_DESCRIPTION": [
-		  "这张牌不能被打出。"
+		  "This card cannot be played."
 		]
 	},
 	"fortuneTeller:SoulVision": {
-		"NAME": "灵视",
-		"DESCRIPTION": " 不能被打出 。 NL 被 替换 时，获得 [E] 。",
-		"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 被 替换 时，获得 [E] [E] 。",
+		"NAME": "Spiritual Vision",
+		"DESCRIPTION": "Unplayable. NL When replaced, gain [E].",
+		"UPGRADE_DESCRIPTION": "Unplayable. NL When replaced, gain [E] [E].",
 		"EXTENDED_DESCRIPTION": [
-			"不能被打出。"
+			"This card cannot be played."
 		]
 	}
 }
