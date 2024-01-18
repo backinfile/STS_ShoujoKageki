@@ -78,6 +78,10 @@ public class DiscardFromBagAction extends AbstractGameAction {
 
         if (discardAll) {
             CardGroup bag = BagField.getBag();
+            if (bag.isEmpty())  {
+                isDone = true;
+                return;
+            }
             for (AbstractCard card : bag.group) {
                 p.drawPile.moveToDiscardPile(card);
                 trigger(card);

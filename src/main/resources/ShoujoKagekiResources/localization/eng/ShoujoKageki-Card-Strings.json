@@ -474,7 +474,7 @@
 	},
 	"ShoujoKageki:NoHesitate": {
 		"NAME": "No Hesitate",
-		"DESCRIPTION": "Choose !M! card{!M!|>1=s}{@@} from your draw pile, discard pile, or hand. Put them into ShoujoKageki:Promise_Pile."
+		"DESCRIPTION": "Choose !M! card{!M!|>1=s}{@@} from your draw pile, discard pile, or hand. Put them into ShoujoKageki:Promise_Pile. NL Exhaust."
 	},
 	"ShoujoKageki:SelectDiscardPile2": {
 		"NAME": "Discard Pile",

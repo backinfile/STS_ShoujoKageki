@@ -24,6 +24,7 @@ public class NoHesitate extends BaseCard {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 2;
         DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
+        exhaust = true;
     }
 
     @Override

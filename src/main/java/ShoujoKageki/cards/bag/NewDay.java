@@ -16,7 +16,7 @@ public class NewDay extends BaseCard {
 
     public NewDay() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.baseBlock = 6;
+        this.baseBlock = 7;
         this.baseMagicNumber = this.magicNumber = 1;
         PutToBagField.putToBag.set(this, true);
     }

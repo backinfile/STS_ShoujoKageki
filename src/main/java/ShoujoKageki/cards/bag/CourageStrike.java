@@ -16,7 +16,7 @@ public class CourageStrike extends BaseCard {
     public static final String ID = ModInfo.makeID(CourageStrike.class.getSimpleName());
 
     public CourageStrike() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         this.baseDamage = 6;
         isMultiDamage = true;
         this.cardsToPreview = new Sideways();
