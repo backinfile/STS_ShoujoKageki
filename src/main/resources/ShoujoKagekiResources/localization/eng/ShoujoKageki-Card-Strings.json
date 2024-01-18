@@ -331,7 +331,7 @@
 		"DESCRIPTION": "Whenever this card is moved between piles, gain !B! block."
 	},
 	"ShoujoKageki:DrinkWater": {
-		"NAME": "Drink Water",
+		"NAME": "Rehydrate",
 		"DESCRIPTION": "Gain !M! ShoujoKageki:Buffer. NL Exhaust."
 	},
 	"ShoujoKageki:OldPlace2": {
@@ -414,7 +414,7 @@
 		"DESCRIPTION": "Whenever you put a card into ShoujoKageki:Promise_Pile, gain !M! block."
 	},
 	"ShoujoKageki:Burn": {
-		"NAME": "Burn, Burn",
+		"NAME": "Burn it, Burn it!",
 		"DESCRIPTION": "Cards drawn from ShoujoKageki:Promise_Pile are upgraded and Exhaust when played."
 	},
 	"ShoujoKageki:Position0": {
