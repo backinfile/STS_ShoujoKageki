@@ -25,8 +25,9 @@ public class DisposableVariable extends DynamicVariable { // Shine
     }
 
     public boolean isModified(AbstractCard card) {
-        if (card.upgraded) return true;
-        return !Objects.equals(DisposableField.baseDisposable.get(card), DisposableField.disposable.get(card));
+        return DisposableField.disposableModified.get(card);
+//        if (card.upgraded) return true;
+//        return !Objects.equals(DisposableField.baseDisposable.get(card), DisposableField.disposable.get(card));
     }
 
     public int value(AbstractCard card) {
@@ -38,12 +39,16 @@ public class DisposableVariable extends DynamicVariable { // Shine
     }
 
     public boolean upgraded(AbstractCard card) {
-        return false;
+        return card.upgraded;
     }
 
 
     public static int getValue(AbstractCard card) {
         return DisposableField.disposable.get(card);
+    }
+
+    public static int getBaseValue(AbstractCard card) {
+        return DisposableField.baseDisposable.get(card);
     }
 
 
@@ -66,6 +71,7 @@ public class DisposableVariable extends DynamicVariable { // Shine
             CardModifierManager.addModifier(card, new ShineCardDescriptionModifier());
             card.initializeDescription();
         }
+        DisposableVariable.checkModify(card);
     }
 
 
@@ -77,6 +83,7 @@ public class DisposableVariable extends DynamicVariable { // Shine
         if (curValue < baseValue) {
             setValue(card, baseValue);
         }
+        DisposableVariable.checkModify(card);
 //        Log.logger.info("reset card " + card.name + " to " + getValue(card));
     }
 
@@ -122,5 +129,10 @@ public class DisposableVariable extends DynamicVariable { // Shine
 
     public static boolean isDisposableCard(AbstractCard card) {
         return DisposableField.baseDisposable.get(card) != 0 || DisposableField.disposable.get(card) != 0;
+    }
+
+    public static void checkModify(AbstractCard card) {
+        DisposableField.disposableModified.set(card,
+                DisposableVariable.getValue(card) != DisposableVariable.getBaseValue(card));
     }
 }

@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class DisposableField {
     public static SpireField<Integer> disposable = new SpireField<>(() -> 0);// use DisposableVariable.setValue instead
     public static SpireField<Integer> baseDisposable = new SpireField<>(() -> 0); // use DisposableVariable.setBaseValue instead
+    public static SpireField<Boolean> disposableModified = new SpireField<>(() -> false);
     public static SpireField<Boolean> forceDispose = new SpireField<>(() -> false);
 
 

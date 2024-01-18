@@ -78,12 +78,28 @@ public class DisposableFieldUpgradePatch {
     )
     public static class UpgradeName { // 重置闪耀
         public static void Prefix(AbstractCard __instance) {
-            resetField(__instance);
+            DisposableVariable.reset(__instance);
         }
     }
 
-    public static void resetField(AbstractCard card) {
-        DisposableVariable.reset(card);
+    @SpirePatch(
+            clz = AbstractCard.class,
+            method = "applyPowers"
+    )
+    public static class ApplyPower {
+        public static void Prefix(AbstractCard __instance) {
+            DisposableVariable.checkModify(__instance);
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractCard.class,
+            method = "displayUpgrades"
+    )
+    public static class DisplayUpgrades {
+        public static void Prefix(AbstractCard __instance) {
+            DisposableField.disposableModified.set(__instance, true);
+        }
     }
 
 

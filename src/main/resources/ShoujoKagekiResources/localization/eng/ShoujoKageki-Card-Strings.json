@@ -12,7 +12,7 @@
 		"DESCRIPTION": "Deal !D! damage."
 	},
 	"ShoujoKageki:ShineStrike2": {
-		"NAME": "Radiance",
+		"NAME": "Penetrate",
 		"DESCRIPTION": "Deal !D! damage !M! times."
 	},
 	"ShoujoKageki:Fall": {
@@ -93,7 +93,7 @@
 		"DESCRIPTION": "Deal !D! damage to ALL enemies 3 times. NL Exhaust."
 	},
 	"ShoujoKageki:Attack06": {
-		"NAME": "Radiance of Last Night",
+		"NAME": "Yesterday's Night Sky",
 		"DESCRIPTION": "Deal !D! damage. NL Put !M! card{!M!|>1=s}{@@} from discard pile into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Defend03": {
@@ -249,8 +249,8 @@
 	},
 	"ShoujoKageki:Star": {
 		"NAME": "Moment of Starlight",
-		"DESCRIPTION": "When ShoujoKageki:Promise_Pile is empty, play your only ShoujoKageki:Shine card as many times as its ShoujoKageki:Shine count.",
-		"UPGRADE_DESCRIPTION": "Retain. NL When ShoujoKageki:Promise_Pile is empty, play your only ShoujoKageki:Shine card as many times as its ShoujoKageki:Shine count.",
+		"DESCRIPTION": "Run out your only ShoujoKageki:Shine card outside the ShoujoKageki:Promise_Pile and play it an equal number of times.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Run out your only ShoujoKageki:Shine card outside the ShoujoKageki:Promise_Pile and play it an equal number of times.",
 		"EXTENDED_DESCRIPTION": [
 		  "You don't have any ShoujoKageki:Shine cards.",
 		  "You have too many ShoujoKageki:Shine cards."
@@ -286,7 +286,7 @@
 		"DESCRIPTION": "Gain !B! block. NL Put !M! *Sandwich into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Practice": {
-		"NAME": "Practice",
+		"NAME": "Martial Arts Practice",
 		"DESCRIPTION": "Gain !B! block. NL When this card is run out, heal !M! HP."
 	},
 	"ShoujoKageki:Practice2": {

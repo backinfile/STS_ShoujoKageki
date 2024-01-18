@@ -1,5 +1,7 @@
 package ShoujoKageki.cards;
 
+import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKageki.variables.patch.DisposableField;
 import ShoujoKageki.variables.patch.DisposableFieldUpgradePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -54,7 +56,7 @@ public abstract class BaseCard extends AbstractDefaultCard {
         this.upgraded = true;
         this.name = cardStrings.NAME + "+" + this.timesUpgraded;
         this.initializeTitle();
-        DisposableFieldUpgradePatch.resetField(this);
+        DisposableVariable.reset(this);
     }
 
     private void initNameAndDescription(String id) {
