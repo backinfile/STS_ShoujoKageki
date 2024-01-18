@@ -41,7 +41,7 @@
 	"ShoujoKageki:PutToBagPower": {
 		"NAME": "New Day",
 		"DESCRIPTIONS": [
-			"The next #y", " cards you play are put into the #yShoujoKageki:Promise_Pile."
+			"The next #y", " card(s) you play are put into the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:LetterPower": {
@@ -59,15 +59,15 @@
 	"ShoujoKageki:NextTurnDrawBagPower": {
 		"NAME": "Draw",
 		"DESCRIPTIONS": [
-			"Next turn, draw #y", " cards from the #yShoujoKageki:Promise_Pile."
+			"Next turn, draw #y", " card(s) from the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:AquariumPower": {
 		"NAME": "Aquarium",
 		"DESCRIPTIONS": [
 			"At the start of each turn, draw #y",
-			" cards, then put #y",
-			" cards from your hand into the #yShoujoKageki:Promise_Pile."
+			" card(s), then put #y",
+			" card(s) from your hand into the #yShoujoKageki:Promise_Pile."
 		]
 	},
 	"ShoujoKageki:ReserveStrengthPower": {
@@ -112,19 +112,19 @@
 	"ShoujoKageki:TragedyPower": {
 		"NAME": "Tragedy",
 		"DESCRIPTIONS": [
-			"At the end of combat, obtain #r", " and #y", " random relics."
+			"At the end of combat, obtain #r", " and #y", " random relic(s)."
 		]
 	},
 	"ShoujoKageki:PassionPower": {
 		"NAME": "Passion",
 		"DESCRIPTIONS": [
-			"At the end of combat, obtain #y", " random relics."
+			"At the end of combat, obtain #y", " random relic(s)."
 		]
 	},
 	"ShoujoKageki:GainRelicPower": {
 		"NAME": "Passion",
 		"DESCRIPTIONS": [
-			"At the end of combat, obtain #y", " random relics."
+			"At the end of combat, obtain #y", " random relic(s)."
 		]
 	},
 	"ShoujoKageki:BurnPower": {
@@ -137,7 +137,7 @@
 	"ShoujoKageki:StarlightPower": {
 		"NAME": "Starlight Act 1",
 		"DESCRIPTIONS": [
-			"When you play a #yShoujoKageki:Shine card, draw #y", " cards."
+			"When you play a #yShoujoKageki:Shine card, draw #y", " card(s)."
 		]
 	},
 	"ShoujoKageki:Starlight02Power": {
@@ -174,14 +174,6 @@
 		"NAME": "Peek",
 		"DESCRIPTIONS": [
 			"Enemies can only gain #y", " #yStrength per turn. Does not stack."
-		]
-	},
-	"fortuneTeller:MovingHungerPower": {
-		"NAME": "Hunger",
-		"DESCRIPTIONS": [
-			"At the start of your turn, randomly #yExhaust #b",
-			" cards and gain #b",
-			" #yStrength."
 		]
 	}
 }
