@@ -25,6 +25,7 @@ public class DisposableVariable extends DynamicVariable { // Shine
     }
 
     public boolean isModified(AbstractCard card) {
+        if (card.upgraded) return true;
         return !Objects.equals(DisposableField.baseDisposable.get(card), DisposableField.disposable.get(card));
     }
 
