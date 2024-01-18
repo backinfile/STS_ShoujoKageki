@@ -11,7 +11,7 @@
 			" NL 约定牌堆 中没有牌 。",
 			" NL 卡牌按顺序： NL ",
 			" NL ", 
-			" NL #y强化 ：现在约定牌堆中充满无限的 #y续演+ 。 NL ", 
+			" NL #y强化 ：现在约定牌堆中充满无限的 #y续演+ 。 NL ",
 		]
 	},
 	"ShoujoKageki:BagInfinitePower": {
@@ -41,7 +41,9 @@
 	"ShoujoKageki:PutToBagPower": {
 		"NAME": "新的一天",
 		"DESCRIPTIONS": [
-			"你打出的下 #y", " 张牌 会被放入 #y约定牌堆 。"
+			"你打出的下 #y",
+			" 张牌 会被放入 #y约定牌堆 。",
+			" 张牌 会被放入 #y约定牌堆 。"
 		]
 	},
 	"ShoujoKageki:LetterPower": {
@@ -59,13 +61,15 @@
 	"ShoujoKageki:NextTurnDrawBagPower": {
 		"NAME": "抽牌",
 		"DESCRIPTIONS": [
-			"下回合，从 #y约定牌堆 中抽 #y", " 张牌。"
+			"下回合，从 #y约定牌堆 中抽 #y", " 张牌。", " 张牌。"
 		]
 	},
 	"ShoujoKageki:AquariumPower": {
 		"NAME": "水族馆",
 		"DESCRIPTIONS": [
 			"每个回合开始时，抽 #y", 
+			" 张牌， 然后选择 #y",
+			" 张手牌放入 #y约定牌堆 。",
 			" 张牌， 然后选择 #y",
 			" 张手牌放入 #y约定牌堆 。"
 		]
@@ -81,7 +85,7 @@
 	"ShoujoKageki:FinancierPower": {
 		"NAME": "Banana费南雪",
 		"DESCRIPTIONS": [
-			"每两回合保留 #y力量 #y", " 回合。"
+			"每两回合保留 #y力量 #y", " 回合。", " 回合。"
 		]
 	},
 	"ShoujoKageki:CryPowerTmp2": {
@@ -110,22 +114,10 @@
 			"回合开始时，失去25%最大生命值的生命，并获得一个随机遗物"
 		]
 	},
-	"ShoujoKageki:TragedyPower": {
-		"NAME": "悲剧",
-		"DESCRIPTIONS": [
-			"战斗结束时，获得 #r", " 和 #y", " 个随机遗物。"
-		]
-	},
-	"ShoujoKageki:PassionPower": {
-		"NAME": "激情",
-		"DESCRIPTIONS": [
-			"战斗结束时，获得 #y", " 个随机遗物。"
-		]
-	},
 	"ShoujoKageki:GainRelicPower": {
 		"NAME": "激情",
 		"DESCRIPTIONS": [
-			"战斗结束时，获得 #y", " 个随机遗物。"
+			"战斗结束时，获得 #y", " 个随机遗物。", " 个随机遗物。"
 		]
 	},
 	"ShoujoKageki:BurnPower": {
@@ -138,7 +130,7 @@
 	"ShoujoKageki:StarlightPower": {
 		"NAME": "Starlight第一幕",
 		"DESCRIPTIONS": [
-			"打出 #y闪耀 牌后，抽 #y", " 张牌。"
+			"打出 #y闪耀 牌后，抽 #y", " 张牌。", " 张牌。"
 		]
 	},
 	"ShoujoKageki:Starlight02Power": {
@@ -176,14 +168,6 @@
 		"DESCRIPTIONS": [
 			"敌人被 削减 的 力量 每回合最多回复", 
 			"点。不可叠加。"
-		]
-	},
-	"fortuneTeller:MovingHungerPower": {
-		"NAME": "饥饿",
-		"DESCRIPTIONS": [
-			"回合开始时随机 消耗 #b",
-			" 张手牌，获得 #b",
-			" 点 力量。"
 		]
 	}
 }

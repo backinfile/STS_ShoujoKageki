@@ -3,13 +3,9 @@ package ShoujoKageki.cards.relic;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.ExpectField;
-import ShoujoKageki.powers.ArrogantPower;
 import ShoujoKageki.powers.GainRelicPower;
-import ShoujoKageki.powers.PassionPower;
-import ShoujoKageki.variables.DisposableVariable;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

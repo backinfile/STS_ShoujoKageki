@@ -36,6 +36,10 @@ public class AquariumPower extends BasePower {
     @Override
     public void updateDescription() {
         super.updateDescription();
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        if (amount == 1) {
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        } else {
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[3] + amount + DESCRIPTIONS[4];
+        }
     }
 }

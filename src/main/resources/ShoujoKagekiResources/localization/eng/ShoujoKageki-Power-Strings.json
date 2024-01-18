@@ -4,14 +4,14 @@
 		"DESCRIPTIONS": [
 			"Unique pile for Karen Aijou. NL ",
 			"Click the character to view the specific cards. NL ",
-			" NL #yEnhance: Now the #yShoujoKageki:Promise_Pile is filled with #yInfinite #yContinue. NL ",
-			" NL #yEnhance: Now the draw pile is treated as the #yShoujoKageki:Promise_Pile. NL ",
-			" NL #yEnhance: Now the cards drawn from the #yShoujoKageki:Promise_Pile are #yUpgraded. NL ",
-			" NL #yEnhance: Now the cards drawn from the #yShoujoKageki:Promise_Pile are #rExhausted when played. NL ",
-			" NL There are no cards in the #yShoujoKageki:Promise_Pile. NL ",
+			" NL #yEnhance: Now the #yPromise #yPile is filled with #yInfinite #yContinue. NL ",
+			" NL #yEnhance: Now the draw pile is treated as the #yPromise #yPile. NL ",
+			" NL #yEnhance: Now the cards drawn from the #yPromise #yPile are #yUpgraded. NL ",
+			" NL #yEnhance: Now the cards drawn from the #yPromise #yPile are #rExhausted when played. NL ",
+			" NL There are no cards in the #yPromise #yPile. NL ",
 			" NL Cards in order: NL ",
 			" NL ",
-			" NL #yEnhance: Now the #yShoujoKageki:Promise_Pile is filled with #yInfinite #yContinue+. NL "
+			" NL #yEnhance: Now the #yPromise #yPile is filled with #yInfinite #yContinue+. NL "
 		]
 	},
 	"ShoujoKageki:BagInfinitePower": {
@@ -41,33 +41,39 @@
 	"ShoujoKageki:PutToBagPower": {
 		"NAME": "New Day",
 		"DESCRIPTIONS": [
-			"The next #y", " card(s) you play are put into the #yShoujoKageki:Promise_Pile."
+			"The next #y",
+			" card you play are put into the #yPromise #yPile.",
+			" cards you play are put into the #yPromise #yPile."
 		]
 	},
 	"ShoujoKageki:LetterPower": {
 		"NAME": "Letter",
 		"DESCRIPTIONS": [
-			"When you put a card into the #yShoujoKageki:Promise_Pile, gain #y", " Block."
+			"When you put a card into the #yPromise #yPile, gain #y", " Block."
 		]
 	},
 	"ShoujoKageki:StageIsWaitingPower": {
 		"NAME": "Stage Is Waiting",
 		"DESCRIPTIONS": [
-			"When the #yShoujoKageki:Promise_Pile is empty, gain #y", " [E]."
+			"When the #yPromise #yPile is empty, gain #y", " [E] ."
 		]
 	},
 	"ShoujoKageki:NextTurnDrawBagPower": {
 		"NAME": "Draw",
 		"DESCRIPTIONS": [
-			"Next turn, draw #y", " card(s) from the #yShoujoKageki:Promise_Pile."
+			"Next turn, draw #y",
+			" card from the #yPromise #yPile.",
+			" cards from the #yPromise #yPile."
 		]
 	},
 	"ShoujoKageki:AquariumPower": {
 		"NAME": "Aquarium",
 		"DESCRIPTIONS": [
 			"At the start of each turn, draw #y",
-			" card(s), then put #y",
-			" card(s) from your hand into the #yShoujoKageki:Promise_Pile."
+			" card, then put #y",
+			" card from your hand into the #yPromise #yPile.",
+			" cards, then put #y",
+			" cards from your hand into the #yPromise #yPile."
 		]
 	},
 	"ShoujoKageki:ReserveStrengthPower": {
@@ -81,7 +87,7 @@
 	"ShoujoKageki:FinancierPower": {
 		"NAME": "Banana Financier",
 		"DESCRIPTIONS": [
-			"Retain #yStrength every two turns for #y", " turns."
+			"Retain #yStrength every two turns for #y", " turn.", " turns."
 		]
 	},
 	"ShoujoKageki:CryPowerTmp2": {
@@ -100,44 +106,26 @@
 	"ShoujoKageki:VoidPower": {
 		"NAME": "The Emptiest Person",
 		"DESCRIPTIONS": [
-			"Replace your draw pile with the #yShoujoKageki:Promise_Pile."
-		]
-	},
-	"ShoujoKageki:ArrogantPower": {
-		"NAME": "Arrogant",
-		"DESCRIPTIONS": [
-			"At the start of your turn, lose 25% of your Max HP and gain a random relic."
-		]
-	},
-	"ShoujoKageki:TragedyPower": {
-		"NAME": "Tragedy",
-		"DESCRIPTIONS": [
-			"At the end of combat, obtain #r", " and #y", " random relic(s)."
-		]
-	},
-	"ShoujoKageki:PassionPower": {
-		"NAME": "Passion",
-		"DESCRIPTIONS": [
-			"At the end of combat, obtain #y", " random relic(s)."
+			"Replace your draw pile with the #yPromise #yPile."
 		]
 	},
 	"ShoujoKageki:GainRelicPower": {
 		"NAME": "Passion",
 		"DESCRIPTIONS": [
-			"At the end of combat, obtain #y", " random relic(s)."
+			"At the end of combat, obtain #y", " random relic.", " random relics."
 		]
 	},
 	"ShoujoKageki:BurnPower": {
 		"NAME": "Burn",
 		"DESCRIPTIONS": [
-			"Cards drawn from the #yShoujoKageki:Promise_Pile are #yUpgraded and #rExhausted when played.",
+			"Cards drawn from the #yPromise #yPile are #yUpgraded and #rExhausted when played.",
 			"#rBurning"
 		]
 	},
 	"ShoujoKageki:StarlightPower": {
 		"NAME": "Starlight Act 1",
 		"DESCRIPTIONS": [
-			"When you play a #yShoujoKageki:Shine card, draw #y", " card(s)."
+			"When you play a #yShoujoKageki:Shine card, draw #y", " card.", " cards."
 		]
 	},
 	"ShoujoKageki:Starlight02Power": {
@@ -155,13 +143,13 @@
 	"ShoujoKageki:BananaLunchPower": {
 		"NAME": "Banana Lunch",
 		"DESCRIPTIONS": [
-			"At the end of your turn, add #y", " #ySandwich into the #yShoujoKageki:Promise_Pile."
+			"At the end of your turn, add #y", " #ySandwich into the #yPromise #yPile."
 		]
 	},
 	"ShoujoKageki:ReproducePower": {
 		"NAME": "Reproduction",
 		"DESCRIPTIONS": [
-			"The #yShoujoKageki:Promise_Pile provides #yInfinite #yContinue."
+			"The #yPromise #yPile provides #yInfinite #yContinue."
 		]
 	},
 	"ShoujoKageki:FormPower": {

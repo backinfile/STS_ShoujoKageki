@@ -106,7 +106,12 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     public void receiveEditStrings() {
         Log.logger.info("Beginning to edit strings for mod with ID: " + ModInfo.getModId());
         String lang = getLang();
-        Log.logger.info("lang = " + lang);
+        if (lang.equals("zht") || lang.equals("zhs")) {
+            lang = "zhs";
+        } else {
+            lang = "eng";
+        }
+        Log.logger.info("fixed lang = " + lang);
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Card-Strings.json"));
@@ -200,13 +205,16 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
                 com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {
-            for (com.evacipated.cardcrawl.mod.stslib.Keyword keyword : keywords) {
-                if (getLang().equals("eng")) {
-                    BaseMod.addKeyword(ModInfo.getModId().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
-                } else {
+            if (getLang().equals("zhs") || getLang().equals("zht")) {
+                for (com.evacipated.cardcrawl.mod.stslib.Keyword keyword : keywords) {
                     BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                    Log.logger.info("-----------------add keyword: " + keyword.PROPER_NAME);
                 }
-                Log.logger.info("-----------------add keyword: " + keyword.PROPER_NAME);
+            } else {
+                for (com.evacipated.cardcrawl.mod.stslib.Keyword keyword : keywords) {
+                    BaseMod.addKeyword(ModInfo.getModId().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                    Log.logger.info("-----------------add keyword: " + keyword.PROPER_NAME);
+                }
             }
         }
     }
