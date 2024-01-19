@@ -1,16 +1,14 @@
 package ShoujoKageki.character;
 
-import ShoujoKageki.*;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.Log;
+import ShoujoKageki.ModInfo;
+import ShoujoKageki.Res;
 import ShoujoKageki.cards.starter.Defend;
 import ShoujoKageki.cards.starter.Fall;
 import ShoujoKageki.cards.starter.ShineStrike;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.HairpinRelic;
-import ShoujoKageki.screen.BagPileViewScreen;
-import basemod.BaseMod;
-import basemod.abstracts.CustomMultiPageFtue;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -23,14 +21,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;

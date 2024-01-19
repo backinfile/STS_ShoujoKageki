@@ -107,5 +107,15 @@
     "TEXT": ["", " NL 闪耀 !ShoujoKageki:disposable! 。", " NL {!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:DisposedPilePatch": {
+    "TEXT": ["正在查看耗尽牌堆。", "返回"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:TopPanelDisposedPileBtn": {
+    "TEXT": ["耗尽牌堆", "查看所有闪耀值耗尽的卡牌。", "耗尽牌堆为空。" ],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }

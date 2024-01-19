@@ -2,12 +2,15 @@ package ShoujoKageki.variables.patch;
 
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.effects.PurgeCardInBattleEffect;
+import ShoujoKageki.patches.TokenCardField;
 import ShoujoKageki.util.ActionUtils;
+import ShoujoKageki.util.Utils2;
 import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,6 +27,14 @@ public class DisposableField {
     public static SpireField<Boolean> disposableModified = new SpireField<>(() -> false);
     public static SpireField<Boolean> forceDispose = new SpireField<>(() -> false);
 
+    public static CardGroup getDisposedPile() {
+        CardGroup disposedPile = DisposableField2.disposedPile.get(AbstractDungeon.player);
+        if (disposedPile == null) {
+            disposedPile = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            DisposableField2.disposedPile.set(AbstractDungeon.player, disposedPile);
+        }
+        return disposedPile;
+    }
 
     public static void disposeCard(AbstractCard card) {
         disposeCard(card, card.current_x, card.current_y);
@@ -53,5 +64,11 @@ public class DisposableField {
 
         DisposableFieldCounterSavePatch.addShineCardDispose(card);
         DisposableFieldRecordPatch.addDisposedCard(card);
+
+        {
+            AbstractCard copyCard = Utils2.makeCardCopyOnlyWithUpgrade(card);
+            TokenCardField.isToken.set(copyCard, false);
+            getDisposedPile().group.add(copyCard);
+        }
     }
 }
