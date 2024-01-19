@@ -6,6 +6,7 @@ import ShoujoKageki.relics.SharedRelic;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.reward.patch.RewardPatch;
 import ShoujoKageki.screen.BagPileViewScreen;
+import ShoujoKageki.ui.TopPanelDisposedPileBtn;
 import ShoujoKageki.util.TextureLoader;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -106,12 +107,6 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
     public void receiveEditStrings() {
         Log.logger.info("Beginning to edit strings for mod with ID: " + ModInfo.getModId());
         String lang = getLang();
-        if (lang.equals("zht") || lang.equals("zhs")) {
-            lang = "zhs";
-        } else {
-            lang = "eng";
-        }
-        Log.logger.info("fixed lang = " + lang);
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 ModInfo.getResPath("/localization/" + lang + "/ShoujoKageki-Card-Strings.json"));
@@ -148,7 +143,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
     private String getLang() {
         Settings.GameLanguage lang = Settings.language;
-        if (lang == Settings.GameLanguage.ZHS) {
+        if (lang == Settings.GameLanguage.ZHS || lang == Settings.GameLanguage.ZHT) {
             return "zhs";
         } else {
             return "eng";
@@ -205,7 +200,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
                 com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {
-            if (getLang().equals("zhs") || getLang().equals("zht")) {
+            if (getLang().equals("zhs")) {
                 for (com.evacipated.cardcrawl.mod.stslib.Keyword keyword : keywords) {
                     BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
                     Log.logger.info("-----------------add keyword: " + keyword.PROPER_NAME);
@@ -253,6 +248,9 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         // Load the Mod Badge
         SettingsPanel.initPanel();
+
+//        BaseMod.addTopPanelItem(new TopPanelDisposedPileBtn());
+
         logger.info("Done loading badge Image and mod options");
     }
 
