@@ -47,6 +47,10 @@
 	},
 	"ShoujoKageki:MeetAgain": {
 		"NAME": "Reunion",
+		"DESCRIPTION": "Gain !B! block. NL Draw !M! card{!M!|>1=s}{@@}. NL Put 1 card into ShoujoKageki:Promise_Pile."
+	},
+	"ShoujoKageki:MeetAgainTmp": {
+		"NAME": "Reunion",
 		"DESCRIPTION": "Gain !M! temporary Strength. NL Put this card into ShoujoKageki:Promise_Pile after playing."
 	},
 	"ShoujoKageki:ChargeStrike": {
@@ -449,7 +453,7 @@
 	},
 	"ShoujoKageki:Stretching": {
 		"NAME": "Stretching",
-		"CHINESE_DESCRIPTION": "获得 !B! 点 格挡。 NL 沉淀 。"
+		"CHINESE_DESCRIPTION": "Gain !B! block. NL Put this card into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Sideways": {
 		"NAME": "Sideways",
@@ -502,7 +506,7 @@
 	},
 	"ShoujoKageki:Run03": {
 		"NAME": "Action",
-		"DESCRIPTION": "Deal !D! damage. NL If ShoujoKageki:Promise_Pile is not empty, gain [E]."
+		"DESCRIPTION": "Draw !M! card{!M!|>1=s}{@@}. NL Put this card into ShoujoKageki:Promise_Pile."
 	},
 	"ShoujoKageki:Void": {
 		"NAME": "The Emptiest Person",

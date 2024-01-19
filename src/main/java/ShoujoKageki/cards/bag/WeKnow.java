@@ -18,6 +18,7 @@ import ShoujoKageki.cards.patches.field.BagField;
 
 import static ShoujoKageki.ModInfo.makeID;
 
+@AutoAdd.Ignore
 public class WeKnow extends BaseCard {
     public static final String ID = makeID(WeKnow.class.getSimpleName());
 

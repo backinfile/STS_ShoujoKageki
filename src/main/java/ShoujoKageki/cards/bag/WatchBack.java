@@ -2,6 +2,7 @@ package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
+@AutoAdd.Ignore
 public class WatchBack extends BaseCard {
 
     public static final String ID = ModInfo.makeID(WatchBack.class.getSimpleName());

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class SeriousStrike extends BaseCard {
 
     public static final String ID = ModInfo.makeID(SeriousStrike.class.getSimpleName());

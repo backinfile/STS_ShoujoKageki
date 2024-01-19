@@ -5,9 +5,9 @@ Added a new character Aijo Karen, and related cards, relics, and potions.
 
 Mechanism introduction:
 
-The promise she made with her childhood friend Kagura Hikari was the original motivation for Karen to become a stage girl, so Karen has a unique deck - the Promise Pile. The Promise Pile can be used to store cards and schedule cards.
+The promise she made with her childhood friend Kagura Hikari was the original motivation for Karen to become a stage girl, so Karen has a unique deck - the [b]Promise Pile[/b]. The [b]Promise Pile[/b] can be used to store cards and schedule cards.
 
-Every stage girl has shine, but shine is not something that can be obtained simply. Cards with the Shine keyword are more powerful than ordinary cards, but will be permanently removed from the deck after being used a certain number of times. Select Shine cards at the right time to deal with various situations!
+Every stage girl has shine, but shine is not something that can be obtained simply. Cards with the [b]Shine[/b] keyword are more powerful than ordinary cards, but will be permanently removed from the deck after being used a certain number of times. Select Shine cards at the right time to deal with various situations!
 
 =================================================================
 

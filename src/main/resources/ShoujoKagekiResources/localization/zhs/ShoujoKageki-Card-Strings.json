@@ -47,6 +47,10 @@
 	},
 	"ShoujoKageki:MeetAgain": {
 		"NAME": "重逢",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 将 1 张牌放入 约定牌堆 。"
+	},
+	"ShoujoKageki:MeetAgainTmp": {
+		"NAME": "重逢",
 		"DESCRIPTION": "获得 !M! 点 临时力量 。 NL 打出后进入 约定牌堆 。"
 	},
 	"ShoujoKageki:ChargeStrike": {
@@ -451,7 +455,7 @@
 	},
 	"ShoujoKageki:Stretching": {
 		"NAME": "拉伸",
-		"DESCRIPTION": "获得 !B! 点 格挡。 NL 沉淀 。"
+		"DESCRIPTION": "获得 !B! 点 格挡。 NL 打出后进入 约定牌堆 。"
 	},
 	"ShoujoKageki:Sideways": {
 		"NAME": "侧身",
@@ -505,6 +509,10 @@
 	},
 	"ShoujoKageki:Run03": {
 		"NAME": "行动",
+		"DESCRIPTION": "抽 !M! 张牌。 NL 打出后进入 约定牌堆 。"
+	},
+	"ShoujoKageki:Run03Tmp": {
+		"NAME": "行动",
 		"DESCRIPTION": "造成 !D! 伤害。 NL 如果 约定牌堆 不为空， 获得 [E] 。"
 	},
 	"ShoujoKageki:Void": {
@@ -527,14 +535,6 @@
 		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E] [E]",
 		"EXTENDED_DESCRIPTION": [
 		  "这张牌不能被打出。"
-		]
-	},
-	"fortuneTeller:SoulVision": {
-		"NAME": "灵视",
-		"DESCRIPTION": " 不能被打出 。 NL 被 替换 时，获得 [E] 。",
-		"UPGRADE_DESCRIPTION": " 不能被打出 。 NL 被 替换 时，获得 [E] [E] 。",
-		"EXTENDED_DESCRIPTION": [
-			"不能被打出。"
 		]
 	}
 }
