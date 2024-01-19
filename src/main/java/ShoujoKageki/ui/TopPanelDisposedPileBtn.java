@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
@@ -26,6 +27,8 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
 
     public TopPanelDisposedPileBtn() {
         super(IMG, ID);
+        this.setX(Settings.WIDTH - (64f + 10f) * 4 * Settings.scale);
+        this.setY(Settings.HEIGHT - 64.0F * Settings.scale);
     }
 
     @Override
@@ -48,13 +51,15 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
 
     @Override
     public void render(SpriteBatch sb) {
+        super.render(sb);
+
         boolean disable = isDisable();
-        render(sb, disable ? DISABLE_COLOR : Color.WHITE);
+        Color renderColor = disable ? DISABLE_COLOR : Color.WHITE;
 
         FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelAmountFont,
                 Integer.toString(DisposableField.getDisposedPile().size()),
                 this.x + 58.0F * Settings.scale,
-                this.y + 25.0F * Settings.scale, Color.WHITE.cpy());
+                this.y + 25.0F * Settings.scale, renderColor);
 
         if (!disable && this.getHitbox().hovered) {
             sb.setColor(Color.CYAN);
@@ -65,7 +70,28 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
     }
 
     private boolean isDisable() {
+        if (this.isOpen && AbstractDungeon.screen == AbstractDungeon.CurrentScreen.EXHAUST_VIEW) {
+            return false;
+        }
         return AbstractDungeon.isScreenUp;
+    }
+
+    @Override
+    protected void onHover() {
+//        super.onHover();
+        if (!isDisable()) {
+            this.tint.a = 0.25F;
+            this.angle = MathHelper.angleLerpSnap(this.angle, 180.0F);
+        }
+    }
+
+    @Override
+    protected void onUnhover() {
+//        super.onUnhover();
+        if (!isDisable()) {
+            this.tint.a = 0.0F;
+            this.angle = MathHelper.angleLerpSnap(this.angle, 0.0F);
+        }
     }
 
     private static final float TIP_Y = (float) Settings.HEIGHT - 120.0F * Settings.scale;

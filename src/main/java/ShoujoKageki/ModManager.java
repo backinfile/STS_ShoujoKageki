@@ -234,7 +234,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         // Load the Mod Badge
         SettingsPanel.initPanel();
 
-        BaseMod.addTopPanelItem(new TopPanelDisposedPileBtn());
+//        BaseMod.addTopPanelItem(new TopPanelDisposedPileBtn());
 
         logger.info("Done loading badge Image and mod options");
     }

@@ -85,7 +85,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:settingsPanel": {
-    "TEXT":["Unlock Ascension 20", "Show Promise Pile Preview"],
+    "TEXT":["Unlock Ascension 20", "Show Promise Pile Preview", "Show Pile of run-out cards"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
@@ -105,6 +105,16 @@
   },
   "ShoujoKageki:DisposableKeyword": {
     "TEXT": ["", " NL ShoujoKageki:Shine !ShoujoKageki:disposable! .", " NL {!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:DisposedPilePatch": {
+    "TEXT": ["Viewing Pile of run-out cards.", "Back"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:TopPanelDisposedPileBtn": {
+    "TEXT": ["Pile of run-out cards", "view all run-out cards.", "no run-out card." ],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   }

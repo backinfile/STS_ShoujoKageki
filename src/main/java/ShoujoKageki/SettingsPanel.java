@@ -24,6 +24,7 @@ import static ShoujoKageki.character.KarenCharacter.Enums.Karen;
 
 public class SettingsPanel {
     public static boolean showDrawBagReview = false;
+    public static boolean showDisposedPile = true;
 
 
     public static final String CONFIG_FILE_NAME = "config";
@@ -31,10 +32,12 @@ public class SettingsPanel {
 
     public static void initProperties() {
         settingsProperties.setProperty("showDrawBagReview", "FALSE");
+        settingsProperties.setProperty("showDisposedPile", "TRUE");
         try {
             SpireConfig config = new SpireConfig(ModInfo.ModName, CONFIG_FILE_NAME, settingsProperties);
             config.load();
             showDrawBagReview = config.getBool("showDrawBagReview");
+            showDisposedPile = config.getBool("showDisposedPile");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -44,6 +47,7 @@ public class SettingsPanel {
         try {
             SpireConfig config = new SpireConfig(ModInfo.ModName, CONFIG_FILE_NAME, settingsProperties);
             config.setBool("showDrawBagReview", showDrawBagReview);
+            config.setBool("showDisposedPile", showDisposedPile);
             config.save();
         } catch (Exception e) {
             e.printStackTrace();
@@ -87,8 +91,19 @@ public class SettingsPanel {
                     saveProperties();
                 });
 
+        // Create the on/off button:
+        ModLabeledToggleButton showDisposedPileBtn = new ModLabeledToggleButton(
+                uiStrings.TEXT[2], 350.0f, 600.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                showDisposedPile, settingsPanel, (label) -> {
+        },
+                (button) -> {
+                    showDisposedPile = button.enabled;
+                    saveProperties();
+                });
+
         settingsPanel.addUIElement(unlockAscensionBtn);
         settingsPanel.addUIElement(showDrawBagReviewBtn);
+        settingsPanel.addUIElement(showDisposedPileBtn);
 
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
         BaseMod.registerModBadge(badgeTexture, ModInfo.ModName, ModInfo.AUTHOR, ModInfo.DESCRIPTION, settingsPanel);
