@@ -20,12 +20,6 @@ public class DisposedPilePatch {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(DisposedPilePatch.class.getSimpleName()));
 
 
-    private static class RenderExhaustPileViewScreenPatchLocator extends SpireInsertLocator {
-        public int[] Locate(CtBehavior ctBehavior) throws Exception {
-            Matcher matcher = new Matcher.MethodCallMatcher(FontHelper.class, "renderDeckViewTip");
-            return LineFinder.findInOrder(ctBehavior, matcher);
-        }
-    }
 
     @SpirePatch(
             clz = ExhaustPileViewScreen.class,
@@ -43,12 +37,11 @@ public class DisposedPilePatch {
                 return SpireReturn.Continue();
             }
         }
-    }
-
-    private static class OpenExhaustPileViewScreenPatchLocator extends SpireInsertLocator {
-        public int[] Locate(CtBehavior ctBehavior) throws Exception {
-            Matcher matcher = new Matcher.MethodCallMatcher(ExhaustPileViewScreen.class, "hideCards");
-            return LineFinder.findInOrder(ctBehavior, matcher);
+        private static class RenderExhaustPileViewScreenPatchLocator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher matcher = new Matcher.MethodCallMatcher(FontHelper.class, "renderDeckViewTip");
+                return LineFinder.findInOrder(ctBehavior, matcher);
+            }
         }
     }
 
@@ -71,6 +64,13 @@ public class DisposedPilePatch {
                 showingScreen = false;
             }
 
+        }
+
+        private static class OpenExhaustPileViewScreenPatchLocator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher matcher = new Matcher.MethodCallMatcher(ExhaustPileViewScreen.class, "hideCards");
+                return LineFinder.findInOrder(ctBehavior, matcher);
+            }
         }
     }
 }

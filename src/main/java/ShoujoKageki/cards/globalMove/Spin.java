@@ -18,8 +18,8 @@ public class Spin extends BaseCard {
 
     public Spin() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 6;
-        this.baseMagicNumber = this.magicNumber = 3;
+        this.baseDamage = 5;
+        this.baseMagicNumber = this.magicNumber = 2;
         this.logGlobalMove = true;
     }
 
@@ -61,7 +61,7 @@ public class Spin extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
+//            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }
