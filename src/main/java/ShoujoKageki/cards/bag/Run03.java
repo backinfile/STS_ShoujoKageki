@@ -20,7 +20,7 @@ public class Run03 extends BaseCard {
 
     public Run03() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.baseMagicNumber = this.magicNumber = 3;
+        this.baseMagicNumber = this.magicNumber = 2;
         PutToBagField.putToBag.set(this, true);
     }
 
