@@ -83,6 +83,7 @@ public class TakeAllRewardCardsPatch {
             takeAllRewardCardsButton.hide();
         }
     }
+
     @SpirePatch(
             clz = CardRewardScreen.class,
             method = "chooseOneOpen"
@@ -92,6 +93,7 @@ public class TakeAllRewardCardsPatch {
             takeAllRewardCardsButton.hide();
         }
     }
+
     @SpirePatch(
             clz = CardRewardScreen.class,
             method = "draftOpen"
@@ -165,6 +167,7 @@ public class TakeAllRewardCardsPatch {
             Log.logger.info("three btn");
             setTargetX(SkipCardButton.class, ___skipButton, TakeAllRewardCardsButton.SHOW_X - 165.0F * Settings.scale * 2);
             setTargetX(SingingBowlButton.class, ___bowlButton, TakeAllRewardCardsButton.SHOW_X);
+            ___bowlButton.hb.move(TakeAllRewardCardsButton.SHOW_X, SkipCardButton.TAKE_Y);
             takeAllRewardCardsButton.target_x = TakeAllRewardCardsButton.SHOW_X + 165.0F * Settings.scale * 2;
         }
 
