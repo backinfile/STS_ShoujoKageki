@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import ShoujoKageki.ModInfo;
 
+@SharedRelic
 public class BookMarchRelic extends BaseRelic {
     public static final String RAW_ID = BookMarchRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);
