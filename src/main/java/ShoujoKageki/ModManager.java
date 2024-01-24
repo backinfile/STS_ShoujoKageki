@@ -7,7 +7,6 @@ import ShoujoKageki.relics.SharedRelic;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.screen.BagPileViewScreen;
 import ShoujoKageki.screen.BlackMarketScreen;
-import ShoujoKageki.ui.TopPanelDisposedPileBtn;
 import ShoujoKageki.util.IDCheckDontTouchPls;
 import ShoujoKageki.variables.DefaultCustomVariable;
 import ShoujoKageki.variables.DefaultSecondMagicNumber;

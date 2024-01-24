@@ -20,7 +20,7 @@ public class MeetAgain extends BaseCard {
     public MeetAgain() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         magicNumber = baseMagicNumber = 2;
-        this.baseBlock = 7;
+        this.baseBlock = 6;
     }
 
     @Override
