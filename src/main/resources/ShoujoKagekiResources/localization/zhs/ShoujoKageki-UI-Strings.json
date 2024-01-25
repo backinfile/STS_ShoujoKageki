@@ -117,5 +117,10 @@
     "TEXT": ["已耗尽的牌", "查看所有闪耀值耗尽的卡牌。", "耗尽牌堆为空。" ],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:RunPathElement": {
+    "TEXT": ["耗尽：", " 耗尽"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }

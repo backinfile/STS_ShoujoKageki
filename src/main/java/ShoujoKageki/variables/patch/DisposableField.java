@@ -3,6 +3,7 @@ package ShoujoKageki.variables.patch;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.effects.PurgeCardInBattleEffect;
 import ShoujoKageki.patches.TokenCardField;
+import ShoujoKageki.patches.showDisposeInHistory.MetricDataPatch;
 import ShoujoKageki.util.ActionUtils;
 import ShoujoKageki.util.Utils2;
 import basemod.helpers.CardModifierManager;
@@ -12,6 +13,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -22,6 +24,8 @@ import java.util.ArrayList;
         method = "<class>"
 )
 public class DisposableField {
+    private static final int RECORD_MAX = 200;
+
     public static SpireField<Integer> disposable = new SpireField<>(() -> 0);// use DisposableVariable.setValue instead
     public static SpireField<Integer> baseDisposable = new SpireField<>(() -> 0); // use DisposableVariable.setBaseValue instead
     public static SpireField<Boolean> disposableModified = new SpireField<>(() -> false);
@@ -68,7 +72,12 @@ public class DisposableField {
         {
             AbstractCard copyCard = Utils2.makeCardCopyOnlyWithUpgrade(card);
             TokenCardField.isToken.set(copyCard, false);
-            getDisposedPile().group.add(copyCard);
+            CardGroup disposedPile = getDisposedPile();
+            if (disposedPile.size() < RECORD_MAX) {
+                disposedPile.group.add(copyCard);
+            }
         }
+
+        MetricDataPatch.addDisposedCard(card);
     }
 }
