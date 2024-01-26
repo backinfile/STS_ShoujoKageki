@@ -9,6 +9,7 @@ import ShoujoKageki.relics.BaseRelic;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -158,6 +159,25 @@ public class BagFieldPatch {
         }
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
+        }
+    }
+
+
+
+    @SpirePatch2(
+            clz = AbstractRoom.class,
+            method = "endTurn"
+    )
+    public static class EndTurnClearAttr {
+        public static void Prefix() {
+            if (!BagField.isChangeToDrawPile(false)) {
+                CardGroup bag = BagField.getBag();
+                if (bag != null) {
+                    for (AbstractCard card : bag.group) {
+                        card.resetAttributes();
+                    }
+                }
+            }
         }
     }
 }
