@@ -1,6 +1,7 @@
 package ShoujoKageki.patches.showDisposeInHistory;
 
 import ShoujoKageki.Log;
+import ShoujoKageki.relics.BaseRelic;
 import ShoujoKageki.variables.patch.DisposableFieldCounterSavePatch;
 import basemod.patches.com.megacrit.cardcrawl.saveAndContinue.SaveFile.ModSaves;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import javassist.CtBehavior;
@@ -73,16 +75,9 @@ public class SaveFilePatch {
     )
     public static class LoadPlayerSaves {
         public static void Postfix(CardCrawlGame __instance, AbstractPlayer p) {
-            HashMap<String, ArrayList<String>> stringArrayListHashMap = SaveStringField.disposedCards.get(CardCrawlGame.saveFile);
-            if (stringArrayListHashMap != null) {
-                MetricDataPatch.Field.disposedCards.set(CardCrawlGame.metricData, stringArrayListHashMap);
+            for (AbstractRelic relic : p.relics) {
+                if (relic instanceof BaseRelic) ((BaseRelic) relic).onSaveLoad();
             }
-
-            int count = SaveStringField.disposedCardsCount.get(CardCrawlGame.saveFile);
-            MetricDataPatch.Field.disposedCardsCount.set(CardCrawlGame.metricData, count);
-
-            Log.logger.info("load " + SerializedName1 + " = " + stringArrayListHashMap);
-            Log.logger.info("load " + SerializedName2 + " = " + count);
         }
     }
 }

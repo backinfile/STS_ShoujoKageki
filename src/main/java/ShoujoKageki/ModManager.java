@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.potions.AwakePotion;
 import ShoujoKageki.potions.BagPotion;
 import ShoujoKageki.potions.ShinePotion;
 import ShoujoKageki.relics.SharedRelic;
@@ -145,6 +146,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         Log.logger.info("Beginning to add potions.");
         BaseMod.addPotion(ShinePotion.class, Color.GOLD, CardHelper.getColor(255.0f, 230.0f, 230.0f), Color.GOLD, ShinePotion.POTION_ID, Karen);
         BaseMod.addPotion(BagPotion.class, KarenRenderColor.cpy(), Color.GOLD, KarenRenderColor.cpy(), BagPotion.POTION_ID, Karen);
+        BaseMod.addPotion(AwakePotion.class, KarenRenderColor.cpy(), KarenRenderColor.cpy(), KarenRenderColor.cpy(), AwakePotion.POTION_ID, Karen);
         Log.logger.info("Added potions.");
     }
 

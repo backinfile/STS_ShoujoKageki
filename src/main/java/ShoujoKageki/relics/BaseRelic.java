@@ -43,4 +43,8 @@ public abstract class BaseRelic extends CustomRelic {
     public void triggerOnTakeFromBag(AbstractCard card) {
 
     }
+
+    public void onSaveLoad() {
+
+    }
 }

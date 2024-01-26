@@ -44,8 +44,9 @@ public class HelmetRelic extends BaseRelic {
     }
 
     @Override
-    public void obtain() {
-        super.obtain();
+    public void onSaveLoad() {
+        super.onSaveLoad();
+        cardSelected = true;
     }
 
     public void update() {

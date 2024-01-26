@@ -540,5 +540,17 @@
 		"EXTENDED_DESCRIPTION": [
 		  "这张牌不能被打出。"
 		]
+	},
+	"ShoujoKageki:SelectDiscardPile3": {
+		"NAME": "弃牌堆",
+		"DESCRIPTION": "从 弃牌堆 中选择任意数量的牌放入你的手牌。"
+	},
+	"ShoujoKageki:SelectDrawPile3": {
+		"NAME": "抽牌堆",
+		"DESCRIPTION": "从 抽牌堆 中选择任意数量的牌放入你的手牌。"
+	},
+	"ShoujoKageki:SelectBagPile3": {
+		"NAME": "约定牌堆",
+		"DESCRIPTION": "从 约定牌堆 中选择任意数量的牌放入你的手牌。"
 	}
 }

@@ -3,6 +3,7 @@ package ShoujoKageki.potions;
 import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.ModManager;
+import ShoujoKageki.Res;
 import ShoujoKageki.actions.GainCardOrIgnoreAction;
 import ShoujoKageki.variables.DisposableVariable;
 import com.badlogic.gdx.graphics.Color;
@@ -32,6 +33,7 @@ public class ShinePotion extends BasePotion {
 
     public ShinePotion() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.CARD, PotionColor.SWIFT);
+        this.labOutlineColor = Res.KarenRenderColor.cpy();
     }
 
     @Override

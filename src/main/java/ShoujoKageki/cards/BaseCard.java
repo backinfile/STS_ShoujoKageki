@@ -11,6 +11,7 @@ import ShoujoKageki.ModInfo;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 import static ShoujoKageki.character.KarenCharacter.Enums.CardColor_Karen;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
