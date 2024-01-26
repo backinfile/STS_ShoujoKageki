@@ -99,5 +99,26 @@
 		"DESCRIPTIONS": [
 			"All cards in the store get #yShoujoKageki:Shine 3 and discount #b50%."
 		]
+	},
+	"ShoujoKageki:TeaCupRelic": {
+		"NAME": "Tea Cup",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"Every time you take out #y2 cards from #yShoujoKageki:Promise_Pile, gain #y1 temporary #yStrength 。"
+		]
+	},
+	"ShoujoKageki:FlowerRelic": {
+		"NAME": "Flower",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"Relic rewards have an additional option."
+		]
+	},
+	"ShoujoKageki:HelmetRelic": {
+		"NAME": "Helmet",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"Upon pickup, choose a card, set cost to #y0 .", "choose a card ", "", " 's cost is #y0 ."
+		]
 	}
 }

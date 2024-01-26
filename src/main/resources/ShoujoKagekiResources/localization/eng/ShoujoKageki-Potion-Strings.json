@@ -15,5 +15,11 @@
 			"Choose #b ",
 			" cards from draw pile to put into #yPromise_Pile. These cards cost #b0 this turn."
 		]
+	},
+	"ShoujoKageki:AwakePotion": {
+		"NAME": "Awake Potion",
+		"DESCRIPTIONS": [
+			"Select cards from any deck and put them into your hand until your hand reaches the upper limit."
+		]
 	}
 }

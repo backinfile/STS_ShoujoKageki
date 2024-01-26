@@ -524,10 +524,6 @@
 		"DESCRIPTION": "虚无 。 NL 每个回合开始时，抽满手牌。",
 		"UPGRADE_DESCRIPTION": "每个回合开始时，抽满手牌。"
 	},
-	"ShoujoKageki:Sleepy": {
-		"NAME": "困意",
-		"DESCRIPTION": "不能被打出 。 NL 虚无 。 NL 不能从牌组中移除。"
-	},
 	"ShoujoKageki:Reproduce": {
 		"NAME": "我，再生产",
 		"DESCRIPTION": "消耗 约定牌堆 中的所有牌，每 消耗 一张，放入 !M! 张随机卡牌。",
@@ -552,5 +548,9 @@
 	"ShoujoKageki:SelectBagPile3": {
 		"NAME": "约定牌堆",
 		"DESCRIPTION": "从 约定牌堆 中选择任意数量的牌放入你的手牌。"
+	},
+	"ShoujoKageki:Sleepy": {
+		"NAME": "困意",
+		"DESCRIPTION": "不能被打出 。 NL 虚无 。 NL 不能从牌组中移除。"
 	}
 }

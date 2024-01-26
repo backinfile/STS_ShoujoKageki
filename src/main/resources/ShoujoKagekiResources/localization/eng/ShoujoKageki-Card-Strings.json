@@ -473,7 +473,7 @@
 		"DESCRIPTION": "Choose 2 cards from your draw pile and put them into your hand."
 	},
 	"ShoujoKageki:SelectBagPile": {
-		"NAME": "ShoujoKageki:Promise_Pile",
+		"NAME": "Promise_Pile",
 		"DESCRIPTION": "Choose 2 cards from your ShoujoKageki:Promise_Pile and put them into your hand."
 	},
 	"ShoujoKageki:NoHesitate": {
@@ -529,5 +529,21 @@
 		"EXTENDED_DESCRIPTION": [
 		  "This card cannot be played."
 		]
+	},
+	"ShoujoKageki:SelectDiscardPile3": {
+		"NAME": "Discard Pile",
+		"DESCRIPTION": "Choose any cards from your discard pile and put them into your hand."
+	},
+	"ShoujoKageki:SelectDrawPile3": {
+		"NAME": "Draw Pile",
+		"DESCRIPTION": "Choose any cards from your draw pile and put them into your hand."
+	},
+	"ShoujoKageki:SelectBagPile3": {
+		"NAME": "Promise Pile",
+		"DESCRIPTION": "Choose any cards from your ShoujoKageki:Promise_Pile and put them into your hand."
+	},
+	"ShoujoKageki:Sleepy": {
+		"NAME": "Sleepy",
+		"DESCRIPTION": "Unplayable. NL Ethereal. NL Cannot be removed from your deck."
 	}
 }

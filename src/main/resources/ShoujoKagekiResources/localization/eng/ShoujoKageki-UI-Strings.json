@@ -114,8 +114,18 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:TopPanelDisposedPileBtn": {
-    "TEXT": ["Run-out cards:", " Run-out cards", "no run-out card." ],
+    "TEXT": ["Run-out cards", "view all run-out cards.", "no run-out card." ],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:RunPathElement": {
+    "TEXT": ["Run-out cards:", " run-out cards"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKageki:HelmetRelicModifier": {
+    "TEXT": ["", ""],
+    "EXTRA_TEXT": [""],
     "TEXT_DICT": {}
   }
 }
