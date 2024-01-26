@@ -93,5 +93,26 @@
 		"DESCRIPTIONS": [
 			"商店中的所有卡牌获得 #y闪耀 3，且打折 #b50% 。"
 		]
+	},
+	"ShoujoKageki:TeaCupRelic": {
+		"NAME": "茶杯",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"每从 #y约定牌堆 取出 #y2 张牌，获得 #y1 #y临时力量 。"
+		]
+	},
+	"ShoujoKageki:FlowerRelic": {
+		"NAME": "花朵",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"遗物奖励拥有额外一个选项。"
+		]
+	},
+	"ShoujoKageki:HelmetRelic": {
+		"NAME": "头盔",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"拾起时，选择一张牌，将其耗能变为0。", "选择一张牌 ", "", " 的耗能为 #y0 。"
+		]
 	}
 }

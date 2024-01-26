@@ -23,6 +23,7 @@ public class CookieRelic extends BaseRelic {
 
     public CookieRelic() {
         super(ID, RAW_ID, RelicTier.UNCOMMON);
+        this.screenLess = false;
     }
 
     @Override

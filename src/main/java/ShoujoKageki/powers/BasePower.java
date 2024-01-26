@@ -52,6 +52,10 @@ public abstract class BasePower extends AbstractPower {
     public void onRemove() {
     }
 
+
+    public void triggerOnTakeFromBagToHand(AbstractCard card) {
+
+    }
     public void triggerOnTakeFromBag(AbstractCard card) {
 
     }

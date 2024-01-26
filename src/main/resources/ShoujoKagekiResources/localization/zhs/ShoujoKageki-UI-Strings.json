@@ -122,5 +122,10 @@
     "TEXT": ["耗尽：", " 耗尽"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:HelmetRelicModifier": {
+    "TEXT": ["", ""],
+    "EXTRA_TEXT": [""],
+    "TEXT_DICT": {}
   }
 }

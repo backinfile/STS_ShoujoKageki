@@ -2,6 +2,7 @@ package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.variables.DisposableVariable;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 
 import java.util.Iterator;
 
+@AutoAdd.Ignore
 public class MrWhiteRelic extends BaseRelic {
     public static final String RAW_ID = MrWhiteRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);

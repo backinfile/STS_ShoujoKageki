@@ -5,6 +5,7 @@ import ShoujoKageki.actions.bag.TakeRndTmpCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.powers.BasePower;
+import ShoujoKageki.relics.BaseRelic;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 
@@ -140,8 +142,13 @@ public class BagFieldPatch {
             ((BaseCard) card).triggerOnTakeFromBag();
             ((BaseCard) card).triggerOnTakeFromBagToHand();
         }
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic instanceof BaseRelic) ((BaseRelic) relic).triggerOnTakeFromBag(card);
+            if (relic instanceof BaseRelic) ((BaseRelic) relic).triggerOnTakeFromBagToHand(card);
+        }
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
+            if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBagToHand(card);
         }
     }
 

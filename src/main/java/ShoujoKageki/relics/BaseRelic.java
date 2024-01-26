@@ -6,6 +6,9 @@ import ShoujoKageki.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public abstract class BaseRelic extends CustomRelic {
+    public boolean screenLess = true;
+
+
     public BaseRelic(String id, String rawId, RelicTier tier) {
         super(id, TextureLoader.getTexture(ModInfo.makeRelicPath(rawId + ".png")),
                 TextureLoader.getTexture(ModInfo.makeRelicPath(rawId + ".png")),
@@ -29,6 +32,15 @@ public abstract class BaseRelic extends CustomRelic {
     }
 
     public void triggerOnCardDisposed(AbstractCard card) {
+
+    }
+
+
+    public void triggerOnTakeFromBagToHand(AbstractCard card) {
+
+    }
+
+    public void triggerOnTakeFromBag(AbstractCard card) {
 
     }
 }
