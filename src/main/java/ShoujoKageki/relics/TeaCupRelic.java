@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import java.util.ArrayList;
 
-@SharedRelic
 public class TeaCupRelic extends BaseRelic {
     public static final String RAW_ID = TeaCupRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);

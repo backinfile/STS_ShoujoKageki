@@ -14,6 +14,11 @@ public class StarCrownRelic extends BaseRelic {
         super(ID, RAW_ID, RelicTier.BOSS, LandingSound.FLAT);
     }
 
+    @Override
+    public int getStokeWidth() {
+        return 3;
+    }
+
     public void onEquip() {
         ++AbstractDungeon.player.energy.energyMaster;
     }

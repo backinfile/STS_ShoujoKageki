@@ -13,7 +13,7 @@ public class OnStage extends BaseCard {
 
     public OnStage() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.baseMagicNumber = this.magicNumber = 2;
+        this.baseMagicNumber = this.magicNumber = 4;
         exhaust = true;
     }
 
