@@ -1,5 +1,5 @@
 
-Added a new character Aijo Karen, and related cards, relics, and potions.
+Added a new character Aijo Karen, including 75 cards, 13 relics, and 3 potions.
 
 =================================================================
 

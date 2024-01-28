@@ -30,35 +30,33 @@ public abstract class BaseRelic extends CustomRelic {
 //        outlineTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 //        this.setTextureOutline(relicTexture, outlineTexture);
 
-        Gdx.app.postRunnable(() -> {
-            Pixmap texture = new Pixmap(Gdx.files.internal(ModInfo.makeRelicPath(rawId + ".png")));
-            int width = texture.getWidth();
-            int height = texture.getHeight();
+        Pixmap texture = new Pixmap(Gdx.files.internal(ModInfo.makeRelicPath(rawId + ".png")));
+        int width = texture.getWidth();
+        int height = texture.getHeight();
 //            Log.logger.info("=================== {} {} {}", width, height, rawId);
-            Pixmap outline = new Pixmap(width, height, Pixmap.Format.RGBA8888);
-            outline.setColor(Color.WHITE);
-            for (int i = 0; i < width; i++) {
-                for (int j = 0; j < height; j++) {
-                    if (hasColorAround(texture, i, j)) {
-                        outline.drawPixel(i, j);
-                    }
+        Pixmap outline = new Pixmap(width, height, Pixmap.Format.RGBA8888);
+        outline.setColor(Color.WHITE);
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                if (hasColorAround(texture, i, j)) {
+                    outline.drawPixel(i, j);
                 }
             }
-            outline.setColor(new Color(1f, 1f, 1f, 0.5f));
-            for (int i = 0; i < width; i++) {
-                for (int j = 0; j < height; j++) {
-                    if (outline.getPixel(i, j) != 0 && !allAdjColored(texture, i, j)) {
-                        outline.drawPixel(i, j);
-                    }
+        }
+        outline.setColor(new Color(1f, 1f, 1f, 0.5f));
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                if (outline.getPixel(i, j) != 0 && !allAdjColored(texture, i, j)) {
+                    outline.drawPixel(i, j);
                 }
             }
+        }
 
-            Texture relicTexture = new Texture(texture);
-            Texture outlineTexture = new Texture(outline);
-            relicTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-            outlineTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-            this.setTextureOutline(relicTexture, outlineTexture);
-        });
+        Texture relicTexture = new Texture(texture);
+        Texture outlineTexture = new Texture(outline);
+        relicTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        outlineTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        this.setTextureOutline(relicTexture, outlineTexture);
     }
 
 
