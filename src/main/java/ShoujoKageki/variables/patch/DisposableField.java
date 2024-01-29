@@ -50,17 +50,18 @@ public class DisposableField {
             AbstractDungeon.player.masterDeck.removeCard(cardInDeck);
         }
 
-        float centerX = (float) Settings.WIDTH / 2.0F;
-        float centerY = (float) Settings.HEIGHT / 2.0F;
-        card.target_x = centerX;
-        card.target_y = centerY;
-        card.current_x = x;
-        card.current_y = y;
-        ActionUtils.resetBeforeMoving(card);
-        card.lighten(false);
-        card.targetAngle = 0.0F;
-        AbstractDungeon.effectList.add(new PurgeCardInBattleEffect(card, card.current_x, card.current_y));
-
+        if (card.type != AbstractCard.CardType.POWER) {
+            float centerX = (float) Settings.WIDTH / 2.0F;
+            float centerY = (float) Settings.HEIGHT / 2.0F;
+            card.target_x = centerX;
+            card.target_y = centerY;
+            card.current_x = x;
+            card.current_y = y;
+            ActionUtils.resetBeforeMoving(card);
+            card.lighten(false);
+            card.targetAngle = 0.0F;
+            AbstractDungeon.effectList.add(new PurgeCardInBattleEffect(card, card.current_x, card.current_y));
+        }
 
         if (card instanceof BaseCard) {
             ((BaseCard) card).triggerOnDisposed();

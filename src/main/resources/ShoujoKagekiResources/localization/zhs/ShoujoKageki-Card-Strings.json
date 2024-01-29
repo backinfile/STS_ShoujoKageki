@@ -20,7 +20,7 @@
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张牌放入 约定牌堆 。"
 	},
 	"ShoujoKageki:WhosPromise": {
-		"NAME": "翩翩旋转的双人舞",
+		"NAME": "双人舞",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 从 约定牌堆 中抽 !M! 张牌，然后放入 !M! 张牌。"
 	},
 	"ShoujoKageki:Bridge": {

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
@@ -29,7 +30,7 @@ public class DisposableFieldPatch {
         @SpireInsertPatch(
                 locator = Locator.class
         )
-        public static SpireReturn<Void> poofCard(UseCardAction __instance, AbstractCard ___targetCard) {
+        public static SpireReturn<Void> Insert(UseCardAction __instance, AbstractCard ___targetCard) {
             int curValue = DisposableField.disposable.get(___targetCard);
             if (curValue <= 0) {
                 return SpireReturn.Continue();
@@ -57,9 +58,6 @@ public class DisposableFieldPatch {
         }
 
         private static class Locator extends SpireInsertLocator {
-            private Locator() {
-            }
-
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.FieldAccessMatcher(UseCardAction.class, "exhaustCard");
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
@@ -67,4 +65,39 @@ public class DisposableFieldPatch {
         }
     }
 
+
+    @SpirePatch2(
+            clz = UseCardAction.class,
+            method = "update"
+    )
+    public static class Use_Power {
+
+        @SpireInsertPatch(
+                locator = Locator.class
+        )
+        public static void Insert(UseCardAction __instance, AbstractCard ___targetCard) {
+            int curValue = DisposableField.disposable.get(___targetCard);
+            if (curValue <= 0) return;
+
+            AbstractCard cardInDeck = StSLib.getMasterDeckEquivalent(___targetCard);
+            if (curValue == 1 || DisposableField.forceDispose.get(___targetCard)) {
+                DisposableField.disposeCard(___targetCard);
+            } else {
+                curValue--;
+                if (cardInDeck != null) { // 牌组中的闪耀值可能低于战斗内的，此时不扣
+                    if (DisposableVariable.getValue(cardInDeck) > curValue) {
+                        DisposableVariable.setValue(cardInDeck, curValue);
+                    }
+                }
+                DisposableVariable.setValue(___targetCard, curValue);
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "empower");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
 }
