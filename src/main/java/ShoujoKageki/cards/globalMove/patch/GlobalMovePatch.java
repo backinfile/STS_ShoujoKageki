@@ -184,4 +184,28 @@ public class GlobalMovePatch {
             triggerGlobalMove(___c, CardGroup.CardGroupType.UNSPECIFIED, CardGroup.CardGroupType.HAND);
         }
     }
+
+    @SpirePatch2(
+            clz = CardGroup.class,
+            method = "moveToDeck"
+    )
+    public static class MoveToDeck {
+        public static void Postfix(CardGroup __instance, AbstractCard ___c) {
+            triggerGlobalMove(___c, CardGroup.CardGroupType.UNSPECIFIED, CardGroup.CardGroupType.DRAW_PILE);
+        }
+    }
+
+    @SpirePatch2(
+            clz = CardGroup.class,
+            method = "moveToBottomOfDeck"
+    )
+    public static class MoveToBottomOfDeck {
+        public static void Postfix(CardGroup __instance, AbstractCard ___c) {
+            if (BagField.isChangeToDrawPile(false)) {
+                triggerGlobalMove(___c, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
+            } else {
+                triggerGlobalMove(___c, CardGroup.CardGroupType.UNSPECIFIED, CardGroup.CardGroupType.DRAW_PILE);
+            }
+        }
+    }
 }

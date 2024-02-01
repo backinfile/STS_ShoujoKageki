@@ -45,7 +45,9 @@ public class MoveCardToBagAction extends AbstractGameAction {
 
             for (AbstractCard card : cardsToBag) {
                 GlobalMovePatch.triggerOnPutInBag(card);
-                GlobalMovePatch.triggerGlobalMove(card, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
+                if (!BagField.isChangeToDrawPile(false)) {
+                    GlobalMovePatch.triggerGlobalMove(card, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
+                }
                 player.limbo.removeCard(card);
             }
 
