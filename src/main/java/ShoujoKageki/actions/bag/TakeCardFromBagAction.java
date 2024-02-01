@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -39,7 +40,7 @@ public class TakeCardFromBagAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        BasePlayer player = (BasePlayer) AbstractDungeon.player;
+        AbstractPlayer player =  AbstractDungeon.player;
         if (this.duration == Settings.ACTION_DUR_FAST) {
             int handSize = player.hand.size();
             if (handSize >= BaseMod.MAX_HAND_SIZE) {

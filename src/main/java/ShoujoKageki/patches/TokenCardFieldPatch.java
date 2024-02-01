@@ -3,6 +3,7 @@ package ShoujoKageki.patches;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.character.KarenCharacter;
 import ShoujoKageki.util.Utils2;
 import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableFieldPatch;
@@ -169,6 +170,9 @@ public class TokenCardFieldPatch {
             return;
         }
         if (!AbstractDungeon.isPlayerInDungeon() || AbstractDungeon.getCurrMapNode() == null || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            return;
+        }
+        if (!(AbstractDungeon.player instanceof KarenCharacter)) {
             return;
         }
         if (!TokenCardField.isToken.get(card)) {
