@@ -166,7 +166,7 @@
 	},
 	"ShoujoKageki:StageIsWaiting": {
 		"NAME": "Stage Is Waiting",
-		"DESCRIPTION": "When ShoujoKageki:Promise_Pile is empty, gain [E]."
+		"DESCRIPTION": "When ShoujoKageki:Promise_Pile is emptied, gain [E]."
 	},
 	"ShoujoKageki:LastWord": {
 		"NAME": "Last Word",
