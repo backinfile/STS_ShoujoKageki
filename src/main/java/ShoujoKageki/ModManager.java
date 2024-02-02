@@ -8,6 +8,7 @@ import ShoujoKageki.relics.SharedRelic;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.screen.BagPileViewScreen;
 import ShoujoKageki.screen.BlackMarketScreen;
+import ShoujoKageki.util.GenTool;
 import ShoujoKageki.util.IDCheckDontTouchPls;
 import ShoujoKageki.variables.DefaultCustomVariable;
 import ShoujoKageki.variables.DefaultSecondMagicNumber;
@@ -236,6 +237,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         SettingsPanel.initPanel();
 
 //        BaseMod.addTopPanelItem(new TopPanelDisposedPileBtn());
+        GenTool.gen();
 
         logger.info("Done loading badge Image and mod options");
     }
