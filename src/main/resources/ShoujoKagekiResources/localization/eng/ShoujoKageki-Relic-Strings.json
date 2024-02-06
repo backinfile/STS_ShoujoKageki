@@ -120,5 +120,13 @@
 		"DESCRIPTIONS": [
 			"Upon pickup, choose a card, set cost to #y0 .", "choose a card ", "", " 's cost is #y0 ."
 		]
+	},
+	"CeramicFish": {
+		"NAME": "Ceramic Fish",
+		"FLAVOR": "Meticulously painted, these fish were revered to bring great fortune.",
+		"DESCRIPTIONS": [
+			"Whenever you add a card to your deck outside combat, gain #b",
+			" #yGold."
+		]
 	}
 }

@@ -205,7 +205,7 @@ public class KarenCharacter extends BasePlayer {
     // respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 5;
     }
 
     // Should return the card color enum to be associated with your character.
@@ -236,7 +236,7 @@ public class KarenCharacter extends BasePlayer {
     // Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new ShineStrike();
     }
 
     // The class name as it appears next to your player name in-game

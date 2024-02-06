@@ -15,7 +15,7 @@ public class Stretching extends BaseCard {
 
     public Stretching() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseBlock = 12;
+        this.baseBlock = 14;
         PutToBagField.putToBag.set(this, true);
     }
 

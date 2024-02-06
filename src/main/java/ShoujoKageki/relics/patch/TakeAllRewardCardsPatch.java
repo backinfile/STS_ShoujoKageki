@@ -1,12 +1,13 @@
 package ShoujoKageki.relics.patch;
 
+import ShoujoKageki.ModInfo;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.SingingBowl;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 import com.megacrit.cardcrawl.ui.buttons.SingingBowlButton;
@@ -17,6 +18,9 @@ import ShoujoKageki.ui.TakeAllRewardCardsButton;
 import javassist.CtBehavior;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.stream.Collectors;
 
 public class TakeAllRewardCardsPatch {
     private static final TakeAllRewardCardsButton takeAllRewardCardsButton = new TakeAllRewardCardsButton();
@@ -192,5 +196,18 @@ public class TakeAllRewardCardsPatch {
             Log.logger.error(e);
             return true;
         }
+    }
+
+    public static void record(ArrayList<AbstractCard> takes) {
+        ArrayList<String> picked_list = new ArrayList<>();
+        for (AbstractCard card : takes) {
+            picked_list.add(card.getMetricID());
+        }
+        HashMap<String, Object> choice = new HashMap<>();
+        choice.put("picked", ModInfo.makeID("TAKE_ALL"));
+        choice.put("picked_list", picked_list);
+        choice.put("not_picked", new ArrayList<AbstractCard>());
+        choice.put("floor", AbstractDungeon.floorNum);
+        CardCrawlGame.metricData.card_choices.add(choice);
     }
 }

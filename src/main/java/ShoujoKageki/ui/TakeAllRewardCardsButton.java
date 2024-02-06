@@ -1,5 +1,6 @@
 package ShoujoKageki.ui;
 
+import ShoujoKageki.relics.patch.TakeAllRewardCardsPatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -83,6 +84,7 @@ public class TakeAllRewardCardsButton {
     }
 
     public void onClick() {
+        TakeAllRewardCardsPatch.record(this.rItem.cards);
         for (AbstractCard card : this.rItem.cards) {
             card.upgrade();
             AbstractDungeon.effectsQueue.add(new FastCardObtainEffect(card, card.current_x, card.current_y));

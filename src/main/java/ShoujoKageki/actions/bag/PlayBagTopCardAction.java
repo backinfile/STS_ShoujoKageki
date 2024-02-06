@@ -45,7 +45,9 @@ public class PlayBagTopCardAction extends AbstractGameAction {
             }
 
             if (BagField.isChangeToDrawPile()) {
-                addToTop(new PlayTopCardAction(target, exhaustCards));
+                if (!p.drawPile.isEmpty()) {
+                    addToTop(new PlayTopCardAction(target, exhaustCards));
+                }
                 isDone = true;
                 return;
             }
