@@ -55,7 +55,7 @@ public class SelectBagCardToHandAction extends AbstractGameAction {
             }
 
             if (BagField.isChangeToDrawPile()) {
-                addToBot(new BetterDrawPileToHandAction(numberOfCards));
+                addToTop(new BetterDrawPileToHandAction(numberOfCards));
                 isDone = true;
                 return;
             }

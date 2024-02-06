@@ -1,5 +1,6 @@
 package ShoujoKageki.cards.patches;
 
+import ShoujoKageki.Log;
 import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.actions.bag.TakeRndTmpCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
@@ -8,19 +9,20 @@ import ShoujoKageki.powers.BasePower;
 import ShoujoKageki.relics.BaseRelic;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import javassist.CtBehavior;
 
 
 public class BagFieldPatch {
@@ -68,7 +70,6 @@ public class BagFieldPatch {
                                                float ___duration, float ___startDuration,
                                                AbstractPlayer ___player, int ___numberOfCards,
                                                boolean ___optional) {
-
             if (!BagField.isChangeToDrawPile(false)) {
                 return SpireReturn.Continue();
             }
@@ -135,6 +136,30 @@ public class BagFieldPatch {
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch2(
+            clz = AbstractPlayer.class,
+            method = "draw",
+            paramtypez = {int.class}
+    )
+    public static class PlayerDrawCardPatch {
+        @SpireInsertPatch(
+                locator = Locator.class,
+                localvars = "c"
+        )
+        public static void Insert(AbstractPlayer __instance, AbstractCard c) {
+            if (BagField.isChangeToDrawPile(false)) {
+                triggerOnTakeFromBagToHand(c);
+            }
+        }
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "relics");
+                return LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher);
+            }
         }
     }
 

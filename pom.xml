@@ -5,7 +5,7 @@
 
     <groupId>backinfile</groupId>
     <artifactId>ShoujoKageki</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <packaging>jar</packaging>
     <name>ShoujoKageki</name>
     <description>ShoujoKageki</description>

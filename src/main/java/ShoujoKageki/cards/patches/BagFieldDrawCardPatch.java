@@ -26,8 +26,16 @@ public class BagFieldDrawCardPatch {
             paramtypez = int.class
     )
     public static class AbstractPlayerDraw {
-        public static void Postfix(AbstractPlayer __instance, int numCards) {
-            drawCnt += numCards;
+        @SpireInsertPatch(locator = Locator.class)
+        public static void Insert(AbstractPlayer __instance) {
+            drawCnt += 1;
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "relics");
+                return LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher);
+            }
         }
     }
 
