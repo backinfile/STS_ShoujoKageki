@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.util.Utils2;
 
+import static ShoujoKageki.ModInfo.DESCRIPTION;
 import static ShoujoKageki.ModInfo.makeID;
 
 public class BagPower extends BasePower {
@@ -48,41 +49,48 @@ public class BagPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
-        if (!(owner instanceof AbstractPlayer)) return;
+        if (!(owner instanceof AbstractPlayer)) {
+            this.description = DESCRIPTIONS[0];
+            return;
+        }
+        StringBuilder descriptionBuilder = new StringBuilder();
+        descriptionBuilder.append(DESCRIPTIONS[0]);
 
         boolean infinite = BagField.isInfinite(false);
         boolean changeToDrawPile = BagField.isChangeToDrawPile(false);
         boolean showCardsInBag = BagField.showCardsInBag();
 
         if (showCardsInBag) {
-            description += DESCRIPTIONS[1];
+            descriptionBuilder.append(DESCRIPTIONS[1]);
         }
         if (changeToDrawPile) {
-            description += DESCRIPTIONS[3];
+            descriptionBuilder.append(DESCRIPTIONS[3]);
         }
         if (infinite && BagField.isUpgrade()) {
-            description += DESCRIPTIONS[9];
+            descriptionBuilder.append(DESCRIPTIONS[9]);
         } else if (infinite) {
-            description += DESCRIPTIONS[2];
+            descriptionBuilder.append(DESCRIPTIONS[2]);
         } else if (BagField.isUpgrade()) {
-            description += DESCRIPTIONS[4];
+            descriptionBuilder.append(DESCRIPTIONS[4]);
         }
 
         if (BagField.isBurn()) {
-            description += DESCRIPTIONS[5];
+            descriptionBuilder.append(DESCRIPTIONS[5]);
         }
 
-        if (!showCardsInBag) {
-            return;
+        if (showCardsInBag) {
+            CardGroup bag = BagField.bag.get(owner);
+            if (bag.isEmpty()) {
+                descriptionBuilder.append(DESCRIPTIONS[6]);
+            } else {
+                descriptionBuilder.append(DESCRIPTIONS[7]).append(Utils2.getCardNames(bag, DESCRIPTIONS[8], false));
+            }
         }
 
-        CardGroup bag = BagField.bag.get(owner);
-        if (bag.isEmpty()) {
-            description += DESCRIPTIONS[6];
-        } else {
-            description += DESCRIPTIONS[7] + Utils2.getCardNames(bag, DESCRIPTIONS[8], false);
+        if (descriptionBuilder.length() >= 4 && descriptionBuilder.substring(descriptionBuilder.length() - 4).equals(" NL ")) {
+            descriptionBuilder.setLength(descriptionBuilder.length() - 4);
         }
+        this.description = descriptionBuilder.toString();
     }
 
     public void checkBagPower(boolean flash) {

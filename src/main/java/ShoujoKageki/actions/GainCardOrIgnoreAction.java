@@ -61,10 +61,16 @@ public class GainCardOrIgnoreAction extends AbstractGameAction {
             TokenCardField.isToken.set(targetCard, false);
 
             addToBot(new AddCardToDeckAction(targetCard.makeSameInstanceOf()));
-
             if (reduceCost) targetCard.setCostForTurn(0);
             addToBot(new MakeTempCardInHandAction(targetCard, false, true));
-            if (duplicate) addToBot(new MakeTempCardInHandAction(targetCard, false, true));
+
+
+            if (duplicate) {
+                AbstractCard card = Utils2.makeCardCopyOnlyWithUpgrade(targetCard);
+                addToBot(new AddCardToDeckAction(card.makeSameInstanceOf()));
+                if (reduceCost) card.setCostForTurn(0);
+                addToBot(new MakeTempCardInHandAction(card, false, true));
+            }
             isDone = true;
         }
 
