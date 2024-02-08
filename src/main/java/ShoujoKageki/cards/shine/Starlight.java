@@ -12,7 +12,7 @@ public class Starlight extends BaseCard {
     public static final String ID = makeID(Starlight.class.getSimpleName());
 
     public Starlight() {
-        super(ID, 0, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
     }
 

@@ -12,8 +12,8 @@ import static ShoujoKageki.ModInfo.makeID;
 public class Parry extends BaseCard {
     public static final String ID = makeID(Parry.class.getSimpleName());
 
-    private static final int BASE_BLOCK = 4;
-    private static final int UPGRADED_BLOCK = 4;
+    private static final int BASE_BLOCK = 5;
+    private static final int UPGRADED_BLOCK = 3;
 
     private int extraBlock = 0;
 

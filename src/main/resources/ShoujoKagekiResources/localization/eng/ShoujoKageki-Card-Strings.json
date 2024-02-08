@@ -114,8 +114,11 @@
 	},
 	"ShoujoKageki:BackToBack": {
 		"NAME": "Back-to-Back",
+		"DESCRIPTION": "Deal damage equal to ShoujoKageki:Promise_Pile size times !M!. NL (Max 10 cards)",
 		"UPGRADE_DESCRIPTION": "",
-		"DESCRIPTION": "Deal damage equal to ShoujoKageki:Promise_Pile size times !M!. NL (Deal !D! damage) NL (Max 10 cards)"
+		"EXTENDED_DESCRIPTION": [
+			"Deal damage equal to ShoujoKageki:Promise_Pile size times !M!. NL (Max 10 cards) NL (Deal !D! damage)"
+		]
 	},
 	"ShoujoKageki:Snack": {
 		"NAME": "Snacks",

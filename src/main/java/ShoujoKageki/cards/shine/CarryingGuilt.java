@@ -69,8 +69,8 @@ public class CarryingGuilt extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(4);
-            upgradeMagicNumber(2);
+            upgradeDamage(3);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

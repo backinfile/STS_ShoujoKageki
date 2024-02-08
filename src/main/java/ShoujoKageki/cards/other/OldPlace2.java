@@ -21,7 +21,7 @@ public class OldPlace2 extends BaseCard {
 
     public OldPlace2() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        baseBlock = 4;
+        baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 1;
     }
 

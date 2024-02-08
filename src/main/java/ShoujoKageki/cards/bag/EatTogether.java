@@ -34,8 +34,8 @@ public class EatTogether extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//            upgradeMagicNumber(1);
-            upgradeDefaultSecondMagicNumber(1);
+            upgradeMagicNumber(1);
+//            upgradeDefaultSecondMagicNumber(1);
         }
     }
 }

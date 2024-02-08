@@ -114,8 +114,11 @@
 	},
 	"ShoujoKageki:BackToBack": {
 		"NAME": "背靠背",
-		"DESCRIPTION": "造成 约定牌堆 中卡牌数量 !M! 倍 的 伤害。 NL （造成 !D! 点 伤害） NL （至多计算10张）",
-		"UPGRADE_DESCRIPTION": ""
+		"DESCRIPTION": "造成 约定牌堆 中卡牌数量 !M! 倍 的 伤害。 NL （至多计算10张）",
+		"UPGRADE_DESCRIPTION": "",
+		"EXTENDED_DESCRIPTION": [
+			"造成 约定牌堆 中卡牌数量 !M! 倍 的 伤害。 NL （至多计算10张） NL （造成 !D! 点伤害）"
+		]
 	},
 	"ShoujoKageki:Snack": {
 		"NAME": "小零食",
@@ -341,7 +344,7 @@
 	},
 	"ShoujoKageki:OldPlace2": {
 		"NAME": "明年也要在这里相见",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 保留你的 能量 ，手牌， 格挡 ， 或 力量 !M! 回合。",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 选择保留你的能量 ，手牌， 格挡 ， 或 力量 !M! 回合。",
 		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:RetainBlock": {

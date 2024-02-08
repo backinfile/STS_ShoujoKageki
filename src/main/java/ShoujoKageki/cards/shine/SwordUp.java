@@ -18,7 +18,7 @@ public class SwordUp extends BaseCard {
 
     public SwordUp() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 4;
+        this.baseDamage = 5;
         this.baseMagicNumber = this.magicNumber = 1;
         DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
     }

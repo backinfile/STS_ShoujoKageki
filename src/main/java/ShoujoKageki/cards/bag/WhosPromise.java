@@ -17,7 +17,7 @@ public class WhosPromise extends BaseCard {
 
     public WhosPromise() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.baseDamage = 9;
+        this.baseDamage = 10;
         this.baseMagicNumber = this.magicNumber = 1;
         this.bagCardPreviewNumber = 1;
     }

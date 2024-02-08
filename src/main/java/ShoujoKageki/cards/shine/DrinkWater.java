@@ -30,7 +30,8 @@ public class DrinkWater extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 }

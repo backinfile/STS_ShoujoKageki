@@ -44,6 +44,8 @@ public class BackToBack extends BaseCard {
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         if (this.baseDamage != this.damage) this.isDamageModified = true;
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override
@@ -53,6 +55,8 @@ public class BackToBack extends BaseCard {
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         if (this.baseDamage != this.damage) this.isDamageModified = true;
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override

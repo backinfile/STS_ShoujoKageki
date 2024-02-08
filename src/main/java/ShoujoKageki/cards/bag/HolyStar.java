@@ -15,7 +15,7 @@ public class HolyStar extends BaseCard {
 
     public HolyStar() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 16;
+        this.baseDamage = 18;
 //        AccretionField.accretion.set(this, true);
         this.baseMagicNumber = this.magicNumber = 1;
     }

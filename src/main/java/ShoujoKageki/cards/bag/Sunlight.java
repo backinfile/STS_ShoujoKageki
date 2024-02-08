@@ -22,7 +22,7 @@ public class Sunlight extends BaseCard {
 
     public Sunlight() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 9;
+        this.baseDamage = 10;
         DisposableVariable.setBaseValue(this, LOW_SHINE_CNT);
 //        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.TRADITIONAL);
 //        FlavorText.AbstractCardFlavorFields.flavor.set(this, cardStrings.EXTENDED_DESCRIPTION[1]);
@@ -38,7 +38,7 @@ public class Sunlight extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(4);
         }
     }
 
