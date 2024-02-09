@@ -60,4 +60,19 @@ public class MetricDataPatch {
             ___params.put("sj_disposedCardsCount", Field.disposedCardsCount.get(CardCrawlGame.metricData));
         }
     }
+
+    @SpirePatch2(
+            clz = MetricData.class,
+            method = "clearData"
+    )
+    public static class ClearData {
+        public static void Postfix(MetricData __instance) {
+            HashMap<String, ArrayList<String>> disposedCards = Field.disposedCards.get(__instance);
+            if (disposedCards != null) {
+                disposedCards.clear();
+            }
+            Field.disposedCardsCount.set(__instance, 0);
+
+        }
+    }
 }

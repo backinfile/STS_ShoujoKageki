@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Net;
 import com.badlogic.gdx.net.HttpRequestBuilder;
 import com.evacipated.cardcrawl.modthespire.Loader;
+import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.google.gson.Gson;
@@ -23,9 +24,10 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class MetricsPatch {
+public class CollectDataPatch {
     private static final Gson gson = new Gson();
     private static final String URL = "http://59.110.33.80:12007";
     private static final String URL1 = "http://127.0.0.1:12007";
@@ -70,11 +72,16 @@ public class MetricsPatch {
         public static void Postfix(Metrics __instance, HashMap<Object, Object> ___params) {
             if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == KarenCharacter.Enums.Karen) {
                 try {
+                    if (hasModConflict()) {
+                        return;
+                    }
                     Method m = Metrics.class.getDeclaredMethod("gatherAllData", Boolean.TYPE, Boolean.TYPE, MonsterGroup.class);
                     m.setAccessible(true);
                     m.invoke(__instance, __instance.death, __instance.trueVictory, __instance.monsters);
+                    ArrayList<String> mods = Arrays.stream(Loader.MODINFOS).map((info) -> info.ID).sorted().collect(Collectors.toCollection(ArrayList::new));
                     ___params.put("language", Settings.language.name());
-                    ___params.put("mods", Arrays.stream(Loader.MODINFOS).map((info) -> info.Name).sorted().collect(Collectors.toCollection(ArrayList::new)));
+                    ___params.put("mods", mods);
+                    ___params.put(ShoujoKageki.ModInfo.makeID("version"), getModVersion());
                     sendPost(___params);
                 } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException var3) {
                     var3.printStackTrace();
@@ -82,6 +89,29 @@ public class MetricsPatch {
             }
 
         }
+    }
+
+    public static boolean hasModConflict() {
+        ArrayList<String> conflictList = new ArrayList<>();
+        conflictList.add("PvPInTheSpire");
+        for(ModInfo modInfo: Loader.MODINFOS) {
+            if (conflictList.contains(modInfo.ID)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String getModVersion() {
+        for (ModInfo modInfo : Loader.MODINFOS) {
+            if (Objects.equals(modInfo.ID, ShoujoKageki.ModInfo.getModId())) {
+                if (modInfo.ModVersion == null) {
+                    return "";
+                }
+                return modInfo.ModVersion.toString();
+            }
+        }
+        return "";
     }
 
     @SpirePatch(

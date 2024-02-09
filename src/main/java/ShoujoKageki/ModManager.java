@@ -1,5 +1,6 @@
 package ShoujoKageki;
 
+import ShoujoKagek.collectData.CollectDataPatch;
 import ShoujoKageki.character.KarenCharacter;
 import ShoujoKageki.potions.AwakePotion;
 import ShoujoKageki.potions.BagPotion;
@@ -37,6 +38,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static ShoujoKageki.Res.*;
 import static ShoujoKageki.character.KarenCharacter.Enums.CardColor_Karen;
@@ -240,6 +242,10 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         GenTool.gen();
 
         logger.info("Done loading badge Image and mod options");
+//        logger.info("================== " + CollectDataPatch.getModVersion());
+//        for (com.evacipated.cardcrawl.modthespire.ModInfo modInfo : Loader.MODINFOS) {
+//            logger.info("================== {} {}", modInfo.ID, modInfo.Name);
+//        }
     }
 
 
