@@ -1,9 +1,11 @@
 package ShoujoKageki.relics.patch;
 
 import ShoujoKageki.ModInfo;
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,27 +28,65 @@ public class TakeAllRewardCardsPatch {
     private static final TakeAllRewardCardsButton takeAllRewardCardsButton = new TakeAllRewardCardsButton();
 
 
-    @SpirePatch(
+    @SpirePatch2(
             clz = CardRewardScreen.class,
             method = "open"
     )
     public static class OpenPatch {
-        public static void Postfix(CardRewardScreen __instance) {
+        public static void Postfix(CardRewardScreen __instance, SkipCardButton ___skipButton, SingingBowlButton ___bowlButton) {
             Log.logger.info("========= openPatch");
-            fixTakeAllButtonsShow(__instance);
+            takeAllRewardCardsButton.hide();
+
+            AbstractRelic takeAllCardsRelic = AbstractDungeon.player.getRelic(BookMarchRelic.ID);
+            if (takeAllCardsRelic == null || takeAllCardsRelic.usedUp) {
+                return;
+            }
+
+            boolean skipBtnHidden = isHidden(SkipCardButton.class, ___skipButton);
+            if (skipBtnHidden) {
+                takeAllRewardCardsButton.hide();
+                Log.logger.info("skipBtnHidden");
+                return;
+            }
+
+            takeAllRewardCardsButton.show(__instance.rItem);
+            repositionThreeBtn(__instance, ___skipButton, ___bowlButton);
         }
     }
 
-    @SpirePatch(
+    @SpirePatch2(
             clz = CardRewardScreen.class,
             method = "reopen"
     )
     public static class ReopenPatch {
-        public static void Postfix(CardRewardScreen __instance) {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void Insert(CardRewardScreen __instance, SkipCardButton ___skipButton, SingingBowlButton ___bowlButton, boolean ___skippable) {
             Log.logger.info("========= reopenPatch");
-            fixTakeAllButtonsShow(__instance);
+            if (!___skippable) {
+                takeAllRewardCardsButton.hide();
+            } else {
+                takeAllRewardCardsButton.show(__instance.rItem);
+                repositionThreeBtn(__instance, ___skipButton, ___bowlButton);
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "hasRelic");
+                return LineFinder.findInOrder(ctBehavior, finalMatcher);
+            }
         }
     }
+//    @SpirePatch2(
+//            clz = CardRewardScreen.class,
+//            method = "reopen"
+//    )
+//    public static class ReopenPatch2 {
+//        public static void Postfix(CardRewardScreen __instance, SkipCardButton ___skipButton, SingingBowlButton ___bowlButton, boolean ___skippable) {
+//            boolean bowlBtnHidden = isHidden(SingingBowlButton.class, ___bowlButton);
+//            Log.logger.info("========= reopenPatch2 {}", bowlBtnHidden);
+//        }
+//    }
 
     @SpirePatch(
             clz = CardRewardScreen.class,
@@ -127,41 +167,8 @@ public class TakeAllRewardCardsPatch {
         }
     }
 
-    private static void fixTakeAllButtonsShow(CardRewardScreen instance) {
-        takeAllRewardCardsButton.hide();
-
-        AbstractRelic takeAllCardsRelic = AbstractDungeon.player.getRelic(BookMarchRelic.ID);
-        if (takeAllCardsRelic == null || takeAllCardsRelic.usedUp) {
-            return;
-        }
-
-        SkipCardButton ___skipButton = null;
-        SingingBowlButton ___bowlButton = null;
-
-        {
-            try {
-                Field skipButtonField = CardRewardScreen.class.getDeclaredField("skipButton");
-                Field bowlButtonField = CardRewardScreen.class.getDeclaredField("bowlButton");
-                skipButtonField.setAccessible(true);
-                bowlButtonField.setAccessible(true);
-                ___skipButton = (SkipCardButton) skipButtonField.get(instance);
-                ___bowlButton = (SingingBowlButton) bowlButtonField.get(instance);
-            } catch (Exception e) {
-                Log.logger.error(e);
-                return;
-            }
-        }
-
-
-        boolean skipBtnHidden = isHidden(SkipCardButton.class, ___skipButton);
-        if (skipBtnHidden) {
-            takeAllRewardCardsButton.hide();
-            Log.logger.info("skipBtnHidden");
-            return;
-        }
+    private static void repositionThreeBtn(CardRewardScreen instance, SkipCardButton ___skipButton, SingingBowlButton ___bowlButton) {
         boolean bowlBtnHidden = isHidden(SingingBowlButton.class, ___bowlButton);
-
-        takeAllRewardCardsButton.show(instance.rItem);
         if (bowlBtnHidden) { // only skipBtn and takeAllBtn
             Log.logger.info("only skipBtn and takeAllBtn");
             setTargetX(SkipCardButton.class, ___skipButton, TakeAllRewardCardsButton.SHOW_X - 165.0F * Settings.scale);
@@ -174,7 +181,6 @@ public class TakeAllRewardCardsPatch {
             ___bowlButton.hb.move(TakeAllRewardCardsButton.SHOW_X, SkipCardButton.TAKE_Y);
             takeAllRewardCardsButton.target_x = TakeAllRewardCardsButton.SHOW_X + 165.0F * Settings.scale * 2;
         }
-
     }
 
     private static <T> void setTargetX(Class<T> clazz, T instance, float value) {
