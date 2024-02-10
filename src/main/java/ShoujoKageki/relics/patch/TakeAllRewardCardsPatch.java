@@ -59,14 +59,22 @@ public class TakeAllRewardCardsPatch {
             method = "reopen"
     )
     public static class ReopenPatch {
-        @SpireInsertPatch(locator = Locator.class)
-        public static void Insert(CardRewardScreen __instance, SkipCardButton ___skipButton, SingingBowlButton ___bowlButton, boolean ___skippable) {
+        public static void Postfix(CardRewardScreen __instance, SkipCardButton ___skipButton, SingingBowlButton ___bowlButton, boolean ___skippable,
+                                   boolean ___draft, boolean ___codex, boolean ___discovery, boolean ___chooseOne) {
             Log.logger.info("========= reopenPatch");
-            if (!___skippable) {
-                takeAllRewardCardsButton.hide();
-            } else {
-                takeAllRewardCardsButton.show(__instance.rItem);
-                repositionThreeBtn(__instance, ___skipButton, ___bowlButton);
+
+            AbstractRelic takeAllCardsRelic = AbstractDungeon.player.getRelic(BookMarchRelic.ID);
+            if (takeAllCardsRelic == null || takeAllCardsRelic.usedUp) {
+                return;
+            }
+
+            if (!___draft && !___codex && !___discovery && !___chooseOne) {
+                if (!___skippable) {
+                    takeAllRewardCardsButton.hide();
+                } else {
+                    takeAllRewardCardsButton.show(__instance.rItem);
+                    repositionThreeBtn(__instance, ___skipButton, ___bowlButton);
+                }
             }
         }
 
