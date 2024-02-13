@@ -41,7 +41,7 @@ public class KarenCharacter extends BasePlayer {
         @SpireEnum(name = "Karen") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor CardColor_Karen;
         @SpireEnum(name = "Karen")
-        public static CardLibrary.LibraryType LIBRARY_COLOR;
+        public static CardLibrary.LibraryType LibraryType_Karen;
     }
 
     // =============== CHARACTER ENUMERATORS =================

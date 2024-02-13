@@ -19,6 +19,7 @@ public abstract class AbstractDefaultCard extends CustomCard {
                                final CardTarget target) {
 
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        this.color = color; // fix bug with other mod
 
         // Set all the things to their default values.
         isCostModified = false;
