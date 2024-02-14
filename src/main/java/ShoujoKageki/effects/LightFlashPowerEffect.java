@@ -28,7 +28,7 @@ public class LightFlashPowerEffect extends AbstractGameEffect {
     public void update() {
         this.duration -= Gdx.graphics.getDeltaTime();
         if (this.duration > 0.5F) {
-            this.scale = Interpolation.exp5Out.apply(2.0F * Settings.scale, Settings.scale, -(this.duration - 2.0F) / 1.5F);
+            this.scale = Interpolation.exp5Out.apply(1.5F * Settings.scale, Settings.scale, -(this.duration - 2.0F) / 1.5F);
         } else {
             this.color.a = Interpolation.fade.apply(0.5F, 0.0F, 1.0F - this.duration);
         }
