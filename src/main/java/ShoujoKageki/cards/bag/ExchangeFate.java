@@ -14,6 +14,7 @@ public class ExchangeFate extends BaseCard {
     public ExchangeFate() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         exhaust = true;
+        this.bagCardPreviewExchange = true;
     }
 
     @Override

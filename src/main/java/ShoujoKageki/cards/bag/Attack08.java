@@ -20,7 +20,7 @@ public class Attack08 extends BaseCard {
         super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 3;
         this.baseMagicNumber = this.magicNumber = 2;
-        this.bagCardPreviewNumber = 2;
+        this.bagCardPreviewNumber = this.magicNumber;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Attack08 extends BaseCard {
             upgradeName();
 //            upgradeDamage(2);
             upgradeMagicNumber(2);
-            this.bagCardPreviewNumber = 4;
+            this.bagCardPreviewNumber = this.magicNumber;
         }
     }
 }

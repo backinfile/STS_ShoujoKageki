@@ -1,16 +1,26 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKageki.Log;
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import ShoujoKageki.util.TextureLoader;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
+import com.megacrit.cardcrawl.vfx.combat.SilentGainPowerEffect;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 import static ShoujoKageki.ModInfo.makePowerPath;
 
@@ -40,14 +50,6 @@ public abstract class BasePower extends AbstractPower {
         updateDescription();
     }
 
-    public void addToBot(AbstractGameAction action) {
-        AbstractDungeon.actionManager.addToBottom(action);
-    }
-
-    public void addToTop(AbstractGameAction action) {
-        AbstractDungeon.actionManager.addToTop(action);
-    }
-
     @Override
     public void onRemove() {
     }
@@ -56,6 +58,7 @@ public abstract class BasePower extends AbstractPower {
     public void triggerOnTakeFromBagToHand(AbstractCard card) {
 
     }
+
     public void triggerOnTakeFromBag(AbstractCard card) {
 
     }

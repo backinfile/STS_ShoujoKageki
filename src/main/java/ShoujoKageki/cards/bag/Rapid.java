@@ -17,6 +17,7 @@ public class Rapid extends BaseCard {
     public Rapid() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.bagCardPreviewSelectNumber = this.magicNumber;
     }
 
     @Override
@@ -31,6 +32,7 @@ public class Rapid extends BaseCard {
             upgradeName();
             upgradeMagicNumber(1);
             initializeDescription();
+            this.bagCardPreviewSelectNumber = this.magicNumber;
         }
     }
 }

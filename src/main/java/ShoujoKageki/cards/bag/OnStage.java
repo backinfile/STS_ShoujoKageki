@@ -15,6 +15,7 @@ public class OnStage extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 4;
         exhaust = true;
+        this.bagCardPreviewNumber = 4;
     }
 
     @Override

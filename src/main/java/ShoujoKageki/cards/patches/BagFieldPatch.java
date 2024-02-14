@@ -5,24 +5,32 @@ import ShoujoKageki.actions.bag.CheckBagEmptyAction;
 import ShoujoKageki.actions.bag.TakeRndTmpCardFromBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.effects.LightFlashPowerEffect;
+import ShoujoKageki.powers.BagPower;
 import ShoujoKageki.powers.BasePower;
 import ShoujoKageki.relics.BaseRelic;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
+import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
+import com.megacrit.cardcrawl.vfx.combat.SilentGainPowerEffect;
 import javassist.CtBehavior;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 
 public class BagFieldPatch {
@@ -56,7 +64,51 @@ public class BagFieldPatch {
                         BaseMod.openCustomScreen(BagPileViewScreen.Enum.BAG_PILE_VIEW);
                     }
                 }
+            }
+            float cd = BagField.bagPowerFlashCD.get(p);
+            if (cd > 0) {
+                BagField.bagPowerFlashCD.set(p, cd - Gdx.graphics.getDeltaTime());
+            }
+            if (BagFieldPatch.canFlashBagPowerOnce()) {
+                if (p.hb.hovered && !AbstractDungeon.isScreenUp) {
+                    tryFlashBagPowerOnce();
+                }
 
+                if (p.hoveredCard instanceof BaseCard) {
+                    BaseCard hoveredCard = (BaseCard) p.hoveredCard;
+                    if (hoveredCard.bagCardPreviewNumber > 0 || hoveredCard.bagCardPreviewSelectNumber > 0 || hoveredCard.bagCardPreviewExchange) {
+//                        Log.logger.info("==========curhover {}", hoveredCard.name);
+                        BagFieldPatch.tryFlashBagPowerOnce();
+                    }
+                }
+            }
+        }
+    }
+
+    public static boolean canFlashBagPowerOnce() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p == null) return false;
+        float cd = BagField.bagPowerFlashCD.get(p);
+        return cd <= 0f;
+    }
+
+    public static void tryFlashBagPowerOnce() {
+        if (!canFlashBagPowerOnce()) {
+            return;
+        }
+        AbstractPlayer p = AbstractDungeon.player;
+        BagField.bagPowerFlashCD.set(p, 1f);
+
+        AbstractPower power = p.getPower(BagPower.POWER_ID);
+        if (power != null) {
+            Field effectField = ReflectionHacks.getCachedField(AbstractPower.class, "effect");
+            try {
+                ArrayList<AbstractGameEffect> effect = (ArrayList<AbstractGameEffect>) effectField.get(power);
+                if (effect != null) {
+                    effect.add(new LightFlashPowerEffect(power));
+                }
+            } catch (IllegalAccessException e) {
+                Log.logger.error("", e);
             }
         }
     }
@@ -155,6 +207,7 @@ public class BagFieldPatch {
                 triggerOnTakeFromBagToHand(c);
             }
         }
+
         private static class Locator extends SpireInsertLocator {
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "relics");
@@ -186,7 +239,6 @@ public class BagFieldPatch {
             if (power instanceof BasePower) ((BasePower) power).triggerOnTakeFromBag(card);
         }
     }
-
 
 
     @SpirePatch2(

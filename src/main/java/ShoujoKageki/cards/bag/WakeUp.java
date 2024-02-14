@@ -44,6 +44,7 @@ public class WakeUp extends BaseCard {
 //            upgradeBaseCost(0);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
+            this.bagCardPreviewSelectNumber = 2;
         }
     }
 }

@@ -17,6 +17,7 @@ public class Dance extends BaseCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 9;
         this.baseMagicNumber = this.magicNumber = 2;
+        this.bagCardPreviewSelectNumber = this.magicNumber;
     }
 
     @Override
@@ -31,6 +32,7 @@ public class Dance extends BaseCard {
             upgradeName();
             upgradeDamage(3);
             upgradeMagicNumber(2);
+            this.bagCardPreviewSelectNumber = this.magicNumber;
         }
     }
 }
