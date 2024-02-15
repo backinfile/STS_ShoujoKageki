@@ -1,14 +1,17 @@
 package ShoujoKageki.patches.showDisposeInHistory;
 
+import ShoujoKageki.relics.BaseRelic;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.metrics.MetricData;
 import com.megacrit.cardcrawl.metrics.Metrics;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,6 +76,18 @@ public class MetricDataPatch {
             }
             Field.disposedCardsCount.set(__instance, 0);
 
+        }
+    }
+
+    @SpirePatch(
+            clz = CardCrawlGame.class,
+            method = "loadPlayerSave"
+    )
+    public static class LoadPlayerSaves {
+        public static void Postfix(CardCrawlGame __instance, AbstractPlayer p) {
+            HashMap<String, ArrayList<String>> disposedCards = getDisposedCards(CardCrawlGame.metricData);
+            disposedCards.putAll(SaveFilePatch.SaveStringField.disposedCards.get(CardCrawlGame.saveFile));
+            Field.disposedCardsCount.set(CardCrawlGame.metricData, SaveFilePatch.SaveStringField.disposedCardsCount.get(CardCrawlGame.saveFile));
         }
     }
 }
