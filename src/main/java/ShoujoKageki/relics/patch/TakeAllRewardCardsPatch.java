@@ -213,15 +213,13 @@ public class TakeAllRewardCardsPatch {
     }
 
     public static void record(ArrayList<AbstractCard> takes) {
-        ArrayList<String> picked_list = new ArrayList<>();
         for (AbstractCard card : takes) {
-            picked_list.add(card.getMetricID());
+            HashMap<String, Object> choice = new HashMap<>();
+            choice.put("picked", card.getMetricID());
+            choice.put("picked_type", "TAKE_ALL");
+            choice.put("not_picked", new ArrayList<AbstractCard>());
+            choice.put("floor", AbstractDungeon.floorNum);
+            CardCrawlGame.metricData.card_choices.add(choice);
         }
-        HashMap<String, Object> choice = new HashMap<>();
-        choice.put("picked", ModInfo.makeID("TAKE_ALL"));
-        choice.put("picked_list", picked_list);
-        choice.put("not_picked", new ArrayList<AbstractCard>());
-        choice.put("floor", AbstractDungeon.floorNum);
-        CardCrawlGame.metricData.card_choices.add(choice);
     }
 }
