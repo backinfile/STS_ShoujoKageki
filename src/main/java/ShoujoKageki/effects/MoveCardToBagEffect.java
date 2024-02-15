@@ -1,5 +1,6 @@
 package ShoujoKageki.effects;
 
+import ShoujoKageki.Log;
 import ShoujoKageki.powers.VoidPower;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -16,6 +17,8 @@ public class MoveCardToBagEffect extends AbstractGameEffect {
     public AbstractCard card;
     private boolean justStart = true;
 
+    private boolean skipMove = false;
+
     public static float DURATION = Settings.ACTION_DUR_FAST;
     public static final float DISCARD_X = (float) Settings.WIDTH * 0.96F;
     public static final float DISCARD_Y = (float) Settings.HEIGHT * 0.06F;
@@ -23,10 +26,15 @@ public class MoveCardToBagEffect extends AbstractGameEffect {
     public static final float DRAW_PILE_Y = (float) Settings.HEIGHT * 0.06F;
 
     public MoveCardToBagEffect(AbstractCard card) {
+        this(card, false);
+    }
+
+    public MoveCardToBagEffect(AbstractCard card, boolean skipMove) {
         super();
         this.card = card;
         ActionUtils.resetBeforeMoving(card);
         duration = startingDuration = DURATION;
+        this.skipMove = skipMove;
     }
 
     @Override
@@ -46,6 +54,14 @@ public class MoveCardToBagEffect extends AbstractGameEffect {
                 card.target_y = AbstractDungeon.player.hb.cY;
             }
 
+            if (skipMove) {
+                card.current_x = card.target_x;
+                card.current_y = card.target_y;
+                card.drawScale = card.targetDrawScale;
+                isDone = true;
+                return;
+            }
+
 //            AbstractDungeon.player.hand.refreshHandLayout();
 //            AbstractDungeon.player.hand.applyPowers();
         }
@@ -59,7 +75,7 @@ public class MoveCardToBagEffect extends AbstractGameEffect {
     }
 
     public void render(SpriteBatch sb) {
-        if (!this.isDone) {
+        if (!this.isDone && !skipMove) {
             card.render(sb);
         }
 

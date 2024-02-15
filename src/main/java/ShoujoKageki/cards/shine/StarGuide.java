@@ -5,9 +5,14 @@ import ShoujoKageki.actions.MoveAllShineCardsIntoBagAction;
 import ShoujoKageki.actions.StarAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.variables.DisposableVariable;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
 public class StarGuide extends BaseCard {
 
@@ -22,6 +27,8 @@ public class StarGuide extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(Color.GOLD.cpy(), true));
+        this.addToBot(new WaitAction(Settings.ACTION_DUR_XFAST));
         this.addToBot(new MoveAllShineCardsIntoBagAction());
     }
 

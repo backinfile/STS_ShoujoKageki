@@ -3,10 +3,13 @@ package ShoujoKageki.actions;
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.actions.bag.MoveCardToBagAction;
 import ShoujoKageki.cards.patches.field.BagField;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
 import java.util.ArrayList;
 
@@ -30,7 +33,7 @@ public class MoveAllShineCardsIntoBagAction extends AbstractGameAction {
         }
         if (refreshHand) p.hand.refreshHandLayout();
         if (applyBagPower) addToBot(new ApplyBagPowerAction());
-        addToBot(new MoveCardToBagAction(allShineCards));
+        addToBot(new MoveCardToBagAction(allShineCards, true));
         isDone = true;
     }
 }

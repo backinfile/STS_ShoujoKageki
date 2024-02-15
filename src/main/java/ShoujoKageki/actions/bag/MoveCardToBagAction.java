@@ -2,6 +2,7 @@ package ShoujoKageki.actions.bag;
 
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
+import ShoujoKageki.effects.MoveCardToBagAsStarEffect;
 import ShoujoKageki.powers.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
@@ -19,17 +20,23 @@ import java.util.List;
 
 public class MoveCardToBagAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> cardsToBag;
+    private boolean moveAsStar = false;
 
     public MoveCardToBagAction(List<AbstractCard> cardsToBag) {
-        this.cardsToBag = new ArrayList<>();
-        this.cardsToBag.addAll(cardsToBag);
-        this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
+        this(cardsToBag, false);
     }
 
     public MoveCardToBagAction(AbstractCard card) {
         this.cardsToBag = new ArrayList<>();
         cardsToBag.add(card);
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
+    }
+
+    public MoveCardToBagAction(List<AbstractCard> cardsToBag, boolean moveAsStar) {
+        this.cardsToBag = new ArrayList<>();
+        this.cardsToBag.addAll(cardsToBag);
+        this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
+        this.moveAsStar = moveAsStar;
     }
 
     @Override
@@ -71,7 +78,11 @@ public class MoveCardToBagAction extends AbstractGameAction {
             ArrayList<AbstractCard> cards = new ArrayList<>(cardsToBag);
             for (AbstractCard card : cards) {
                 if (player.hand.group.remove(card)) fromHand = true;
-                AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
+                if (moveAsStar) {
+                    AbstractDungeon.effectsQueue.add(new MoveCardToBagAsStarEffect(card));
+                } else {
+                    AbstractDungeon.effectsQueue.add(new MoveCardToBagEffect(card));
+                }
             }
             if (fromHand) player.onCardDrawOrDiscard();
             BagField.bag.get(player).group.addAll(cards);
