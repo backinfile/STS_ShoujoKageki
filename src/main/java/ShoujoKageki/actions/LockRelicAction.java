@@ -54,7 +54,7 @@ public class LockRelicAction extends AbstractGameAction {
 
 
     public static boolean hasRelicToLock(int number) {
-        return getCanLockRelicCount() >= 2;
+        return getCanLockRelicCount() >= number;
     }
 
     public static int getCanLockRelicCount() {

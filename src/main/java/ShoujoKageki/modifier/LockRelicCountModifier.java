@@ -33,6 +33,18 @@ public class LockRelicCountModifier extends AbstractCardModifier {
         }
     }
 
+    private int curRelicNumber = 0;
+    @Override
+    public void onUpdate(AbstractCard card) {
+        super.onUpdate(card);
+        if (AbstractDungeon.player == null) return;
+        int newRelicNumber = AbstractDungeon.player.relics.size();
+        if (curRelicNumber != newRelicNumber) {
+            curRelicNumber = newRelicNumber;
+            card.initializeDescription();
+        }
+    }
+
     @Override
     public AbstractCardModifier makeCopy() {
         return new LockRelicCountModifier();

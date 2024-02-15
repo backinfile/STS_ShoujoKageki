@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 
-@AbstractCardModifier.SaveIgnore
 public class BurnModifier extends AbstractCardModifier {
 
     public BurnModifier() {
