@@ -3,7 +3,9 @@ package ShoujoKageki.cards.relic;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.LockRelicAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.modifier.LockRelicCountModifier;
 import ShoujoKageki.relics.LockRelic;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -19,6 +21,7 @@ public class Forgive extends BaseCard {
         this.baseDamage = 21;
         isMultiDamage = true;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 1;
+        CardModifierManager.addModifier(this, new LockRelicCountModifier());
     }
 
     @Override

@@ -31,11 +31,6 @@ public class Hairpin2Relic extends BaseRelic {
     }
 
     @Override
-    public void instantObtain(AbstractPlayer p, int slot, boolean callOnEquip) {
-        super.instantObtain(p, slot, callOnEquip);
-    }
-
-    @Override
     public void obtain() {
         AbstractPlayer player = AbstractDungeon.player;
         for (int i = 0; i < player.relics.size(); i++) {

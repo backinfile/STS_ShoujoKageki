@@ -1,7 +1,7 @@
 package ShoujoKageki;
 
-import ShoujoKagek.collectData.CollectDataPatch;
 import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.patches.OnRelicChangePatch;
 import ShoujoKageki.potions.AwakePotion;
 import ShoujoKageki.potions.BagPotion;
 import ShoujoKageki.potions.ShinePotion;
@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,7 +39,6 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static ShoujoKageki.Res.*;
 import static ShoujoKageki.character.KarenCharacter.Enums.CardColor_Karen;
@@ -47,7 +47,7 @@ import static ShoujoKageki.character.KarenCharacter.Enums.Karen;
 @SpireInitializer
 public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSubscriber,
         EditRelicsSubscriber, EditStringsSubscriber,
-        EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
+        EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber, RelicGetSubscriber {
     public static final Logger logger = LogManager.getLogger(ModInfo.ModName);
 
     private static String modID;
@@ -246,6 +246,11 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 //        for (com.evacipated.cardcrawl.modthespire.ModInfo modInfo : Loader.MODINFOS) {
 //            logger.info("================== {} {}", modInfo.ID, modInfo.Name);
 //        }
+    }
+
+    @Override
+    public void receiveRelicGet(AbstractRelic abstractRelic) {
+        OnRelicChangePatch.publishOnRelicChange();
     }
 
 

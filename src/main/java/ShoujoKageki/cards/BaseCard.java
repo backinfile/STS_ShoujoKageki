@@ -1,8 +1,10 @@
 package ShoujoKageki.cards;
 
+import ShoujoKageki.modifier.LockRelicCountModifier;
 import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableField;
 import ShoujoKageki.variables.patch.DisposableFieldUpgradePatch;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -151,5 +153,11 @@ public abstract class BaseCard extends AbstractDefaultCard {
 
     public void triggerOnBattleStart() {
 
+    }
+
+    public void onRelicChange() {
+        if (CardModifierManager.hasModifier(this, LockRelicCountModifier.ID)) {
+            initializeDescription();
+        }
     }
 }

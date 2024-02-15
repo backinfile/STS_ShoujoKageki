@@ -127,5 +127,10 @@
     "TEXT": ["", ""],
     "EXTRA_TEXT": [""],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:LockRelicCountModifier": {
+    "TEXT": [" NL （当前可禁用", "个）", "个）"],
+    "EXTRA_TEXT": [""],
+    "TEXT_DICT": {}
   }
 }

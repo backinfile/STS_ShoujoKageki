@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
+
+@AbstractCardModifier.SaveIgnore
 public class CarryingGuiltModifier extends AbstractCardModifier {
 
     public CarryingGuiltModifier() {

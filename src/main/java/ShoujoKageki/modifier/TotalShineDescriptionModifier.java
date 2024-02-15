@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+
+@AbstractCardModifier.SaveIgnore
 public class TotalShineDescriptionModifier extends AbstractCardModifier {
 
 

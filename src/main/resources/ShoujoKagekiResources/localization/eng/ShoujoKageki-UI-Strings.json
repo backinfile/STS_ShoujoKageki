@@ -127,5 +127,10 @@
     "TEXT": ["", ""],
     "EXTRA_TEXT": [""],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:LockRelicCountModifier": {
+    "TEXT": [" NL (There are currently ", " relic that can be disabled)", " relics that can be disabled)"],
+    "EXTRA_TEXT": [""],
+    "TEXT_DICT": {}
   }
 }

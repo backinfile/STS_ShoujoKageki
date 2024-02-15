@@ -3,7 +3,9 @@ package ShoujoKageki.cards.relic;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.LockRelicAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.modifier.LockRelicCountModifier;
 import ShoujoKageki.relics.LockRelic;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,6 +19,7 @@ public class StarCrime extends BaseCard {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 3;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 2;
+        CardModifierManager.addModifier(this, new LockRelicCountModifier());
     }
 
     @Override

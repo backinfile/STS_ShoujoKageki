@@ -2,6 +2,7 @@ package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.LockRelicAction;
+import ShoujoKageki.patches.OnRelicChangePatch;
 import ShoujoKageki.variables.DisposableVariable;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,6 +47,7 @@ public class LockRelic extends BaseRelic {
         super.onVictory();
 
         lockedRelic.instantObtain(AbstractDungeon.player, position, false);
+        OnRelicChangePatch.publishOnRelicChange();
         lockedRelic.onVictory();
     }
 

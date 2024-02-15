@@ -1,9 +1,9 @@
 package ShoujoKageki.actions;
 
 import ShoujoKageki.Log;
+import ShoujoKageki.patches.OnRelicChangePatch;
 import ShoujoKageki.relics.CatRelicTmp;
 import ShoujoKageki.relics.LockRelic;
-import ShoujoKageki.relics.StarCrownRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,8 +17,8 @@ public class LockRelicAction extends AbstractGameAction {
 
     public static final ArrayList<String> WhiteList = new ArrayList<>();
 
-    {
-        WhiteList.add("loadout:");
+    static {
+        WhiteList.add("loadout:".toLowerCase());
     }
 
     public LockRelicAction(int amount) {
@@ -46,6 +46,7 @@ public class LockRelicAction extends AbstractGameAction {
 
                 AbstractRelic lockRelic = new LockRelic(toLock, positionToLock);
                 lockRelic.instantObtain(p, positionToLock, false);
+                OnRelicChangePatch.publishOnRelicChange();
             }
         }
         tickDuration();
@@ -53,13 +54,18 @@ public class LockRelicAction extends AbstractGameAction {
 
 
     public static boolean hasRelicToLock(int number) {
+        return getCanLockRelicCount() >= 2;
+    }
+
+    public static int getCanLockRelicCount() {
+        int count = 0;
         int endPosition = -1;
-        for (int i = 0; i < number; i++) {
+        while (true) {
             endPosition = getRelicPositionToLock(endPosition);
-            if (endPosition < 0) return false;
-            Log.logger.info("===find " + endPosition);
+            if (endPosition < 0) break;
+            count++;
         }
-        return true;
+        return count;
     }
 
     public static int getRelicPositionToLock(int endPosition) {
@@ -68,8 +74,9 @@ public class LockRelicAction extends AbstractGameAction {
         for (int i = endPosition - 1; i >= 0; i--) {
             AbstractRelic relic = p.relics.get(i);
             if (relic instanceof LockRelic) continue;
-            if (relic instanceof StarCrownRelic) continue;
-            if (WhiteList.stream().anyMatch(relic.relicId::contains)) continue;
+            if (relic.tier == AbstractRelic.RelicTier.BOSS) continue;
+            if (WhiteList.stream().anyMatch(relic.relicId.toLowerCase()::contains)) continue;
+            Log.logger.debug("========= got {}", relic.relicId);
             return i;
         }
         return -1;

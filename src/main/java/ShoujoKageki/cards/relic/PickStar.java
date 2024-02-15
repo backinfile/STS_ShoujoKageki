@@ -3,7 +3,9 @@ package ShoujoKageki.cards.relic;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.LockRelicAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.modifier.LockRelicCountModifier;
 import ShoujoKageki.relics.LockRelic;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,6 +18,7 @@ public class PickStar extends BaseCard {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 2;
         this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = 2;
+        CardModifierManager.addModifier(this, new LockRelicCountModifier());
     }
 
     @Override

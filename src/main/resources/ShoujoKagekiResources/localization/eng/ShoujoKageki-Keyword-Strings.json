@@ -68,7 +68,7 @@
 		"NAMES": [
 			"disable"
 		],
-		"DESCRIPTION": "Disable the rightmost available relic in this battle. ( #yStar #yCrown will not be disabled)"
+		"DESCRIPTION": "During this battle, the non-boss relic on the far right will be disabled. NL NL When there are no available relics, cards with #yDisable cannot be played."
 	},
 	{
 		"PROPER_NAME": "Derivative Card",
