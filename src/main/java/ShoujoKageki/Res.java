@@ -29,17 +29,13 @@ public class Res {
     // Character assets
     public static final String THE_DEFAULT_BUTTON = ModInfo.getResPath("/images/charSelect/DefaultCharacterButton.png");
     public static final String THE_DEFAULT_PORTRAIT = ModInfo.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
-    public static final String THE_DEFAULT_SHOULDER_1 = ModInfo.getResPath("/images/char/defaultCharacter/shoulder.png");
-    public static final String THE_DEFAULT_SHOULDER_2 = ModInfo.getResPath("/images/char/defaultCharacter/shoulder.png");
-    public static final String THE_DEFAULT_CORPSE = ModInfo.getResPath("/images/char/defaultCharacter/corpse.png");
+    public static final String THE_DEFAULT_SHOULDER_1 = ModInfo.getResPath("/images/char/karen/shoulder.png");
+    public static final String THE_DEFAULT_SHOULDER_2 = ModInfo.getResPath("/images/char/karen/shoulder.png");
+    public static final String THE_DEFAULT_CORPSE = ModInfo.getResPath("/images/char/karen/corpse.png");
 
     // Mod Badge - A small icon that appears in the mod settings menu next to your
     // mod.
     public static final String BADGE_IMAGE = ModInfo.getResPath("/images/Badge.png");
-
-    // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = ModInfo.getResPath("/images/char/defaultCharacter/Karen.atlas");
-    public static final String THE_DEFAULT_SKELETON_JSON = ModInfo.getResPath("/images/char/defaultCharacter/Karen.json");
 
     // Colors (RGB)
     // Character Color

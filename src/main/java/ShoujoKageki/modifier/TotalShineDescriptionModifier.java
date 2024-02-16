@@ -27,7 +27,7 @@ public class TotalShineDescriptionModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        Log.logger.info("========== on modify");
+//        Log.logger.info("========== on modify");
         if (!Utils2.inRoom()) return rawDescription;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             return rawDescription + TEXT[0] + DisposableVariable.getTotalShineValueInBattle() + TEXT[1];

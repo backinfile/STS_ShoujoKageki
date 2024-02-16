@@ -132,5 +132,10 @@
     "TEXT": [" NL (There are currently ", " relic that can be disabled)", " relics that can be disabled)"],
     "EXTRA_TEXT": [""],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:SkinManager": {
+    "TEXT": ["tv version skin", "pixel version skin"],
+    "EXTRA_TEXT": ["", "Pixiv:70941447 Author:Miiharu"],
+    "TEXT_DICT": {}
   }
 }

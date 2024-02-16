@@ -6,6 +6,7 @@ import ShoujoKageki.potions.AwakePotion;
 import ShoujoKageki.potions.BagPotion;
 import ShoujoKageki.potions.ShinePotion;
 import ShoujoKageki.relics.SharedRelic;
+import ShoujoKageki.reskin.skin.SkinManager;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.screen.BagPileViewScreen;
 import ShoujoKageki.screen.BlackMarketScreen;
@@ -57,7 +58,6 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.subscribe(this);
         setModID(ModInfo.ModName);
         Log.logger.info("Done subscribing");
-
 
         Log.logger.info("Creating the color " + CardColor_Karen.toString());
         BaseMod.addColor(KarenCharacter.Enums.CardColor_Karen,
@@ -237,6 +237,9 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         // Load the Mod Badge
         SettingsPanel.initPanel();
+
+        SkinManager.init();
+
 
 //        BaseMod.addTopPanelItem(new TopPanelDisposedPileBtn());
         GenTool.gen();

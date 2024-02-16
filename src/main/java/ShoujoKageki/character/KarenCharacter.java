@@ -9,7 +9,10 @@ import ShoujoKageki.cards.starter.ShineStrike;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.HairpinRelic;
+import ShoujoKageki.reskin.skin.AbstractSkin;
+import ShoujoKageki.reskin.skin.SkinManager;
 import basemod.animations.SpineAnimation;
+import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -70,18 +73,6 @@ public class KarenCharacter extends BasePlayer {
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
-    @Override
-    public void applyEndOfTurnTriggers() {
-        super.applyEndOfTurnTriggers();
-
-    }
-
-    @Override
-    public void applyStartOfCombatLogic() {
-        super.applyStartOfCombatLogic();
-
-//		PlayCardThenRestoreEnergyPower.onCombatStart();
-    }
 
     public static final String[] orbTextures = {ModName + "Resources/images/char/defaultCharacter/orb/layer1.png",
             ModName + "Resources/images/char/defaultCharacter/orb/layer2.png",
@@ -94,14 +85,14 @@ public class KarenCharacter extends BasePlayer {
             ModName + "Resources/images/char/defaultCharacter/orb/layer3d.png",
             ModName + "Resources/images/char/defaultCharacter/orb/layer4d.png",
             ModName + "Resources/images/char/defaultCharacter/orb/layer5d.png",};
+    public static final String orbVfxPath = ModName + "Resources/images/char/defaultCharacter/orb/vfx.png";
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
     // =============== CHARACTER CLASS START =================
 
     public KarenCharacter(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures, ModName + "Resources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpineAnimation(Res.THE_DEFAULT_SKELETON_ATLAS, Res.THE_DEFAULT_SKELETON_JSON, 1.0f));
+        super(name, setClass, orbTextures, orbVfxPath, null, null, null);
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
 
@@ -117,6 +108,7 @@ public class KarenCharacter extends BasePlayer {
 
         // =============== ANIMATIONS =================
 
+        SkinManager.loadSkin(this);
 //        loadAnimation(Res.THE_DEFAULT_SKELETON_ATLAS, Res.THE_DEFAULT_SKELETON_JSON, 1.0f);
 //        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
 //        e.setTime(e.getEndTime() * MathUtils.random());
