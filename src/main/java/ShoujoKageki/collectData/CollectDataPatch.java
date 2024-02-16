@@ -3,6 +3,8 @@ package ShoujoKageki.collectData;
 
 import ShoujoKageki.Log;
 import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.reskin.skin.AbstractSkin;
+import ShoujoKageki.reskin.skin.SkinManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Net;
 import com.badlogic.gdx.net.HttpRequestBuilder;
@@ -82,6 +84,7 @@ public class CollectDataPatch {
                     ___params.put("language", Settings.language.name());
                     ___params.put("mods", mods);
                     ___params.put(ShoujoKageki.ModInfo.makeID("version"), getModVersion());
+                    ___params.put(ShoujoKageki.ModInfo.makeID("skin"), getSkinId());
                     sendPost(___params);
                 } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException var3) {
                     var3.printStackTrace();
@@ -91,10 +94,18 @@ public class CollectDataPatch {
         }
     }
 
+    public static String getSkinId() {
+        AbstractSkin curSkin = SkinManager.getCurSkin(AbstractDungeon.player.chosenClass);
+        if (curSkin != null) {
+            return curSkin.SkinId;
+        }
+        return "";
+    }
+
     public static boolean hasModConflict() {
         ArrayList<String> conflictList = new ArrayList<>();
         conflictList.add("PvPInTheSpire");
-        for(ModInfo modInfo: Loader.MODINFOS) {
+        for (ModInfo modInfo : Loader.MODINFOS) {
             if (conflictList.contains(modInfo.ID)) {
                 return true;
             }
