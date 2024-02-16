@@ -1,4 +1,4 @@
-package ShoujoKagek.collectData;
+package ShoujoKageki.collectData;
 
 
 import ShoujoKageki.Log;
