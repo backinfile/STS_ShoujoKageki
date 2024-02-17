@@ -1,8 +1,7 @@
 package ShoujoKageki.util;
 
 import ShoujoKageki.Log;
-import ShoujoKageki.ModInfo;
-import ShoujoKageki.ModManager;
+import ShoujoKageki_Karen.ShoujoKagekiKarenManager;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
@@ -21,7 +20,7 @@ public class GenTool {
 
     private static void gen_card_rarity() {
         HashMap<String, String> map = new HashMap<>();
-        for (AbstractCard card : ModManager.allModCards) {
+        for (AbstractCard card : ShoujoKagekiKarenManager.allKarenCardList) {
             map.put(card.cardID, card.rarity.name());
         }
         Log.logger.info(gson.toJson(map));

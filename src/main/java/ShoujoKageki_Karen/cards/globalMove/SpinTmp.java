@@ -1,0 +1,100 @@
+package ShoujoKageki_Karen.cards.globalMove;
+
+import ShoujoKageki_Karen.KarenPath;
+import ShoujoKageki.base.BaseCard;
+import basemod.AutoAdd;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+@AutoAdd.Ignore
+public class SpinTmp extends BaseCard {
+
+    private static final boolean LOG = true;
+
+    public static final String ID = KarenPath.makeID(SpinTmp.class.getSimpleName());
+
+    public SpinTmp() {
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        this.baseDamage = 4;
+        this.baseMagicNumber = this.magicNumber = 0;
+        this.logGlobalMove = true;
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (int i = 0; i < this.magicNumber; i++) {
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        }
+
+//        addToBot(new AbstractGameAction() {
+//            @Override
+//            public void update() {
+//                reset();
+//                isDone = true;
+//            }
+//        });
+    }
+
+    public void reset() {
+//        magicNumber = baseMagicNumber = 0;
+//        isMagicNumberModified = false;
+//        initializeDescription();
+//        Log.logger.info("reset");
+    }
+
+    private void onTrigger() {
+        this.baseMagicNumber++;
+        this.magicNumber = this.baseMagicNumber;
+        isMagicNumberModified = true;
+        initializeDescription();
+        flash();
+//        new RuntimeException("").printStackTrace();
+    }
+
+//    @Override
+//    public void triggerOnPutInBag() {
+//        super.triggerOnPutInBag();
+//        onTrigger();
+//    }
+
+    @Override
+    public void triggerOnGlobalMove() {
+        super.triggerOnGlobalMove();
+        onTrigger();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        super.triggerOnEndOfPlayerTurn();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInBag() {
+        super.triggerOnEndOfPlayerTurnInBag();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDrawPile() {
+        super.triggerOnEndOfPlayerTurnInDrawPile();
+        reset();
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurnInDiscardPile() {
+        super.triggerOnEndOfPlayerTurnInDiscardPile();
+        reset();
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(2);
+        }
+    }
+}

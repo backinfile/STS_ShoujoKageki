@@ -1,0 +1,126 @@
+{
+	"Karen:HairpinRelic": {
+		"NAME": "发夹",
+		"FLAVOR": "小时候与小光两人在东京塔附近的商店中买到的一对发夹中皇冠样式的一枚",
+		"DESCRIPTIONS": [
+			"在第二回合开始时，获得一张 #y约定之塔 。"
+		]
+	},
+	"Karen:Hairpin2Relic": {
+		"NAME": "发夹-立体版",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"替换 #r发夹 。 NL 在第一回合开始时，获得一张 #y约定之塔+ 。"
+		]
+	},
+	"Karen:BookMarchRelic": {
+		"NAME": "书签",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"在选奖励牌时，可以升级全部卡牌并获取它们。 NL 使用后失效，可通过击杀 #y精英 敌人 重置此遗物。",
+			"获取全部"
+		]
+	},
+	"Karen:CookieRelic": {
+		"NAME": "饼干",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"拾起时，随机获得 #y普通 ， #y罕见 ， #y稀有 #y闪耀 牌各一张。",
+			"[饼干] 获取卡牌"
+		]
+	},
+	"Karen:LockRelic": {
+		"NAME": "上锁的遗物",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"这里锁着 #y", " 。",
+			"无可禁用遗物"
+		]
+	},
+	"Karen:DrawExtraRelic": {
+		"NAME": "怀表牌",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"若回合内没有额外抽牌，则于下回合额外抽 #y1 张牌"
+		]
+	},
+	"Karen:TapeRelic": {
+		"NAME": "胶带",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"现在你可以在休息处为卡牌添加 #y闪耀 。（最多3次）"
+		]
+	},
+	"Karen:FrogWaterCupRelic": {
+		"NAME": "水杯",
+		"FLAVOR": "贴有青蛙贴纸的水杯，属于大场奈奈。",
+		"DESCRIPTIONS": [
+			"每当你获得 #y闪耀牌 时，使其 #y闪耀 增加 #y1 。"
+		]
+	},
+	"Karen:MrWhiteRelic": {
+		"NAME": "Mr.White",
+		"FLAVOR": "神乐光喜爱的角色形象。",
+		"DESCRIPTIONS": [
+			"在每场战斗开始时，将你牌组中超出30张的部分放入 #y约定牌堆 。"
+		]
+	},
+	"Karen:CatRelic": {
+		"NAME": "棒球猫",
+		"FLAVOR": "露崎真昼喜爱的角色形象。",
+		"DESCRIPTIONS": [
+			"每次战斗中，每耗尽一张非同名的 #y闪耀牌 ，获得一个 #y闪耀牌奖励 。"
+		]
+	},
+	"Karen:CatRelicTmp": {
+		"NAME": "棒球猫",
+		"FLAVOR": "露崎真昼喜爱的角色形象。",
+		"DESCRIPTIONS": [
+			"被 #y禁用 时，改为获得 #y ",
+			" 点 #y格挡 。"
+		]
+	},
+	"Karen:StarCrownRelic": {
+		"NAME": "星之皇冠",
+		"FLAVOR": "带来最闪耀Revue的女孩，将被授予星之皇冠，通往TopStar的道路也将为她敞开。",
+		"DESCRIPTIONS": [
+			"在回合开始时获得 [E] 。 NL 在每个回合开始时， #y禁用 #y2 个 遗物。"
+		]
+	},
+	"Karen:ShineCardRelic": {
+		"NAME": "闪耀会员卡",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"商店中的所有卡牌获得 #y闪耀 3，且打折 #b50% 。"
+		]
+	},
+	"Karen:TeaCupRelic": {
+		"NAME": "茶杯",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"每从 #y约定牌堆 取出 #y2 张牌，获得 #y1 #y临时力量 。"
+		]
+	},
+	"Karen:FlowerRelic": {
+		"NAME": "花朵",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"遗物奖励拥有额外一个选项。"
+		]
+	},
+	"Karen:HelmetRelic": {
+		"NAME": "头盔",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"拾起时，选择一张牌，将其耗能变为0。", "选择一张牌 ", "", " 的耗能为 #y0 。"
+		]
+	},
+	"CeramicFish": {
+		"NAME": "陶瓷小鱼",
+		"FLAVOR": "这些被精心上色的鱼儿被认为可以带来滚滚财源。",
+		"DESCRIPTIONS": [
+			"战斗外，每次你往自己的牌组中加入一张卡牌时，获得 #b",
+			" #y金币 。"
+		]
+	}
+}

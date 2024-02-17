@@ -1,8 +1,10 @@
 package ShoujoKageki.collectData;
 
 
+import ShoujoKageki.ShoujokagekiPath;
+import ShoujoKageki_Karen.KarenPath;
 import ShoujoKageki.Log;
-import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki_Karen.character.KarenCharacter;
 import ShoujoKageki.reskin.skin.AbstractSkin;
 import ShoujoKageki.reskin.skin.SkinManager;
 import com.badlogic.gdx.Gdx;
@@ -83,8 +85,8 @@ public class CollectDataPatch {
                     ArrayList<String> mods = Arrays.stream(Loader.MODINFOS).map((info) -> info.ID).sorted().collect(Collectors.toCollection(ArrayList::new));
                     ___params.put("language", Settings.language.name());
                     ___params.put("mods", mods);
-                    ___params.put(ShoujoKageki.ModInfo.makeID("version"), getModVersion());
-                    ___params.put(ShoujoKageki.ModInfo.makeID("skin"), getSkinId());
+                    ___params.put(ShoujokagekiPath.makeID("version"), getModVersion());
+                    ___params.put(ShoujokagekiPath.makeID("skin"), getSkinId());
                     sendPost(___params);
                 } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException var3) {
                     var3.printStackTrace();
@@ -115,7 +117,7 @@ public class CollectDataPatch {
 
     public static String getModVersion() {
         for (ModInfo modInfo : Loader.MODINFOS) {
-            if (Objects.equals(modInfo.ID, ShoujoKageki.ModInfo.getModId())) {
+            if (Objects.equals(modInfo.ID, ShoujokagekiPath.getModId())) {
                 if (modInfo.ModVersion == null) {
                     return "";
                 }

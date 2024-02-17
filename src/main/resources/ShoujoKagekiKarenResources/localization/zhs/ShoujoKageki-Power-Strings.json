@@ -1,0 +1,173 @@
+{
+	"Karen:BagPower": {
+		"NAME": "约定牌堆",
+		"DESCRIPTIONS": [
+			"爱城华恋特有的牌堆。 NL ", 
+			"可点击人物查看具体卡牌。 NL ", 
+			" NL #y强化 ：现在约定牌堆中充满无限的 #y续演 。 NL ", 
+			" NL #y强化 ：现在视抽牌堆为约定牌堆。 NL ",
+			" NL #y强化 ：现在从约定牌堆中抽出的牌将被 #y升级。 NL ",
+			" NL #y强化 ：现在从约定牌堆中抽出的牌被打出时将 #r消耗 。 NL ",
+			" NL 约定牌堆 中没有牌 。",
+			" NL 卡牌按顺序： NL ",
+			" NL ", 
+			" NL #y强化 ：现在约定牌堆中充满无限的 #y续演+ 。 NL ",
+		]
+	},
+	"Karen:BagInfinitePower": {
+		"NAME": "约定牌堆",
+		"DESCRIPTIONS": [
+			"爱城华恋特有的牌堆，现在有 #y无限 的 #y续演 。"
+		]
+	},
+	"Karen:ToolPower": {
+		"NAME": "闪耀",
+		"DESCRIPTIONS": [
+			"提高工具牌的效果。"
+		]
+	},
+	"Karen:Position0Power": {
+		"NAME": "Position 0",
+		"DESCRIPTIONS": [
+			"每回合前 #y", " 次 造成未被格挡的攻击伤害时，获得等量 #y格挡 。"
+		]
+	},
+	"Karen:Position0TmpPower": {
+		"NAME": "Position 0",
+		"DESCRIPTIONS": [
+			"每当你获得 #y力量 ， 获得额外 #y", " 点 #y力量 。"
+		]
+	},
+	"Karen:PutToBagPower": {
+		"NAME": "新的一天",
+		"DESCRIPTIONS": [
+			"你打出的下 #y",
+			" 张牌 会被放入 #y约定牌堆 。",
+			" 张牌 会被放入 #y约定牌堆 。"
+		]
+	},
+	"Karen:LetterPower": {
+		"NAME": "信封",
+		"DESCRIPTIONS": [
+			"将卡牌放入到 约定牌堆 时，获得 #y", " 点 格挡 。"
+		]
+	},
+	"Karen:StageIsWaitingPower": {
+		"NAME": "舞台正在等待着",
+		"DESCRIPTIONS": [
+			"约定牌堆 被清空时，获得  #y", " 个 [E] 。"
+		]
+	},
+	"Karen:NextTurnDrawBagPower": {
+		"NAME": "抽牌",
+		"DESCRIPTIONS": [
+			"下回合，从 #y约定牌堆 中抽 #y", " 张牌。", " 张牌。"
+		]
+	},
+	"Karen:AquariumPower": {
+		"NAME": "水族馆",
+		"DESCRIPTIONS": [
+			"每个回合开始时，抽 #y", 
+			" 张牌， 然后选择 #y",
+			" 张手牌放入 #y约定牌堆 。",
+			" 张牌， 然后选择 #y",
+			" 张手牌放入 #y约定牌堆 。"
+		]
+	},
+	"Karen:ReserveStrengthPower": {
+		"NAME": "保留力量",
+		"DESCRIPTIONS": [
+			"在本回合保留你的 #y力量 。", 
+			"在接下来的 #y",
+			" 回合保留你的 #y力量 。"
+		]
+	},
+	"Karen:FinancierPower": {
+		"NAME": "Banana费南雪",
+		"DESCRIPTIONS": [
+			"每两回合保留 #y力量 #y", " 回合。", " 回合。"
+		]
+	},
+	"Karen:CryPowerTmp2": {
+		"NAME": "添麻烦了",
+		"DESCRIPTIONS": [
+			"获得 #y力量 时， 对所有敌人造成当前 #y力量 值的伤害。",
+			"获得 #y力量 时， 对所有敌人造成当前 #y力量 值 #y", " 倍 的伤害。"
+		]
+	},
+	"Karen:CryPowerTmp": {
+		"NAME": "添麻烦了",
+		"DESCRIPTIONS": [
+			"当有 #y力量 发生变化时， 获得变化数量 #y",
+			" 倍的 #y格挡 。"
+		]
+	},
+	"Karen:VoidPower": {
+		"NAME": "世界上最空虚的人",
+		"DESCRIPTIONS": [
+			"以 #y约定牌堆 代替 抽牌堆。"
+		]
+	},
+	"Karen:ArrogantPower": {
+		"NAME": "骄傲",
+		"DESCRIPTIONS": [
+			"回合开始时，失去25%最大生命值的生命，并获得一个随机遗物"
+		]
+	},
+	"Karen:GainRelicPower": {
+		"NAME": "激情",
+		"DESCRIPTIONS": [
+			"战斗结束时，获得 #y", " 个随机遗物。", " 个随机遗物。"
+		]
+	},
+	"Karen:BurnPower": {
+		"NAME": "燃烧",
+		"DESCRIPTIONS": [
+			"从 约定牌堆 抽出的牌将被 #y升级 ， 且被打出时 #r消耗 。",
+			"#r燃烧中"
+		]
+	},
+	"Karen:StarlightPower": {
+		"NAME": "Starlight第一幕",
+		"DESCRIPTIONS": [
+			"打出 #y闪耀 牌后，抽 #y", " 张牌。", " 张牌。"
+		]
+	},
+	"Karen:Starlight02Power": {
+		"NAME": "Starlight第二幕",
+		"DESCRIPTIONS": [
+			"打出的 #y闪耀 牌会额外打出 #y", " 次，然后 #r耗尽 #y闪耀 。"
+		]
+	},
+	"Karen:ShineRewardPower": {
+		"NAME": "闪耀牌奖励",
+		"DESCRIPTIONS": [
+			"战斗结束时, 获得 #y", " 个 #y闪耀牌奖励 。"
+		]
+	},
+	"Karen:BananaLunchPower": {
+		"NAME": "Banana午餐",
+		"DESCRIPTIONS": [
+			"回合结束时，增加 #y", " 张 #y三明治 到 约定牌堆 。"
+		]
+	},
+	"Karen:ReproducePower": {
+		"NAME": "再生产",
+		"DESCRIPTIONS": [
+			"#y约定牌堆 将提供 #y无限 的 #y续演 。"
+		]
+	},
+	"Karen:FormPower": {
+		"NAME": "觉醒形态",
+		"DESCRIPTIONS": [
+			"每个回合开始时，抽满手牌。"
+		]
+	},
+	"Karen:ReduceStrengthLimitPower": {
+		"NAME": "暗中窥视",
+		"DESCRIPTIONS": [
+			"敌人被 削减 的 力量 每回合最多回复", 
+			"点。不可叠加。"
+		]
+	}
+}

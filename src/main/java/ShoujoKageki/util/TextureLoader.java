@@ -1,6 +1,7 @@
 package ShoujoKageki.util;
 
-import ShoujoKageki.ModInfo;
+import ShoujoKageki.ShoujokagekiPath;
+import ShoujoKageki_Karen.KarenPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.utils.GdxRuntimeException;
@@ -31,7 +32,7 @@ public class TextureLoader {
 				loadTexture(textureString);
 			} catch (GdxRuntimeException e) {
 				logger.error("Could not find texture: " + textureString);
-				return getTexture(ModInfo.getResPath("/images/ui/missing_texture.png"));
+				return getTexture(KarenPath.getResPath("/images/ui/missing_texture.png"));
 			}
 		}
 		return textures.get(textureString);
@@ -46,7 +47,7 @@ public class TextureLoader {
 	 * @throws GdxRuntimeException
 	 */
 	private static void loadTexture(final String textureString) throws GdxRuntimeException {
-		logger.info(ModInfo.getFullModName() + ": " + textureString);
+		logger.info(ShoujokagekiPath.getFullModName() + ": " + textureString);
 		Texture texture = new Texture(textureString);
 		texture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		textures.put(textureString, texture);

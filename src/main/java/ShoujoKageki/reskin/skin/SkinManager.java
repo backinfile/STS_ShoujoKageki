@@ -1,8 +1,9 @@
 package ShoujoKageki.reskin.skin;
 
 import ShoujoKageki.Log;
-import ShoujoKageki.ModInfo;
-import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.ShoujokagekiPath;
+import ShoujoKageki_Karen.KarenPath;
+import ShoujoKageki_Karen.character.KarenCharacter;
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,27 +18,27 @@ import java.util.List;
 public class SkinManager {
     public static final HashMap<AbstractPlayer.PlayerClass, List<AbstractSkin>> skinMap = new HashMap<>();
     public static final HashMap<String, Integer> skinSelected = new HashMap<>();
-    public static final UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(SkinManager.class.getSimpleName()));
+    public static final UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString(ShoujokagekiPath.makeID(SkinManager.class.getSimpleName()));
 
     public static void init() {
         Log.logger.info("init skin");
         addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
                 "tv_clip",
-                ModInfo.getResPath("/images/char/karen/skin_tv/Karen.atlas"),
-                ModInfo.getResPath("/images/char/karen/skin_tv/Karen.json"),
+                KarenPath.getResPath("/images/char/karen/skin_tv/Karen.atlas"),
+                KarenPath.getResPath("/images/char/karen/skin_tv/Karen.json"),
                 UI_STRINGS.TEXT[0],
                 UI_STRINGS.EXTRA_TEXT[0],
                 "")
         );
         addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
                 "pixel",
-                ModInfo.getResPath("/images/char/karen/skin_pixel/Karen.atlas"),
-                ModInfo.getResPath("/images/char/karen/skin_pixel/Karen.json"),
+                KarenPath.getResPath("/images/char/karen/skin_pixel/Karen.atlas"),
+                KarenPath.getResPath("/images/char/karen/skin_pixel/Karen.json"),
                 UI_STRINGS.TEXT[1],
                 UI_STRINGS.EXTRA_TEXT[1],
                 "") // https://www.pixiv.net/artworks/70941447
         );
-        BaseMod.addSaveField(ModInfo.makeID("reskin"), new CustomSavable<HashMap<String, Integer>>() {
+        BaseMod.addSaveField(KarenPath.makeID("reskin"), new CustomSavable<HashMap<String, Integer>>() {
             @Override
             public HashMap<String, Integer> onSave() {
                 return skinSelected;

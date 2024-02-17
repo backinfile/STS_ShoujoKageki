@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.util.TextureLoader;
+import ShoujoKageki_Karen.KarenPath;
 import basemod.BaseMod;
 import basemod.ModLabeledButton;
 import basemod.ModLabeledToggleButton;
@@ -8,7 +9,6 @@ import basemod.ModPanel;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
-import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,8 +19,8 @@ import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 
 import java.util.Properties;
 
-import static ShoujoKageki.Res.BADGE_IMAGE;
-import static ShoujoKageki.character.KarenCharacter.Enums.Karen;
+import static ShoujoKageki_Karen.Res.BADGE_IMAGE;
+import static ShoujoKageki_Karen.character.KarenCharacter.Enums.Karen;
 
 public class SettingsPanel {
     public static boolean showDrawBagReview = false;
@@ -34,7 +34,7 @@ public class SettingsPanel {
         settingsProperties.setProperty("showDrawBagReview", "FALSE");
         settingsProperties.setProperty("showDisposedPile", "TRUE");
         try {
-            SpireConfig config = new SpireConfig(ModInfo.ModName, CONFIG_FILE_NAME, settingsProperties);
+            SpireConfig config = new SpireConfig(ShoujokagekiPath.ModName, CONFIG_FILE_NAME, settingsProperties);
             config.load();
             showDrawBagReview = config.getBool("showDrawBagReview");
             showDisposedPile = config.getBool("showDisposedPile");
@@ -45,7 +45,7 @@ public class SettingsPanel {
 
     public static void saveProperties() {
         try {
-            SpireConfig config = new SpireConfig(ModInfo.ModName, CONFIG_FILE_NAME, settingsProperties);
+            SpireConfig config = new SpireConfig(ShoujokagekiPath.ModName, CONFIG_FILE_NAME, settingsProperties);
             config.setBool("showDrawBagReview", showDrawBagReview);
             config.setBool("showDisposedPile", showDisposedPile);
             config.save();
@@ -55,7 +55,7 @@ public class SettingsPanel {
     }
 
     public static void initPanel() {
-        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID("settingsPanel"));
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ShoujokagekiPath.makeID("settingsPanel"));
 
         ModPanel settingsPanel = new ModPanel();
 
@@ -106,6 +106,6 @@ public class SettingsPanel {
         settingsPanel.addUIElement(showDisposedPileBtn);
 
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
-        BaseMod.registerModBadge(badgeTexture, ModInfo.ModName, ModInfo.AUTHOR, ModInfo.DESCRIPTION, settingsPanel);
+        BaseMod.registerModBadge(badgeTexture, ShoujokagekiPath.ModName, ShoujokagekiPath.AUTHOR, ShoujokagekiPath.DESCRIPTION, settingsPanel);
     }
 }

@@ -1,7 +1,7 @@
 package ShoujoKageki.reskin.patches;
 
 import ShoujoKageki.reskin.skin.SkinManager;
-import ShoujoKageki.screen.SkinSelectScreen;
+import ShoujoKageki_Karen.screen.SkinSelectScreen;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

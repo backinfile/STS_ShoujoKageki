@@ -1,6 +1,6 @@
 package ShoujoKageki;
 
-import basemod.BaseMod;
+import ShoujoKageki_Karen.KarenPath;
 import basemod.abstracts.CustomMultiPageFtue;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,15 +8,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipTracker;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.ui.MultiPageFtue;
 
 public class FTUEUtils {
-    public static final String COMBAT_TIP_KEY = ModInfo.makeID("COMBAT_TIP");
+    public static final String COMBAT_TIP_KEY = ShoujokagekiPath.makeID("COMBAT_TIP");
 
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInfo.makeID("FTUE"));
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ShoujokagekiPath.makeID("FTUE"));
     private static final Texture[] TEXTURES = new Texture[]{
-            ImageMaster.loadImage(ModInfo.makeUIPath("tip01.png")),
-            ImageMaster.loadImage(ModInfo.makeUIPath("tip02.png")),
+            ImageMaster.loadImage(KarenPath.makeUIPath("tip01.png")),
+            ImageMaster.loadImage(KarenPath.makeUIPath("tip02.png")),
     };
 
     public static void openCombatTip() {
