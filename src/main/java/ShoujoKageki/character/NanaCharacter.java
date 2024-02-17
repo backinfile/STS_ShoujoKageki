@@ -3,12 +3,12 @@ package ShoujoKageki.character;
 import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.Res;
-import ShoujoKageki.karen.cards.starter.Defend;
-import ShoujoKageki.karen.cards.starter.Fall;
-import ShoujoKageki.karen.cards.starter.ShineStrike;
-import ShoujoKageki.karen.cards.starter.Strike;
-import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.karen.relics.HairpinRelic;
+import ShoujoKageki.nana.cards.starter.Defend;
+import ShoujoKageki.nana.cards.starter.Fall;
+import ShoujoKageki.nana.cards.starter.ShineStrike;
+import ShoujoKageki.nana.cards.starter.Strike;
+import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.reskin.skin.SkinManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -33,15 +33,15 @@ import java.util.List;
 import static ShoujoKageki.character.KarenCharacter.Enums.CardColor_Karen;
 import static ShoujoKageki.character.KarenCharacter.Enums.Karen;
 
-public class KarenCharacter extends BasePlayer {
+public class NanaCharacter extends BasePlayer {
 
     public static class Enums {
         @SpireEnum
-        public static PlayerClass Karen;
-        @SpireEnum(name = "Karen") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor CardColor_Karen;
-        @SpireEnum(name = "Karen")
-        public static CardLibrary.LibraryType LibraryType_Karen;
+        public static PlayerClass Nana;
+        @SpireEnum(name = "ShoujoKageki_Nana") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor CardColor_Nana;
+        @SpireEnum(name = "ShoujoKageki_Nana")
+        public static CardLibrary.LibraryType LibraryType_Nana;
     }
 
     // =============== CHARACTER ENUMERATORS =================
@@ -88,7 +88,7 @@ public class KarenCharacter extends BasePlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public KarenCharacter(String name, PlayerClass setClass) {
+    public NanaCharacter(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, orbVfxPath, null, null, null);
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
@@ -100,26 +100,10 @@ public class KarenCharacter extends BasePlayer {
                 Res.THE_Karen_SHOULDER_1, // another campfire pose
                 Res.THE_DEFAULT_CORPSE, // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
-
-        // =============== /TEXTURES, ENERGY, LOADOUT/ =================
-
-        // =============== ANIMATIONS =================
-
         SkinManager.loadSkin(this);
-//        loadAnimation(Res.THE_DEFAULT_SKELETON_ATLAS, Res.THE_DEFAULT_SKELETON_JSON, 1.0f);
-//        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
-//        e.setTime(e.getEndTime() * MathUtils.random());
-
-        // =============== /ANIMATIONS/ =================
-
-        // =============== TEXT BUBBLE LOCATION =================
-
-        dialogX = (drawX + 0.0F * Settings.scale); // set location for text bubbles
-        dialogY = (drawY + 220.0F * Settings.scale); // you can just copy these values
-
+        dialogX = (drawX + 0.0F * Settings.scale);
+        dialogY = (drawY + 220.0F * Settings.scale);
         maxOrbs = 0;
-        // =============== /TEXT BUBBLE LOCATION/ =================
-
     }
 
     @Override
@@ -230,7 +214,7 @@ public class KarenCharacter extends BasePlayer {
 
     // The class name as it appears next to your player name in-game
     @Override
-    public String getTitle(AbstractPlayer.PlayerClass playerClass) {
+    public String getTitle(PlayerClass playerClass) {
         return NAMES[1];
     }
 
@@ -238,7 +222,7 @@ public class KarenCharacter extends BasePlayer {
     // parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new KarenCharacter(name, chosenClass);
+        return new NanaCharacter(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in

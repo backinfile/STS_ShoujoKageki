@@ -3,6 +3,7 @@ package ShoujoKageki.reskin.skin;
 import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.character.NanaCharacter;
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -35,6 +36,14 @@ public class SkinManager {
                 ModInfo.getResPath("/images/char/karen/skin_pixel/Karen.json"),
                 UI_STRINGS.TEXT[1],
                 UI_STRINGS.EXTRA_TEXT[1],
+                "") // https://www.pixiv.net/artworks/70941447
+        );
+        addSkin(NanaCharacter.Enums.Nana, new AbstractSkin(
+                "tv",
+                ModInfo.getResPath("/images/char/nana/tv/Karen.atlas"),
+                ModInfo.getResPath("/images/char/nana/tv/Karen.json"),
+                "tv",
+                "",
                 "") // https://www.pixiv.net/artworks/70941447
         );
         BaseMod.addSaveField(ModInfo.makeID("reskin"), new CustomSavable<HashMap<String, Integer>>() {

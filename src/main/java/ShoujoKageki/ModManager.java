@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.character.NanaCharacter;
 import ShoujoKageki.patches.OnRelicChangePatch;
 import ShoujoKageki.potions.AwakePotion;
 import ShoujoKageki.potions.BagPotion;
@@ -68,9 +69,9 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
                 KarenRenderColor.cpy(),
                 KarenRenderColor.cpy(),
                 KarenRenderColor.cpy(),
-                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY,
-                ENERGY_ORB_DEFAULT_GRAY, ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT,
-                POWER_DEFAULT_GRAY_PORTRAIT, ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
+                ATTACK_Karen, SKILL_Karen, POWER_Karen,
+                ENERGY_ORB_Karen, ATTACK_Karen_PORTRAIT, SKILL_Karen_PORTRAIT,
+                POWER_Karen_PORTRAIT, ENERGY_ORB_Karen_PORTRAIT, CARD_ENERGY_ORB_Karen);
 
         SettingsPanel.initProperties();
 
@@ -146,6 +147,13 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
                 THE_DEFAULT_PORTRAIT, Karen);
         Log.logger.info("Added " + Karen.toString());
 
+
+        Log.logger.info("Beginning to edit characters. " + "Add " + NanaCharacter.Enums.Nana.toString());
+        BaseMod.addCharacter(new NanaCharacter("Nana", NanaCharacter.Enums.Nana), THE_DEFAULT_BUTTON,
+                THE_DEFAULT_PORTRAIT, NanaCharacter.Enums.Nana);
+        Log.logger.info("Added " + NanaCharacter.Enums.Nana.toString());
+
+
         Log.logger.info("Beginning to add potions.");
         BaseMod.addPotion(ShinePotion.class, Color.GOLD, CardHelper.getColor(255.0f, 230.0f, 230.0f), Color.GOLD, ShinePotion.POTION_ID, Karen);
         BaseMod.addPotion(BagPotion.class, KarenRenderColor.cpy(), Color.GOLD, KarenRenderColor.cpy(), BagPotion.POTION_ID, Karen);
@@ -166,16 +174,18 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.addDynamicVariable(new DisposableVariable());
 
         Log.logger.info("Adding cards");
-        String cardsClassPath = this.getClass().getPackage().getName() + ".karen.cards";
-        new AutoAdd(ModInfo.getModId()).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
-            BaseMod.addCard(card);
-            if (info.seen) {
-                UnlockTracker.unlockCard(card.cardID);
-            }
-            if (card.color == CardColor_Karen) {
-                allModCards.add(card);
-            }
-        });
+        {
+            String cardsClassPath = this.getClass().getPackage().getName() + ".karen.cards";
+            new AutoAdd(ModInfo.getModId()).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
+                BaseMod.addCard(card);
+                if (info.seen) {
+                    UnlockTracker.unlockCard(card.cardID);
+                }
+                if (card.color == CardColor_Karen) {
+                    allModCards.add(card);
+                }
+            });
+        }
         Log.logger.info("Done adding cards!");
     }
 

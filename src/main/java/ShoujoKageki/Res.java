@@ -14,23 +14,23 @@ public class Res {
     // Red/Brown
 
     // Card backgrounds - The actual rectangular card.
-    public static final String ATTACK_DEFAULT_GRAY = ModInfo.getResPath("/images/512/bg_attack_default_gray.png");
-    public static final String SKILL_DEFAULT_GRAY = ModInfo.getResPath("/images/512/bg_skill_default_gray.png");
-    public static final String POWER_DEFAULT_GRAY = ModInfo.getResPath("/images/512/bg_power_default_gray.png");
+    public static final String ATTACK_Karen = ModInfo.getResPath("/images/512/bg_attack_default_gray.png");
+    public static final String SKILL_Karen = ModInfo.getResPath("/images/512/bg_skill_default_gray.png");
+    public static final String POWER_Karen = ModInfo.getResPath("/images/512/bg_power_default_gray.png");
 
-    public static final String ENERGY_ORB_DEFAULT_GRAY = ModInfo.getResPath("/images/512/card_default_gray_orb.png");
-    public static final String CARD_ENERGY_ORB = ModInfo.getResPath("/images/512/card_small_orb.png");
+    public static final String ENERGY_ORB_Karen = ModInfo.getResPath("/images/512/card_default_gray_orb.png");
+    public static final String CARD_ENERGY_ORB_Karen = ModInfo.getResPath("/images/512/card_small_orb.png");
 
-    public static final String ATTACK_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/bg_attack_default_gray.png");
-    public static final String SKILL_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/bg_skill_default_gray.png");
-    public static final String POWER_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/bg_power_default_gray.png");
-    public static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = ModInfo.getResPath("/images/1024/card_default_gray_orb.png");
+    public static final String ATTACK_Karen_PORTRAIT = ModInfo.getResPath("/images/1024/bg_attack_default_gray.png");
+    public static final String SKILL_Karen_PORTRAIT = ModInfo.getResPath("/images/1024/bg_skill_default_gray.png");
+    public static final String POWER_Karen_PORTRAIT = ModInfo.getResPath("/images/1024/bg_power_default_gray.png");
+    public static final String ENERGY_ORB_Karen_PORTRAIT = ModInfo.getResPath("/images/1024/card_default_gray_orb.png");
 
     // Character assets
     public static final String THE_DEFAULT_BUTTON = ModInfo.getResPath("/images/charSelect/DefaultCharacterButton.png");
     public static final String THE_DEFAULT_PORTRAIT = ModInfo.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
-    public static final String THE_DEFAULT_SHOULDER_1 = ModInfo.getResPath("/images/char/karen/shoulder.png");
-    public static final String THE_DEFAULT_SHOULDER_2 = ModInfo.getResPath("/images/char/karen/shoulder.png");
+    public static final String THE_Karen_SHOULDER_1 = ModInfo.getResPath("/images/char/karen/shoulder.png");
+    public static final String THE_Karen_SHOULDER_2 = ModInfo.getResPath("/images/char/karen/shoulder.png");
     public static final String THE_DEFAULT_CORPSE = ModInfo.getResPath("/images/char/karen/corpse.png");
 
     // Mod Badge - A small icon that appears in the mod settings menu next to your

@@ -53,6 +53,14 @@
                     <systemPath>${Steam.path}/workshop/content/646570/1610056683/downfall.jar</systemPath>
                     <!--<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>-->
                 </dependency>
+                <dependency>
+                    <groupId>mod-group-name</groupId>
+                    <artifactId>Paranoia</artifactId>
+                    <version>4.1.16</version>
+                    <scope>system</scope>
+                    <systemPath>${Steam.path}/workshop/content/646570/2834719274/Paranoia.jar</systemPath>
+                    <!--<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>-->
+                </dependency>
 <!--                <dependency>-->
 <!--                    <groupId>mod-group-name</groupId>-->
 <!--                    <artifactId>downfall</artifactId>-->
