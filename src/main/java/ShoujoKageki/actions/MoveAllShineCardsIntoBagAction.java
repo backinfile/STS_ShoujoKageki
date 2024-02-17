@@ -2,14 +2,11 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.actions.bag.MoveCardToBagAction;
-import ShoujoKageki.cards.patches.field.BagField;
-import com.badlogic.gdx.graphics.Color;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
 import java.util.ArrayList;
 

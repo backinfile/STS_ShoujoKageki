@@ -1,7 +1,6 @@
 package ShoujoKageki.variables;
 
-import ShoujoKageki.Log;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.modifier.ShineCardDescriptionModifier;
 import ShoujoKageki.util.Utils2;
 import basemod.abstracts.DynamicVariable;
@@ -11,8 +10,6 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.variables.patch.DisposableField;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import java.util.Objects;
 
 public class DisposableVariable extends DynamicVariable { // Shine
 

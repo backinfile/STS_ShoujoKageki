@@ -2,9 +2,8 @@ package ShoujoKageki.effects;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.campfireOption.ShineOption;
-import ShoujoKageki.relics.TapeRelic;
+import ShoujoKageki.karen.relics.TapeRelic;
 import ShoujoKageki.variables.DisposableVariable;
-import ShoujoKageki.variables.patch.DisposableField;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -23,8 +22,6 @@ import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-
-import java.util.Iterator;
 
 public class CampfireShineEffect extends AbstractGameEffect {
     private static String RAW_ID = CampfireShineEffect.class.getSimpleName();

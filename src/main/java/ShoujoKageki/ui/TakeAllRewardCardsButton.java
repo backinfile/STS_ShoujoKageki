@@ -1,6 +1,6 @@
 package ShoujoKageki.ui;
 
-import ShoujoKageki.relics.patch.TakeAllRewardCardsPatch;
+import ShoujoKageki.karen.relics.patches.TakeAllRewardCardsPatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
-import ShoujoKageki.relics.BookMarchRelic;
+import ShoujoKageki.karen.relics.BookMarchRelic;
 
 public class TakeAllRewardCardsButton {
     public static final String TEXT;

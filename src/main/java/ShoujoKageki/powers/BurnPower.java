@@ -1,10 +1,9 @@
 package ShoujoKageki.powers;
 
 
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.modifier.BurnModifier;
 import basemod.helpers.CardModifierManager;
-import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

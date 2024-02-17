@@ -1,13 +1,8 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.powers.BagInfinitePower;
 import ShoujoKageki.powers.BagPower;
-import ShoujoKageki.powers.VoidPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;

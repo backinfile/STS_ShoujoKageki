@@ -1,7 +1,7 @@
 package ShoujoKageki.screen;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import basemod.BaseMod;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.Gdx;

@@ -1,11 +1,8 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.Log;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.powers.BasePower;
-import ShoujoKageki.powers.StageIsWaitingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;

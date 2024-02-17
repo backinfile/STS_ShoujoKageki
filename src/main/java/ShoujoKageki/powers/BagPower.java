@@ -12,10 +12,9 @@ import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.util.Utils2;
 
-import static ShoujoKageki.ModInfo.DESCRIPTION;
 import static ShoujoKageki.ModInfo.makeID;
 
 public class BagPower extends BasePower {

@@ -2,8 +2,8 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.Log;
 import ShoujoKageki.patches.OnRelicChangePatch;
-import ShoujoKageki.relics.CatRelicTmp;
-import ShoujoKageki.relics.LockRelic;
+import ShoujoKageki.karen.relics.CatRelicTmp;
+import ShoujoKageki.karen.relics.LockRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

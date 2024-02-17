@@ -1,6 +1,6 @@
 package ShoujoKageki.effects;
 
-import ShoujoKageki.relics.DeckTopRelic;
+import ShoujoKageki.karen.relics.DeckTopRelic;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 

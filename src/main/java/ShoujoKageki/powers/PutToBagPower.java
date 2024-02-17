@@ -1,7 +1,7 @@
 package ShoujoKageki.powers;
 
 
-import ShoujoKageki.cards.patches.field.PutToBagField;
+import ShoujoKageki.karen.cards.patches.field.PutToBagField;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

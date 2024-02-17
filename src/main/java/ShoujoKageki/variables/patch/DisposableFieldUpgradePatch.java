@@ -1,20 +1,14 @@
 package ShoujoKageki.variables.patch;
 
-import ShoujoKageki.Log;
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.variables.DisposableVariable;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.unique.ApotheosisAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.WarPaint;
-import com.megacrit.cardcrawl.relics.Whetstone;
-import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 import javassist.CtBehavior;
-
-import java.util.ArrayList;
 
 public class DisposableFieldUpgradePatch {
 

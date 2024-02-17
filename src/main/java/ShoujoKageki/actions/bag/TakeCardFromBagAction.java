@@ -10,8 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.character.BasePlayer;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 
 import java.util.ArrayList;
 

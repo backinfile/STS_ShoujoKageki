@@ -3,21 +3,16 @@ package ShoujoKageki.variables.patch;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.effects.PurgeCardInBattleEffect;
 import ShoujoKageki.patches.TokenCardField;
-import ShoujoKageki.patches.showDisposeInHistory.MetricDataPatch;
+import ShoujoKageki.ui.showDisposeInHistory.patch.MetricDataPatch;
 import ShoujoKageki.util.ActionUtils;
 import ShoujoKageki.util.Utils2;
-import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import java.util.ArrayList;
 
 @SpirePatch(
         clz = AbstractCard.class,

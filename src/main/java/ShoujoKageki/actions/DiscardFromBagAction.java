@@ -3,15 +3,9 @@ package ShoujoKageki.actions;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.actions.bag.CheckBagEmptyAction;
-import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.patches.BagFieldDrawCardPatch;
-import ShoujoKageki.cards.patches.BagFieldPatch;
-import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.powers.BasePower;
+import ShoujoKageki.karen.cards.patches.BagFieldPatch;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,14 +13,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.relics.ChemicalX;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class DiscardFromBagAction extends AbstractGameAction {
 

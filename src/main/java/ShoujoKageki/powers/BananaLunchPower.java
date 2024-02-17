@@ -2,7 +2,7 @@ package ShoujoKageki.powers;
 
 
 import ShoujoKageki.actions.bag.MakeTempCardInBagAction;
-import ShoujoKageki.cards.bag.EatFood2;
+import ShoujoKageki.karen.cards.bag.EatFood2;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

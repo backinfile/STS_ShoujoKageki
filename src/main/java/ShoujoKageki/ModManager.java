@@ -166,7 +166,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
         BaseMod.addDynamicVariable(new DisposableVariable());
 
         Log.logger.info("Adding cards");
-        String cardsClassPath = this.getClass().getPackage().getName() + ".cards";
+        String cardsClassPath = this.getClass().getPackage().getName() + ".karen.cards";
         new AutoAdd(ModInfo.getModId()).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
             BaseMod.addCard(card);
             if (info.seen) {
@@ -205,7 +205,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
     @Override
     public void receiveEditRelics() {
-        String relicClassPath = this.getClass().getPackage().getName() + ".relics";
+        String relicClassPath = this.getClass().getPackage().getName() + ".karen.relics";
         Log.logger.info("===============Adding relics: search in " + relicClassPath);
         for (com.evacipated.cardcrawl.modthespire.ModInfo info : Loader.MODINFOS) {
             Log.logger.info(info.ID);

@@ -1,8 +1,8 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.cards.bag.Continue;
-import ShoujoKageki.cards.patches.BagFieldPatch;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.bag.Continue;
+import ShoujoKageki.karen.cards.patches.BagFieldPatch;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;

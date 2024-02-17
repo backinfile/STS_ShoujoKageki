@@ -1,6 +1,6 @@
 package ShoujoKageki.ui;
 
-import ShoujoKageki.relics.DeckTopRelic;
+import ShoujoKageki.karen.relics.DeckTopRelic;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

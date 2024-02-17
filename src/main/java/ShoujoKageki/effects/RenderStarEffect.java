@@ -1,8 +1,6 @@
 package ShoujoKageki.effects;
 
-import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.cards.shine.Star;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -11,7 +9,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class RenderStarEffect extends AbstractGameEffect {

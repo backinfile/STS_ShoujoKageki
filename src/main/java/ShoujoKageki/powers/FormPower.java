@@ -2,12 +2,6 @@ package ShoujoKageki.powers;
 
 
 import ShoujoKageki.actions.FormAction;
-import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.modifier.BurnModifier;
-import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;

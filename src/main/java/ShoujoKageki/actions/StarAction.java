@@ -1,7 +1,7 @@
 package ShoujoKageki.actions;
 
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

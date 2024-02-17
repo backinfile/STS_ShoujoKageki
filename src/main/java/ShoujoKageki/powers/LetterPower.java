@@ -1,6 +1,5 @@
 package ShoujoKageki.powers;
 
-import ShoujoKageki.cards.patches.field.BagField;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

@@ -1,9 +1,8 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.cards.bag.Continue;
-import ShoujoKageki.cards.patches.BagFieldPatch;
-import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.character.BasePlayer;
+import ShoujoKageki.karen.cards.bag.Continue;
+import ShoujoKageki.karen.cards.patches.BagFieldPatch;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.effects.ShowBagCardAndAddToDiscardEffect;
 import ShoujoKageki.effects.ShowBagCardToHandEffect;
 import basemod.BaseMod;

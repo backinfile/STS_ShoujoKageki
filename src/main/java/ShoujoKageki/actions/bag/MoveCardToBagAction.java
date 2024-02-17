@@ -1,9 +1,7 @@
 package ShoujoKageki.actions.bag;
 
-import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
+import ShoujoKageki.karen.cards.patches.GlobalMovePatch;
 import ShoujoKageki.effects.MoveCardToBagAsStarEffect;
-import ShoujoKageki.powers.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,9 +9,8 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.karen.cards.patches.field.BagField;
 import ShoujoKageki.effects.MoveCardToBagEffect;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 import java.util.List;
