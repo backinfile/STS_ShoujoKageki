@@ -2,7 +2,7 @@ package ShoujoKageki_Nana;
 
 public class NanaPath {
     public static final String ModName = "ShoujoKageki";
-    public static final String Name = "Karen";
+    public static final String Name = "Nana";
 
     public static String makeID(String idText) {
         return Name + ":" + idText;

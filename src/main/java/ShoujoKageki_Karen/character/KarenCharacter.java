@@ -65,25 +65,25 @@ public class KarenCharacter extends BasePlayer {
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
 
-    private static final String ModName = KarenPath.ModName;
+    private static final String ResourcesPath = KarenPath.ModName + KarenPath.Name;
 
     // =============== /STRINGS/ =================
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
 
-    public static final String[] orbTextures = {ModName + "Resources/images/char/defaultCharacter/orb/layer1.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer2.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer3.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer4.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer5.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer6.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer1d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer2d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer3d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer4d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer5d.png",};
-    public static final String orbVfxPath = ModName + "Resources/images/char/defaultCharacter/orb/vfx.png";
+    public static final String[] orbTextures = {ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer1.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer2.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer3.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer4.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer5.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer6.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer1d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer2d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer3d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer4d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer5d.png",};
+    public static final String orbVfxPath = ResourcesPath + "Resources/images/char/defaultCharacter/orb/vfx.png";
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 

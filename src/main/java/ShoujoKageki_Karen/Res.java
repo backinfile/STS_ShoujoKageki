@@ -40,5 +40,6 @@ public class Res {
 
     // Colors (RGB)
     // Character Color
-    public static final Color KarenRenderColor = CardHelper.getColor(251f, 84f, 88.0f);
+    public static final Color KarenRenderColor = CardHelper.getColor(251f, 84f, 88.0f); // ff2600
+    public static final Color NanaRenderColor = CardHelper.getColor(253f, 209f, 98f); // fdd162
 }

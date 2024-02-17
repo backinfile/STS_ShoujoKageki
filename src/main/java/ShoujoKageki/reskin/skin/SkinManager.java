@@ -4,6 +4,7 @@ import ShoujoKageki.Log;
 import ShoujoKageki.ShoujokagekiPath;
 import ShoujoKageki_Karen.KarenPath;
 import ShoujoKageki_Karen.character.KarenCharacter;
+import ShoujoKageki_Nana.character.NanaCharacter;
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SkinManager {
     public static final HashMap<AbstractPlayer.PlayerClass, List<AbstractSkin>> skinMap = new HashMap<>();
@@ -32,6 +34,14 @@ public class SkinManager {
         );
         addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
                 "pixel",
+                KarenPath.getResPath("/images/char/karen/skin_pixel/Karen.atlas"),
+                KarenPath.getResPath("/images/char/karen/skin_pixel/Karen.json"),
+                UI_STRINGS.TEXT[1],
+                UI_STRINGS.EXTRA_TEXT[1],
+                "") // https://www.pixiv.net/artworks/70941447
+        );
+        addSkin(NanaCharacter.Enums.ShoujoKageki_Nana, new AbstractSkin(
+                "nana",
                 KarenPath.getResPath("/images/char/karen/skin_pixel/Karen.atlas"),
                 KarenPath.getResPath("/images/char/karen/skin_pixel/Karen.json"),
                 UI_STRINGS.TEXT[1],

@@ -1,4 +1,4 @@
-package ShoujoKageki_Karen.screen;
+package ShoujoKageki.reskin.skin;
 
 import ShoujoKageki.Log;
 import ShoujoKageki.reskin.skin.AbstractSkin;
@@ -46,7 +46,6 @@ public class SkinSelectScreen {
     }
 
     public void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
-        Log.logger.info("loadAnimation {}", atlasUrl);
         this.atlas = new TextureAtlas(Gdx.files.internal(atlasUrl));
         SkeletonJson json = new SkeletonJson(this.atlas);
         json.setScale(Settings.renderScale / scale);
@@ -62,8 +61,10 @@ public class SkinSelectScreen {
 
     public void refresh() {
         if (CardCrawlGame.chosenCharacter == null) return;
+        Log.logger.info("shin select refresh {}", CardCrawlGame.chosenCharacter);
         AbstractSkin skin = SkinManager.getCurSkin(CardCrawlGame.chosenCharacter);
         if (skin == null) return;
+        Log.logger.info("load skin {}", skin.SkinId);
         this.curName = skin.name;
         this.info = skin.info;
         this.link = skin.jumpUrl;

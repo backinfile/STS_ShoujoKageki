@@ -1,0 +1,101 @@
+
+[
+	{
+		"PROPER_NAME": "Promise Pile",
+		"NAMES": [
+			"promise pile", "promise_pile"
+		],
+		"DESCRIPTION": "Promise Pile is a special pile of #yKaren #yAijou. NL When a card is put into this pile, it is placed at the bottom of the pile by default."
+	},
+	{
+		"PROPER_NAME": "Expectation",
+		"NAMES": [
+			"expectation"
+		],
+		"DESCRIPTION": "When playing another card, or at the end of the turn, #rexhaust this card."
+	},
+	{
+		"PROPER_NAME": "Precipitation",
+		"NAMES": [
+			"precipitation"
+		],
+		"DESCRIPTION": "At the end of the turn, cards with precipitation will be placed in #yPromise #yPile."
+	},
+	{
+		"PROPER_NAME": "Temporary Strength",
+		"NAMES": [
+			"temporary strength"
+		],
+		"DESCRIPTION": "Temporary strength will give extra damage to attacks in this turn."
+	},
+	{
+		"PROPER_NAME": "Buffer",
+		"NAMES": [
+			"buffer"
+		],
+		"DESCRIPTION": "Prevent the next damage you receive."
+	},
+	{
+		"PROPER_NAME": "Shine",
+		"NAMES": [
+			"shine"
+		],
+		"DESCRIPTION": "After playing X times, the card is #rpermanently removed from your #yDeck ."
+	},
+	{
+		"PROPER_NAME": "Shine Card Reward",
+		"NAMES": [
+			"shine card reward", "shine-card-reward"
+		],
+		"DESCRIPTION": "At the end of the battle, drop #y1 #yCard Reward containing only one #yShine Card . NL (The third layer boss is invalid)"
+	},
+	{
+		"PROPER_NAME": "Search",
+		"NAMES": [
+			"search"
+		],
+		"DESCRIPTION": "Select one or more cards from the target pile and place them in your hand."
+	},
+	{
+		"PROPER_NAME": "Shine Forever",
+		"NAMES": [
+			"shine forever"
+		],
+		"DESCRIPTION": "After playing, it will no longer be #rremoved from the deck ."
+	},
+	{
+		"PROPER_NAME": "Disable",
+		"NAMES": [
+			"disable"
+		],
+		"DESCRIPTION": "During this battle, the non-boss relic on the far right will be disabled. NL NL When there are no available relics, cards with #yDisable cannot be played."
+	},
+	{
+		"PROPER_NAME": "Derivative Card",
+		"NAMES": [
+			"derivative card"
+		],
+		"DESCRIPTION": "Cards outside the deck."
+	},
+	{
+		"PROPER_NAME": "Proficiency",
+		"NAMES": [
+			"proficiency"
+		],
+		"DESCRIPTION": "Improve the effect of tool cards."
+	},
+	{
+		"PROPER_NAME": "Cut",
+		"NAMES": [
+			"cut"
+		],
+		"DESCRIPTION": "The enemy loses strength this turn."
+	},
+	{
+		"PROPER_NAME": "Training",
+		"NAMES": [
+			"training"
+		],
+		"DESCRIPTION": "Training will give #yShoot extra damage, and the number of layers will decrease by half every turn."
+	}
+]

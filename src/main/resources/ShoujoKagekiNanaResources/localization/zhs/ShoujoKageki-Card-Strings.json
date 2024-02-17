@@ -1,0 +1,14 @@
+{
+	"Nana:Defend": {
+		"NAME": "防御",
+		"DESCRIPTION": "获得 !B! 点 格挡 。"
+	},
+	"Nana:Strike": {
+		"NAME": "打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"Nana:ShineStrike": {
+		"NAME": "闪耀打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	}
+}

@@ -1,0 +1,141 @@
+{
+	"Karen:PutHandCardIntoBagAction": {
+    "TEXT": ["Put into Promise Pile"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:TakeCardFromBagAction": {
+    "TEXT": ["Take from Promise Pile"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:BagPileViewScreen": {
+    "TEXT": ["Viewing Promise Pile", "Back"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:SelectDiscardCardIntoBagAction": {
+    "TEXT": ["Select a card to put into Promise Pile", "Back"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:SelectBagCardToHandAction": {
+    "TEXT": ["Select a card to put into hand", "Select", " cards to put into hand"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:DiscardFromBagAction": {
+    "TEXT": ["Non non 哒哟"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:TotalShineDescriptionModifier": {
+    "TEXT":[" NL (Total "," ShoujoKageki:Shine )"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:CarryingGuiltModifier": {
+    "TEXT":[" NL ("," cards exhausted)"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:BurnModifier": {
+    "TEXT":["", " NL When played, exhauseted (Burn)."],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:TokenCardField": {
+    "TEXT":["Token"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:ShineCardReward": {
+    "TEXT":["Add a Shine card into your deck", "Choose a card"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:CopyHandCardToDeckAction": {
+    "TEXT":["Add a copy of the token card into your deck"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:GainCardOrIgnoreAction": {
+    "TEXT":["Choose to add into deck and hand"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:BlackMarketOption": {
+    "TEXT":["Black Market", "Enter Black Market", "(Protection Fee", ")"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:ShineOption": {
+    "TEXT":["Use Tape", "Choose a card to gain 3 ShoujoKageki:Shine"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:CampfireShineEffect": {
+    "TEXT":["Choose a card to add 3 ShoujoKageki:Shine"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:BlackMarketScreen": {
+    "TEXT":["Back", "exchange something"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:settingsPanel": {
+    "TEXT":["Unlock Ascension 20", "Show Promise Pile Preview", "Show Pile of run-out cards"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:FTUE": {
+    "TEXT": [
+      "Karen Aijou uses #yPromise #yPile to manage her cards. NL NL After putting cards into #yPromise #yPile, click the character to view the cards in the pile.",
+      "Cards with #yShine will be #rpermanently removed from the deck after being played a certain number of times."
+    ],
+    "EXTRA_TEXT": [
+      "Next",
+      "I'm ready!",
+      "Tutorial",
+      "(Page: ",
+      "/2)"
+    ],
+    "TEXT_DICT": {}
+  },
+	"Karen:DisposableKeyword": {
+    "TEXT": ["", " NL ShoujoKageki:Shine !Karen:disposable! .", " NL {!Karen:disposable!|@=闪耀 !Karen:disposable! |<0=永远闪耀 }。{@@}"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:DisposedPilePatch": {
+    "TEXT": ["Viewing Pile of run-out cards.", "Back"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:TopPanelDisposedPileBtn": {
+    "TEXT": ["Run-out cards", "view all run-out cards.", "no run-out card." ],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:RunPathElement": {
+    "TEXT": ["Run-out cards:", " run-out cards"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+	"Karen:HelmetRelicModifier": {
+    "TEXT": ["", ""],
+    "EXTRA_TEXT": [""],
+    "TEXT_DICT": {}
+  },
+	"Karen:LockRelicCountModifier": {
+    "TEXT": [" NL (There are currently ", " relic that can be disabled)", " relics that can be disabled)"],
+    "EXTRA_TEXT": [""],
+    "TEXT_DICT": {}
+  },
+	"Karen:SkinManager": {
+    "TEXT": ["tv version skin", "pixel version skin"],
+    "EXTRA_TEXT": ["", "Pixiv:70941447 Author:Miiharu"],
+    "TEXT_DICT": {}
+  }
+}

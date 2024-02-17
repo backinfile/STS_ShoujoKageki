@@ -3,14 +3,13 @@ package ShoujoKageki_Nana.character;
 import ShoujoKageki.Log;
 import ShoujoKageki.base.BasePlayer;
 import ShoujoKageki.reskin.skin.SkinManager;
-import ShoujoKageki_Karen.KarenPath;
 import ShoujoKageki_Karen.Res;
-import ShoujoKageki_Karen.cards.starter.Defend;
-import ShoujoKageki_Karen.cards.starter.Fall;
-import ShoujoKageki_Karen.cards.starter.ShineStrike;
-import ShoujoKageki_Karen.cards.starter.Strike;
 import ShoujoKageki_Karen.patches.AudioPatch;
 import ShoujoKageki_Karen.relics.HairpinRelic;
+import ShoujoKageki_Nana.NanaPath;
+import ShoujoKageki_Nana.cards.starter.Defend;
+import ShoujoKageki_Nana.cards.starter.ShineStrike;
+import ShoujoKageki_Nana.cards.starter.Strike;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -31,14 +30,11 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ShoujoKageki_Karen.character.KarenCharacter.Enums.CardColor_Karen;
-import static ShoujoKageki_Karen.character.KarenCharacter.Enums.Karen;
-
 public class NanaCharacter extends BasePlayer {
 
     public static class Enums {
         @SpireEnum
-        public static PlayerClass Nana;
+        public static PlayerClass ShoujoKageki_Nana;
         @SpireEnum(name = "ShoujoKageki_Nana") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor CardColor_Nana;
         @SpireEnum(name = "ShoujoKageki_Nana")
@@ -60,30 +56,32 @@ public class NanaCharacter extends BasePlayer {
 
     // =============== STRINGS =================
 
-    private static final String ID = KarenPath.makeID(Karen.toString());
+    private static final String ID = NanaPath.makeID("Nana");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
 
-    private static final String ModName = KarenPath.ModName;
+    private static final String ResourcesPath = NanaPath.ModName + NanaPath.Name;
 
     // =============== /STRINGS/ =================
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
 
-    public static final String[] orbTextures = {ModName + "Resources/images/char/defaultCharacter/orb/layer1.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer2.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer3.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer4.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer5.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer6.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer1d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer2d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer3d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer4d.png",
-            ModName + "Resources/images/char/defaultCharacter/orb/layer5d.png",};
-    public static final String orbVfxPath = ModName + "Resources/images/char/defaultCharacter/orb/vfx.png";
+    public static final String[] orbTextures = {
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer1.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer2.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer3.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer4.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer5.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer6.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer1d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer2d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer3d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer4d.png",
+            ResourcesPath + "Resources/images/char/defaultCharacter/orb/layer5d.png",
+    };
+    public static final String orbVfxPath = ResourcesPath + "Resources/images/char/defaultCharacter/orb/vfx.png";
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -164,7 +162,7 @@ public class NanaCharacter extends BasePlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(Fall.ID);
+//        retVal.add(Fall.ID);
         return retVal;
     }
 
@@ -201,13 +199,13 @@ public class NanaCharacter extends BasePlayer {
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return CardColor_Karen;
+        return Enums.CardColor_Nana;
     }
 
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return Res.KarenRenderColor.cpy();
+        return Res.NanaRenderColor.cpy();
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -246,14 +244,14 @@ public class NanaCharacter extends BasePlayer {
     // run history.
     @Override
     public Color getCardRenderColor() {
-        return Res.KarenRenderColor.cpy();
+        return Res.NanaRenderColor.cpy();
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return Res.KarenRenderColor.cpy();
+        return Res.NanaRenderColor.cpy();
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects
@@ -296,9 +294,9 @@ public class NanaCharacter extends BasePlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         ArrayList<CutscenePanel> panels = new ArrayList<>();
-        panels.add(new CutscenePanel(KarenPath.makeUIPath("CutScene_Karen1.png")));
-        panels.add(new CutscenePanel(KarenPath.makeUIPath("CutScene_Karen2.png")));
-        panels.add(new CutscenePanel(KarenPath.makeUIPath("CutScene_Karen3.png")));
+        panels.add(new CutscenePanel(NanaPath.makeUIPath("CutScene_Karen1.png")));
+        panels.add(new CutscenePanel(NanaPath.makeUIPath("CutScene_Karen2.png")));
+        panels.add(new CutscenePanel(NanaPath.makeUIPath("CutScene_Karen3.png")));
         return panels;
     }
 }

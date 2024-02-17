@@ -54,7 +54,6 @@ public class ShoujoKagekiKarenManager implements ISubscriber, EditCardsSubscribe
         EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber, RelicGetSubscriber {
     public static final Logger logger = LogManager.getLogger(KarenPath.ModName);
 
-    private static String modID;
     public static final List<AbstractCard> allKarenCardList = new ArrayList<>();
 
     public ShoujoKagekiKarenManager() {

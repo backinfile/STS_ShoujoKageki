@@ -1,12 +1,16 @@
 package ShoujoKageki.reskin.patches;
 
+import ShoujoKageki.Log;
 import ShoujoKageki.reskin.skin.SkinManager;
-import ShoujoKageki_Karen.screen.SkinSelectScreen;
+import ShoujoKageki.reskin.skin.SkinSelectScreen;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
+import javassist.CtBehavior;
 
 public class SelectScreenPatch {
 
@@ -52,5 +56,26 @@ public class SelectScreenPatch {
                 Lazy.SKIN_SELECT_SCREEN.update();
             }
         }
+    }
+
+    @SpirePatch(
+            clz = CharacterOption.class,
+            method = "updateHitbox"
+    )
+    public static class CharacterOptionPatch_reloadAnimation {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void Insert(CharacterOption __instance) {
+            if (SkinManager.isCharHasSkin(CardCrawlGame.chosenCharacter)) {
+                Lazy.SKIN_SELECT_SCREEN.refresh();
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "getPrefs");
+                return LineFinder.findInOrder(ctBehavior, finalMatcher);
+            }
+        }
+
     }
 }
