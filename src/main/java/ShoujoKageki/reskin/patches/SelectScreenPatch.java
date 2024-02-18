@@ -23,7 +23,7 @@ public class SelectScreenPatch {
     }
 
     public static boolean isShowSkinScreen() {
-        return SkinManager.isCharHasSkin(CardCrawlGame.chosenCharacter) && anySelected();
+        return SkinManager.isCharHasMoreSkin(CardCrawlGame.chosenCharacter) && anySelected();
     }
 
     public static boolean anySelected() {

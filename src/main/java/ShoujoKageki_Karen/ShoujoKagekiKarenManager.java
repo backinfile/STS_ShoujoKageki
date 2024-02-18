@@ -1,13 +1,9 @@
 package ShoujoKageki_Karen;
 
 import ShoujoKageki.Log;
-import ShoujoKageki.SettingsPanel;
 import ShoujoKageki.ShoujoKagekiManager;
 import ShoujoKageki.ShoujokagekiPath;
 import ShoujoKageki.base.SharedRelic;
-import ShoujoKageki.reskin.skin.SkinManager;
-import ShoujoKageki.util.GenTool;
-import ShoujoKageki.util.IDCheckDontTouchPls;
 import ShoujoKageki_Karen.character.KarenCharacter;
 import ShoujoKageki_Karen.patches.OnRelicChangePatch;
 import ShoujoKageki_Karen.potions.AwakePotion;
@@ -25,7 +21,6 @@ import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -38,8 +33,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +73,6 @@ public class ShoujoKagekiKarenManager implements ISubscriber, EditCardsSubscribe
         new ShoujoKagekiKarenManager();
         Log.logger.info("========================= /ShoujoKageki Karen Initialized. Hello World./ =========================");
     }
-
 
 
     // ================ LOAD THE TEXT ===================
@@ -127,8 +119,8 @@ public class ShoujoKagekiKarenManager implements ISubscriber, EditCardsSubscribe
     public void receiveEditCharacters() {
 
         Log.logger.info("Beginning to edit characters. " + "Add " + Karen.toString());
-        BaseMod.addCharacter(new KarenCharacter("Karen", Karen), THE_DEFAULT_BUTTON,
-                THE_DEFAULT_PORTRAIT, Karen);
+        BaseMod.addCharacter(new KarenCharacter("Karen", Karen), Karen_BUTTON,
+                Karen_PORTRAIT, Karen);
         Log.logger.info("Added " + Karen.toString());
 
         Log.logger.info("Beginning to add potions.");

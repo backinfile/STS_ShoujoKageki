@@ -9,5 +9,10 @@
       "Pixiv:70941447 作者：Miiharu"
     ],
     "TEXT_DICT": {}
+  },
+  "Nana:TopPanelStageScreenBtn": {
+    "TEXT": [
+      "舞台", "查看舞台。"
+    ]
   }
 }

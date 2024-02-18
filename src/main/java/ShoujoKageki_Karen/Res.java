@@ -1,6 +1,6 @@
 package ShoujoKageki_Karen;
 
-import ShoujoKageki_Karen.KarenPath;
+import ShoujoKageki_Nana.NanaPath;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 
@@ -28,8 +28,10 @@ public class Res {
     public static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = KarenPath.getResPath("/images/1024/card_default_gray_orb.png");
 
     // Character assets
-    public static final String THE_DEFAULT_BUTTON = KarenPath.getResPath("/images/charSelect/DefaultCharacterButton.png");
-    public static final String THE_DEFAULT_PORTRAIT = KarenPath.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
+    public static final String Karen_BUTTON = KarenPath.getResPath("/images/charSelect/DefaultCharacterButton.png");
+    public static final String Nana_BUTTON = NanaPath.getResPath("/images/charSelect/DefaultCharacterButton.png");
+    public static final String Karen_PORTRAIT = KarenPath.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
+    public static final String Nana_PORTRAIT = NanaPath.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
     public static final String THE_DEFAULT_SHOULDER_1 = KarenPath.getResPath("/images/char/karen/shoulder.png");
     public static final String THE_DEFAULT_SHOULDER_2 = KarenPath.getResPath("/images/char/karen/shoulder.png");
     public static final String THE_DEFAULT_CORPSE = KarenPath.getResPath("/images/char/karen/corpse.png");

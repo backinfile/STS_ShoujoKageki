@@ -13,6 +13,7 @@ import ShoujoKageki_Karen.variables.DefaultCustomVariable;
 import ShoujoKageki_Karen.variables.DefaultSecondMagicNumber;
 import ShoujoKageki_Karen.variables.DisposableVariable;
 import ShoujoKageki_Nana.character.NanaCharacter;
+import ShoujoKageki_Nana.screen.StageScreen;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
@@ -114,8 +115,8 @@ public class ShoujoKagekiNanaManager implements ISubscriber, EditCardsSubscriber
     public void receiveEditCharacters() {
 
         Log.logger.info("Beginning to edit characters. " + "Add " + NanaCharacter.Enums.ShoujoKageki_Nana.toString());
-        BaseMod.addCharacter(new NanaCharacter("Nana", NanaCharacter.Enums.ShoujoKageki_Nana), THE_DEFAULT_BUTTON,
-                THE_DEFAULT_PORTRAIT, NanaCharacter.Enums.ShoujoKageki_Nana);
+        BaseMod.addCharacter(new NanaCharacter("Nana", NanaCharacter.Enums.ShoujoKageki_Nana), Nana_BUTTON,
+                Nana_PORTRAIT, NanaCharacter.Enums.ShoujoKageki_Nana);
         Log.logger.info("Added " + NanaCharacter.Enums.ShoujoKageki_Nana.toString());
 
         Log.logger.info("Beginning to add potions.");
@@ -193,8 +194,7 @@ public class ShoujoKagekiNanaManager implements ISubscriber, EditCardsSubscriber
     @Override
     public void receivePostInitialize() {
 //        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
-        BaseMod.addCustomScreen(new BlackMarketScreen());
-        BaseMod.addCustomScreen(new BagPileViewScreen());
+        BaseMod.addCustomScreen(new StageScreen());
 
         ShineCardReward.register();
 

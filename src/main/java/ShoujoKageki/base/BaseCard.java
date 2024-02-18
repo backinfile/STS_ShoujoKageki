@@ -55,7 +55,8 @@ public abstract class BaseCard extends AbstractDefaultCard {
         if (split[0].equals(KarenPath.Name)) {
             return KarenPath.makeCardPath(split[1] + ".png");
         } else {
-            return NanaPath.makeCardPath(split[1] + ".png");
+            return KarenPath.makeCardPath("Defend.png");
+//            return NanaPath.makeCardPath(split[1] + ".png");
         }
     }
 

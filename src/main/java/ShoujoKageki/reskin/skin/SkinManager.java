@@ -68,6 +68,11 @@ public class SkinManager {
         return skinMap.containsKey(playerClass);
     }
 
+    public static boolean isCharHasMoreSkin(AbstractPlayer.PlayerClass playerClass) {
+        List<AbstractSkin> abstractSkins = skinMap.get(playerClass);
+        return abstractSkins != null && abstractSkins.size() > 1;
+    }
+
     public static void addSkin(AbstractPlayer.PlayerClass playerClass, AbstractSkin skin) {
         skinMap.computeIfAbsent(playerClass, k -> new ArrayList<>()).add(skin);
     }

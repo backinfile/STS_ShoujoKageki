@@ -1,8 +1,11 @@
 package ShoujoKageki_Karen.ui.patch;
 
 import ShoujoKageki.SettingsPanel;
+import ShoujoKageki.base.BasePlayer;
 import ShoujoKageki_Karen.character.KarenCharacter;
 import ShoujoKageki_Karen.ui.TopPanelDisposedPileBtn;
+import ShoujoKageki_Nana.character.NanaCharacter;
+import ShoujoKageki_Nana.ui.TopPanelStageScreenBtn;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,6 +14,7 @@ import com.megacrit.cardcrawl.ui.panels.TopPanel;
 public class TopPanelRenderPatch {
 
     private static final TopPanelDisposedPileBtn btn = new TopPanelDisposedPileBtn();
+    private static final TopPanelStageScreenBtn stageScreenBtn = new TopPanelStageScreenBtn();
 
 
     @SpirePatch2(
@@ -19,8 +23,11 @@ public class TopPanelRenderPatch {
     )
     public static class Render {
         public static void Postfix(SpriteBatch sb) {
-            if (SettingsPanel.showDisposedPile && AbstractDungeon.player instanceof KarenCharacter) {
+            if (SettingsPanel.showDisposedPile && AbstractDungeon.player instanceof BasePlayer) {
                 btn.render(sb);
+            }
+            if (AbstractDungeon.player instanceof NanaCharacter) {
+                stageScreenBtn.render(sb);
             }
         }
     }
@@ -31,8 +38,11 @@ public class TopPanelRenderPatch {
     )
     public static class Update {
         public static void Postfix() {
-            if (SettingsPanel.showDisposedPile && AbstractDungeon.player instanceof KarenCharacter) {
+            if (SettingsPanel.showDisposedPile && AbstractDungeon.player instanceof BasePlayer) {
                 btn.update();
+            }
+            if (AbstractDungeon.player instanceof NanaCharacter) {
+                stageScreenBtn.update();
             }
         }
     }

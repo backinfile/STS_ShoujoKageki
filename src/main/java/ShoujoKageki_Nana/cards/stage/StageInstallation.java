@@ -1,4 +1,4 @@
-package ShoujoKageki_Nana.cards.starter;
+package ShoujoKageki_Nana.cards.stage;
 
 import ShoujoKageki.base.BaseCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -8,27 +8,24 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static ShoujoKageki_Nana.NanaPath.makeID;
 
 
-public class Defend extends BaseCard {
-    public static final String ID = makeID(Defend.class.getSimpleName());
+public class StageInstallation extends BaseCard {
+    public static final String ID = makeID(StageInstallation.class.getSimpleName());
 
-    public Defend() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseBlock = 5;
-
-        this.tags.add(CardTags.STARTER_DEFEND);
-
+    public StageInstallation() {
+        super(ID, 1, CardType.POWER, CardRarity.BASIC, CardTarget.NONE);
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
+//        addToBot(new GainBlockAction(p, p, block));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

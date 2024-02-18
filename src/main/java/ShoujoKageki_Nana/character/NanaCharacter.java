@@ -7,6 +7,7 @@ import ShoujoKageki_Karen.Res;
 import ShoujoKageki_Karen.patches.AudioPatch;
 import ShoujoKageki_Karen.relics.HairpinRelic;
 import ShoujoKageki_Nana.NanaPath;
+import ShoujoKageki_Nana.cards.stage.StageInstallation;
 import ShoujoKageki_Nana.cards.starter.Defend;
 import ShoujoKageki_Nana.cards.starter.ShineStrike;
 import ShoujoKageki_Nana.cards.starter.Strike;
@@ -123,7 +124,7 @@ public class NanaCharacter extends BasePlayer {
 
     @Override
     public String getPortraitImageName() {
-        return Res.THE_DEFAULT_PORTRAIT;
+        return Res.Nana_PORTRAIT;
     }
 
     // =============== /CHARACTER CLASS END/ =================
@@ -162,7 +163,7 @@ public class NanaCharacter extends BasePlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-//        retVal.add(Fall.ID);
+        retVal.add(StageInstallation.ID);
         return retVal;
     }
 

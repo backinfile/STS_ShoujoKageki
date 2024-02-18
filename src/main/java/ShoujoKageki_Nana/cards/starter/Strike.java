@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static ShoujoKageki_Karen.KarenPath.makeID;
+import static ShoujoKageki_Nana.NanaPath.makeID;
 
 public class Strike extends BaseCard {
     public static final String ID = makeID(Strike.class.getSimpleName());

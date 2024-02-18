@@ -10,5 +10,9 @@
 	"Nana:ShineStrike": {
 		"NAME": "闪耀打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"Nana:StageInstallation": {
+		"NAME": "散光灯",
+		"DESCRIPTION": "舞台装置 。 NL 舞台上相邻的卡牌造成伤害增加 !M! 。"
 	}
 }

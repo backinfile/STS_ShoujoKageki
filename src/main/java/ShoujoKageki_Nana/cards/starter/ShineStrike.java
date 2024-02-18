@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static ShoujoKageki_Karen.KarenPath.makeID;
+import static ShoujoKageki_Nana.NanaPath.makeID;
 
 public class ShineStrike extends BaseCard {
 

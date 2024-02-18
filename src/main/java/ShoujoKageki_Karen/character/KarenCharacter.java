@@ -125,7 +125,7 @@ public class KarenCharacter extends BasePlayer {
 
     @Override
     public String getPortraitImageName() {
-        return Res.THE_DEFAULT_PORTRAIT;
+        return Res.Karen_PORTRAIT;
     }
 
     // =============== /CHARACTER CLASS END/ =================
