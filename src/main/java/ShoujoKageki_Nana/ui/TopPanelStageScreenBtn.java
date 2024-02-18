@@ -23,7 +23,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TopPanelStageScreenBtn extends TopPanelItem {
-    private static final Texture IMG = new Texture(KarenPath.makeUIPath("disposedPile.png"));
+    private static final Texture IMG = new Texture(NanaPath.makeUIPath("stage_icon.png"));
     public static final String ID = NanaPath.makeID(TopPanelStageScreenBtn.class.getSimpleName());
     public static final UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = UI_STRINGS.TEXT;
@@ -160,7 +160,7 @@ public class TopPanelStageScreenBtn extends TopPanelItem {
     @Override
     public void update() {
         if (isOpen) {
-            if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.EXHAUST_VIEW) isOpen = false;
+            if (AbstractDungeon.screen != StageScreen.Enum.STAGE_SCREEN) isOpen = false;
         }
 
         setClickable(isOkToClick());
