@@ -3,6 +3,7 @@ package ShoujoKageki_Nana.stage;
 import ShoujoKageki.Log;
 import ShoujoKageki.util.TextureLoader;
 import ShoujoKageki_Karen.character.KarenCharacter;
+import ShoujoKageki_Karen.variables.patch.DisposableFieldUpgradePatch;
 import ShoujoKageki_Nana.NanaPath;
 import ShoujoKageki_Nana.character.NanaCharacter;
 import basemod.BaseMod;
@@ -13,16 +14,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import javassist.CtBehavior;
 
 import java.util.Set;
 
@@ -53,6 +52,10 @@ public class StagePatch {
             BaseMod.subscribe(new InitStageCard());
         }
 
+
+        private static final int[] DX = {0, -1, 1, 0};
+        private static final int[] DY = {-1, 0, 0, 1};
+
         @Override
         public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
             if (playerClass != NanaCharacter.Enums.ShoujoKageki_Nana) {
@@ -64,19 +67,10 @@ public class StagePatch {
                 if (card.type == AbstractCard.CardType.POWER) {
                     getStagePosition(card).setPosition(0, 0);
                 } else if (card.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                    switch (curFixed) {
-                        case 0:
-                            getStagePosition(card).setPosition(0, -1);
-                            break;
-                        case 1:
-                            getStagePosition(card).setPosition(-1, 0);
-                            break;
-                        case 2:
-                            getStagePosition(card).setPosition(1, 0);
-                            break;
-                        case 3:
-                            getStagePosition(card).setPosition(0, 1);
-                            break;
+                    if (curFixed < DX.length) {
+                        getStagePosition(card).setPosition(DX[curFixed], DY[curFixed]);
+                    } else {
+                        Log.logger.error("======== found more than 4 strike");
                     }
                     curFixed++;
                 }
@@ -86,7 +80,7 @@ public class StagePatch {
     }
 
 
-    private static final TextureRegion STAGE_ICON = new TextureRegion(TextureLoader.getTexture(NanaPath.makeUIPath("stage.png")));
+    private static final TextureRegion STAGE_ICON = new TextureRegion(TextureLoader.getTexture(NanaPath.makeUIPath("stage_icon.png")));
 
     // 初始化 初始的舞台
     @SpirePatch2(
@@ -97,33 +91,38 @@ public class StagePatch {
         public static void Postfix(AbstractCard __instance, SpriteBatch sb, float ___drawScale, float ___angle, float ___transparency) {
             StagePosition stagePosition = getStagePosition(__instance);
             if (stagePosition.invalid) return;
-            String text = stagePosition.toString();
+            String text = stagePosition.getPositionString();
 
 
             float offsetX = 0 * Settings.scale * ___drawScale;
-            float offsetY = -20 * Settings.scale * ___drawScale;
+            float offsetY = -60 * Settings.scale * ___drawScale;
+            float img_scale = 1.2f;
+            float text_scale = 0.8f;
+
+            float textOffsetX = -132.0F * ___drawScale * Settings.scale;
+            float textOffsetY = 192.0F * ___drawScale * Settings.scale;
 
             float drawX = __instance.current_x;
             float drawY = __instance.current_y;
             TextureRegion img = STAGE_ICON;
             sb.setColor(Color.WHITE);
             sb.draw(img,
-                    drawX - (float) img.getRegionWidth() / 2.0F + offsetX,
-                    drawY - (float) img.getRegionHeight() / 2.0F + offsetY,
+                    drawX - (float) img.getRegionWidth() / 2.0F * ___drawScale * Settings.scale * img_scale + offsetX + textOffsetX,
+                    drawY - (float) img.getRegionHeight() / 2.0F * ___drawScale * Settings.scale * img_scale + offsetY + textOffsetY,
                     0f,
                     0f,
-                    64f,
-                    64f,
-                    ___drawScale * Settings.scale,
-                    ___drawScale * Settings.scale,
+                    img.getRegionWidth(),
+                    img.getRegionHeight(),
+                    ___drawScale * Settings.scale * img_scale,
+                    ___drawScale * Settings.scale * img_scale,
                     ___angle);
 
 
             Color costColor = Color.WHITE.cpy();
             costColor.a = ___transparency;
-            FontHelper.cardEnergyFont_L.getData().setScale(___drawScale);
+            FontHelper.cardEnergyFont_L.getData().setScale(___drawScale * text_scale);
             BitmapFont font = FontHelper.cardEnergyFont_L;
-            FontHelper.renderRotatedText(sb, font, text, drawX + offsetX, drawY + offsetY, -132.0F * ___drawScale * Settings.scale, 192.0F * ___drawScale * Settings.scale, ___angle, false, costColor);
+            FontHelper.renderRotatedText(sb, font, text, drawX + offsetX, drawY + offsetY, textOffsetX, textOffsetY, ___angle, false, costColor);
         }
     }
 
@@ -132,6 +131,25 @@ public class StagePatch {
             StagePosition stagePosition = getStagePosition(card);
             if (stagePosition.invalid) continue;
             Log.logger.info("card:{} position:{}", card.name, stagePosition);
+        }
+    }
+
+
+    @SpirePatch2(
+            clz = AbstractCard.class,
+            method = "makeStatEquivalentCopy"
+    )
+    public static class CopyStageField {
+        @SpireInsertPatch(locator = Locator.class, localvars = "card")
+        public static void Insert(AbstractCard __instance, AbstractCard card) {
+            getStagePosition(card).setPosition(getStagePosition(__instance));
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "name");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
         }
     }
 }

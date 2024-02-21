@@ -21,6 +21,12 @@ public class StagePosition {
         this.invalid = false;
     }
 
+    public void setPosition(StagePosition stagePosition) {
+        this.invalid = stagePosition.invalid;
+        this.x = stagePosition.x;
+        this.y = stagePosition.y;
+    }
+
     public void setInvalid(boolean invalid) {
         this.invalid = invalid;
     }
@@ -29,4 +35,25 @@ public class StagePosition {
     public String toString() {
         return x + "," + y;
     }
+
+    public String getPositionString() {
+        if (invalid) return "NULL";
+        String line;
+        switch (y) {
+            case -1:
+                line = "B";
+                break;
+            case 0:
+                line = "P";
+                break;
+            case 1:
+                line = "F";
+                break;
+            default:
+                line = "NULL";
+                break;
+        }
+        return line + x;
+    }
+
 }
