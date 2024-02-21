@@ -31,6 +31,14 @@ public class StagePosition {
         this.invalid = invalid;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     @Override
     public String toString() {
         return x + "," + y;

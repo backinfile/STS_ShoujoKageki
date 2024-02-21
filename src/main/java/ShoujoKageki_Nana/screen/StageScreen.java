@@ -29,6 +29,7 @@ public class StageScreen extends CustomScreen {
         AbstractDungeon.isScreenUp = true;
         AbstractDungeon.overlayMenu.showBlackScreen();
         AbstractDungeon.overlayMenu.cancelButton.show("cancel_temp");
+        StageViewRender.Inst.initCards();
     }
 
     @Override
@@ -41,11 +42,12 @@ public class StageScreen extends CustomScreen {
 
     @Override
     public void update() {
-
+        StageViewRender.Inst.update();
     }
 
     @Override
-    public void render(SpriteBatch spriteBatch) {
+    public void render(SpriteBatch sb) {
+        StageViewRender.Inst.render(sb);
 
     }
 
