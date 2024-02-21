@@ -7,8 +7,11 @@ import ShoujoKageki_Karen.variables.patch.DisposableFieldUpgradePatch;
 import ShoujoKageki_Nana.NanaPath;
 import ShoujoKageki_Nana.character.NanaCharacter;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.interfaces.ISubscriber;
 import basemod.interfaces.PostCreateStartingDeckSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
+import basemod.patches.com.megacrit.cardcrawl.saveAndContinue.SaveFile.CustomRewardSave;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -22,7 +25,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import javassist.CtBehavior;
+import org.apache.commons.lang3.StringUtils;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class StagePatch {
@@ -47,7 +53,7 @@ public class StagePatch {
 
     // 初始化 初始的舞台
     @SpireInitializer
-    public static class InitStageCard implements ISubscriber, PostCreateStartingDeckSubscriber {
+    public static class InitStageCard implements ISubscriber, PostCreateStartingDeckSubscriber, PostInitializeSubscriber {
         public static void initialize() {
             BaseMod.subscribe(new InitStageCard());
         }
@@ -77,6 +83,48 @@ public class StagePatch {
             }
             printStageCard();
         }
+
+        @Override
+        public void receivePostInitialize() {
+            BaseMod.addSaveField(NanaPath.makeID("stageField"), new StageFiledSaveClass());
+        }
+
+
+        private static class StageFiledSaveClass implements CustomSavable<ArrayList<String>> {
+
+            @Override
+            public ArrayList<String> onSave() {
+                ArrayList<String> list = new ArrayList<>();
+                for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+                    StagePosition stagePosition = getStagePosition(card);
+                    if (stagePosition.invalid) {
+                        list.add("");
+                    } else {
+                        list.add(stagePosition.x + "|" + stagePosition.y);
+                    }
+                }
+                return list;
+            }
+
+            @Override
+            public void onLoad(ArrayList<String> strings) {
+                int index = 0;
+                for (String save : strings) {
+                    if (index >= AbstractDungeon.player.masterDeck.size()) {
+                        Log.logger.error("master deck size not match {}", strings);
+                        break;
+                    }
+                    AbstractCard card = AbstractDungeon.player.masterDeck.group.get(index++);
+                    if (StringUtils.isEmpty(save)) continue;
+                    try {
+                        String[] split = save.split("\\|");
+                        getStagePosition(card).setPosition(Integer.parseInt(split[0]), Integer.parseInt(split[1]));
+                    } catch (Exception e) {
+                        Log.logger.error("parse stageField error: {}", strings);
+                    }
+                }
+            }
+        }
     }
 
 
@@ -95,7 +143,7 @@ public class StagePatch {
 
 
             float offsetX = 0 * Settings.scale * ___drawScale;
-            float offsetY = -60 * Settings.scale * ___drawScale;
+            float offsetY = -68 * Settings.scale * ___drawScale;
             float img_scale = 1.2f;
             float text_scale = 0.8f;
 

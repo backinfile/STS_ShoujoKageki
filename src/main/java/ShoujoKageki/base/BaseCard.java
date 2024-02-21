@@ -24,6 +24,8 @@ public abstract class BaseCard extends AbstractDefaultCard {
     public static final int MEDIUM_SHINE_CNT = 6;
     public static final int LOW_SHINE_CNT = 3;
 
+    public boolean showStagePreview = false; // hold时显示舞台
+
     public int bagCardPreviewNumber = 0; // 仅用于显示，表示即将从约定牌堆抽出几张
     public int bagCardPreviewSelectNumber = 0; // 仅用于显示，表示即将从约定牌堆选择几张
     public boolean bagCardPreviewExchange = false; // 仅用于显示，表示即将从约定牌堆交换
