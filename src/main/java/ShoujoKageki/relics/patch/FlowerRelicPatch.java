@@ -3,6 +3,7 @@ package ShoujoKageki.relics.patch;
 import ShoujoKageki.Log;
 import ShoujoKageki.relics.FlowerRelic;
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.google.gson.annotations.SerializedName;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
@@ -69,6 +71,13 @@ public class FlowerRelicPatch {
     }
 
     public static void addOtherOption(CombatRewardScreen instance) {
+        // not save relic pool
+        Gdx.app.postRunnable(() -> {
+            addOtherOptionRelic(instance);
+        });
+    }
+
+    private static void addOtherOptionRelic(CombatRewardScreen instance) {
         ArrayList<RewardItem> rewards = instance.rewards;
         AbstractRelic flowerRelic = AbstractDungeon.player.getRelic(FlowerRelic.ID);
         if (flowerRelic == null) return;
