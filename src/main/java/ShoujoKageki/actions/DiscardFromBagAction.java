@@ -64,6 +64,7 @@ public class DiscardFromBagAction extends AbstractGameAction {
                     p.drawPile.moveToDiscardPile(card);
                     trigger(card);
                 }
+                addToTop(new CheckBagEmptyAction());
                 isDone = true;
                 return;
             }

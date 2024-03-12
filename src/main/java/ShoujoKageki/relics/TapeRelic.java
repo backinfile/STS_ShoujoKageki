@@ -7,10 +7,16 @@ import ShoujoKageki.campfireOption.ShineOption;
 import ShoujoKageki.cards.bag.TowerOfPromise;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Girya;
+import com.megacrit.cardcrawl.relics.PeacePipe;
+import com.megacrit.cardcrawl.relics.Shovel;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class TapeRelic extends BaseRelic {
     public static final String RAW_ID = TapeRelic.class.getSimpleName();
@@ -38,6 +44,29 @@ public class TapeRelic extends BaseRelic {
 
         if (this.counter <= 0) {
             this.setCounter(-2);
+        }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (AbstractDungeon.floorNum >= 48 && !Settings.isEndless) {
+            return false;
+        } else {
+            int campfireRelicCount = 0;
+            Iterator var2 = AbstractDungeon.player.relics.iterator();
+
+            while(true) {
+                AbstractRelic r;
+                do {
+                    if (!var2.hasNext()) {
+                        return campfireRelicCount < 2;
+                    }
+
+                    r = (AbstractRelic)var2.next();
+                } while(!(r instanceof PeacePipe) && !(r instanceof Shovel) && !(r instanceof Girya));
+
+                ++campfireRelicCount;
+            }
         }
     }
 
