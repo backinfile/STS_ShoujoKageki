@@ -1,5 +1,6 @@
 package ShoujoKageki.relics;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import ShoujoKageki.ModInfo;
 
+@AutoAdd.Ignore
 @SharedRelic
 public class DrawExtraRelic extends BaseRelic {
     public static final String RAW_ID = DrawExtraRelic.class.getSimpleName();

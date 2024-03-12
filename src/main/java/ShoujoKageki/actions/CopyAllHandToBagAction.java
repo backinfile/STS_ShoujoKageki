@@ -29,7 +29,7 @@ public class CopyAllHandToBagAction extends AbstractGameAction {
 
             ArrayList<AbstractCard> copyCards = new ArrayList<>();
             for (AbstractCard card : p.hand.group) {
-                AbstractCard copy = Utils2.makeCardCopyOnlyWithUpgrade(card);
+                AbstractCard copy = card.makeStatEquivalentCopy();
                 copy.current_x = card.current_x;
                 copy.current_y = card.current_y;
                 copy.angle = card.angle;

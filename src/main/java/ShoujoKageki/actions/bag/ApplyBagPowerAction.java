@@ -29,8 +29,28 @@ public class ApplyBagPowerAction extends AbstractGameAction {
         AbstractPower power = p.getPower(BagPower.POWER_ID);
         if (power == null) {
             addToBot(new ApplyPowerAction(p, p, new BagPower(amount)));
+            addToBot(new ApplyBagPowerAction());
         } else {
             power.onSpecificTrigger();
         }
+        fixPowerPosition();
+    }
+
+    private void fixPowerPosition() {
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                isDone = true;
+                AbstractPlayer p = AbstractDungeon.player;
+                AbstractPower power = p.getPower(BagPower.POWER_ID);
+                if (power != null) {
+                    int index = p.powers.indexOf(power);
+                    if (index > 0) {
+                        p.powers.remove(power);
+                        p.powers.add(0, power);
+                    }
+                }
+            }
+        });
     }
 }

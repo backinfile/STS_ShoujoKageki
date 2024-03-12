@@ -4,6 +4,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -64,5 +65,12 @@ public class Spin extends BaseCard {
 //            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        Spin card = (Spin)super.makeStatEquivalentCopy();
+        card.addedDamage = this.addedDamage;
+        return card;
     }
 }
