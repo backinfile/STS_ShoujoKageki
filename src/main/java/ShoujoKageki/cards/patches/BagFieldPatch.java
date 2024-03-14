@@ -101,17 +101,22 @@ public class BagFieldPatch {
 
         AbstractPower power = p.getPower(BagPower.POWER_ID);
         if (power != null) {
-            Field effectField = ReflectionHacks.getCachedField(AbstractPower.class, "effect");
-            try {
-                ArrayList<AbstractGameEffect> effect = (ArrayList<AbstractGameEffect>) effectField.get(power);
-                if (effect != null) {
-                    effect.add(new LightFlashPowerEffect(power));
-                }
-            } catch (IllegalAccessException e) {
-                Log.logger.error("", e);
-            }
+            flashPower(power);
         }
     }
+
+    public static void flashPower(AbstractPower power) {
+        Field effectField = ReflectionHacks.getCachedField(AbstractPower.class, "effect");
+        try {
+            ArrayList<AbstractGameEffect> effect = (ArrayList<AbstractGameEffect>) effectField.get(power);
+            if (effect != null) {
+                effect.add(new LightFlashPowerEffect(power));
+            }
+        } catch (IllegalAccessException e) {
+            Log.logger.error("", e);
+        }
+    }
+
 
     @SpirePatch(
             clz = BetterDrawPileToHandAction.class,

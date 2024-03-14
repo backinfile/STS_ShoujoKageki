@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class LightFlashPowerEffect extends AbstractGameEffect {
-    private static final float EFFECT_DUR = 2.0F;
+    public static final float EFFECT_DUR = 2.0F;
     private float scale;
     private TextureAtlas.AtlasRegion region48 = null;
 
@@ -19,8 +19,8 @@ public class LightFlashPowerEffect extends AbstractGameEffect {
             this.region48 = power.region48;
         }
 
-        this.duration = 2.0F;
-        this.startingDuration = 2.0F;
+        this.duration = EFFECT_DUR;
+        this.startingDuration = EFFECT_DUR;
         this.scale = Settings.scale;
         this.color = new Color(1.0F, 1.0F, 1.0F, 0.5F);
     }
@@ -28,7 +28,7 @@ public class LightFlashPowerEffect extends AbstractGameEffect {
     public void update() {
         this.duration -= Gdx.graphics.getDeltaTime();
         if (this.duration > 0.5F) {
-            this.scale = Interpolation.exp5Out.apply(1.5F * Settings.scale, Settings.scale, -(this.duration - 2.0F) / 1.5F);
+            this.scale = Interpolation.exp5Out.apply(1.5F * Settings.scale, Settings.scale, -(this.duration - EFFECT_DUR) / 1.5F);
         } else {
             this.color.a = Interpolation.fade.apply(0.5F, 0.0F, 1.0F - this.duration);
         }
@@ -41,7 +41,7 @@ public class LightFlashPowerEffect extends AbstractGameEffect {
         sb.setColor(this.color);
         sb.setBlendFunction(770, 1);
         if (this.region48 != null) {
-            sb.draw(this.region48, x - (float)this.region48.packedWidth / 2.0F, y - (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth / 2.0F, (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth, (float)this.region48.packedHeight, this.scale, this.scale, 0.0F);
+            sb.draw(this.region48, x - (float)this.region48.packedWidth / EFFECT_DUR, y - (float)this.region48.packedHeight / EFFECT_DUR, (float)this.region48.packedWidth / EFFECT_DUR, (float)this.region48.packedHeight / EFFECT_DUR, (float)this.region48.packedWidth, (float)this.region48.packedHeight, this.scale, this.scale, 0.0F);
         }
 
         sb.setBlendFunction(770, 771);

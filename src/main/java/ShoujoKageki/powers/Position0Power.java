@@ -1,8 +1,11 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.UnblockedDamagePatch;
+import ShoujoKageki.effects.LightFlashPowerEffect;
 import ShoujoKageki.powers.patch.StrengthPowerPatch;
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -60,5 +63,19 @@ public class Position0Power extends BasePower {
     public void updateDescription() {
         super.updateDescription();
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
+
+    private float timer = 0f;
+    @Override
+    public void update(int slot) {
+        super.update(slot);
+        timer -= Gdx.graphics.getDeltaTime();
+        if (timer <= 0) {
+            timer = 1f;
+
+            if (UnblockedDamagePatch.UnblockedDamageCurCount < this.amount) {
+                BagFieldPatch.flashPower(this);
+            }
+        }
     }
 }
