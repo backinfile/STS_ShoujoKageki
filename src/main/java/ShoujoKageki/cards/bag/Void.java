@@ -6,6 +6,7 @@ import ShoujoKageki.actions.DestroyAllCardInDrawPileAction;
 import ShoujoKageki.actions.bag.MoveCardToBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.patches.VoidDeckPatch;
 import ShoujoKageki.powers.BagPower;
 import ShoujoKageki.powers.BasePower;
 import ShoujoKageki.powers.VoidPower;
@@ -30,6 +31,13 @@ public class Void extends BaseCard {
 //        addToBot(new ApplyPowerAction(p, p, new VoidPower()));
         BagField.bagReplace.set(p, true);
         addToBot(new DestroyAllCardInDrawPileAction());
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                VoidDeckPatch.showVoidDeckIcon = true;
+                isDone = true;
+            }
+        });
         addToBot(new MoveCardToBagAction(BagField.getBag().group));
         addToBot(new ApplyBagPowerAction());
         addToBot(new AbstractGameAction() {
