@@ -50,6 +50,12 @@ public abstract class BasePower extends AbstractPower {
         updateDescription();
     }
 
+    public void setTexture(String RAW_ID) {
+        this.region128 = new TextureAtlas.AtlasRegion(TextureLoader.getTexture(makePowerPath(RAW_ID + "84.png")), 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(TextureLoader.getTexture(makePowerPath(RAW_ID + "32.png")), 0, 0, 32, 32);
+
+    }
+
     @Override
     public void onRemove() {
     }

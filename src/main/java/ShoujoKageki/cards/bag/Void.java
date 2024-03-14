@@ -6,11 +6,15 @@ import ShoujoKageki.actions.DestroyAllCardInDrawPileAction;
 import ShoujoKageki.actions.bag.MoveCardToBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.powers.BagPower;
+import ShoujoKageki.powers.BasePower;
 import ShoujoKageki.powers.VoidPower;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class Void extends BaseCard {
 
@@ -28,6 +32,16 @@ public class Void extends BaseCard {
         addToBot(new DestroyAllCardInDrawPileAction());
         addToBot(new MoveCardToBagAction(BagField.getBag().group));
         addToBot(new ApplyBagPowerAction());
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                AbstractPower power = p.getPower(BagPower.POWER_ID);
+                if (power instanceof BasePower) {
+                    ((BasePower) power).setTexture(VoidPower.RAW_ID);
+                }
+                isDone = true;
+            }
+        });
     }
 
     @Override

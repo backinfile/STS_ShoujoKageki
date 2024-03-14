@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import static ShoujoKageki.ModInfo.makeID;
 
 public class VoidPower extends BasePower {
-    private static final String RAW_ID = VoidPower.class.getSimpleName();
+    public static final String RAW_ID = VoidPower.class.getSimpleName();
     public static final String POWER_ID = makeID(RAW_ID);
 
     public VoidPower() {
