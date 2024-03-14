@@ -49,4 +49,7 @@ public class ModInfo {
         return getResPath("/audio/" + resourcePath);
     }
 
+    public static String makeVideoPath(String resourcePath) {
+        return getResPath("/video/" + resourcePath);
+    }
 }

@@ -10,6 +10,7 @@ import ShoujoKageki.reskin.skin.SkinManager;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.screen.BagPileViewScreen;
 import ShoujoKageki.screen.BlackMarketScreen;
+import ShoujoKageki.screen.EmptyScreen;
 import ShoujoKageki.util.GenTool;
 import ShoujoKageki.util.IDCheckDontTouchPls;
 import ShoujoKageki.variables.DefaultCustomVariable;
@@ -228,6 +229,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 //        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
         BaseMod.addCustomScreen(new BlackMarketScreen());
         BaseMod.addCustomScreen(new BagPileViewScreen());
+        BaseMod.addCustomScreen(new EmptyScreen());
 
         ShineCardReward.register();
 

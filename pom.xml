@@ -78,6 +78,7 @@
             <!--<systemPath>${basedir}/../lib/StSLib.jar</systemPath>-->
         </dependency>
 
+
         <!--         <dependency> -->
         <!--             <groupId>downfall</groupId> -->
         <!--             <artifactId>downfall</artifactId> -->
@@ -142,6 +143,7 @@
                     <include>ModTheSpire.json</include>
                 </includes>
             </resource>
+
         </resources>
     </build>
 </project>

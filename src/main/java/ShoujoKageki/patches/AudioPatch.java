@@ -11,6 +11,7 @@ public class AudioPatch {
 
     public static final String Karen_OnSelect = "Karen_OnSelect.ogg";
     public static final String Revue = "Revue.ogg";
+    public static final String Last_Word = "last_word_bgm_fixed.WAV";
 
     @SpirePatch(
             clz = SoundMaster.class,
@@ -20,6 +21,7 @@ public class AudioPatch {
         public static void Postfix(SoundMaster instance, HashMap<String, Sfx> ___map) {
             load(instance, ___map, Karen_OnSelect);
             load(instance, ___map, Revue);
+            load(instance, ___map, Last_Word);
         }
     }
 

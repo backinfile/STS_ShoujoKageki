@@ -1,11 +1,11 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.bag.MakeTempCardInBagAction;
+import ShoujoKageki.actions.RunEffectAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.powers.BagDefendPower;
-import com.badlogic.gdx.graphics.Color;
+import ShoujoKageki.effects.LastWordEffect;
+import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,6 +24,11 @@ public class LastWord extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // stop attack animation
+        p.animX = 0;
+        ReflectionHacks.setPrivate(p, AbstractPlayer.class, "animationTimer", 0f);
+
+        addToBot(new RunEffectAction(new LastWordEffect(), true));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
