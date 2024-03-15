@@ -21,7 +21,7 @@ public class LastWordEffect extends AbstractGameEffect {
 
     private boolean startPlay = false;
 
-    private final VideoPlayer videoPlayer;
+    private VideoPlayer videoPlayer;
 
     private float videoWidth;
     private float videoHeight;
@@ -32,6 +32,9 @@ public class LastWordEffect extends AbstractGameEffect {
 
     private float expandRate = 0.1f;
 
+    private boolean inTail = false;
+
+
     public LastWordEffect() {
         this.duration = this.startingDuration = 2f;
         LastWordPatch.notShowPlayerPowerTip = true;
@@ -39,6 +42,7 @@ public class LastWordEffect extends AbstractGameEffect {
         CardCrawlGame.music.silenceBGM();
         CardCrawlGame.sound.stop(AudioPatch.Last_Word);
         CardCrawlGame.sound.play(AudioPatch.Last_Word);
+        this.color = Color.WHITE.cpy();
 
         videoPlayer = VideoPlayerCreator.createVideoPlayer();
         if (videoPlayer == null) {
@@ -47,7 +51,7 @@ public class LastWordEffect extends AbstractGameEffect {
         }
         videoPlayer.setOnCompletionListener(e -> over());
         videoPlayer.setOnVideoSizeListener((w, h) -> {
-            videoWidth = w - 100;  // fix video error
+            videoWidth = w - 30;  // fix video error
             videoHeight = h;
             float scale = videoHeight / Settings.HEIGHT * 0.7f;
             renderW = videoWidth * scale;
@@ -85,6 +89,17 @@ public class LastWordEffect extends AbstractGameEffect {
             expandRate = MathUtils.lerp(expandRate, 1f, Gdx.graphics.getDeltaTime() * 6.0F);
             if (expandRate > 1f) expandRate = 1f;
         }
+
+        if (!inTail && (this.startingDuration - this.duration >= 6.5f)) {
+            inTail = true;
+            AbstractDungeon.overlayMenu.hideBlackScreen();
+        }
+        if (inTail) {
+            this.color.a = MathUtils.lerp(this.color.a, 0, Gdx.graphics.getDeltaTime() * 5f);
+            if (this.color.a <= 0.01f) {
+                over();
+            }
+        }
     }
 
     @Override
@@ -92,7 +107,7 @@ public class LastWordEffect extends AbstractGameEffect {
         if (startPlay) {
             Texture texture = videoPlayer.getTexture();
             if (texture != null) {
-                sb.setColor(Color.WHITE);
+                sb.setColor(this.color);
 
                 float offsetW = (1f - expandRate) * renderW / 2f;
                 sb.draw(texture, renderX + offsetW, renderY, renderW - offsetW * 2, renderH, (int) ((1 - expandRate) * videoWidth / 2), 0, (int) (expandRate * videoWidth), (int) videoHeight, false, false);
@@ -108,6 +123,7 @@ public class LastWordEffect extends AbstractGameEffect {
     private void over() {
         if (videoPlayer != null) {
             videoPlayer.dispose();
+            videoPlayer = null;
         }
         isDone = true;
         LastWordPatch.notShowPlayerPowerTip = false;

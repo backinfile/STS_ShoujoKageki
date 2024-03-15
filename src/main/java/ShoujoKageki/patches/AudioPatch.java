@@ -11,7 +11,7 @@ public class AudioPatch {
 
     public static final String Karen_OnSelect = "Karen_OnSelect.ogg";
     public static final String Revue = "Revue.ogg";
-    public static final String Last_Word = "last_word_bgm_fixed.WAV";
+    public static final String Last_Word = "last_word.WAV";
 
     @SpirePatch(
             clz = SoundMaster.class,

@@ -86,7 +86,10 @@ public class MetricDataPatch {
     public static class LoadPlayerSaves {
         public static void Postfix(CardCrawlGame __instance, AbstractPlayer p) {
             HashMap<String, ArrayList<String>> disposedCards = getDisposedCards(CardCrawlGame.metricData);
-            disposedCards.putAll(SaveFilePatch.SaveStringField.disposedCards.get(CardCrawlGame.saveFile));
+            HashMap<String, ArrayList<String>> saveFields = SaveFilePatch.SaveStringField.disposedCards.get(CardCrawlGame.saveFile);
+            if (saveFields != null) {
+                disposedCards.putAll(saveFields);
+            }
             Field.disposedCardsCount.set(CardCrawlGame.metricData, SaveFilePatch.SaveStringField.disposedCardsCount.get(CardCrawlGame.saveFile));
         }
     }
