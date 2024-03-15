@@ -12,6 +12,7 @@ public class ModInfo {
     public static String makeID(String idText) {
         return getModId() + ":" + idText;
     }
+
     public static String getFullModName() {
         return AUTHOR + ":" + getModId();
     }
@@ -19,6 +20,7 @@ public class ModInfo {
     public static String getResPath(String relativePath) {
         return getModId() + "Resources" + relativePath;
     }
+
     public static String makeCardPath(String resourcePath) {
         return getResPath("/images/cards/" + resourcePath);
     }
@@ -38,6 +40,7 @@ public class ModInfo {
     public static String makePowerPath(String resourcePath) {
         return getResPath("/images/powers/" + resourcePath);
     }
+
     public static String makeUIPath(String resourcePath) {
         return getResPath("/images/ui/" + resourcePath);
     }
@@ -45,8 +48,13 @@ public class ModInfo {
     public static String makeEventPath(String resourcePath) {
         return getResPath("/images/events/" + resourcePath);
     }
-    public static String makeAudioPath(String resourcePath) {
-        return getResPath("/audio/" + resourcePath);
+
+    public static String makeSoundPath(String resourcePath) {
+        return getResPath("/audio/sound/" + resourcePath);
+    }
+
+    public static String makeMusicPath(String resourcePath) {
+        return getResPath("/audio/music/" + resourcePath);
     }
 
     public static String makeVideoPath(String resourcePath) {

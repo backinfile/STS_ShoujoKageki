@@ -9,10 +9,7 @@ import ShoujoKageki.cards.starter.ShineStrike;
 import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.HairpinRelic;
-import ShoujoKageki.reskin.skin.AbstractSkin;
 import ShoujoKageki.reskin.skin.SkinManager;
-import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -180,8 +177,8 @@ public class KarenCharacter extends BasePlayer {
     // character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.stop(AudioPatch.Karen_OnSelect);
-        CardCrawlGame.sound.play(AudioPatch.Karen_OnSelect); // Sound Effect
+        CardCrawlGame.sound.stop(AudioPatch.Sound_Karen_OnSelect);
+        CardCrawlGame.sound.play(AudioPatch.Sound_Karen_OnSelect); // Sound Effect
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen
         // Effect
     }

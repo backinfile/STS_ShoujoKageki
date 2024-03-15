@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.screens.splash.SplashScreen;
 
 public class GiraffeSplashScreen {
     public boolean isDone = false;
@@ -25,11 +24,11 @@ public class GiraffeSplashScreen {
     private long musicId;
 
     public GiraffeSplashScreen() {
-        musicId = CardCrawlGame.sound.play(AudioPatch.Revue);
+        musicId = CardCrawlGame.sound.play(AudioPatch.Sound_Revue);
     }
 
     public void close() {
-        CardCrawlGame.sound.stop(AudioPatch.Revue);
+        CardCrawlGame.sound.stop(AudioPatch.Sound_Revue);
         GiraffeSplashScreenPatch.setOver();
     }
 

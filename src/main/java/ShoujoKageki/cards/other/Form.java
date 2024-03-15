@@ -1,12 +1,20 @@
 package ShoujoKageki.cards.other;
 
+import ShoujoKageki.actions.RunEffectAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.effects.FormVideoEffect;
+import ShoujoKageki.effects.WhirlwindLongEffect;
+import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.powers.FormPower;
 import ShoujoKageki.variables.DisposableVariable;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKageki.ModInfo.makeID;
@@ -22,7 +30,12 @@ public class Form extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+//        addToBot(new RunEffectAction(new FormVideoEffect(), true));
         addToBot(new ApplyPowerAction(p, p, new FormPower()));
+        CardCrawlGame.music.silenceTempBgmInstantly();
+        CardCrawlGame.music.silenceBGMInstantly();
+        CardCrawlGame.music.playTempBgmInstantly(AudioPatch.Music_Form, true);
+        AbstractDungeon.effectsQueue.add(new WhirlwindLongEffect(new Color(0.28f, 0.1f, 0.08f, 0.9f), true));
     }
 
     @Override

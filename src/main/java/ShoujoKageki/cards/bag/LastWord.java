@@ -4,7 +4,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.RunEffectAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.effects.LastWordEffect;
+import ShoujoKageki.effects.LastWordVideoEffect;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -28,7 +28,7 @@ public class LastWord extends BaseCard {
         p.animX = 0;
         ReflectionHacks.setPrivate(p, AbstractPlayer.class, "animationTimer", 0f);
 
-        addToBot(new RunEffectAction(new LastWordEffect(), true));
+        addToBot(new RunEffectAction(new LastWordVideoEffect(), true));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
