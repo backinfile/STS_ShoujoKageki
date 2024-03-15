@@ -3,11 +3,14 @@ package ShoujoKageki.cards.extraCard;
 import ShoujoKageki.actions.CopyAllHandToBagAction;
 import ShoujoKageki.actions.CopyHandCardToDeckAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.effects.GearVideoEffect;
 import ShoujoKageki.patches.TokenCardField;
 import ShoujoKageki.relics.DeckTopRelic;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.SteroidPotion;
@@ -24,6 +27,8 @@ public class Gear extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.topLevelEffectsQueue.add(new GearVideoEffect());
+        addToBot(new WaitAction(Settings.ACTION_DUR_LONG));
         addToBot(new CopyAllHandToBagAction());
 //        addToBot(new CopyHandCardToDeckAction(1, this::canCopy));
     }

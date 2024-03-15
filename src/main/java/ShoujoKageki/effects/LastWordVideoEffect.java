@@ -121,8 +121,12 @@ public class LastWordVideoEffect extends AbstractGameEffect {
 
     private void over() {
         if (videoPlayer != null) {
-            new Thread(()-> videoPlayer.dispose()).start();
-            videoPlayer = null;
+            new Thread(() -> {
+                if (videoPlayer != null) {
+                    videoPlayer.dispose();
+                    videoPlayer = null;
+                }
+            }).start();
         }
         isDone = true;
         LastWordPatch.notShowPlayerPowerTip = false;

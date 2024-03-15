@@ -17,6 +17,7 @@ public class AudioPatch {
     public static final String Sound_Karen_OnSelect = "Karen_OnSelect.ogg";
     public static final String Sound_Revue = "Karen_Revue.ogg";
     public static final String Sound_Last_Word = "Karen_last_word.WAV";
+    public static final String Sound_Gear = "Karen_Gear.wav";
 
     public static final String Music_Form = "Karen_form.ogg";
 
@@ -30,6 +31,7 @@ public class AudioPatch {
             load(__instance, ___map, Sound_Karen_OnSelect);
             load(__instance, ___map, Sound_Revue);
             load(__instance, ___map, Sound_Last_Word);
+            load(__instance, ___map, Sound_Gear);
         }
     }
 
