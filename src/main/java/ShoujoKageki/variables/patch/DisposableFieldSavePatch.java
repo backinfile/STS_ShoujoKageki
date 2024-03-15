@@ -78,6 +78,7 @@ public class DisposableFieldSavePatch {
     public static class LoadPlayerSaves {
         public static void Postfix(CardCrawlGame __instance, AbstractPlayer p) {
             ModSaves.ArrayListOfString savedString = SaveStringField.disposableSave.get(CardCrawlGame.saveFile);
+            if (savedString == null) savedString = new ModSaves.ArrayListOfString();
 
             CardGroup masterDeck = AbstractDungeon.player.masterDeck;
             if (savedString.size() != masterDeck.size()) {

@@ -46,7 +46,9 @@ public class SkinManager {
             @Override
             public void onLoad(HashMap<String, Integer> stringIntegerHashMap) {
                 skinSelected.clear();
-                skinSelected.putAll(stringIntegerHashMap);
+                if (stringIntegerHashMap != null) {
+                    skinSelected.putAll(stringIntegerHashMap);
+                }
                 loadSkin(AbstractDungeon.player);
             }
         });
