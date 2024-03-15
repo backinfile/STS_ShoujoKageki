@@ -13,6 +13,7 @@ import com.badlogic.gdx.video.VideoPlayer;
 import com.badlogic.gdx.video.VideoPlayerCreator;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
@@ -35,6 +36,7 @@ public class LastWordEffect extends AbstractGameEffect {
         this.duration = this.startingDuration = 2f;
         LastWordPatch.notShowPlayerPowerTip = true;
 
+        CardCrawlGame.music.silenceBGM();
         CardCrawlGame.sound.stop(AudioPatch.Last_Word);
         CardCrawlGame.sound.play(AudioPatch.Last_Word);
 
@@ -75,6 +77,7 @@ public class LastWordEffect extends AbstractGameEffect {
         if (!startPlay && (this.startingDuration - this.duration >= 1f)) {
             startPlay = true;
             videoPlayer.resume();
+            AbstractDungeon.overlayMenu.showBlackScreen();
         }
 
         if (startPlay) {
@@ -108,5 +111,6 @@ public class LastWordEffect extends AbstractGameEffect {
         }
         isDone = true;
         LastWordPatch.notShowPlayerPowerTip = false;
+        AbstractDungeon.overlayMenu.hideBlackScreen();
     }
 }
