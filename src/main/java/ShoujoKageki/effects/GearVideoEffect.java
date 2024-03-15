@@ -26,6 +26,7 @@ public class GearVideoEffect extends AbstractGameEffect {
     private int videoWidth;
     private int videoHeight;
 
+    private float expandRadiusRate = 0f;
     private boolean inTail = false;
 
     private static Texture mask = null;
@@ -83,6 +84,11 @@ public class GearVideoEffect extends AbstractGameEffect {
         this.duration -= Gdx.graphics.getDeltaTime();
         videoPlayer.update();
 
+        if (expandRadiusRate < 1f) {
+            expandRadiusRate = MathUtils.lerp(expandRadiusRate, 1f, Gdx.graphics.getDeltaTime() / 0.1f);
+            if (expandRadiusRate > 1f) expandRadiusRate = 1f;
+        }
+
         if (!inTail && (this.startingDuration - this.duration >= 2.5f)) {
             inTail = true;
         }
@@ -99,8 +105,10 @@ public class GearVideoEffect extends AbstractGameEffect {
         if (mask != null) {
             Texture texture = videoPlayer.getTexture();
             if (texture != null) {
-                float x = (Settings.WIDTH - videoWidth) / 2f;
-                float y = (Settings.HEIGHT - videoHeight) / 2f;
+                float x = (Settings.WIDTH - videoWidth * expandRadiusRate) / 2f;
+                float y = (Settings.HEIGHT - videoHeight * expandRadiusRate) / 2f;
+                float width = videoWidth * expandRadiusRate;
+                float height = videoHeight * expandRadiusRate;
 
 //                sb.draw(texture, x, y, videoWidth, videoHeight);
 
@@ -108,15 +116,15 @@ public class GearVideoEffect extends AbstractGameEffect {
                 Gdx.gl.glColorMask(false, false, false, true);
                 sb.setBlendFunction(GL20.GL_ONE, GL20.GL_ZERO);
                 sb.setColor(color);
-                sb.draw(mask, x, y, videoWidth, videoHeight);
+                sb.draw(mask, x, y, width, height);
                 sb.setBlendFunction(GL20.GL_ZERO, GL20.GL_SRC_ALPHA);
                 sb.setColor(Color.WHITE);
-                sb.draw(texture, x, y, videoWidth, videoHeight);
+                sb.draw(texture, x, y, width, height);
 
                 // draw texture
                 Gdx.gl.glColorMask(true, true, true, true);
                 sb.setBlendFunction(GL20.GL_DST_ALPHA, GL20.GL_ONE_MINUS_DST_ALPHA);
-                sb.draw(texture, x, y, videoWidth, videoHeight);
+                sb.draw(texture, x, y, width, height);
 
                 // over
                 sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
