@@ -28,8 +28,8 @@ public class SkinManager {
                 "fan",
                 ModInfo.getResPath("/images/char/karen/skin_fan/Karen.atlas"),
                 ModInfo.getResPath("/images/char/karen/skin_fan/Karen.json"),
-                UI_STRINGS.TEXT[1],
-                UI_STRINGS.EXTRA_TEXT[1],
+                UI_STRINGS.TEXT[0],
+                UI_STRINGS.EXTRA_TEXT[0],
                 "")
         );
 //        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
