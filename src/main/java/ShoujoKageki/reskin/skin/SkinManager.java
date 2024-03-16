@@ -16,7 +16,7 @@ import java.util.List;
 
 public class SkinManager {
 
-    public static final boolean HIDE_SELECT_SCREEN = true;
+    public static final boolean HIDE_SELECT_SCREEN = false;
 
     public static final HashMap<AbstractPlayer.PlayerClass, List<AbstractSkin>> skinMap = new HashMap<>();
     public static final HashMap<String, Integer> skinSelected = new HashMap<>();
@@ -24,14 +24,6 @@ public class SkinManager {
 
     public static void init() {
         Log.logger.info("init skin");
-        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
-                "fan",
-                ModInfo.getResPath("/images/char/karen/skin_fan/Karen.atlas"),
-                ModInfo.getResPath("/images/char/karen/skin_fan/Karen.json"),
-                UI_STRINGS.TEXT[0],
-                UI_STRINGS.EXTRA_TEXT[0],
-                "")
-        );
 //        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
 //                "fan",
 //                ModInfo.getResPath("/images/char/nana/Nana.atlas"),
@@ -40,6 +32,14 @@ public class SkinManager {
 //                UI_STRINGS.EXTRA_TEXT[1],
 //                "")
 //        );
+        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
+                "fan",
+                ModInfo.getResPath("/images/char/karen/skin_fan/Karen.atlas"),
+                ModInfo.getResPath("/images/char/karen/skin_fan/Karen.json"),
+                UI_STRINGS.TEXT[0],
+                UI_STRINGS.EXTRA_TEXT[0],
+                "")
+        );
 //        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
 //                "tv_clip",
 //                ModInfo.getResPath("/images/char/karen/skin_tv/Karen.atlas"),
