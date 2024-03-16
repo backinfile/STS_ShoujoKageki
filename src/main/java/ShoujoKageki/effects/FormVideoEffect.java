@@ -105,12 +105,8 @@ public class FormVideoEffect extends AbstractGameEffect {
 
     private void over() {
         if (videoPlayer != null) {
-            new Thread(() -> {
-                if (videoPlayer != null) {
-                    videoPlayer.dispose();
-                    videoPlayer = null;
-                }
-            }).start();
+            videoPlayer.dispose();
+            videoPlayer = null;
         }
         isDone = true;
         AbstractDungeon.overlayMenu.hideBlackScreen();

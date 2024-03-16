@@ -16,7 +16,7 @@ import java.util.List;
 
 public class SkinManager {
 
-    public static final boolean HIDE_SELECT_SCREEN = false;
+    public static final boolean HIDE_SELECT_SCREEN = true;
 
     public static final HashMap<AbstractPlayer.PlayerClass, List<AbstractSkin>> skinMap = new HashMap<>();
     public static final HashMap<String, Integer> skinSelected = new HashMap<>();

@@ -177,9 +177,9 @@ public class KarenCharacter extends BasePlayer {
     // character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.stop(AudioPatch.Sound_Karen_OnSelect);
-        CardCrawlGame.sound.play(AudioPatch.Sound_Karen_OnSelect); // Sound Effect
-        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen
+//        CardCrawlGame.sound.stop(AudioPatch.Sound_Karen_OnSelect);
+//        CardCrawlGame.sound.play(AudioPatch.Sound_Karen_OnSelect); // Sound Effect
+//        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen
         // Effect
     }
 
