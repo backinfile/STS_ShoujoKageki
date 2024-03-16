@@ -31,11 +31,9 @@ public class Form extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 //        addToBot(new RunEffectAction(new FormVideoEffect(), true));
-        addToBot(new ApplyPowerAction(p, p, new FormPower()));
-        CardCrawlGame.music.silenceTempBgmInstantly();
-        CardCrawlGame.music.silenceBGMInstantly();
-        CardCrawlGame.music.playTempBgmInstantly(AudioPatch.Music_Form, true);
-        AbstractDungeon.effectsQueue.add(new WhirlwindLongEffect(new Color(0.28f, 0.1f, 0.08f, 0.9f), true));
+        if (!p.hasPower(FormPower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(p, p, new FormPower()));
+        }
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LastWord extends BaseCard {
@@ -52,6 +53,7 @@ public class LastWord extends BaseCard {
                 return false;
             }
         }
+        CardCrawlGame.music.silenceBGM();
         return true;
     }
 

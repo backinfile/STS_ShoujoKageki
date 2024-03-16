@@ -3,8 +3,11 @@ package ShoujoKageki.powers;
 
 import ShoujoKageki.actions.FormAction;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.effects.WhirlwindLongEffect;
 import ShoujoKageki.modifier.BurnModifier;
+import ShoujoKageki.patches.AudioPatch;
 import basemod.helpers.CardModifierManager;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -39,6 +42,21 @@ public class FormPower extends BasePower {
         description = DESCRIPTIONS[0];
     }
 
+    @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
+
+        CardCrawlGame.music.silenceTempBgmInstantly();
+        CardCrawlGame.music.silenceBGMInstantly();
+        CardCrawlGame.music.playTempBgmInstantly(AudioPatch.Music_Form, true);
+        AbstractDungeon.effectsQueue.add(new WhirlwindLongEffect(new Color(0.28f, 0.1f, 0.08f, 0.9f), true));
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        CardCrawlGame.music.silenceTempBgmInstantly();
+    }
 
 //    @Override
 //    public float atDamageFinalGive(float damage, DamageInfo.DamageType type) {

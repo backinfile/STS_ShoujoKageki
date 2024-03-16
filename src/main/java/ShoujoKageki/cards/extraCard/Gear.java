@@ -27,8 +27,8 @@ public class Gear extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.topLevelEffectsQueue.add(new GearVideoEffect());
-        addToBot(new WaitAction(Settings.ACTION_DUR_LONG));
+//        AbstractDungeon.topLevelEffectsQueue.add(new GearVideoEffect());
+//        addToBot(new WaitAction(Settings.ACTION_DUR_LONG));
         addToBot(new CopyAllHandToBagAction());
 //        addToBot(new CopyHandCardToDeckAction(1, this::canCopy));
     }
