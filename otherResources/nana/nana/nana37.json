@@ -1,0 +1,32 @@
+{
+"skeleton": {
+	"hash": "8lQ3JlfFz3u38YI3EpEaV/Tbf6U",
+	"spine": "3.8.75",
+	"x": -171.64,
+	"y": -29.06,
+	"width": 322,
+	"height": 397,
+	"images": "../",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "nana_stand", "bone": "root", "attachment": "nana_stand" }
+],
+"animations": {
+	"animation": {}
+},
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 0.76, "y": 4.04, "scaleX": -1.7951, "scaleY": 1.4533, "width": 148, "height": 25 }
+		},
+		"nana_stand": {
+			"nana_stand": { "x": -10.64, "y": 169.44, "width": 322, "height": 397 }
+		}
+	}
+}
+}

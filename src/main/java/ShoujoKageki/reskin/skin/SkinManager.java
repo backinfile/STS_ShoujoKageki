@@ -15,6 +15,9 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SkinManager {
+
+    public static final boolean HIDE_SELECT_SCREEN = true;
+
     public static final HashMap<AbstractPlayer.PlayerClass, List<AbstractSkin>> skinMap = new HashMap<>();
     public static final HashMap<String, Integer> skinSelected = new HashMap<>();
     public static final UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString(ModInfo.makeID(SkinManager.class.getSimpleName()));
@@ -22,21 +25,37 @@ public class SkinManager {
     public static void init() {
         Log.logger.info("init skin");
         addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
-                "tv_clip",
-                ModInfo.getResPath("/images/char/karen/skin_tv/Karen.atlas"),
-                ModInfo.getResPath("/images/char/karen/skin_tv/Karen.json"),
-                UI_STRINGS.TEXT[0],
-                UI_STRINGS.EXTRA_TEXT[0],
-                "")
-        );
-        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
-                "pixel",
-                ModInfo.getResPath("/images/char/karen/skin_pixel/Karen.atlas"),
-                ModInfo.getResPath("/images/char/karen/skin_pixel/Karen.json"),
+                "fan",
+                ModInfo.getResPath("/images/char/karen/skin_fan/Karen.atlas"),
+                ModInfo.getResPath("/images/char/karen/skin_fan/Karen.json"),
                 UI_STRINGS.TEXT[1],
                 UI_STRINGS.EXTRA_TEXT[1],
-                "") // https://www.pixiv.net/artworks/70941447
+                "")
         );
+//        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
+//                "fan",
+//                ModInfo.getResPath("/images/char/nana/Nana.atlas"),
+//                ModInfo.getResPath("/images/char/nana/Nana.json"),
+//                UI_STRINGS.TEXT[1],
+//                UI_STRINGS.EXTRA_TEXT[1],
+//                "")
+//        );
+//        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
+//                "tv_clip",
+//                ModInfo.getResPath("/images/char/karen/skin_tv/Karen.atlas"),
+//                ModInfo.getResPath("/images/char/karen/skin_tv/Karen.json"),
+//                UI_STRINGS.TEXT[0],
+//                UI_STRINGS.EXTRA_TEXT[0],
+//                "")
+//        );
+//        addSkin(KarenCharacter.Enums.Karen, new AbstractSkin(
+//                "pixel",
+//                ModInfo.getResPath("/images/char/karen/skin_pixel/Karen.atlas"),
+//                ModInfo.getResPath("/images/char/karen/skin_pixel/Karen.json"),
+//                UI_STRINGS.TEXT[1],
+//                UI_STRINGS.EXTRA_TEXT[1],
+//                "") // https://www.pixiv.net/artworks/70941447
+//        );
         BaseMod.addSaveField(ModInfo.makeID("reskin"), new CustomSavable<HashMap<String, Integer>>() {
             @Override
             public HashMap<String, Integer> onSave() {

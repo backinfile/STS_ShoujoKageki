@@ -19,6 +19,7 @@ public class SelectScreenPatch {
     }
 
     public static boolean isShowSkinScreen() {
+        if (SkinManager.HIDE_SELECT_SCREEN) return false;
         return SkinManager.isCharHasSkin(CardCrawlGame.chosenCharacter) && anySelected();
     }
 
