@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import javassist.CtBehavior;
@@ -72,6 +73,27 @@ public class CharSelectPlayVideoPatch {
         private static class Locator extends SpireInsertLocator {
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.FieldAccessMatcher(CharacterSelectScreen.class, "cancelButton");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch2(
+            clz = CharacterSelectScreen.class,
+            method = "updateButtons"
+    )
+    public static class EnterDungeonPatch {
+
+        @SpireInsertPatch(locator = Locator.class)
+        public static void Insert() {
+            if (inPlayVideo) {
+                CharSelectPlayVideoPatch.Lazy.PLAY_VIDEO_SCREEN.overInstantly();
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractDungeon.class, "generateSeeds");
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
         }

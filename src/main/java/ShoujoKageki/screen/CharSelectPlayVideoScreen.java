@@ -98,14 +98,8 @@ public class CharSelectPlayVideoScreen {
 
         if (waitToCloseTime > 0) {
             waitToCloseTime -= Gdx.graphics.getDeltaTime();
-            if (waitToCloseTime < 0) {
-
-                CharSelectPlayVideoPatch.inPlayVideo = false;
-                CardCrawlGame.music.unsilenceBGM();
-                if (videoPlayer != null) {
-                    videoPlayer.dispose();
-                    videoPlayer = null;
-                }
+            if (waitToCloseTime <= 0) {
+                overInstantly();
             }
         }
     }
@@ -127,5 +121,15 @@ public class CharSelectPlayVideoScreen {
 
     public void over() {
         waitToCloseTime = 0.5f;
+    }
+
+    public void overInstantly() {
+        waitToCloseTime = -1f;
+        CharSelectPlayVideoPatch.inPlayVideo = false;
+        CardCrawlGame.music.unsilenceBGM();
+        if (videoPlayer != null) {
+            videoPlayer.dispose();
+            videoPlayer = null;
+        }
     }
 }
