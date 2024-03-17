@@ -137,5 +137,10 @@
     "TEXT": ["tv版皮肤", "像素版皮肤"],
     "EXTRA_TEXT": ["", "Pixiv:70941447 作者：Miiharu"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:KarenCutscene": {
+    "TEXT": ["跳过", "胜利？"],
+    "EXTRA_TEXT": [],
+    "TEXT_DICT": {}
   }
 }

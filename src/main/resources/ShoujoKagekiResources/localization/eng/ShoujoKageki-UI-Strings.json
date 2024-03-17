@@ -137,5 +137,10 @@
     "TEXT": ["tv version skin", "pixel version skin"],
     "EXTRA_TEXT": ["", "Pixiv:70941447 Author:Miiharu"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:KarenCutscene": {
+    "TEXT": ["Skip", "Victory?"],
+    "EXTRA_TEXT": [],
+    "TEXT_DICT": {}
   }
 }

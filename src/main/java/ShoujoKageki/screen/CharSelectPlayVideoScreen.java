@@ -33,7 +33,7 @@ public class CharSelectPlayVideoScreen {
     private float waitToCloseTime;
     private Texture lastTexture;
 
-    private static class Lazy {
+    static class Lazy {
         public static final Texture BLACK_TEXTURE;
 
         static {
@@ -52,7 +52,6 @@ public class CharSelectPlayVideoScreen {
             return;
         }
 
-        lastShowVideoTime = System.currentTimeMillis();
         CharSelectPlayVideoPatch.inPlayVideo = true;
         CardCrawlGame.music.silenceBGMInstantly();
         waitToCloseTime = -1;
@@ -77,6 +76,7 @@ public class CharSelectPlayVideoScreen {
                 float rate = Settings.HEIGHT / h;
                 renderW = w * rate;
                 renderH = h * rate;
+                Log.logger.info("========  w = {} rate = {} renderW = {} Width={}", w, rate, renderW, Settings.WIDTH);
             }
             renderX = (Settings.WIDTH - renderW) / 2f;
             renderY = (Settings.HEIGHT - renderH) / 2f;
@@ -125,6 +125,7 @@ public class CharSelectPlayVideoScreen {
 
     public void over() {
 //        waitToCloseTime = 0.5f;
+        lastShowVideoTime = System.currentTimeMillis();
         overInstantly();
     }
 
