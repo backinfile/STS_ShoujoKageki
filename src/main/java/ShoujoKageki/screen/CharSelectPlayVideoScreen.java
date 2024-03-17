@@ -69,7 +69,7 @@ public class CharSelectPlayVideoScreen {
             float rateW = w / Settings.WIDTH;
             float rateH = h / Settings.HEIGHT;
 
-            if (rateW > rateH) {
+            if (false) { // rateW > rateH
                 float rate = Settings.WIDTH / w;
                 renderW = w * rate;
                 renderH = h * rate;
@@ -85,12 +85,16 @@ public class CharSelectPlayVideoScreen {
         new Thread(() -> {
             try {
                 videoPlayer.play(Gdx.files.internal(ModInfo.makeVideoPath("karen_on_select.webm")));
+//                videoPlayer.setVolume(0f);
             } catch (Exception e) {
                 Log.logger.error("", e);
                 e.printStackTrace();
                 over();
             }
         }).start();
+
+//        CardCrawlGame.sound.stop(AudioPatch.Sound_Karen_OnSelect);
+//        CardCrawlGame.sound.play(AudioPatch.Sound_Karen_OnSelect); // Sound Effect
     }
 
     public void update() {
@@ -120,7 +124,8 @@ public class CharSelectPlayVideoScreen {
     }
 
     public void over() {
-        waitToCloseTime = 0.5f;
+//        waitToCloseTime = 0.5f;
+        overInstantly();
     }
 
     public void overInstantly() {
