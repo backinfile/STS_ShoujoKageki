@@ -43,13 +43,13 @@ public class KarenCutsceneVideoScreen {
         }
         videoPlayer.setOnCompletionListener(e -> over());
         videoPlayer.setOnVideoSizeListener((w, h) -> {
-            w -= 100; // fix video error
+//            w -= 100; // fix video error
             float rate = Settings.HEIGHT / h * 0.7f;
             renderW = w * rate;
             renderH = h * rate;
             renderX = (Settings.WIDTH - renderW) / 2f;
             renderY = (Settings.HEIGHT - renderH) / 2f;
-            Log.logger.info("========  w = {} rate = {} renderW = {}", w, rate, renderW);
+//            Log.logger.info("========  w = {} rate = {} renderW = {}", w, rate, renderW);
         });
         // do not block main thread
         new Thread(() -> {

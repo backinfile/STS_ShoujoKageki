@@ -76,7 +76,7 @@ public class CharSelectPlayVideoScreen {
                 float rate = Settings.HEIGHT / h;
                 renderW = w * rate;
                 renderH = h * rate;
-                Log.logger.info("========  w = {} rate = {} renderW = {} Width={}", w, rate, renderW, Settings.WIDTH);
+//                Log.logger.info("========  w = {} rate = {} renderW = {} Width={}", w, rate, renderW, Settings.WIDTH);
             }
             renderX = (Settings.WIDTH - renderW) / 2f;
             renderY = (Settings.HEIGHT - renderH) / 2f;

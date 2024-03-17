@@ -62,7 +62,9 @@ public class KarenVideoCutscenePatch {
     )
     public static class DynamicBannerPatch {
         public static void Postfix() {
-            AbstractDungeon.dynamicBanner.appear(KarenCutscene.UI_STRINGS.TEXT[1]);
+            if (AbstractDungeon.player.chosenClass == KarenCharacter.Enums.Karen) {
+                AbstractDungeon.dynamicBanner.appear(KarenCutscene.UI_STRINGS.TEXT[1]);
+            }
         }
     }
 
@@ -73,7 +75,9 @@ public class KarenVideoCutscenePatch {
     )
     public static class DynamicBannerPatch2 {
         public static void Postfix() {
-            AbstractDungeon.dynamicBanner.appear(KarenCutscene.UI_STRINGS.TEXT[1]);
+            if (AbstractDungeon.player.chosenClass == KarenCharacter.Enums.Karen) {
+                AbstractDungeon.dynamicBanner.appear(KarenCutscene.UI_STRINGS.TEXT[1]);
+            }
         }
     }
 }
