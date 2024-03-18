@@ -11,10 +11,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.video.VideoPlayer;
 import com.badlogic.gdx.video.VideoPlayerCreator;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 
 public class LastWordVideoEffect extends AbstractGameEffect {
 
@@ -38,7 +40,6 @@ public class LastWordVideoEffect extends AbstractGameEffect {
         this.duration = this.startingDuration = 2f;
         LastWordPatch.notShowPlayerPowerTip = true;
 
-        CardCrawlGame.music.silenceBGM();
         CardCrawlGame.sound.stop(AudioPatch.Sound_Last_Word);
         CardCrawlGame.sound.play(AudioPatch.Sound_Last_Word);
         this.color = Color.WHITE.cpy();
@@ -71,6 +72,8 @@ public class LastWordVideoEffect extends AbstractGameEffect {
                 over();
             }
         }).start();
+
+        AbstractDungeon.effectsQueue.add(new LastWordScreenEffect());
     }
 
     @Override
@@ -89,7 +92,7 @@ public class LastWordVideoEffect extends AbstractGameEffect {
             if (expandRate > 1f) expandRate = 1f;
         }
 
-        if (!inTail && (this.startingDuration - this.duration >= 6.5f)) {
+        if (!inTail && (this.startingDuration - this.duration >= 3.5f)) {
             inTail = true;
             AbstractDungeon.overlayMenu.hideBlackScreen();
         }
