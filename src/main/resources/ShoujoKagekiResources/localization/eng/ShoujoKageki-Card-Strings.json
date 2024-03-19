@@ -175,7 +175,7 @@
 		"NAME": "Last Word",
 		"DESCRIPTION": "Can only be played if this is the only card out of ShoujoKageki:Promise_Pile. NL Deal !D! damage to ALL enemies.",
 		"EXTENDED_DESCRIPTION": [
-			"Can only be played if this is the only card out of ShoujoKageki:Promise_Pile."
+			"Can only be played if this is the only card out of ShoujoKageki:Promise_Pile.", "I also... don't want to lose to Hikari"
 		]
 	},
 	"ShoujoKageki:StageIsWaitingTmp": {

@@ -8,6 +8,7 @@ import ShoujoKageki.effects.LastWordScreenEffect;
 import ShoujoKageki.effects.LastWordTEffect;
 import ShoujoKageki.effects.LastWordVideoEffect;
 import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 
@@ -50,6 +52,7 @@ public class LastWord extends BaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        FlavorText.AbstractCardFlavorFields.flavor.set(this, "");
         boolean canUse = super.canUse(p, m);
         if (!canUse) return false;
 
@@ -63,6 +66,7 @@ public class LastWord extends BaseCard {
                 return false;
             }
         }
+        FlavorText.AbstractCardFlavorFields.flavor.set(this, cardStrings.EXTENDED_DESCRIPTION[1]);
         return true;
     }
 

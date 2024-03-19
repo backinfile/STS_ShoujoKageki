@@ -175,7 +175,7 @@
 		"NAME": "最后的台词",
 		"DESCRIPTION": "约定牌堆 之外只有这张牌时才能打出。 NL 对所有敌人造成 !D! 点伤害。",
 		"EXTENDED_DESCRIPTION": [
-			"约定牌堆 之外必须只有这张牌。"
+			"约定牌堆 之外必须只有这张牌。", "我也……不想输给光"
 		]
 	},
 	"ShoujoKageki:StageIsWaitingTmp": {
