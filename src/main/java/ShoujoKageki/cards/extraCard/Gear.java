@@ -2,10 +2,14 @@ package ShoujoKageki.cards.extraCard;
 
 import ShoujoKageki.actions.CopyAllHandToBagAction;
 import ShoujoKageki.actions.CopyHandCardToDeckAction;
+import ShoujoKageki.actions.RunAction;
+import ShoujoKageki.actions.TrueWaitAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.effects.CardImageVideoEffect;
 import ShoujoKageki.effects.GearVideoEffect;
 import ShoujoKageki.patches.TokenCardField;
 import ShoujoKageki.relics.DeckTopRelic;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -29,6 +33,9 @@ public class Gear extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 //        AbstractDungeon.topLevelEffectsQueue.add(new GearVideoEffect());
 //        addToBot(new WaitAction(Settings.ACTION_DUR_LONG));
+//        addToBot(new TrueWaitAction(0.5f));
+        addToBot(new RunAction(() -> addCardImageEffect(new CardImageVideoEffect(this, "Gear_card.webm"))));
+        addToBot(new TrueWaitAction(0.5f));
         addToBot(new CopyAllHandToBagAction());
 //        addToBot(new CopyHandCardToDeckAction(1, this::canCopy));
     }

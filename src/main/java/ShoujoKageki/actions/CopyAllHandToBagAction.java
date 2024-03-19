@@ -37,7 +37,7 @@ public class CopyAllHandToBagAction extends AbstractGameAction {
                 card.superFlash();
 
                 copy.target_x = card.current_x;
-                copy.target_y = card.target_y + AbstractCard.IMG_HEIGHT * card.drawScale * Settings.scale * 1f;
+                copy.target_y = card.target_y + AbstractCard.IMG_HEIGHT * card.drawScale * Settings.scale * 0.7f;
                 copy.targetAngle = card.angle;
                 copy.targetDrawScale = card.drawScale;
 

@@ -2,18 +2,20 @@ package ShoujoKageki.cards;
 
 import ShoujoKageki.modifier.LockRelicCountModifier;
 import ShoujoKageki.variables.DisposableVariable;
-import ShoujoKageki.variables.patch.DisposableField;
-import ShoujoKageki.variables.patch.DisposableFieldUpgradePatch;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
+import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.function.Consumer;
 
 import static ShoujoKageki.character.KarenCharacter.Enums.CardColor_Karen;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -33,6 +35,7 @@ public abstract class BaseCard extends AbstractDefaultCard {
     private List<AbstractCard> cardsToPreviewList = null;
     public CardStrings cardStrings;
     public String DESCRIPTION;
+    public ArrayList<AbstractGameEffect> cardImageEffects = null;
 
     public boolean logGlobalMove = false;
 
@@ -100,6 +103,44 @@ public abstract class BaseCard extends AbstractDefaultCard {
                 this.cardsToPreview = cardsToPreviewList.get(previewCardsListIndex++);
                 Log.logger.info("index = " + previewCardsListIndex);
             }
+        }
+    }
+
+    @Override
+    public void update() {
+        super.update();
+
+        if (cardImageEffects != null) {
+            Iterator<AbstractGameEffect> iterator = cardImageEffects.iterator();
+            while (iterator.hasNext()) {
+                AbstractGameEffect effect = iterator.next();
+                effect.update();
+                if (effect.isDone) {
+                    iterator.remove();
+                }
+            }
+        }
+    }
+
+    @SpireOverride
+    protected void renderPortrait(SpriteBatch sb) {
+        SpireSuper.call(sb);
+        if (cardImageEffects != null) {
+            Iterator<AbstractGameEffect> iterator = cardImageEffects.iterator();
+            while (iterator.hasNext()) {
+                AbstractGameEffect effect = iterator.next();
+                effect.render(sb);
+                if (effect.isDone) {
+                    iterator.remove();
+                }
+            }
+        }
+    }
+
+    public void addCardImageEffect(AbstractGameEffect effect) {
+        if (!effect.isDone) {
+            if (cardImageEffects == null) cardImageEffects = new ArrayList<>();
+            cardImageEffects.add(effect);
         }
     }
 
