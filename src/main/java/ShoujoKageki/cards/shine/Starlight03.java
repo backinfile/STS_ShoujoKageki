@@ -13,6 +13,7 @@ public class Starlight03 extends BaseCard {
 
     public Starlight03() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
