@@ -29,6 +29,7 @@ public abstract class BaseCard extends AbstractDefaultCard {
     public int bagCardPreviewNumber = 0; // 仅用于显示，表示即将从约定牌堆抽出几张
     public int bagCardPreviewSelectNumber = 0; // 仅用于显示，表示即将从约定牌堆选择几张
     public boolean bagCardPreviewExchange = false; // 仅用于显示，表示即将从约定牌堆交换
+    public int stageLightForTarget = 0; // 舞台灯光特效
 
     private long previewCardsListLastChangeTime = -1;
     private int previewCardsListIndex = 0;

@@ -85,6 +85,7 @@ public class CharSelectPlayVideoScreen {
         new Thread(() -> {
             try {
                 videoPlayer.play(Gdx.files.internal(ModInfo.makeVideoPath("karen_on_select.webm")));
+                videoPlayer.setVolume(Settings.SOUND_VOLUME * Settings.MASTER_VOLUME);
 //                videoPlayer.setVolume(0f);
             } catch (Exception e) {
                 Log.logger.error("", e);

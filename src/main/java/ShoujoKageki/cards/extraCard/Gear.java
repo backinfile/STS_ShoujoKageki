@@ -1,23 +1,14 @@
 package ShoujoKageki.cards.extraCard;
 
 import ShoujoKageki.actions.CopyAllHandToBagAction;
-import ShoujoKageki.actions.CopyHandCardToDeckAction;
 import ShoujoKageki.actions.RunAction;
 import ShoujoKageki.actions.TrueWaitAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.effects.CardImageVideoEffect;
-import ShoujoKageki.effects.GearVideoEffect;
 import ShoujoKageki.patches.TokenCardField;
-import ShoujoKageki.relics.DeckTopRelic;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.potions.SteroidPotion;
 
 import static ShoujoKageki.ModInfo.makeID;
 

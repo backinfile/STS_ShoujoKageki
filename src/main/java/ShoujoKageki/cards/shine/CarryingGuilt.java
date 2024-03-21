@@ -1,14 +1,16 @@
 package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.actions.ReduceStrengthAction;
+import ShoujoKageki.actions.RunAction;
+import ShoujoKageki.actions.TrueWaitAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.cards.patches.StageLightPatch;
+import ShoujoKageki.effects.StageLightImgMultiEffect;
 import ShoujoKageki.modifier.CarryingGuiltModifier;
-import ShoujoKageki.util.Utils2;
-import ShoujoKageki.variables.DisposableVariable;
 import ShoujoKageki.variables.patch.DisposableFieldCounterSavePatch;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,11 +28,15 @@ public class CarryingGuilt extends BaseCard {
 //        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
 
         CardModifierManager.addModifier(this, new CarryingGuiltModifier());
+        stageLightForTarget = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new VFXAction(new StageLightImgMultiEffect(m), StageLightImgMultiEffect.ANI_DURATION));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        addToBot(new TrueWaitAction(StageLightImgMultiEffect.STAY_DURATION - StageLightImgMultiEffect.ANI_DURATION));
+        addToBot(new RunAction(() -> StageLightPatch.closeLight(false)));
     }
 
     private int counterCache = 0;

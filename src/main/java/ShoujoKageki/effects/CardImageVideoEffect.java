@@ -30,6 +30,7 @@ public class CardImageVideoEffect extends AbstractGameEffect {
         new Thread(() -> {
             try {
                 videoPlayer.play(Gdx.files.internal(ModInfo.makeVideoPath(videoFileName)));
+                videoPlayer.setVolume(Settings.MUSIC_VOLUME * Settings.MASTER_VOLUME);
             } catch (Exception e) {
                 Log.logger.error("", e);
                 e.printStackTrace();

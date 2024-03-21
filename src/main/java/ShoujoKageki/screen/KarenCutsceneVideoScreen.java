@@ -55,6 +55,7 @@ public class KarenCutsceneVideoScreen {
         new Thread(() -> {
             try {
                 videoPlayer.play(Gdx.files.internal(ModInfo.makeVideoPath("end.webm")));
+                videoPlayer.setVolume(Settings.MUSIC_VOLUME * Settings.MASTER_VOLUME);
 //                videoPlayer.setVolume(0f);
             } catch (Exception e) {
                 Log.logger.error("", e);
