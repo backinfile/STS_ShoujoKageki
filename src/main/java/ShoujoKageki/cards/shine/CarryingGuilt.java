@@ -28,15 +28,16 @@ public class CarryingGuilt extends BaseCard {
 //        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
 
         CardModifierManager.addModifier(this, new CarryingGuiltModifier());
-        stageLightForTarget = 3;
+        stageLightForTarget = 0;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new StageLightImgMultiEffect(m), StageLightImgMultiEffect.ANI_DURATION));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-        addToBot(new TrueWaitAction(StageLightImgMultiEffect.STAY_DURATION - StageLightImgMultiEffect.ANI_DURATION));
-        addToBot(new RunAction(() -> StageLightPatch.closeLight(false)));
+//        addToBot(new VFXAction(new StageLightImgMultiEffect(m), StageLightImgMultiEffect.ANI_DURATION));
+//        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+//        addToBot(new TrueWaitAction(StageLightImgMultiEffect.STAY_DURATION - StageLightImgMultiEffect.ANI_DURATION));
+//        addToBot(new RunAction(() -> StageLightPatch.closeLight(false)));
     }
 
     private int counterCache = 0;
