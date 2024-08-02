@@ -1,6 +1,7 @@
 package ShoujoKageki.screen;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.SettingsPanel;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.screen.patch.GiraffeSplashScreenPatch;
 import com.badlogic.gdx.Gdx;
@@ -21,10 +22,15 @@ public class GiraffeSplashScreen {
 
     private float rotation = 0;
     private float timeLeft = 10;
-    private long musicId;
+    private long musicId = -1L;
 
     public GiraffeSplashScreen() {
-        musicId = CardCrawlGame.sound.play(AudioPatch.Sound_Revue);
+
+        if (!SettingsPanel.showSplashScreen) {
+            GiraffeSplashScreenPatch.setOver();
+        } else {
+            musicId = CardCrawlGame.sound.play(AudioPatch.Sound_Revue);
+        }
     }
 
     public void close() {
