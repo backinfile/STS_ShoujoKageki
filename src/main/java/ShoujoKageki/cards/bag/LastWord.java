@@ -4,23 +4,17 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.RunEffectAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.effects.LastWordScreenEffect;
-import ShoujoKageki.effects.LastWordTEffect;
 import ShoujoKageki.effects.LastWordVideoEffect;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 
 public class LastWord extends BaseCard {
 
@@ -56,7 +50,7 @@ public class LastWord extends BaseCard {
         boolean canUse = super.canUse(p, m);
         if (!canUse) return false;
 
-        if (p.hand.size() != 1 || !p.discardPile.isEmpty()) {
+        if (!isHandEmpty(p) || !p.discardPile.isEmpty()) {
             this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             return false;
         }
@@ -68,6 +62,10 @@ public class LastWord extends BaseCard {
         }
         FlavorText.AbstractCardFlavorFields.flavor.set(this, cardStrings.EXTENDED_DESCRIPTION[1]);
         return true;
+    }
+
+    private boolean isHandEmpty(AbstractPlayer p) {
+        return p.hand.group.stream().noneMatch(c -> c != this);
     }
 
     @Override
