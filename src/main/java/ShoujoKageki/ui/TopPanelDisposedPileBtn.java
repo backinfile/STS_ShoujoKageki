@@ -125,7 +125,7 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
                 this.x + 58.0F * Settings.scale,
                 this.y + 25.0F * Settings.scale, renderColor);
 
-        if (clickable && this.getHitbox().hovered) {
+        if (this.getHitbox().hovered) {
             sb.setColor(Color.CYAN);
             if (!isOpen) {
                 TipHelper.renderGenericTip(TOP_RIGHT_TIP_X, TIP_Y, TEXT[0], TEXT[1]);
