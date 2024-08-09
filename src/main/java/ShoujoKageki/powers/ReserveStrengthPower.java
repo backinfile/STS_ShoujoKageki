@@ -2,6 +2,7 @@ package ShoujoKageki.powers;
 
 
 import ShoujoKageki.actions.bag.PutHandCardIntoBagAction;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -19,7 +20,7 @@ public class ReserveStrengthPower extends BasePower {
 
 
     public ReserveStrengthPower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
         isTurnBased = true;
     }
 

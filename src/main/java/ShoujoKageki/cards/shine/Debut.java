@@ -1,7 +1,7 @@
 package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;

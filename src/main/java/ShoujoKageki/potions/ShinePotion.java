@@ -5,7 +5,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.ModManager;
 import ShoujoKageki.Res;
 import ShoujoKageki.actions.GainCardOrIgnoreAction;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

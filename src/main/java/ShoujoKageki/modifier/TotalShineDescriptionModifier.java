@@ -3,7 +3,7 @@ package ShoujoKageki.modifier;
 import ShoujoKageki.Log;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.util.Utils2;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

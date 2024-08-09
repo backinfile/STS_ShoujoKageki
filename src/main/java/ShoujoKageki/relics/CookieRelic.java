@@ -1,8 +1,8 @@
 package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.variables.DisposableVariable;
-import ShoujoKageki.variables.patch.DisposableField;
+import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.curses.CurseOfTheBell;
@@ -22,7 +22,7 @@ public class CookieRelic extends BaseRelic {
     public static final RelicStrings STRINGS = CardCrawlGame.languagePack.getRelicStrings(ID);
 
     public CookieRelic() {
-        super(ID, RAW_ID, RelicTier.UNCOMMON);
+        super(ID, RelicTier.UNCOMMON);
         this.screenLess = false;
     }
 

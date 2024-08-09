@@ -23,7 +23,7 @@ public class TapeRelic extends BaseRelic {
     public static final String ID = ModInfo.makeID(RAW_ID);
 
     public TapeRelic() {
-        super(ID, RAW_ID, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, RelicTier.RARE, LandingSound.FLAT);
         setCounter(3);
     }
 

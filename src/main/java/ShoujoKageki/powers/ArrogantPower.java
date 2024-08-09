@@ -1,6 +1,7 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,7 +21,7 @@ public class ArrogantPower extends BasePower {
     private static int idCnt = 0;
 
     public ArrogantPower() {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, -1);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, -1);
         this.ID += idCnt++;
     }
 

@@ -3,7 +3,7 @@ package ShoujoKageki.actions.bag;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
 import ShoujoKageki.effects.MoveCardToBagAsStarEffect;
-import ShoujoKageki.powers.BasePower;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

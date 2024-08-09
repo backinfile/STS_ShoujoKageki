@@ -1,7 +1,7 @@
 package ShoujoKageki.actions;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.patches.TokenCardField;
+import ShoujoKagekiCore.token.TokenCardField;
 import ShoujoKageki.util.Utils2;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;

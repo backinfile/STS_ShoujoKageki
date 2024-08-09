@@ -2,8 +2,8 @@ package ShoujoKageki.actions;
 
 import ShoujoKageki.actions.bag.ApplyBagPowerAction;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.variables.DisposableVariable;
-import ShoujoKageki.variables.patch.DisposableField;
+import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

@@ -3,7 +3,7 @@ package ShoujoKageki.cards.bag;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;

@@ -1,6 +1,6 @@
 package ShoujoKageki.relics;
 
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +13,7 @@ public class BlackMarketRelic extends BaseRelic {
     public static final String ID = ModInfo.makeID(RAW_ID);
 
     public BlackMarketRelic() {
-        super(ID, RAW_ID, RelicTier.SPECIAL);
+        super(ID, RelicTier.SPECIAL);
     }
 
     @Override

@@ -7,7 +7,7 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.effects.LightFlashPowerEffect;
 import ShoujoKageki.powers.BagPower;
-import ShoujoKageki.powers.BasePower;
+import ShoujoKagekiCore.base.BasePower;
 import ShoujoKageki.relics.BaseRelic;
 import ShoujoKageki.screen.BagPileViewScreen;
 import basemod.BaseMod;

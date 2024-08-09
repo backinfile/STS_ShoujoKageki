@@ -1,7 +1,8 @@
 package ShoujoKageki.powers;
 
 
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,7 +18,7 @@ public class ToolPower extends BasePower {
     public static final String POWER_ID = makeID(RAW_ID);
 
     public ToolPower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     @Override

@@ -1,0 +1,34 @@
+{
+	"ShoujoKagekiNana:StageRemovePower": {
+		"NAME": "耀眼吗？",
+		"DESCRIPTIONS": [
+			"战斗结束后，使 #y",
+			" #r无法触及 。"
+		]
+	},
+	"ShoujoKagekiNana:HotBananaPower": {
+		"NAME": "HotBanana",
+		"DESCRIPTIONS": [
+			"每回合第一次打出 #y闪耀 牌时，获得 [E] ，抽 #y1 张牌。",
+			"每回合前 #y"," 次打出 #y闪耀 牌时，获得 [E] ，抽 #y1 张牌。"
+		]
+	},
+	"ShoujoKagekiNana:InvitePower": {
+		"NAME": "长颈鹿的邀请",
+		"DESCRIPTIONS": [
+			"回合开始时，抽 #y", " 张牌, 打出其中 #y1 张后，弃置其余。"
+		]
+	},
+	"ShoujoKagekiNana:HelloPower": {
+		"NAME": "打招呼",
+		"DESCRIPTIONS": [
+			"回合结束时，消耗 #y", " 张牌，然后对随机敌人造成其伤害值的伤害。"
+		]
+	},
+	"ShoujoKagekiNana:RondoPower": {
+		"NAME": "轮舞",
+		"DESCRIPTIONS": [
+			"受到攻击伤害时，抽 #y"," 张牌 "
+		]
+	}
+}

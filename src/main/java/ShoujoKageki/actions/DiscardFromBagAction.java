@@ -7,7 +7,7 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.BagFieldDrawCardPatch;
 import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.powers.BasePower;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;

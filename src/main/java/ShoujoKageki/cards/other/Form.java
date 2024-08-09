@@ -6,7 +6,7 @@ import ShoujoKageki.effects.FormVideoEffect;
 import ShoujoKageki.effects.WhirlwindLongEffect;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.powers.FormPower;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

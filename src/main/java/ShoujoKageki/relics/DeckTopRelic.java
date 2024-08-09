@@ -14,7 +14,7 @@ public class DeckTopRelic extends BaseRelic {
     public static DeckTopViewer deckTopViewer = null;
 
     public DeckTopRelic() {
-        super(ID, RAW_ID, RelicTier.STARTER);
+        super(ID, RelicTier.STARTER);
     }
 
     @Override

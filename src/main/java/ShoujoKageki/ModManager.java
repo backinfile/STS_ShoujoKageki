@@ -15,7 +15,7 @@ import ShoujoKageki.util.GenTool;
 import ShoujoKageki.util.IDCheckDontTouchPls;
 import ShoujoKageki.variables.DefaultCustomVariable;
 import ShoujoKageki.variables.DefaultSecondMagicNumber;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;

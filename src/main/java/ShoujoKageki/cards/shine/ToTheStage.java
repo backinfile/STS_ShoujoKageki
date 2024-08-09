@@ -2,7 +2,7 @@ package ShoujoKageki.cards.shine;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

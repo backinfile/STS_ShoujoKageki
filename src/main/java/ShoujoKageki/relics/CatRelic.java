@@ -4,7 +4,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.powers.ShineRewardPower;
 import ShoujoKageki.reward.ShineCardReward;
 import ShoujoKageki.util.Utils2;
-import ShoujoKageki.variables.patch.DisposableFieldRecordPatch;
+import ShoujoKagekiCore.shine.DisposableFieldRecordPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,7 +20,7 @@ public class CatRelic extends BaseRelic {
 
 
     public CatRelic() {
-        super(ID, RAW_ID, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override

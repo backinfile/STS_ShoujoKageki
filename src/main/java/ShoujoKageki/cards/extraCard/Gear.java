@@ -5,7 +5,7 @@ import ShoujoKageki.actions.RunAction;
 import ShoujoKageki.actions.TrueWaitAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.effects.CardImageVideoEffect;
-import ShoujoKageki.patches.TokenCardField;
+import ShoujoKagekiCore.token.TokenCardField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

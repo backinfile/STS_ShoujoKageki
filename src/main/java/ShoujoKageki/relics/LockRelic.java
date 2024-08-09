@@ -3,7 +3,7 @@ package ShoujoKageki.relics;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.LockRelicAction;
 import ShoujoKageki.patches.OnRelicChangePatch;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -26,7 +26,7 @@ public class LockRelic extends BaseRelic {
     private final int position;
 
     public LockRelic(AbstractRelic lockedRelic, int position) {
-        super(ID, RAW_ID, RelicTier.SPECIAL);
+        super(ID, RelicTier.SPECIAL);
         this.lockedRelic = lockedRelic;
         this.position = position;
         this.description = getUpdatedDescription();

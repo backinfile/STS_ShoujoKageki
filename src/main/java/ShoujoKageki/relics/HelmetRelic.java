@@ -22,7 +22,7 @@ public class HelmetRelic extends BaseRelic {
     private boolean cardSelected;
 
     public HelmetRelic() {
-        super(ID, RAW_ID, RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, RelicTier.BOSS, LandingSound.FLAT);
         this.screenLess = false;
     }
 

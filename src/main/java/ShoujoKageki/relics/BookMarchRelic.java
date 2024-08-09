@@ -13,7 +13,7 @@ public class BookMarchRelic extends BaseRelic {
     public static final RelicStrings STRINGS = CardCrawlGame.languagePack.getRelicStrings(ID);
 
     public BookMarchRelic() {
-        super(ID, RAW_ID, RelicTier.UNCOMMON);
+        super(ID, RelicTier.UNCOMMON);
     }
 
     @Override

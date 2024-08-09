@@ -15,6 +15,6 @@ public class FlowerRelic extends BaseRelic {
     public static final String ID = ModInfo.makeID(RAW_ID);
 
     public FlowerRelic() {
-        super(ID, RAW_ID, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, RelicTier.RARE, LandingSound.FLAT);
     }
 }

@@ -2,7 +2,7 @@ package ShoujoKageki.actions.bag;
 
 import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.character.BasePlayer;
+import ShoujoKagekiCore.base.BasePlayer;
 import ShoujoKageki.effects.ShowBagCardAndAddToDiscardEffect;
 import ShoujoKageki.effects.ShowBagCardToHandEffect;
 import basemod.BaseMod;

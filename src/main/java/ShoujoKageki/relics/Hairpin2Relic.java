@@ -15,7 +15,7 @@ public class Hairpin2Relic extends BaseRelic {
     public static final String ID = ModInfo.makeID(RAW_ID);
 
     public Hairpin2Relic() {
-        super(ID, RAW_ID, RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, RelicTier.BOSS, LandingSound.FLAT);
     }
 
 

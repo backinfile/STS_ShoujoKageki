@@ -5,6 +5,7 @@ import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.UnblockedDamagePatch;
 import ShoujoKageki.effects.LightFlashPowerEffect;
 import ShoujoKageki.powers.patch.StrengthPowerPatch;
+import ShoujoKagekiCore.base.BasePower;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -25,7 +26,7 @@ public class Position0Power extends BasePower {
     public static final String POWER_ID = makeID(RAW_ID);
 
     public Position0Power(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     @Override

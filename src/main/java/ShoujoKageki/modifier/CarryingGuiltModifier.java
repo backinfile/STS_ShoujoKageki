@@ -2,7 +2,7 @@ package ShoujoKageki.modifier;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.util.Utils2;
-import ShoujoKageki.variables.patch.DisposableFieldCounterSavePatch;
+import ShoujoKagekiCore.shine.DisposableFieldCounterSavePatch;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

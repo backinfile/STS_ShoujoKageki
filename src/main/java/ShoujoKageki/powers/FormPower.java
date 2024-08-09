@@ -6,6 +6,7 @@ import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.effects.WhirlwindLongEffect;
 import ShoujoKageki.modifier.BurnModifier;
 import ShoujoKageki.patches.AudioPatch;
+import ShoujoKagekiCore.base.BasePower;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -26,7 +27,7 @@ public class FormPower extends BasePower {
     private static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID).DESCRIPTIONS;
 
     public FormPower() {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, -1);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, -1);
     }
 
 

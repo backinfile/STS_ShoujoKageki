@@ -4,7 +4,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.MoveAllShineCardsIntoBagAction;
 import ShoujoKageki.actions.StarAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

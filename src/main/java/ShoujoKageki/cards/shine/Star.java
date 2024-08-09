@@ -3,7 +3,7 @@ package ShoujoKageki.cards.shine;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.StarAction;
 import ShoujoKageki.cards.BaseCard;
-import ShoujoKageki.patches.TokenCardField;
+import ShoujoKagekiCore.token.TokenCardField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

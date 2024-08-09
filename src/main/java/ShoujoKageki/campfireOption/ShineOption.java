@@ -3,7 +3,7 @@ package ShoujoKageki.campfireOption;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.effects.CampfireShineEffect;
 import ShoujoKageki.util.TextureLoader;
-import ShoujoKageki.variables.patch.DisposableField;
+import ShoujoKagekiCore.shine.DisposableField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

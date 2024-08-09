@@ -11,7 +11,7 @@ public class ShineCardRelic extends BaseRelic {
     public static final float Multiplier = 0.5f;
 
     public ShineCardRelic() {
-        super(ID, RAW_ID, RelicTier.SHOP, LandingSound.FLAT);
+        super(ID, RelicTier.SHOP, LandingSound.FLAT);
     }
 
 

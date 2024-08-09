@@ -1,10 +1,10 @@
 package ShoujoKageki.variables;
 
+import ShoujoKageki.cards.BaseCard;
 import basemod.abstracts.DynamicVariable;
 
 import static ShoujoKageki.ModInfo.makeID;
 
-import ShoujoKageki.cards.AbstractDefaultCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class DefaultSecondMagicNumber extends DynamicVariable {
@@ -21,22 +21,22 @@ public class DefaultSecondMagicNumber extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractDefaultCard) card).isDefaultSecondMagicNumberModified;
+        return ((BaseCard) card).isDefaultSecondMagicNumberModified;
 
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractDefaultCard) card).defaultSecondMagicNumber;
+        return ((BaseCard) card).defaultSecondMagicNumber;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractDefaultCard) card).defaultBaseSecondMagicNumber;
+        return ((BaseCard) card).defaultBaseSecondMagicNumber;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractDefaultCard) card).upgradedDefaultSecondMagicNumber;
+        return ((BaseCard) card).upgradedDefaultSecondMagicNumber;
     }
 }

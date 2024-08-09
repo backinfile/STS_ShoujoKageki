@@ -4,6 +4,7 @@ package ShoujoKageki.powers;
 import ShoujoKageki.actions.AquariumAction;
 import ShoujoKageki.actions.bag.PutHandCardIntoBagAction;
 import ShoujoKageki.actions.bag.TakeCardFromBagAction;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,7 +23,7 @@ public class AquariumPower extends BasePower {
 
 
     public AquariumPower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     @Override

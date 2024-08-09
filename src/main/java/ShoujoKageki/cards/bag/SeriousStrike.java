@@ -4,7 +4,7 @@ import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.MakeTempCardInBagAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.AccretionField;
-import ShoujoKageki.variables.patch.DisposableFieldCounterSavePatch;
+import ShoujoKagekiCore.shine.DisposableFieldCounterSavePatch;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

@@ -1,8 +1,9 @@
 package ShoujoKageki.powers;
 
 
-import ShoujoKageki.variables.DisposableVariable;
-import ShoujoKageki.variables.patch.DisposableField;
+import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableField;
+import ShoujoKagekiCore.base.BasePower;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -28,7 +29,7 @@ public class Starlight02Power extends BasePower {
     public static final String POWER_ID = makeID(RAW_ID);
 
     public Starlight02Power(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
         updateDescription();
     }
 

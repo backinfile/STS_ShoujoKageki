@@ -20,7 +20,7 @@ public class TeaCupRelic extends BaseRelic {
 
 
     public TeaCupRelic() {
-        super(ID, RAW_ID, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, RelicTier.UNCOMMON, LandingSound.FLAT);
         setCounter(0);
     }
 

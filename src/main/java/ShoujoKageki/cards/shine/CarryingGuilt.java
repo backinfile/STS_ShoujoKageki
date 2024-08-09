@@ -7,7 +7,7 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.StageLightPatch;
 import ShoujoKageki.effects.StageLightImgMultiEffect;
 import ShoujoKageki.modifier.CarryingGuiltModifier;
-import ShoujoKageki.variables.patch.DisposableFieldCounterSavePatch;
+import ShoujoKagekiCore.shine.DisposableFieldCounterSavePatch;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

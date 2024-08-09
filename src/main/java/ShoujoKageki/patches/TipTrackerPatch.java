@@ -2,7 +2,7 @@ package ShoujoKageki.patches;
 
 import ShoujoKageki.FTUEUtils;
 import ShoujoKageki.character.KarenCharacter;
-import ShoujoKageki.powers.BasePower;
+import ShoujoKagekiCore.base.BasePower;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;

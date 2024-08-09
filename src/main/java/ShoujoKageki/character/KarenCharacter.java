@@ -10,6 +10,7 @@ import ShoujoKageki.cards.starter.Strike;
 import ShoujoKageki.patches.AudioPatch;
 import ShoujoKageki.relics.HairpinRelic;
 import ShoujoKageki.reskin.skin.SkinManager;
+import ShoujoKagekiCore.base.BasePlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;

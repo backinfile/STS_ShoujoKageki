@@ -3,7 +3,7 @@ package ShoujoKageki.cards.globalMove.patch;
 import ShoujoKageki.Log;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
-import ShoujoKageki.powers.BasePower;
+import ShoujoKagekiCore.base.BasePower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;

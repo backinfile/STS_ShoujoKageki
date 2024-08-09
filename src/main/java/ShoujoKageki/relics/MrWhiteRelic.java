@@ -1,7 +1,7 @@
 package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -18,7 +18,7 @@ public class MrWhiteRelic extends BaseRelic {
     public static final int PILE_NUMBER = 30;
 
     public MrWhiteRelic() {
-        super(ID, RAW_ID, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     @Override

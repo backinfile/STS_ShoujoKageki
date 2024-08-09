@@ -2,6 +2,7 @@ package ShoujoKageki.powers;
 
 
 import ShoujoKageki.actions.bag.TakeCardFromBagAction;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -18,7 +19,7 @@ public class StageIsWaitingPower extends BasePower {
 
 
     public StageIsWaitingPower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     @Override

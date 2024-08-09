@@ -11,7 +11,7 @@ public class StarCrownRelic extends BaseRelic {
     public static final int BLOCK = 8;
 
     public StarCrownRelic() {
-        super(ID, RAW_ID, RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override

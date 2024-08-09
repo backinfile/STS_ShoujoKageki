@@ -8,7 +8,7 @@ import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
 import ShoujoKageki.patches.VoidDeckPatch;
 import ShoujoKageki.powers.BagPower;
-import ShoujoKageki.powers.BasePower;
+import ShoujoKagekiCore.base.BasePower;
 import ShoujoKageki.powers.VoidPower;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

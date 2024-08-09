@@ -12,7 +12,7 @@ public class BagDiscoverRelic extends BaseRelic {
     public static final int TAKE_NUM = 5;
 
     public BagDiscoverRelic() {
-        super(ID, RAW_ID, RelicTier.COMMON);
+        super(ID, RelicTier.COMMON);
     }
 
     @Override

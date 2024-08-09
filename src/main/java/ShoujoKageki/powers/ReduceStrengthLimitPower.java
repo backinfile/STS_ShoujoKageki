@@ -1,5 +1,6 @@
 package ShoujoKageki.powers;
 
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -16,7 +17,7 @@ public class ReduceStrengthLimitPower extends BasePower {
     public static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID).DESCRIPTIONS;
 
     public ReduceStrengthLimitPower(int amount) {
-        super(POWER_ID, RAW_ID, AbstractPower.PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, AbstractPower.PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     // 为所有镣铐buff更新一下描述

@@ -6,7 +6,7 @@ import ShoujoKageki.Res;
 import ShoujoKageki.actions.AwakePotionAction;
 import ShoujoKageki.actions.GainCardOrIgnoreAction;
 import ShoujoKageki.character.KarenCharacter;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

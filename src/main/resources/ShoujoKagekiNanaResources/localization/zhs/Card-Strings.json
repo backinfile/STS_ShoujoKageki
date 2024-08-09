@@ -1,0 +1,190 @@
+{
+	"ShoujoKagekiNana:Strike": {
+		"NAME": "打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"ShoujoKagekiNana:Strike2": {
+		"NAME": "打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"ShoujoKagekiNana:ShineStrike": {
+		"NAME": "闪耀打击",
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"ShoujoKagekiNana:Attack06": {
+		"NAME": "我会替你全部承担",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 牌池中的卡牌伤害+1。 NL 消耗 。"
+	},
+	"ShoujoKagekiNana:Attack04": {
+		"NAME": "劈砍",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果此牌为 衍生牌 ， NL 获得 [E] 。"
+	},
+	"ShoujoKagekiNana:Attack02": {
+		"NAME": "朝向你的所在",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
+	},
+	"ShoujoKagekiNana:Attack03": {
+		"NAME": "开幕",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。给予所有敌人 !M! 层 易伤 。"
+	},
+	"ShoujoKagekiNana:Attack05": {
+		"NAME": "突刺",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 易伤 状态， NL 抽 !M! 张牌。"
+	},
+	"ShoujoKagekiNana:Attack07": {
+		"NAME": "我们的伙伴",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
+	},
+	"ShoujoKagekiNana:Attack09": {
+		"NAME": "星光化成星屑",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。"
+	},
+	"ShoujoKagekiNana:Attack08": {
+		"NAME": "在绝望到来之前",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 每有1张 无法触及 的牌，伤害+ !M! 。"
+	},
+	"ShoujoKagekiNana:Past": {
+		"NAME": "曾经的闪耀",
+		"DESCRIPTION": "造成 !D! 点伤害两次 。"
+	},
+	"ShoujoKagekiNana:Defend": {
+		"NAME": "防御",
+		"DESCRIPTION": "获得 !B! 点 格挡 。"
+	},
+	"ShoujoKagekiNana:Defend02": {
+		"NAME": "腾空",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，打出其中1张时，弃置其余。"
+	},
+	"ShoujoKagekiNana:Defend03": {
+		"NAME": "若是无动于衷",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡。 NL 当你强化牌池时，同时强化此牌。"
+	},
+	"ShoujoKagekiNana:Stay": {
+		"NAME": "星光下的种子",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将此牌加入牌组时，移除1张 *打击 。"
+	},
+	"ShoujoKagekiNana:Hello": {
+		"NAME": "打招呼",
+		"DESCRIPTION": "回合结束时，消耗 !M! 张牌，然后对随机敌人造成其伤害值的伤害。"
+	},
+	"ShoujoKagekiNana:DesireRevue": {
+		"NAME": "渴望的Revue",
+		"DESCRIPTION": "获得 !M! 点力量。 NL 获得 [E] 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "获得 !M! 点力量。 NL 获得 [E] [E] 。 NL 消耗 。",
+		"FLAVOR": "如果只有那颗星星知晓未来。"
+	},
+	"ShoujoKagekiNana:JealousRevue": {
+		"NAME": "嫉妒的Revue",
+		"DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。",
+		"FLAVOR": "夜尽天明，迎来真昼。"
+	},
+	"ShoujoKagekiNana:PassionateRevue": {
+		"NAME": "激情的Revue",
+		"DESCRIPTION": "固有 。 NL 抽 !M! 张牌。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满，打出其中1张时， NL 弃置其余。",
+		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
+	},
+	"ShoujoKagekiNana:PromisedRevue": {
+		"NAME": "约定的Revue",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图是攻击，则抽 !M! 张牌。",
+		"FLAVOR": "在碰撞、争执、交错中不断连接的羁绊，却也是被拆散的两人无法再次相见的悲剧。"
+	},
+	"ShoujoKagekiNana:ProudRevue": {
+		"NAME": "骄傲的Revue",
+		"DESCRIPTION": "目标敌人立即行动 。 NL 获得 [E] [E] 。 NL 抽 !M! 张牌。",
+		"FLAVOR": "选拔的合格者能获得成为Top Star的资格，不合格者将会失去舞台少女的闪耀。"
+	},
+	"ShoujoKagekiNana:IKnown": {
+		"NAME": "我全都知道哦",
+		"DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值的 格挡 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值+ !M! 的 格挡 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:OutOfReach": {
+		"NAME": "无法触及 因而闪耀",
+		"DESCRIPTION": "发现 1张牌，然后使其 无法触及 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:StageClose": {
+		"NAME": "落幕",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 从3张随机牌中选择1张使其 无法触及 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Done": {
+		"NAME": "烹饪完成",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 牌池中的卡牌伤害+1。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:HotBanana": {
+		"NAME": "Hot Banana",
+		"DESCRIPTION": "每回合第一次打出 闪耀 牌时，获得 [E] ，抽 1 张牌。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Invite": {
+		"NAME": "长颈鹿的邀请",
+		"DESCRIPTION": "选择1张 衍生牌 加入牌组。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 选择1张 衍生牌 加入牌组。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:GAOU": {
+		"NAME": "嘎哦",
+		"DESCRIPTION": "失去所有 易伤 和 虚弱 。 NL 给予所有敌人 !M! 层 易伤 和 虚弱 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:ScatteredStories": {
+		"NAME": "散落的故事",
+		"DESCRIPTION": "发现 1张牌， NL 使其伤害+ !M! 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Rondo": {
+		"NAME": "轮舞",
+		"DESCRIPTION": "本回合内，目标敌人受到攻击伤害时，抽 !M! 张牌 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Jump": {
+		"NAME": "跳跃斩击",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果本回合打出过攻击牌，抽 !M! 张牌。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Build": {
+		"NAME": "高塔建立之时",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 加入牌组时， NL 牌池中的卡牌伤害+1。",
+		"FLAVOR": "如饥似渴地追求新的舞台，这就是舞台少女。"
+	},
+	"ShoujoKagekiNana:Exist": {
+		"NAME": "很耀眼吗？",
+		"DESCRIPTION": "发现 1张牌，获得与其耗能相等的 [E] 。",
+		"FLAVOR": "真的可以得到任何舞台吗？任何时间的任何舞台都可以吗？"
+	},
+	"ShoujoKagekiNana:OutOfStory": {
+		"NAME": "剧本之外",
+		"DESCRIPTION": "发现 1张牌。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "发现 1张牌，这张牌在本回合耗能变为0 。 NL 消耗 。",
+		"FLAVOR": "这次的再演是怎么回事呢？全是未经历过的事情。"
+	},
+	"ShoujoKagekiNana:WildScreenBaroque": {
+		"NAME": "狂野银幕巴洛克",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时， 升级 你牌池中的一张随机牌。 NL 消耗 。",
+		"FLAVOR": "皆杀的Revue——开幕！歌唱！起舞！互相争夺吧！"
+	},
+	"ShoujoKagekiNana:EmptyStage": {
+		"NAME": "舞台空了",
+		"DESCRIPTION": "不能被打出 。 ",
+		"FLAVOR": "我只想用全力去保护。"
+	},
+	"ShoujoKagekiNana:Mabuxi": {
+		"NAME": "可能",
+		"DESCRIPTION": "获得 [E] [E] 。 NL 当你打出手牌中的1张牌时，弃置其余。",
+		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 当你打出手牌中的1张牌时，弃置其余。",
+		"FLAVOR": "你心中也有吧，耀眼的舞台。"
+	},
+	"D_ShoujoKageki:Promise": {
+		"NAME": "约定",
+		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",
+		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E] [E]",
+		"EXTENDED_DESCRIPTION": [
+			"这张牌不能被打出。"
+		]
+	}
+}

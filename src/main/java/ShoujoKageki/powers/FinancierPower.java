@@ -1,6 +1,7 @@
 package ShoujoKageki.powers;
 
 
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +18,7 @@ public class FinancierPower extends BasePower {
     private int turnCount = 1;
 
     public FinancierPower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     @Override

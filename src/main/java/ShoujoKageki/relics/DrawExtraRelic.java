@@ -16,7 +16,7 @@ public class DrawExtraRelic extends BaseRelic {
     public static final String ID = ModInfo.makeID(RAW_ID);
 
     public DrawExtraRelic() {
-        super(ID, RAW_ID, RelicTier.COMMON);
+        super(ID, RelicTier.COMMON);
     }
 
     @Override

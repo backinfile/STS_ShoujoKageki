@@ -11,7 +11,7 @@ public class CatRelicTmp extends BaseRelic {
     public static final int BLOCK = 8;
 
     public CatRelicTmp() {
-        super(ID, RAW_ID, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override

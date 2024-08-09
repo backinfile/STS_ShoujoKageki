@@ -1,0 +1,55 @@
+{
+  "ShoujoKagekiNana:InstantBlock": {
+    "TEXT": [
+      "瞬间格挡",
+      "持续到下一张卡牌打出后，阻挡伤害。"
+    ]
+  },
+  "ShoujoKagekiNana:StageDiscoveryAction": {
+    "TEXT": [
+      "从舞台中发现一张牌",
+      "选择一张牌，使其无法触及"
+    ]
+  },
+  "ShoujoKagekiNana:AuditionEnergy": {
+    "TEXT": [
+      "竞演能量",
+      "另一种类型的能量，尽可以用来打出攻击牌。"
+    ]
+  },
+  "ShoujoKagekiNana:settingsPanel": {
+    "TEXT_DICT": {
+      "test": "test btn"
+    }
+  },
+  "ShoujoKagekiNana:TopPanelDisposedPileBtn": {
+    "TEXT": ["命运的舞台", "舞台即为当前牌池，影响战斗内随机获取卡牌的效果以及卡牌奖励。", " NL #y无法触及 的牌共有 #y", " 张，不在这里显示。" ],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:StagePoolPilePatch": {
+    "TEXT": ["战斗内随机获取的卡牌以及卡牌奖励中的可能出现的卡牌。", "返回"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:StagePowerUpModifier": {
+    "TEXT": ["舞台增益", "伤害增加 #y", " 。"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:InstantModifier": {
+    "TEXT": ["瞬间", "打出具有瞬间的牌后，丢弃其他具有瞬间的牌。 NL 回合结束或被弃置时，失去瞬间。", "瞬间 。", " NL "],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:CopyHandCardToDeckAction": {
+    "TEXT": ["选择卡牌加入牌组"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:ExhaustHandCardAction": {
+    "TEXT": ["消耗"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  }
+}

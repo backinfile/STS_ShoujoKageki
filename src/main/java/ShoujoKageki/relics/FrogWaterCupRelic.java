@@ -2,7 +2,7 @@ package ShoujoKageki.relics;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.campfireOption.ShineOption;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,7 +18,7 @@ public class FrogWaterCupRelic extends BaseRelic {
     public static final String ID = ModInfo.makeID(RAW_ID);
 
     public FrogWaterCupRelic() {
-        super(ID, RAW_ID, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, RelicTier.COMMON, LandingSound.FLAT);
     }
 
 //    public void onEquip() {

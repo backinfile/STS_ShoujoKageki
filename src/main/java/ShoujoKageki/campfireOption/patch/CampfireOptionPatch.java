@@ -1,7 +1,7 @@
 package ShoujoKageki.campfireOption.patch;
 
 import ShoujoKageki.campfireOption.ShineOption;
-import ShoujoKageki.character.BasePlayer;
+import ShoujoKagekiCore.base.BasePlayer;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.CampfireUI;

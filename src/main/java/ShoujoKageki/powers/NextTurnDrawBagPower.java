@@ -2,6 +2,7 @@ package ShoujoKageki.powers;
 
 
 import ShoujoKageki.actions.bag.TakeCardFromBagAction;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +18,7 @@ public class NextTurnDrawBagPower extends BasePower {
 
 
     public NextTurnDrawBagPower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     @Override

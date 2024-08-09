@@ -2,7 +2,7 @@ package ShoujoKageki.reward;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.reward.patch.RewardPatch;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import basemod.BaseMod;
 import basemod.abstracts.CustomReward;
 import com.badlogic.gdx.Gdx;

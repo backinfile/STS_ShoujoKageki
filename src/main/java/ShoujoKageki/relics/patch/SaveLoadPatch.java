@@ -1,8 +1,5 @@
 package ShoujoKageki.relics.patch;
 
-import ShoujoKageki.Log;
-import ShoujoKageki.patches.showDisposeInHistory.MetricDataPatch;
-import ShoujoKageki.patches.showDisposeInHistory.SaveFilePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

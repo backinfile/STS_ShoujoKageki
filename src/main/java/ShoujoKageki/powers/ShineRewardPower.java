@@ -2,6 +2,7 @@ package ShoujoKageki.powers;
 
 
 import ShoujoKageki.reward.ShineCardReward;
+import ShoujoKagekiCore.base.BasePower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
@@ -16,7 +17,7 @@ public class ShineRewardPower extends BasePower {
     public static final String POWER_ID = makeID(RAW_ID);
 
     public ShineRewardPower() {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, 1);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, 1);
         updateDescription();
     }
 

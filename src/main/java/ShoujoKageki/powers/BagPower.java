@@ -3,6 +3,7 @@ package ShoujoKageki.powers;
 
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.modifier.BurnModifier;
+import ShoujoKagekiCore.base.BasePower;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,7 +27,7 @@ public class BagPower extends BasePower {
     private static final String[] DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID).DESCRIPTIONS;
 
     public BagPower(int amount) {
-        super(POWER_ID, RAW_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
+        super(POWER_ID, PowerType.BUFF, AbstractDungeon.player, AbstractDungeon.player, amount);
     }
 
     @Override

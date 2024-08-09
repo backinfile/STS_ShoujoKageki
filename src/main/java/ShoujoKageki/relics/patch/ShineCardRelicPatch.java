@@ -3,7 +3,7 @@ package ShoujoKageki.relics.patch;
 import ShoujoKageki.actions.bag.MoveCardToBagAction;
 import ShoujoKageki.relics.MrWhiteRelic;
 import ShoujoKageki.relics.ShineCardRelic;
-import ShoujoKageki.variables.DisposableVariable;
+import ShoujoKagekiCore.shine.DisposableVariable;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
