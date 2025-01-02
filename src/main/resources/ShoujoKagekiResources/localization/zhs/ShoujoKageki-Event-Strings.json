@@ -1,5 +1,5 @@
 {
-	"fortuneTeller:IdentityCrisisEvent": {
+	"ShoujoKageki:IdentityCrisisEvent": {
 		"NAME": "Identity Crisis",
 		"DESCRIPTIONS": [
 			"As you move through ~The~ ~City~ you come across a #pPurple #pMirror. NL You look at it, but you see no reflection.",
@@ -18,26 +18,30 @@
 			"Select card to remove."
 		]
 	},
-	"fortuneTeller:NeowEventPatch": {
-		"NAME": "NeowEventPatch",
-		"DESCRIPTIONS": [
-			"实现了~",
-			
-		],
-		"OPTIONS": [
-			"[ #g获得一页 #g罗塞尔大帝的日记 ]",
-			"[离开]"
-		]
-	},
 	"ShoujoKageki:RealTimeEvent": {
 		"NAME": "观众席是这么近的吗？",
 		"DESCRIPTIONS": [
 			"观众席是这么近的吗？ NL 照明灯是这么 #g炽热 的吗？ NL 舞台是这么 #g可怕 的吗？ NL 大家都活在这样的 #g恐惧 里面吗？",
-			"但我却没察觉到这些，只看到了小光。",
+			"但我却没察觉到这些，只看到了小光。"
 		],
 		"OPTIONS": [
 			"[soyo] #g获得卡牌",
 			"[离开]"
+		]
+	},
+	"ShoujoKageki:ShineBookEvent": {
+		"NAME": "剧本书",
+		"DESCRIPTIONS": [
+			"#b光 ：Starlight，一个遥远星球上，很久以前的遥远未来的故事。 NL #r恋 ：为了挚友愿意舍身求得奇迹——芙洛拉的勇气， NL #b光 ：痛失记忆却不忘与挚友之约——可蕾尔的坚强， NL #r恋 ：好棒! NL #b光 ：嗯，好棒！ NL #r恋 ：这是宝贝，我的宝贝书。",
+			"我一个人看不懂啊，小光。",
+			"新的Starlight，一定要让它成为最棒的舞台。"
+		],
+		"OPTIONS": [
+			"[阅读] #g选择一张牌，将其闪耀值提升至99。",
+			"[怀念] #g获得1张 ",
+			" 。",
+			"[离开]",
+			"选择一张牌，将其闪耀值提升至99。"
 		]
 	}
 }

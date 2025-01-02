@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.events.ShineBookEvent;
 import ShoujoKageki.patches.OnRelicChangePatch;
 import ShoujoKageki.potions.AwakePotion;
 import ShoujoKageki.potions.BagPotion;
@@ -235,6 +236,7 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         // =============== /EVENTS/ =================
 //        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
+        BaseMod.addEvent(ShineBookEvent.ID, ShineBookEvent.class);
 
 
         // Load the Mod Badge
