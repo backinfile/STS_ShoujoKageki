@@ -2,7 +2,9 @@ package ShoujoKageki.cards.globalMove;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.modifier.RetainStrengthTipModifier;
 import ShoujoKageki.powers.FinancierPower;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,6 +17,7 @@ public class Financier extends BaseCard {
     public Financier() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 1;
+        CardModifierManager.addModifier(this, new RetainStrengthTipModifier());
     }
 
     @Override

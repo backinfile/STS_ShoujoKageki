@@ -148,5 +148,10 @@
       "Tower of Promise+", "Retain. Draw cards from Promise Pile until your hand is full."],
     "EXTRA_TEXT": [],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:RetainStrengthTipModifier": {
+    "TEXT": ["Retain Strength?", "Extends the number of turns your temporary power lasts." ],
+    "EXTRA_TEXT": [],
+    "TEXT_DICT": {}
   }
 }

@@ -3,8 +3,10 @@ package ShoujoKageki.cards.bag;
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.actions.bag.MakeTempCardInBagAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.modifier.RetainStrengthTipModifier;
 import ShoujoKageki.powers.BananaLunchPower;
 import ShoujoKageki.powers.ReserveStrengthPower;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,6 +22,8 @@ public class EatTogether extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 3;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 1;
+
+        CardModifierManager.addModifier(this, new RetainStrengthTipModifier());
     }
 
     @Override

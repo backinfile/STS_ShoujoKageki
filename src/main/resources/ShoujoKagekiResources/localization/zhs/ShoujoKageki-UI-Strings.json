@@ -148,5 +148,10 @@
               "约定之塔+", "保留 。 从 约定牌堆 中抽牌直到手牌上限。"],
     "EXTRA_TEXT": [],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:RetainStrengthTipModifier": {
+    "TEXT": ["保留力量?", "延续你临时力量持续的回合数。" ],
+    "EXTRA_TEXT": [],
+    "TEXT_DICT": {}
   }
 }

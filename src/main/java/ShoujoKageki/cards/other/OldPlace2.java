@@ -2,7 +2,9 @@ package ShoujoKageki.cards.other;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.modifier.RetainStrengthTipModifier;
 import ShoujoKageki.powers.ReserveStrengthPower;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
@@ -23,6 +25,9 @@ public class OldPlace2 extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 1;
+
+
+        CardModifierManager.addModifier(this, new RetainStrengthTipModifier());
     }
 
     @Override

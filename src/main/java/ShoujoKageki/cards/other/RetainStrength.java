@@ -2,7 +2,9 @@ package ShoujoKageki.cards.other;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.modifier.RetainStrengthTipModifier;
 import ShoujoKageki.powers.ReserveStrengthPower;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,6 +19,9 @@ public class RetainStrength extends BaseCard {
         super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE);
         this.color = CardColor.COLORLESS;
         this.baseMagicNumber = this.magicNumber = 1;
+
+
+        CardModifierManager.addModifier(this, new RetainStrengthTipModifier());
     }
 
     @Override
