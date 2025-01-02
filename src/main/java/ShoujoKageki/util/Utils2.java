@@ -39,6 +39,26 @@ public class Utils2 {
         return sj.toString();
     }
 
+
+    public static String getCardNames(CardGroup group, String sep, boolean reverse, int limit) {
+        StringJoiner sj = new StringJoiner(sep);
+        if (reverse) {
+            for (int i = Math.min(limit - 1, group.size() - 1); i >= 0; i--) {
+                AbstractCard card = group.group.get(i);
+                sj.add("[#FFFF87]" + card.name.trim().replace(" ", "[] [#FFFF87]") + "[]");
+            }
+        } else {
+            for (int i = 0; i < limit && i < group.size(); i++) {
+                AbstractCard card = group.group.get(i);
+                sj.add("[#FFFF87]" + card.name.trim().replace(" ", "[] [#FFFF87]") + "[]");
+            }
+        }
+        if (group.size() > limit) {
+            sj.add("...");
+        }
+        return sj.toString();
+    }
+
     public static String getCardNames(CardGroup group, String sep, String pre, String suf) {
         StringJoiner sj = new StringJoiner(sep, pre, suf);
         for (AbstractCard card : group.group) {

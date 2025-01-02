@@ -1,11 +1,13 @@
 package ShoujoKageki.actions.bag;
 
+import ShoujoKageki.actions.TrueWaitAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
 import ShoujoKageki.effects.MoveCardToBagAsStarEffect;
 import ShoujoKageki.powers.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -87,6 +89,11 @@ public class MoveCardToBagAction extends AbstractGameAction {
             if (fromHand) player.onCardDrawOrDiscard();
             BagField.bag.get(player).group.addAll(cards);
             addToTop(new ApplyBagPowerAction(cards.size()));
+
+            // fix: in case of play next card too fast
+            if (moveAsStar && !cards.isEmpty()) {
+                addToBot(new TrueWaitAction(Settings.ACTION_DUR_FAST + Settings.ACTION_DUR_FAST + Settings.ACTION_DUR_LONG));
+            }
         }
         tickDuration();
     }

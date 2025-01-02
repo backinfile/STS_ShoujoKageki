@@ -83,7 +83,7 @@ public class BagPower extends BasePower {
             if (bag.isEmpty()) {
                 descriptionBuilder.append(DESCRIPTIONS[6]);
             } else {
-                descriptionBuilder.append(DESCRIPTIONS[7]).append(Utils2.getCardNames(bag, DESCRIPTIONS[8], false));
+                descriptionBuilder.append(DESCRIPTIONS[7]).append(Utils2.getCardNames(bag, DESCRIPTIONS[8], false, 10));
             }
         }
 
