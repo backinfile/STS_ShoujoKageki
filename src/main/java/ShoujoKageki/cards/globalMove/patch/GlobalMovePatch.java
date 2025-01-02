@@ -8,6 +8,7 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.defect.ShuffleAllAction;
+import com.megacrit.cardcrawl.actions.unique.SkillFromDeckToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.Soul;
@@ -205,6 +206,45 @@ public class GlobalMovePatch {
                 triggerGlobalMove(___c, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
             } else {
                 triggerGlobalMove(___c, CardGroup.CardGroupType.UNSPECIFIED, CardGroup.CardGroupType.DRAW_PILE);
+            }
+        }
+    }
+
+
+    @SpirePatch2(
+            clz = SkillFromDeckToHandAction.class,
+            method = "update"
+    )
+    public static class SkillFromDeckToHandActionUpdate {
+        @SpireInsertPatch(
+                locator = Locator1.class,
+                localvars = "card"
+        )
+        public static void Insert1(SkillFromDeckToHandAction __instance, AbstractCard card) {
+            triggerGlobalMove(card, CardGroup.CardGroupType.DRAW_PILE, CardGroup.CardGroupType.HAND);
+        }
+
+        @SpireInsertPatch(
+                locator = Locator2.class,
+                localvars = "c"
+        )
+        public static void Insert2(SkillFromDeckToHandAction __instance, AbstractCard c) {
+            triggerGlobalMove(c, CardGroup.CardGroupType.DRAW_PILE, CardGroup.CardGroupType.HAND);
+        }
+
+        private static class Locator1 extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "addToTop");
+                int[] inOrder = LineFinder.findAllInOrder(ctBehavior, finalMatcher);
+                return new int[]{inOrder[0]};
+            }
+        }
+
+        private static class Locator2 extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "addToTop");
+                int[] inOrder = LineFinder.findAllInOrder(ctBehavior, finalMatcher);
+                return new int[]{inOrder[1]};
             }
         }
     }
