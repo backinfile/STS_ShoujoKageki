@@ -4,8 +4,10 @@ package ShoujoKageki.powers;
 import ShoujoKageki.cards.patches.BagFieldPatch;
 import ShoujoKageki.cards.patches.UnblockedDamagePatch;
 import ShoujoKageki.effects.LightFlashPowerEffect;
+import ShoujoKageki.patches.AttackTriggerPatch;
 import ShoujoKageki.powers.patch.StrengthPowerPatch;
 import com.badlogic.gdx.Gdx;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,6 +17,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static ShoujoKageki.ModInfo.makeID;
 
@@ -32,7 +37,20 @@ public class Position0Power extends BasePower {
     public void onAttackAfter(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (damageAmount > 0 && info.type == DamageInfo.DamageType.NORMAL) {
             if (UnblockedDamagePatch.UnblockedDamageCurCount <= this.amount) {
-                addToTop(new GainBlockAction(this.owner, this.owner, damageAmount));
+                GainBlockAction gainBlockAction = new GainBlockAction(this.owner, this.owner, damageAmount);
+                AttackTriggerPatch.FirstRunActionField.firstRunAction.set(gainBlockAction, true);
+                addToTop(gainBlockAction);
+            }
+        }
+
+        // move gain block action to top. fix aoe to ThornsPower
+        if (AbstractDungeon.actionManager.actions.stream().anyMatch(a -> a instanceof GainBlockAction &&
+                AttackTriggerPatch.FirstRunActionField.firstRunAction.get(a))) {
+            List<AbstractGameAction> gainBlockActions = AbstractDungeon.actionManager.actions.stream().filter(a -> a instanceof GainBlockAction &&
+                    AttackTriggerPatch.FirstRunActionField.firstRunAction.get(a)).collect(Collectors.toList());
+            AbstractDungeon.actionManager.actions.removeAll(gainBlockActions);
+            for (AbstractGameAction a: gainBlockActions) {
+                AbstractDungeon.actionManager.addToTop(a);
             }
         }
     }
@@ -66,6 +84,7 @@ public class Position0Power extends BasePower {
     }
 
     private float timer = 0f;
+
     @Override
     public void update(int slot) {
         super.update(slot);
