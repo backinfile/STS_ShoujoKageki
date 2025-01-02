@@ -27,7 +27,10 @@ public class ShineCardDescriptionModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return TEXT[0] + rawDescription + TEXT[1];
+        if (rawDescription.endsWith(uiStrings.TEXT[3])) {
+            return uiStrings.TEXT[0] + rawDescription + uiStrings.TEXT[1];
+        }
+        return uiStrings.TEXT[0] + rawDescription + uiStrings.TEXT[2] + uiStrings.TEXT[1];
     }
 
     @Override

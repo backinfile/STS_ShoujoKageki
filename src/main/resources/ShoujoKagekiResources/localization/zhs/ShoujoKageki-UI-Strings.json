@@ -104,7 +104,8 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:DisposableKeyword": {
-    "TEXT": ["", " NL 闪耀 !ShoujoKageki:disposable! 。", " NL {!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
+    "TEXT": ["", " 闪耀 !ShoujoKageki:disposable! 。", " NL ", " NL 消耗 。",
+      " NL {!ShoujoKageki:disposable!|@= ShoujoKageki:闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },

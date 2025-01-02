@@ -20,6 +20,7 @@ public class Ready extends BaseCard {
         DisposableVariable.setBaseValue(this, MEDIUM_SHINE_CNT);
         this.isInnate = true;
         this.defaultSecondMagicNumber = this.defaultBaseSecondMagicNumber = 1;
+        this.exhaust = true;
     }
 
     @Override

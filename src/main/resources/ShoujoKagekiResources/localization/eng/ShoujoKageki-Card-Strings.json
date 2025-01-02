@@ -213,7 +213,7 @@
 	},
 	"ShoujoKageki:Ready": {
 		"NAME": "Ready",
-		"DESCRIPTION": "Innate. NL Gain !M! Strength. NL Draw !ShoujoKageki:SM! cards."
+		"DESCRIPTION": "Innate. NL Gain !M! Strength. NL Draw !ShoujoKageki:SM! cards. NL Exhaust."
 	},
 	"ShoujoKageki:Debut": {
 		"NAME": "Debut",
