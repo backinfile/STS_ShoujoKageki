@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -28,16 +29,17 @@ public class CarryingGuilt extends BaseCard {
 //        DisposableVariable.setBaseValue(this, DEFAULT_SHINE_CNT);
 
         CardModifierManager.addModifier(this, new CarryingGuiltModifier());
-        stageLightForTarget = 0;
+        stageLightForTarget = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-//        addToBot(new VFXAction(new StageLightImgMultiEffect(m), StageLightImgMultiEffect.ANI_DURATION));
 //        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-//        addToBot(new TrueWaitAction(StageLightImgMultiEffect.STAY_DURATION - StageLightImgMultiEffect.ANI_DURATION));
-//        addToBot(new RunAction(() -> StageLightPatch.closeLight(false)));
+        addToBot(new VFXAction(new StageLightImgMultiEffect(m), StageLightImgMultiEffect.ANI_DURATION));
+        addToBot(new TrueWaitAction(Settings.ACTION_DUR_FAST));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        addToBot(new TrueWaitAction(StageLightImgMultiEffect.STAY_DURATION - StageLightImgMultiEffect.ANI_DURATION));
+        addToBot(new RunAction(() -> StageLightPatch.closeLight(false)));
     }
 
     private int counterCache = 0;
