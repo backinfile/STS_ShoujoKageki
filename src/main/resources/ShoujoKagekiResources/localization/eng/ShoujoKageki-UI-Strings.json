@@ -142,5 +142,11 @@
     "TEXT": ["Skip", "Victory?"],
     "EXTRA_TEXT": [],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:HairpinRelic": {
+    "TEXT": ["Tower of Promise", "Retain. Draw cards from Promise Pile until your hand is full. Exhaust.",
+      "Tower of Promise+", "Retain. Draw cards from Promise Pile until your hand is full."],
+    "EXTRA_TEXT": [],
+    "TEXT_DICT": {}
   }
 }

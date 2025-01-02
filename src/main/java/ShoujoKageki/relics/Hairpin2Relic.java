@@ -7,15 +7,24 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class Hairpin2Relic extends BaseRelic {
     public static final String RAW_ID = Hairpin2Relic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);
 
+    public static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HairpinRelic.ID);
     public Hairpin2Relic() {
         super(ID, RAW_ID, RelicTier.BOSS, LandingSound.FLAT);
+
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip(uiStrings.TEXT[2], uiStrings.TEXT[3]));
+        initializeTips();
     }
 
 

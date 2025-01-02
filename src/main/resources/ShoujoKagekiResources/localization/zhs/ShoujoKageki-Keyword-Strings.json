@@ -37,7 +37,7 @@
 	{
 		"PROPER_NAME": "闪耀",
 		"NAMES": [
-			"销毁", "闪耀", "工具"
+			"闪耀"
 		],
 		"DESCRIPTION": "打出X次后卡牌从 #y牌组 中 #r永久移除 。"
 	},
@@ -47,20 +47,6 @@
 			"闪耀牌奖励"
 		],
 		"DESCRIPTION": "战斗结束时多掉落 #y1 次仅包含一张 闪耀 牌 的 #y卡牌奖励 。"
-	},
-	{
-		"PROPER_NAME": "搜寻",
-		"NAMES": [
-			"搜寻"
-		],
-		"DESCRIPTION": "从目标牌堆中选择一张牌或多张牌置入手牌。"
-	},
-	{
-		"PROPER_NAME": "永远闪耀",
-		"NAMES": [
-			"永远闪耀"
-		],
-		"DESCRIPTION": "打出后不再从牌组中 #r移除 。"
 	},
 	{
 		"PROPER_NAME": "禁用",
@@ -75,26 +61,5 @@
 			"衍生牌"
 		],
 		"DESCRIPTION": "牌组以外的牌。"
-	},
-	{
-		"PROPER_NAME": "熟练度",
-		"NAMES": [
-			"熟练度"
-		],
-		"DESCRIPTION": "提高工具牌的效果。"
-	},
-	{
-		"PROPER_NAME": "削减",
-		"NAMES": [
-			"削减"
-		],
-		"DESCRIPTION": "敌人当回合失去力量。"
-	},
-	{
-		"PROPER_NAME": "训练",
-		"NAMES": [
-			"训练"
-		],
-		"DESCRIPTION": "训练会让 #y射击 获得额外的伤害，层数每回合下降一半。"
 	}
 ]

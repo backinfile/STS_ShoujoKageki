@@ -7,17 +7,28 @@ import ShoujoKageki.cards.bag.TowerOfPromise;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class HairpinRelic extends BaseRelic {
     public static final String RAW_ID = HairpinRelic.class.getSimpleName();
     public static final String ID = ModInfo.makeID(RAW_ID);
 
+    public static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(HairpinRelic.ID);
+
     private int turnCount = 0;
 
     public HairpinRelic() {
         super(ID, RAW_ID, RelicTier.STARTER, LandingSound.FLAT);
+
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip(uiStrings.TEXT[0], uiStrings.TEXT[1]));
+        initializeTips();
     }
+
 
     @Override
     public void atBattleStart() {
@@ -72,5 +83,6 @@ public class HairpinRelic extends BaseRelic {
 //            addToBot(new GainBlockAction(AbstractDungeon.player, cardsNumInBag));
 //        }
 //    }
+
 
 }

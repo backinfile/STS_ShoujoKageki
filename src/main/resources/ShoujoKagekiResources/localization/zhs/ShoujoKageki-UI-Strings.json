@@ -142,5 +142,11 @@
     "TEXT": ["跳过", "胜利？"],
     "EXTRA_TEXT": [],
     "TEXT_DICT": {}
+  },
+  "ShoujoKageki:HairpinRelic": {
+    "TEXT": ["约定之塔", "保留 。 从 约定牌堆 中抽牌直到手牌上限。 消耗 。",
+              "约定之塔+", "保留 。 从 约定牌堆 中抽牌直到手牌上限。"],
+    "EXTRA_TEXT": [],
+    "TEXT_DICT": {}
   }
 }

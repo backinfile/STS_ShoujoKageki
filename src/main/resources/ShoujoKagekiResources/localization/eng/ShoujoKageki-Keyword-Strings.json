@@ -50,20 +50,6 @@
 		"DESCRIPTION": "At the end of the battle, drop #y1 #yCard Reward containing only one #yShine Card . NL (The third layer boss is invalid)"
 	},
 	{
-		"PROPER_NAME": "Search",
-		"NAMES": [
-			"search"
-		],
-		"DESCRIPTION": "Select one or more cards from the target pile and place them in your hand."
-	},
-	{
-		"PROPER_NAME": "Shine Forever",
-		"NAMES": [
-			"shine forever"
-		],
-		"DESCRIPTION": "After playing, it will no longer be #rremoved from the deck ."
-	},
-	{
 		"PROPER_NAME": "Disable",
 		"NAMES": [
 			"disable"
@@ -76,26 +62,5 @@
 			"derivative card"
 		],
 		"DESCRIPTION": "Cards outside the deck."
-	},
-	{
-		"PROPER_NAME": "Proficiency",
-		"NAMES": [
-			"proficiency"
-		],
-		"DESCRIPTION": "Improve the effect of tool cards."
-	},
-	{
-		"PROPER_NAME": "Cut",
-		"NAMES": [
-			"cut"
-		],
-		"DESCRIPTION": "The enemy loses strength this turn."
-	},
-	{
-		"PROPER_NAME": "Training",
-		"NAMES": [
-			"training"
-		],
-		"DESCRIPTION": "Training will give #yShoot extra damage, and the number of layers will decrease by half every turn."
 	}
 ]
