@@ -34,7 +34,7 @@ public class TakeAllRewardCardsPatch {
     )
     public static class OpenPatch {
         public static void Postfix(CardRewardScreen __instance, SkipCardButton ___skipButton, SingingBowlButton ___bowlButton) {
-            Log.logger.info("========= openPatch");
+//            Log.logger.info("========= openPatch");
             takeAllRewardCardsButton.hide();
 
             AbstractRelic takeAllCardsRelic = AbstractDungeon.player.getRelic(BookMarchRelic.ID);

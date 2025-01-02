@@ -344,7 +344,7 @@
 	},
 	"ShoujoKageki:OldPlace2": {
 		"NAME": "明年也要在这里相见",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 选择保留你的能量 ，手牌， 格挡 ， 或 力量 !M! 回合。",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 选择：保留你的能量 ，手牌， 格挡 ， 或 力量 !M! 回合。",
 		"UPGRADE_DESCRIPTION": ""
 	},
 	"ShoujoKageki:RetainBlock": {
