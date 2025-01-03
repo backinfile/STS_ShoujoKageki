@@ -2,6 +2,8 @@ package ShoujoKageki.events;
 
 import ShoujoKageki.ModInfo;
 import ShoujoKageki.cards.starter.StageReason;
+import ShoujoKageki.patches.AudioPatch;
+import ShoujoKageki.util.Utils2;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,6 +32,8 @@ public class PlayMusicEvent extends AbstractImageEvent {
     private final int healAmt;
     private final int goldAmt;
 
+    private String musicKey = "";
+
     public PlayMusicEvent() {
         super(NAME, DESCRIPTIONS[0], IMG);
         // The first dialogue options available to us.
@@ -43,21 +47,32 @@ public class PlayMusicEvent extends AbstractImageEvent {
         imageEventText.setDialogOption(OPTIONS[3]); // leave
     }
 
+    public void playMusic(String key) {
+        if (!musicKey.equals("")) {
+            CardCrawlGame.sound.stop(musicKey);
+        }
+        musicKey = key;
+        CardCrawlGame.sound.play(key);
+    }
+
     @Override
     protected void buttonEffect(int btn) { // This is the event:
         switch (screenNum) {
             case 0: // screen number 0
                 switch (btn) {
                     case 0:
+                        playMusic(AudioPatch.Sound_Event_FancyYou);
                         AbstractDungeon.player.heal(healAmt);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new StageReason(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                         break;
                     case 1:
+                        playMusic(AudioPatch.Sound_Event_StarDiamond);
                         AbstractDungeon.effectList.add(new RainingGoldEffect(goldAmt));
                         AbstractDungeon.player.gainGold(goldAmt);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new StageReason(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                         break;
                     case 2:
+                        playMusic(AudioPatch.Karen_Event_Shoujo);
                         if (AbstractDungeon.player.hasRelic("Sozu")) {
                             AbstractDungeon.player.getRelic("Sozu").flash();
                         } else {

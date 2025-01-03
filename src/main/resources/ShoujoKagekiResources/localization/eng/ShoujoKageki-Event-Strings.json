@@ -13,16 +13,27 @@
 	"ShoujoKageki:ShineBookEvent": {
 		"NAME": "Script Book",
 		"DESCRIPTIONS": [
-			"#bHikari ：Starlight, A story about a distant planet, a long time ago, in the distant future. NL #rKaren : Sacrificing herself for a miracle for her best friend——Flora's courage, NL #bHikari : Losing her memory but not forgetting her promise to her best friend——Karell’s strength, NL #rKaren ：Great! NL #bHikari : Mm, great! NL #rKaren ：This is my baby, my baby book.",
+			"#bHikari : Starlight, A story about a distant planet, a long time ago, in the distant future. NL #rKaren : Sacrificing herself for a miracle for her best friend——Flora's courage, NL #bHikari : Losing her memory but not forgetting her promise to her best friend——Karell’s strength, NL #rKaren ：Great! NL #bHikari : Mm, great! NL #rKaren ：This is my baby, my baby book.",
 			"I can’t understand it by myself, Hikari.",
 			"The new Starlight must be the best stage."
 		],
 		"OPTIONS": [
-			"[Read] #gChoose #ga #gcard #gand #graise #gits #gShine #gvalue #gto 99.",
-			"[Miss] #gGet ",
-			" .",
+			"[Read] #rBecome #rCursed #r- #rStage #rReason.",
 			"[Leave]",
-			"Choose a card and raise its Shine value to 99."
+			"[Translate] #gObtain #ga #gRelic. #rBecome #rCursed #r- #rStage #rReason.",
+			"[Miss] #gRestore #gthe #gshine #gvalue #gof #gall #gcards."
+		]
+	},
+	"ShoujoKageki:PlayMusicEvent": {
+		"NAME": "Music Player",
+		"DESCRIPTIONS": [
+			"You encountered a disc in the tower, and miraculously, it can play #g~any~ #g~song~ that exists in your mind. NL What do you want to play with it now?"
+		],
+		"OPTIONS": [
+			"[Fancy You] #gHeal #g{0} #gHP。 #rBecome #rCursed #r- #rStage #rReason.",
+			"[Star Diamond] #gGain #g{0} #gGold。 #rBecome #rCursed #r- #rStage #rReason.",
+			"[Stage Girl Experience] #gGet #ga #gPotion. #rBecome #rCursed #r- #rStage #rReason.",
+			"[Leave]"
 		]
 	}
 }

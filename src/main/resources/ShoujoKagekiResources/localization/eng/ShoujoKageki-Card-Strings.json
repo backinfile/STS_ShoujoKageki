@@ -548,5 +548,9 @@
 	"ShoujoKageki:Sleepy": {
 		"NAME": "Sleepy",
 		"DESCRIPTION": "Unplayable. NL Ethereal. NL Cannot be removed from your deck."
+	},
+	"ShoujoKageki:StageReason": {
+		"NAME": "Stage Reason",
+		"DESCRIPTION": "Exhaust."
 	}
 }

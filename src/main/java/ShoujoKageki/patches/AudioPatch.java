@@ -19,6 +19,9 @@ public class AudioPatch {
     public static final String Sound_Last_Word = "Karen_last_word.WAV";
     public static final String Sound_Gear = "Karen_Gear.wav";
     public static final String Sound_Stage_Light = "Karen_stage_light.mp3";
+    public static final String Sound_Event_FancyYou = "Karen_Event_FancyYou.ogg";
+    public static final String Sound_Event_StarDiamond = "Karen_Event_StarDiamond.ogg";
+    public static final String Karen_Event_Shoujo = "Karen_Event_Shoujo.ogg";
 
     public static final String Music_Form = "Karen_form.MP3";
 
@@ -34,6 +37,9 @@ public class AudioPatch {
             load(__instance, ___map, Sound_Last_Word);
             load(__instance, ___map, Sound_Gear);
             load(__instance, ___map, Sound_Stage_Light);
+            load(__instance, ___map, Sound_Event_FancyYou);
+            load(__instance, ___map, Sound_Event_StarDiamond);
+            load(__instance, ___map, Karen_Event_Shoujo);
         }
     }
 

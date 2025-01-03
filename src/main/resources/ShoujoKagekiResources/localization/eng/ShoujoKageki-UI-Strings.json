@@ -151,7 +151,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:RetainStrengthTipModifier": {
-    "TEXT": ["Retain Strength?", "Extends the number of turns your temporary power lasts." ],
+    "TEXT": ["Retain Strength?", "Extends the number of turns your Temporary Strength lasts." ],
     "EXTRA_TEXT": [],
     "TEXT_DICT": {}
   }
