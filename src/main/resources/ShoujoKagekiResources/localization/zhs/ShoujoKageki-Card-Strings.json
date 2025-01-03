@@ -555,5 +555,9 @@
 	"ShoujoKageki:Sleepy": {
 		"NAME": "困意",
 		"DESCRIPTION": "不能被打出 。 NL 虚无 。 NL 不能从牌组中移除。"
+	},
+	"ShoujoKageki:StageReason": {
+		"NAME": "存在于舞台的理由",
+		"DESCRIPTION": "消耗 。"
 	}
 }

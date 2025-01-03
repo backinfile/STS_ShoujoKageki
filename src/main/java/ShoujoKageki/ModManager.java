@@ -1,6 +1,7 @@
 package ShoujoKageki;
 
 import ShoujoKageki.character.KarenCharacter;
+import ShoujoKageki.events.PlayMusicEvent;
 import ShoujoKageki.events.ShineBookEvent;
 import ShoujoKageki.patches.OnRelicChangePatch;
 import ShoujoKageki.potions.AwakePotion;
@@ -30,6 +31,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -236,7 +239,8 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         // =============== /EVENTS/ =================
 //        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
-        BaseMod.addEvent(ShineBookEvent.ID, ShineBookEvent.class);
+        BaseMod.addEvent(ShineBookEvent.ID, ShineBookEvent.class, TheCity.ID);
+        BaseMod.addEvent(PlayMusicEvent.ID, PlayMusicEvent.class, TheBeyond.ID);
 
 
         // Load the Mod Badge
