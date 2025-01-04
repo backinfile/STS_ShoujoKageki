@@ -1,10 +1,15 @@
 package ShoujoKageki.cards.shine;
 
+import ShoujoKageki.actions.RunAction;
+import ShoujoKageki.actions.RunEffectAction;
 import ShoujoKageki.cards.BaseCard;
+import ShoujoKageki.effects.LastWordVideoEffect;
+import ShoujoKageki.effects.Starlight2VideoEffect;
 import ShoujoKageki.powers.Starlight02Power;
 import ShoujoKageki.powers.StarlightPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKageki.ModInfo.makeID;
@@ -19,6 +24,7 @@ public class Starlight02 extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new RunEffectAction(new Starlight2VideoEffect(), true));
         addToBot(new ApplyPowerAction(p, p, new Starlight02Power(magicNumber)));
     }
 
