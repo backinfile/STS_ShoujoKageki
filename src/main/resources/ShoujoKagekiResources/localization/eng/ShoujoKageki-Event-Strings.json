@@ -27,7 +27,8 @@
 	"ShoujoKageki:PlayMusicEvent": {
 		"NAME": "Music Player",
 		"DESCRIPTIONS": [
-			"You encountered a disc in the tower, and miraculously, it can play #g~any~ #g~song~ that exists in your mind. NL What do you want to play with it now?"
+			"You encountered a disc in the tower, and miraculously, it can play #g~any~ #g~song~ that exists in your mind. NL What do you want to play with it now?",
+			"The disc is damaged."
 		],
 		"OPTIONS": [
 			"[Fancy You] #gHeal #g{0} #gHP。 #rBecome #rCursed #r- #rStage #rReason.",

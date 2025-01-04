@@ -239,8 +239,8 @@ public class ModManager implements ISubscriber, PostDrawSubscriber, EditCardsSub
 
         // =============== /EVENTS/ =================
 //        BaseMod.addEvent(RealTimeEvent.ID, RealTimeEvent.class, TheCity.ID);
-        BaseMod.addEvent(ShineBookEvent.ID, ShineBookEvent.class, TheCity.ID);
-        BaseMod.addEvent(PlayMusicEvent.ID, PlayMusicEvent.class, TheBeyond.ID);
+        BaseMod.addEvent(ShineBookEvent.ID, ShineBookEvent.class, TheBeyond.ID);
+        BaseMod.addEvent(PlayMusicEvent.ID, PlayMusicEvent.class, TheCity.ID);
 
 
         // Load the Mod Badge

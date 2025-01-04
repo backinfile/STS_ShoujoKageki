@@ -32,6 +32,9 @@ public class PlayMusicEvent extends AbstractImageEvent {
     private final int healAmt;
     private final int goldAmt;
 
+    private final int limit = 6;
+    private int amt = 0;
+
     private String musicKey = "";
 
     public PlayMusicEvent() {
@@ -64,12 +67,14 @@ public class PlayMusicEvent extends AbstractImageEvent {
                         playMusic(AudioPatch.Sound_Event_FancyYou);
                         AbstractDungeon.player.heal(healAmt);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new StageReason(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                        amt++;
                         break;
                     case 1:
                         playMusic(AudioPatch.Sound_Event_StarDiamond);
                         AbstractDungeon.effectList.add(new RainingGoldEffect(goldAmt));
                         AbstractDungeon.player.gainGold(goldAmt);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new StageReason(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                        amt++;
                         break;
                     case 2:
                         playMusic(AudioPatch.Karen_Event_Shoujo);
@@ -80,19 +85,33 @@ public class PlayMusicEvent extends AbstractImageEvent {
                             AbstractDungeon.player.obtainPotion(p);
                         }
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new StageReason(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                        amt++;
                         break;
                     case 3:
                         openMap();
                         break;
                 }
 
-                this.imageEventText.updateBodyText(DESCRIPTIONS[0]);
-                imageEventText.clearAllDialogs();
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], healAmt), new StageReason());
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], goldAmt), new StageReason());
-                imageEventText.setDialogOption(OPTIONS[2], new StageReason());
-                imageEventText.setDialogOption(OPTIONS[3]); // leave
+                if (amt >= limit) {
+                    this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                    imageEventText.clearAllDialogs();
+                    imageEventText.setDialogOption(OPTIONS[3]); // leave
+                    screenNum = 1;
+                } else {
+                    this.imageEventText.updateBodyText(DESCRIPTIONS[0]);
+                    imageEventText.clearAllDialogs();
+                    imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], healAmt), new StageReason());
+                    imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], goldAmt), new StageReason());
+                    imageEventText.setDialogOption(OPTIONS[2], new StageReason());
+                    imageEventText.setDialogOption(OPTIONS[3]); // leave
+                }
                 break;
+            case 1: // screen number 1
+                switch (btn) {
+                    case 0:
+                        openMap();
+                        break;
+                }
         }
     }
 }
