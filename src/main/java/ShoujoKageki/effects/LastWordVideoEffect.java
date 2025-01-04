@@ -73,7 +73,6 @@ public class LastWordVideoEffect extends AbstractGameEffect {
             }
         }).start();
 
-        AbstractDungeon.effectsQueue.add(new LastWordScreenEffect());
     }
 
     @Override

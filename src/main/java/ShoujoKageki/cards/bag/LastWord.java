@@ -1,9 +1,12 @@
 package ShoujoKageki.cards.bag;
 
 import ShoujoKageki.ModInfo;
+import ShoujoKageki.SettingsPanel;
 import ShoujoKageki.actions.RunEffectAction;
+import ShoujoKageki.actions.TrueWaitAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.patches.field.BagField;
+import ShoujoKageki.effects.LastWordScreenEffect;
 import ShoujoKageki.effects.LastWordVideoEffect;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
@@ -14,6 +17,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LastWord extends BaseCard {
@@ -28,14 +32,21 @@ public class LastWord extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // stop attack animation
-        p.animX = 0;
-        ReflectionHacks.setPrivate(p, AbstractCreature.class, "animationTimer", 0f);
+        if (SettingsPanel.showCardVideoEffect) {
+            // stop attack animation
+            p.animX = 0;
+            ReflectionHacks.setPrivate(p, AbstractCreature.class, "animationTimer", 0f);
 
-        CardCrawlGame.music.silenceBGMInstantly();
-        CardCrawlGame.music.silenceTempBgmInstantly();
-        addToBot(new WaitAction(0.5f));
-        addToBot(new RunEffectAction(new LastWordVideoEffect(), true));
+            CardCrawlGame.music.silenceBGMInstantly();
+            CardCrawlGame.music.silenceTempBgmInstantly();
+            addToBot(new WaitAction(0.5f));
+            addToBot(new RunEffectAction(new LastWordVideoEffect(), true));
+            AbstractDungeon.effectsQueue.add(new LastWordScreenEffect());
+        } else {
+            AbstractDungeon.effectsQueue.add(new LastWordScreenEffect());
+            addToBot(new TrueWaitAction(0.7f));
+        }
+
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 

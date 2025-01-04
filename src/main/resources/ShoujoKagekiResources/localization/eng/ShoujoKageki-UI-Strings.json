@@ -85,7 +85,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKageki:settingsPanel": {
-    "TEXT":["Unlock Ascension 20", "Show Promise Pile Preview", "Show Pile of run-out cards", "show giraffe splash screen"],
+    "TEXT":["Unlock Ascension 20", "Show Promise Pile Preview", "Show Pile of run-out cards", "Show giraffe splash screen", "Display video effects when playing cards"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
