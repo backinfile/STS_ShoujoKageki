@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.util.ArrayList;
 
@@ -80,5 +81,12 @@ public class DisposableField {
         }
 
         MetricDataPatch.addDisposedCard(card);
+
+        // achievement
+        {
+            if (DisposableFieldCounterSavePatch.getDiffShineDisposedCount() >= 9) {
+                UnlockTracker.unlockAchievement("Karen:Shine");
+            }
+        }
     }
 }

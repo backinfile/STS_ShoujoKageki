@@ -1,0 +1,51 @@
+{
+  "Karen:Eat": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "好好吃饭",
+    "DESCRIPTION": "在一回合中获得25点力量。",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Eat.png"
+  },
+  "Karen:Arrogant": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "激情的Revue",
+    "DESCRIPTION": "拥有遗物数量>25。",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Arrogant.png"
+  },
+  "Karen:Shine": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "渴望的Revue",
+    "DESCRIPTION": "在一局游戏中耗尽9种闪耀牌。",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Shine.png"
+  },
+  "Karen:Promise": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "约定的Revue",
+    "DESCRIPTION": "在一回合中将同一张牌放入约定牌堆3次。",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Promise.png"
+  },
+  "Karen:Reproduce": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "我，再生产",
+    "DESCRIPTION": "爱城华恋在一场战斗中使用3种金色能力牌。",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Reproduce.png"
+  },
+  "Karen:LastWord": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "我也不想输给小光",
+    "DESCRIPTION": "成功打出最后的台词。",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/LastWord.png"
+  },
+  "Karen:LastWord2": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "Starlight的引擎停下了",
+    "DESCRIPTION": "使用最后的台词击杀腐化之心。",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/LastWord2.png"
+  }
+}

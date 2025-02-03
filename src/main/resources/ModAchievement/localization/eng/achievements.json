@@ -1,0 +1,51 @@
+{
+  "Karen:Eat": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "Eat well",
+    "DESCRIPTION": "Gain 25 Strength in one turn.",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Eat.png"
+  },
+  "Karen:Arrogant": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "Passionate Revue",
+    "DESCRIPTION": "Have > 25 relics.",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Arrogant.png"
+  },
+  "Karen:Shine": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "Desire Revue",
+    "DESCRIPTION": "Use up 9 types of Shine cards in one combat.",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Shine.png"
+  },
+  "Karen:Promise": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "Promised Revue",
+    "DESCRIPTION": "Put the same card into the promise pile 3 times in one turn.",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Promise.png"
+  },
+  "Karen:Reproduce": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "I, Reproduce",
+    "DESCRIPTION": "Aijo Karen use 3 rare power cards in one combat.",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/Reproduce.png"
+  },
+  "Karen:LastWord": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "I don't want to lose to Hikari either.",
+    "DESCRIPTION": "Play Last-Word",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/LastWord.png"
+  },
+  "Karen:LastWord2": {
+    "CARD_COLOR": "Karen",
+    "TITLE": "Starlight's engines stopped",
+    "DESCRIPTION": "Use the Last-Word to kill the Corrupted Heart.",
+    "HIDDEN": false,
+    "IMAGE": "ShoujoKagekiResources/images/achievement/LastWord2.png"
+  }
+}

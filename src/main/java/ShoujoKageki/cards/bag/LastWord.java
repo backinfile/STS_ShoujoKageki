@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 public class LastWord extends BaseCard {
 
@@ -48,6 +49,8 @@ public class LastWord extends BaseCard {
         }
 
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
+        UnlockTracker.unlockAchievement("Karen:LastWord");
     }
 
     @Override

@@ -4,6 +4,7 @@ import ShoujoKageki.actions.TrueWaitAction;
 import ShoujoKageki.cards.BaseCard;
 import ShoujoKageki.cards.globalMove.patch.GlobalMovePatch;
 import ShoujoKageki.effects.MoveCardToBagAsStarEffect;
+import ShoujoKageki.patches.ExtraAchievementUnlockPatch;
 import ShoujoKageki.powers.BasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
@@ -58,6 +59,7 @@ public class MoveCardToBagAction extends AbstractGameAction {
                     GlobalMovePatch.triggerGlobalMove(card, CardGroup.CardGroupType.UNSPECIFIED, GlobalMovePatch.Bag);
                 }
                 player.limbo.removeCard(card);
+                ExtraAchievementUnlockPatch.OnMoveCardToBag(card);
             }
 
 
